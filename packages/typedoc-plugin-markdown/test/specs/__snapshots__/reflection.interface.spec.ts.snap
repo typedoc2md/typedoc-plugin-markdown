@@ -179,7 +179,7 @@ Comments for propWithProps
 
 #### callbacks?
 
-> \`optional\` **callbacks**: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
+> \`optional\` **callbacks**: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\>
 
 Comments for callbacks
 
@@ -246,7 +246,7 @@ Comments for BasicInterface
 | \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations |
 | \`propWithFunction\` | (\`options\`: \`object\`) => \`boolean\` | Comments for propWithFunction |
 | \`propWithProps\` | \`object\` | Comments for propWithProps |
-| \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks |
+| \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\> | Comments for callbacks |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB |
 | \`propWithProps.nestedPropC\` | \`object\` | Comments for nestedPropC |
@@ -478,7 +478,7 @@ Comments for propWithProps
 
 #### callbacks?
 
-> \`optional\` **callbacks**: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
+> \`optional\` **callbacks**: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\>
 
 Comments for callbacks
 
@@ -550,7 +550,7 @@ Comments for ExtendedInterface
 | \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations | [\`BasicInterface\`](BasicInterface.md).\`propReturningSignatureDeclarations\` |
 | \`propWithFunction\` | (\`options\`: \`object\`) => \`boolean\` | Comments for propWithFunction | [\`BasicInterface\`](BasicInterface.md).\`propWithFunction\` |
 | \`propWithProps\` | \`object\` | Comments for propWithProps | [\`BasicInterface\`](BasicInterface.md).\`propWithProps\` |
-| \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks | - |
+| \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\> | Comments for callbacks | - |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA | - |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB | - |
 | \`propWithProps.nestedPropC\` | \`object\` | Comments for nestedPropC | - |

@@ -31,7 +31,7 @@ Comments for current function 1
 
 ##### iterable
 
-\`Iterable\`\\<\`Value\`, \`any\`, \`any\`\\>
+\`Iterable\`\\<\`Value\`\\>
 
 Comments for iterable arg
 
@@ -57,7 +57,7 @@ Comments for iterable arg
 
 #### iterable
 
-\`Iterable\`\\<\`Value\`, \`any\`, \`any\`\\>
+\`Iterable\`\\<\`Value\`\\>
 
 ### Returns
 
@@ -73,7 +73,7 @@ Comments for main curriedFunction
 ## Call Signature
 
 \`\`\`ts
-function curriedFunction(searchElement: unknown): <Value>(iterable: Iterable<Value, any, any>) => boolean
+function curriedFunction(searchElement: unknown): <Value>(iterable: Iterable<Value>) => boolean
 \`\`\`
 
 **Defined in**: [functions.ts:1](http://source-url)
@@ -100,7 +100,7 @@ Comments for current function 1
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| \`iterable\` | \`Iterable\`\\<\`Value\`, \`any\`, \`any\`\\> | Comments for iterable arg |
+| \`iterable\` | \`Iterable\`\\<\`Value\`\\> | Comments for iterable arg |
 
 #### Returns
 
@@ -109,7 +109,7 @@ Comments for current function 1
 ## Call Signature
 
 \`\`\`ts
-function curriedFunction<Value>(searchElement: unknown, iterable: Iterable<Value, any, any>): string
+function curriedFunction<Value>(searchElement: unknown, iterable: Iterable<Value>): string
 \`\`\`
 
 **Defined in**: [functions.ts:1](http://source-url)
@@ -125,7 +125,7 @@ function curriedFunction<Value>(searchElement: unknown, iterable: Iterable<Value
 | Parameter | Type |
 | :------ | :------ |
 | \`searchElement\` | \`unknown\` |
-| \`iterable\` | \`Iterable\`\\<\`Value\`, \`any\`, \`any\`\\> |
+| \`iterable\` | \`Iterable\`\\<\`Value\`\\> |
 
 ### Returns
 

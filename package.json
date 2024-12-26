@@ -30,15 +30,15 @@
     "@types/fs-extra": "^11.0.4",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.10.2",
-    "consola": "^3.2.3",
+    "consola": "^3.3.3",
     "copyfiles": "^2.4.1",
     "eslint": "^9.17.0",
     "fs-extra": "^11.2.0",
     "glob": "^11.0.0",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
-    "markdownlint": "^0.37.1",
-    "p-limit": "^6.1.0",
+    "markdownlint": "^0.37.2",
+    "p-limit": "^6.2.0",
     "prettier": "^3.4.2",
     "prettier-plugin-organize-imports": "^4.1.0",
     "remark": "^15.0.1",
@@ -52,8 +52,8 @@
     "ts-morph": "^24.0.0",
     "tsc-alias": "^1.8.10",
     "tsx": "^4.19.2",
-    "typedoc": "^0.27.5",
+    "typedoc": "0.27.6",
     "typescript": "^5.7.2",
-    "typescript-eslint": "^8.18.1"
+    "typescript-eslint": "^8.18.2"
   }
 }
