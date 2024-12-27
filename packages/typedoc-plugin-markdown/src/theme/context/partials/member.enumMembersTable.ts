@@ -37,7 +37,7 @@ export function enumMembersTable(
     const row: string[] = [];
     const nameColumn: string[] = [];
 
-    if (this.options.getValue('useHTMLAnchors') && property.anchor) {
+    if (property.anchor) {
       nameColumn.push(`<a id="${property.anchor}"></a>`);
     }
 

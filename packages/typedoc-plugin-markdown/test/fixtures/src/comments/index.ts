@@ -14,7 +14,8 @@
  * - {@link SameName.prop}
  * - {@link TypeWithGenerics}
  * - {@link TypeDeclarationType}
- * - {@link TypeDeclarationType#declaration1 | Links to declaration1}
+ * - {@link TypeDeclarationType#declaration1}
+ * - {@link TypeDeclarationType2#declaration1}
  *
  * External links:
  *
@@ -251,16 +252,21 @@ export interface InterfacePropertiesTable extends BaseInterfaceProperties {
 
 export type TypeDeclarationType = {
   /**
-   * The subroutine recursively parsed the hexadecimal data.
-   * to generate the binary output for input validation.
+   * Comments for declaration1
    */
   declaration1: boolean;
   /**
-   * The subroutine recursively parsed the hexadecimal data.
-   * to generate the binary output for input validation.
+   * Comments for declaration2
    */
   declaration2: boolean;
-  declaration4: 100;
+  declaration3: 100;
+};
+
+export type TypeDeclarationType2 = {
+  /**
+   * Comments for declaration1
+   */
+  declaration1: boolean;
 };
 
 export const TypeDeclarationConst = {

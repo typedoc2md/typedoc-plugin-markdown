@@ -96,7 +96,7 @@ export function propertiesTable(
 
     const nameColumn: string[] = [];
 
-    if (this.options.getValue('useHTMLAnchors') && property.anchor) {
+    if (property.anchor) {
       nameColumn.push(`<a id="${property.anchor}"></a>`);
     }
 

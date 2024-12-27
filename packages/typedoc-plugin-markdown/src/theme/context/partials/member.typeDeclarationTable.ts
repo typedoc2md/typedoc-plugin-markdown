@@ -60,7 +60,7 @@ export function typeDeclarationTable(
 
     const nameColumn: string[] = [];
 
-    if (this.options.getValue('useHTMLAnchors') && declaration.anchor) {
+    if (declaration.anchor) {
       nameColumn.push(`<a id="${declaration.anchor}"></a>`);
     }
 

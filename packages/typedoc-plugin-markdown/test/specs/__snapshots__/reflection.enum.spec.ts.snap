@@ -40,8 +40,8 @@ Comments for enum
 
 | Enumeration Member | Value | Description |
 | :------ | :------ | :------ |
-| \`MemberA\` | \`0\` | Comments for MemberA |
-| \`MemberB\` | \`1\` | Comments for MemberB |
+| <a id="membera"></a> \`MemberA\` | \`0\` | Comments for MemberA |
+| <a id="memberb"></a> \`MemberB\` | \`1\` | Comments for MemberB |
 "
 `;
 
@@ -81,7 +81,7 @@ Comments for enum
 
 | Enumeration Member | Value |
 | :------ | :------ |
-| \`MemberA\` | \`"UP"\` |
-| \`MemberB\` | \`"DOWN"\` |
+| <a id="membera"></a> \`MemberA\` | \`"UP"\` |
+| <a id="memberb"></a> \`MemberB\` | \`"DOWN"\` |
 "
 `;

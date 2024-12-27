@@ -279,18 +279,18 @@ Comments for LiteralType
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| \`someFunctionWithArrow\` | () => \`string\` | Comments for someFunctionWithArrow |
-| \`x\`? | \`string\` | comment for x |
-| \`y\` | \`object\` | comment for y |
+| <a id="somefunctionwitharrow"></a> \`someFunctionWithArrow\` | () => \`string\` | Comments for someFunctionWithArrow |
+| <a id="x"></a> \`x\`? | \`string\` | comment for x |
+| <a id="y"></a> \`y\` | \`object\` | comment for y |
 | \`y.x\` | \`string\` | comment for y.x |
 | \`y.y\`? | \`boolean\` \\| \`string\` | comment for y.y |
 | \`y.z\` | (\`x\`: \`string\`) => \`string\` | comment for y.z |
-| \`z\` | (\`x\`: \`string\`) => \`string\` | - |
-| \`get accessorA\` | [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\> | Comments for accessorA getter |
-| \`set accessorA\` | \`void\` | Comments for accessorA setter |
-| \`get accessorB\` | \`string\` | - |
-| \`set accessorB\` | \`void\` | - |
-| \`someFunction()\` | [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\> | Comments for someFunction |
+| <a id="z"></a> \`z\` | (\`x\`: \`string\`) => \`string\` | - |
+| <a id="accessora"></a> \`get accessorA\` | [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\> | Comments for accessorA getter |
+| <a id="accessora"></a> \`set accessorA\` | \`void\` | Comments for accessorA setter |
+| <a id="accessorb"></a> \`get accessorB\` | \`string\` | - |
+| <a id="accessorb"></a> \`set accessorB\` | \`void\` | - |
+| <a id="somefunction"></a> \`someFunction()\` | [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\> | Comments for someFunction |
 "
 `;
 
@@ -363,10 +363,10 @@ Comments for FunctionType
 
 - Test link resolution for:
 
-- [\`LiteralType\`](LiteralType.md) and uses [LiteralType#x](LiteralType.md)
-- [\`BasicInterface\`](../interfaces/BasicInterface.md) and uses [BasicInterface#prop](../interfaces/BasicInterface.md)
-- [\`BasicClass\`](../classes/BasicClass.md) and uses [BasicClass#prop](../classes/BasicClass.md)
-- [\`BasicEnum\`](../enumerations/BasicEnum.md) and uses [BasicEnum#MemberA](../enumerations/BasicEnum.md)
+- [\`LiteralType\`](LiteralType.md) and uses [LiteralType#x](LiteralType.md#x)
+- [\`BasicInterface\`](../interfaces/BasicInterface.md) and uses [BasicInterface#prop](../interfaces/BasicInterface.md#prop)
+- [\`BasicClass\`](../classes/BasicClass.md) and uses [BasicClass#prop](../classes/BasicClass.md#prop)
+- [\`BasicEnum\`](../enumerations/BasicEnum.md) and uses [BasicEnum#MemberA](../enumerations/BasicEnum.md#membera)
 
 ## Parameters
 

@@ -47,13 +47,13 @@ exports[`Text should get translations for member page: (Output File Strategy "me
 
 | プロパティ | Type (jp) | 説明 |
 | :------ | :------ | :------ |
-| \`someProp?\` | \`boolean\` | Description for prop someProp |
+| <a id="someprop"></a> \`someProp?\` | \`boolean\` | Description for prop someProp |
 
 ## Events
 
 | イベント | Type (jp) |
 | :------ | :------ |
-| \`someEvent\` | \`MouseEvent\` |
+| <a id="someevent"></a> \`someEvent\` | \`MouseEvent\` |
 
 ***
 
@@ -74,13 +74,13 @@ exports[`Text should get translations for member page: (Output File Strategy "me
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| \`someProp?\` | \`boolean\` | Description for prop someProp |
+| <a id="someprop"></a> \`someProp?\` | \`boolean\` | Description for prop someProp |
 
 ## Events
 
 | Event | Type |
 | :------ | :------ |
-| \`someEvent\` | \`MouseEvent\` |
+| <a id="someevent"></a> \`someEvent\` | \`MouseEvent\` |
 "
 `;
 

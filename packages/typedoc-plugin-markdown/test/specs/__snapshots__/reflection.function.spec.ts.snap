@@ -351,8 +351,8 @@ Return comments
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |
-| \`x\` | \`number\` | 1 |
-| \`y\` | \`number\` | 2 |
+| <a id="x"></a> \`x\` | \`number\` | 1 |
+| <a id="y"></a> \`y\` | \`number\` | 2 |
 "
 `;
 

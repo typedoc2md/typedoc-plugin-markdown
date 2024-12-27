@@ -72,7 +72,7 @@ new AbstractClass(): AbstractClass
 
 | Property | Modifier | Type | Description |
 | :------ | :------ | :------ | :------ |
-| \`abstractProp\` | \`abstract\` | \`string\` | Comments for abstractProp |
+| <a id="abstractprop"></a> \`abstractProp\` | \`abstract\` | \`string\` | Comments for abstractProp |
 
 ## Methods
 
@@ -158,7 +158,7 @@ new BasicClass(): BasicClass
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| \`prop\` | \`string\` | Comments for prop |
+| <a id="prop"></a> \`prop\` | \`string\` | Comments for prop |
 
 ## Methods
 
@@ -347,7 +347,7 @@ new ClassWithAccessors(): ClassWithAccessors
 
 | Property | Modifier | Type |
 | :------ | :------ | :------ |
-| \`privateProp\` | \`private\` | \`string\` |
+| <a id="privateprop"></a> \`privateProp\` | \`private\` | \`string\` |
 
 ## Accessors
 
@@ -497,7 +497,7 @@ new ClassWithComplexProps(): ClassWithComplexProps
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| \`objecLiteralProp\` | \`object\` | - |
+| <a id="objecliteralprop"></a> \`objecLiteralProp\` | \`object\` | - |
 | \`objecLiteralProp.someFunction\` | (\`a\`: \`string\`) => \`string\` | Comments for someFunction |
 | \`objecLiteralProp.someProp\` | \`string\` | Comments for someProp |
 "
@@ -726,8 +726,8 @@ new ClassWithFlags(): ClassWithFlags
 
 | Property | Modifier | Type | Description |
 | :------ | :------ | :------ | :------ |
-| \`expermintalProp\` | \`public\` | \`string\` | **\`Experimental\`** |
-| \`internalProp\` | \`private\` | \`string\` | **\`Internal\`** |
+| <a id="expermintalprop"></a> \`expermintalProp\` | \`public\` | \`string\` | **\`Experimental\`** |
+| <a id="internalprop"></a> \`internalProp\` | \`private\` | \`string\` | **\`Internal\`** |
 
 ## Methods
 
@@ -897,11 +897,11 @@ new ClassWithModifiers(): ClassWithModifiers
 
 | Property | Modifier | Type | Default value | Description |
 | :------ | :------ | :------ | :------ | :------ |
-| \`privateProp\` | \`private\` | \`string\` | \`undefined\` | Comments for privateProp |
-| \`protectedProp\` | \`protected\` | \`string\` | \`undefined\` | Comments for protectedProp |
-| \`publicPropWithDefault\` | \`public\` | \`string\` | \`'propWithDefault'\` | Comments for propWithDefault |
-| \`readonlyProp\` | \`readonly\` | \`string\` | \`undefined\` | Comments for abstractProperty |
-| \`staticProp\` | \`static\` | \`string\` | \`undefined\` | Comments for staticProp |
+| <a id="privateprop"></a> \`privateProp\` | \`private\` | \`string\` | \`undefined\` | Comments for privateProp |
+| <a id="protectedprop"></a> \`protectedProp\` | \`protected\` | \`string\` | \`undefined\` | Comments for protectedProp |
+| <a id="publicpropwithdefault"></a> \`publicPropWithDefault\` | \`public\` | \`string\` | \`'propWithDefault'\` | Comments for propWithDefault |
+| <a id="readonlyprop"></a> \`readonlyProp\` | \`readonly\` | \`string\` | \`undefined\` | Comments for abstractProperty |
+| <a id="staticprop"></a> \`staticProp\` | \`static\` | \`string\` | \`undefined\` | Comments for staticProp |
 
 ## Methods
 
@@ -1119,10 +1119,10 @@ new ClassWithSimpleProps(): ClassWithSimpleProps
 
 | Property | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| \`propA\` | \`string\` | \`'propAValue'\` | Comments for propA |
-| \`propB\` | \`string\` | \`'propBDefaultValue'\` | Comments for propB |
-| \`propC\` | \`string\` | \`'propCDefaultValue'\` | Comments for propB on two lines |
-| \`propD\` | \`string\` | \`undefined\` | Comments for propE |
+| <a id="propa"></a> \`propA\` | \`string\` | \`'propAValue'\` | Comments for propA |
+| <a id="propb"></a> \`propB\` | \`string\` | \`'propBDefaultValue'\` | Comments for propB |
+| <a id="propc"></a> \`propC\` | \`string\` | \`'propCDefaultValue'\` | Comments for propB on two lines |
+| <a id="propd"></a> \`propD\` | \`string\` | \`undefined\` | Comments for propE |
 "
 `;
 
@@ -1408,8 +1408,8 @@ new DerivedClassA(): DerivedClassA
 
 | Property | Type | Default value | Description | Overrides |
 | :------ | :------ | :------ | :------ | :------ |
-| \`abstractProp\` | \`string\` | \`'abstractProp'\` | Comments for abstractProp | [\`AbstractClass\`](AbstractClass.md).\`abstractProp\` |
-| \`derivedProp\` | \`string\` | \`undefined\` | - | - |
+| <a id="abstractprop"></a> \`abstractProp\` | \`string\` | \`'abstractProp'\` | Comments for abstractProp | [\`AbstractClass\`](AbstractClass.md).[\`abstractProp\`](AbstractClass.md#abstractprop) |
+| <a id="derivedprop"></a> \`derivedProp\` | \`string\` | \`undefined\` | - | - |
 
 ## Methods
 

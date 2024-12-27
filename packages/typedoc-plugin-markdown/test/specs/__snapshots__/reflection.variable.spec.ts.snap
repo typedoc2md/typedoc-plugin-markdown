@@ -34,7 +34,7 @@ Comments variable with symbol
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| \`[sym]\` | \`string\` | 'value' | Comments for symbol |
+| <a id="sym"></a> \`[sym]\` | \`string\` | 'value' | Comments for symbol |
 "
 `;
 
@@ -200,12 +200,12 @@ xyz.com
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| \`valueA\` | \`number\` | 100 | Comments for valueA |
-| \`valueB\` | \`boolean\` | true | - |
-| \`valueX\` | \`object\` | - | Comments for valueX |
+| <a id="valuea"></a> \`valueA\` | \`number\` | 100 | Comments for valueA |
+| <a id="valueb"></a> \`valueB\` | \`boolean\` | true | - |
+| <a id="valuex"></a> \`valueX\` | \`object\` | - | Comments for valueX |
 | \`valueX.valueA\` | \`number\`[] | - | Comment for valueX.valueA |
 | \`valueX.valueY\` | (\`z\`: \`string\`) => \`object\` | - | - |
 | \`valueX.valueZ\` | \`string\` | 'foo' | - |
-| \`valueY\` | (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\` | - | - |
+| <a id="valuey"></a> \`valueY\` | (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\` | - | - |
 "
 `;

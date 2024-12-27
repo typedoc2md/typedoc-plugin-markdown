@@ -224,7 +224,7 @@ export interface PluginOptions {
   useCodeBlocks: boolean;
 
   /**
-   * Add HTML named anchors to headings and table rows.
+   * Add HTML anchors to page headings.
    */
   useHTMLAnchors: boolean;
 

@@ -649,15 +649,16 @@ export const useHTMLEncodedBrackets: Partial<DeclarationOption> = {
 };
 
 /**
- * This option should be used if there are issues when anchoring to symbols within a page.
+ * By default markdown parsers normally assign header IDs to headings automatically.
+ * This is required when cross linking to symbols within a page.
+ * This option should be used when parsers that do not automatically assign header IDs.
  *
- * - For Markdown parsers that do not automatically assign header ids.
- * - When cross referencing symbols that are referenced in a table row.
+ * Note that HTML anchors will be added to linkable symbols listed in table rows as there is no alternative way to anchor to these items.
  *
  * @category Utility
  */
 export const useHTMLAnchors: Partial<DeclarationOption> = {
-  help: 'Add HTML named anchors to headings and table rows.',
+  help: 'Add HTML anchors to page headings.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };

@@ -514,28 +514,34 @@ export class UrlBuilder {
     );
   }
 
-  private applyAnchorUrl(
-    reflection: DeclarationReflection,
-    containerUrl: string,
-  ) {
+  private applyAnchorUrl(reflection: Reflection, containerUrl: string) {
     const anchorPrefix = this.options.getValue('anchorPrefix');
     const anchorId = this.getAnchorId(reflection);
 
+    if (!this.anchors[containerUrl]) {
+      this.anchors[containerUrl] = [];
+    }
+
     if (anchorId) {
-      if (!this.anchors[containerUrl]) {
-        this.anchors[containerUrl] = [];
-      }
-
-      this.anchors[containerUrl].push(anchorId);
-
       const count = this.anchors[containerUrl]?.filter(
         (id) => id === anchorId,
       )?.length;
 
-      const anchorParts = [anchorId];
+      let anchorParts: string[] = [];
 
-      if (count > 1) {
-        anchorParts.push(`-${count - 1}`);
+      if (
+        reflection.parent?.parent?.kind === ReflectionKind.Property &&
+        reflection.kind === ReflectionKind.Property
+      ) {
+        const anchorMatch = containerUrl.match(/#(.*)$/);
+        const anchor = anchorMatch ? anchorMatch[1] : '';
+        anchorParts = [anchor];
+      } else {
+        this.anchors[containerUrl].push(anchorId);
+        anchorParts = [anchorId];
+        if (count > 0) {
+          anchorParts.push(`-${count}`);
+        }
       }
 
       if (anchorPrefix) {
@@ -558,7 +564,7 @@ export class UrlBuilder {
     }
   }
 
-  private getAnchorId(reflection: DeclarationReflection) {
+  private getAnchorId(reflection: Reflection) {
     const preserveAnchorCasing = this.options.getValue('preserveAnchorCasing');
 
     const anchorName = this.getAnchorName(reflection);
@@ -570,55 +576,18 @@ export class UrlBuilder {
     return null;
   }
 
-  private getAnchorName(reflection: DeclarationReflection) {
+  private getAnchorName(reflection: Reflection) {
     if ([ReflectionKind.TypeParameter].includes(reflection.kind)) {
       return null;
-    }
-    const htmlTableAnchors = this.options.getValue('useHTMLAnchors');
-
-    if (!htmlTableAnchors) {
-      if (
-        (reflection.kind === ReflectionKind.Property &&
-          this.options
-            .getValue('propertiesFormat')
-            .toLowerCase()
-            .includes('table')) ||
-        (reflection.kind === ReflectionKind.Property &&
-          reflection.parent?.kind === ReflectionKind.TypeLiteral &&
-          this.options
-            .getValue('typeDeclarationFormat')
-            .toLowerCase()
-            .includes('table')) ||
-        (reflection.kind === ReflectionKind.Property &&
-          reflection.parent?.kind === ReflectionKind.Class &&
-          this.options
-            .getValue('classPropertiesFormat')
-            .toLowerCase()
-            .includes('table')) ||
-        (reflection.kind === ReflectionKind.Property &&
-          reflection.parent?.kind === ReflectionKind.Interface &&
-          this.options
-            .getValue('interfacePropertiesFormat')
-            .toLowerCase()
-            .includes('table')) ||
-        (reflection.kind === ReflectionKind.EnumMember &&
-          this.options
-            .getValue('enumMembersFormat')
-            .toLowerCase()
-            .includes('table'))
-      ) {
-        return null;
-      }
     }
     if (reflection.kind === ReflectionKind.Constructor) {
       return 'Constructors';
     }
-    const anchorParts = [reflection.name];
-    if (reflection.typeParameters?.length) {
+    const anchorParts = [reflection.name.replace(/[\\[\]]/g, '')];
+    const typeParams = (reflection as DeclarationReflection)?.typeParameters;
+    if (typeParams?.length) {
       anchorParts.push(
-        reflection.typeParameters
-          .map((typeParameter) => typeParameter.name)
-          .join('-'),
+        typeParams?.map((typeParameter) => typeParameter.name).join('-'),
       );
     }
     return anchorParts.join('');

@@ -9,8 +9,8 @@ exports[`Comments should compile @links with anchors: (Output File Strategy "mod
 - [SameName.prop](README.md#prop-2)
 - [TypeWithGenerics](README.md#typewithgenericsc-d)
 - [TypeDeclarationType](README.md#typedeclarationtype)
-- [Links to declaration1](README.md#declaration1)
-"
+- [TypeDeclarationType#declaration1](README.md#declaration1)
+- [TypeDeclarationType2#declaration1](README.md#declaration1-1)"
 `;
 
 exports[`Comments should compile comments for module: (Output File Strategy "members") (Option Group "1") 1`] = `
@@ -30,7 +30,8 @@ Links using \`{@link}\` inline tags.
 - [SameName.prop](interfaces/SameName.md#prop)
 - [TypeWithGenerics](type-aliases/TypeWithGenerics.md)
 - [TypeDeclarationType](type-aliases/TypeDeclarationType.md)
-- [Links to declaration1](type-aliases/TypeDeclarationType.md#declaration1)
+- [TypeDeclarationType#declaration1](type-aliases/TypeDeclarationType.md#declaration1)
+- [TypeDeclarationType2#declaration1](type-aliases/TypeDeclarationType2.md#declaration1)
 
 External links:
 
@@ -104,6 +105,7 @@ Some <p> html </p> inside codeblock
 ## Type Aliases
 
 - [TypeDeclarationType](type-aliases/TypeDeclarationType.md)
+- [TypeDeclarationType2](type-aliases/TypeDeclarationType2.md)
 - [typeWithBlockTags](type-aliases/typeWithBlockTags.md)
 - [TypeWithGenerics](type-aliases/TypeWithGenerics.md)
 
@@ -512,9 +514,9 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 
 | Name | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="declaration1"></a> \`declaration1\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | [index.ts:1](http://source-url) |
-| <a id="declaration2"></a> \`declaration2\` | \`boolean\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | [index.ts:1](http://source-url) |
-| <a id="declaration4"></a> \`declaration4\` | \`100\` | - | [index.ts:1](http://source-url) |
+| <a id="declaration1"></a> \`declaration1\` | \`boolean\` | Comments for declaration1 | [index.ts:1](http://source-url) |
+| <a id="declaration2"></a> \`declaration2\` | \`boolean\` | Comments for declaration2 | [index.ts:1](http://source-url) |
+| <a id="declaration3"></a> \`declaration3\` | \`100\` | - | [index.ts:1](http://source-url) |
 "
 `;
 
@@ -537,7 +539,7 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 exports[`Comments should get tables for type declarations: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Type Alias: TypeDeclarationType
 
-> **TypeDeclarationType**: \\{ \`declaration1\`: \`boolean\`; \`declaration2\`: \`boolean\`; \`declaration4\`: \`100\`; \\}
+> **TypeDeclarationType**: \\{ \`declaration1\`: \`boolean\`; \`declaration2\`: \`boolean\`; \`declaration3\`: \`100\`; \\}
 
 **Defined in**: [index.ts:1](http://source-url)
 
@@ -565,8 +567,7 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 </td>
 <td>
 
-The subroutine recursively parsed the hexadecimal data.
-to generate the binary output for input validation.
+Comments for declaration1
 
 </td>
 </tr>
@@ -583,15 +584,14 @@ to generate the binary output for input validation.
 </td>
 <td>
 
-The subroutine recursively parsed the hexadecimal data.
-to generate the binary output for input validation.
+Comments for declaration2
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="declaration4"></a> \`declaration4\`
+<a id="declaration3"></a> \`declaration3\`
 
 </td>
 <td>
