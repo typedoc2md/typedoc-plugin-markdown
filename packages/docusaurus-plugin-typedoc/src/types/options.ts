@@ -16,9 +16,6 @@ export interface PluginOptions {
   sidebar: Sidebar;
 }
 
-/**
- *
- */
 export interface Sidebar {
   autoConfiguration: boolean;
   pretty: boolean;

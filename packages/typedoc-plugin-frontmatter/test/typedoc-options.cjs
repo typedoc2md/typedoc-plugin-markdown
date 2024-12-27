@@ -19,4 +19,5 @@ module.exports = {
     hide: true,
   },
   frontmatterCommentTags: ['tagOne', 'tagTwo', 'tagThree'],
+  disableSources: true,
 };

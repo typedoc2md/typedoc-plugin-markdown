@@ -10,5 +10,13 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "minor",
-  "ignore": ["@devtools/*"]
+  "ignore": [
+    "@devtools/*",
+    "docusaurus-plugin-typedoc",
+    "typedoc-github-wiki-theme",
+    "typedoc-gitlab-wiki-theme",
+    "typedoc-vitepress-theme",
+    "typedoc-plugin-remark",
+    "typedoc-plugin-frontmatter"
+  ]
 }
