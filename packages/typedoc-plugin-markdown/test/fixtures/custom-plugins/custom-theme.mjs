@@ -49,12 +49,12 @@ export function load(app) {
 
   app.renderer.markdownHooks.on(
     'index.page.begin',
-    () => '> `page.index.begin` hook',
+    () => '> `index.page.begin` hook',
   );
 
   app.renderer.markdownHooks.on(
     'index.page.end',
-    () => '> **Generated using `page.index.end` hook**',
+    () => '> **Generated using `index.page.end` hook**',
   );
 
   app.renderer.preRenderAsyncJobs.push(async (renderer) => {

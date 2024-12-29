@@ -16,7 +16,7 @@
           "items": {
             "type": "string"
           },
-          "description": "[typedoc-plugin-markdown] Specifies comment block tags that should preserve their position in relation to the comment summary.",
+          "description": "[typedoc-plugin-markdown] Specifies comment block tags that should preserve their position.",
           "default": []
         },
         "classPropertiesFormat": {
@@ -84,7 +84,7 @@
         },
         "hideGroupHeadings": {
           "type": "boolean",
-          "description": "[typedoc-plugin-markdown] Excludes grouping by kind so all members are rendered and sorted at the same level."
+          "description": "[typedoc-plugin-markdown] Excludes grouping by kind so all members are rendered at the same level."
         },
         "hidePageHeader": {
           "type": "boolean",
@@ -127,7 +127,7 @@
               "TypeAlias"
             ]
           },
-          "description": "[typedoc-plugin-markdown] Determines which members are exported to their own file when `outputFileStrategy` equals `members`.",
+          "description": "[typedoc-plugin-markdown] Determines which members are exported to their own file.",
           "default": [
             "Enum",
             "Variable",
@@ -436,7 +436,7 @@
         },
         "useHTMLAnchors": {
           "type": "boolean",
-          "description": "[typedoc-plugin-markdown] Add HTML named anchors to headings and table rows."
+          "description": "[typedoc-plugin-markdown] Add HTML anchors to page headings."
         },
         "useHTMLEncodedBrackets": {
           "type": "boolean",

@@ -2,15 +2,11 @@
 
 By default navigation is not present but can be consumed programmatically. This is useful if you want to provide a custom sidebar/navigation implementation (if relevant to your environment).
 
+You can configure the navigation structure by utilizing the TypeDoc [navigation](https://typedoc.org/documents/Options.Output.html#navigation) option, which should provide the same structure navigation as the default HTML theme.
+
 ## Usage
 
-### Configuration
-
-You can configure the navigation structure by utilizing the TypeDoc [--navigation](https://typedoc.org/options/output/#navigation) option, which should provide the same structure navigation as the default HTML theme.
-
-### Consuming navigation JSON
-
-The navigation can be accessed by utilizing the `postRenderAsyncJobs` on the renderer.
+The navigation can be accessed by utilizing the [`postRenderAsyncJobs`](/docs/customizing-output#async-jobs) on the renderer.
 
 The navigation is returned as `JSON` and can be mapped to a custom structure and written to a file.
 
@@ -32,8 +28,3 @@ export function load(app) {
   });
 }
 ```
-
-## See
-
-- [MarkdownRendererEvent](/api-docs/Class.MarkdownRendererEvent.mdx)
-- [NavigationItem](/api-docs/Interface.NavigationItem.mdx)

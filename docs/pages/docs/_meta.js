@@ -11,6 +11,8 @@ export default {
     title: 'Guides',
   },
   'typedoc-usage': '',
+  'customizing-output': '',
+  'utilizing-navigation': '',
   '-- Support': {
     type: 'separator',
     title: 'Support',

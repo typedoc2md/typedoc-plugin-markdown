@@ -18,8 +18,4 @@ export default {
     title: 'Utils & Themes',
     type: 'page',
   },
-  'api-docs': {
-    type: 'page',
-    title: 'API',
-  },
 };

@@ -156,13 +156,13 @@ ${presetsJson}
 
       options.forEach((option) => {
         optionsTable.push(
-          `| [\`${option.name}\`](./options/${categoryName.toLowerCase()}-options.mdx#--${option.name.toLowerCase()}) | ${
+          `| [\`${option.name}\`](./options/${categoryName.toLowerCase()}-options.mdx#${option.name.toLowerCase()}) | ${
             option.help
           } |`,
         );
         out.push(
           `${optionLevel} ${
-            option.deprecated ? `~--${option.name}~` : `--${option.name}`
+            option.deprecated ? `~${option.name}~` : `${option.name}`
           }`,
         );
         if (option.deprecated) {

@@ -20,9 +20,7 @@
     "pretest": "npm run fixtures -- -isCI",
     "test": "npm run validate && jest",
     "test:update": "npm run build-and-run && npm run validate && jest -u",
-    "playground": "npm run build && typedoc --options ./playground/typedoc.json",
-    "schema": "tsx ./.scripts/schema/generate-schema.ts",
-    "docs": "npm run build && typedoc --options ./typedoc.public.json"
+    "schema": "tsx ./.scripts/schema/generate-schema.ts"
   },
   "author": "Thomas Grey",
   "license": "MIT",

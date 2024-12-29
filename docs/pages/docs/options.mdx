@@ -11,54 +11,54 @@ import { Callout } from "nextra/components";
 
 Options that are used to configure how files are output.
 
-| Option                                                                      | Description                                                                  |
-| --------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| [`outputFileStrategy`](./options/file-options.mdx#--outputfilestrategy)     | Determines how output files are generated.                                   |
-| [`membersWithOwnFile`](./options/file-options.mdx#--memberswithownfile)     | Determines which members are exported to their own file.                     |
-| [`flattenOutputFiles`](./options/file-options.mdx#--flattenoutputfiles)     | Flatten output files to a single directory.                                  |
-| [`fileExtension`](./options/file-options.mdx#--fileextension)               | Specify the file extension for generated output files.                       |
-| [`entryFileName`](./options/file-options.mdx#--entryfilename)               | The file name of the entry page.                                             |
-| [`modulesFileName`](./options/file-options.mdx#--modulesfilename)           | The file name of the separate modules / index page.                          |
-| [`mergeReadme`](./options/file-options.mdx#--mergereadme)                   | Appends the documentation index page to the readme page.                     |
-| [`entryModule`](./options/file-options.mdx#--entrymodule)                   | The name of a module that should act as the root page for the documentation. |
-| [`excludeScopesInPaths`](./options/file-options.mdx#--excludescopesinpaths) | Exclude writing @ scope directories in paths.                                |
+| Option                                                                    | Description                                                                  |
+| ------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| [`outputFileStrategy`](./options/file-options.mdx#outputfilestrategy)     | Determines how output files are generated.                                   |
+| [`membersWithOwnFile`](./options/file-options.mdx#memberswithownfile)     | Determines which members are exported to their own file.                     |
+| [`flattenOutputFiles`](./options/file-options.mdx#flattenoutputfiles)     | Flatten output files to a single directory.                                  |
+| [`fileExtension`](./options/file-options.mdx#fileextension)               | Specify the file extension for generated output files.                       |
+| [`entryFileName`](./options/file-options.mdx#entryfilename)               | The file name of the entry page.                                             |
+| [`modulesFileName`](./options/file-options.mdx#modulesfilename)           | The file name of the separate modules / index page.                          |
+| [`mergeReadme`](./options/file-options.mdx#mergereadme)                   | Appends the documentation index page to the readme page.                     |
+| [`entryModule`](./options/file-options.mdx#entrymodule)                   | The name of a module that should act as the root page for the documentation. |
+| [`excludeScopesInPaths`](./options/file-options.mdx#excludescopesinpaths) | Exclude writing @ scope directories in paths.                                |
 
 ## Display Options
 
 Options that are used to configure how the output is structured and displayed.
 
-| Option                                                                                   | Description                                                               |
-| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| [`hidePageHeader`](./options/display-options.mdx#--hidepageheader)                       | Do not print page header.                                                 |
-| [`hideBreadcrumbs`](./options/display-options.mdx#--hidebreadcrumbs)                     | Do not print breadcrumbs.                                                 |
-| [`hidePageTitle`](./options/display-options.mdx#--hidepagetitle)                         | Do not print page title.                                                  |
-| [`hideGroupHeadings`](./options/display-options.mdx#--hidegroupheadings)                 | Excludes grouping by kind so all members are rendered at the same level.  |
-| [`useCodeBlocks`](./options/display-options.mdx#--usecodeblocks)                         | Wraps signatures and declarations in code blocks.                         |
-| [`expandObjects`](./options/display-options.mdx#--expandobjects)                         | Expand objects inside declarations.                                       |
-| [`expandParameters`](./options/display-options.mdx#--expandparameters)                   | Expand parameters in signature parentheses to display type information.   |
-| [`blockTagsPreserveOrder`](./options/display-options.mdx#--blocktagspreserveorder)       | Specifies comment block tags that should preserve their position.         |
-| [`indexFormat`](./options/display-options.mdx#--indexformat)                             | Sets the format of index items.                                           |
-| [`parametersFormat`](./options/display-options.mdx#--parametersformat)                   | Sets the format of parameter and type parameter groups.                   |
-| [`interfacePropertiesFormat`](./options/display-options.mdx#--interfacepropertiesformat) | Sets the format of property groups for interfaces.                        |
-| [`classPropertiesFormat`](./options/display-options.mdx#--classpropertiesformat)         | Sets the format of property groups for classes.                           |
-| [`enumMembersFormat`](./options/display-options.mdx#--enummembersformat)                 | Sets the format of enumeration members.                                   |
-| [`propertyMembersFormat`](./options/display-options.mdx#--propertymembersformat)         | Sets the format of style for property members for interfaces and classes. |
-| [`typeDeclarationFormat`](./options/display-options.mdx#--typedeclarationformat)         | Sets the format of style for type declaration members.                    |
-| [`typeDeclarationVisibility`](./options/display-options.mdx#--typedeclarationvisibility) | Set the visibility level for type declaration documentation.              |
-| [`tableColumnSettings`](./options/display-options.mdx#--tablecolumnsettings)             | Control how table columns are configured and displayed.                   |
+| Option                                                                                 | Description                                                               |
+| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [`hidePageHeader`](./options/display-options.mdx#hidepageheader)                       | Do not print page header.                                                 |
+| [`hideBreadcrumbs`](./options/display-options.mdx#hidebreadcrumbs)                     | Do not print breadcrumbs.                                                 |
+| [`hidePageTitle`](./options/display-options.mdx#hidepagetitle)                         | Do not print page title.                                                  |
+| [`hideGroupHeadings`](./options/display-options.mdx#hidegroupheadings)                 | Excludes grouping by kind so all members are rendered at the same level.  |
+| [`useCodeBlocks`](./options/display-options.mdx#usecodeblocks)                         | Wraps signatures and declarations in code blocks.                         |
+| [`expandObjects`](./options/display-options.mdx#expandobjects)                         | Expand objects inside declarations.                                       |
+| [`expandParameters`](./options/display-options.mdx#expandparameters)                   | Expand parameters in signature parentheses to display type information.   |
+| [`blockTagsPreserveOrder`](./options/display-options.mdx#blocktagspreserveorder)       | Specifies comment block tags that should preserve their position.         |
+| [`indexFormat`](./options/display-options.mdx#indexformat)                             | Sets the format of index items.                                           |
+| [`parametersFormat`](./options/display-options.mdx#parametersformat)                   | Sets the format of parameter and type parameter groups.                   |
+| [`interfacePropertiesFormat`](./options/display-options.mdx#interfacepropertiesformat) | Sets the format of property groups for interfaces.                        |
+| [`classPropertiesFormat`](./options/display-options.mdx#classpropertiesformat)         | Sets the format of property groups for classes.                           |
+| [`enumMembersFormat`](./options/display-options.mdx#enummembersformat)                 | Sets the format of enumeration members.                                   |
+| [`propertyMembersFormat`](./options/display-options.mdx#propertymembersformat)         | Sets the format of style for property members for interfaces and classes. |
+| [`typeDeclarationFormat`](./options/display-options.mdx#typedeclarationformat)         | Sets the format of style for type declaration members.                    |
+| [`typeDeclarationVisibility`](./options/display-options.mdx#typedeclarationvisibility) | Set the visibility level for type declaration documentation.              |
+| [`tableColumnSettings`](./options/display-options.mdx#tablecolumnsettings)             | Control how table columns are configured and displayed.                   |
 
 ## Utility Options
 
 Options that are used for general configuration and utility purposes.
 
-| Option                                                                             | Description                                             |
-| ---------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| [`formatWithPrettier`](./options/utility-options.mdx#--formatwithprettier)         | Apply additional output formatting with Prettier.       |
-| [`prettierConfigFile`](./options/utility-options.mdx#--prettierconfigfile)         | Specify a custom Prettier configuration file location.  |
-| [`sanitizeComments`](./options/utility-options.mdx#--sanitizecomments)             | Sanitize HTML and JSX inside JsDoc comments.            |
-| [`publicPath`](./options/utility-options.mdx#--publicpath)                         | Specify the base path for all urls.                     |
-| [`anchorPrefix`](./options/utility-options.mdx#--anchorprefix)                     | Custom anchor prefix when anchoring to in-page symbols. |
-| [`useHTMLEncodedBrackets`](./options/utility-options.mdx#--usehtmlencodedbrackets) | Use HTML encoded entities for angle brackets.           |
-| [`useHTMLAnchors`](./options/utility-options.mdx#--usehtmlanchors)                 | Add HTML anchors to page headings.                      |
-| [`preserveAnchorCasing`](./options/utility-options.mdx#--preserveanchorcasing)     | Preserve anchor casing when generating link to symbols. |
-| [`pageTitleTemplates`](./options/utility-options.mdx#--pagetitletemplates)         | Change specific text placeholders in the template.      |
+| Option                                                                           | Description                                             |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| [`formatWithPrettier`](./options/utility-options.mdx#formatwithprettier)         | Apply additional output formatting with Prettier.       |
+| [`prettierConfigFile`](./options/utility-options.mdx#prettierconfigfile)         | Specify a custom Prettier configuration file location.  |
+| [`sanitizeComments`](./options/utility-options.mdx#sanitizecomments)             | Sanitize HTML and JSX inside JsDoc comments.            |
+| [`publicPath`](./options/utility-options.mdx#publicpath)                         | Specify the base path for all urls.                     |
+| [`anchorPrefix`](./options/utility-options.mdx#anchorprefix)                     | Custom anchor prefix when anchoring to in-page symbols. |
+| [`useHTMLEncodedBrackets`](./options/utility-options.mdx#usehtmlencodedbrackets) | Use HTML encoded entities for angle brackets.           |
+| [`useHTMLAnchors`](./options/utility-options.mdx#usehtmlanchors)                 | Add HTML anchors to page headings.                      |
+| [`preserveAnchorCasing`](./options/utility-options.mdx#preserveanchorcasing)     | Preserve anchor casing when generating link to symbols. |
+| [`pageTitleTemplates`](./options/utility-options.mdx#pagetitletemplates)         | Change specific text placeholders in the template.      |
