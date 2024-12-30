@@ -8,7 +8,14 @@ export interface InterfaceA {
 export interface InterfaceB {}
 export enum EnumA {}
 export enum EnumB {}
+
+/**
+ * @deprecated
+ */
 export class ClassA {}
+/**
+ * @deprecated
+ */
 export class ClassB {}
 export type TypeA = string;
 export type TypeB = string;

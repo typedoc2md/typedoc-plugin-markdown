@@ -42,7 +42,7 @@ function getNavigationItem(
   if (navigationItem.children?.length) {
     return {
       type: 'category',
-      label: `${navigationItem.title}`,
+      label: getNavigationLabel(navigationItem),
       items: getSidebar(navigationItem.children, basePath, numberPrefixParser),
       ...(id && {
         link: {
@@ -57,7 +57,20 @@ function getNavigationItem(
     ? {
         type: 'doc',
         id,
-        label: `${navigationItem.title}`,
+        label: getNavigationLabel(navigationItem),
       }
     : null;
+}
+
+function getNavigationLabel(navigationItem: NavigationItem) {
+  return navigationItem.isDeprecated
+    ? strikethrough(navigationItem.title)
+    : navigationItem.title;
+}
+
+function strikethrough(label: string) {
+  return label
+    .split('')
+    .map((char) => char + '\u0336')
+    .join('');
 }
