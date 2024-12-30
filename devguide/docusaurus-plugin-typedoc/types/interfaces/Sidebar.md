@@ -2,15 +2,15 @@
 
 # Interface: Sidebar
 
+Defined in: [docusaurus-plugin-typedoc/src/types/options.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/types/options.ts#L19)
+
 ## Properties
 
 ### autoConfiguration
 
 > **autoConfiguration**: `boolean`
 
-#### Defined in
-
-[docusaurus-plugin-typedoc/src/types/options.ts:23](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/types/options.ts#L23)
+Defined in: [docusaurus-plugin-typedoc/src/types/options.ts:20](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/types/options.ts#L20)
 
 ***
 
@@ -18,6 +18,4 @@
 
 > **pretty**: `boolean`
 
-#### Defined in
-
-[docusaurus-plugin-typedoc/src/types/options.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/types/options.ts#L24)
+Defined in: [docusaurus-plugin-typedoc/src/types/options.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/types/options.ts#L21)

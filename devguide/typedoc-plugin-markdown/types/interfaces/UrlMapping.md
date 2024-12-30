@@ -1,23 +1,16 @@
 [Developer Guide](../../../README.md) / [typedoc-plugin-markdown](../../README.md) / [types](../README.md) / UrlMapping
 
-# Interface: UrlMapping\<Model>
+# Interface: UrlMapping\<Model\>
+
+Defined in: [packages/typedoc-plugin-markdown/src/types/theme.ts:18](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L18)
 
 The model used to define the URL mapping structure.
-
-## Contents
-
-* [Type Parameters](#type-parameters)
-* [Properties](#properties)
-  * [url](#url)
-  * [model](#model)
-  * [group?](#group)
-  * [template()](#template)
 
 ## Type Parameters
 
 | Type Parameter |
-| -------------- |
-| `Model`        |
+| ------ |
+| `Model` |
 
 ## Properties
 
@@ -25,19 +18,15 @@ The model used to define the URL mapping structure.
 
 > **url**: `string`
 
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/types/theme.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L19)
+Defined in: [packages/typedoc-plugin-markdown/src/types/theme.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L19)
 
 ***
 
 ### model
 
-> **model**: `Model`
+> **model**: [`Model`](../../../interfaces/typedoc-plugin-markdown.types.UrlMapping.html#model)
 
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/types/theme.ts:20](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L20)
+Defined in: [packages/typedoc-plugin-markdown/src/types/theme.ts:20](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L20)
 
 ***
 
@@ -45,9 +34,7 @@ The model used to define the URL mapping structure.
 
 > `optional` **group**: `string`
 
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/types/theme.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L21)
+Defined in: [packages/typedoc-plugin-markdown/src/types/theme.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L21)
 
 ***
 
@@ -55,16 +42,14 @@ The model used to define the URL mapping structure.
 
 > **template**: (`data`) => `string`
 
+Defined in: [packages/typedoc-plugin-markdown/src/types/theme.ts:22](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L22)
+
 #### Parameters
 
-| Parameter | Type                                                                       |
-| --------- | -------------------------------------------------------------------------- |
-| `data`    | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<`Model`> |
+| Parameter | Type |
+| ------ | ------ |
+| `data` | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`Model`](../../../interfaces/typedoc-plugin-markdown.types.UrlMapping.html#model)\> |
 
 #### Returns
 
 `string`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/types/theme.ts:22](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L22)

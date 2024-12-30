@@ -2,9 +2,13 @@
 
 # declarations
 
-## sidebar
+## Variables
 
-> `const` **sidebar**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+### sidebar
+
+> `const` **sidebar**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)\>
+
+Defined in: [docusaurus-plugin-typedoc/src/options/declarations.ts:29](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/options/declarations.ts#L29)
 
 **sidebar.autoConfiguration**
 
@@ -16,7 +20,7 @@ Pretty format the sidebar JSON.
 
 Please see the [sidebar guide](https:/typedoc-plugin-markdown.org/plugins/docusaurus/sidebar) for additional information on sidebar setup.
 
-### Default Value
+#### Initializer
 
 ```ts
 {
@@ -25,7 +29,3 @@ Please see the [sidebar guide](https:/typedoc-plugin-markdown.org/plugins/docusa
     defaultValue: DEFAULT_SIDEBAR_OPTIONS,
 }
 ```
-
-### Defined in
-
-[docusaurus-plugin-typedoc/src/options/declarations.ts:29](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/options/declarations.ts#L29)

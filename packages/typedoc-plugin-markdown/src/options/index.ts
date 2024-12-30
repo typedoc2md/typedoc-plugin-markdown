@@ -1,7 +1,7 @@
 /**
  * Contains all the option declarations and types used in the plugin.
  *
- * @document ../../supporting-docs/adding-options.md
+ * @document ../../internal-docs/adding-options.md
  *
  * @module
  */

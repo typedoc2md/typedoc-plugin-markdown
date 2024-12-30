@@ -5,7 +5,7 @@ exports[`Type Alias Reflection should compile array of objects type: (Output Fil
 
 > **ArrayOfObjectsType**: \`object\`[]
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 ## Type declaration
 
@@ -28,7 +28,7 @@ exports[`Type Alias Reflection should compile array of objects type: (Output Fil
 type ArrayOfObjectsType = object[];
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 ## Type declaration
 
@@ -44,7 +44,7 @@ exports[`Type Alias Reflection should compile array type: (Output File Strategy 
 
 > **ArrayType**: \`string\`[]
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for ArrayType
 "
@@ -57,7 +57,7 @@ exports[`Type Alias Reflection should compile array type: (Output File Strategy 
 type ArrayType = string[];
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for ArrayType
 "
@@ -68,7 +68,7 @@ exports[`Type Alias Reflection should compile conditional type: (Output File Str
 
 > **ConditionalType**\\<\`T\`\\>: \`T\` *extends* \`string\` ? \`"string"\` : \`T\` *extends* \`number\` ? \`"number"\` : \`T\` *extends* \`boolean\` ? \`"boolean"\` : \`T\` *extends* \`undefined\` ? \`"undefined"\` : \`"object"\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for ConditionalType
 
@@ -85,7 +85,7 @@ exports[`Type Alias Reflection should compile conditional type: (Output File Str
 type ConditionalType<T> = T extends string ? "string" : T extends number ? "number" : T extends boolean ? "boolean" : T extends undefined ? "undefined" : "object";
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for ConditionalType
 
@@ -102,7 +102,7 @@ exports[`Type Alias Reflection should compile external link symbol type: (Output
 
 > **TypeWithExternalSymbolLinkMapping**: [\`Application\`](https://typedoc.org/api/classes/Application.html)
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for TypeWithExternalSymbolLinkMapping
 "
@@ -115,7 +115,7 @@ exports[`Type Alias Reflection should compile external link symbol type: (Output
 type TypeWithExternalSymbolLinkMapping = Application;
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for TypeWithExternalSymbolLinkMapping
 "
@@ -126,7 +126,7 @@ exports[`Type Alias Reflection should compile external literal type: (Output Fil
 
 > **LiteralType**: \`object\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for LiteralType
 
@@ -271,7 +271,7 @@ exports[`Type Alias Reflection should compile external literal type: (Output Fil
 type LiteralType = object;
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for LiteralType
 
@@ -299,7 +299,7 @@ exports[`Type Alias Reflection should compile external reference type: (Output F
 
 > **ExternalReferenceType**: [\`ClassWithTypeParameters\`](../classes/ClassWithTypeParameters.md)\\<\`"x"\`, \`"y"\`\\>
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for ExternalReferenceType
 "
@@ -312,7 +312,7 @@ exports[`Type Alias Reflection should compile external reference type: (Output F
 type ExternalReferenceType = ClassWithTypeParameters<"x", "y">;
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for ExternalReferenceType
 "
@@ -323,7 +323,7 @@ exports[`Type Alias Reflection should compile function type: (Output File Strate
 
 > **FunctionType**: (\`name\`, \`value\`) => \`void\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for FunctionType
 
@@ -357,7 +357,7 @@ exports[`Type Alias Reflection should compile function type: (Output File Strate
 type FunctionType = (name: string, value: unknown) => void;
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for FunctionType
 
@@ -386,7 +386,7 @@ exports[`Type Alias Reflection should compile index access type: (Output File St
 
 > **IndexAccessType**: [\`ArrayOfObjectsType\`](ArrayOfObjectsType.md)\\[\`number\`\\]
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for IndexAccessType
 "
@@ -399,7 +399,7 @@ exports[`Type Alias Reflection should compile index access type: (Output File St
 type IndexAccessType = ArrayOfObjectsType[number];
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for IndexAccessType
 "
@@ -410,7 +410,7 @@ exports[`Type Alias Reflection should compile intersection type: (Output File St
 
 > **IntersectionType**: [\`TupleType\`](TupleType.md) & [\`ArrayType\`](ArrayType.md) & \`object\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for IntersectionType
 
@@ -429,7 +429,7 @@ exports[`Type Alias Reflection should compile intersection type: (Output File St
 type IntersectionType = TupleType & ArrayType & object;
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for IntersectionType
 
@@ -446,7 +446,7 @@ exports[`Type Alias Reflection should compile partial mapped type: (Output File 
 
 > **PartialMappedType**\\<\`T\`\\>: \`{ [P in keyof T]?: T[P] }\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for PartialMappedType
 
@@ -463,7 +463,7 @@ exports[`Type Alias Reflection should compile partial mapped type: (Output File 
 type PartialMappedType<T> = { [P in keyof T]?: T[P] };
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for PartialMappedType
 
@@ -480,7 +480,7 @@ exports[`Type Alias Reflection should compile primitive type: (Output File Strat
 
 > **PrimitiveType**: \`boolean\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for PrimitiveType
 "
@@ -493,7 +493,7 @@ exports[`Type Alias Reflection should compile primitive type: (Output File Strat
 type PrimitiveType = boolean;
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for PrimitiveType
 "
@@ -504,7 +504,7 @@ exports[`Type Alias Reflection should compile query type: (Output File Strategy 
 
 > **QueryType**: *typeof* [\`someQuery\`](../variables/someQuery.md)
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for query type
 "
@@ -517,7 +517,7 @@ exports[`Type Alias Reflection should compile query type: (Output File Strategy 
 type QueryType = typeof someQuery;
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for query type
 "
@@ -528,7 +528,7 @@ exports[`Type Alias Reflection should compile readonly mapped type: (Output File
 
 > **ReadonlyMappedType**\\<\`T\`\\>: \`{ readonly [P in keyof T]: T[P] }\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for ReadonlyMapedType
 
@@ -545,7 +545,7 @@ exports[`Type Alias Reflection should compile readonly mapped type: (Output File
 type ReadonlyMappedType<T> = { readonly [P in keyof T]: T[P] };
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for ReadonlyMapedType
 
@@ -562,7 +562,7 @@ exports[`Type Alias Reflection should compile string literal type: (Output File 
 
 > **StringLiteralType**: \`" "\` \\| \`"string"\` \\| "string\\|with\\|pipes" \\| \`\` "string\`with\`backticks" \`\` \\| \`"<foo>"\` \\| \`"*"\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for StringLiteralType
 "
@@ -581,7 +581,7 @@ type StringLiteralType =
   | "*";
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for StringLiteralType
 "
@@ -592,7 +592,7 @@ exports[`Type Alias Reflection should compile string tuple type: (Output File St
 
 > **TupleType**: \\[\`string\`, \`number\`\\]
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for TupleType
 "
@@ -605,7 +605,7 @@ exports[`Type Alias Reflection should compile string tuple type: (Output File St
 type TupleType = [string, number];
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for TupleType
 "
@@ -616,7 +616,7 @@ exports[`Type Alias Reflection should compile type parameter type: (Output File 
 
 > **TypeWithTypeParams**\\<\`T\`, \`R\`\\>: \\[\`T\`, \`R\`\\]
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for TypeWithTypeParams
 
@@ -635,7 +635,7 @@ exports[`Type Alias Reflection should compile type parameter type: (Output File 
 type TypeWithTypeParams<T, R> = [T, R];
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for TypeWithTypeParams
 
@@ -653,7 +653,7 @@ exports[`Type Alias Reflection should compile type with returns: (Output File St
 
 > **TypeWithReturns**: \`string\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for TypeWithReturns
 
@@ -670,7 +670,7 @@ exports[`Type Alias Reflection should compile type with returns: (Output File St
 type TypeWithReturns = string;
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for TypeWithReturns
 
@@ -685,7 +685,7 @@ exports[`Type Alias Reflection should compile union type with template strings: 
 
 > **UnionTypeWithTemplateStrings**: \`\` \`v\${number}\` \`\` \\| \`\` \`v\${number}.\${number}\` \`\` \\| \`\` \`v\${number}.\${number}.\${number}\` \`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Union with template strings
 "
@@ -701,7 +701,7 @@ type UnionTypeWithTemplateStrings =
   | \`v\${number}.\${number}.\${number}\`;
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Union with template strings
 "
@@ -712,7 +712,7 @@ exports[`Type Alias Reflection should compile union type: (Output File Strategy 
 
 > **UnionType**: \`string\` \\| \`boolean\` \\| \\{ \`z\`: \`string\`; \\}
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for UnionType
 "
@@ -730,7 +730,7 @@ type UnionType =
 };
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for UnionType
 "
@@ -741,7 +741,7 @@ exports[`Type Alias Reflection should compile useful union type: (Output File St
 
 > **UsefulUnionType**: \`string\` \\| \`boolean\` \\| \\{ \`z\`: \`string\`; \\}
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for useful UnionType
 
@@ -773,7 +773,7 @@ type UsefulUnionType =
 };
 \`\`\`
 
-**Defined in**: [types.ts:1](http://source-url)
+Defined in: [types.ts:1](http://source-url)
 
 Comments for useful UnionType
 

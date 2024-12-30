@@ -1,7 +1,7 @@
 /**
  * The plugin entrypoint and bootstrapping of the plugin.
  *
- * @module
+ * @module core
  */
 import * as path from 'path';
 import {
@@ -68,4 +68,7 @@ export function load(app: MarkdownApplication) {
   );
 }
 
-export { PluginOptions } from './types/options.js';
+/**
+ * Export anything that is available publicly
+ */
+export * from './public-api.js';

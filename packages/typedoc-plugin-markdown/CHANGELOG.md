@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+This release introduces structural UI enhancements and several bug fixes.
+
+### Structural Changes
+
+- Source file links are now placed inline rather than under separate "Defined in" headings. This change aligns with the default HTML theme, generates more compact output, and improves the readability of automatically generated Table of Contents (TOCs).
+- Extraneous "Index" headings on module landing pages have been removed, bringing the structure in line with the default HTML theme and reducing unnecessary clutter.
+- Anchor IDs are now applied to linkable symbols within table rows by default. Previously, the useHTMLAnchors option was required, but since there is no alternative way to link to these items, this behavior is now the default.
+
 ## 4.3.3 (2024-12-18)
 
 ### Patch Changes

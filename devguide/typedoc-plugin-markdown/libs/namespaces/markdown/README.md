@@ -2,285 +2,246 @@
 
 # markdown
 
-## Contents
+Helpers for generating markdown.
 
-* [backTicks()](#backticks)
-* [blockQuoteBlock()](#blockquoteblock)
-* [bold()](#bold)
-* [codeBlock()](#codeblock)
-* [heading()](#heading)
-* [horizontalRule()](#horizontalrule)
-* [htmlTable()](#htmltable)
-* [indentBlock()](#indentblock)
-* [italic()](#italic)
-* [link()](#link)
-* [strikeThrough()](#strikethrough)
-* [table()](#table)
-* [unorderedList()](#unorderedlist)
+## Functions
 
-## backTicks()
+### backTicks()
 
 > **backTicks**(`text`): `string`
 
+Defined in: [packages/typedoc-plugin-markdown/src/libs/markdown/back-ticks.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/back-ticks.ts#L6)
+
 Wraps a string in backticks.
-If the input string itself contains a backtick, pipe, or backslash (which can result in unwanted side effects) the string is escaped instead.
 
-### Parameters
+#### Parameters
 
-| Parameter | Type     |
-| --------- | -------- |
-| `text`    | `string` |
+| Parameter | Type |
+| ------ | ------ |
+| `text` | `string` |
 
-### Returns
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/markdown/back-ticks.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/back-ticks.ts#L7)
-
 ***
 
-## blockQuoteBlock()
+### blockQuoteBlock()
 
 > **blockQuoteBlock**(`content`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/markdown/block-quote-block.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/block-quote-block.ts#L1)
 
-| Parameter | Type     |
-| --------- | -------- |
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
 | `content` | `string` |
 
-### Returns
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/markdown/block-quote-block.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/block-quote-block.ts#L1)
-
 ***
 
-## bold()
+### bold()
 
 > **bold**(`text`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/markdown/bold.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/bold.ts#L1)
 
-| Parameter | Type     |
-| --------- | -------- |
-| `text`    | `string` |
+#### Parameters
 
-### Returns
+| Parameter | Type |
+| ------ | ------ |
+| `text` | `string` |
+
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/markdown/bold.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/bold.ts#L1)
-
 ***
 
-## codeBlock()
+### codeBlock()
 
 > **codeBlock**(`content`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/markdown/code-block.ts:3](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/code-block.ts#L3)
 
-| Parameter | Type     |
-| --------- | -------- |
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
 | `content` | `string` |
 
-### Returns
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/markdown/code-block.ts:3](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/code-block.ts#L3)
-
 ***
 
-## heading()
+### heading()
 
 > **heading**(`level`, `text`): `string`
 
+Defined in: [packages/typedoc-plugin-markdown/src/libs/markdown/heading.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/heading.ts#L6)
+
 Returns a heading in markdown format
 
-### Parameters
+#### Parameters
 
-| Parameter | Type     | Description              |
-| --------- | -------- | ------------------------ |
-| `level`   | `number` | The level of the heading |
-| `text`    | `string` | The text of the heading  |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `level` | `number` | The level of the heading |
+| `text` | `string` | The text of the heading |
 
-### Returns
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/markdown/heading.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/heading.ts#L6)
-
 ***
 
-## horizontalRule()
+### horizontalRule()
 
 > **horizontalRule**(): `string`
 
-### Returns
+Defined in: [packages/typedoc-plugin-markdown/src/libs/markdown/horizontal-rule.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/horizontal-rule.ts#L1)
+
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/markdown/horizontal-rule.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/horizontal-rule.ts#L1)
-
 ***
 
-## htmlTable()
+### htmlTable()
 
 > **htmlTable**(`headers`, `rows`, `leftAlignHeadings`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/markdown/html-table.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/html-table.ts#L1)
 
-| Parameter           | Type           | Default value |
-| ------------------- | -------------- | ------------- |
-| `headers`           | `string`\[]    | `undefined`   |
-| `rows`              | `string`\[]\[] | `undefined`   |
-| `leftAlignHeadings` | `boolean`      | `false`       |
+#### Parameters
 
-### Returns
+| Parameter | Type | Default value |
+| ------ | ------ | ------ |
+| `headers` | `string`[] | `undefined` |
+| `rows` | `string`[][] | `undefined` |
+| `leftAlignHeadings` | `boolean` | `false` |
+
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/markdown/html-table.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/html-table.ts#L1)
-
 ***
 
-## indentBlock()
+### indentBlock()
 
 > **indentBlock**(`content`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/markdown/indent-block.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/indent-block.ts#L1)
 
-| Parameter | Type     |
-| --------- | -------- |
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
 | `content` | `string` |
 
-### Returns
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/markdown/indent-block.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/indent-block.ts#L1)
-
 ***
 
-## italic()
+### italic()
 
 > **italic**(`text`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/markdown/italic.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/italic.ts#L1)
 
-| Parameter | Type     |
-| --------- | -------- |
-| `text`    | `string` |
+#### Parameters
 
-### Returns
+| Parameter | Type |
+| ------ | ------ |
+| `text` | `string` |
+
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/markdown/italic.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/italic.ts#L1)
-
 ***
 
-## link()
+### link()
 
 > **link**(`label`, `url`): `string`
 
+Defined in: [packages/typedoc-plugin-markdown/src/libs/markdown/link.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/link.ts#L6)
+
 The link element
 
-### Parameters
+#### Parameters
 
-| Parameter | Type               | Description                      |
-| --------- | ------------------ | -------------------------------- |
-| `label`   | `string`           | The text to display for the link |
-| `url`     | `null` \| `string` | The url to link to               |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `label` | `string` | The text to display for the link |
+| `url` | `null` \| `string` | The url to link to |
 
-### Returns
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/markdown/link.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/link.ts#L6)
-
 ***
 
-## strikeThrough()
+### strikeThrough()
 
 > **strikeThrough**(`content`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/markdown/strike-through.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/strike-through.ts#L1)
 
-| Parameter | Type     |
-| --------- | -------- |
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
 | `content` | `string` |
 
-### Returns
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/markdown/strike-through.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/strike-through.ts#L1)
-
 ***
 
-## table()
+### table()
 
 > **table**(`headers`, `rows`, `headerLeftAlign`): `string`
 
+Defined in: [packages/typedoc-plugin-markdown/src/libs/markdown/table.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/table.ts#L7)
+
 Comments for table
 
-### Parameters
+#### Parameters
 
-| Parameter         | Type           | Default value |
-| ----------------- | -------------- | ------------- |
-| `headers`         | `string`\[]    | `undefined`   |
-| `rows`            | `string`\[]\[] | `undefined`   |
-| `headerLeftAlign` | `boolean`      | `false`       |
+| Parameter | Type | Default value |
+| ------ | ------ | ------ |
+| `headers` | `string`[] | `undefined` |
+| `rows` | `string`[][] | `undefined` |
+| `headerLeftAlign` | `boolean` | `false` |
 
-### Returns
+#### Returns
 
 `string`
-
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/markdown/table.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/table.ts#L7)
 
 ***
 
-## unorderedList()
+### unorderedList()
 
 > **unorderedList**(`items`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/markdown/unordered-list.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/unordered-list.ts#L1)
 
-| Parameter | Type        |
-| --------- | ----------- |
-| `items`   | `string`\[] |
+#### Parameters
 
-### Returns
+| Parameter | Type |
+| ------ | ------ |
+| `items` | `string`[] |
+
+#### Returns
 
 `string`
-
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/markdown/unordered-list.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/markdown/unordered-list.ts#L1)

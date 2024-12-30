@@ -1,7 +1,7 @@
 /**
  * Contains all functionality relevant to the markdown theme.
  *
- * @document ../../supporting-docs/custom-theme.md
+ * @document ../../internal-docs/custom-theme.md
  *
  * @module
  */

@@ -5,7 +5,7 @@ exports[`Variable Reflection should compile object with symbol: (Output File Str
 
 > \`const\` **objectWithSymbol**: \`object\`
 
-**Defined in**: [variables.ts:1](http://source-url)
+Defined in: [variables.ts:1](http://source-url)
 
 Comments variable with symbol
 
@@ -26,7 +26,7 @@ exports[`Variable Reflection should compile object with symbol: (Output File Str
 const objectWithSymbol: object;
 \`\`\`
 
-**Defined in**: [variables.ts:1](http://source-url)
+Defined in: [variables.ts:1](http://source-url)
 
 Comments variable with symbol
 
@@ -43,7 +43,7 @@ exports[`Variable Reflection should compile type operator variable: (Output File
 
 > \`const\` **typeOperatorVariable**: unique \`symbol\`
 
-**Defined in**: [variables.ts:1](http://source-url)
+Defined in: [variables.ts:1](http://source-url)
 
 Comments for typeOperatorVariable
 "
@@ -56,7 +56,7 @@ exports[`Variable Reflection should compile type operator variable: (Output File
 const typeOperatorVariable: unique symbol;
 \`\`\`
 
-**Defined in**: [variables.ts:1](http://source-url)
+Defined in: [variables.ts:1](http://source-url)
 
 Comments for typeOperatorVariable
 "
@@ -67,7 +67,7 @@ exports[`Variable Reflection should compile variable assigned to a string: (Outp
 
 > \`const\` **stringVariable**: \`"stringConstWithDefaultValue"\` = \`'stringConstWithDefaultValue'\`
 
-**Defined in**: [variables.ts:1](http://source-url)
+Defined in: [variables.ts:1](http://source-url)
 
 A simple string variable
 "
@@ -80,7 +80,7 @@ exports[`Variable Reflection should compile variable assigned to a string: (Outp
 const stringVariable: "stringConstWithDefaultValue" = 'stringConstWithDefaultValue';
 \`\`\`
 
-**Defined in**: [variables.ts:1](http://source-url)
+Defined in: [variables.ts:1](http://source-url)
 
 A simple string variable
 "
@@ -91,7 +91,7 @@ exports[`Variable Reflection should compile variable assigned to an object liter
 
 > \`const\` **objectLiteralVariable**: \`object\`
 
-**Defined in**: [variables.ts:1](http://source-url)
+Defined in: [variables.ts:1](http://source-url)
 
 Comments for objectLiteralVariable
 
@@ -188,7 +188,7 @@ exports[`Variable Reflection should compile variable assigned to an object liter
 const objectLiteralVariable: object;
 \`\`\`
 
-**Defined in**: [variables.ts:1](http://source-url)
+Defined in: [variables.ts:1](http://source-url)
 
 Comments for objectLiteralVariable
 

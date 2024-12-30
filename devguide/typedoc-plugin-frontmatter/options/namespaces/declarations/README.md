@@ -2,18 +2,15 @@
 
 # declarations
 
-## Contents
+Typedoc options declarations.
 
-* [frontmatterGlobals](#frontmatterglobals)
-* [readmeFrontmatter](#readmefrontmatter)
-* [indexFrontmatter](#indexfrontmatter)
-* [frontmatterCommentTags](#frontmattercommenttags)
-* [preserveFrontmatterCommentTags](#preservefrontmattercommenttags)
-* [frontmatterNamingConvention](#frontmatternamingconvention)
+## Variables
 
-## frontmatterGlobals
+### frontmatterGlobals
 
-> `const` **frontmatterGlobals**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+> `const` **frontmatterGlobals**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)\>
+
+Defined in: [options/declarations.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L21)
 
 ```yaml filename="YAML"
 ---
@@ -22,106 +19,115 @@ sidebar: true
 ---
 ```
 
-### Example
+#### Example
 
 ```ts
 {"layout": "docs", "sidebar": true }
 ```
 
-### Default Value
+#### Initializer
 
 ```ts
 {
     help: 'Specify static variables to be added to all frontmatter blocks.',
-    type: ParameterType.Mixed,
+    type: ParameterType.Object,
     defaultValue: {},
+    validate(value) {
+        if (typeof value !== 'object') {
+            throw new Error('[typedoc-plugin-frontmatter] frontmatterGlobals must be an object.');
+        }
+    },
 }
 ```
 
-### Defined in
-
-[options/declarations.ts:15](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L15)
-
 ***
 
-## readmeFrontmatter
+### readmeFrontmatter
 
-> `const` **readmeFrontmatter**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+> `const` **readmeFrontmatter**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)\>
 
-### Example
+Defined in: [options/declarations.ts:37](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L37)
+
+#### Example
 
 ```ts
 {"onReadme": "true" }
 ```
 
-### Default Value
+#### Initializer
 
 ```ts
 {
     help: 'Specify static variables to be added to the readme page only.',
-    type: ParameterType.Mixed,
+    type: ParameterType.Object,
     defaultValue: {},
+    validate(value) {
+        if (typeof value !== 'object') {
+            throw new Error('[typedoc-plugin-frontmatter] readmeFrontmatter must be an object.');
+        }
+    },
 }
 ```
 
-### Defined in
-
-[options/declarations.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L24)
-
 ***
 
-## indexFrontmatter
+### indexFrontmatter
 
-> `const` **indexFrontmatter**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+> `const` **indexFrontmatter**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)\>
 
-### Example
+Defined in: [options/declarations.ts:53](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L53)
+
+#### Example
 
 ```ts
 {"onIndex": "true" }
 ```
 
-### Default Value
+#### Initializer
 
 ```ts
 {
     help: 'Specify static variables to be added to the index page only.',
-    type: ParameterType.Mixed,
+    type: ParameterType.Object,
     defaultValue: {},
+    validate(value) {
+        if (typeof value !== 'object') {
+            throw new Error('[typedoc-plugin-frontmatter] indexFrontmatter must be an object.');
+        }
+    },
 }
 ```
 
-### Defined in
-
-[options/declarations.ts:33](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L33)
-
 ***
 
-## frontmatterCommentTags
+### frontmatterCommentTags
 
-> `const` **frontmatterCommentTags**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+> `const` **frontmatterCommentTags**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)\>
+
+Defined in: [options/declarations.ts:88](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L88)
 
 Frontmatter variables can be added by extracting comments from block (@) tags.
 
 Please note tags must be added to the comment blocks of the symbol exported to a page.
 
-```ansi filename="Block Tags (someModule.ts)"
-/**
-* \@author Joe Bloggs
-*
-* \@description A description that will be added to frontmatter.
-*/
-```
+ ```ts filename="Block Tags (someModule.ts)"
+ /**
+ * \@author Joe Bloggs
+ *
+ * \@description A description that will be added to frontmatter.
+ */
+ ```
 
 ```yaml filename="YAML (someModule.md)"
 ---
 author: Joe Bloggs
 description: A description that will be added to frontmatter.
 ---
-```
+````
 
-@example \["author", "description"]
+@example ["author", "description"]
 
-### Default Value
+#### Initializer
 
 ```ts
 {
@@ -130,17 +136,15 @@ description: A description that will be added to frontmatter.
 }
 ```
 
-### Defined in
-
-[options/declarations.ts:61](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L61)
-
 ***
 
-## preserveFrontmatterCommentTags
+### preserveFrontmatterCommentTags
 
-> `const` **preserveFrontmatterCommentTags**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+> `const` **preserveFrontmatterCommentTags**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)\>
 
-### Default Value
+Defined in: [options/declarations.ts:93](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L93)
+
+#### Initializer
 
 ```ts
 {
@@ -150,21 +154,19 @@ description: A description that will be added to frontmatter.
 }
 ```
 
-### Defined in
-
-[options/declarations.ts:66](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L66)
-
 ***
 
-## frontmatterNamingConvention
+### frontmatterNamingConvention
 
-> `const` **frontmatterNamingConvention**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+> `const` **frontmatterNamingConvention**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)\>
+
+Defined in: [options/declarations.ts:104](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L104)
 
 Block tags have to be written in camelCase (see [tsdoc.org](https://tsdoc.org/pages/spec/tag_kinds)).
 
 This option can configure the output style of frontmatter variables when written to YAML.
 
-### Default Value
+#### Initializer
 
 ```ts
 {
@@ -174,7 +176,3 @@ This option can configure the output style of frontmatter variables when written
     defaultValue: FrontmatterNamingConvention.CamelCase,
 }
 ```
-
-### Defined in
-
-[options/declarations.ts:77](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/options/declarations.ts#L77)

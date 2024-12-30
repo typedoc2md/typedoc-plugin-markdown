@@ -9,6 +9,8 @@ export function accessor(
 ): string {
   const md: string[] = [];
 
+  const showSources = model?.parent?.kind !== ReflectionKind.TypeLiteral;
+
   if (model.getSignature) {
     md.push(
       heading(
@@ -21,6 +23,13 @@ export function accessor(
         accessor: 'get',
       }),
     );
+
+    if (showSources && !this.options.getValue('disableSources')) {
+      if (model.getSignature?.sources) {
+        md.push(this.partials.sources(model.getSignature));
+      }
+    }
+
     if (model.getSignature.comment) {
       md.push(
         this.partials.comment(model.getSignature.comment, {
@@ -48,6 +57,12 @@ export function accessor(
         accessor: 'set',
       }),
     );
+
+    if (showSources && !this.options.getValue('disableSources')) {
+      if (model.setSignature?.sources) {
+        md.push(this.partials.sources(model.setSignature));
+      }
+    }
 
     if (model.setSignature.comment) {
       md.push(
@@ -84,6 +99,12 @@ export function accessor(
     }
   }
 
+  if (showSources && !this.options.getValue('disableSources')) {
+    if (!model.getSignature && !model.setSignature) {
+      md.push(this.partials.sources(model));
+    }
+  }
+
   if (model.comment) {
     md.push(
       this.partials.comment(model.comment, {
@@ -95,18 +116,6 @@ export function accessor(
   md.push(
     this.partials.inheritance(model, { headingLevel: options.headingLevel }),
   );
-
-  const showSources = model?.parent?.kind !== ReflectionKind.TypeLiteral;
-
-  if (showSources && !this.options.getValue('disableSources')) {
-    if (model.getSignature?.sources) {
-      md.push(this.partials.sources(model.getSignature));
-    } else if (model.setSignature?.sources) {
-      md.push(this.partials.sources(model.setSignature));
-    } else {
-      md.push(this.partials.sources(model));
-    }
-  }
 
   return md.join('\n\n');
 }

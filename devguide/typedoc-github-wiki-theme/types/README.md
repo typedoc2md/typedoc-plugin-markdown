@@ -4,11 +4,9 @@
 
 All plugin types are exported from this module.
 
-## Index
+## Interfaces
 
-### Interfaces
-
-| Interface                                    | Description                                   |
-| -------------------------------------------- | --------------------------------------------- |
+| Interface | Description |
+| ------ | ------ |
 | [PluginOptions](interfaces/PluginOptions.md) | Describes the options declared by the plugin. |
-| [Sidebar](interfaces/Sidebar.md)             | -                                             |
+| [Sidebar](interfaces/Sidebar.md) | - |

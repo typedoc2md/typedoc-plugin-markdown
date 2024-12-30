@@ -4,11 +4,8 @@
 
 All plugin types are exported from this module.
 
-## Index
+## Namespaces
 
-### Namespaces
-
-| Namespace                                         | Description |
-| ------------------------------------------------- | ----------- |
-| [declarations](namespaces/declarations/README.md) | -           |
-| [helpers](namespaces/helpers/README.md)           | -           |
+| Namespace | Description |
+| ------ | ------ |
+| [declarations](namespaces/declarations/README.md) | - |

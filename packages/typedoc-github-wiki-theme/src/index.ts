@@ -1,7 +1,7 @@
 /**
  * The plugin entrypoint and bootstrapping of the plugin.
  *
- * @module
+ * @module core
  */
 import * as fs from 'fs';
 import { DeclarationOption, Options, OptionsReader, Reflection } from 'typedoc';

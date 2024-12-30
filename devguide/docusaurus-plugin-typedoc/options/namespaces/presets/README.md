@@ -2,20 +2,20 @@
 
 # presets
 
-## presets
+## Variables
+
+### presets
 
 > `const` **presets**: `object`
 
-### Type declaration
+Defined in: [docusaurus-plugin-typedoc/src/options/presets.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/options/presets.ts#L1)
 
-| Name              | Type        | Default value | Description |
-| ----------------- | ----------- | ------------- | ----------- |
-| `plugin`          | `string`\[] | -             |             |
-| `out`             | `string`    | './docs/api'  | -           |
-| `hideBreadcrumbs` | `boolean`   | true          | -           |
-| `hidePageHeader`  | `boolean`   | true          | -           |
-| `entryFileName`   | `string`    | 'index.md'    | -           |
+#### Type declaration
 
-### Defined in
-
-[docusaurus-plugin-typedoc/src/options/presets.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/options/presets.ts#L1)
+| Name | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| <a id="plugin-2"></a> `plugin` | `string`[] | - | **Initializer** `['typedoc-plugin-markdown', 'docusaurus-plugin-typedoc']` |
+| <a id="out-2"></a> `out` | `string` | './docs/api' | - |
+| <a id="hidebreadcrumbs-2"></a> `hideBreadcrumbs` | `boolean` | true | - |
+| <a id="hidepageheader-2"></a> `hidePageHeader` | `boolean` | true | - |
+| <a id="entryfilename-2"></a> `entryFileName` | `string` | 'index.md' | - |

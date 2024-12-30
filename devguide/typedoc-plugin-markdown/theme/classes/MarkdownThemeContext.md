@@ -2,7 +2,7 @@
 
 # Class: MarkdownThemeContext
 
-**`Internal`**
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:35](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L35)
 
 The theme context class that is provided as context on the rendering of every page.
 
@@ -10,132 +10,25 @@ It is heavily influenced by the equivalent [DefaultThemeRenderContext](https://t
 
 This class can be used to customize the theme output by extending the class and overriding the templates, partials and helpers.
 
-## Contents
-
-* [Constructors](#constructors)
-  * [new MarkdownThemeContext()](#new-markdownthemecontext)
-* [Properties](#properties)
-  * [internationalization](#internationalization)
-  * [i18n](#i18n)
-  * [theme](#theme)
-  * [page](#page)
-  * [options](#options)
-  * [packagesMetaData](#packagesmetadata)
-  * [hook()](#hook)
-    * [Type Parameters](#type-parameters)
-* [Methods](#methods)
-  * [getPackageMetaData()](#getpackagemetadata)
-  * [getRelativeUrl()](#getrelativeurl)
-* [Resources](#resources)
-  * [templates](#templates)
-    * [document()](#document)
-    * [project()](#project)
-    * [readme()](#readme)
-    * [reflection()](#reflection)
-  * [partials](#partials)
-    * [comment()](#comment)
-    * [body()](#body)
-    * [categories()](#categories)
-    * [groups()](#groups)
-    * [members()](#members)
-    * [accessor()](#accessor)
-    * [constructor()](#constructor)
-    * [memberContainer()](#membercontainer)
-    * [declaration()](#declaration)
-    * [declarationTitle()](#declarationtitle)
-    * [documents()](#documents)
-    * [enumMembersTable()](#enummemberstable)
-    * [hierarchy()](#hierarchy)
-    * [indexSignature()](#indexsignature)
-    * [inheritance()](#inheritance)
-    * [memberTitle()](#membertitle)
-    * [memberWithGroups()](#memberwithgroups)
-    * [parametersList()](#parameterslist)
-    * [parametersTable()](#parameterstable)
-    * [propertiesTable()](#propertiestable)
-    * [referenceMember()](#referencemember)
-    * [reflectionIndex()](#reflectionindex)
-    * [signature()](#signature)
-    * [signatureParameters()](#signatureparameters)
-    * [signatureReturns()](#signaturereturns)
-    * [signatureTitle()](#signaturetitle)
-    * [signatures()](#signatures)
-    * [sources()](#sources)
-    * [member()](#member)
-    * [typeAndParent()](#typeandparent)
-    * [typeArguments()](#typearguments)
-    * [typeDeclaration()](#typedeclaration)
-    * [typeDeclarationContainer()](#typedeclarationcontainer)
-    * [typeDeclarationList()](#typedeclarationlist)
-    * [typeDeclarationTable()](#typedeclarationtable)
-    * [typeParametersList()](#typeparameterslist)
-    * [typeParametersTable()](#typeparameterstable)
-    * [breadcrumbs()](#breadcrumbs)
-    * [footer()](#footer)
-    * [header()](#header)
-    * [packagesIndex()](#packagesindex)
-    * [pageTitle()](#pagetitle)
-    * [arrayType()](#arraytype)
-    * [conditionalType()](#conditionaltype)
-    * [indexAccessType()](#indexaccesstype)
-    * [inferredType()](#inferredtype)
-    * [intersectionType()](#intersectiontype)
-    * [intrinsicType()](#intrinsictype)
-    * [literalType()](#literaltype)
-    * [namedTupleType()](#namedtupletype)
-    * [optionalType()](#optionaltype)
-    * [queryType()](#querytype)
-    * [referenceType()](#referencetype)
-    * [declarationType()](#declarationtype)
-    * [functionType()](#functiontype)
-    * [reflectionType()](#reflectiontype)
-    * [someType()](#sometype)
-    * [tupleType()](#tupletype)
-    * [typeOperatorType()](#typeoperatortype)
-    * [unionType()](#uniontype)
-    * [unknownType()](#unknowntype)
-  * [helpers](#helpers)
-    * [getAngleBracket()](#getanglebracket)
-    * [getCommentParts()](#getcommentparts)
-    * [getDeclarationType()](#getdeclarationtype)
-    * [getDescriptionForComment()](#getdescriptionforcomment)
-    * [getFlattenedDeclarations()](#getflatteneddeclarations)
-    * [getGroupIndexList()](#getgroupindexlist)
-    * [getGroupIndexTable()](#getgroupindextable)
-    * [getGroupIndex()](#getgroupindex)
-    * [getHierarchyType()](#gethierarchytype)
-    * [getKeyword()](#getkeyword)
-    * [getModifier()](#getmodifier)
-    * [getParameterDefaultValue()](#getparameterdefaultvalue)
-    * [getProjectName()](#getprojectname)
-    * [getPropertyDefaultValue()](#getpropertydefaultvalue)
-    * [getReflectionFlags()](#getreflectionflags)
-    * [getReturnType()](#getreturntype)
-    * [hasUsefulTypeDetails()](#hasusefultypedetails)
-    * [isGroupKind()](#isgroupkind)
-    * [useTableFormat()](#usetableformat)
-
 ## Constructors
 
 ### new MarkdownThemeContext()
 
 > **new MarkdownThemeContext**(`theme`, `page`, `options`): [`MarkdownThemeContext`](MarkdownThemeContext.md)
 
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:42](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L42)
+
 #### Parameters
 
-| Parameter | Type                                                                                                                               | Description                              |
-| --------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| `theme`   | [`MarkdownTheme`](MarkdownTheme.md)                                                                                                | The theme instance.                      |
-| `page`    | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Reflection.html)> | The current page event.                  |
-| `options` | [`Options`](https://typedoc.org/api/types/Configuration.Options.html)                                                              | The options provided to the application. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `theme` | [`MarkdownTheme`](MarkdownTheme.md) | The theme instance. |
+| `page` | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md) | The current page event. |
+| `options` | [`Options`](https://typedoc.org/api/types/Configuration.Options.html) | The options provided to the application. |
 
 #### Returns
 
 [`MarkdownThemeContext`](MarkdownThemeContext.md)
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:46](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L46)
 
 ## Properties
 
@@ -145,9 +38,7 @@ Properties are passed into the constructor and are used to provide context to th
 
 > **internationalization**: `Internationalization`
 
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L40)
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:36](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L36)
 
 ***
 
@@ -155,9 +46,7 @@ Properties are passed into the constructor and are used to provide context to th
 
 > **i18n**: `TranslationProxy`
 
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:41](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L41)
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:37](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L37)
 
 ***
 
@@ -165,23 +54,19 @@ Properties are passed into the constructor and are used to provide context to th
 
 > `private` **theme**: [`MarkdownTheme`](MarkdownTheme.md)
 
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:46](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L46)
+
 The theme instance.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:50](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L50)
 
 ***
 
 ### page
 
-> `readonly` **page**: [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Reflection.html)>
+> `readonly` **page**: [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)
+
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:50](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L50)
 
 The current page event.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:54](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L54)
 
 ***
 
@@ -189,33 +74,29 @@ The current page event.
 
 > `readonly` **options**: [`Options`](https://typedoc.org/api/types/Configuration.Options.html)
 
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:54](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L54)
+
 The options provided to the application.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:58](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L58)
 
 ***
 
 ### packagesMetaData
 
-> `private` **packagesMetaData**: `Record`\<`string`, [`PackageMetaData`](../../types/interfaces/PackageMetaData.md)>
+> `private` **packagesMetaData**: `Record`\<`string`, [`PackageMetaData`](../../types/interfaces/PackageMetaData.md)\>
+
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:68](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L68)
 
 Holds meta data for individual packages (if entryPointStrategy equals `packages`).
 
 This is required for generating package specific documentation.
 
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:72](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L72)
-
 ***
 
 ### hook()
 
-> **hook**: \<`K`>(`event`, ...`args`) => `string`\[]
+> **hook**: \<`K`\>(`event`, ...`args`) => `string`[]
 
-**`Internal`**
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:168](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L168)
 
 Hook into the TypeDoc rendering system.
 
@@ -223,24 +104,20 @@ Emits an event to all currently subscribed listeners.
 
 #### Type Parameters
 
-| Type Parameter                                                                                 |
-| ---------------------------------------------------------------------------------------------- |
+| Type Parameter |
+| ------ |
 | `K` *extends* keyof [`MarkdownRendererHooks`](../../types/interfaces/MarkdownRendererHooks.md) |
 
 #### Parameters
 
-| Parameter | Type                                                                             | Description                           |
-| --------- | -------------------------------------------------------------------------------- | ------------------------------------- |
-| `event`   | `K`                                                                              | the event to emit.                    |
-| ...`args` | [`MarkdownRendererHooks`](../../types/interfaces/MarkdownRendererHooks.md)\[`K`] | any arguments required for the event. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `event` | `K` | the event to emit. |
+| ...`args` | [`MarkdownRendererHooks`](../../types/interfaces/MarkdownRendererHooks.md)\[`K`\] | any arguments required for the event. |
 
 #### Returns
 
-`string`\[]
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:167](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L167)
+`string`[]
 
 ## Methods
 
@@ -248,25 +125,35 @@ General context aware helper methods not bound to any specific models that can b
 
 ### getPackageMetaData()
 
-> **getPackageMetaData**(`packageName`): `undefined` | [`PackageMetaData`](../../types/interfaces/PackageMetaData.md)
+> **getPackageMetaData**(`packageName`): `undefined` \| [`PackageMetaData`](../../types/interfaces/PackageMetaData.md)
 
-**`Internal`**
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:116](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L116)
 
 Returns the package meta data for a given package name when entrypointStrategy is set to `packages`.
 
 #### Parameters
 
-| Parameter     | Type     | Description                                               |
-| ------------- | -------- | --------------------------------------------------------- |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
 | `packageName` | `string` | The package name as per `name` field from `package.json`. |
 
 #### Returns
 
-`undefined` | [`PackageMetaData`](../../types/interfaces/PackageMetaData.md)
+`undefined` \| [`PackageMetaData`](../../types/interfaces/PackageMetaData.md)
 
-#### Defined in
+***
 
-[packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:122](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L122)
+### getPackagesCount()
+
+> **getPackagesCount**(): `number`
+
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:123](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L123)
+
+Return the number of packages in the project.
+
+#### Returns
+
+`number`
 
 ***
 
@@ -274,24 +161,22 @@ Returns the package meta data for a given package name when entrypointStrategy i
 
 > **getRelativeUrl**(`url`, `ignorePublicPath`): `string`
 
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:137](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L137)
+
 Returns the relative URL (from the current page context url).
 
 If public path is set, it will be used as the base URL.
 
 #### Parameters
 
-| Parameter          | Type      | Default value | Description                        |
-| ------------------ | --------- | ------------- | ---------------------------------- |
-| `url`              | `string`  | `undefined`   | The URL to make relative.          |
-| `ignorePublicPath` | `boolean` | `false`       | Whether to ignore the public path. |
+| Parameter | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| `url` | `string` | `undefined` | The URL to make relative. |
+| `ignorePublicPath` | `boolean` | `false` | Whether to ignore the public path. |
 
 #### Returns
 
 `string`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:134](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L134)
 
 ## Resources
 
@@ -300,6 +185,8 @@ Theme resources are the main building blocks for the theme context. They are spl
 ### templates
 
 > **templates**: `object`
+
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:76](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L76)
 
 Then `templates` namespace holds the main templates for the theme and are mapped to single pages and configured in the MarkdownTheme.
 
@@ -313,9 +200,9 @@ Template that maps to a project document.
 
 ##### Parameters
 
-| Parameter | Type                                                                                    |
-| --------- | --------------------------------------------------------------------------------------- |
-| `page`    | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<`DocumentReflection`> |
+| Parameter | Type |
+| ------ | ------ |
+| `page` | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<`DocumentReflection`\> |
 
 ##### Returns
 
@@ -329,9 +216,9 @@ Template that maps to the root project reflection. This will be the index page /
 
 ##### Parameters
 
-| Parameter | Type                                                                                                                                                    |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `page`    | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)> |
+| Parameter | Type |
+| ------ | ------ |
+| `page` | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)\> |
 
 ##### Returns
 
@@ -345,9 +232,9 @@ Template that specifically maps to the resolved readme file. This template is no
 
 ##### Parameters
 
-| Parameter | Type                                                                                                                                                    |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `page`    | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)> |
+| Parameter | Type |
+| ------ | ------ |
+| `page` | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html)\> |
 
 ##### Returns
 
@@ -361,17 +248,13 @@ Template that maps to individual reflection models.
 
 ##### Parameters
 
-| Parameter | Type                                                                                                                                                            |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `page`    | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)> |
+| Parameter | Type |
+| ------ | ------ |
+| `page` | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\> |
 
 ##### Returns
 
 `string`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:80](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L80)
 
 ***
 
@@ -379,21 +262,23 @@ Template that maps to individual reflection models.
 
 > **partials**: `object`
 
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:96](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L96)
+
 The `partials` namespace holds the partials for the theme and are used by templates to map speficic models to page output.
 
 Please note that partials::
 
-* Take a `model` param (that references a specific TypeDoc model) and an `options` param if required.
-* Can call other partials and helpers.
-* Must return a string.
+- Take a `model` param (that references a specific TypeDoc model) and an `options` param if required.
+- Can call other partials and helpers.
+- Must return a string.
 
 Partials are categorised by their use:
 
-* Page Partials: Partials that render core page elements such as header and breadcrumbs.
-* Container Partials: Partials that are used to render reflection groups and categories.
-* Member Partials: Partials that render specific parts of reflections.
-* Comment Partials: Partials that render comments.
-* Type Partials: Partials that render specific TypeDoc model types.
+- Page Partials: Partials that render core page elements such as header and breadcrumbs.
+- Container Partials: Partials that are used to render reflection groups and categories.
+- Member Partials: Partials that render specific parts of reflections.
+- Comment Partials: Partials that render comments.
+- Type Partials: Partials that render specific TypeDoc model types.
 
 #### comment()
 
@@ -401,15 +286,15 @@ Partials are categorised by their use:
 
 ##### Parameters
 
-| Parameter                | Type                                                                                                                             |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
-| `model`                  | [`Comment`](https://typedoc.org/api/classes/Models.Comment.html)                                                                 |
-| `options`                | \{`headingLevel`: `number`;`showSummary`: `boolean`;`showTags`: `boolean`;`showReturns`: `boolean`;`isTableColumn`: `boolean`; } |
-| `options.headingLevel`?  | `number`                                                                                                                         |
-| `options.showSummary`?   | `boolean`                                                                                                                        |
-| `options.showTags`?      | `boolean`                                                                                                                        |
-| `options.showReturns`?   | `boolean`                                                                                                                        |
-| `options.isTableColumn`? | `boolean`                                                                                                                        |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`Comment`](https://typedoc.org/api/classes/Models.Comment.html) |
+| `options` | \{ `headingLevel`: `number`; `showSummary`: `boolean`; `showTags`: `boolean`; `showReturns`: `boolean`; `isTableColumn`: `boolean`; \} |
+| `options.headingLevel`? | `number` |
+| `options.showSummary`? | `boolean` |
+| `options.showTags`? | `boolean` |
+| `options.showReturns`? | `boolean` |
+| `options.isTableColumn`? | `boolean` |
 
 ##### Returns
 
@@ -421,11 +306,11 @@ Partials are categorised by their use:
 
 ##### Parameters
 
-| Parameter              | Type                                                                                     |
-| ---------------------- | ---------------------------------------------------------------------------------------- |
-| `model`                | [`ContainerReflection`](https://typedoc.org/api/classes/Models.ContainerReflection.html) |
-| `options`              | \{`headingLevel`: `number`; }                                                            |
-| `options.headingLevel` | `number`                                                                                 |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ContainerReflection`](https://typedoc.org/api/classes/Models.ContainerReflection.html) |
+| `options` | \{ `headingLevel`: `number`; \} |
+| `options.headingLevel` | `number` |
 
 ##### Returns
 
@@ -437,11 +322,11 @@ Partials are categorised by their use:
 
 ##### Parameters
 
-| Parameter              | Type                                                                                               |
-| ---------------------- | -------------------------------------------------------------------------------------------------- |
-| `model`                | [`ReflectionCategory`](https://typedoc.org/api/types/ReflectionCategory.DeclarationOption.html)\[] |
-| `options`              | \{`headingLevel`: `number`; }                                                                      |
-| `options.headingLevel` | `number`                                                                                           |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ReflectionCategory`](https://typedoc.org/api/types/ReflectionCategory.DeclarationOption.html)[] |
+| `options` | \{ `headingLevel`: `number`; \} |
+| `options.headingLevel` | `number` |
 
 ##### Returns
 
@@ -453,12 +338,12 @@ Partials are categorised by their use:
 
 ##### Parameters
 
-| Parameter              | Type                                                                                                                 |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `model`                | [`ReflectionGroup`](https://typedoc.org/api/classes/ReflectionGroup.html)\[]                                         |
-| `options`              | \{`headingLevel`: `number`;`kind`: [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html); } |
-| `options.headingLevel` | `number`                                                                                                             |
-| `options.kind`         | [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html)                                       |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ReflectionGroup`](https://typedoc.org/api/classes/ReflectionGroup.html)[] |
+| `options` | \{ `headingLevel`: `number`; `kind`: [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html); \} |
+| `options.headingLevel` | `number` |
+| `options.kind` | [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html) |
 
 ##### Returns
 
@@ -470,12 +355,12 @@ Partials are categorised by their use:
 
 ##### Parameters
 
-| Parameter              | Type                                                                                            |
-| ---------------------- | ----------------------------------------------------------------------------------------------- |
-| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\[] |
-| `options`              | \{`headingLevel`: `number`;`groupTitle`: `string`; }                                            |
-| `options.headingLevel` | `number`                                                                                        |
-| `options.groupTitle`?  | `string`                                                                                        |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
+| `options` | \{ `headingLevel`: `number`; `groupTitle`: `string`; \} |
+| `options.headingLevel` | `number` |
+| `options.groupTitle`? | `string` |
 
 ##### Returns
 
@@ -487,11 +372,11 @@ Partials are categorised by their use:
 
 ##### Parameters
 
-| Parameter              | Type                                                                                         |
-| ---------------------- | -------------------------------------------------------------------------------------------- |
-| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options`              | \{`headingLevel`: `number`; }                                                                |
-| `options.headingLevel` | `number`                                                                                     |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | \{ `headingLevel`: `number`; \} |
+| `options.headingLevel` | `number` |
 
 ##### Returns
 
@@ -503,11 +388,11 @@ Partials are categorised by their use:
 
 ##### Parameters
 
-| Parameter              | Type                                                                                         |
-| ---------------------- | -------------------------------------------------------------------------------------------- |
-| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options`              | \{`headingLevel`: `number`; }                                                                |
-| `options.headingLevel` | `number`                                                                                     |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | \{ `headingLevel`: `number`; \} |
+| `options.headingLevel` | `number` |
 
 ##### Returns
 
@@ -519,13 +404,13 @@ Partials are categorised by their use:
 
 ##### Parameters
 
-| Parameter              | Type                                                                                         |
-| ---------------------- | -------------------------------------------------------------------------------------------- |
-| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options`              | \{`headingLevel`: `number`;`nested`: `boolean`;`groupTitle`: `string`; }                     |
-| `options.headingLevel` | `number`                                                                                     |
-| `options.nested`?      | `boolean`                                                                                    |
-| `options.groupTitle`?  | `string`                                                                                     |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | \{ `headingLevel`: `number`; `nested`: `boolean`; `groupTitle`: `string`; \} |
+| `options.headingLevel` | `number` |
+| `options.nested`? | `boolean` |
+| `options.groupTitle`? | `string` |
 
 ##### Returns
 
@@ -537,12 +422,12 @@ Partials are categorised by their use:
 
 ##### Parameters
 
-| Parameter              | Type                                                                                         |
-| ---------------------- | -------------------------------------------------------------------------------------------- |
-| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options`              | \{`headingLevel`: `number`;`nested`: `boolean`; }                                            |
-| `options.headingLevel` | `number`                                                                                     |
-| `options.nested`?      | `boolean`                                                                                    |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | \{ `headingLevel`: `number`; `nested`: `boolean`; \} |
+| `options.headingLevel` | `number` |
+| `options.nested`? | `boolean` |
 
 ##### Returns
 
@@ -554,9 +439,9 @@ Partials are categorised by their use:
 
 ##### Parameters
 
-| Parameter | Type                                                                                         |
-| --------- | -------------------------------------------------------------------------------------------- |
-| `model`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 
 ##### Returns
 
@@ -568,11 +453,11 @@ Partials are categorised by their use:
 
 ##### Parameters
 
-| Parameter              | Type                                                                                                                                                                                                                                                                             |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `model`                | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) \| [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ContainerReflection`](https://typedoc.org/api/classes/Models.ContainerReflection.html) |
-| `options`              | \{`headingLevel`: `number`; }                                                                                                                                                                                                                                                    |
-| `options.headingLevel` | `number`                                                                                                                                                                                                                                                                         |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) \| [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`ContainerReflection`](https://typedoc.org/api/classes/Models.ContainerReflection.html) |
+| `options` | \{ `headingLevel`: `number`; \} |
+| `options.headingLevel` | `number` |
 
 ##### Returns
 
@@ -584,9 +469,23 @@ Partials are categorised by their use:
 
 ##### Parameters
 
-| Parameter | Type                                                                                            |
-| --------- | ----------------------------------------------------------------------------------------------- |
-| `model`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\[] |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
+
+##### Returns
+
+`string`
+
+#### groupIndex()
+
+> **groupIndex**: (`group`) => `string`
+
+##### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `group` | [`ReflectionCategory`](https://typedoc.org/api/types/ReflectionCategory.DeclarationOption.html) \| [`ReflectionGroup`](https://typedoc.org/api/classes/ReflectionGroup.html) |
 
 ##### Returns
 
@@ -598,11 +497,11 @@ Partials are categorised by their use:
 
 ##### Parameters
 
-| Parameter              | Type                                                                                       |
-| ---------------------- | ------------------------------------------------------------------------------------------ |
-| `model`                | [`DeclarationHierarchy`](https://typedoc.org/api/classes/Models.DeclarationHierarchy.html) |
-| `options`              | \{`headingLevel`: `number`; }                                                              |
-| `options.headingLevel` | `number`                                                                                   |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationHierarchy`](https://typedoc.org/api/classes/Models.DeclarationHierarchy.html) |
+| `options` | \{ `headingLevel`: `number`; \} |
+| `options.headingLevel` | `number` |
 
 ##### Returns
 
@@ -614,9 +513,9 @@ Partials are categorised by their use:
 
 ##### Parameters
 
-| Parameter | Type                                                                              |
-| --------- | --------------------------------------------------------------------------------- |
-| `model`   | [`SignatureReflection`](https://typedoc.org/api/classes/SignatureReflection.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/SignatureReflection.html) |
 
 ##### Returns
 
@@ -628,11 +527,11 @@ Partials are categorised by their use:
 
 ##### Parameters
 
-| Parameter              | Type                                                                                                                                                                              |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/SignatureReflection.html) |
-| `options`              | \{`headingLevel`: `number`; }                                                                                                                                                     |
-| `options.headingLevel` | `number`                                                                                                                                                                          |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/SignatureReflection.html) |
+| `options` | \{ `headingLevel`: `number`; \} |
+| `options.headingLevel` | `number` |
 
 ##### Returns
 
@@ -644,9 +543,9 @@ Partials are categorised by their use:
 
 ##### Parameters
 
-| Parameter | Type                                                                                         |
-| --------- | -------------------------------------------------------------------------------------------- |
-| `model`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 
 ##### Returns
 
@@ -660,11 +559,11 @@ Renders a top-level member that contains group and child members such as Classes
 
 ##### Parameters
 
-| Parameter              | Type                                                                                         |
-| ---------------------- | -------------------------------------------------------------------------------------------- |
-| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options`              | \{`headingLevel`: `number`; }                                                                |
-| `options.headingLevel` | `number`                                                                                     |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | \{ `headingLevel`: `number`; \} |
+| `options.headingLevel` | `number` |
 
 ##### Returns
 
@@ -676,11 +575,11 @@ Renders a top-level member that contains group and child members such as Classes
 
 ##### Parameters
 
-| Parameter              | Type                                                                                 |
-| ---------------------- | ------------------------------------------------------------------------------------ |
-| `model`                | [`ParameterReflection`](https://typedoc.org/api/classes/ParameterReflection.html)\[] |
-| `options`              | \{`headingLevel`: `number`; }                                                        |
-| `options.headingLevel` | `number`                                                                             |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ParameterReflection`](https://typedoc.org/api/classes/ParameterReflection.html)[] |
+| `options` | \{ `headingLevel`: `number`; \} |
+| `options.headingLevel` | `number` |
 
 ##### Returns
 
@@ -692,9 +591,9 @@ Renders a top-level member that contains group and child members such as Classes
 
 ##### Parameters
 
-| Parameter | Type                                                                                 |
-| --------- | ------------------------------------------------------------------------------------ |
-| `model`   | [`ParameterReflection`](https://typedoc.org/api/classes/ParameterReflection.html)\[] |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ParameterReflection`](https://typedoc.org/api/classes/ParameterReflection.html)[] |
 
 ##### Returns
 
@@ -710,11 +609,11 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter               | Type                                                                                            |
-| ----------------------- | ----------------------------------------------------------------------------------------------- |
-| `model`                 | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\[] |
-| `options`?              | \{`isEventProps`: `boolean`; }                                                                  |
-| `options.isEventProps`? | `boolean`                                                                                       |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
+| `options`? | \{ `isEventProps`: `boolean`; \} |
+| `options.isEventProps`? | `boolean` |
 
 ##### Returns
 
@@ -726,9 +625,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                              |
-| --------- | --------------------------------------------------------------------------------- |
-| `model`   | [`ReferenceReflection`](https://typedoc.org/api/classes/ReferenceReflection.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ReferenceReflection`](https://typedoc.org/api/classes/ReferenceReflection.html) |
 
 ##### Returns
 
@@ -740,11 +639,11 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter              | Type                                                                                                                                                                                 |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `model`                | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) \| [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options`              | \{`headingLevel`: `number`; }                                                                                                                                                        |
-| `options.headingLevel` | `number`                                                                                                                                                                             |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) \| [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | \{ `headingLevel`: `number`; \} |
+| `options.headingLevel` | `number` |
 
 ##### Returns
 
@@ -756,14 +655,14 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter                     | Type                                                                                                   |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------ |
-| `model`                       | [`SignatureReflection`](https://typedoc.org/api/classes/SignatureReflection.html)                      |
-| `options`                     | \{`headingLevel`: `number`;`nested`: `boolean`;`accessor`: `string`;`multipleSignatures`: `boolean`; } |
-| `options.headingLevel`        | `number`                                                                                               |
-| `options.nested`?             | `boolean`                                                                                              |
-| `options.accessor`?           | `string`                                                                                               |
-| `options.multipleSignatures`? | `boolean`                                                                                              |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/SignatureReflection.html) |
+| `options` | \{ `headingLevel`: `number`; `nested`: `boolean`; `accessor`: `string`; `multipleSignatures`: `boolean`; \} |
+| `options.headingLevel` | `number` |
+| `options.nested`? | `boolean` |
+| `options.accessor`? | `string` |
+| `options.multipleSignatures`? | `boolean` |
 
 ##### Returns
 
@@ -775,9 +674,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                                 |
-| --------- | ------------------------------------------------------------------------------------ |
-| `model`   | [`ParameterReflection`](https://typedoc.org/api/classes/ParameterReflection.html)\[] |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ParameterReflection`](https://typedoc.org/api/classes/ParameterReflection.html)[] |
 
 ##### Returns
 
@@ -789,11 +688,11 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter              | Type                                                                              |
-| ---------------------- | --------------------------------------------------------------------------------- |
-| `model`                | [`SignatureReflection`](https://typedoc.org/api/classes/SignatureReflection.html) |
-| `options`              | \{`headingLevel`: `number`; }                                                     |
-| `options.headingLevel` | `number`                                                                          |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/SignatureReflection.html) |
+| `options` | \{ `headingLevel`: `number`; \} |
+| `options.headingLevel` | `number` |
 
 ##### Returns
 
@@ -805,12 +704,12 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter              | Type                                                                              |
-| ---------------------- | --------------------------------------------------------------------------------- |
-| `model`                | [`SignatureReflection`](https://typedoc.org/api/classes/SignatureReflection.html) |
-| `options`?             | \{`accessor`: `string`;`includeType`: `boolean`; }                                |
-| `options.accessor`?    | `string`                                                                          |
-| `options.includeType`? | `boolean`                                                                         |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/SignatureReflection.html) |
+| `options`? | \{ `accessor`: `string`; `includeType`: `boolean`; \} |
+| `options.accessor`? | `string` |
+| `options.includeType`? | `boolean` |
 
 ##### Returns
 
@@ -822,12 +721,12 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter              | Type                                                                                         |
-| ---------------------- | -------------------------------------------------------------------------------------------- |
-| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options`              | \{`headingLevel`: `number`;`nested`: `boolean`; }                                            |
-| `options.headingLevel` | `number`                                                                                     |
-| `options.nested`?      | `boolean`                                                                                    |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | \{ `headingLevel`: `number`; `nested`: `boolean`; \} |
+| `options.headingLevel` | `number` |
+| `options.nested`? | `boolean` |
 
 ##### Returns
 
@@ -835,15 +734,15 @@ There is no association list partial for properties as these are handled as a st
 
 #### sources()
 
-> **sources**: (`model`, `options`) => `string`
+> **sources**: (`model`, `options`?) => `string`
 
 ##### Parameters
 
-| Parameter              | Type                                                                                                                                                                              |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/SignatureReflection.html) |
-| `options`              | \{`headingLevel`: `number`; }                                                                                                                                                     |
-| `options.headingLevel` | `number`                                                                                                                                                                          |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/SignatureReflection.html) |
+| `options`? | \{ `hideLabel`: `boolean`; \} |
+| `options.hideLabel`? | `boolean` |
 
 ##### Returns
 
@@ -855,12 +754,12 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter              | Type                                                                                         |
-| ---------------------- | -------------------------------------------------------------------------------------------- |
-| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options`              | \{`headingLevel`: `number`;`nested`: `boolean`; }                                            |
-| `options.headingLevel` | `number`                                                                                     |
-| `options.nested`?      | `boolean`                                                                                    |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | \{ `headingLevel`: `number`; `nested`: `boolean`; \} |
+| `options.headingLevel` | `number` |
+| `options.nested`? | `boolean` |
 
 ##### Returns
 
@@ -872,9 +771,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                                                                                          |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `model`   | [`ReferenceType`](https://typedoc.org/api/classes/ReferenceType.html) \| [`ArrayType`](https://typedoc.org/api/classes/Models.ArrayType.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ReferenceType`](https://typedoc.org/api/classes/ReferenceType.html) \| [`ArrayType`](https://typedoc.org/api/classes/Models.ArrayType.html) |
 
 ##### Returns
 
@@ -886,11 +785,11 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter                | Type                                                           |
-| ------------------------ | -------------------------------------------------------------- |
-| `model`                  | [`SomeType`](https://typedoc.org/api/classes/SomeType.html)\[] |
-| `options`?               | \{`forceCollapse`: `boolean`; }                                |
-| `options.forceCollapse`? | `boolean`                                                      |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`SomeType`](https://typedoc.org/api/classes/SomeType.html)[] |
+| `options`? | \{ `forceCollapse`: `boolean`; \} |
+| `options.forceCollapse`? | `boolean` |
 
 ##### Returns
 
@@ -902,12 +801,12 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter              | Type                                                                                         |
-| ---------------------- | -------------------------------------------------------------------------------------------- |
-| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options`              | \{`headingLevel`: `number`;`allowSource`: `boolean`; }                                       |
-| `options.headingLevel` | `number`                                                                                     |
-| `options.allowSource`? | `boolean`                                                                                    |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options` | \{ `headingLevel`: `number`; `allowSource`: `boolean`; \} |
+| `options.headingLevel` | `number` |
+| `options.allowSource`? | `boolean` |
 
 ##### Returns
 
@@ -919,13 +818,13 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter           | Type                                                                                         |
-| ------------------- | -------------------------------------------------------------------------------------------- |
-| `model`             | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `typeDeclaration`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `opts`              | \{`headingLevel`: `number`;`nested`: `boolean`; }                                            |
-| `opts.headingLevel` | `number`                                                                                     |
-| `opts.nested`?      | `boolean`                                                                                    |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `typeDeclaration` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `opts` | \{ `headingLevel`: `number`; `nested`: `boolean`; \} |
+| `opts.headingLevel` | `number` |
+| `opts.nested`? | `boolean` |
 
 ##### Returns
 
@@ -937,11 +836,11 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter              | Type                                                                                            |
-| ---------------------- | ----------------------------------------------------------------------------------------------- |
-| `model`                | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\[] |
-| `options`              | \{`headingLevel`: `number`; }                                                                   |
-| `options.headingLevel` | `number`                                                                                        |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
+| `options` | \{ `headingLevel`: `number`; \} |
+| `options.headingLevel` | `number` |
 
 ##### Returns
 
@@ -953,11 +852,11 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter       | Type                                                                                            |
-| --------------- | ----------------------------------------------------------------------------------------------- |
-| `model`         | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\[] |
-| `options`       | \{`kind`: [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html); }     |
-| `options.kind`? | [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html)                  |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
+| `options` | \{ `kind`: [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html); \} |
+| `options.kind`? | [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html) |
 
 ##### Returns
 
@@ -969,9 +868,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                                         |
-| --------- | -------------------------------------------------------------------------------------------- |
-| `model`   | [`TypeParameterReflection`](https://typedoc.org/api/classes/TypeParameterReflection.html)\[] |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`TypeParameterReflection`](https://typedoc.org/api/classes/TypeParameterReflection.html)[] |
 
 ##### Returns
 
@@ -983,9 +882,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                                         |
-| --------- | -------------------------------------------------------------------------------------------- |
-| `model`   | [`TypeParameterReflection`](https://typedoc.org/api/classes/TypeParameterReflection.html)\[] |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`TypeParameterReflection`](https://typedoc.org/api/classes/TypeParameterReflection.html)[] |
 
 ##### Returns
 
@@ -1021,9 +920,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                                 |
-| --------- | ------------------------------------------------------------------------------------ |
-| `model`   | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) |
 
 ##### Returns
 
@@ -1043,9 +942,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                 |
-| --------- | -------------------------------------------------------------------- |
-| `model`   | [`ArrayType`](https://typedoc.org/api/classes/Models.ArrayType.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ArrayType`](https://typedoc.org/api/classes/Models.ArrayType.html) |
 
 ##### Returns
 
@@ -1057,9 +956,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                             |
-| --------- | -------------------------------------------------------------------------------- |
-| `model`   | [`ConditionalType`](https://typedoc.org/api/classes/Models.ConditionalType.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ConditionalType`](https://typedoc.org/api/classes/Models.ConditionalType.html) |
 
 ##### Returns
 
@@ -1071,9 +970,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                                          |
-| --------- | --------------------------------------------------------------------------------------------- |
-| `model`   | [`IndexedAccessType`](https://typedoc.org/api/types/IndexedAccessType.DeclarationOption.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`IndexedAccessType`](https://typedoc.org/api/types/IndexedAccessType.DeclarationOption.html) |
 
 ##### Returns
 
@@ -1085,9 +984,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                                |
-| --------- | ----------------------------------------------------------------------------------- |
-| `model`   | [`InferredType`](https://typedoc.org/api/types/InferredType.DeclarationOption.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`InferredType`](https://typedoc.org/api/types/InferredType.DeclarationOption.html) |
 
 ##### Returns
 
@@ -1099,9 +998,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                                        |
-| --------- | ------------------------------------------------------------------------------------------- |
-| `model`   | [`IntersectionType`](https://typedoc.org/api/types/IntersectionType.DeclarationOption.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`IntersectionType`](https://typedoc.org/api/types/IntersectionType.DeclarationOption.html) |
 
 ##### Returns
 
@@ -1113,9 +1012,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                                  |
-| --------- | ------------------------------------------------------------------------------------- |
-| `model`   | [`IntrinsicType`](https://typedoc.org/api/types/IntrinsicType.DeclarationOption.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`IntrinsicType`](https://typedoc.org/api/types/IntrinsicType.DeclarationOption.html) |
 
 ##### Returns
 
@@ -1127,9 +1026,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                              |
-| --------- | --------------------------------------------------------------------------------- |
-| `model`   | [`LiteralType`](https://typedoc.org/api/types/LiteralType.DeclarationOption.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`LiteralType`](https://typedoc.org/api/types/LiteralType.DeclarationOption.html) |
 
 ##### Returns
 
@@ -1141,9 +1040,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                                        |
-| --------- | ------------------------------------------------------------------------------------------- |
-| `model`   | [`NamedTupleMember`](https://typedoc.org/api/types/NamedTupleMember.DeclarationOption.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`NamedTupleMember`](https://typedoc.org/api/types/NamedTupleMember.DeclarationOption.html) |
 
 ##### Returns
 
@@ -1155,9 +1054,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type           |
-| --------- | -------------- |
-| `model`   | `OptionalType` |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | `OptionalType` |
 
 ##### Returns
 
@@ -1169,9 +1068,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                 |
-| --------- | -------------------------------------------------------------------- |
-| `model`   | [`QueryType`](https://typedoc.org/api/classes/Models.QueryType.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`QueryType`](https://typedoc.org/api/classes/Models.QueryType.html) |
 
 ##### Returns
 
@@ -1183,9 +1082,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                  |
-| --------- | --------------------------------------------------------------------- |
-| `model`   | [`ReferenceType`](https://typedoc.org/api/classes/ReferenceType.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ReferenceType`](https://typedoc.org/api/classes/ReferenceType.html) |
 
 ##### Returns
 
@@ -1197,11 +1096,11 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter                | Type                                                                                         |
-| ------------------------ | -------------------------------------------------------------------------------------------- |
-| `model`                  | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options`?               | \{`forceCollapse`: `boolean`; }                                                              |
-| `options.forceCollapse`? | `boolean`                                                                                    |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| `options`? | \{ `forceCollapse`: `boolean`; \} |
+| `options.forceCollapse`? | `boolean` |
 
 ##### Returns
 
@@ -1213,11 +1112,11 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter                     | Type                                                                                 |
-| ----------------------------- | ------------------------------------------------------------------------------------ |
-| `model`                       | [`SignatureReflection`](https://typedoc.org/api/classes/SignatureReflection.html)\[] |
-| `options`?                    | \{`forceParameterType`: `boolean`; }                                                 |
-| `options.forceParameterType`? | `boolean`                                                                            |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`SignatureReflection`](https://typedoc.org/api/classes/SignatureReflection.html)[] |
+| `options`? | \{ `forceParameterType`: `boolean`; \} |
+| `options.forceParameterType`? | `boolean` |
 
 ##### Returns
 
@@ -1229,11 +1128,11 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter                | Type                                                                    |
-| ------------------------ | ----------------------------------------------------------------------- |
-| `model`                  | [`ReflectionType`](https://typedoc.org/api/classes/ReflectionType.html) |
-| `options`?               | \{`forceCollapse`: `boolean`; }                                         |
-| `options.forceCollapse`? | `boolean`                                                               |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ReflectionType`](https://typedoc.org/api/classes/ReflectionType.html) |
+| `options`? | \{ `forceCollapse`: `boolean`; \} |
+| `options.forceCollapse`? | `boolean` |
 
 ##### Returns
 
@@ -1245,11 +1144,11 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter                | Type                                                        |
-| ------------------------ | ----------------------------------------------------------- |
-| `model`?                 | [`SomeType`](https://typedoc.org/api/classes/SomeType.html) |
-| `options`?               | \{`forceCollapse`: `boolean`; }                             |
-| `options.forceCollapse`? | `boolean`                                                   |
+| Parameter | Type |
+| ------ | ------ |
+| `model`? | [`SomeType`](https://typedoc.org/api/classes/SomeType.html) |
+| `options`? | \{ `forceCollapse`: `boolean`; \} |
+| `options.forceCollapse`? | `boolean` |
 
 ##### Returns
 
@@ -1261,9 +1160,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                          |
-| --------- | ------------------------------------------------------------- |
-| `model`   | [`TupleType`](https://typedoc.org/api/classes/TupleType.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`TupleType`](https://typedoc.org/api/classes/TupleType.html) |
 
 ##### Returns
 
@@ -1275,9 +1174,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                                              |
-| --------- | ------------------------------------------------------------------------------------------------- |
-| `model`   | [`TypeOperatorType`](https://typedoc.org/api/TypeDocOptions,TypeOperatorType/TypeDocOptions.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`TypeOperatorType`](https://typedoc.org/api/TypeDocOptions,TypeOperatorType/TypeDocOptions.html) |
 
 ##### Returns
 
@@ -1289,9 +1188,9 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                          |
-| --------- | ----------------------------------------------------------------------------- |
-| `model`   | [`UnionType`](https://typedoc.org/api/types/UnionType.DeclarationOption.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`UnionType`](https://typedoc.org/api/types/UnionType.DeclarationOption.html) |
 
 ##### Returns
 
@@ -1303,17 +1202,13 @@ There is no association list partial for properties as these are handled as a st
 
 ##### Parameters
 
-| Parameter | Type                                                                              |
-| --------- | --------------------------------------------------------------------------------- |
-| `model`   | [`UnknownType`](https://typedoc.org/api/types/UnknownType.DeclarationOption.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`UnknownType`](https://typedoc.org/api/types/UnknownType.DeclarationOption.html) |
 
 ##### Returns
 
 `string`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:100](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L100)
 
 ***
 
@@ -1321,13 +1216,15 @@ There is no association list partial for properties as these are handled as a st
 
 > **helpers**: `object`
 
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:109](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L109)
+
 The `helpers` namespace holds the helpers for the theme and are smaller utility functions that return snippets or text or other data transformations.
 
 Please note that partials:
 
-* Take a `model` param (that references a specific TypeDoc model) and an `options` param if required.
-* Can reference other helpers but should not reference partials.
-* Can return strings or other models.
+- Take a `model` param (that references a specific TypeDoc model) and an `options` param if required.
+- Can reference other helpers but should not reference partials.
+- Can return strings or other models.
 
 #### getAngleBracket()
 
@@ -1335,8 +1232,8 @@ Please note that partials:
 
 ##### Parameters
 
-| Parameter | Type           |
-| --------- | -------------- |
+| Parameter | Type |
+| ------ | ------ |
 | `bracket` | `"<"` \| `">"` |
 
 ##### Returns
@@ -1349,9 +1246,9 @@ Please note that partials:
 
 ##### Parameters
 
-| Parameter | Type                                                                                      |
-| --------- | ----------------------------------------------------------------------------------------- |
-| `model`   | [`CommentDisplayPart`](https://typedoc.org/api/classes/Models.CommentDisplayPart.html)\[] |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`CommentDisplayPart`](https://typedoc.org/api/classes/Models.CommentDisplayPart.html)[] |
 
 ##### Returns
 
@@ -1359,89 +1256,47 @@ Please note that partials:
 
 #### getDeclarationType()
 
-> **getDeclarationType**: (`model`) => `undefined` | [`SomeType`](https://typedoc.org/api/classes/SomeType.html)
+> **getDeclarationType**: (`model`) => `undefined` \| [`SomeType`](https://typedoc.org/api/classes/SomeType.html)
 
 ##### Parameters
 
-| Parameter | Type                                                                                         |
-| --------- | -------------------------------------------------------------------------------------------- |
-| `model`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 
 ##### Returns
 
-`undefined` | [`SomeType`](https://typedoc.org/api/classes/SomeType.html)
+`undefined` \| [`SomeType`](https://typedoc.org/api/classes/SomeType.html)
 
 #### getDescriptionForComment()
 
-> **getDescriptionForComment**: (`comment`) => `null` | `string`
+> **getDescriptionForComment**: (`comment`) => `null` \| `string`
 
 ##### Parameters
 
-| Parameter | Type                                                             |
-| --------- | ---------------------------------------------------------------- |
+| Parameter | Type |
+| ------ | ------ |
 | `comment` | [`Comment`](https://typedoc.org/api/classes/Models.Comment.html) |
 
 ##### Returns
 
-`null` | `string`
+`null` \| `string`
 
 #### getFlattenedDeclarations()
 
-> **getFlattenedDeclarations**: (`model`, `options`?) => [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\[]
+> **getFlattenedDeclarations**: (`model`, `options`?) => [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[]
 
 ##### Parameters
 
-| Parameter                    | Type                                                                                            |
-| ---------------------------- | ----------------------------------------------------------------------------------------------- |
-| `model`                      | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\[] |
-| `options`?                   | \{`includeSignatures`: `boolean`; }                                                             |
-| `options.includeSignatures`? | `boolean`                                                                                       |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[] |
+| `options`? | \{ `includeSignatures`: `boolean`; \} |
+| `options.includeSignatures`? | `boolean` |
 
 ##### Returns
 
-[`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\[]
-
-#### getGroupIndexList()
-
-> **getGroupIndexList**: (`children`) => `string`
-
-##### Parameters
-
-| Parameter  | Type                                                                                                                       |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `children` | `DocumentReflection`\[] \| [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\[] |
-
-##### Returns
-
-`string`
-
-#### getGroupIndexTable()
-
-> **getGroupIndexTable**: (`children`) => `string`
-
-##### Parameters
-
-| Parameter  | Type                                                                                                                       |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `children` | `DocumentReflection`\[] \| [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)\[] |
-
-##### Returns
-
-`string`
-
-#### getGroupIndex()
-
-> **getGroupIndex**: (`group`) => `any`
-
-##### Parameters
-
-| Parameter | Type                                                                                                                                                                         |
-| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `group`   | [`ReflectionCategory`](https://typedoc.org/api/types/ReflectionCategory.DeclarationOption.html) \| [`ReflectionGroup`](https://typedoc.org/api/classes/ReflectionGroup.html) |
-
-##### Returns
-
-`any`
+[`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html)[]
 
 #### getHierarchyType()
 
@@ -1449,11 +1304,11 @@ Please note that partials:
 
 ##### Parameters
 
-| Parameter           | Type                                                        |
-| ------------------- | ----------------------------------------------------------- |
-| `model`             | [`SomeType`](https://typedoc.org/api/classes/SomeType.html) |
-| `options`?          | \{`isTarget`: `boolean`; }                                  |
-| `options.isTarget`? | `boolean`                                                   |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`SomeType`](https://typedoc.org/api/classes/SomeType.html) |
+| `options`? | \{ `isTarget`: `boolean`; \} |
+| `options.isTarget`? | `boolean` |
 
 ##### Returns
 
@@ -1465,9 +1320,9 @@ Please note that partials:
 
 ##### Parameters
 
-| Parameter | Type                                                                           |
-| --------- | ------------------------------------------------------------------------------ |
-| `model`   | [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html) |
 
 ##### Returns
 
@@ -1475,17 +1330,17 @@ Please note that partials:
 
 #### getModifier()
 
-> **getModifier**: (`model`) => `null` | `string`
+> **getModifier**: (`model`) => `null` \| `string`
 
 ##### Parameters
 
-| Parameter | Type                                                                                         |
-| --------- | -------------------------------------------------------------------------------------------- |
-| `model`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 
 ##### Returns
 
-`null` | `string`
+`null` \| `string`
 
 #### getParameterDefaultValue()
 
@@ -1493,9 +1348,9 @@ Please note that partials:
 
 ##### Parameters
 
-| Parameter | Type                                                                              |
-| --------- | --------------------------------------------------------------------------------- |
-| `model`   | [`ParameterReflection`](https://typedoc.org/api/classes/ParameterReflection.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`ParameterReflection`](https://typedoc.org/api/classes/ParameterReflection.html) |
 
 ##### Returns
 
@@ -1507,11 +1362,11 @@ Please note that partials:
 
 ##### Parameters
 
-| Parameter                | Type                                                                                                                               | Default value |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `stringWithPlaceholders` | `string`                                                                                                                           | `undefined`   |
-| `page`                   | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Reflection.html)> | `undefined`   |
-| `includeVersion`         | `boolean`                                                                                                                          | `true`        |
+| Parameter | Type | Default value |
+| ------ | ------ | ------ |
+| `stringWithPlaceholders` | `string` | `undefined` |
+| `page` | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md) | `undefined` |
+| `includeVersion` | `boolean` | `true` |
 
 ##### Returns
 
@@ -1519,17 +1374,17 @@ Please note that partials:
 
 #### getPropertyDefaultValue()
 
-> **getPropertyDefaultValue**: (`model`) => `null` | `string`
+> **getPropertyDefaultValue**: (`model`) => `null` \| `string`
 
 ##### Parameters
 
-| Parameter | Type                                                                                         |
-| --------- | -------------------------------------------------------------------------------------------- |
-| `model`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
 
 ##### Returns
 
-`null` | `string`
+`null` \| `string`
 
 #### getReflectionFlags()
 
@@ -1537,8 +1392,8 @@ Please note that partials:
 
 ##### Parameters
 
-| Parameter         | Type                                                                      |
-| ----------------- | ------------------------------------------------------------------------- |
+| Parameter | Type |
+| ------ | ------ |
 | `reflectionFlags` | [`ReflectionFlags`](https://typedoc.org/api/classes/ReflectionFlags.html) |
 
 ##### Returns
@@ -1551,9 +1406,9 @@ Please note that partials:
 
 ##### Parameters
 
-| Parameter | Type                                                        |
-| --------- | ----------------------------------------------------------- |
-| `model`?  | [`SomeType`](https://typedoc.org/api/classes/SomeType.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model`? | [`SomeType`](https://typedoc.org/api/classes/SomeType.html) |
 
 ##### Returns
 
@@ -1565,9 +1420,9 @@ Please note that partials:
 
 ##### Parameters
 
-| Parameter | Type                                                        |
-| --------- | ----------------------------------------------------------- |
-| `type`    | [`SomeType`](https://typedoc.org/api/classes/SomeType.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `type` | [`SomeType`](https://typedoc.org/api/classes/SomeType.html) |
 
 ##### Returns
 
@@ -1579,9 +1434,9 @@ Please note that partials:
 
 ##### Parameters
 
-| Parameter | Type                                                                                                                                                                              |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `model`   | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/SignatureReflection.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `model` | [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) \| [`SignatureReflection`](https://typedoc.org/api/classes/SignatureReflection.html) |
 
 ##### Returns
 
@@ -1593,15 +1448,11 @@ Please note that partials:
 
 ##### Parameters
 
-| Parameter         | Type                                                                                         |
-| ----------------- | -------------------------------------------------------------------------------------------- |
-| `key`             | `"parameters"` \| `"properties"` \| `"enums"` \| `"typeDeclarations"` \| `"propertyMembers"` |
-| `reflectionKind`? | [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html)               |
+| Parameter | Type |
+| ------ | ------ |
+| `key` | `"parameters"` \| `"properties"` \| `"enums"` \| `"typeDeclarations"` \| `"propertyMembers"` |
+| `reflectionKind`? | [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html) |
 
 ##### Returns
 
 `boolean`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:113](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L113)

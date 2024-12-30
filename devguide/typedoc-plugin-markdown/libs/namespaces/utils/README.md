@@ -4,283 +4,243 @@
 
 General utility pure functions.
 
-## Contents
+## Functions
 
-* [camelToTitleCase()](#cameltotitlecase)
-* [encodeAngleBrackets()](#encodeanglebrackets)
-* [escapeChars()](#escapechars)
-* [formatMarkdown()](#formatmarkdown)
-* [formatTableCell()](#formattablecell)
-* [getFileNameWithExtension()](#getfilenamewithextension)
-* [isQuoted()](#isquoted)
-* [removeFirstScopedDirectory()](#removefirstscopeddirectory)
-* [removeLineBreaks()](#removelinebreaks)
-* [sanitizeComments()](#sanitizecomments)
-* [slugify()](#slugify)
-* [toPascalCase()](#topascalcase)
-* [unEscapeChars()](#unescapechars)
-
-## camelToTitleCase()
+### camelToTitleCase()
 
 > **camelToTitleCase**(`text`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/utils/camel-to-title-case.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/camel-to-title-case.ts#L1)
 
-| Parameter | Type     |
-| --------- | -------- |
-| `text`    | `string` |
+#### Parameters
 
-### Returns
+| Parameter | Type |
+| ------ | ------ |
+| `text` | `string` |
+
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/utils/camel-to-title-case.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/camel-to-title-case.ts#L1)
-
 ***
 
-## encodeAngleBrackets()
+### encodeAngleBrackets()
 
 > **encodeAngleBrackets**(`str`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/utils/encode-angle-brackets.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/encode-angle-brackets.ts#L1)
 
-| Parameter | Type     |
-| --------- | -------- |
-| `str`     | `string` |
+#### Parameters
 
-### Returns
+| Parameter | Type |
+| ------ | ------ |
+| `str` | `string` |
+
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/utils/encode-angle-brackets.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/encode-angle-brackets.ts#L1)
-
 ***
 
-## escapeChars()
+### escapeChars()
 
 > **escapeChars**(`str`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/utils/escape-chars.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/escape-chars.ts#L1)
 
-| Parameter | Type     |
-| --------- | -------- |
-| `str`     | `string` |
+#### Parameters
 
-### Returns
+| Parameter | Type |
+| ------ | ------ |
+| `str` | `string` |
+
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/utils/escape-chars.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/escape-chars.ts#L1)
-
 ***
 
-## formatMarkdown()
+### formatMarkdown()
 
 > **formatMarkdown**(`str`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/utils/format-markdown.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/format-markdown.ts#L1)
 
-| Parameter | Type     |
-| --------- | -------- |
-| `str`     | `string` |
+#### Parameters
 
-### Returns
+| Parameter | Type |
+| ------ | ------ |
+| `str` | `string` |
+
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/utils/format-markdown.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/format-markdown.ts#L1)
-
 ***
 
-## formatTableCell()
+### formatTableCell()
 
 > **formatTableCell**(`str`): `string`
 
-* Replace new lines with spaces
-* Replaces code blocks with single backticks
-* Replaces multiple spaces with single spaces
+Defined in: [packages/typedoc-plugin-markdown/src/libs/utils/format-table-cell.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/format-table-cell.ts#L6)
 
-### Parameters
+- Replace new lines with spaces
+- Replaces code blocks with single backticks
+- Replaces multiple spaces with single spaces
 
-| Parameter | Type     |
-| --------- | -------- |
-| `str`     | `string` |
+#### Parameters
 
-### Returns
+| Parameter | Type |
+| ------ | ------ |
+| `str` | `string` |
+
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/utils/format-table-cell.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/format-table-cell.ts#L6)
-
 ***
 
-## getFileNameWithExtension()
+### getFileNameWithExtension()
 
 > **getFileNameWithExtension**(`fileName`, `fileExtension`): `string`
 
+Defined in: [packages/typedoc-plugin-markdown/src/libs/utils/get-file-name-with-extension.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/get-file-name-with-extension.ts#L6)
+
 Returns a filename with extension while normalizing both the input name and input extension.
 
-### Parameters
+#### Parameters
 
-| Parameter       | Type     |
-| --------------- | -------- |
-| `fileName`      | `string` |
+| Parameter | Type |
+| ------ | ------ |
+| `fileName` | `string` |
 | `fileExtension` | `string` |
 
-### Returns
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/utils/get-file-name-with-extension.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/get-file-name-with-extension.ts#L6)
-
 ***
 
-## isQuoted()
+### isQuoted()
 
 > **isQuoted**(`str`): `boolean`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/utils/is-quoted.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/is-quoted.ts#L1)
 
-| Parameter | Type     |
-| --------- | -------- |
-| `str`     | `string` |
+#### Parameters
 
-### Returns
+| Parameter | Type |
+| ------ | ------ |
+| `str` | `string` |
+
+#### Returns
 
 `boolean`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/utils/is-quoted.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/is-quoted.ts#L1)
-
 ***
 
-## removeFirstScopedDirectory()
+### removeFirstScopedDirectory()
 
 > **removeFirstScopedDirectory**(`urlString`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/utils/remove-first-scoped-directory.ts:3](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/remove-first-scoped-directory.ts#L3)
 
-| Parameter   | Type     |
-| ----------- | -------- |
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
 | `urlString` | `string` |
 
-### Returns
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/utils/remove-first-scoped-directory.ts:3](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/remove-first-scoped-directory.ts#L3)
-
 ***
 
-## removeLineBreaks()
+### removeLineBreaks()
 
 > **removeLineBreaks**(`str`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/utils/remove-line-breaks.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/remove-line-breaks.ts#L1)
 
-| Parameter | Type     |
-| --------- | -------- |
-| `str`     | `string` |
+#### Parameters
 
-### Returns
+| Parameter | Type |
+| ------ | ------ |
+| `str` | `string` |
+
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/utils/remove-line-breaks.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/remove-line-breaks.ts#L1)
-
 ***
 
-## sanitizeComments()
+### sanitizeComments()
 
 > **sanitizeComments**(`str`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/utils/sanitize-comments.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/sanitize-comments.ts#L1)
 
-| Parameter | Type     |
-| --------- | -------- |
-| `str`     | `string` |
+#### Parameters
 
-### Returns
+| Parameter | Type |
+| ------ | ------ |
+| `str` | `string` |
+
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/utils/sanitize-comments.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/sanitize-comments.ts#L1)
-
 ***
 
-## slugify()
+### slugify()
 
 > **slugify**(`url`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/utils/slugify.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/slugify.ts#L1)
 
-| Parameter | Type     |
-| --------- | -------- |
-| `url`     | `string` |
+#### Parameters
 
-### Returns
+| Parameter | Type |
+| ------ | ------ |
+| `url` | `string` |
+
+#### Returns
 
 `string`
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/utils/slugify.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/slugify.ts#L1)
-
 ***
 
-## toPascalCase()
+### toPascalCase()
 
 > **toPascalCase**(`text`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/utils/to-pascal-case.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/to-pascal-case.ts#L1)
 
-| Parameter | Type     |
-| --------- | -------- |
-| `text`    | `string` |
+#### Parameters
 
-### Returns
+| Parameter | Type |
+| ------ | ------ |
+| `text` | `string` |
+
+#### Returns
 
 `string`
-
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/utils/to-pascal-case.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/to-pascal-case.ts#L1)
 
 ***
 
-## unEscapeChars()
+### unEscapeChars()
 
 > **unEscapeChars**(`str`): `string`
 
-### Parameters
+Defined in: [packages/typedoc-plugin-markdown/src/libs/utils/un-escape-chars.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/un-escape-chars.ts#L1)
 
-| Parameter | Type     |
-| --------- | -------- |
-| `str`     | `string` |
+#### Parameters
 
-### Returns
+| Parameter | Type |
+| ------ | ------ |
+| `str` | `string` |
+
+#### Returns
 
 `string`
-
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/libs/utils/un-escape-chars.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/libs/utils/un-escape-chars.ts#L1)

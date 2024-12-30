@@ -133,7 +133,7 @@ exports[`Comments should get function with block tags: (Output File Strategy "me
 
 > **functionWithBlockTags**(\`x\`, \`y\`): \`void\`
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 Function with block tags summary
 
@@ -169,7 +169,7 @@ exports[`Comments should get function with block tags: (Output File Strategy "me
 
 > **functionWithBlockTags**(\`x\`, \`y\`): \`void\`
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 Function with block tags summary
 
@@ -233,7 +233,7 @@ Other block tags
 exports[`Comments should get tables for enum: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Enumeration: EnumMembersTable
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 ## Enumeration Members
 
@@ -246,7 +246,7 @@ exports[`Comments should get tables for enum: (Output File Strategy "members") (
 exports[`Comments should get tables for enum: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Enumeration: EnumMembersTable
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 ## Enumeration Members
 
@@ -286,7 +286,7 @@ exports[`Comments should get tables for parameters: (Output File Strategy "membe
 
 > **parametersTable**\\<\`T\`\\>(\`param1\`, \`param2\`, \`param3\`): \`number\`
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 Adds two numbers together.
 
@@ -313,7 +313,7 @@ Adds two numbers together.
 exports[`Comments should get tables for properties: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: ClassPropertiesTable
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 ## Extends
 
@@ -351,7 +351,7 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 exports[`Comments should get tables for properties: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Class: ClassPropertiesTable
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 ## Extends
 
@@ -508,7 +508,7 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 
 > **TypeDeclarationType**: \`object\`
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 ## Type declaration
 
@@ -525,7 +525,7 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 
 > \`const\` **TypeDeclarationConst**: \`object\`
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 ## Type declaration
 
@@ -541,7 +541,7 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 
 > **TypeDeclarationType**: \\{ \`declaration1\`: \`boolean\`; \`declaration2\`: \`boolean\`; \`declaration3\`: \`100\`; \\}
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 ## Type declaration
 
@@ -615,7 +615,7 @@ exports[`Comments should get tables for type declarations: (Output File Strategy
 
 > \`const\` **TypeDeclarationConst**: \\{ \`declaration1\`: \`string\`; \`declaration2\`: \`number\`; \\}
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 ## Type declaration
 
@@ -672,7 +672,7 @@ exports[`Comments should get variable with block tags: (Output File Strategy "me
 
 > **typeWithBlockTags**: \`object\`
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 Variable with block tags summary
 
@@ -699,7 +699,7 @@ exports[`Comments should get variable with block tags: (Output File Strategy "me
 
 > **typeWithBlockTags**: \\{ \`x\`: \`string\`; \\}
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 Variable with block tags summary
 
@@ -745,7 +745,7 @@ exports[`Comments should handle const function with returns: (Output File Strate
 
 > **constFunctionWithReturns**(\`text\`): \`boolean\`
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 constFunctionWithReturns comments
 
@@ -772,7 +772,7 @@ exports[`Comments should handle const function: (Output File Strategy "members")
 
 > **constFunction**(\`text\`): \`boolean\`
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 constFunction comments
 
@@ -797,7 +797,7 @@ exports[`Comments should handle multiple example tags: (Output File Strategy "me
 
 > **multipleExampleTags**(): \`boolean\`
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 Function with multiple example tags
 
@@ -829,7 +829,7 @@ exports[`Comments should handle single example tags: (Output File Strategy "memb
 
 > **singleExampleTag**(): \`boolean\`
 
-**Defined in**: [index.ts:1](http://source-url)
+Defined in: [index.ts:1](http://source-url)
 
 Function with single example tag
 

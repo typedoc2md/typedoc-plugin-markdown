@@ -2,76 +2,100 @@
 
 # declarations
 
-## Contents
+## Variables
 
-* [remarkPlugins](#remarkplugins)
-* [remarkStringifyOptions](#remarkstringifyoptions)
+### remarkPlugins
 
-## remarkPlugins
+> `const` **remarkPlugins**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)\>
 
-> `const` **remarkPlugins**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+Defined in: [options/declarations.ts:12](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-remark/src/options/declarations.ts#L12)
 
-You can provide any compatible [remark plugins](https://github.com/remarkjs/remark/blob/main/doc/plugins.md) or you can write your own and reference locally.
+You can include any compatible [remark plugins](https://github.com/remarkjs/remark/blob/main/doc/plugins.md)  or create and reference your own locally.
 
-Each required plugin should be individually installed.
+Each plugin you wish to use must be installed individually.
 
-Options can be passed either as an array of strings or an array of string / options.
+Options can be provided as either an array of strings or an array of strings with associated options.
 
-Please note that `remark-frontmatter`, `remark-gfm`, and `remark-mdx` are always included by default.
-
-### Example
+#### Example
 
 ```ts
-["unified-prettier","remark-github", ["remark-toc", { "maxDepth": 3 }] ]
+["remark-github", ["remark-toc", { "maxDepth": 3 }] ]
 ```
 
-### Default Value
+#### Initializer
 
 ```ts
 {
-    help: 'An array of remark plugin names.',
+    help: 'An array of remark plugin names to be executed.',
     type: ParameterType.Mixed,
     defaultValue: [],
     validate(value) {
         if (!Array.isArray(value)) {
-            throw new Error('remarkPlugins must be an array.');
+            throw new Error('[typedoc-plugin-remark] remarkPlugins must be an array.');
         }
     },
 }
 ```
 
-### Defined in
+***
 
-[options/declarations.ts:14](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-remark/src/options/declarations.ts#L14)
+### defaultRemarkPlugins
+
+> `const` **defaultRemarkPlugins**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)\>
+
+Defined in: [options/declarations.ts:32](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-remark/src/options/declarations.ts#L32)
+
+By default, the plugins [`remark-gfm`](https://github.com/remarkjs/remark-gfm), [`remark-frontmatter`](https://github.com/remarkjs/remark-frontmatter), and [`remark-mdx`](https://github.com/mdx-js/mdx/tree/main/packages/remark-mdx) are included, as these are considered the most common use cases.
+
+However, these plugins modify the default parsing behavior of remark, which may not be ideal for all scenarios.
+
+If you'd like to disable any of these default plugins, simply set the corresponding flag to `false`.
+
+#### Initializer
+
+```ts
+{
+    help: 'A set of flags that control the enabling or disabling of remark plugins that are loaded by default.',
+    type: ParameterType.Flags,
+    defaults: {
+        gfm: true,
+        frontmatter: true,
+        mdx: true,
+    },
+}
+```
 
 ***
 
-## remarkStringifyOptions
+### remarkStringifyOptions
 
-> `const` **remarkStringifyOptions**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)>
+> `const` **remarkStringifyOptions**: `Partial`\<[`DeclarationOption`](https://typedoc.org/api/types/Configuration.DeclarationOption.html)\>
 
-Under the hood, the `remark-stringify` plugin is used to serialize the markdown into final output.
+Defined in: [options/declarations.ts:51](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-remark/src/options/declarations.ts#L51)
+
+Under the hood, the [`remark-stringify`](https://github.com/remarkjs/remark/tree/main/packages/remark-stringify) plugin is used to serialize the markdown into final output.
 
 You can pass in options to the `remark-stringify` plugin using this option.
 
-Please see [https://github.com/remarkjs/remark/tree/main/packages/remark-stringify#options](https://github.com/remarkjs/remark/tree/main/packages/remark-stringify#options)
+Please see https://github.com/remarkjs/remark/tree/main/packages/remark-stringify#options
 
-### Example
+#### Example
 
 ```ts
 {  "bullet": "+", "fence": "~" }
 ```
 
-### Default Value
+#### Initializer
 
 ```ts
 {
     help: 'Custom options for the remark-stringify plugin.',
-    type: ParameterType.Mixed,
+    type: ParameterType.Object,
     defaultValue: {},
+    validate(value) {
+        if (typeof value !== 'object') {
+            throw new Error('[typedoc-plugin-remark] remarkStringifyOptions must be an object.');
+        }
+    },
 }
 ```
-
-### Defined in
-
-[options/declarations.ts:34](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-remark/src/options/declarations.ts#L34)

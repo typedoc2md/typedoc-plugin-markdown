@@ -11,5 +11,5 @@
   ],
   "exclude": ["./src/public-api.ts"],
   "categoryOrder": ["File", "Display", "Utility", "Functions", "Locales"],
-  "projectDocuments": ["./supporting-docs/test-and-validation.md"]
+  "projectDocuments": ["./internal-docs/test-and-validation.md"]
 }

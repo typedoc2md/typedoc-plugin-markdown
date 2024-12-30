@@ -4,48 +4,41 @@
 
 Functionality to map options to tags.
 
-## Contents
+## Functions
 
-* [getResolvedTags()](#getresolvedtags)
-* [getFrontmatterTags()](#getfrontmattertags)
-
-## getResolvedTags()
+### getResolvedTags()
 
 > **getResolvedTags**(`app`, `comment`?): `object`
 
-### Parameters
+Defined in: [tags.ts:10](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/tags.ts#L10)
 
-| Parameter  | Type                                                                                           |
-| ---------- | ---------------------------------------------------------------------------------------------- |
-| `app`      | [`MarkdownApplication`](../../typedoc-plugin-markdown/types/interfaces/MarkdownApplication.md) |
-| `comment`? | [`Comment`](https://typedoc.org/api/classes/Models.Comment.html)                               |
+#### Parameters
 
-### Returns
+| Parameter | Type |
+| ------ | ------ |
+| `app` | [`MarkdownApplication`](../../typedoc-plugin-markdown/types/interfaces/MarkdownApplication.md) |
+| `comment`? | [`Comment`](https://typedoc.org/api/classes/Models.Comment.html) |
+
+#### Returns
 
 `object`
-
-### Defined in
-
-[tags.ts:10](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/tags.ts#L10)
 
 ***
 
-## getFrontmatterTags()
+### getFrontmatterTags()
 
 > **getFrontmatterTags**(`comment`, `frontmatterTags`, `namingConvention`): `object`
 
-### Parameters
+Defined in: [tags.ts:34](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/tags.ts#L34)
 
-| Parameter          | Type                                                                                                    |
-| ------------------ | ------------------------------------------------------------------------------------------------------- |
-| `comment`          | [`Comment`](https://typedoc.org/api/classes/Models.Comment.html)                                        |
-| `frontmatterTags`  | `string`\[]                                                                                             |
-| `namingConvention` | [`FrontmatterNamingConvention`](../options/namespaces/maps/enumerations/FrontmatterNamingConvention.md) |
+#### Parameters
 
-### Returns
+| Parameter | Type |
+| ------ | ------ |
+| `comment` | [`Comment`](https://typedoc.org/api/classes/Models.Comment.html) |
+| `frontmatterTags` | `string`[] |
+| `namingConvention` | [`FrontmatterNamingConvention`](../options/namespaces/maps/README.md#frontmatternamingconvention) |
+
+#### Returns
 
 `object`
-
-### Defined in
-
-[tags.ts:34](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-frontmatter/src/tags.ts#L34)

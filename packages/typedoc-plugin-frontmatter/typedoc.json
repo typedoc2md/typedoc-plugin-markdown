@@ -4,5 +4,6 @@
     "./src/options",
     "./src/tags.ts",
     "./src/types"
-  ]
+  ],
+  "exclude": ["./src/public-api.ts"]
 }

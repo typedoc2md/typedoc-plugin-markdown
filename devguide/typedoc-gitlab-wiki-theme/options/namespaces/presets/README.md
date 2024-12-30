@@ -2,17 +2,17 @@
 
 # presets
 
-## presets
+## Variables
+
+### presets
 
 > `const` **presets**: `object`
 
-### Type declaration
+Defined in: [options/presets.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-gitlab-wiki-theme/src/options/presets.ts#L1)
 
-| Name             | Type      | Default value |
-| ---------------- | --------- | ------------- |
-| `entryFileName`  | `string`  | 'home.md'     |
-| `hidePageHeader` | `boolean` | true          |
+#### Type declaration
 
-### Defined in
-
-[options/presets.ts:1](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-gitlab-wiki-theme/src/options/presets.ts#L1)
+| Name | Type | Default value |
+| ------ | ------ | ------ |
+| <a id="entryfilename-2"></a> `entryFileName` | `string` | 'home.md' |
+| <a id="hidepageheader-2"></a> `hidePageHeader` | `boolean` | true |

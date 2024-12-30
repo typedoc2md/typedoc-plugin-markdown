@@ -2,15 +2,15 @@
 
 # Interface: Sidebar
 
+Defined in: [types/options.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/types/options.ts#L19)
+
 ## Properties
 
 ### autoConfiguration
 
 > **autoConfiguration**: `boolean`
 
-#### Defined in
-
-[types/options.ts:23](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/types/options.ts#L23)
+Defined in: [types/options.ts:20](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/types/options.ts#L20)
 
 ***
 
@@ -18,9 +18,7 @@
 
 > **format**: `string`
 
-#### Defined in
-
-[types/options.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/types/options.ts#L24)
+Defined in: [types/options.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/types/options.ts#L21)
 
 ***
 
@@ -28,9 +26,7 @@
 
 > **pretty**: `boolean`
 
-#### Defined in
-
-[types/options.ts:25](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/types/options.ts#L25)
+Defined in: [types/options.ts:22](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/types/options.ts#L22)
 
 ***
 
@@ -38,6 +34,4 @@
 
 > **collapsed**: `boolean`
 
-#### Defined in
-
-[types/options.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/types/options.ts#L26)
+Defined in: [types/options.ts:23](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-vitepress-theme/src/types/options.ts#L23)

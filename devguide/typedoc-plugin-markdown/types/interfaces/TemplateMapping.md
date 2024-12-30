@@ -2,17 +2,17 @@
 
 # Interface: TemplateMapping
 
+Defined in: [packages/typedoc-plugin-markdown/src/types/theme.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L40)
+
 Defines how reflections are mapped to urls.
 
 ## Properties
 
 ### directory
 
-> **directory**: `null` | `string`
+> **directory**: `null` \| `string`
 
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/types/theme.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L40)
+Defined in: [packages/typedoc-plugin-markdown/src/types/theme.ts:41](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L41)
 
 ***
 
@@ -20,9 +20,7 @@ Defines how reflections are mapped to urls.
 
 > **template**: `any`
 
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/types/theme.ts:41](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L41)
+Defined in: [packages/typedoc-plugin-markdown/src/types/theme.ts:42](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L42)
 
 ***
 
@@ -30,6 +28,4 @@ Defines how reflections are mapped to urls.
 
 > **kind**: [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html)
 
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/types/theme.ts:42](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L42)
+Defined in: [packages/typedoc-plugin-markdown/src/types/theme.ts:43](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/theme.ts#L43)

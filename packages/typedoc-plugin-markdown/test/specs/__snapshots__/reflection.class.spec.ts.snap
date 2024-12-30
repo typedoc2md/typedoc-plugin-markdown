@@ -3,7 +3,7 @@
 exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: \`abstract\` AbstractClass
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 ## Extended by
 
@@ -26,7 +26,7 @@ exports[`Class Reflection should compile abstract class: (Output File Strategy "
 
 > \`abstract\` **abstractProp**: \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for abstractProp
 
@@ -36,7 +36,7 @@ Comments for abstractProp
 
 > \`abstract\` **abstractMethod**(): \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for abstractMethod
 
@@ -49,7 +49,7 @@ Comments for abstractMethod
 exports[`Class Reflection should compile abstract class: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Class: \`abstract\` AbstractClass
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 ## Extended by
 
@@ -82,7 +82,7 @@ new AbstractClass(): AbstractClass
 abstract abstractMethod(): string
 \`\`\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for abstractMethod
 
@@ -95,7 +95,7 @@ Comments for abstractMethod
 exports[`Class Reflection should compile basic class: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: BasicClass
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for BasicClass
 
@@ -115,7 +115,7 @@ Comments for BasicClass
 
 > **prop**: \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for prop
 
@@ -125,7 +125,7 @@ Comments for prop
 
 > **method**(): \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for method
 
@@ -138,7 +138,7 @@ Comments for method
 exports[`Class Reflection should compile basic class: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Class: BasicClass
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for BasicClass
 
@@ -168,7 +168,7 @@ new BasicClass(): BasicClass
 method(): string
 \`\`\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for method
 
@@ -181,7 +181,7 @@ Comments for method
 exports[`Class Reflection should compile class with accessor keywords: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: ClassWithAccessorKeywords
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 ## Constructors
 
@@ -197,6 +197,8 @@ exports[`Class Reflection should compile class with accessor keywords: (Output F
 
 ### accessor1
 
+Defined in: [classes.ts:1](http://source-url)
+
 Accessor comments
 
 #### Example
@@ -205,11 +207,11 @@ Accessor comments
 const x = 1;
 \`\`\`
 
-**Defined in**: [classes.ts:1](http://source-url)
-
 ***
 
 ### accessor2
+
+Defined in: [classes.ts:1](http://source-url)
 
 Accessor comments
 
@@ -217,22 +219,20 @@ Accessor comments
 
 Remark comments
 
-**Defined in**: [classes.ts:1](http://source-url)
-
 ***
 
 ### accessor3
 
-Accessor comments
+Defined in: [classes.ts:1](http://source-url)
 
-**Defined in**: [classes.ts:1](http://source-url)
+Accessor comments
 "
 `;
 
 exports[`Class Reflection should compile class with accessors: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: ClassWithAccessors
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for ClassWithAccessors
 
@@ -252,7 +252,7 @@ Comments for ClassWithAccessors
 
 > \`private\` **privateProp**: \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 ## Accessors
 
@@ -261,6 +261,8 @@ Comments for ClassWithAccessors
 #### Get Signature
 
 > **get** **accessor**(): \`string\`
+
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for getter
 
@@ -271,6 +273,8 @@ Comments for getter
 #### Set Signature
 
 > **set** **accessor**(\`value\`): \`void\`
+
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for setter
 
@@ -286,8 +290,6 @@ Param comments
 
 \`void\`
 
-**Defined in**: [classes.ts:1](http://source-url)
-
 ***
 
 ### noGetter
@@ -295,6 +297,8 @@ Param comments
 #### Set Signature
 
 > **set** **noGetter**(\`x\`): \`void\`
+
+Defined in: [classes.ts:1](http://source-url)
 
 ##### Parameters
 
@@ -306,8 +310,6 @@ Param comments
 
 \`void\`
 
-**Defined in**: [classes.ts:1](http://source-url)
-
 ***
 
 ### noSetter
@@ -316,18 +318,18 @@ Param comments
 
 > **get** **noSetter**(): \`string\`
 
+Defined in: [classes.ts:1](http://source-url)
+
 ##### Returns
 
 \`string\`
-
-**Defined in**: [classes.ts:1](http://source-url)
 "
 `;
 
 exports[`Class Reflection should compile class with accessors: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Class: ClassWithAccessors
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for ClassWithAccessors
 
@@ -359,6 +361,8 @@ new ClassWithAccessors(): ClassWithAccessors
 get accessor(): string
 \`\`\`
 
+Defined in: [classes.ts:1](http://source-url)
+
 Comments for getter
 
 ##### Returns
@@ -370,6 +374,8 @@ Comments for getter
 \`\`\`ts
 set accessor(value: string): void
 \`\`\`
+
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for setter
 
@@ -383,8 +389,6 @@ Comments for setter
 
 \`void\`
 
-**Defined in**: [classes.ts:1](http://source-url)
-
 ***
 
 ### noGetter
@@ -394,6 +398,8 @@ Comments for setter
 \`\`\`ts
 set noGetter(x: string): void
 \`\`\`
+
+Defined in: [classes.ts:1](http://source-url)
 
 ##### Parameters
 
@@ -405,8 +411,6 @@ set noGetter(x: string): void
 
 \`void\`
 
-**Defined in**: [classes.ts:1](http://source-url)
-
 ***
 
 ### noSetter
@@ -417,18 +421,18 @@ set noGetter(x: string): void
 get noSetter(): string
 \`\`\`
 
+Defined in: [classes.ts:1](http://source-url)
+
 ##### Returns
 
 \`string\`
-
-**Defined in**: [classes.ts:1](http://source-url)
 "
 `;
 
 exports[`Class Reflection should compile class with complex props: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: ClassWithComplexProps
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for ClassWithComplexProps
 
@@ -448,7 +452,7 @@ Comments for ClassWithComplexProps
 
 > **objecLiteralProp**: \`object\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### someFunction()
 
@@ -477,7 +481,7 @@ Comments for someProp
 exports[`Class Reflection should compile class with complex props: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Class: ClassWithComplexProps
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for ClassWithComplexProps
 
@@ -506,7 +510,7 @@ new ClassWithComplexProps(): ClassWithComplexProps
 exports[`Class Reflection should compile class with constructor overloads: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: ClassWithConstructorOverloads
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for ClassWithConstructorOverloads
 
@@ -516,7 +520,7 @@ Comments for ClassWithConstructorOverloads
 
 > **new ClassWithConstructorOverloads**(\`x\`, \`y\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Parameters
 
@@ -538,7 +542,7 @@ Comments for x number
 
 > **new ClassWithConstructorOverloads**(\`x\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Parameters
 
@@ -556,7 +560,7 @@ Comments for x string
 
 > **new ClassWithConstructorOverloads**(\`s\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Parameters
 
@@ -573,7 +577,7 @@ Comments for x string
 exports[`Class Reflection should compile class with constructor overloads: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Class: ClassWithConstructorOverloads
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for ClassWithConstructorOverloads
 
@@ -585,7 +589,7 @@ Comments for ClassWithConstructorOverloads
 new ClassWithConstructorOverloads(x: number, y: string): ClassWithConstructorOverloads
 \`\`\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Parameters
 
@@ -604,7 +608,7 @@ new ClassWithConstructorOverloads(x: number, y: string): ClassWithConstructorOve
 new ClassWithConstructorOverloads(x: string): ClassWithConstructorOverloads
 \`\`\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Parameters
 
@@ -622,7 +626,7 @@ new ClassWithConstructorOverloads(x: string): ClassWithConstructorOverloads
 new ClassWithConstructorOverloads(s: string): ClassWithConstructorOverloads
 \`\`\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Parameters
 
@@ -639,7 +643,7 @@ new ClassWithConstructorOverloads(s: string): ClassWithConstructorOverloads
 exports[`Class Reflection should compile class with flags: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: ClassWithFlags
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comment for ClassWithFlags
 
@@ -659,7 +663,7 @@ Comment for ClassWithFlags
 
 > **expermintalProp**: \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 **\`Experimental\`**
 
@@ -669,7 +673,7 @@ Comment for ClassWithFlags
 
 > \`private\` **internalProp**: \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 **\`Internal\`**
 
@@ -679,7 +683,7 @@ Comment for ClassWithFlags
 
 > **expermintalMethod**(): \`void\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 **\`Experimental\`**
 
@@ -693,7 +697,7 @@ Comment for ClassWithFlags
 
 > \`protected\` **internalMethod**(): \`void\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 **\`Internal\`**
 
@@ -706,7 +710,7 @@ Comment for ClassWithFlags
 exports[`Class Reflection should compile class with flags: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Class: ClassWithFlags
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comment for ClassWithFlags
 
@@ -737,7 +741,7 @@ new ClassWithFlags(): ClassWithFlags
 expermintalMethod(): void
 \`\`\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 **\`Experimental\`**
 
@@ -753,7 +757,7 @@ expermintalMethod(): void
 protected internalMethod(): void
 \`\`\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 **\`Internal\`**
 
@@ -766,7 +770,7 @@ protected internalMethod(): void
 exports[`Class Reflection should compile class with modifiers: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: \`abstract\` ClassWithModifiers
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for ClassWithModifiers
 
@@ -786,7 +790,7 @@ Comments for ClassWithModifiers
 
 > \`private\` **privateProp**: \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for privateProp
 
@@ -796,7 +800,7 @@ Comments for privateProp
 
 > \`protected\` **protectedProp**: \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for protectedProp
 
@@ -806,7 +810,7 @@ Comments for protectedProp
 
 > **publicPropWithDefault**: \`string\` = \`'propWithDefault'\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for propWithDefault
 
@@ -816,7 +820,7 @@ Comments for propWithDefault
 
 > \`readonly\` **readonlyProp**: \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for abstractProperty
 
@@ -826,7 +830,7 @@ Comments for abstractProperty
 
 > \`static\` **staticProp**: \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for staticProp
 
@@ -836,7 +840,7 @@ Comments for staticProp
 
 > \`private\` **privateMethod**(): \`void\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comment for privateMethod
 
@@ -850,7 +854,7 @@ Comment for privateMethod
 
 > **publicMethod**(): \`void\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comment for publicMethod
 
@@ -864,7 +868,7 @@ Comment for publicMethod
 
 > \`static\` **staticMethod**(): \`void\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comment for staticMethod
 
@@ -877,7 +881,7 @@ Comment for staticMethod
 exports[`Class Reflection should compile class with modifiers: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Class: \`abstract\` ClassWithModifiers
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for ClassWithModifiers
 
@@ -911,7 +915,7 @@ new ClassWithModifiers(): ClassWithModifiers
 private privateMethod(): void
 \`\`\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comment for privateMethod
 
@@ -927,7 +931,7 @@ Comment for privateMethod
 publicMethod(): void
 \`\`\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comment for publicMethod
 
@@ -943,7 +947,7 @@ Comment for publicMethod
 static staticMethod(): void
 \`\`\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comment for staticMethod
 
@@ -956,7 +960,7 @@ Comment for staticMethod
 exports[`Class Reflection should compile class with prop categories: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: ClassWithPropCategories
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 ## Constructors
 
@@ -964,7 +968,7 @@ exports[`Class Reflection should compile class with prop categories: (Output Fil
 
 > **new ClassWithPropCategories**(\`opts\`): [\`ClassWithPropCategories\`](ClassWithPropCategories.md)
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Parameters
 
@@ -988,7 +992,7 @@ exports[`Class Reflection should compile class with prop categories: (Output Fil
 
 > **prop1**: \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 ## CatB
 
@@ -996,7 +1000,7 @@ exports[`Class Reflection should compile class with prop categories: (Output Fil
 
 > **prop2**: \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 ## Other
 
@@ -1004,7 +1008,7 @@ exports[`Class Reflection should compile class with prop categories: (Output Fil
 
 > **method1**(): \`void\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
@@ -1016,7 +1020,7 @@ exports[`Class Reflection should compile class with prop categories: (Output Fil
 
 > **method2**(): \`void\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
@@ -1027,7 +1031,7 @@ exports[`Class Reflection should compile class with prop categories: (Output Fil
 exports[`Class Reflection should compile class with simple props: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: ClassWithSimpleProps
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for ClassWithSimpleProps
 
@@ -1047,7 +1051,7 @@ Comments for ClassWithSimpleProps
 
 > **propA**: \`string\` = \`'propAValue'\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for propA
 
@@ -1057,7 +1061,7 @@ Comments for propA
 
 > **propB**: \`string\` = \`'propBValue'\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for propB
 
@@ -1073,7 +1077,7 @@ Comments for propB
 
 > **propC**: \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for propB
 on two lines
@@ -1090,7 +1094,7 @@ on two lines
 
 > **propD**: \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for propE
 "
@@ -1099,7 +1103,7 @@ Comments for propE
 exports[`Class Reflection should compile class with simple props: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Class: ClassWithSimpleProps
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for ClassWithSimpleProps
 
@@ -1129,7 +1133,7 @@ new ClassWithSimpleProps(): ClassWithSimpleProps
 exports[`Class Reflection should compile class with symbols: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: ClassWithSymbols
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 ## Constructors
 
@@ -1147,7 +1151,7 @@ exports[`Class Reflection should compile class with symbols: (Output File Strate
 
 > \`static\` \`optional\` **\\[symbolConst\\]**: () => \`void\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
@@ -1159,7 +1163,7 @@ exports[`Class Reflection should compile class with symbols: (Output File Strate
 
 > **\\[dispose\\]**(): \`void\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
@@ -1170,7 +1174,7 @@ exports[`Class Reflection should compile class with symbols: (Output File Strate
 exports[`Class Reflection should compile class with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: ClassWithTypeParameters\\<A, B, C\\>
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for ClassWithTypeParameters
 
@@ -1201,7 +1205,7 @@ Comments for param C
 exports[`Class Reflection should compile class with type parameters: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Class: ClassWithTypeParameters\\<A, B, C\\>
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for ClassWithTypeParameters
 
@@ -1230,7 +1234,7 @@ new ClassWithTypeParameters<A, B, C>(): ClassWithTypeParameters<A, B, C>
 exports[`Class Reflection should compile class without prop categories: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: ClassWithoutPropCategories
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 ## Constructors
 
@@ -1238,7 +1242,7 @@ exports[`Class Reflection should compile class without prop categories: (Output 
 
 > **new ClassWithoutPropCategories**(\`opts\`): [\`ClassWithoutPropCategories\`](ClassWithoutPropCategories.md)
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Parameters
 
@@ -1262,7 +1266,7 @@ exports[`Class Reflection should compile class without prop categories: (Output 
 
 > **prop1**: \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 ***
 
@@ -1270,7 +1274,7 @@ exports[`Class Reflection should compile class without prop categories: (Output 
 
 > **prop2**: \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 ## Methods
 
@@ -1278,7 +1282,7 @@ exports[`Class Reflection should compile class without prop categories: (Output 
 
 > **method1**(): \`void\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
@@ -1290,7 +1294,7 @@ exports[`Class Reflection should compile class without prop categories: (Output 
 
 > **method2**(): \`void\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
@@ -1301,7 +1305,7 @@ exports[`Class Reflection should compile class without prop categories: (Output 
 exports[`Class Reflection should compile derived class: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: DerivedClassA
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for DerivedClassA
 
@@ -1329,7 +1333,7 @@ Comments for DerivedClassA
 
 > **abstractProp**: \`string\` = \`'abstractProp'\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for abstractProp
 
@@ -1343,7 +1347,7 @@ Comments for abstractProp
 
 > **derivedProp**: \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 ## Methods
 
@@ -1351,7 +1355,7 @@ Comments for abstractProp
 
 > **abstractMethod**(): \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for abstractMethod
 
@@ -1369,7 +1373,7 @@ Comments for abstractMethod
 
 > **derivedMethod**(): \`string\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
@@ -1380,7 +1384,7 @@ Comments for abstractMethod
 exports[`Class Reflection should compile derived class: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Class: DerivedClassA
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for DerivedClassA
 
@@ -1419,7 +1423,7 @@ new DerivedClassA(): DerivedClassA
 abstractMethod(): string
 \`\`\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 Comments for abstractMethod
 
@@ -1439,7 +1443,7 @@ Comments for abstractMethod
 derivedMethod(): string
 \`\`\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
@@ -1450,7 +1454,7 @@ derivedMethod(): string
 exports[`Class Reflection should compile disposable class: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: DisposableClass
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 ## Implements
 
@@ -1472,7 +1476,7 @@ exports[`Class Reflection should compile disposable class: (Output File Strategy
 
 > **\\[dispose\\]**(): \`void\`
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
@@ -1487,7 +1491,7 @@ exports[`Class Reflection should compile disposable class: (Output File Strategy
 exports[`Class Reflection should compile hierarchy for BaseClass: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: BaseClass
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 ## Extended by
 
@@ -1509,7 +1513,7 @@ exports[`Class Reflection should compile hierarchy for BaseClass: (Output File S
 exports[`Class Reflection should compile hierarchy for ChildClassA: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: ChildClassA
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 ## Extends
 
@@ -1539,7 +1543,7 @@ exports[`Class Reflection should compile hierarchy for ChildClassA: (Output File
 exports[`Class Reflection should compile hierarchy for GrandChildClassA: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: GrandChildClassA
 
-**Defined in**: [classes.ts:1](http://source-url)
+Defined in: [classes.ts:1](http://source-url)
 
 ## Extends
 

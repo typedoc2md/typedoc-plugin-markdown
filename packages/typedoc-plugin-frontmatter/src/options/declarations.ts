@@ -1,3 +1,9 @@
+/**
+ * Typedoc options declarations.
+ *
+ * @module
+ */
+
 import { DeclarationOption, ParameterType } from 'typedoc';
 import { FrontmatterNamingConvention } from './maps.js';
 

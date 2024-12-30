@@ -4,11 +4,15 @@
 
 Contains all functionality relevant to the markdown theme.
 
-## Index
+## Documents
 
-### Theme Classes
+| Document | Description |
+| ------ | ------ |
+| [Custom Theme](documents/Custom%20Theme.md) | How to extend the default Markdown Theme. |
 
-| Class                                                   | Description                                                                         |
-| ------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| [MarkdownTheme](classes/MarkdownTheme.md)               | The main theme class for the plugin.                                                |
+## Classes
+
+| Class | Description |
+| ------ | ------ |
+| [MarkdownTheme](classes/MarkdownTheme.md) | The main theme class for the plugin. |
 | [MarkdownThemeContext](classes/MarkdownThemeContext.md) | The theme context class that is provided as context on the rendering of every page. |

@@ -8,21 +8,13 @@ The translatable strings configured in the plugin are only additional strings th
 
 To add a new locale or edit and existing locale (if you think the strings are incorrect).
 
-## Contents
-
-* [Methods](#methods)
-  * [getTranslatable()](#gettranslatable)
-* [Locales](#locales)
-  * [en](#en)
-  * [jp](#jp)
-  * [ko](#ko)
-  * [zh](#zh)
-
-## Methods
+## Functions
 
 ### getTranslatable()
 
 > **getTranslatable**(`app`): `any`
+
+Defined in: [packages/typedoc-plugin-markdown/src/internationalization/translatable.ts:16](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/translatable.ts#L16)
 
 Returns subset of translatable strings for the plugin.
 
@@ -30,17 +22,13 @@ These will then be merged with the main set of TypeDoc string.
 
 #### Parameters
 
-| Parameter | Type                                                              |
-| --------- | ----------------------------------------------------------------- |
-| `app`     | [`Application`](https://typedoc.org/api/classes/Application.html) |
+| Parameter | Type |
+| ------ | ------ |
+| `app` | [`Application`](https://typedoc.org/api/classes/Application.html) |
 
 #### Returns
 
 `any`
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/internationalization/translatable.ts:16](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/translatable.ts#L16)
 
 ## Locales
 
@@ -48,9 +36,11 @@ These will then be merged with the main set of TypeDoc string.
 
 > `const` **en**: [`TranslatableStrings`](../types/interfaces/TranslatableStrings.md)
 
+Defined in: [packages/typedoc-plugin-markdown/src/internationalization/locales/en.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/locales/en.ts#L7)
+
 Translations for 'en' locale.
 
-#### Default Value
+#### Initializer
 
 ```ts
 {
@@ -67,6 +57,7 @@ Translations for 'en' locale.
     theme_member_plural: 'Members',
     theme_modifier: 'Modifier',
     theme_name: 'Name',
+    theme_package: 'Package',
     theme_packages: 'Packages',
     theme_type: 'Type',
     theme_value: 'Value',
@@ -74,19 +65,17 @@ Translations for 'en' locale.
 }
 ```
 
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/internationalization/locales/en.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/locales/en.ts#L7)
-
 ***
 
 ### jp
 
-> `const` **jp**: `Partial`\<[`TranslatableStrings`](../types/interfaces/TranslatableStrings.md)>
+> `const` **jp**: `Partial`\<[`TranslatableStrings`](../types/interfaces/TranslatableStrings.md)\>
+
+Defined in: [packages/typedoc-plugin-markdown/src/internationalization/locales/jp.ts:8](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/locales/jp.ts#L8)
 
 Translations for 'jp' locale.
 
-#### Default Value
+#### Initializer
 
 ```ts
 {
@@ -103,6 +92,7 @@ Translations for 'jp' locale.
     theme_member_plural: 'メンバー',
     theme_modifier: '修飾子',
     theme_name: '名前',
+    theme_package: 'パッケージ',
     theme_packages: 'パッケージ',
     theme_type: 'タイプ',
     theme_value: '値',
@@ -110,19 +100,17 @@ Translations for 'jp' locale.
 }
 ```
 
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/internationalization/locales/jp.ts:8](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/locales/jp.ts#L8)
-
 ***
 
 ### ko
 
-> `const` **ko**: `Partial`\<[`TranslatableStrings`](../types/interfaces/TranslatableStrings.md)>
+> `const` **ko**: `Partial`\<[`TranslatableStrings`](../types/interfaces/TranslatableStrings.md)\>
+
+Defined in: [packages/typedoc-plugin-markdown/src/internationalization/locales/ko.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/locales/ko.ts#L7)
 
 Translations for 'ko' locale.
 
-#### Default Value
+#### Initializer
 
 ```ts
 {
@@ -139,6 +127,7 @@ Translations for 'ko' locale.
     theme_member_plural: '멤버들',
     theme_modifier: '수정자',
     theme_name: '이름',
+    theme_package: '패키지',
     theme_packages: '패키지',
     theme_type: '유형',
     theme_value: '값',
@@ -146,19 +135,17 @@ Translations for 'ko' locale.
 }
 ```
 
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/internationalization/locales/ko.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/locales/ko.ts#L7)
-
 ***
 
 ### zh
 
-> `const` **zh**: `Partial`\<[`TranslatableStrings`](../types/interfaces/TranslatableStrings.md)>
+> `const` **zh**: `Partial`\<[`TranslatableStrings`](../types/interfaces/TranslatableStrings.md)\>
+
+Defined in: [packages/typedoc-plugin-markdown/src/internationalization/locales/zh.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/locales/zh.ts#L7)
 
 Translations for 'zh' locale.
 
-#### Default Value
+#### Initializer
 
 ```ts
 {
@@ -175,13 +162,10 @@ Translations for 'zh' locale.
     theme_member_plural: '成员',
     theme_modifier: '修饰符',
     theme_name: '名称',
+    theme_package: '包',
     theme_packages: '包',
     theme_type: '类型',
     theme_value: '值',
     theme_version: '版本',
 }
 ```
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/internationalization/locales/zh.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/locales/zh.ts#L7)

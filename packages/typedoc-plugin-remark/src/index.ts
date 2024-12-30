@@ -1,7 +1,7 @@
 /**
  * The plugin entrypoint and bootstrapping of the plugin.
  *
- * @module
+ * @module core
  */
 
 import * as path from 'path';

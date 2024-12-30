@@ -2,4 +2,4 @@
 'typedoc-plugin-markdown': minor
 ---
 
-- Always assign header ids to linkable symbols within table rows.
+- Always assign HTML anchor ids to linkable symbols within table rows.

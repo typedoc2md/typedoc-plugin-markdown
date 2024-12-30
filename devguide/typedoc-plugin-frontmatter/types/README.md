@@ -4,13 +4,8 @@
 
 All plugin types are exported from this module.
 
-## Index
+## References
 
-### Interfaces
+### PluginOptions
 
-| Interface                                              | Description                                   |
-| ------------------------------------------------------ | --------------------------------------------- |
-| [PluginOptions](interfaces/PluginOptions.md)           | Describes the options declared by the plugin. |
-| [FrontmatterGlobals](interfaces/FrontmatterGlobals.md) | -                                             |
-| [IndexFrontmatter](interfaces/IndexFrontmatter.md)     | -                                             |
-| [ReadmeFrontmatter](interfaces/ReadmeFrontmatter.md)   | -                                             |
+Re-exports [PluginOptions](../core/interfaces/PluginOptions.md)

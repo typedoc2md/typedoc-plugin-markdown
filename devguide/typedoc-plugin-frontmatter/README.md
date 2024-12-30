@@ -4,20 +4,16 @@
 
 "typedoc-plugin-frontmatter" is a utility package the prepends frontmatter to pages.
 
-## Contents
+Package features includes:
 
-* [What Does the Package Do?](#what-does-the-package-do)
-
-## What Does the Package Do?
-
-* Exposes some additional options to TypeDoc.
-* Prepends a YAML block to pages.
+- Exposes some additional options to TypeDoc.
+- Prepends a YAML block to pages.
 
 ## Modules
 
-| Module                       | Description                                                        |
-| ---------------------------- | ------------------------------------------------------------------ |
-| [index](index/README.md)     | The plugin entrypoint and bootstrapping of the plugin.             |
+| Module | Description |
+| ------ | ------ |
+| [core](core/README.md) | The plugin entrypoint and bootstrapping of the plugin. |
 | [options](options/README.md) | Contains all the option declarations and types used in the plugin. |
-| [tags](tags/README.md)       | Functionality to map options to tags.                              |
-| [types](types/README.md)     | All plugin types are exported from this module.                    |
+| [tags](tags/README.md) | Functionality to map options to tags. |
+| [types](types/README.md) | All plugin types are exported from this module. |

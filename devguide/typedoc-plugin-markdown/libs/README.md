@@ -4,11 +4,9 @@
 
 General pure library functions to be consumed across the plugin.
 
-## Index
+## Namespaces
 
-### Namespaces
-
-| Namespace                                 | Description                     |
-| ----------------------------------------- | ------------------------------- |
-| [markdown](namespaces/markdown/README.md) | -                               |
-| [utils](namespaces/utils/README.md)       | General utility pure functions. |
+| Namespace | Description |
+| ------ | ------ |
+| [markdown](namespaces/markdown/README.md) | Helpers for generating markdown. |
+| [utils](namespaces/utils/README.md) | General utility pure functions. |

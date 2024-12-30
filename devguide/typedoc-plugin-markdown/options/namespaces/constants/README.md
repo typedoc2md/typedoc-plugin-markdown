@@ -4,19 +4,17 @@
 
 Contains constant default values used in options.
 
-## Contents
+## Variables
 
-* [ALLOWED\_OWN\_FILE\_MEMBERS](#allowed_own_file_members)
-* [TEXT\_CONTENT\_MAPPINGS](#text_content_mappings)
-* [DEFAULT\_PAGE\_TITLES](#default_page_titles)
+### ALLOWED\_OWN\_FILE\_MEMBERS
 
-## ALLOWED\_OWN\_FILE\_MEMBERS
+> `const` **ALLOWED\_OWN\_FILE\_MEMBERS**: `string`[]
 
-> `const` **ALLOWED\_OWN\_FILE\_MEMBERS**: `string`\[]
+Defined in: [packages/typedoc-plugin-markdown/src/options/constants.ts:12](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/constants.ts#L12)
 
 Default values for `membersWithOwnFile` option.
 
-### Default Value
+#### Initializer
 
 ```ts
 [
@@ -29,46 +27,38 @@ Default values for `membersWithOwnFile` option.
 ]
 ```
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/constants.ts:12](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/constants.ts#L12)
-
 ***
 
-## TEXT\_CONTENT\_MAPPINGS
+### TEXT\_CONTENT\_MAPPINGS
 
 > `const` **TEXT\_CONTENT\_MAPPINGS**: `object`
 
+Defined in: [packages/typedoc-plugin-markdown/src/options/constants.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/constants.ts#L24)
+
 Default values for `textContentMappings` option.
 
-### Type declaration
+#### Type declaration
 
-| Name               | Type     | Default value               |
-| ------------------ | -------- | --------------------------- |
-| `header.title`     | `string` | '\{projectName} \{version}' |
-| `breadcrumbs.home` | `string` | '\{projectName} \{version}' |
-| `title.indexPage`  | `string` | '\{projectName} \{version}' |
-| `title.memberPage` | `string` | '\{kind}: \{name}'          |
-| `title.modulePage` | `string` | '\{name}'                   |
-
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/constants.ts:24](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/constants.ts#L24)
+| Name | Type | Default value |
+| ------ | ------ | ------ |
+| <a id="header.title-2"></a> `header.title` | `string` | '\{projectName\} \{version\}' |
+| <a id="breadcrumbs.home-2"></a> `breadcrumbs.home` | `string` | '\{projectName\} \{version\}' |
+| <a id="title.indexpage-2"></a> `title.indexPage` | `string` | '\{projectName\} \{version\}' |
+| <a id="title.memberpage-2"></a> `title.memberPage` | `string` | '\{kind\}: \{name\}' |
+| <a id="title.modulepage-2"></a> `title.modulePage` | `string` | '\{name\}' |
 
 ***
 
-## DEFAULT\_PAGE\_TITLES
+### DEFAULT\_PAGE\_TITLES
 
 > `const` **DEFAULT\_PAGE\_TITLES**: `object`
 
-### Type declaration
+Defined in: [packages/typedoc-plugin-markdown/src/options/constants.ts:32](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/constants.ts#L32)
 
-| Name     | Type     | Default value               |
-| -------- | -------- | --------------------------- |
-| `index`  | `string` | '\{projectName} \{version}' |
-| `member` | `string` | '\{kind}: \{name}'          |
-| `module` | `string` | '\{name}'                   |
+#### Type declaration
 
-### Defined in
-
-[packages/typedoc-plugin-markdown/src/options/constants.ts:32](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/options/constants.ts#L32)
+| Name | Type | Default value |
+| ------ | ------ | ------ |
+| <a id="index-2"></a> `index` | `string` | '\{projectName\} \{version\}' |
+| <a id="member-2"></a> `member` | `string` | '\{kind\}: \{name\}' |
+| <a id="module-2"></a> `module` | `string` | '\{name\}' |

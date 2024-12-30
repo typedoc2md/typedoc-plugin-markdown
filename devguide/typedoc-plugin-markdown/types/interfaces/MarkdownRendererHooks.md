@@ -2,64 +2,56 @@
 
 # Interface: MarkdownRendererHooks
 
+Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts:6](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts#L6)
+
 Describes the hooks available to inject output in the markdown theme.
 
 ## Hooks
 
 ### page.begin
 
-> **page.begin**: \[[`MarkdownThemeContext`](../../theme/classes/MarkdownThemeContext.md)]
+> **page.begin**: \[[`MarkdownThemeContext`](../../theme/classes/MarkdownThemeContext.md)\]
+
+Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts:12](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts#L12)
 
 Applied at the start of the markdown output.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts:12](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts#L12)
 
 ***
 
 ### page.end
 
-> **page.end**: \[[`MarkdownThemeContext`](../../theme/classes/MarkdownThemeContext.md)]
+> **page.end**: \[[`MarkdownThemeContext`](../../theme/classes/MarkdownThemeContext.md)\]
+
+Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts#L19)
 
 Applied at the end of the markdown output.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts:19](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts#L19)
 
 ***
 
 ### content.begin
 
-> **content.begin**: \[[`MarkdownThemeContext`](../../theme/classes/MarkdownThemeContext.md)]
+> **content.begin**: \[[`MarkdownThemeContext`](../../theme/classes/MarkdownThemeContext.md)\]
+
+Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts#L26)
 
 Applied before the main markdown content is rendered.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts#L26)
 
 ***
 
 ### index.page.begin
 
-> **index.page.begin**: \[[`MarkdownThemeContext`](../../theme/classes/MarkdownThemeContext.md)]
+> **index.page.begin**: \[[`MarkdownThemeContext`](../../theme/classes/MarkdownThemeContext.md)\]
+
+Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts:33](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts#L33)
 
 Applied at the start of the markdown output on the index page.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts:33](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts#L33)
 
 ***
 
 ### index.page.end
 
-> **index.page.end**: \[[`MarkdownThemeContext`](../../theme/classes/MarkdownThemeContext.md)]
+> **index.page.end**: \[[`MarkdownThemeContext`](../../theme/classes/MarkdownThemeContext.md)\]
+
+Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts#L40)
 
 Applied at the end of the markdown output on the index page.
-
-#### Defined in
-
-[packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts:40](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer-hooks.ts#L40)

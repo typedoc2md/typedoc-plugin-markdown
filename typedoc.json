@@ -37,7 +37,7 @@
   "packageOptions": {
     "includeVersion": false,
     "excludePrivate": false,
-    "readme": "none",
+    "readme": "./internal-docs/introduction.md",
     "sortEntryPoints": false,
     "sort": "source-order",
     "excludeExternals": true,
@@ -45,7 +45,7 @@
   },
 
   // typedoc-plugin-markdown options
-  "mergeReadme": false,
+  "mergeReadme": true,
   "outputFileStrategy": "members",
   "membersWithOwnFile": ["Class", "Interface"],
   "hidePageHeader": true,
