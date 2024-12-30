@@ -1,7 +1,7 @@
 /**
- * The plugin entrypoint and bootstrapping of the plugin.
+ * The entry point for initializing and bootstrapping the plugin.
  *
- * @module
+ * @module core
  */
 import { getTranslatable } from '@plugin/internationalization/translatable.js';
 import { declarations } from '@plugin/options/index.js';
@@ -17,17 +17,30 @@ import {
   ParameterType,
 } from 'typedoc';
 import { render } from './renderer/render.js';
+
 /**
  * The function that is called by TypeDoc to bootstrap the plugin.
  *
- * Here we expose additional TypeDoc options and make some adjustments.
+ * @remarks
+ *
+ * The load function exposes additional TypeDoc options and make some adjustments.
  *
  * This method is not intended to be consumed in any other context that via the `plugin` option.
+ *
+ * The load functions:
+ *
+ * 1. Bootstrap the plugin options
+ * 2. Configures markdown outputs
+ * 3. Configures localization
+ * 4. Applies any other behaviour
+ *
+ * The module also exports anything that is available publicly.
+ *
  */
 export function load(app: Application) {
   /**
    * ====================
-   * 1. Bootstrap Options
+   * 1. Bootstrap options
    * ====================
    */
 

@@ -1,9 +1,4 @@
-import {
-  heading,
-  htmlTable,
-  link,
-  table,
-} from '@plugin/libs/markdown/index.js';
+import { htmlTable, link, table } from '@plugin/libs/markdown/index.js';
 import {
   escapeChars,
   getFileNameWithExtension,
@@ -22,8 +17,6 @@ export function packagesIndex(
 
   const md: string[] = [];
 
-  md.push(heading(2, this.i18n.theme_packages()));
-
   const includeVersion = model.children?.some((projectPackage) =>
     Boolean(projectPackage.packageVersion),
   );
@@ -36,7 +29,7 @@ export function packagesIndex(
   );
 
   if (this.options.getValue('indexFormat').toLowerCase().includes('table')) {
-    const headers = [this.i18n.theme_name()];
+    const headers = [this.i18n.theme_package()];
     if (includeVersion) {
       headers.push(this.i18n.theme_version());
     }

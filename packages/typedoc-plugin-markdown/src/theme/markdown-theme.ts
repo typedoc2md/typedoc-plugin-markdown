@@ -22,10 +22,6 @@ import {
  * You would typically only be interested in overriding the the theme's render context instance.
  *
  * The API follows the implementation of [TypeDoc's custom theming](https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md) with some minor adjustments.
- *
- * @group Theme Classes
- *
- * @internal
  */
 export class MarkdownTheme extends Theme {
   constructor(renderer: Renderer) {
@@ -34,8 +30,6 @@ export class MarkdownTheme extends Theme {
 
   /**
    * Renders a template and page model to a string.
-   *
-   * @internal
    */
   render(
     page: MarkdownPageEvent<Reflection>,
@@ -73,7 +67,7 @@ export class MarkdownTheme extends Theme {
   }
 
   /**
-   * @internal
+   * Returns the template mapping for a given reflection kind.
    */
   getTemplateMapping(
     kind: ReflectionKind,
@@ -196,30 +190,18 @@ export class MarkdownTheme extends Theme {
     return mappings[kind];
   }
 
-  /**
-   * @internal
-   */
   documentTemplate = (page: MarkdownPageEvent<DocumentReflection>) => {
     return this.getRenderContext(page).templates.document(page);
   };
 
-  /**
-   * @internal
-   */
   readmeTemplate = (page: MarkdownPageEvent<ProjectReflection>) => {
     return this.getRenderContext(page).templates.readme(page);
   };
 
-  /**
-   * @internal
-   */
   projectTemplate = (page: MarkdownPageEvent<ProjectReflection>) => {
     return this.getRenderContext(page).templates.project(page);
   };
 
-  /**
-   * @internal
-   */
   reflectionTemplate = (page: MarkdownPageEvent<DeclarationReflection>) => {
     return this.getRenderContext(page).templates.reflection(page);
   };

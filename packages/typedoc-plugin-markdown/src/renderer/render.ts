@@ -15,6 +15,8 @@ import {
 /**
  * The render method for the Markdown plugin
  *
+ * @remarks
+ *
  * This is essentially a copy the default theme render method with some adjustments.
  *
  * - Removes unnecessary async calls to load highlighters only required for html theme.

@@ -70,6 +70,5 @@ export interface MarkdownRenderer extends Renderer {
    */
   postRenderAsyncJobs: Array<(output: MarkdownRendererEvent) => Promise<void>>;
 
-  /** @internal */
   packagesMeta: Record<string, { description: string; options: Options }>;
 }

@@ -3,7 +3,16 @@
 
   // typedoc options
   "name": "Developer Guide",
-  "out": "./devguide",
+  "outputs": [
+    {
+      "name": "html",
+      "path": "./devguide-html"
+    },
+    {
+      "name": "markdown",
+      "path": "./devguide"
+    }
+  ],
   "entryPoints": [
     "./packages/typedoc-plugin-markdown",
     "./packages/typedoc-plugin-frontmatter",
@@ -13,20 +22,22 @@
     "./packages/typedoc-vitepress-theme",
     "./packages/docusaurus-plugin-typedoc"
   ],
-
   "plugin": [
     "./packages/typedoc-plugin-markdown/dist/index.js",
-    "./packages/typedoc-plugin-remark/dist/index.js",
     "./devtools/typedoc-plugins/typedoc-default-values.mjs",
+    "./devtools/typedoc-plugins/typedoc-replace-filetree.mjs",
     "./devtools/typedoc-plugins/typedoc-symbols.mjs"
   ],
+  "sortEntryPoints": false,
+  "cleanOutputDir": true,
   "entryPointStrategy": "packages",
   "excludePrivate": false,
-  "readme": "./packages/README.md",
+  "readme": "none",
+  "projectDocuments": ["./GETTING_STARTED.md"],
   "packageOptions": {
     "includeVersion": false,
     "excludePrivate": false,
-    "readme": "./OVERVIEW.md",
+    "readme": "none",
     "sortEntryPoints": false,
     "sort": "source-order",
     "excludeExternals": true,
@@ -34,30 +45,19 @@
   },
 
   // typedoc-plugin-markdown options
-  "mergeReadme": true,
+  "mergeReadme": false,
   "outputFileStrategy": "members",
-  "membersWithOwnFile": ["Class", "Interface", "TypeAlias", "Enum"],
+  "membersWithOwnFile": ["Class", "Interface"],
   "hidePageHeader": true,
-  "hideGroupHeadings": true,
-  "pageTitleTemplates": {
-    "index": "API Index"
-  },
+  "hideGroupHeadings": false,
   "expandObjects": false,
+  "expandParameters": false,
   "useCodeBlocks": false,
   "parametersFormat": "table",
   "enumMembersFormat": "table",
   "typeDeclarationFormat": "table",
+  "interfacePropertiesFormat": "list",
   "indexFormat": "table",
   "tableColumnSettings": { "hideSources": true },
-  "sanitizeComments": true,
-  "remarkPlugins": [
-    [
-      "remark-toc",
-      {
-        "tight": true,
-        "maxDepth": 4,
-        "skip": "Default Value|Defined in|Example|Overrides|Parameters|Returns|See|Type declaration|Inherited from|Deprecated|Packages|Modules"
-      }
-    ]
-  ]
+  "sanitizeComments": true
 }

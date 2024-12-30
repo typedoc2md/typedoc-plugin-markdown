@@ -103,7 +103,7 @@ export const membersWithOwnFile: Partial<DeclarationOption> = {
     for (const kind of values) {
       if (!validValues.includes(kind)) {
         throw new Error(
-          `'${kind}' is an invalid value for 'membersWithOwnFile'. Must be one of: ${validValues.join(
+          `'${kind}' is an invalid value for 'membersWithOwnFile'. Allowed values are: ${validValues.join(
             ', ',
           )}`,
         );
@@ -508,14 +508,12 @@ export const typeDeclarationVisibility: Partial<DeclarationOption> = {
 };
 
 /**
+ * @deprecated
+ *
  * @hidden
- *
- * @deprecated This option has been deprecated in favour of `--interfacePropertiesFormat` and `--classPropertiesFormat`.
- *
- * @category Display
  */
 export const propertiesFormat: Partial<DeclarationOption> = {
-  help: 'Sets the format of property groups for interfaces and classes.',
+  help: '@deprecated  This option has been deprecated in favour of `--interfacePropertiesFormat` and `--classPropertiesFormat`.',
   type: ParameterType.Map,
   map: DisplayFormat,
   defaultValue: DisplayFormat.List,
@@ -669,12 +667,10 @@ export const preserveAnchorCasing: Partial<DeclarationOption> = {
 /**
  * @hidden
  *
- * @deprecated This option has been deprecated in favour of `--pageTitleTemplates`.
- *
- * @category Utility
+ * @deprecated
  */
 export const textContentMappings: Partial<DeclarationOption> = {
-  help: 'Change specific text placeholders in the template.',
+  help: '@deprecated This option has been deprecated in favour of `--pageTitleTemplates`.',
   type: ParameterType.Object,
   defaultValue: TEXT_CONTENT_MAPPINGS,
   configFileOnly: true,

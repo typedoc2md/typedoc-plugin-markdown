@@ -165,7 +165,7 @@ export interface PluginOptions {
   prettierConfigFile: string;
 
   /**
-   * Sets the format of property groups for interfaces and classes.
+   * @deprecated  This option has been deprecated in favour of `--interfacePropertiesFormat` and `--classPropertiesFormat`.
    */
   propertiesFormat: 'list' | 'table' | 'htmlTable';
 
@@ -198,7 +198,7 @@ export interface PluginOptions {
   };
 
   /**
-   * Change specific text placeholders in the template.
+   * @deprecated This option has been deprecated in favour of `--pageTitleTemplates`.
    */
   textContentMappings: {
     'header.title': string;

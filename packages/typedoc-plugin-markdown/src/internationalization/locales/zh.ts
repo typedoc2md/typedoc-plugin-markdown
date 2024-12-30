@@ -18,6 +18,7 @@ export const translatable: Partial<TranslatableStrings> = {
   theme_member_plural: '成员',
   theme_modifier: '修饰符',
   theme_name: '名称',
+  theme_package: '包',
   theme_packages: '包',
   theme_type: '类型',
   theme_value: '值',

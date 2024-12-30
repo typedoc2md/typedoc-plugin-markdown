@@ -93,9 +93,7 @@ exports[`Text should get translations for module page: (Output File Strategy "me
 
 # module-1
 
-## インデックス
-
-### インターフェイス
+## インターフェイス
 
 - [SomeInterface](interfaces/SomeInterface.md)
 

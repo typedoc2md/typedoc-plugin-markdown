@@ -11,44 +11,42 @@ exports[`Groups should compile basic module index page: (Output File Strategy "m
 
 A basic module
 
-## Index
-
-### Enumerations
+## Enumerations
 
 | Enumeration | Description |
 | :------ | :------ |
 | [EnumA](enumerations/EnumA.md) | EnumA function. |
 | [EnumB](enumerations/EnumB.md) | - |
 
-### Classes
+## Classes
 
 | Class | Description |
 | :------ | :------ |
 | [ClassA](classes/ClassA.md) | ClassA function. |
 | [ClassB](classes/ClassB.md) | - |
 
-### Interfaces
+## Interfaces
 
 | Interface | Description |
 | :------ | :------ |
 | [InterfaceA](interfaces/InterfaceA.md) | Interface A comments line 1 and comments on a soft line. |
 | [InterfaceB](interfaces/InterfaceB.md) | InterfaceB function. |
 
-### Type Aliases
+## Type Aliases
 
 | Type alias | Description |
 | :------ | :------ |
 | [TypeA](type-aliases/TypeA.md) | TypeA function. |
 | [TypeB](type-aliases/TypeB.md) | TypeB function. |
 
-### Variables
+## Variables
 
 | Variable | Description |
 | :------ | :------ |
 | [variableA](variables/variableA.md) | - |
 | [variableB](variables/variableB.md) | - |
 
-### Functions
+## Functions
 
 | Function | Description |
 | :------ | :------ |
@@ -67,9 +65,7 @@ exports[`Groups should compile basic module index page: (Output File Strategy "m
 
 A basic module
 
-## Index
-
-### Functions
+## Functions
 
 <table>
 <thead>
@@ -94,7 +90,7 @@ Comments for functionA
 </tbody>
 </table>
 
-### Interfaces
+## Interfaces
 
 <table>
 <thead>
@@ -146,7 +142,7 @@ InterfaceB function.
 </tbody>
 </table>
 
-### Classes
+## Classes
 
 <table>
 <thead>
@@ -183,7 +179,7 @@ ClassA function.
 </tbody>
 </table>
 
-### Enumerations
+## Enumerations
 
 <table>
 <thead>
@@ -220,7 +216,7 @@ EnumA function.
 </tbody>
 </table>
 
-### Type Aliases
+## Type Aliases
 
 <table>
 <thead>
@@ -748,53 +744,51 @@ exports[`Groups should compile categories index page: (Output File Strategy "mem
 
 A module that contains categories
 
-## Index
+## Enumerations
 
-### Enumerations
-
-#### Category A
+### Category A
 
 | Enumeration | Description |
 | :------ | :------ |
 | [CategoryAEnum1](enumerations/CategoryAEnum1.md) | - |
 | [CategoryAEnum2](enumerations/CategoryAEnum2.md) | - |
 
-#### Category B
+### Category B
 
 | Enumeration | Description |
 | :------ | :------ |
 | [CategoryBEnum1](enumerations/CategoryBEnum1.md) | - |
 | [CategoryBEnum2](enumerations/CategoryBEnum2.md) | - |
 
-#### Other
+### Other
 
 | Enumeration | Description |
 | :------ | :------ |
 | [UnCategorizedEnum](enumerations/UnCategorizedEnum.md) | - |
 
-### Interfaces
+## Interfaces
 
-#### Category A
+### Category A
 
 | Interface | Description |
 | :------ | :------ |
 | [CategoryAInterface1](interfaces/CategoryAInterface1.md) | - |
 | [CategoryAInterface2](interfaces/CategoryAInterface2.md) | - |
 
-#### Category B
+### Category B
 
 | Interface | Description |
 | :------ | :------ |
 | [CategoryBInterface1](interfaces/CategoryBInterface1.md) | - |
 | [CategoryBInterface2](interfaces/CategoryBInterface2.md) | - |
 
-#### Category C
+### Category C
 
 | Interface | Description |
 | :------ | :------ |
 | [CategoryCInterface1](interfaces/CategoryCInterface1.md) | - |
 
-#### Other
+### Other
 
 | Interface | Description |
 | :------ | :------ |
@@ -814,9 +808,7 @@ exports[`Groups should compile categories index page: (Output File Strategy "mem
 
 A module that contains categories
 
-## Index
-
-### Category A
+## Category A
 
 <table>
 <thead>
@@ -877,7 +869,7 @@ A module that contains categories
 </tbody>
 </table>
 
-### Category B
+## Category B
 
 <table>
 <thead>
@@ -938,7 +930,7 @@ A module that contains categories
 </tbody>
 </table>
 
-### Category C
+## Category C
 
 <table>
 <thead>
@@ -963,7 +955,7 @@ A module that contains categories
 </tbody>
 </table>
 
-### Other
+## Other
 
 <table>
 <thead>
@@ -1025,15 +1017,13 @@ exports[`Groups should compile custom groups index page: (Output File Strategy "
 
 A module that contains custom groupings
 
-## Index
-
-### Variables
+## Variables
 
 | Variable | Description |
 | :------ | :------ |
 | [variableC](variables/variableC.md) | Default grouping |
 
-### CustomGroupA
+## CustomGroupA
 
 Group description for CustomGroupA
 
@@ -1041,7 +1031,7 @@ Group description for CustomGroupA
 | :------ | :------ |
 | [variabelA](variables/variabelA.md) | - |
 
-### CustomGroupB
+## CustomGroupB
 
 | Variable | Description |
 | :------ | :------ |
@@ -1410,15 +1400,13 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 # \\_Namespace\\_A\\_
 
-## Index
-
-### Namespaces
+## Namespaces
 
 | Namespace | Description |
 | :------ | :------ |
 | [NestedNamespace](namespaces/NestedNamespace/index.md) | - |
 
-### Interfaces
+## Interfaces
 
 | Interface | Description |
 | :------ | :------ |
@@ -1435,9 +1423,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 # \\_Namespace\\_A\\_
 
-## Index
-
-### Interfaces
+## Interfaces
 
 <table>
 <thead>
@@ -1462,7 +1448,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 </tbody>
 </table>
 
-### Namespaces
+## Namespaces
 
 <table>
 <thead>
@@ -1498,9 +1484,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 # \\_Namespace\\_A\\_
 
-## Index
-
-### Namespaces
+## Namespaces
 
 | Namespace | Description |
 | :------ | :------ |
@@ -1521,9 +1505,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 # \\_Namespace\\_A\\_
 
-## Index
-
-### Namespaces
+## Namespaces
 
 <table>
 <thead>
@@ -1565,51 +1547,49 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 
 A module that contains namespaces
 
-## Index
-
-### Namespaces
+## Namespaces
 
 | Namespace | Description |
 | :------ | :------ |
 | [\\_Namespace\\_A\\_](namespaces/Namespace_A/index.md) | - |
 | [NamespaceB](namespaces/NamespaceB/index.md) | - |
 
-### Enumerations
+## Enumerations
 
 | Enumeration | Description |
 | :------ | :------ |
 | [\\_Enum\\_A\\_](enumerations/Enum_A.md) | - |
 | [EnumB](enumerations/EnumB.md) | - |
 
-### Classes
+## Classes
 
 | Class | Description |
 | :------ | :------ |
 | [\\_\\_Class\\_A\\_](classes/Class_A.md) | - |
 | [ClassB](classes/ClassB.md) | - |
 
-### Interfaces
+## Interfaces
 
 | Interface | Description |
 | :------ | :------ |
 | [\\_Interface\\_A\\_](interfaces/Interface_A.md) | - |
 | [InterfaceB](interfaces/InterfaceB.md) | - |
 
-### Type Aliases
+## Type Aliases
 
 | Type alias | Description |
 | :------ | :------ |
 | [\\_Type\\_A\\_](type-aliases/Type_A.md) | - |
 | [TypeB](type-aliases/TypeB.md) | - |
 
-### Variables
+## Variables
 
 | Variable | Description |
 | :------ | :------ |
 | [\\_variable\\_A\\_](variables/variable_A.md) | - |
 | [variableB](variables/variableB.md) | - |
 
-### Functions
+## Functions
 
 | Function | Description |
 | :------ | :------ |
@@ -1629,9 +1609,7 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 
 A module that contains namespaces
 
-## Index
-
-### Functions
+## Functions
 
 <table>
 <thead>
@@ -1668,7 +1646,7 @@ A module that contains namespaces
 </tbody>
 </table>
 
-### Interfaces
+## Interfaces
 
 <table>
 <thead>
@@ -1705,7 +1683,7 @@ A module that contains namespaces
 </tbody>
 </table>
 
-### Classes
+## Classes
 
 <table>
 <thead>
@@ -1742,7 +1720,7 @@ A module that contains namespaces
 </tbody>
 </table>
 
-### Enumerations
+## Enumerations
 
 <table>
 <thead>
@@ -1779,7 +1757,7 @@ A module that contains namespaces
 </tbody>
 </table>
 
-### Namespaces
+## Namespaces
 
 <table>
 <thead>
@@ -1816,7 +1794,7 @@ A module that contains namespaces
 </tbody>
 </table>
 
-### Type Aliases
+## Type Aliases
 
 <table>
 <thead>
@@ -1880,9 +1858,7 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 
 A module that contains namespaces
 
-## Index
-
-### Namespaces
+## Namespaces
 
 | Namespace | Description |
 | :------ | :------ |
@@ -1974,9 +1950,7 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 
 A module that contains namespaces
 
-## Index
-
-### Namespaces
+## Namespaces
 
 <table>
 <thead>
@@ -2213,9 +2187,7 @@ exports[`Groups should compile references index page: (Output File Strategy "mem
 
 A module that contains references
 
-## Index
-
-### Functions
+## Functions
 
 | Function | Description |
 | :------ | :------ |
@@ -2252,9 +2224,7 @@ exports[`Groups should compile references index page: (Output File Strategy "mem
 
 A module that contains references
 
-## Index
-
-### Functions
+## Functions
 
 <table>
 <thead>

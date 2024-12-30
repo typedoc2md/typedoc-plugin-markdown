@@ -12,7 +12,11 @@ export function memberWithGroups(
 ): string {
   const md: string[] = [];
 
-  if (model.sources && !this.options.getValue('disableSources')) {
+  if (
+    ![ReflectionKind.Module, ReflectionKind.Namespace].includes(model.kind) &&
+    model.sources &&
+    !this.options.getValue('disableSources')
+  ) {
     md.push(this.partials.sources(model));
   }
 
@@ -97,26 +101,9 @@ export function memberWithGroups(
     model.documents ||
     model?.groups?.some((group) => group.allChildrenHaveOwnDocument())
   ) {
-    const isAbsoluteIndex = model?.groups?.every(
-      (group) => group.owningReflection.kind !== ReflectionKind.Document,
-    );
-    if (isAbsoluteIndex) {
-      md.push(heading(options.headingLevel, this.i18n.theme_index()));
-    }
-
-    if (model.documents) {
-      md.push(
-        this.partials.documents(model, {
-          headingLevel: options.headingLevel,
-        }),
-      );
-    }
-
     md.push(
       this.partials.reflectionIndex(model, {
-        headingLevel: isAbsoluteIndex
-          ? options.headingLevel + 1
-          : options.headingLevel,
+        headingLevel: options.headingLevel,
       }),
     );
   }

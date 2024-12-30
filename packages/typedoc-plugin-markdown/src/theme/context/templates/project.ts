@@ -1,12 +1,7 @@
 import { MarkdownPageEvent } from '@plugin/events/index.js';
 import { heading } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import {
-  EntryPointStrategy,
-  ProjectReflection,
-  ReflectionGroup,
-  ReflectionKind,
-} from 'typedoc';
+import { ProjectReflection, ReflectionKind } from 'typedoc';
 
 /**
  * Template that maps to the root project reflection. This will be the index page / documentation root page.
@@ -16,10 +11,6 @@ export function project(
   page: MarkdownPageEvent<ProjectReflection>,
 ) {
   const md: string[] = [];
-
-  const isPackages =
-    this.page.project.url === this.page.url &&
-    this.options.getValue('entryPointStrategy') === EntryPointStrategy.Packages;
 
   md.push(this.hook('index.page.begin', this).join('\n'));
 
@@ -48,32 +39,25 @@ export function project(
     md.push(this.partials.comment(page.model.comment, { headingLevel: 2 }));
   }
 
-  if (page.model?.groups?.some((group) => group.allChildrenHaveOwnDocument())) {
-    if (page.model.documents?.length) {
-      const group: ReflectionGroup = {
-        children: page.model.documents,
-      } as ReflectionGroup;
-      md.push(heading(2, ReflectionKind.pluralString(ReflectionKind.Document)));
-      md.push(this.partials.groupIndex(group));
-    }
-
+  if (
+    page.model?.groups?.some(
+      (group) =>
+        group.title === this.i18n.kind_plural_module() ||
+        group.allChildrenHaveOwnDocument(),
+    )
+  ) {
     if (
       page.model.children?.some((child) => child.kind !== ReflectionKind.Module)
     ) {
       md.push(this.partials.body(page.model, { headingLevel: 2 }));
     }
-
     md.push(
       this.partials.reflectionIndex(page.model, {
         headingLevel: 2,
       }),
     );
   } else {
-    if (isPackages) {
-      md.push(this.partials.packagesIndex(page.model));
-    } else {
-      md.push(this.partials.body(page.model, { headingLevel: 2 }));
-    }
+    md.push(this.partials.body(page.model, { headingLevel: 2 }));
   }
 
   md.push(this.partials.footer());

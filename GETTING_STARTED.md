@@ -1,17 +1,11 @@
-# Developer Guide
+---
+title: Getting Started
+description: How to start developing locally.
+---
 
-## Monorepo Overview
+# Getting Started
 
-This is a simple monorepo managed by [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces).
-
-Please view individual packages for further insights:
-
-- {@link typedoc-plugin-markdown} is the core package and is the package that is used to generate the markdown documentation.
-- {@link typedoc-plugin-frontmatter} and {@link typedoc-plugin-remark} provide metadata or adjust the output.
-- {@link typedoc-github-wiki-theme}, {@link typedoc-gitlab-wiki-theme},
-  {@link typedoc-vitepress-theme} and {@link docusaurus-plugin-typedoc} target specific implementations.
-
-## Machine Setup
+## 1. Machine Setup
 
 **1. Fork and clone the repository**
 
@@ -47,4 +41,16 @@ Test all packages in the workspace:
 npm run test
 ```
 
+## 2. Contributing to packages
+
 If the project builds and the tests run successfully you are ready to start contributing to the project.
+
+This is a simple monorepo managed by [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces).
+
+{@link typedoc-plugin-markdown} is the core package and is the package that is used to generate the Markdown documentation.
+
+Child packages all depend on the core package and provide further functionality:
+
+- {@link typedoc-plugin-frontmatter} and {@link typedoc-plugin-remark} provide metadata or adjust the output.
+- {@link typedoc-github-wiki-theme}, {@link typedoc-gitlab-wiki-theme},
+  {@link typedoc-vitepress-theme} and {@link docusaurus-plugin-typedoc} target specific implementations.

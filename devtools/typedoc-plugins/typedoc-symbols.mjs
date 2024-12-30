@@ -31,6 +31,7 @@ export function load(app) {
       const interfaces = ['TypeDocOptions', 'TypeOperatorType'];
       const classes = [
         'Application',
+        'Context',
         'DefaultThemeRenderContext',
         'Event',
         'EventHooks',

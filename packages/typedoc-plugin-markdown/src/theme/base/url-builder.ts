@@ -74,7 +74,7 @@ export class UrlBuilder {
         this.buildUrlsFromProject(this.project);
       } else {
         this.project.children?.forEach((projectChild) => {
-          this.buildUrlsFromPackage(projectChild);
+          this.buildUrlsFromPackage(this.project, projectChild);
         });
       }
     } else {
@@ -164,7 +164,16 @@ export class UrlBuilder {
     });
   }
 
-  private buildUrlsFromPackage(projectChild: DeclarationReflection) {
+  private buildUrlsFromPackage(
+    project: ProjectReflection,
+    projectChild: DeclarationReflection,
+  ) {
+    if (project.documents) {
+      project.documents.forEach((document) => {
+        this.buildUrlsForDocument(document);
+      });
+    }
+
     const preservePackageReadme =
       Boolean(projectChild.readme) && !this.options.getValue('mergeReadme');
 

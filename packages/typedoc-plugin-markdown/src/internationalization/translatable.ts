@@ -11,7 +11,7 @@ import { Application } from 'typedoc';
  *
  * These will then be merged with the main set of TypeDoc string.
  *
- * @category Methods
+ * @category Functions
  */
 export function getTranslatable(app: Application) {
   const LOCALES = {

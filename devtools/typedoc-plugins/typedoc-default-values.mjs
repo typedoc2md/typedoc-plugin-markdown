@@ -44,7 +44,7 @@ export function load(app) {
   );
 }
 function getTag(value) {
-  return new CommentTag('@defaultValue', [
+  return new CommentTag('@initializer', [
     {
       kind: 'code',
       text: makeCodeBlock(value),

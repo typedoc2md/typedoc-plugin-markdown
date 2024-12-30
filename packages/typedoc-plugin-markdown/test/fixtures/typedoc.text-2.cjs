@@ -15,7 +15,6 @@ module.exports = {
   },
   locales: {
     en: {
-      theme_index: 'TOC',
       kind_plural_interface: 'CoolInterfaces',
       kind_plural_variable: 'CoolVars',
     },

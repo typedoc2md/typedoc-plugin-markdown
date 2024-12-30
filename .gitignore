@@ -9,7 +9,7 @@ samples
 typedoc-examples
 out
 html
-/devdocs-html
+/devguide-html
 
 # dependencies
 node_modules

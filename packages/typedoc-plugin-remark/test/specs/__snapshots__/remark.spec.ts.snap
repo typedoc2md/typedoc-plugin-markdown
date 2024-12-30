@@ -233,17 +233,15 @@ Thanks [**@tgrey**](https://github.com/tgrey) please see issue [#1](https://gith
 const x = 1
 \`\`\`
 
-## Index
-
-### Classes
+## Classes
 
 * [SomeClass](classes/SomeClass.md)
 
-### Interfaces
+## Interfaces
 
 * [SomeInterface](interfaces/SomeInterface.md)
 
-### Functions
+## Functions
 
 * [some\\_function](functions/some_function.md)
 "

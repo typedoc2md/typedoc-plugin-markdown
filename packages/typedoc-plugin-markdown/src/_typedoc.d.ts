@@ -91,6 +91,7 @@ declare module 'typedoc' {
       theme_member_plural: [];
       theme_modifier: [];
       theme_name: [];
+      theme_package: [];
       theme_packages: [];
       theme_type: [];
       theme_value: [];

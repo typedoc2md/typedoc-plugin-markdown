@@ -18,6 +18,7 @@ export const translatable: TranslatableStrings = {
   theme_member_plural: 'Members',
   theme_modifier: 'Modifier',
   theme_name: 'Name',
+  theme_package: 'Package',
   theme_packages: 'Packages',
   theme_type: 'Type',
   theme_value: 'Value',

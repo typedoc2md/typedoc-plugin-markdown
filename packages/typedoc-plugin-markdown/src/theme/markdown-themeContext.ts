@@ -31,10 +31,6 @@ import { Internationalization, Options, Reflection } from 'typedoc';
  * @privateRemarks
  *
  * In order to create cleaner code, internally individual templates located in the `resources/templates` directory are bound to the this.
- *
- * @group Theme Classes
- *
- * @internal
  */
 export class MarkdownThemeContext {
   internationalization: Internationalization.Internationalization;
@@ -116,11 +112,18 @@ export class MarkdownThemeContext {
    * Returns the package meta data for a given package name when entrypointStrategy is set to `packages`.
    *
    * @param packageName - The package name as per `name` field from `package.json`.
-   *
-   * @internal
    */
   getPackageMetaData(packageName: string): PackageMetaData | undefined {
     return this.packagesMetaData[packageName];
+  }
+
+  /**
+   * Return the number of packages in the project.
+   */
+  getPackagesCount() {
+    return this.packagesMetaData
+      ? Object.keys(this.packagesMetaData).length
+      : 0;
   }
 
   /**
@@ -161,8 +164,6 @@ export class MarkdownThemeContext {
 
   /**
    * Hook into the TypeDoc rendering system.
-   *
-   * @internal
    */
   hook: MarkdownRenderer['markdownHooks']['emit'] = (...params) => {
     return (this.theme.owner as unknown as MarkdownRenderer).markdownHooks.emit(

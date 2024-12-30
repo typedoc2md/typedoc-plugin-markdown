@@ -4,6 +4,10 @@ import * as path from 'path';
 import { Application, Context } from 'typedoc';
 
 /**
+ * Resolves packages meta data for the project.
+ *
+ * @remarks
+ *
  * Currently options set for packages are only stored on the converter and are destroyed before being passed to the Renderer.
  *
  * By intercepting the package options set in the converter and storing them on the renderer we can use them later in the theme.

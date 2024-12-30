@@ -24,8 +24,8 @@ export function reflectionIndex(
   } else {
     const groups = model.groups?.filter(
       (group) =>
-        group.allChildrenHaveOwnDocument() &&
-        group.title !== ReflectionKind.pluralString(ReflectionKind.Document),
+        group.title === this.i18n.kind_plural_module() ||
+        group.allChildrenHaveOwnDocument(),
     );
     groups?.forEach((reflectionGroup) => {
       if (reflectionGroup.categories) {
@@ -47,13 +47,27 @@ export function reflectionIndex(
           md.push(this.partials.groupIndex(categoryGroup) + '\n');
         });
       } else {
-        md.push(heading(options.headingLevel, reflectionGroup.title) + '\n');
+        const isPackages =
+          this.getPackagesCount() > 1 &&
+          model.kind === ReflectionKind.Project &&
+          reflectionGroup.title === this.i18n.kind_plural_module();
+        if (isPackages) {
+          md.push(
+            heading(options.headingLevel, this.i18n.theme_packages()) + '\n',
+          );
+        } else {
+          md.push(heading(options.headingLevel, reflectionGroup.title) + '\n');
+        }
         if (reflectionGroup.description) {
           md.push(
             this.helpers.getCommentParts(reflectionGroup.description) + '\n',
           );
         }
-        md.push(this.partials.groupIndex(reflectionGroup) + '\n');
+        if (isPackages) {
+          md.push(this.partials.packagesIndex(model as ProjectReflection));
+        } else {
+          md.push(this.partials.groupIndex(reflectionGroup) + '\n');
+        }
       }
     });
   }

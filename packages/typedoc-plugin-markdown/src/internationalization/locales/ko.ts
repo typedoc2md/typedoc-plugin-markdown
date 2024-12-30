@@ -18,6 +18,7 @@ export const translatable: Partial<TranslatableStrings> = {
   theme_member_plural: '멤버들',
   theme_modifier: '수정자',
   theme_name: '이름',
+  theme_package: '패키지',
   theme_packages: '패키지',
   theme_type: '유형',
   theme_value: '값',

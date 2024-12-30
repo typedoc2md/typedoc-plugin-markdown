@@ -62,7 +62,7 @@ export const indexFrontmatter: Partial<DeclarationOption> = {
  *
  * Please note tags must be added to the comment blocks of the symbol exported to a page.
  *
- *  ```ansi filename="Block Tags (someModule.ts)"
+ *  ```ts filename="Block Tags (someModule.ts)"
  *  \/**
  *  * \@author Joe Bloggs
  *  *

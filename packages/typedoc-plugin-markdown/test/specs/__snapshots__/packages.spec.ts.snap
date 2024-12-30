@@ -196,7 +196,7 @@ Some text.
 
 ## Packages
 
-| Name | Version | Description |
+| Package | Version | Description |
 | :------ | :------ | :------ |
 | [@scope/package-1](package-1/README.md) | 1.0.0 | Description for package-1 |
 | [@scope/package-3](package-3/README.md) | - | Description for package 3 |
@@ -218,9 +218,7 @@ exports[`Packages should compile relative entry module package: (Output File Str
 
 # module1
 
-## Index
-
-### Interfaces
+## Interfaces
 
 - [PackageInterface1](package-6/module1/interfaces/PackageInterface1.md)
 "
