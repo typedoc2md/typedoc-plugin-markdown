@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0
+
+### Minor Changes
+
+- Strikeout deprecated items in sidebar ([#747](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/747)).
+
 ## 1.1.1 (2024-12-03)
 
 ### Patch Changes
