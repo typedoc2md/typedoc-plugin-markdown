@@ -1,6 +1,14 @@
 # Changelog
 
-## 4.4.0
+## 4.4.0 (2024-12-30)
+
+This release introduces structural enhancements to the user interface and bug fixes to enhance overall functionality.
+
+### Structural Changes
+
+- Source file links are now placed inline rather than under separate "Defined in" headings. This change aligns with the default HTML theme, generates more compact output, and improves the readability of automatically generated Table of Contents (TOCs).
+- Extraneous "Index" headings on module landing pages have been removed, bringing the structure in line with the default HTML theme and reducing unnecessary clutter.
+- Anchor IDs are now applied to linkable symbols within table rows by default. Previously, the useHTMLAnchors option was required, but since there is no alternative way to link to these items, this behaviour is now the default.
 
 ### Minor Changes
 
@@ -16,16 +24,6 @@
 - Fix inline formatting of types when when "useCodeBlocks" is used ([#742](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/742)).
 - Expose group descriptions to module indexes.
 - Expose global documents with "packages" entryPointStrategy.
-
-## Unreleased
-
-This release introduces structural UI enhancements and several bug fixes.
-
-### Structural Changes
-
-- Source file links are now placed inline rather than under separate "Defined in" headings. This change aligns with the default HTML theme, generates more compact output, and improves the readability of automatically generated Table of Contents (TOCs).
-- Extraneous "Index" headings on module landing pages have been removed, bringing the structure in line with the default HTML theme and reducing unnecessary clutter.
-- Anchor IDs are now applied to linkable symbols within table rows by default. Previously, the useHTMLAnchors option was required, but since there is no alternative way to link to these items, this behavior is now the default.
 
 ## 4.3.3 (2024-12-18)
 
