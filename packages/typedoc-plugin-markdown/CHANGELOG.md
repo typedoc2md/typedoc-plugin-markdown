@@ -1,5 +1,22 @@
 # Changelog
 
+## 4.4.0
+
+### Minor Changes
+
+- Expose "isDeprecated" flag to navigation model ([#747](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/747)).
+- Moved source link inline and exposed to all parent symbols ([#746](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/746)).
+- Remove extraneous "Index" headings.
+- Always assign HTML anchor ids to linkable symbols within table rows.
+
+### Patch Changes
+
+- Always display inline object for tuple types ([#745](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/745)).
+- Strikeout deprecated items in reflection indexes.
+- Fix inline formatting of types when when "useCodeBlocks" is used ([#742](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/742)).
+- Expose group descriptions to module indexes.
+- Expose global documents with "packages" entryPointStrategy.
+
 ## Unreleased
 
 This release introduces structural UI enhancements and several bug fixes.
