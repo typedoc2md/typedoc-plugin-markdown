@@ -511,7 +511,7 @@ Comments for array of union stuff
 
 ### a
 
-\\[(\`null\` \\| [\`Stuff\`](../type-aliases/Stuff.md))?\\]
+\\[[\`Stuff\`](../type-aliases/Stuff.md)?\\]
 
 ## Returns
 
@@ -523,7 +523,7 @@ exports[`Function Reflection should compile function with array of union stuff: 
 "# Function: functionWithArrayOfUnionStuff()
 
 \`\`\`ts
-function functionWithArrayOfUnionStuff(a: [(null | Stuff)?]): void
+function functionWithArrayOfUnionStuff(a: [Stuff?]): void
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -534,7 +534,7 @@ Comments for array of union stuff
 
 | Parameter | Type |
 | :------ | :------ |
-| \`a\` | \\[(\`null\` \\| [\`Stuff\`](../type-aliases/Stuff.md))?\\] |
+| \`a\` | \\[[\`Stuff\`](../type-aliases/Stuff.md)?\\] |
 
 ## Returns
 
@@ -1170,7 +1170,7 @@ Defined in: [functions.ts:1](http://source-url)
 
 ### opts
 
-\\[(\`null\` \\| \\{ \`a\`: \`string\`; \`b\`: \`string\`; \\})?\\]
+\\[\\{ \`a\`: \`string\`; \`b\`: \`string\`; \\}?\\]
 
 ## Returns
 
@@ -1182,12 +1182,10 @@ exports[`Function Reflection should compile function with tuple type optional pa
 "# Function: tupleTypeFunctionOptional()
 
 \`\`\`ts
-function tupleTypeFunctionOptional(opts: [(
-  | null
-  | {
+function tupleTypeFunctionOptional(opts: [{
   a: string;
   b: string;
- })?]): void
+ }?]): void
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -1196,7 +1194,7 @@ Defined in: [functions.ts:1](http://source-url)
 
 | Parameter | Type |
 | :------ | :------ |
-| \`opts\` | \\[( \\| \`null\` \\| \\{ \`a\`: \`string\`; \`b\`: \`string\`; \\})?\\] |
+| \`opts\` | \\[\\{ \`a\`: \`string\`; \`b\`: \`string\`; \\}?\\] |
 
 ## Returns
 
@@ -1299,7 +1297,7 @@ Function with type parameters
 exports[`Function Reflection should compile function with union params: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionWithUnionParams()
 
-> **functionWithUnionParams**(\`primitiveUnions\`, \`objectUnions\`, \`mixedUnions\`, \`noUnions\`): \`undefined\`
+> **functionWithUnionParams**(\`primitiveUnions\`, \`objectUnions\`, \`mixedUnions\`, \`noUnions\`): \`any\`
 
 Defined in: [functions.ts:1](http://source-url)
 
@@ -1367,7 +1365,7 @@ Comments for noUnions
 
 ## Returns
 
-\`undefined\`
+\`any\`
 "
 `;
 
@@ -1402,7 +1400,7 @@ function functionWithUnionParams(
      z: string;
     };
  }, 
-   noUnions: string): undefined
+   noUnions: string): any
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -1418,6 +1416,6 @@ Defined in: [functions.ts:1](http://source-url)
 
 ## Returns
 
-\`undefined\`
+\`any\`
 "
 `;
