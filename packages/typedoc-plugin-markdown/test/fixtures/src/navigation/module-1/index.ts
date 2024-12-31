@@ -8,6 +8,8 @@
 
 /**
  * @category Category 1
+ *
+ * @deprecated
  */
 export interface SomeInterface1 {}
 

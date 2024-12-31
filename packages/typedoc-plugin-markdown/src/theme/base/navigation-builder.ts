@@ -253,6 +253,7 @@ export class NavigationBuilder {
           title: child.name,
           kind: child.kind,
           path: child.url,
+          isDeprecated: child.isDeprecated(),
           ...(children && { children }),
         };
       });

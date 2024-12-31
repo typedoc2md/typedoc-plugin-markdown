@@ -365,6 +365,7 @@ const config = {
     entryPoints: [
       '/navigation/module-1/index.ts',
       '/navigation/module-2/index.ts',
+      '/navigation/module-3/index.ts',
     ],
     commonOptions: {
       hidePageHeader: true,

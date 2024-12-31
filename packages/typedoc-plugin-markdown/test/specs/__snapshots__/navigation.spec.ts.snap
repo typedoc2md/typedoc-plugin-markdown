@@ -1092,6 +1092,26 @@ exports[`Navigation should get with and without groups and categories: (Output F
         "isDeprecated": false
       }
     ]
+  },
+  {
+    "title": "Module3",
+    "kind": 2,
+    "path": "Module3/README.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "SomeInterfaceA",
+        "kind": 256,
+        "path": "Module3/interfaces/SomeInterfaceA.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "SomeInterfaceB",
+        "kind": 256,
+        "path": "Module3/interfaces/SomeInterfaceB.md",
+        "isDeprecated": true
+      }
+    ]
   }
 ]"
 `;
@@ -1113,12 +1133,14 @@ exports[`Navigation should get with and without groups and categories: (Output F
               {
                 "title": "SomeInterface1",
                 "kind": 256,
-                "path": "Module1/interfaces/SomeInterface1.md"
+                "path": "Module1/interfaces/SomeInterface1.md",
+                "isDeprecated": true
               },
               {
                 "title": "SomeInterface2",
                 "kind": 256,
-                "path": "Module1/interfaces/SomeInterface2.md"
+                "path": "Module1/interfaces/SomeInterface2.md",
+                "isDeprecated": true
               }
             ]
           },
@@ -1128,7 +1150,8 @@ exports[`Navigation should get with and without groups and categories: (Output F
               {
                 "title": "SomeInterface3",
                 "kind": 256,
-                "path": "Module1/interfaces/SomeInterface3.md"
+                "path": "Module1/interfaces/SomeInterface3.md",
+                "isDeprecated": true
               }
             ]
           }
@@ -1159,6 +1182,41 @@ exports[`Navigation should get with and without groups and categories: (Output F
         ]
       }
     ]
+  },
+  {
+    "title": "Group 3",
+    "children": [
+      {
+        "title": "Module3",
+        "kind": 2,
+        "path": "Module3/README.md",
+        "isDeprecated": false,
+        "children": [
+          {
+            "title": "Category1",
+            "children": [
+              {
+                "title": "SomeInterfaceA",
+                "kind": 256,
+                "path": "Module3/interfaces/SomeInterfaceA.md",
+                "isDeprecated": false
+              }
+            ]
+          },
+          {
+            "title": "Category2",
+            "children": [
+              {
+                "title": "SomeInterfaceB",
+                "kind": 256,
+                "path": "Module3/interfaces/SomeInterfaceB.md",
+                "isDeprecated": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]"
 `;
@@ -1175,6 +1233,12 @@ exports[`Navigation should get with and without groups and categories: (Output F
     "title": "Module2",
     "kind": 2,
     "path": "Module2.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "Module3",
+    "kind": 2,
+    "path": "Module3.md",
     "isDeprecated": false
   }
 ]"
@@ -1200,6 +1264,17 @@ exports[`Navigation should get with and without groups and categories: (Output F
         "title": "Module2",
         "kind": 2,
         "path": "Module2.md",
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "title": "Group 3",
+    "children": [
+      {
+        "title": "Module3",
+        "kind": 2,
+        "path": "Module3.md",
         "isDeprecated": false
       }
     ]
@@ -2718,13 +2793,13 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
             "title": "ClassA",
             "kind": 128,
             "path": "namespace/classes/ClassA.md",
-            "isDeprecated": false
+            "isDeprecated": true
           },
           {
             "title": "ClassB",
             "kind": 128,
             "path": "namespace/classes/ClassB.md",
-            "isDeprecated": false
+            "isDeprecated": true
           }
         ]
       },
@@ -3213,13 +3288,13 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
             "title": "ClassA",
             "kind": 128,
             "path": "@scope.namespace.Class.ClassA.md",
-            "isDeprecated": false
+            "isDeprecated": true
           },
           {
             "title": "ClassB",
             "kind": 128,
             "path": "@scope.namespace.Class.ClassB.md",
-            "isDeprecated": false
+            "isDeprecated": true
           }
         ]
       },
@@ -4235,22 +4310,26 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
           {
             "title": "CategoryAEnum1",
             "kind": 8,
-            "path": "has-categories/enumerations/CategoryAEnum1.md"
+            "path": "has-categories/enumerations/CategoryAEnum1.md",
+            "isDeprecated": false
           },
           {
             "title": "CategoryAEnum2",
             "kind": 8,
-            "path": "has-categories/enumerations/CategoryAEnum2.md"
+            "path": "has-categories/enumerations/CategoryAEnum2.md",
+            "isDeprecated": false
           },
           {
             "title": "CategoryAInterface1",
             "kind": 256,
-            "path": "has-categories/interfaces/CategoryAInterface1.md"
+            "path": "has-categories/interfaces/CategoryAInterface1.md",
+            "isDeprecated": false
           },
           {
             "title": "CategoryAInterface2",
             "kind": 256,
-            "path": "has-categories/interfaces/CategoryAInterface2.md"
+            "path": "has-categories/interfaces/CategoryAInterface2.md",
+            "isDeprecated": false
           }
         ]
       },
@@ -4260,22 +4339,26 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
           {
             "title": "CategoryBEnum1",
             "kind": 8,
-            "path": "has-categories/enumerations/CategoryBEnum1.md"
+            "path": "has-categories/enumerations/CategoryBEnum1.md",
+            "isDeprecated": false
           },
           {
             "title": "CategoryBEnum2",
             "kind": 8,
-            "path": "has-categories/enumerations/CategoryBEnum2.md"
+            "path": "has-categories/enumerations/CategoryBEnum2.md",
+            "isDeprecated": false
           },
           {
             "title": "CategoryBInterface1",
             "kind": 256,
-            "path": "has-categories/interfaces/CategoryBInterface1.md"
+            "path": "has-categories/interfaces/CategoryBInterface1.md",
+            "isDeprecated": false
           },
           {
             "title": "CategoryBInterface2",
             "kind": 256,
-            "path": "has-categories/interfaces/CategoryBInterface2.md"
+            "path": "has-categories/interfaces/CategoryBInterface2.md",
+            "isDeprecated": false
           }
         ]
       },
@@ -4285,7 +4368,8 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
           {
             "title": "CategoryCInterface1",
             "kind": 256,
-            "path": "has-categories/interfaces/CategoryCInterface1.md"
+            "path": "has-categories/interfaces/CategoryCInterface1.md",
+            "isDeprecated": false
           }
         ]
       },
@@ -4295,17 +4379,20 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
           {
             "title": "UnCategorizedEnum",
             "kind": 8,
-            "path": "has-categories/enumerations/UnCategorizedEnum.md"
+            "path": "has-categories/enumerations/UnCategorizedEnum.md",
+            "isDeprecated": false
           },
           {
             "title": "CategoryCInterface2",
             "kind": 256,
-            "path": "has-categories/interfaces/CategoryCInterface2.md"
+            "path": "has-categories/interfaces/CategoryCInterface2.md",
+            "isDeprecated": false
           },
           {
             "title": "UnCategorizedInterace",
             "kind": 256,
-            "path": "has-categories/interfaces/UnCategorizedInterace.md"
+            "path": "has-categories/interfaces/UnCategorizedInterace.md",
+            "isDeprecated": false
           }
         ]
       }
