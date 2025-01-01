@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.4.1
+
+### Patch Changes
+
+- Correctly display inline objects for tuple optional types ([#745](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/745)).
+- Expose isDeprecated flag to navigation category items.
+
 ## 4.4.0 (2024-12-30)
 
 This release introduces structural enhancements to the user interface and bug fixes to enhance overall functionality.
