@@ -3,20 +3,16 @@
  *
  * @module core
  */
-import { getTranslatable } from '@plugin/internationalization/translatable.js';
+import { setupInternationalization } from '@plugin/internationalization/index.js';
 import { declarations } from '@plugin/options/index.js';
-import { resolvePackages } from '@plugin/renderer/packages.js';
-import { MarkdownRendererHooks, MarkdownTheme } from 'public-api.js';
+import { render, setupRenderer } from '@plugin/renderer/index.js';
+import { MarkdownRenderer } from '@plugin/types/index.js';
 import {
   Application,
-  Context,
-  Converter,
   DeclarationOption,
-  EventHooks,
   ParameterHint,
   ParameterType,
 } from 'typedoc';
-import { render } from './renderer/render.js';
 
 /**
  * The function that is called by TypeDoc to bootstrap the plugin.
@@ -27,13 +23,6 @@ import { render } from './renderer/render.js';
  *
  * This method is not intended to be consumed in any other context that via the `plugin` option.
  *
- * The load functions:
- *
- * 1. Bootstrap the plugin options
- * 2. Configures markdown outputs
- * 3. Configures localization
- * 4. Applies any other behaviour
- *
  * The module also exports anything that is available publicly.
  *
  */
@@ -43,8 +32,6 @@ export function load(app: Application) {
    * 1. Bootstrap options
    * ====================
    */
-
-  //  Iterate over declaration definitions and to the container.
   Object.entries(declarations).forEach(([name, declaration]) => {
     app.options.addDeclaration({
       name,
@@ -52,13 +39,6 @@ export function load(app: Application) {
     } as DeclarationOption);
   });
 
-  app.renderer.defineTheme('markdown', MarkdownTheme);
-
-  /**
-   * =============================
-   * 2. Configure markdown outputs
-   * =============================
-   */
   app.options.addDeclaration({
     name: 'markdown',
     outputShortcut: 'markdown',
@@ -68,48 +48,24 @@ export function load(app: Application) {
     defaultValue: './docs',
   });
 
+  /**
+   * =============================
+   * 2. Configure markdown outputs
+   * =============================
+   */
   app.outputs.addOutput('markdown', async (out, project) => {
-    await render(app.renderer, project, out);
+    await render(app.renderer as unknown as MarkdownRenderer, project, out);
   });
 
   app.outputs.setDefaultOutputName('markdown');
 
-  Object.defineProperty(app.renderer, 'markdownHooks', {
-    value: new EventHooks<MarkdownRendererHooks, string>(),
-  });
-
   /**
-   * =========================
-   * 3. Configure localization
-   * =========================
+   * =====================================
+   * 3. Setup up renderer and translations
+   * ======================================
    */
-
-  // Load the additional translations used by the theme for the selected language.
-  app.converter.on(Converter.EVENT_BEGIN, () => {
-    app.internationalization.addTranslations(
-      app.options.getValue('lang'),
-      { ...getTranslatable(app) },
-      true,
-    );
-  });
-
-  /**
-   * ============================
-   * 4. Apply any other behaviour
-   * ============================
-   */
-
-  /**
-   * Currently options set for packages are only stored on the converter and are destroyed before being passed to the {@link Renderer}.
-   *
-   * By intercepting the package options set in the converter and storing them on the renderer we can use them later in the theme.
-   *
-   */
-  app.converter.on(Converter.EVENT_RESOLVE_END, (context: Context) => {
-    if (app.options.packageDir) {
-      resolvePackages(app, context, app.options.packageDir);
-    }
-  });
+  setupRenderer(app);
+  setupInternationalization(app);
 }
 
 /**

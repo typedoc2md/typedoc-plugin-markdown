@@ -4,5 +4,5 @@
  * @module
  */
 
-export * from './packages.js';
 export * from './render.js';
+export * from './setup.js';

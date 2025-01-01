@@ -8,4 +8,4 @@
  * @module
  */
 export * from './locales/index.js';
-export * from './translatable.js';
+export * from './setup.js';

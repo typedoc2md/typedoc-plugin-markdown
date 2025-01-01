@@ -10,7 +10,6 @@ import {
   ProjectReflection,
   Reflection,
   ReflectionKind,
-  Renderer,
   Theme,
 } from 'typedoc';
 
@@ -24,10 +23,6 @@ import {
  * The API follows the implementation of [TypeDoc's custom theming](https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md) with some minor adjustments.
  */
 export class MarkdownTheme extends Theme {
-  constructor(renderer: Renderer) {
-    super(renderer);
-  }
-
   /**
    * Renders a template and page model to a string.
    */

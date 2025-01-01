@@ -2,7 +2,8 @@ import {
   MarkdownPageEvent,
   MarkdownRendererEvent,
 } from '@plugin/events/index.js';
-import { MarkdownTheme } from '@plugin/public-api.js';
+import { MarkdownTheme } from '@plugin/theme/index.js';
+import { MarkdownRenderer } from '@plugin/types/index.js';
 import * as fs from 'fs';
 import * as path from 'path';
 import {
@@ -24,7 +25,7 @@ import {
  * - Adds any logic specific to markdown rendering.
  */
 export async function render(
-  renderer: Renderer,
+  renderer: MarkdownRenderer,
   project: ProjectReflection,
   outputDirectory: string,
 ) {
@@ -49,13 +50,15 @@ export async function render(
 
   renderer.trigger(MarkdownRendererEvent.BEGIN, output);
 
-  await executeJobs(renderer.preRenderAsyncJobs, output);
+  await executeJobs(renderer.preMarkdownRenderAsyncJobs, output);
+  await executeJobs(renderer.preRenderAsyncJobs, output); // for backward compatibility
 
   await renderPages(renderer, output);
 
   copyMediaFiles(project, outputDirectory);
 
-  await executeJobs(renderer.postRenderAsyncJobs, output);
+  await executeJobs(renderer.postMarkdownRenderAsyncJobs, output);
+  await executeJobs(renderer.postRenderAsyncJobs, output); // for backward compatibility
 
   renderer.trigger(MarkdownRendererEvent.END, output);
 

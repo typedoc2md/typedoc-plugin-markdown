@@ -53,14 +53,25 @@ export interface MarkdownRenderer extends Renderer {
     theme: new (renderer: Renderer) => MarkdownTheme,
   ) => void;
 
+  /**
+   * Dedicated markdown hooks to add to the renderer
+   */
   markdownHooks: EventHooks<MarkdownRendererHooks, string>;
+
+  /**
+   * Configure pre and post async jobs
+   *
+   * When used with "outputs" is preMarkdownRenderAsyncJobs and postMarkdownRenderAsyncJobs should be used.
+   */
 
   /**
    * A list of async jobs which must be completed before rendering output.
    *
    * Note: This array is cleared after calling the contained functions on each call.
    */
-  preRenderAsyncJobs: Array<(output: MarkdownRendererEvent) => Promise<void>>;
+  preMarkdownRenderAsyncJobs: Array<
+    (output: MarkdownRendererEvent) => Promise<void>
+  >;
 
   /**
    * A list of async jobs which must be completed after rendering output files but before generation is considered successful.
@@ -68,7 +79,16 @@ export interface MarkdownRenderer extends Renderer {
    *
    * Note: This array is cleared after calling the contained functions on each call.
    */
+  postMarkdownRenderAsyncJobs: Array<
+    (output: MarkdownRendererEvent) => Promise<void>
+  >;
+
+  // For backwards compatibility
+  preRenderAsyncJobs: Array<(output: MarkdownRendererEvent) => Promise<void>>;
   postRenderAsyncJobs: Array<(output: MarkdownRendererEvent) => Promise<void>>;
 
+  /**
+   * Store meta data about packages
+   */
   packagesMeta: Record<string, { description: string; options: Options }>;
 }
