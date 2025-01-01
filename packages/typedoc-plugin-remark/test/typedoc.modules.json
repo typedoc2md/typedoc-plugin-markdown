@@ -9,5 +9,6 @@
   ],
   "defaultRemarkPlugins": {
     "mdx": false
-  }
+  },
+  "out": "./out/modules"
 }

@@ -1,5 +1,6 @@
 {
   "extends": "./typedoc.base.json",
   "entryPoints": ["./stubs/module-2.ts"],
-  "fileExtension": ".mdx"
+  "fileExtension": ".mdx",
+  "out": "./out/globals-mdx"
 }

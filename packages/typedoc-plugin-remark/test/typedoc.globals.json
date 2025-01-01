@@ -8,5 +8,6 @@
   ],
   "defaultRemarkPlugins": {
     "mdx": false
-  }
+  },
+  "out": "./out/globals"
 }

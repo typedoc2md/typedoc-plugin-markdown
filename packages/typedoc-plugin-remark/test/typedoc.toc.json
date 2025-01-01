@@ -5,5 +5,15 @@
   "remarkPlugins": [["remark-toc", { "maxDepth": 3 }]],
   "readme": "none",
   "disableSources": true,
-  "hidePageHeader": true
+  "hidePageHeader": true,
+  "outputs": [
+    {
+      "name": "html",
+      "path": "./out/toc-html"
+    },
+    {
+      "name": "markdown",
+      "path": "./out/toc-md"
+    }
+  ]
 }

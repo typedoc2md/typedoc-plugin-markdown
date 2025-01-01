@@ -10,12 +10,12 @@ consola.start(`Building test fixtures...`);
 fs.removeSync(`./test/out`);
 
 const fixtures = [
-  { options: 'typedoc.modules.json', outDir: 'modules' },
-  { options: 'typedoc.members.json', outDir: 'members' },
-  { options: 'typedoc.toc.json', outDir: 'toc' },
-  { options: 'typedoc.globals.json', outDir: 'globals' },
-  { options: 'typedoc.globals-mdx.json', outDir: 'globals-mdx' },
-  { options: 'typedoc.globals-notoc.json', outDir: 'globals-notoc' },
+  { options: 'typedoc.modules.json' },
+  { options: 'typedoc.members.json' },
+  { options: 'typedoc.toc.json' },
+  { options: 'typedoc.globals.json' },
+  { options: 'typedoc.globals-mdx.json' },
+  { options: 'typedoc.globals-notoc.json' },
 ];
 
 // write fixtures
@@ -26,16 +26,7 @@ fixtures.forEach((fixture) => {
 function writeMarkdown(fixture: any) {
   spawn(
     'typedoc',
-    [
-      ...[
-        '-options',
-        `./test/${fixture.options}`,
-        '-logLevel',
-        'Warn',
-        '-out',
-        `./test/out/${fixture.outDir}`,
-      ],
-    ],
+    [...['-options', `./test/${fixture.options}`, '-logLevel', 'Warn']],
     {
       stdio: 'inherit',
     },

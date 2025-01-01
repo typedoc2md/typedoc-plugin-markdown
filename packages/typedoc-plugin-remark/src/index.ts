@@ -5,7 +5,8 @@
  */
 
 import * as path from 'path';
-import { Application, DeclarationOption, RendererEvent } from 'typedoc';
+import { DeclarationOption } from 'typedoc';
+import { MarkdownApplication } from 'typedoc-plugin-markdown';
 import { fileURLToPath } from 'url';
 import { getDefaultPlugins } from './helpers/get-default-plugins.js';
 import * as options from './options/declarations.js';
@@ -14,7 +15,7 @@ import { parse } from './parse.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export function load(app: Application) {
+export function load(app: MarkdownApplication) {
   Object.entries(options).forEach(([name, option]) => {
     app.options.addDeclaration({
       name,
@@ -22,7 +23,7 @@ export function load(app: Application) {
     } as DeclarationOption);
   });
 
-  app.renderer.postRenderAsyncJobs.push(async (output: RendererEvent) => {
+  app.renderer.postMarkdownRenderAsyncJobs.push(async (output) => {
     const remarkPlugins = app.options.getValue('remarkPlugins') as [];
     const defaultPlugins = getDefaultPlugins(
       app.options.getValue('defaultRemarkPlugins'),
