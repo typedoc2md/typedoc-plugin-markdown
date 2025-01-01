@@ -7,7 +7,7 @@
 import * as path from 'path';
 import { DeclarationOption } from 'typedoc';
 import { MarkdownApplication } from 'typedoc-plugin-markdown';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 import { getDefaultPlugins } from './helpers/get-default-plugins.js';
 import * as options from './options/declarations.js';
 import { parse } from './parse.js';
@@ -48,7 +48,7 @@ export function load(app: MarkdownApplication) {
               ? tocPlugin[1]
               : {};
             defaultPlugins.push([
-              path.join(__dirname, 'plugins', 'add-toc.js'),
+              pathToFileURL(path.join(__dirname, 'plugins', 'add-toc.js')).href,
               {
                 reflection: urlMapping.model,
                 typedocOptions: app.options,
