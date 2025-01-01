@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.3
+
+### Patch Changes
+
+- Fix windows ERR_UNSUPPORTED_ESM_URL_SCHEME error ([#752](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/752)).
+
 ## 1.2.2 (2024-12-23)
 
 ### Patch Changes
