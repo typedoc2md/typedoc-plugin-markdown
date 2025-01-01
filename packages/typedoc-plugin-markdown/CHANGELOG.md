@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.4.1
+## 4.4.1 (2025-01-01)
 
 ### Patch Changes
 
