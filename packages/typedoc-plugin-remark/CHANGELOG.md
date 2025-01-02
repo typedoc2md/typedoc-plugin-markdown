@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.4
+
+### Patch Changes
+
+- Fix typedoc-plugin-markdown 4.0.0 compatibility.
+
 ## 1.2.3 (2025-01-01)
 
 ### Patch Changes
