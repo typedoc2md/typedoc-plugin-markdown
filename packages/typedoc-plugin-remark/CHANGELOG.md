@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.2.4
+## 1.2.4 (2025-01-02)
 
 ### Patch Changes
 
