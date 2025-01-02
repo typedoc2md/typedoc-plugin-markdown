@@ -23,7 +23,7 @@ export function load(app: MarkdownApplication) {
     } as DeclarationOption);
   });
 
-  app.renderer.postMarkdownRenderAsyncJobs.push(async (output) => {
+  app.renderer.postRenderAsyncJobs.push(async (output) => {
     const remarkPlugins = app.options.getValue('remarkPlugins') as [];
     const defaultPlugins = getDefaultPlugins(
       app.options.getValue('defaultRemarkPlugins'),

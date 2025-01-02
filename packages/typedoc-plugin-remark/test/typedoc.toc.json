@@ -8,10 +8,6 @@
   "hidePageHeader": true,
   "outputs": [
     {
-      "name": "html",
-      "path": "./out/toc-html"
-    },
-    {
       "name": "markdown",
       "path": "./out/toc-md"
     }
