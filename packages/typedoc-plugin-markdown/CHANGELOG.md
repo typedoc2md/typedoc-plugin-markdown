@@ -250,7 +250,7 @@ There are two TypeDoc breaking changes that might effect users of this plugin:
 - The option `allReflectionsHaveOwnDocument` has been removed (this behaviour is now the default). Please see option `outputFileStrategy`](/docs/options#outputfilestrategy).
 - The option `entryDocument` has been renamed to `entryFileName` to better reflect its purpose.
 - The option `namedAnchors` has been renamed to `useHTMLAnchors` to better reflect its purpose.
-- The option `hideInPageTOC` has been removed. In-page TOC are no longer included by default. You can include in-page TOCs by using `typedoc-plugin-remark` and the `remark-toc` plugin.
+- The option `hideInPageTOC` has been removed. In-page TOC are no longer included by default.
 - The option `objectLiteralTypeDeclarationStyle` has been removed. Please use option `--typeDeclarationFormat=list`.
 
 ### Bug Fixes

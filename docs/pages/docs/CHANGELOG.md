@@ -1,5 +1,37 @@
 # Changelog
 
+## 4.4.1 (2025-01-01)
+
+### Patch Changes
+
+- Correctly display inline objects for tuple optional types ([#745](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/745)).
+- Expose isDeprecated flag to navigation category items.
+
+## 4.4.0 (2024-12-30)
+
+This release introduces structural enhancements to the user interface and bug fixes to enhance overall functionality.
+
+### Structural Changes
+
+- Source file links are now placed inline rather than under separate "Defined in" headings. This change aligns with the default HTML theme, generates more compact output, and improves the readability of automatically generated Table of Contents (TOCs).
+- Extraneous "Index" headings on module landing pages have been removed, bringing the structure in line with the default HTML theme and reducing unnecessary clutter.
+- Anchor IDs are now applied to linkable symbols within table rows by default. Previously, the useHTMLAnchors option was required, but since there is no alternative way to link to these items, this behaviour is now the default.
+
+### Minor Changes
+
+- Expose "isDeprecated" flag to navigation model ([#747](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/747)).
+- Moved source link inline and exposed to all parent symbols ([#746](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/746)).
+- Remove extraneous "Index" headings.
+- Always assign HTML anchor ids to linkable symbols within table rows.
+
+### Patch Changes
+
+- Always display inline object for tuple types ([#745](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/745)).
+- Strikeout deprecated items in reflection indexes.
+- Fix inline formatting of types when when "useCodeBlocks" is used ([#742](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/742)).
+- Expose group descriptions to module indexes.
+- Expose global documents with "packages" entryPointStrategy.
+
 ## 4.3.3 (2024-12-18)
 
 ### Patch Changes
