@@ -59,8 +59,9 @@ export function load(app: MarkdownApplication) {
     if (sidebarOptions.autoConfiguration && output.navigation) {
       const outDir = app.options.getValue('out');
       const sidebarPath = path.resolve(outDir, 'typedoc-sidebar.json');
-      const basePath = path.relative(app.options.getValue('docsRoot'), outDir);
-
+      const basePath = path
+        .relative(app.options.getValue('docsRoot'), outDir)
+        .replace(/\\/g, '/');
       const sidebarJson = getSidebar(
         output.navigation,
         basePath,
