@@ -153,7 +153,9 @@ const config = {
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        theme: {},
+        theme: {
+          customCss: ['./css/typedoc.css'],
+        },
       }),
     ],
   ],
@@ -166,6 +168,7 @@ const config = {
       sidebar: {
         autoCollapseCategories: true,
       },
+
       navbar: {
         title: 'My Site',
         logo: {

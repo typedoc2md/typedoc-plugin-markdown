@@ -32,7 +32,7 @@ const config = {
         entryPoints: ['./test/stubs/src/module-1.ts'],
         out: './test/out/global-members',
         readme: 'none',
-        sidebar: { pretty: true },
+        sidebar: { pretty: true, deprecatedItemClassName: 'is-deprecated' },
         fileExtension: '.mdx',
         disableSources: true,
         hidePageHeader: true,

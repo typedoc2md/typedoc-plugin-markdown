@@ -1,13 +1,15 @@
 import { NavigationItem } from 'typedoc-plugin-markdown';
+import { Sidebar } from '../types/options.js';
 
 export function getSidebar(
   navigation: NavigationItem[],
   basePath: string,
+  options: Sidebar,
   numberPrefixParser?: any,
 ) {
   return navigation
     .map((navigationItem) =>
-      getNavigationItem(navigationItem, basePath, numberPrefixParser),
+      getNavigationItem(navigationItem, basePath, options, numberPrefixParser),
     )
     .filter((navItem) => Boolean(navItem));
 }
@@ -15,6 +17,7 @@ export function getSidebar(
 function getNavigationItem(
   navigationItem: NavigationItem,
   basePath: string,
+  options: Sidebar,
   numberPrefixParser?: any,
 ) {
   const navigationItemPath = navigationItem.path || (navigationItem as any).url;
@@ -42,8 +45,13 @@ function getNavigationItem(
   if (navigationItem.children?.length) {
     return {
       type: 'category',
-      label: getNavigationLabel(navigationItem),
-      items: getSidebar(navigationItem.children, basePath, numberPrefixParser),
+      label: navigationItem.title,
+      items: getSidebar(
+        navigationItem.children,
+        basePath,
+        options,
+        numberPrefixParser,
+      ),
       ...(id && {
         link: {
           type: 'doc',
@@ -57,20 +65,10 @@ function getNavigationItem(
     ? {
         type: 'doc',
         id,
-        label: getNavigationLabel(navigationItem),
+        label: navigationItem.title,
+        ...(navigationItem.isDeprecated && {
+          className: options.deprecatedItemClassName,
+        }),
       }
     : null;
-}
-
-function getNavigationLabel(navigationItem: NavigationItem) {
-  return navigationItem.isDeprecated
-    ? strikethrough(navigationItem.title)
-    : navigationItem.title;
-}
-
-function strikethrough(label: string) {
-  return label
-    .split('')
-    .map((char) => char + '\u0336')
-    .join('');
 }

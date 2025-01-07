@@ -3,6 +3,7 @@ import { presets } from './presets.js';
 export const DEFAULT_SIDEBAR_OPTIONS = {
   autoConfiguration: true,
   pretty: false,
+  deprecatedItemClassName: 'typedoc-sidebar-item-deprecated',
 };
 
 const DEFAULT_PLUGIN_OPTIONS = {

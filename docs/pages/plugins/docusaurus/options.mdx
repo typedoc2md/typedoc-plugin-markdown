@@ -30,13 +30,17 @@ The following options are exposed by this plugin:
 
 > Accepts a key/value object.
 
-**sidebar.autoConfiguration**
+**autoConfiguration**
 
 Set to `false` to disable sidebar generation. Defaults to `true`.
 
-**sidebar.pretty**
+**pretty**
 
 Pretty format the sidebar JSON.
+
+**deprecatedItemClassName**
+
+The class name to apply to deprecated items in the sidebar. Defaults to `"typedoc-sidebar-item-deprecated"`.
 
 Please see the [sidebar guide](https:/typedoc-plugin-markdown.org/plugins/docusaurus/sidebar) for additional information on sidebar setup.
 
@@ -44,7 +48,8 @@ Please see the [sidebar guide](https:/typedoc-plugin-markdown.org/plugins/docusa
 {
   "sidebar": {
     "autoConfiguration": true,
-    "pretty": false
+    "pretty": false,
+    "deprecatedItemClassName": "typedoc-sidebar-item-deprecated"
   }
 }
 ```

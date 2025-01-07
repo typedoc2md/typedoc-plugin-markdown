@@ -64,6 +64,7 @@ export function load(app: MarkdownApplication) {
       const sidebarJson = getSidebar(
         output.navigation,
         baseDir,
+        sidebar,
         numberPrefixParser,
       );
 

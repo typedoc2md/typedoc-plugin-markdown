@@ -15,8 +15,7 @@
 .nextra-toc a[href^='#non-breaking-changes'],
 .nextra-toc a[href^='#architectural-changes'],
 .nextra-toc a[href^='#structural-changes'],
-.nextra-toc a[href^='#breaking-changes'],
-.nextra-toc a[href^='#deprecated'] {
+.nextra-toc a[href^='#breaking-changes'] {
   display: none;
 }
 blockquote {

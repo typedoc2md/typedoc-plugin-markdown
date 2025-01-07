@@ -19,4 +19,5 @@ export interface PluginOptions {
 export interface Sidebar {
   autoConfiguration: boolean;
   pretty: boolean;
+  deprecatedItemClassName: string;
 }
