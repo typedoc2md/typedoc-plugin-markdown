@@ -6,7 +6,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prepare": "copyfiles -u 3 ../packages/typedoc-plugin-markdown/CHANGELOG.md pages/docs",
+    "prepare": "node ./copy-changelogs.cjs",
     "predev": "npm run prepare",
     "prebuild": "npm run prepare",
     "dev": "next",
