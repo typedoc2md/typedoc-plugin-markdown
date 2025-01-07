@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.2
+
+### Patch Changes
+
+- Correctly handle base sidebar paths in windows ([#756](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/756)).
+
 ## 1.1.1 (2024-12-02)
 
 ### Patch Changes
