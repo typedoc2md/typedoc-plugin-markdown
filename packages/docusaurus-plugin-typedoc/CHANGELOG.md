@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.1
+
+### Patch Changes
+
+- Expose CSS class name to deprecated sidebar items ([#747](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/747)).
+
 ## 1.2.0 (2024-12-30)
 
 ### Minor Changes
