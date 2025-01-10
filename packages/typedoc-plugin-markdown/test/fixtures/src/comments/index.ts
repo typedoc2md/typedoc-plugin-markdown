@@ -25,6 +25,7 @@
  * Relative Links:
  *
  * - [Relative Document](../../PROJECT_DOC_1.md)
+ * - [Relative Document With Anchor](../../PROJECT_DOC_1.md#anchor)
  *
  * Relative Image Links:
  *
