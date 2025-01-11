@@ -63,7 +63,8 @@ export function getCommentParts(
             } else {
               const fileName = this.page.project.files.getName(part.target);
               if (fileName) {
-                url = this.getRelativeUrl(`_media/${fileName}`);
+                const anchor = part.targetAnchor ? `#${part.targetAnchor}` : '';
+                url = this.getRelativeUrl(`_media/${fileName}${anchor}`);
               }
             }
 
