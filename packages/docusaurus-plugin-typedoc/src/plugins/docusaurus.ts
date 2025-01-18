@@ -44,8 +44,11 @@ async function generateTypedoc(context: any, opts: Partial<any>) {
   const { plugin, ...options } = getPluginOptions(context, opts);
 
   // spawn typedoc process and pass docusaurus.config options as a string
+
+  const typedocExecutable = process.platform === 'win32' ? 'typedoc.cmd' : 'typedoc';
+
   spawnSync(
-    'typedoc',
+    typedocExecutable,
     [
       ...plugin.flatMap((plugin) => ['--plugin', plugin]),
       '--docusaurusConfigOptions',
