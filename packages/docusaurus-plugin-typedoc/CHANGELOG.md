@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.2
+
+### Patch Changes
+
+- Correctly handle typedoc executable in Windows ([#762](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/762)).
+
 ## 1.2.1
 
 ### Patch Changes
