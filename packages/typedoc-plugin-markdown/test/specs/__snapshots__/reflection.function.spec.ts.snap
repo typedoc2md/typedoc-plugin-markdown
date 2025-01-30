@@ -834,11 +834,11 @@ Defined in: [functions.ts:1](http://source-url)
 
 various options
 
-#### bar
+#### bar?
 
 \`number\` = \`43\`
 
-#### foo
+#### foo?
 
 \`number\` = \`42\`
 
@@ -921,7 +921,7 @@ A nested object.
 
 \`number\`
 
-#### parent
+#### parent?
 
 \`number\`
 
