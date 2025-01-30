@@ -133,8 +133,12 @@ function getReflectionType(
   if (parameter.comment) {
     block.push(context.partials.comment(parameter.comment));
   }
-  flatten?.forEach((flat) => {
-    typeMd.push('\n' + heading(options.headingLevel + 2, flat.name));
+  flatten?.forEach((flat: ParameterReflection) => {
+    const name = [flat.name];
+    if (flat.flags.isOptional) {
+      name.push('?');
+    }
+    typeMd.push('\n' + heading(options.headingLevel + 2, name.join('')));
     typeMd.push(getOtherType(context, flat));
   });
   block.push(typeMd.join('\n\n'));
