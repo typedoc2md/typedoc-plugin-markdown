@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.3
+
+### Patch Changes
+
+- Bootstrap TypeDoc using API instead of child_process to avoid cross-platform issues ([#762](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/762)).
+
 ## 1.2.2 (2025-01-18)
 
 ### Patch Changes
