@@ -3,8 +3,7 @@
   "version": "1.2.2",
   "description": "A Docusaurus plugin to integrate TypeDoc ( + typedoc-plugin-markdown ) into a Docusaurus project.",
   "exports": {
-    ".": "./dist/index.js",
-    "./typedoc": "./dist/plugins/typedoc.js"
+    ".": "./dist/index.js"
   },
   "type": "module",
   "files": [
@@ -24,7 +23,7 @@
   },
   "scripts": {
     "lint": "eslint ./src",
-    "prebuild": "rm -rf dist && prebuild-options",
+    "prebuild": "rm -rf dist && copyfiles --up 1 ./src/**/*.cjs ./dist/",
     "prepublishOnly": "npm run lint && npm run build",
     "build": "tsc",
     "pretest": "rm -rf ./test/out && docusaurus generate-typedoc",
@@ -39,7 +38,7 @@
     "plugin"
   ],
   "devDependencies": {
-    "@docusaurus/core": "^3.6.1",
-    "@docusaurus/types": "^3.6.1"
+    "@docusaurus/core": "^3.7.0",
+    "@docusaurus/types": "^3.7.0"
   }
 }

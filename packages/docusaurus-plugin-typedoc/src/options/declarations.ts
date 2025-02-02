@@ -2,19 +2,6 @@ import { DeclarationOption, ParameterType } from 'typedoc';
 import { DEFAULT_SIDEBAR_OPTIONS } from './options.js';
 
 /**
- * Used internally to pass options from docusaurus.config to TypeDoc.
- *
- * @internal
- *
- * @hidden
- */
-export const docusaurusConfigOptions: Partial<DeclarationOption> = {
-  help: 'docusaurus.config options - should not be used if running as a docusaurus plugin.',
-  type: ParameterType.String,
-  defaultValue: '{}',
-};
-
-/**
  * **autoConfiguration**
  *
  * Set to `false` to disable sidebar generation. Defaults to `true`.

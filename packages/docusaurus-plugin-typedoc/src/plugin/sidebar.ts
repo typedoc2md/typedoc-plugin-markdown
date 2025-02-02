@@ -1,7 +1,52 @@
+import * as fs from 'fs';
+import * as path from 'path';
 import { NavigationItem } from 'typedoc-plugin-markdown';
 import { Sidebar } from '../types/options.js';
+import { adjustBaseDirectory } from '../utils/adjust-basedir.js';
 
-export function getSidebar(
+export function writeSidebar(
+  navigation: NavigationItem[],
+  outputDir: string,
+  sidebar: Sidebar,
+  siteDir: string,
+  docsPresetPath: string,
+  numberPrefixParser: any,
+) {
+  if (sidebar?.autoConfiguration) {
+    const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.cjs');
+
+    let baseDir = path
+      .relative(siteDir, outputDir)
+      .split(path.sep)
+      .slice(1)
+      .join('/');
+
+    if (docsPresetPath) {
+      baseDir = adjustBaseDirectory(baseDir, docsPresetPath);
+    }
+
+    const sidebarJson = getSidebar(
+      navigation,
+      baseDir,
+      sidebar,
+      numberPrefixParser,
+    );
+
+    fs.writeFileSync(
+      sidebarPath,
+      `// @ts-check
+/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
+const typedocSidebar = { items: ${JSON.stringify(
+        sidebarJson,
+        null,
+        sidebar.pretty ? 2 : 0,
+      )}};
+module.exports = typedocSidebar.items;`,
+    );
+  }
+}
+
+function getSidebar(
   navigation: NavigationItem[],
   basePath: string,
   options: Sidebar,
