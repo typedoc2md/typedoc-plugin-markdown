@@ -1,4 +1,4 @@
-import { en, jp, ko, zh } from '@plugin/internationalization/index.js';
+import { en, ja, jp, ko, zh } from '@plugin/internationalization/index.js';
 import { Application, Converter } from 'typedoc';
 
 /**
@@ -24,6 +24,7 @@ export function setupInternationalization(app: Application): void {
 function getTranslatable(app: Application) {
   const LOCALES = {
     en,
+    ja,
     jp,
     ko,
     zh,

@@ -9,8 +9,9 @@
  */
 
 import en from './en.js';
+import ja from './ja.js';
 import jp from './jp.js';
 import ko from './ko.js';
 import zh from './zh.js';
 
-export { en, jp, ko, zh };
+export { en, ja, jp, ko, zh };

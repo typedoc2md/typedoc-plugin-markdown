@@ -45,13 +45,13 @@ exports[`Text should get translations for member page: (Output File Strategy "me
 
 ## プロパティ
 
-| プロパティ | Type (jp) | 説明 |
+| プロパティ | Type (ja) | 説明 |
 | :------ | :------ | :------ |
 | <a id="someprop"></a> \`someProp?\` | \`boolean\` | Description for prop someProp |
 
 ## Events
 
-| イベント | Type (jp) |
+| イベント | Type (ja) |
 | :------ | :------ |
 | <a id="someevent"></a> \`someEvent\` | \`MouseEvent\` |
 

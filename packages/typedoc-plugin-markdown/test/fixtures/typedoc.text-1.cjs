@@ -12,10 +12,10 @@ module.exports = {
     'title.indexPage': ':tada: Custom Index Title',
     'title.memberPage': '{name}',
   },
-  lang: 'jp',
+  lang: 'ja',
   locales: {
-    jp: {
-      theme_type: 'Type (jp)',
+    ja: {
+      theme_type: 'Type (ja)',
     },
   },
 };
