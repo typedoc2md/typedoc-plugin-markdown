@@ -274,7 +274,7 @@ Return comments
 exports[`Function Reflection should compile function returning a union: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAUnionType()
 
-> **functionReturningAUnionType**(): \`string\` \\| \`boolean\` \\| \`"string1"\` \\| \`"string2"\`
+> **functionReturningAUnionType**(): \`string\` \\| \`boolean\`
 
 Defined in: [functions.ts:1](http://source-url)
 
@@ -282,7 +282,7 @@ Comments for function
 
 ## Returns
 
-\`string\` \\| \`boolean\` \\| \`"string1"\` \\| \`"string2"\`
+\`string\` \\| \`boolean\`
 
 Return comments
 "
@@ -292,7 +292,7 @@ exports[`Function Reflection should compile function returning a union: (Output 
 "# Function: functionReturningAUnionType()
 
 \`\`\`ts
-function functionReturningAUnionType(): string | boolean | "string1" | "string2"
+function functionReturningAUnionType(): string | boolean
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -301,7 +301,7 @@ Comments for function
 
 ## Returns
 
-\`string\` \\| \`boolean\` \\| \`"string1"\` \\| \`"string2"\`
+\`string\` \\| \`boolean\`
 
 Return comments
 "

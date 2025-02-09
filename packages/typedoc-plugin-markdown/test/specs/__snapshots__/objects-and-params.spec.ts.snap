@@ -151,13 +151,13 @@ Comments for propWithFunction
 
 ### propWithProps
 
-> **propWithProps**: \\{ \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\>; \`nestedPropA\`: \`string\`; \`nestedPropB\`: \`boolean\`; \`nestedPropC\`: \\{ \`nestedPropCA\`: \`string\`; \\}; \`nestedPropD\`: () => \`boolean\`; \\}
+> **propWithProps**: \\{ \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>; \`nestedPropA\`: \`string\`; \`nestedPropB\`: \`boolean\`; \`nestedPropC\`: \\{ \`nestedPropCA\`: \`string\`; \\}; \`nestedPropD\`: () => \`boolean\`; \\}
 
 Comments for propWithProps
 
 #### callbacks?
 
-> \`optional\` **callbacks**: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\>
+> \`optional\` **callbacks**: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>
 
 Comments for callbacks
 
@@ -221,8 +221,8 @@ Comments for BasicInterface
 | <a id="propreturningsignaturedeclaration"></a> \`propReturningSignatureDeclaration?\` | () => \`string\` \\| \`number\` \\| \`boolean\` | Comments for propReturningSignatureDeclaration |
 | <a id="propreturningsignaturedeclarations"></a> \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations |
 | <a id="propwithfunction"></a> \`propWithFunction\` | (\`options\`: \\{ \`a\`: \`boolean\`; \`b\`: \`string\`; \\}) => \`boolean\` | Comments for propWithFunction |
-| <a id="propwithprops"></a> \`propWithProps\` | \\{ \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\>; \`nestedPropA\`: \`string\`; \`nestedPropB\`: \`boolean\`; \`nestedPropC\`: \\{ \`nestedPropCA\`: \`string\`; \\}; \`nestedPropD\`: () => \`boolean\`; \\} | Comments for propWithProps |
-| \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\> | Comments for callbacks |
+| <a id="propwithprops"></a> \`propWithProps\` | \\{ \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>; \`nestedPropA\`: \`string\`; \`nestedPropB\`: \`boolean\`; \`nestedPropC\`: \\{ \`nestedPropCA\`: \`string\`; \\}; \`nestedPropD\`: () => \`boolean\`; \\} | Comments for propWithProps |
+| \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB |
 | \`propWithProps.nestedPropC\` | \\{ \`nestedPropCA\`: \`string\`; \\} | Comments for nestedPropC |
@@ -270,13 +270,13 @@ Return comments
 exports[`Objects And Params should compile function returning a union: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAUnionType()
 
-> **functionReturningAUnionType**(): \`string\` \\| \`boolean\` \\| \`"string1"\` \\| \`"string2"\`
+> **functionReturningAUnionType**(): \`string\` \\| \`boolean\`
 
 Comments for function
 
 ## Returns
 
-\`string\` \\| \`boolean\` \\| \`"string1"\` \\| \`"string2"\`
+\`string\` \\| \`boolean\`
 
 Return comments
 "
@@ -286,14 +286,14 @@ exports[`Objects And Params should compile function returning a union: (Output F
 "# Function: functionReturningAUnionType()
 
 \`\`\`ts
-function functionReturningAUnionType(): string | boolean | "string1" | "string2"
+function functionReturningAUnionType(): string | boolean
 \`\`\`
 
 Comments for function
 
 ## Returns
 
-\`string\` \\| \`boolean\` \\| \`"string1"\` \\| \`"string2"\`
+\`string\` \\| \`boolean\`
 
 Return comments
 "
