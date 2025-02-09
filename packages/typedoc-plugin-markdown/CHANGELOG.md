@@ -1,10 +1,10 @@
 # Changelog
 
-## 4.4.2
+## 4.4.2 (2025-02-09)
 
 ### Patch Changes
 
-- Handle duplicate symbols with leading underscores
+- Handle duplicate symbols with leading underscores.
 - Correctly flag optional nested parameters ([#765](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/765)).
 - Introduced ja theme translations as per TypeDoc 0.27.7.
 - Expose anchors to relative document links (thanks @matus-vacula).
