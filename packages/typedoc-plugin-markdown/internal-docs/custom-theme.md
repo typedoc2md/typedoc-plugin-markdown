@@ -7,7 +7,7 @@ description: How to extend the default Markdown Theme.
 
 If there are some specific customization not achievable with hooks or events then a more advanced customization can be achieved by providing a new theme class which returns a different context class.
 
-This implementation follows an adapted version of [TypeDoc's custom theming implementation](https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md).
+This implementation follows an adapted version of [TypeDoc's custom theming implementation](https://typedoc.org/documents/Development.Custom_Themes.html).
 
 Please note that although the theme api is public it is not covered by semantic versioning and the contract may change between versions (although changes will likely be minimal). If full stability is required please either fix versions, fork the project or do not extend the theme.
 

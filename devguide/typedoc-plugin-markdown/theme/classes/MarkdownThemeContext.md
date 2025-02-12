@@ -23,7 +23,7 @@ Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `theme` | [`MarkdownTheme`](MarkdownTheme.md) | The theme instance. |
-| `page` | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md) | The current page event. |
+| `page` | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Reflection.html)\> | The current page event. |
 | `options` | [`Options`](https://typedoc.org/api/types/Configuration.Options.html) | The options provided to the application. |
 
 #### Returns
@@ -62,7 +62,7 @@ The theme instance.
 
 ### page
 
-> `readonly` **page**: [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)
+> `readonly` **page**: [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Reflection.html)\>
 
 Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts:50](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-themeContext.ts#L50)
 
@@ -318,13 +318,13 @@ Partials are categorised by their use:
 
 #### categories()
 
-> **categories**: (`model`, `options`) => `string`
+> **categories**: (`models`, `options`) => `string`
 
 ##### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `model` | [`ReflectionCategory`](https://typedoc.org/api/types/ReflectionCategory.DeclarationOption.html)[] |
+| `models` | [`ReflectionCategory`](https://typedoc.org/api/types/ReflectionCategory.DeclarationOption.html)[] |
 | `options` | \{ `headingLevel`: `number`; \} |
 | `options.headingLevel` | `number` |
 
@@ -340,7 +340,7 @@ Partials are categorised by their use:
 
 | Parameter | Type |
 | ------ | ------ |
-| `model` | [`ReflectionGroup`](https://typedoc.org/api/classes/ReflectionGroup.html)[] |
+| `model` | [`ContainerReflection`](https://typedoc.org/api/classes/Models.ContainerReflection.html) |
 | `options` | \{ `headingLevel`: `number`; `kind`: [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html); \} |
 | `options.headingLevel` | `number` |
 | `options.kind` | [`ReflectionKind`](https://typedoc.org/api/enums/Models.ReflectionKind-1.html) |
@@ -628,22 +628,6 @@ There is no association list partial for properties as these are handled as a st
 | Parameter | Type |
 | ------ | ------ |
 | `model` | [`ReferenceReflection`](https://typedoc.org/api/classes/ReferenceReflection.html) |
-
-##### Returns
-
-`string`
-
-#### reflectionIndex()
-
-> **reflectionIndex**: (`model`, `options`) => `string`
-
-##### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `model` | [`ProjectReflection`](https://typedoc.org/api/classes/Models.ProjectReflection.html) \| [`DeclarationReflection`](https://typedoc.org/api/classes/Models.DeclarationReflection.html) |
-| `options` | \{ `headingLevel`: `number`; \} |
-| `options.headingLevel` | `number` |
 
 ##### Returns
 
@@ -1050,13 +1034,15 @@ There is no association list partial for properties as these are handled as a st
 
 #### optionalType()
 
-> **optionalType**: (`model`) => `string`
+> **optionalType**: (`model`, `options`?) => `string`
 
 ##### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
 | `model` | `OptionalType` |
+| `options`? | \{ `forceCollapse`: `boolean`; \} |
+| `options.forceCollapse`? | `boolean` |
 
 ##### Returns
 
@@ -1365,7 +1351,7 @@ Please note that partials:
 | Parameter | Type | Default value |
 | ------ | ------ | ------ |
 | `stringWithPlaceholders` | `string` | `undefined` |
-| `page` | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md) | `undefined` |
+| `page` | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Reflection.html)\> | `undefined` |
 | `includeVersion` | `boolean` | `true` |
 
 ##### Returns

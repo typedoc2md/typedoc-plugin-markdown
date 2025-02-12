@@ -1,5 +1,0 @@
-/**
- * Translations methods.
- *
- * @module
- */

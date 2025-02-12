@@ -19,3 +19,11 @@ Defined in: [docusaurus-plugin-typedoc/src/types/options.ts:20](https://github.c
 > **pretty**: `boolean`
 
 Defined in: [docusaurus-plugin-typedoc/src/types/options.ts:21](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/types/options.ts#L21)
+
+***
+
+### deprecatedItemClassName
+
+> **deprecatedItemClassName**: `string`
+
+Defined in: [docusaurus-plugin-typedoc/src/types/options.ts:22](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/types/options.ts#L22)

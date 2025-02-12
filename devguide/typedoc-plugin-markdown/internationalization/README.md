@@ -10,11 +10,11 @@ To add a new locale or edit and existing locale (if you think the strings are in
 
 ## Functions
 
-### getTranslatable()
+### setupInternationalization()
 
-> **getTranslatable**(`app`): `any`
+> **setupInternationalization**(`app`): `void`
 
-Defined in: [packages/typedoc-plugin-markdown/src/internationalization/translatable.ts:16](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/translatable.ts#L16)
+Defined in: [packages/typedoc-plugin-markdown/src/internationalization/setup.ts:11](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/setup.ts#L11)
 
 Returns subset of translatable strings for the plugin.
 
@@ -28,7 +28,7 @@ These will then be merged with the main set of TypeDoc string.
 
 #### Returns
 
-`any`
+`void`
 
 ## Locales
 
@@ -67,13 +67,13 @@ Translations for 'en' locale.
 
 ***
 
-### jp
+### ja
 
-> `const` **jp**: `Partial`\<[`TranslatableStrings`](../types/interfaces/TranslatableStrings.md)\>
+> `const` **ja**: `Partial`\<[`TranslatableStrings`](../types/interfaces/TranslatableStrings.md)\>
 
-Defined in: [packages/typedoc-plugin-markdown/src/internationalization/locales/jp.ts:8](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/locales/jp.ts#L8)
+Defined in: [packages/typedoc-plugin-markdown/src/internationalization/locales/ja.ts:8](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/internationalization/locales/ja.ts#L8)
 
-Translations for 'jp' locale.
+Translations for 'ja' locale.
 
 #### Initializer
 
@@ -169,3 +169,9 @@ Translations for 'zh' locale.
     theme_version: '版本',
 }
 ```
+
+## Other
+
+### jp
+
+Renames and re-exports [ja](README.md#ja)

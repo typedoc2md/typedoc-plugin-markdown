@@ -41,7 +41,54 @@ Define a new theme that can be used to render output.
 
 > **markdownHooks**: [`EventHooks`](https://typedoc.org/api/classes/EventHooks.html)\<[`MarkdownRendererHooks`](MarkdownRendererHooks.md), `string`\>
 
-Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:56](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L56)
+Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:59](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L59)
+
+Dedicated markdown hooks to add to the renderer
+
+***
+
+### preMarkdownRenderAsyncJobs
+
+> **preMarkdownRenderAsyncJobs**: (`output`) => `Promise`\<`void`\>[]
+
+Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:72](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L72)
+
+A list of async jobs which must be completed before rendering output.
+
+Note: This array is cleared after calling the contained functions on each call.
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `output` | [`MarkdownRendererEvent`](../../events/classes/MarkdownRendererEvent.md) |
+
+#### Returns
+
+`Promise`\<`void`\>
+
+***
+
+### postMarkdownRenderAsyncJobs
+
+> **postMarkdownRenderAsyncJobs**: (`output`) => `Promise`\<`void`\>[]
+
+Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:82](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L82)
+
+A list of async jobs which must be completed after rendering output files but before generation is considered successful.
+These functions will be called after all documents have been written to the filesystem.
+
+Note: This array is cleared after calling the contained functions on each call.
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `output` | [`MarkdownRendererEvent`](../../events/classes/MarkdownRendererEvent.md) |
+
+#### Returns
+
+`Promise`\<`void`\>
 
 ***
 
@@ -49,11 +96,15 @@ Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:56]
 
 > **preRenderAsyncJobs**: (`output`) => `Promise`\<`void`\>[]
 
-Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:63](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L63)
+Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:87](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L87)
 
-A list of async jobs which must be completed before rendering output.
+A list of async jobs which must be completed *before* rendering output.
+They will be called after RendererEvent.BEGIN has fired, but before any files have been written.
 
-Note: This array is cleared after calling the contained functions on each call.
+This may be used by plugins to register work that must be done to prepare output files. For example: asynchronously
+transform markdown to HTML.
+
+Note: This array is cleared after calling the contained functions on each Renderer.render call.
 
 #### Parameters
 
@@ -75,12 +126,15 @@ Note: This array is cleared after calling the contained functions on each call.
 
 > **postRenderAsyncJobs**: (`output`) => `Promise`\<`void`\>[]
 
-Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:71](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L71)
+Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:88](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L88)
 
 A list of async jobs which must be completed after rendering output files but before generation is considered successful.
 These functions will be called after all documents have been written to the filesystem.
 
-Note: This array is cleared after calling the contained functions on each call.
+This may be used by plugins to register work that must be done to finalize output files. For example: asynchronously
+generating an image referenced in a render hook.
+
+Note: This array is cleared after calling the contained functions on each Renderer.render call.
 
 #### Parameters
 
@@ -102,7 +156,9 @@ Note: This array is cleared after calling the contained functions on each call.
 
 > **packagesMeta**: `Record`\<`string`, \{ `description`: `string`; `options`: [`Options`](https://typedoc.org/api/types/Configuration.Options.html); \}\>
 
-Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:73](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L73)
+Defined in: [packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts:93](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/types/markdown-renderer.ts#L93)
+
+Store meta data about packages
 
 ## Methods
 

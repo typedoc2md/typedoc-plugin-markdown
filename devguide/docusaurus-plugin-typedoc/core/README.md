@@ -14,7 +14,7 @@
 
 > **default**(`context`, `opts`): `Promise`\<\{ `name`: `string`; `extendCli`: `void`; \}\>
 
-Defined in: [docusaurus-plugin-typedoc/src/plugins/docusaurus.ts:8](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/plugins/docusaurus.ts#L8)
+Defined in: [docusaurus-plugin-typedoc/src/plugin/docusaurus.ts:7](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/docusaurus-plugin-typedoc/src/plugin/docusaurus.ts#L7)
 
 #### Parameters
 

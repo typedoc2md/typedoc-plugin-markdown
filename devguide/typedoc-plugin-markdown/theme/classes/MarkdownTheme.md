@@ -2,7 +2,7 @@
 
 # Class: MarkdownTheme
 
-Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:26](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L26)
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:25](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L25)
 
 The main theme class for the plugin.
 
@@ -20,21 +20,23 @@ The API follows the implementation of [TypeDoc's custom theming](https://github.
 
 ### new MarkdownTheme()
 
-> **new MarkdownTheme**(`renderer`): [`MarkdownTheme`](MarkdownTheme.md)
+> **new MarkdownTheme**(`owner`): [`MarkdownTheme`](MarkdownTheme.md)
 
-Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:27](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L27)
+Defined in: node\_modules/typedoc/dist/lib/utils/component.d.ts:29
+
+Create new Component instance.
 
 #### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `renderer` | [`Renderer`](https://typedoc.org/api/classes/Renderer.html) |
+| `owner` | [`Renderer`](https://typedoc.org/api/classes/Renderer.html) |
 
 #### Returns
 
 [`MarkdownTheme`](MarkdownTheme.md)
 
-#### Overrides
+#### Inherited from
 
 `Theme.constructor`
 
@@ -44,7 +46,7 @@ Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:27](ht
 
 > **render**(`page`, `template`): `string`
 
-Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:34](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L34)
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:29](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L29)
 
 Renders a template and page model to a string.
 
@@ -52,8 +54,8 @@ Renders a template and page model to a string.
 
 | Parameter | Type |
 | ------ | ------ |
-| `page` | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md) |
-| `template` | [`RenderTemplate`](../../types/README.md#rendertemplatet)\<[`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\> |
+| `page` | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Reflection.html)\> |
+| `template` | [`RenderTemplate`](../../types/README.md#rendertemplatet)\<[`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Reflection.html)\>\> |
 
 #### Returns
 
@@ -69,7 +71,7 @@ Renders a template and page model to a string.
 
 > **getRenderContext**(`page`): [`MarkdownThemeContext`](MarkdownThemeContext.md)
 
-Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:51](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L51)
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:46](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L46)
 
 Creates a new instance of the current theme context.
 
@@ -79,7 +81,7 @@ This method can be overridden to provide an alternative theme context.
 
 | Parameter | Type |
 | ------ | ------ |
-| `page` | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md) |
+| `page` | [`MarkdownPageEvent`](../../events/classes/MarkdownPageEvent.md)\<[`Reflection`](https://typedoc.org/api/classes/Reflection.html)\> |
 
 #### Returns
 
@@ -91,7 +93,7 @@ This method can be overridden to provide an alternative theme context.
 
 > **getUrls**(`project`): [`UrlMapping`](../../types/interfaces/UrlMapping.md)\<[`Reflection`](https://typedoc.org/api/classes/Reflection.html)\>[]
 
-Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:58](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L58)
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:53](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L53)
 
 Maps the models of the given project to the desired output files.
 
@@ -115,7 +117,7 @@ Maps the models of the given project to the desired output files.
 
 > **getNavigation**(`project`): [`NavigationItem`](../../types/interfaces/NavigationItem.md)[]
 
-Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:65](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L65)
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:60](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L60)
 
 Map the models of the given project to a navigation structure.
 
@@ -135,7 +137,7 @@ Map the models of the given project to a navigation structure.
 
 > **getTemplateMapping**(`kind`, `outputFileStrategy`?): `any`
 
-Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:72](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L72)
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:67](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L67)
 
 Returns the template mapping for a given reflection kind.
 
@@ -156,7 +158,7 @@ Returns the template mapping for a given reflection kind.
 
 > **documentTemplate**(`page`): `string`
 
-Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:193](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L193)
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:188](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L188)
 
 #### Parameters
 
@@ -174,7 +176,7 @@ Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:193](h
 
 > **readmeTemplate**(`page`): `string`
 
-Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:197](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L197)
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:192](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L192)
 
 #### Parameters
 
@@ -192,7 +194,7 @@ Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:197](h
 
 > **projectTemplate**(`page`): `string`
 
-Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:201](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L201)
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:196](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L196)
 
 #### Parameters
 
@@ -210,7 +212,7 @@ Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:201](h
 
 > **reflectionTemplate**(`page`): `string`
 
-Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:205](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L205)
+Defined in: [packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts:200](https://github.com/typedoc2md/typedoc-plugin-markdown/blob/main/packages/typedoc-plugin-markdown/src/theme/markdown-theme.ts#L200)
 
 #### Parameters
 
