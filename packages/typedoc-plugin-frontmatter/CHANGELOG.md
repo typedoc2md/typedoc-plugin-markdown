@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.2.0
+## 1.2.0 (2024-02-14)
 
 ### Minor Changes
 
