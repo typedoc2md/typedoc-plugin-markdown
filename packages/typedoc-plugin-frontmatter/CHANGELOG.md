@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0
+
+### Minor Changes
+
+- Expose "yamlStringifyOptions" option ([#771](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/771)).
+
 ## 1.1.2 (2024-12-11)
 
 ### Patch Changes
