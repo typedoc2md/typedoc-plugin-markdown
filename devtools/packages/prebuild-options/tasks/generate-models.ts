@@ -32,17 +32,14 @@ async function writeTypeDocDeclarations(
     .filter(
       ([name, option]) =>
         (option as any).type === ParameterType.Mixed &&
-        (option as any).defaultValue &&
-        Object.keys((option as any).defaultValue).length,
+        (option as any).defaultValue,
     )
     .map(([name, option]) => capitalize(name, false));
 
   const out: string[] = [];
 
   out.push(`// THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY.
-import { ManuallyValidatedOption } from 'typedoc';
-${docsConfig.optionsPath === 'plugins/frontmatter' ? `import { ToStringOptions } from 'yaml';` : ''}
-`);
+import { ManuallyValidatedOption } from 'typedoc';${docsConfig.optionsPath === 'plugins/frontmatter' ? `\nimport { ToStringOptions } from 'yaml';` : ''}`);
 
   if (manuallyValidatedOptions.length) {
     manuallyValidatedOptions.forEach((option: any) => {
