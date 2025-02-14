@@ -60,8 +60,14 @@ export function load(app: MarkdownApplication) {
     MarkdownPageEvent.END,
     (page: MarkdownPageEvent<ProjectReflection | DeclarationReflection>) => {
       if (page.frontmatter && Object.keys(page.frontmatter)?.length) {
+        const yamlStringifyOptions = app.options.getValue(
+          'yamlStringifyOptions',
+        );
         page.contents = page?.contents
-          ?.replace(/^/, `---\n${yaml.stringify(page.frontmatter)}---\n\n`)
+          ?.replace(
+            /^/,
+            `---\n${yaml.stringify(page.frontmatter, yamlStringifyOptions)}---\n\n`,
+          )
           .replace(/[\r\n]{3,}/g, '\n\n');
       }
     },

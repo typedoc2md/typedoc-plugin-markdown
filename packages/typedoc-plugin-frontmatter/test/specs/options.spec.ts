@@ -36,5 +36,12 @@ describe(`Options:`, () => {
         .toString();
       expect(pageContent).toMatchSnapshot();
     });
+
+    test(`should accept yaml stringify options`, async () => {
+      const pageContent = fs
+        .readFileSync(path.join(__dirname, '../out/options-3/README.md'))
+        .toString();
+      expect(pageContent).toMatchSnapshot();
+    });
   });
 });

@@ -1,6 +1,7 @@
 /*
  * THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY
  */
+import { ToStringOptions } from 'yaml';
 /**
  * Describes the options declared by the plugin.
  */
@@ -34,4 +35,9 @@ export interface PluginOptions {
    * Specify static variables to be added to the readme page only.
    */
   readmeFrontmatter: Record<string, any>;
+
+  /**
+   * Options to pass into `yaml.stringify()`.
+   */
+  yamlStringifyOptions: ToStringOptions;
 }

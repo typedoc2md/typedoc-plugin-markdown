@@ -12,6 +12,7 @@ fs.removeSync(`./test/out`);
 const fixtures = [
   { options: 'typedoc-options.cjs', outDir: 'options' },
   { options: 'typedoc-options-2.cjs', outDir: 'options-2' },
+  { options: 'typedoc-options-3.cjs', outDir: 'options-3' },
   { options: 'typedoc-base.json', outDir: 'no-data' },
 ];
 

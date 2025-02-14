@@ -13,7 +13,6 @@
   "ignore": [
     "@devtools/*",
     "typedoc-github-wiki-theme",
-    "typedoc-gitlab-wiki-theme",
-    "typedoc-plugin-frontmatter"
+    "typedoc-gitlab-wiki-theme"
   ]
 }

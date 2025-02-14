@@ -99,6 +99,10 @@ description: A description that will be added to frontmatter.
 
 > Accepts a boolean value. Defaults to `false`.
 
+By default tags defined in `frontmatterCommentTags` are removed from final output.
+
+Use this option to preserve the tags in the output.
+
 ```json filename="typedoc.json"
 {
   "preserveFrontmatterCommentTags": false
@@ -120,5 +124,25 @@ This option can configure the output style of frontmatter variables when written
 ```json filename="typedoc.json"
 {
   "frontmatterNamingConvention": "camelCase"
+}
+```
+
+## yamlStringifyOptions
+
+<Callout emoji="💡">Options to pass into `yaml.stringify()`.</Callout>
+
+> Accepts a key/value object.
+
+Provides additional options to control how YAML is internally serialized using
+the `yaml.stringify` method from the [YAML](https://eemeli.org/yaml/#yaml) library.
+
+For available options, see
+[YAML ToString Options](https://eemeli.org/yaml/#tostring-options).
+
+```json filename="typedoc.json"
+{
+  "yamlStringifyOptions": {
+    "lineWidth": 0
+  }
 }
 ```

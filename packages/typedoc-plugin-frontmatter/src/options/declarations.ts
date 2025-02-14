@@ -90,6 +90,11 @@ export const frontmatterCommentTags: Partial<DeclarationOption> = {
   type: ParameterType.Array,
 };
 
+/**
+ * By default tags defined in `frontmatterCommentTags` are removed from final output.
+ *
+ * Use this option to preserve the tags in the output.
+ */
 export const preserveFrontmatterCommentTags: Partial<DeclarationOption> = {
   help: 'Preserve tags defined in frontmatter block tags in output.',
   type: ParameterType.Boolean,
@@ -106,4 +111,19 @@ export const frontmatterNamingConvention: Partial<DeclarationOption> = {
   type: ParameterType.Map,
   map: FrontmatterNamingConvention,
   defaultValue: FrontmatterNamingConvention.CamelCase,
+};
+
+/**
+ * Provides additional options to control how YAML is internally serialized using
+ * the `yaml.stringify` method from the [YAML](https://eemeli.org/yaml/#yaml) library.
+ *
+ * For available options, see
+ * [YAML ToString Options](https://eemeli.org/yaml/#tostring-options).
+ *
+ * @example { "lineWidth": 0 }
+ */
+export const yamlStringifyOptions: Partial<DeclarationOption> = {
+  help: 'Options to pass into `yaml.stringify()`.',
+  type: ParameterType.Object,
+  defaultValue: {},
 };
