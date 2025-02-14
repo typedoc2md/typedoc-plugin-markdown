@@ -199,6 +199,7 @@ ${presetsJson}
         if (!option.omitExample) {
           if (
             !option.example &&
+            option.defaultValue &&
             option.type === ParameterType.Mixed &&
             Object.keys(option.defaultValue).length &&
             (!Array.isArray(option.defaultValue) || option.defaultValue?.length)

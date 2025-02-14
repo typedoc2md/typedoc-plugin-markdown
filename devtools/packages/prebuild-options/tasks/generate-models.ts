@@ -5,7 +5,11 @@ import * as path from 'path';
 import * as prettier from 'prettier';
 import { DeclarationOption, ParameterType } from 'typedoc';
 
-const ignoreTypes = ['textContentMappings', 'remarkStringifyOptions'];
+const ignoreTypes = [
+  'textContentMappings',
+  'remarkStringifyOptions',
+  'yamlStringifyOptions',
+];
 
 export async function generateOptionsModels(docsConfig: DocsConfig) {
   const optionsConfig = await import(docsConfig.declarationsPath as string);
@@ -28,14 +32,17 @@ async function writeTypeDocDeclarations(
     .filter(
       ([name, option]) =>
         (option as any).type === ParameterType.Mixed &&
-        (option as any).defaultValue,
+        (option as any).defaultValue &&
+        Object.keys((option as any).defaultValue).length,
     )
     .map(([name, option]) => capitalize(name, false));
 
   const out: string[] = [];
 
   out.push(`// THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY.
-import { ManuallyValidatedOption } from 'typedoc'`);
+import { ManuallyValidatedOption } from 'typedoc';
+${docsConfig.optionsPath === 'plugins/frontmatter' ? `import { ToStringOptions } from 'yaml';` : ''}
+`);
 
   if (manuallyValidatedOptions.length) {
     manuallyValidatedOptions.forEach((option: any) => {
@@ -100,10 +107,12 @@ async function writeOptionsTypes(
   );
 
   const optionsOutput: string[] = [];
+
   optionsOutput.push(`
   /*
    * THIS FILE IS AUTO GENERATED FROM THE OPTIONS CONFIG. DO NOT EDIT DIRECTLY
    */
+  ${docsConfig.optionsPath === 'plugins/frontmatter' ? `import { ToStringOptions } from 'yaml';` : ''}
   /**
    * Describes the options declared by the plugin.
    */
@@ -153,13 +162,6 @@ ${name}: ${getType(name, option, true)};`,
   fs.writeFileSync(optionsModelFile, formatted);
 }
 
-function getComments(name: string) {
-  if (name === 'textContentMappings') {
-    return 'Describes the keys available to replace static text.';
-  }
-  return '';
-}
-
 function getValueType(key: string, value: any) {
   if (key === 'pageTitleTemplates') {
     return `{
@@ -192,6 +194,7 @@ function getType(
     module: string | ((name: { name: string, kind: string }) => string);
   }`;
   }
+
   if (option.type === ParameterType.Array && option.defaultValue?.length) {
     return `(${option.defaultValue
       .toString()
@@ -235,11 +238,14 @@ function getType(
       .map((value) => `"${value}"`)
       .join(' | ')}`;
   }
+
   if (option.type === ParameterType.Object) {
     const outType =
       typeof option.defaultValue === 'object' &&
       Object.keys(option.defaultValue as object).length === 0
-        ? 'Record<string, any>'
+        ? name === 'yamlStringifyOptions'
+          ? 'ToStringOptions'
+          : 'Record<string, any>'
         : `{${Object.keys(option.defaultValue as any)
             .map((key) => `'${key}': ${getObjectType(name)};`)
             .join('')}}`;
