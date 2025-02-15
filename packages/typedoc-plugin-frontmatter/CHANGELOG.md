@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.1
+
+### Patch Changes
+
+- Prevent line wrapping as default in yaml.stringify() options ([#771](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/771)).
+
 ## 1.2.0 (2024-02-14)
 
 ### Minor Changes
