@@ -2,7 +2,13 @@ import { backTicks, link } from '@plugin/libs/markdown/index.js';
 import { escapeChars } from '@plugin/libs/utils/escape-chars.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import * as fs from 'fs';
-import { CommentDisplayPart, InlineTagDisplayPart } from 'typedoc';
+import {
+  CommentDisplayPart,
+  DeclarationReflection,
+  InlineTagDisplayPart,
+  Reflection,
+  ReflectionKind,
+} from 'typedoc';
 
 export function getCommentParts(
   this: MarkdownThemeContext,
@@ -26,7 +32,7 @@ export function getCommentParts(
           case '@linkcode':
           case '@linkplain': {
             if (part.target) {
-              const url = getUrl(part);
+              const url = getUrlOld(part);
               if (url) {
                 if (part.tag === '@linkcode') {
                   md.push(
@@ -86,16 +92,72 @@ export function getCommentParts(
   return md.join('');
 }
 
-function getUrl(part: InlineTagDisplayPart) {
-  if ((part.target as any).url) {
-    return (part.target as any).url;
+export function getTargetReflection(part: InlineTagDisplayPart) {
+  let url: string | undefined;
+  let target: Reflection | undefined;
+  if (
+    part.target &&
+    part.target instanceof DeclarationReflection &&
+    'id' in part.target
+  ) {
+    target = part.target;
+    url = part.target.url;
+    if (!url) {
+      target = part.target.parent!;
+      url = part.target.url;
+      while (!url && target.parent) {
+        target = target.parent;
+        url = target.url;
+      }
+    }
+  }
+  return target;
+}
+
+export function getUrl(part: InlineTagDisplayPart) {
+  let url: string | undefined;
+  if (part.target) {
+    if (typeof part.target === 'string') {
+      url = part.target;
+    } else if ('id' in part.target) {
+      url = getTargetUrl(part.target);
+      if (!url) {
+        let target = part.target.parent!;
+        url = getTargetUrl(part.target);
+        while (!url && target.parent) {
+          target = target.parent;
+          url = getTargetUrl(target);
+        }
+      }
+    }
+  }
+  return url;
+}
+
+function getTargetUrl(target: Reflection) {
+  if (
+    [ReflectionKind.Property, ReflectionKind.EnumMember].includes(target.kind)
+  ) {
+    return target.url?.replace(/#.*$/, `#${target.getFullName()}`);
+  }
+  return target.url;
+}
+
+export function getUrlOld(part: InlineTagDisplayPart) {
+  if (typeof part.target === 'string') {
+    return part.target;
+  }
+  if (part.target instanceof DeclarationReflection) {
+    if (part.target.url) {
+      return getTargetUrl(part.target);
+    }
+
+    if (part.target?.parent?.url) {
+      return getTargetUrl(part.target.parent);
+    }
   }
 
-  if ((part.target as any)?.parent?.url) {
-    return (part.target as any)?.parent?.url;
-  }
-
-  return typeof part.target === 'string' ? part.target : '';
+  return null;
 }
 
 export function isFile(file: string) {

@@ -316,3 +316,12 @@ export class ClassWithAccessorKeywords {
    */
   public accessor accessor3!: string;
 }
+export interface IObject {
+  id: string;
+  description: string;
+}
+export class MyClass {
+  public loadObjectAsync(objectId: string): any {
+    return objectId;
+  }
+}

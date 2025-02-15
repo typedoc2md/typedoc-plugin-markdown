@@ -15,6 +15,7 @@ declare module 'typedoc' {
     fileExtension: string;
     flattenOutputFiles: boolean;
     formatWithPrettier: boolean;
+    headingAnchorStrategy: 'auto' | 'explicit' | 'html';
     hideBreadcrumbs: boolean;
     hideGroupHeadings: boolean;
     hidePageHeader: boolean;

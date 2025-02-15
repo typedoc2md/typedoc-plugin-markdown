@@ -59,12 +59,12 @@ const config = {
           '../../../packages/typedoc-plugin-markdown/test/fixtures/tsconfig.json',
         ),
         entryPoints: [
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/comments/index.ts',
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/reflections/index.ts',
         ],
         expandObjects: true,
         readme: 'none',
         sidebar: { pretty: true },
-        outputFileStrategy: 'modules',
+        outputFileStrategy: 'members',
         cleanOutputDir: true,
       },
     ],
@@ -84,52 +84,15 @@ const config = {
           '../../../packages/typedoc-plugin-markdown/test/fixtures/tsconfig.json',
         ),
         entryPoints: [
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/modules/module-1',
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/modules/module-2',
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/comments/index.ts',
         ],
-        entryPointStrategy: 'expand',
+        expandObjects: true,
+        readme: 'none',
+        sidebar: { pretty: true },
+        outputFileStrategy: 'members',
         cleanOutputDir: true,
-        navigation: {
-          includeFolders: false,
-          includeGroups: false,
-          includeCategories: true,
-        },
-        excludeScopesInPaths: true,
-        sidebar: {
-          pretty: true,
-        },
       },
     ],
-    /*[
-      docusaurusPlugin,
-      {
-        id: 'api-3',
-        out: './docs/api-3',
-        ...require(
-          path.join(
-            __dirname,
-            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
-          ),
-        ),
-        tsconfig: path.join(
-          __dirname,
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/tsconfig.json',
-        ),
-        entryPoints:
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/packages/*',
-        entryPointStrategy: 'packages',
-        cleanOutputDir: true,
-        navigation: {
-          includeFolders: true,
-          includeGroups: true,
-          includeCategories: true,
-        },
-        excludeScopesInPaths: true,
-        sidebar: {
-          pretty: true,
-        },
-      },
-    ],*/
   ],
   presets: [
     [
@@ -188,7 +151,6 @@ const config = {
             label: 'API 2',
             position: 'left',
           },
-
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',

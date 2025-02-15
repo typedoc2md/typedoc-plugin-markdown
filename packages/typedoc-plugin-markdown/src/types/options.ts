@@ -72,6 +72,11 @@ export interface PluginOptions {
   formatWithPrettier: boolean;
 
   /**
+   * Determines how to generate heading ids.
+   */
+  headingAnchorStrategy: 'auto' | 'explicit' | 'html';
+
+  /**
    * Do not print breadcrumbs.
    */
   hideBreadcrumbs: boolean;

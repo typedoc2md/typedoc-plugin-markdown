@@ -224,7 +224,7 @@ There is no association list partial for properties as these are handled as a st
       partials.typeDeclarationList.apply(context, [model, options]) as string,
     typeDeclarationTable: (
       model: DeclarationReflection[],
-      options: { kind?: ReflectionKind | undefined },
+      options: { name?: string | undefined; kind?: ReflectionKind | undefined },
     ) =>
       partials.typeDeclarationTable.apply(context, [model, options]) as string,
     typeParametersList: (model: TypeParameterReflection[]) =>

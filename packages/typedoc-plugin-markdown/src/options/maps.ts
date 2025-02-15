@@ -24,6 +24,15 @@ export enum DisplayFormat {
 /**
  * The allowed values for formatting reflections and indexes.
  */
+export enum HeadingAnchorStrategy {
+  Auto = 'auto',
+  Explicit = 'explicit',
+  Html = 'html',
+}
+
+/**
+ * The allowed values for formatting reflections and indexes.
+ */
 export enum TypeDeclarationVisibility {
   Compact = 'compact',
   Verbose = 'verbose',

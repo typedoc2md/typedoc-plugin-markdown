@@ -38,8 +38,9 @@ export class UrlBuilder {
   private entryFileName: string;
   private isPackages: boolean;
   private flattenOutputFiles: boolean;
+  // private useHTMLAnchors: boolean;
+  // private headingAnchorStrategy: HeadingAnchorStrategy;
   private urls: UrlMapping<Reflection>[] = [];
-  private anchors: Record<string, string[]> = {};
 
   constructor(
     public theme: MarkdownTheme,
@@ -53,6 +54,10 @@ export class UrlBuilder {
 
     this.fileExtension = this.options.getValue('fileExtension');
     this.ignoreScopes = this.options.getValue('excludeScopesInPaths');
+    //this.useHTMLAnchors = this.options.getValue('useHTMLAnchors');
+    //this.headingAnchorStrategy = this.options.getValue(
+    //  'headingAnchorStrategy',
+    //) as HeadingAnchorStrategy;
 
     this.entryFileName = getFileNameWithExtension(
       this.options.getValue('entryFileName'),
@@ -535,18 +540,10 @@ export class UrlBuilder {
     const anchorPrefix = this.options.getValue('anchorPrefix');
     const anchorId = this.getAnchorId(reflection);
 
-    if (!this.anchors[containerUrl]) {
-      this.anchors[containerUrl] = [];
-    }
-
     if (anchorId) {
-      const count = this.anchors[containerUrl]?.filter(
-        (id) => id === anchorId,
-      )?.length;
-
       let anchorParts: string[] = [];
 
-      if (
+      /*if (
         reflection.parent?.parent?.kind === ReflectionKind.Property &&
         reflection.kind === ReflectionKind.Property
       ) {
@@ -554,12 +551,10 @@ export class UrlBuilder {
         const anchor = anchorMatch ? anchorMatch[1] : '';
         anchorParts = [anchor];
       } else {
-        this.anchors[containerUrl].push(anchorId);
         anchorParts = [anchorId];
-        if (count > 0) {
-          anchorParts.push(`-${count}`);
-        }
-      }
+      }*/
+
+      anchorParts = [anchorId];
 
       if (anchorPrefix) {
         anchorParts.unshift(`${anchorPrefix}`);
@@ -569,7 +564,15 @@ export class UrlBuilder {
         reflection.kind === ReflectionKind.TypeLiteral
           ? containerUrl
           : containerUrl + '#' + anchorParts.join('');
-      reflection.anchor = anchorParts.join('');
+
+      //const useExplicitAnchors =
+      //  this.useHTMLAnchors ||
+      //  this.headingAnchorStrategy === HeadingAnchorStrategy.Explicit;
+      const useExplicitAnchors = true;
+      reflection.anchor = useExplicitAnchors
+        ? this.getExplicitAnchorId(reflection)
+        : anchorParts.join('');
+
       reflection.hasOwnDocument = false;
     }
     if (
@@ -579,6 +582,13 @@ export class UrlBuilder {
         this.applyAnchorUrl(child as DeclarationReflection, containerUrl);
       });
     }
+  }
+
+  private getExplicitAnchorId(reflection: Reflection) {
+    if (reflection.kind === ReflectionKind.Property) {
+      return `${reflection.parent?.name}.${reflection.name}`;
+    }
+    return reflection.getFullName();
   }
 
   private getAnchorId(reflection: Reflection) {

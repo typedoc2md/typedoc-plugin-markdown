@@ -7,7 +7,7 @@ import { DeclarationReflection, ReflectionKind, ReflectionType } from 'typedoc';
 export function typeDeclarationTable(
   this: MarkdownThemeContext,
   model: DeclarationReflection[],
-  options: { kind?: ReflectionKind },
+  options: { name?: string; kind?: ReflectionKind },
 ): string {
   const tableColumnsOptions = this.options.getValue('tableColumnSettings');
   const leftAlignHeadings = tableColumnsOptions.leftAlignHeaders;

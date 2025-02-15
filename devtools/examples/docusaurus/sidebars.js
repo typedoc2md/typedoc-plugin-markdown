@@ -24,24 +24,6 @@ const sidebars = {
       },
       items: require('./docs/api/typedoc-sidebar.cjs'),
     },
-    {
-      type: 'category',
-      label: 'DOCS 2',
-      link: {
-        type: 'doc',
-        id: 'api-2/index',
-      },
-      items: require('./docs/api-2/typedoc-sidebar.cjs'),
-    } /*
-    {
-      type: 'category',
-      label: 'DOCS 3',
-      link: {
-        type: 'doc',
-        id: 'api-3/index',
-      },
-      items: require('./docs/api-3/typedoc-sidebar.cjs'),
-    },*/,
   ],
 };
 

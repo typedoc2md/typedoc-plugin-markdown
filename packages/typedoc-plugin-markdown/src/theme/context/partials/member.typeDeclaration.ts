@@ -28,6 +28,7 @@ export function typeDeclaration(
     md.push(
       this.partials.typeDeclarationTable(model.children || [], {
         kind: model.parent?.kind,
+        name: model.parent?.getFullName(),
       }),
     );
   } else {

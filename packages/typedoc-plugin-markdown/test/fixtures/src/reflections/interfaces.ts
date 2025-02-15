@@ -210,3 +210,21 @@ export interface InterfaceWithComments<A, B, C, D> {
    */
   propertyWithComments: string;
 }
+
+export interface Field {
+  /**
+   * Original field value
+   */
+  value: unknown;
+
+  setValue: (value: unknown) => void;
+  getValue?: (value: unknown) => void;
+}
+
+export class TemplateField implements Field {
+  value: unknown;
+
+  setValue(value: unknown): void {
+    this.value = value;
+  }
+}

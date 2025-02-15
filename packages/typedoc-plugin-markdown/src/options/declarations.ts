@@ -27,6 +27,7 @@ import {
 } from './constants.js';
 import {
   DisplayFormat,
+  HeadingAnchorStrategy,
   OutputFileStrategy,
   TypeDeclarationVisibility,
 } from './maps.js';
@@ -649,6 +650,26 @@ export const useHTMLAnchors: Partial<DeclarationOption> = {
   help: 'Add HTML anchors to page headings.',
   type: ParameterType.Boolean,
   defaultValue: false,
+};
+
+/**
+ * By default links will attempt to anchor to symbols in pages according to the heading id.
+ *
+ * This is sufficient in most use cases but can be problematic when the heading text is not unique in the page and
+ * there is no deterministic way to resolve this ahead of time.
+ *
+ * If this is the case it is recommended to use the `explicit` option (if your Markdown parser supports it) or apply HTML anchors above each heading.
+ *
+ * - `auto` (default) - Generates anchor IDs automatically based on the heading text, following GitHub-style conventions.
+ * - `explicit` - Uses an explicit ID pattern (`{#id}`), if supported by your Markdown parser.
+ * - `html` - Inserts an HTML `<a>` tag above each heading to create a manual anchor.
+ *
+ * @category Utility
+ */
+export const headingAnchorStrategy: Partial<DeclarationOption> = {
+  help: 'Determines how to generate heading ids.',
+  type: ParameterType.Map,
+  map: HeadingAnchorStrategy,
 };
 
 /**
