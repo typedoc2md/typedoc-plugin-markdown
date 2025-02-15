@@ -139,10 +139,13 @@ the `yaml.stringify` method from the [YAML](https://eemeli.org/yaml/#yaml) libra
 For available options, see
 [YAML ToString Options](https://eemeli.org/yaml/#tostring-options).
 
+Please note that `{ lineWidth: 0 }` is set by default to prevent invalid wrapping.
+
 ```json filename="typedoc.json"
 {
   "yamlStringifyOptions": {
-    "lineWidth": 0
+    "defaultStringType": "QUOTE_SINGLE",
+    "defaultKeyType": "PLAIN"
   }
 }
 ```

@@ -9,11 +9,14 @@ module.exports = {
   hidePageHeader: true,
   hideBreadcrumbs: true,
   frontmatterGlobals: {
+    isTrue: true,
     veryLong:
       'This is a long string that would normally wrap over multiple lines when the text exceeds a certain length.',
   },
   yamlStringifyOptions: {
-    lineWidth: 0,
+    trueStr: 'yes',
+    defaultStringType: 'QUOTE_SINGLE',
+    defaultKeyType: 'PLAIN',
   },
   disableSources: true,
 };

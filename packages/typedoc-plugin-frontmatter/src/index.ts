@@ -66,7 +66,7 @@ export function load(app: MarkdownApplication) {
         page.contents = page?.contents
           ?.replace(
             /^/,
-            `---\n${yaml.stringify(page.frontmatter, yamlStringifyOptions)}---\n\n`,
+            `---\n${yaml.stringify(page.frontmatter, { ...yamlStringifyOptions, lineWidth: 0 })}---\n\n`,
           )
           .replace(/[\r\n]{3,}/g, '\n\n');
       }

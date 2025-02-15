@@ -2,7 +2,8 @@
 
 exports[`Options: YAML should accept yaml stringify options 1`] = `
 "---
-veryLong: This is a long string that would normally wrap over multiple lines when the text exceeds a certain length.
+isTrue: yes
+veryLong: 'This is a long string that would normally wrap over multiple lines when the text exceeds a certain length.'
 ---
 
 # typedoc-plugin-frontmatter
@@ -31,8 +32,7 @@ exports[`Options: YAML should prepend frontmatter for readme page 1`] = `
 "---
 title: typedoc-plugin-frontmatter
 layout: blog
-veryLong: This is a long string that would normally wrap over multiple lines
-  when the text exceeds a certain length.
+veryLong: This is a long string that would normally wrap over multiple lines when the text exceeds a certain length.
 navOrder: 1
 hide: true
 onReadme: true
@@ -46,8 +46,7 @@ exports[`Options: YAML should prepend frontmatter to index page 1`] = `
 "---
 title: typedoc-plugin-frontmatter
 layout: blog
-veryLong: This is a long string that would normally wrap over multiple lines
-  when the text exceeds a certain length.
+veryLong: This is a long string that would normally wrap over multiple lines when the text exceeds a certain length.
 navOrder: 1
 hide: true
 onIndex: true
@@ -65,8 +64,7 @@ exports[`Options: YAML should prepend frontmatter with preserved tags 1`] = `
 "---
 title: SomeInterface
 layout: blog
-veryLong: This is a long string that would normally wrap over multiple lines
-  when the text exceeds a certain length.
+veryLong: This is a long string that would normally wrap over multiple lines when the text exceeds a certain length.
 navOrder: 1
 hide: true
 tagOne: 0

@@ -120,7 +120,9 @@ export const frontmatterNamingConvention: Partial<DeclarationOption> = {
  * For available options, see
  * [YAML ToString Options](https://eemeli.org/yaml/#tostring-options).
  *
- * @example { "lineWidth": 0 }
+ * Please note that `{ lineWidth: 0 }` is set by default to prevent invalid wrapping.
+ *
+ * @example {"defaultStringType": "QUOTE_SINGLE", "defaultKeyType": "PLAIN"}
  */
 export const yamlStringifyOptions: Partial<DeclarationOption> = {
   help: 'Options to pass into `yaml.stringify()`.',
