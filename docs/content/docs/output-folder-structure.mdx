@@ -1,0 +1,110 @@
+import { Callout, FileTree } from 'nextra/components';
+
+# Output Folder Structure
+
+TypeDoc generates documentation models according to exports derived from the given [`entryPoints`](https://typedoc.org/documents/Options.Input.html#entrypoints) and [`entryPointsStrategy`](https://typedoc.org/documents/Options.Input.html#entrypointstrategy) TypeDoc configurations.
+
+TypeDoc 0.28.0 introduced an additional `router` option which can be used to modify the output folder structure.
+
+This plugin now utilises this mechanism for output file generation in favour of the deprecated `outputFileStrategy` option.
+
+## Available Routers
+
+The default available routers for the the plugin are **"kind"** (default), **"module"** and **"category"**.
+
+### "kind" router (default)
+
+```json filename="typedoc.json"
+{
+  "router": "kind"
+}
+```
+
+Generates an individual file for each exported module member kind.
+This is similar to the default behaviour of the HTML theme but follows a hierarchical module folder structure.
+
+This is the default setting of the plugin.
+
+<FileTree>
+  <FileTree.File name="README.md" />
+  <FileTree.Folder name="module-a" defaultOpen>
+    <FileTree.Folder name="classes" defaultOpen>
+      <FileTree.File name="ClassA.md" />
+      <FileTree.File name="ClassB.md" />
+    </FileTree.Folder>
+    <FileTree.Folder name="functions" defaultOpen>
+      <FileTree.File name="FunctionA.md" />
+      <FileTree.File name="FunctionB.md" />
+    </FileTree.Folder>
+  </FileTree.Folder>
+  <FileTree.Folder name="module-b" defaultOpen>
+    <FileTree.Folder name="classes" defaultOpen>
+      <FileTree.File name="ClassA.md" />
+      <FileTree.File name="ClassB.md" />
+    </FileTree.Folder>
+  </FileTree.Folder>
+</FileTree>
+
+### "module" router
+
+```json filename="typedoc.json"
+{
+  "router": "module"
+}
+```
+
+Generates a single file for every module and namespace where all module member kinds are hoisted to a single file.
+
+This creates a flat navigation structure and reduces the amount of files generated.
+
+<FileTree>
+  <FileTree.File name="README.md" />
+  <FileTree.File name="module-a.md" />
+  <FileTree.File name="module-b.md" />
+</FileTree>
+
+### "category" router (beta)
+
+```json filename="typedoc.json"
+{
+  "router": "category"
+}
+```
+
+Generates an individual file for each defined top-level module category, whereby each category member will be hoisted to the category file.
+
+<FileTree>
+  <FileTree.File name="README.md" />
+  <FileTree.Folder name="module-a" defaultOpen>
+    <FileTree.File name="Category-A.md" />
+    <FileTree.File name="Category-B.md" />
+  </FileTree.Folder>
+  <FileTree.Folder name="module-b" defaultOpen>
+    <FileTree.File name="Category-A.md" />
+    <FileTree.File name="Category-B.md" />
+  </FileTree.Folder>
+</FileTree>
+
+Please note that `"category"` is not supported when the [`categorizeByGroup`](https://typedoc.org/documents/Options.Organization.html#categorizebygroup) TypeDoc organization option is set to `true`.
+
+### "group" router (beta)
+
+```json filename="typedoc.json"
+{
+  "router": "group"
+}
+```
+
+Generates an individual file for each module group, whereby each group member will be hoisted to the group file.
+
+<FileTree>
+  <FileTree.File name="README.md" />
+  <FileTree.Folder name="module-a" defaultOpen>
+    <FileTree.File name="Classes.md" />
+    <FileTree.File name="Functions.md" />
+  </FileTree.Folder>
+  <FileTree.Folder name="module-b" defaultOpen>
+    <FileTree.File name="Classes.md" />
+    <FileTree.File name="Functions.md" />
+  </FileTree.Folder>
+</FileTree>

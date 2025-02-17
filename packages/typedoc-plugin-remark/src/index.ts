@@ -36,9 +36,9 @@ export function load(app: MarkdownApplication) {
       Array.isArray(plugin) ? plugin[0] : plugin,
     ) as string[];
 
-    if (output.urls?.length) {
+    if (output.pages?.length) {
       await Promise.all(
-        output.urls?.map(async (urlMapping) => {
+        output.pages?.map(async (page) => {
           if (remarkPluginsNames.includes('remark-toc')) {
             const tocPluginIndex = remarkPluginsNames.findIndex(
               (name) => name === 'remark-toc',
@@ -50,13 +50,13 @@ export function load(app: MarkdownApplication) {
             defaultPlugins.push([
               pathToFileURL(path.join(__dirname, 'plugins', 'add-toc.js')).href,
               {
-                reflection: urlMapping.model,
-                typedocOptions: app.options,
+                reflection: page.model,
+                app: app,
                 remarkTocOptions,
               },
             ]);
           }
-          const filePath = `${output.outputDirectory}/${urlMapping.url}`;
+          const filePath = `${output.outputDirectory}/${page.url}`;
           return await parse(
             filePath,
             [...defaultPlugins, ...userPlugins],

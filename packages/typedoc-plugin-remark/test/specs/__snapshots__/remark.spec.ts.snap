@@ -194,11 +194,11 @@ title: "test"
 
 ### new SomeClass()
 
-> **new SomeClass**<\`T\`>(): [\`SomeClass\`](SomeClass.md)<\`T\`>
+> **new SomeClass**<\`T\`>(): \`SomeClass\`<\`T\`>
 
 #### Returns
 
-[\`SomeClass\`](SomeClass.md)<\`T\`>
+\`SomeClass\`<\`T\`>
 
 ## Properties
 
@@ -310,11 +310,11 @@ const x = 1
 
 ##### new SomeClass()
 
-> **new SomeClass**<\`T\`>(): [\`SomeClass\`](module-1.md#someclasst)<\`T\`>
+> **new SomeClass**<\`T\`>(): [\`SomeClass\`](#someclass)<\`T\`>
 
 ###### Returns
 
-[\`SomeClass\`](module-1.md#someclasst)<\`T\`>
+[\`SomeClass\`](#someclass)<\`T\`>
 
 #### Properties
 

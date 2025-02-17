@@ -3,13 +3,14 @@
  *
  * @module core
  */
+import { MarkdownRenderer } from '@plugin//types/index.js';
 import { setupInternationalization } from '@plugin/internationalization/index.js';
 import { declarations } from '@plugin/options/index.js';
 import { render, setupRenderer } from '@plugin/renderer/index.js';
-import { MarkdownRenderer } from '@plugin/types/index.js';
 import {
   Application,
   DeclarationOption,
+  i18n,
   ParameterHint,
   ParameterType,
 } from 'typedoc';
@@ -42,7 +43,7 @@ export function load(app: Application) {
   app.options.addDeclaration({
     name: 'markdown',
     outputShortcut: 'markdown',
-    help: (i18n) => i18n.help_out(),
+    help: () => i18n.help_out(),
     type: ParameterType.Path,
     hint: ParameterHint.Directory,
     defaultValue: './docs',
@@ -54,7 +55,7 @@ export function load(app: Application) {
    * =============================
    */
   app.outputs.addOutput('markdown', async (out, project) => {
-    await render(app.renderer as unknown as MarkdownRenderer, project, out);
+    await render(app.renderer as MarkdownRenderer, project, out);
   });
 
   app.outputs.setDefaultOutputName('markdown');

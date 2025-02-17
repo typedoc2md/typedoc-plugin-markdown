@@ -1,13 +1,11 @@
-import { ProjectReflection, Reflection } from 'typedoc';
+import { PageKind, ProjectReflection } from 'typedoc';
 
 /**
  * An event emitted before and after the markdown of a page is rendered.
  *
  * @event
  */
-export class MarkdownPageEvent<
-  /** @ignore **/ Model = Reflection,
-> extends Event {
+export class MarkdownPageEvent<out Model = unknown> {
   /**
    * The {@linkcode typedoc!ProjectReflection ProjectReflection} instance the renderer is currently processing.
    */
@@ -20,11 +18,6 @@ export class MarkdownPageEvent<
   readonly model: Model;
 
   /**
-   * The group title of the group reflection belongs to.
-   */
-  group?: string;
-
-  /**
    * The final markdown `string` content of the page.
    *
    * Should be rendered by layout templates and can be modified by plugins.
@@ -32,9 +25,14 @@ export class MarkdownPageEvent<
   contents?: string;
 
   /**
-   * The url `string` of the page.
+   * The url this page will be located at.
    */
   url!: string;
+
+  /**
+   * The type of page this is.
+   */
+  pageKind!: PageKind;
 
   /**
    * The complete `string` filename where the file will be written..
@@ -69,8 +67,7 @@ export class MarkdownPageEvent<
   /**
    * @ignore
    */
-  constructor(name: string, model: Model) {
-    super(name);
+  constructor(model: Model) {
     this.model = model;
   }
 }

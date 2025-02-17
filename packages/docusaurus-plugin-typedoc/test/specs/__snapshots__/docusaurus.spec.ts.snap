@@ -63,17 +63,19 @@ Comments form module comments
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](index.md#commentinterfacet) - Links to CommentInterface
-- [Links to CommentInterface.prop](index.md#prop)
-- [Links to CommentInterface.propb](index.md#propb)
+- [CommentInterface](#commentinterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](#prop)
+- [Links to CommentInterface.propb](#propb)
 
 #### Extended by
 
-- [\`CommentInterfaceExtended\`](index.md#commentinterfaceextended)
+- [\`CommentInterfaceExtended\`](#commentinterfaceextended)
 
 #### Type Parameters
 
-• **T**
+##### T
+
+\`T\`
 
 #### Properties
 
@@ -93,13 +95,13 @@ Comments form module comments
 
 Links using \`{@link}\` inline tags.
 
-- [CommentInterface](index.md#commentinterfacet) - Links to CommentInterface
-- [Links to CommentInterface.prop](index.md#prop)
-- [Links to CommentInterface.propb](index.md#propb)
+- [CommentInterface](#commentinterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](#prop)
+- [Links to CommentInterface.propb](#propb)
 
 #### Extends
 
-- [\`CommentInterface\`](index.md#commentinterfacet)\\<[\`CommentEnum\`](index.md#commentenum)\\>
+- [\`CommentInterface\`](#commentinterface)\\<[\`CommentEnum\`](#commentenum)\\>
 
 #### Properties
 
@@ -109,15 +111,15 @@ Links using \`{@link}\` inline tags.
 
 ###### Inherited from
 
-[\`CommentInterface\`](index.md#commentinterfacet).[\`prop\`](index.md#prop)
+[\`CommentInterface\`](#commentinterface).[\`prop\`](#prop)
 
 ##### propb
 
-> **propb**: [\`CommentEnum\`](index.md#commentenum)
+> **propb**: [\`CommentEnum\`](#commentenum)
 
 ###### Inherited from
 
-[\`CommentInterface\`](index.md#commentinterfacet).[\`propb\`](index.md#propb)
+[\`CommentInterface\`](#commentinterface).[\`propb\`](#propb)
 
 ##### propc
 

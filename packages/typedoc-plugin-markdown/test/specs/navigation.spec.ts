@@ -36,4 +36,28 @@ describe(`Navigation`, () => {
       'sidebar.json',
     );
   });
+
+  test(`should gets Navigation Json for categories multi module`, () => {
+    expectFileToEqual('categories', 'categories', 'sidebar.json');
+  });
+
+  test(`should gets Navigation Json for categories single module`, () => {
+    expectFileToEqual('categoriesSingleModule', 'categories', 'sidebar.json');
+  });
+
+  test(`should gets Navigation Json for categories packages`, () => {
+    expectFileToEqual('packagesCategories', 'categories', 'sidebar.json');
+  });
+
+  test(`should gets Navigation Json for groups multi module`, () => {
+    expectFileToEqual('groupsRouter', 'groups', 'sidebar.json');
+  });
+
+  test(`should gets Navigation Json for groups single module`, () => {
+    expectFileToEqual('groupsRouterSingleModule', 'groups', 'sidebar.json');
+  });
+
+  test(`should gets Navigation Json for groups packages`, () => {
+    expectFileToEqual('packagesGroups', 'groups', 'sidebar.json');
+  });
 });

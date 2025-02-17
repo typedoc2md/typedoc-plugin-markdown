@@ -1,9 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Reflection Indexes should compile reflection indexes for modules: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"
+Module comments
+
+- [BasicClass#prop](#prop-2)
+- [BasicClass#Prop](#prop-3)
+- [BasicEnum#MemberB](#memberb)
+- [BasicInterface#functionProp](#functionprop)
+- [LiteralType#y](#y)
+- [LiteralType#y.x](#y)
+- [objectLiteralVariable#valueX](#valuex)
+- [objectLiteralVariable#valueX.valueY](#valuex)"
+`;
+
+exports[`Reflection Indexes should compile reflection indexes for modules: (Output File Strategy "modules") (Option Group "2") 1`] = `
+"
+Module comments
+
+- [BasicClass#prop](#basicclass-prop-2)
+- [BasicClass#Prop](#basicclass-prop-3)
+- [BasicEnum#MemberB](#basicenum-memberb)
+- [BasicInterface#functionProp](#basicinterface-functionprop)
+- [LiteralType#y](#literaltype-y)
+- [LiteralType#y.x](#literaltype-y)
+- [objectLiteralVariable#valueX](#objectliteralvariable-valuex)
+- [objectLiteralVariable#valueX.valueY](#objectliteralvariable-valuex)"
+`;
+
 exports[`Reflection Indexes should compile reflection indexes: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# typedoc-stubs
 
 Module comments
+
+- [BasicClass#prop](classes/BasicClass.md#prop)
+- [BasicClass#Prop](classes/BasicClass.md#prop-1)
+- [BasicEnum#MemberB](enumerations/BasicEnum.md#memberb)
+- [BasicInterface#functionProp](interfaces/BasicInterface.md#functionprop)
+- [LiteralType#y](type-aliases/LiteralType.md#y)
+- [LiteralType#y.x](type-aliases/LiteralType.md#y)
+- [objectLiteralVariable#valueX](variables/objectLiteralVariable.md#valuex)
+- [objectLiteralVariable#valueX.valueY](variables/objectLiteralVariable.md#valuex)
 
 ## Enumerations
 
@@ -81,6 +118,7 @@ Module comments
 
 ## Variables
 
+- [curriedFunction](variables/curriedFunction.md)
 - [objectLiteralVariable](variables/objectLiteralVariable.md)
 - [objectWithSymbol](variables/objectWithSymbol.md)
 - [someQuery](variables/someQuery.md)
@@ -93,7 +131,6 @@ Module comments
 
 - [basicFunction](functions/basicFunction.md)
 - [basicFunctionWithReturns](functions/basicFunctionWithReturns.md)
-- [curriedFunction](functions/curriedFunction.md)
 - [functionReturningAFunction](functions/functionReturningAFunction.md)
 - [functionReturningAnObject](functions/functionReturningAnObject.md)
 - [functionReturningAPromise](functions/functionReturningAPromise.md)
@@ -121,6 +158,15 @@ exports[`Reflection Indexes should compile reflection indexes: (Output File Stra
 "# typedoc-stubs
 
 Module comments
+
+- [BasicClass#prop](classes/BasicClass.md#basicclass-prop)
+- [BasicClass#Prop](classes/BasicClass.md#basicclass-prop-1)
+- [BasicEnum#MemberB](enumerations/BasicEnum.md#basicenum-memberb)
+- [BasicInterface#functionProp](interfaces/BasicInterface.md#basicinterface-functionprop)
+- [LiteralType#y](type-aliases/LiteralType.md#literaltype-y)
+- [LiteralType#y.x](type-aliases/LiteralType.md#literaltype-y)
+- [objectLiteralVariable#valueX](variables/objectLiteralVariable.md#objectliteralvariable-valuex)
+- [objectLiteralVariable#valueX.valueY](variables/objectLiteralVariable.md#objectliteralvariable-valuex)
 
 ## Enumerations
 
@@ -175,7 +221,7 @@ Module comments
 
 ## Type Aliases
 
-| Type alias | Description |
+| Type Alias | Description |
 | :------ | :------ |
 | [\\_\\_TypeDeclarationWithSpecialCharacters\\_](type-aliases/TypeDeclarationWithSpecialCharacters.md) | Comments for object with special characters |
 | [ArrayOfObjectsType](type-aliases/ArrayOfObjectsType.md) | - |
@@ -208,6 +254,7 @@ Module comments
 
 | Variable | Description |
 | :------ | :------ |
+| [curriedFunction](variables/curriedFunction.md) | Comments for main curriedFunction |
 | [objectLiteralVariable](variables/objectLiteralVariable.md) | Comments for objectLiteralVariable |
 | [objectWithSymbol](variables/objectWithSymbol.md) | Comments variable with symbol |
 | [someQuery](variables/someQuery.md) | - |
@@ -222,7 +269,6 @@ Module comments
 | :------ | :------ |
 | [basicFunction](functions/basicFunction.md) | This is a function that is assigned to a variable. |
 | [basicFunctionWithReturns](functions/basicFunctionWithReturns.md) | This is a function that is assigned to a variable. |
-| [curriedFunction](functions/curriedFunction.md) | Comments for main curriedFunction |
 | [functionReturningAFunction](functions/functionReturningAFunction.md) | Comments for function |
 | [functionReturningAnObject](functions/functionReturningAnObject.md) | Comments for function |
 | [functionReturningAPromise](functions/functionReturningAPromise.md) | Comments for function |

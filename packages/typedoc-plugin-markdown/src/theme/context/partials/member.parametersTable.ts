@@ -1,7 +1,12 @@
 import { backTicks, htmlTable, table } from '@plugin/libs/markdown/index.js';
 import { removeLineBreaks } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { ParameterReflection, ReflectionKind, ReflectionType } from 'typedoc';
+import {
+  i18n,
+  ParameterReflection,
+  ReflectionKind,
+  ReflectionType,
+} from 'typedoc';
 
 export function parametersTable(
   this: MarkdownThemeContext,
@@ -43,16 +48,16 @@ export function parametersTable(
   const hasComments = parsedParams.some((param) => Boolean(param.comment));
 
   const headers = [
-    this.internationalization.kindSingularString(ReflectionKind.Parameter),
-    this.i18n.theme_type(),
+    ReflectionKind.singularString(ReflectionKind.Parameter),
+    i18n.theme_type(),
   ];
 
   if (showDefaults) {
-    headers.push(this.i18n.theme_default_value());
+    headers.push(i18n.theme_default_value());
   }
 
   if (hasComments) {
-    headers.push(this.i18n.theme_description());
+    headers.push(i18n.theme_description());
   }
 
   const firstOptionalParamIndex = model.findIndex(
@@ -68,7 +73,7 @@ export function parametersTable(
       parameter.flags.isOptional ||
       (firstOptionalParamIndex !== -1 && i > firstOptionalParamIndex);
 
-    const rest = parameter.flags.isRest ? '...' : '';
+    const rest = parameter.flags?.isRest ? '...' : '';
 
     const optional = isOptional ? '?' : '';
 

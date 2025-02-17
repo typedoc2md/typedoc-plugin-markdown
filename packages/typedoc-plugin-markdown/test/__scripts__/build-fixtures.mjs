@@ -138,13 +138,15 @@ export function writeHtml(key, entryPoints) {
         '-out',
         fullPath,
         '-readme',
-        'none',
+        './test/fixtures/README.md',
         '-projectDocuments',
         path.join(fixturesRoot, 'PROJECT_DOC_1.md'),
         '-projectDocuments',
         path.join(fixturesRoot, 'docs/project/PROJECT_DOC_2.md'),
         '-projectDocuments',
         path.join(fixturesRoot, 'docs/project/PROJECT_DOC_3.md'),
+        '-includeVersion',
+        true,
         //'-plugin',
         //path.join(__dirname, '../../typedoc-plugins/typedoc-default-values.js'),
       ],
@@ -161,11 +163,11 @@ function toEntryPoints(entryPoints) {
     return entryPoints.reduce((prev, curr) => {
       return [
         ...prev,
-        ...[`--entryPoints`, `${process.cwd()}/test/fixtures/src/${curr}`],
+        ...[`--entryPoints`, `${process.cwd()}/test/fixtures/src${curr}`],
       ];
     }, []);
   }
-  return ['--entryPoints', `${process.cwd()}/test/fixtures/src/${entryPoints}`];
+  return ['--entryPoints', `${process.cwd()}/test/fixtures/src${entryPoints}`];
 }
 
 function objectToOptions(obj) {
@@ -186,6 +188,12 @@ function objectToOptions(obj) {
             return [...prev1, ...[`-${curr[0]}.${curr1[0]}`, curr1[1]]];
           }, []),
         ];
+      }
+      if (
+        (curr[0] === 'outputFileStrategy' && curr[1] === 'categories') ||
+        (curr[0] === 'outputFileStrategy' && curr[1] === 'groups')
+      ) {
+        return [...prev];
       }
       return [...prev, ...[`-${curr[0]}`, curr[1]]];
     },

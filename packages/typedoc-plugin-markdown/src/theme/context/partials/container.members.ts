@@ -9,12 +9,15 @@ export function members(
 ): string {
   const md: string[] = [];
   const displayHr = (reflection: DeclarationReflection) => {
-    if (this.options.getValue('outputFileStrategy') === 'modules') {
+    if (
+      this.options.getValue('outputFileStrategy') === 'modules' ||
+      this.options.getValue('router') === 'module'
+    ) {
       return this.helpers.isGroupKind(reflection);
     }
     return true;
   };
-  const items = model?.filter((item) => !item.hasOwnDocument);
+  const items = model?.filter((item) => !this.router.hasOwnDocument(item));
   items?.forEach((item, index) => {
     md.push(
       this.partials.memberContainer(item, {

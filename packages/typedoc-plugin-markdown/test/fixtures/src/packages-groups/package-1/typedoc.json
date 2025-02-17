@@ -1,0 +1,4 @@
+{
+  "entryPoints": ["./index.ts"],
+  "readme": "none"
+}

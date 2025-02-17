@@ -5,11 +5,12 @@
   "remarkPlugins": [["remark-toc", { "maxDepth": 3 }]],
   "readme": "none",
   "disableSources": true,
-  "hidePageHeader": true,
   "outputs": [
     {
       "name": "markdown",
       "path": "./out/toc-md"
     }
-  ]
+  ],
+  "hidePageHeader": true,
+  "hideBreadcrumbs": true
 }

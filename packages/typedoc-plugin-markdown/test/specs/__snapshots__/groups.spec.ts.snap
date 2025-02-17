@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Groups should compile basic module index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs**](../index.md)
+"**typedoc-stubs** • [Readme](../index.md) | [Documentation](../modules.md)
 
 ***
 
@@ -34,7 +34,7 @@ A basic module
 
 ## Type Aliases
 
-| Type alias | Description |
+| Type Alias | Description |
 | :------ | :------ |
 | [TypeA](type-aliases/TypeA.md) | TypeA function. |
 | [TypeB](type-aliases/TypeB.md) | TypeB function. |
@@ -121,7 +121,7 @@ const a = new InterfaceA();
 
 Block tag content.
 
-- [InterfaceB.propA](interfaces/InterfaceB.md#propa)
+- [InterfaceB.propA](interfaces/InterfaceB.md#basic-interfaceb-propa)
 
 </td>
 </tr>
@@ -135,7 +135,7 @@ Block tag content.
 
 InterfaceB function.
 
-- [InterfaceA.propA](interfaces/InterfaceA.md#propa)
+- [InterfaceA.propA](interfaces/InterfaceA.md#basic-interfacea-propa)
 
 </td>
 </tr>
@@ -221,7 +221,7 @@ EnumA function.
 <table>
 <thead>
 <tr>
-<th align="left">Type alias</th>
+<th align="left">Type Alias</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -236,7 +236,7 @@ EnumA function.
 
 TypeA function.
 
-[TypeB#propB](type-aliases/TypeB.md#propb)
+[TypeB#propB](type-aliases/TypeB.md#basic-typeb-propb)
 
 </td>
 </tr>
@@ -255,7 +255,7 @@ TypeB function.
 </tbody>
 </table>
 
-<a id="variablea"></a>
+<a id="basic-variablea"></a>
 
 ## variableA
 
@@ -263,7 +263,7 @@ TypeB function.
 
 ***
 
-<a id="variableb"></a>
+<a id="basic-variableb"></a>
 
 ## variableB
 
@@ -272,7 +272,7 @@ TypeB function.
 `;
 
 exports[`Groups should compile basic module index page: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs**](index.md)
+"**typedoc-stubs** • [Readme](index.md) | [Documentation](modules.md)
 
 ***
 
@@ -331,7 +331,7 @@ const a = new InterfaceA();
 
 Block tag content.
 
-- [InterfaceB.propA](basic.md#propa-1)
+- [InterfaceB.propA](#propa-1)
 
 #### Properties
 
@@ -349,7 +349,7 @@ Block tag content.
 
 InterfaceB function.
 
-- [InterfaceA.propA](basic.md#propa)
+- [InterfaceA.propA](#propa)
 
 #### Properties
 
@@ -365,21 +365,21 @@ InterfaceB function.
 
 ### TypeA
 
-> **TypeA**: \`string\`
+> **TypeA** = \`string\`
 
 TypeA function.
 
-[TypeB#propB](basic.md#propb-2)
+[TypeB#propB](#propb-2)
 
 ***
 
 ### TypeB
 
-> **TypeB**: \`object\`
+> **TypeB** = \`object\`
 
 TypeB function.
 
-#### Type declaration
+#### Properties
 
 ##### propA
 
@@ -420,7 +420,7 @@ exports[`Groups should compile basic module index page: (Output File Strategy "m
 
 A basic module
 
-<a id="functiona"></a>
+<a id="basic-functiona"></a>
 
 ## functionA()
 
@@ -428,7 +428,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="interfacea"></a>
+<a id="basic-interfacea"></a>
 
 ## InterfaceA
 
@@ -445,17 +445,17 @@ const a = new InterfaceA();
 
 Block tag content.
 
-- [InterfaceB.propA](basic.md#propa-1)
+- [InterfaceB.propA](#basic-interfaceb-propa-1)
 
 ### Properties
 
-<a id="propa"></a>
+<a id="basic-interfacea-propa"></a>
 
 #### propA
 
 > **propA**: \`string\`
 
-<a id="propb"></a>
+<a id="basic-interfacea-propb"></a>
 
 #### propB
 
@@ -463,23 +463,23 @@ Block tag content.
 
 ***
 
-<a id="interfaceb"></a>
+<a id="basic-interfaceb"></a>
 
 ## InterfaceB
 
 InterfaceB function.
 
-- [InterfaceA.propA](basic.md#propa)
+- [InterfaceA.propA](#basic-interfacea-propa)
 
 ### Properties
 
-<a id="propa-1"></a>
+<a id="basic-interfaceb-propa-1"></a>
 
 #### propA
 
 > **propA**: \`string\`
 
-<a id="propb-1"></a>
+<a id="basic-interfaceb-propb-1"></a>
 
 #### propB
 
@@ -487,7 +487,7 @@ InterfaceB function.
 
 ***
 
-<a id="classa"></a>
+<a id="basic-classa"></a>
 
 ## ClassA
 
@@ -495,7 +495,7 @@ ClassA function.
 
 ### Constructors
 
-<a id="constructors"></a>
+<a id="basic-classa-constructor"></a>
 
 #### new ClassA()
 
@@ -503,13 +503,13 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="classb"></a>
+<a id="basic-classb"></a>
 
 ## ClassB
 
 ### Constructors
 
-<a id="constructors-1"></a>
+<a id="basic-classb-constructor-1"></a>
 
 #### new ClassB()
 
@@ -517,7 +517,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="enuma"></a>
+<a id="basic-enuma"></a>
 
 ## EnumA
 
@@ -525,41 +525,41 @@ EnumA function.
 
 ***
 
-<a id="enumb"></a>
+<a id="basic-enumb"></a>
 
 ## EnumB
 
 ***
 
-<a id="typea"></a>
+<a id="basic-typea"></a>
 
 ## TypeA
 
-> **TypeA**: \`string\`
+> **TypeA** = \`string\`
 
 TypeA function.
 
-[TypeB#propB](basic.md#propb-2)
+[TypeB#propB](#basic-typeb-propb-2)
 
 ***
 
-<a id="typeb"></a>
+<a id="basic-typeb"></a>
 
 ## TypeB
 
-> **TypeB**: \`object\`
+> **TypeB** = \`object\`
 
 TypeB function.
 
-### Type declaration
+### Properties
 
-<a id="propa-2"></a>
+<a id="basic-typeb-propa-2"></a>
 
 #### propA
 
 > **propA**: \`string\`
 
-<a id="propb-2"></a>
+<a id="basic-typeb-propb-2"></a>
 
 #### propB?
 
@@ -567,7 +567,7 @@ TypeB function.
 
 ***
 
-<a id="variablea"></a>
+<a id="basic-variablea"></a>
 
 ## variableA
 
@@ -575,7 +575,7 @@ TypeB function.
 
 ***
 
-<a id="variableb"></a>
+<a id="basic-variableb"></a>
 
 ## variableB
 
@@ -584,7 +584,7 @@ TypeB function.
 `;
 
 exports[`Groups should compile categories group page: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs**](index.md)
+"**typedoc-stubs** • [Readme](index.md) | [Documentation](modules.md)
 
 ***
 
@@ -661,80 +661,80 @@ A module that contains categories
 
 ## Category A
 
-<a id="categoryaenum1"></a>
+<a id="has-categories-categoryaenum1"></a>
 
 ### CategoryAEnum1
 
 ***
 
-<a id="categoryaenum2"></a>
+<a id="has-categories-categoryaenum2"></a>
 
 ### CategoryAEnum2
 
 ***
 
-<a id="categoryainterface1"></a>
+<a id="has-categories-categoryainterface1"></a>
 
 ### CategoryAInterface1
 
 ***
 
-<a id="categoryainterface2"></a>
+<a id="has-categories-categoryainterface2"></a>
 
 ### CategoryAInterface2
 
 ## Category B
 
-<a id="categorybenum1"></a>
+<a id="has-categories-categorybenum1"></a>
 
 ### CategoryBEnum1
 
 ***
 
-<a id="categorybenum2"></a>
+<a id="has-categories-categorybenum2"></a>
 
 ### CategoryBEnum2
 
 ***
 
-<a id="categorybinterface1"></a>
+<a id="has-categories-categorybinterface1"></a>
 
 ### CategoryBInterface1
 
 ***
 
-<a id="categorybinterface2"></a>
+<a id="has-categories-categorybinterface2"></a>
 
 ### CategoryBInterface2
 
 ## Category C
 
-<a id="categorycinterface1"></a>
+<a id="has-categories-categorycinterface1"></a>
 
 ### CategoryCInterface1
 
 ## Other
 
-<a id="uncategorizedenum"></a>
+<a id="has-categories-uncategorizedenum"></a>
 
 ### UnCategorizedEnum
 
 ***
 
-<a id="categorycinterface2"></a>
+<a id="has-categories-categorycinterface2"></a>
 
 ### CategoryCInterface2
 
 ***
 
-<a id="uncategorizedinterace"></a>
+<a id="has-categories-uncategorizedinterace"></a>
 
 ### UnCategorizedInterace
 "
 `;
 
 exports[`Groups should compile categories index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs**](../index.md)
+"**typedoc-stubs** • [Readme](../index.md) | [Documentation](../modules.md)
 
 ***
 
@@ -1007,7 +1007,7 @@ A module that contains categories
 `;
 
 exports[`Groups should compile custom groups index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs**](../index.md)
+"**typedoc-stubs** • [Readme](../index.md) | [Documentation](../modules.md)
 
 ***
 
@@ -1051,7 +1051,7 @@ exports[`Groups should compile custom groups index page: (Output File Strategy "
 
 A module that contains custom groupings
 
-<a id="variabela"></a>
+<a id="has-custom-groups-variabela"></a>
 
 ## variabelA
 
@@ -1059,7 +1059,7 @@ A module that contains custom groupings
 
 ***
 
-<a id="variableb1"></a>
+<a id="has-custom-groups-variableb1"></a>
 
 ## variableB1
 
@@ -1067,7 +1067,7 @@ A module that contains custom groupings
 
 ***
 
-<a id="variableb2"></a>
+<a id="has-custom-groups-variableb2"></a>
 
 ## variableB2
 
@@ -1075,7 +1075,7 @@ A module that contains custom groupings
 
 ***
 
-<a id="variablec"></a>
+<a id="has-custom-groups-variablec"></a>
 
 ## variableC
 
@@ -1086,7 +1086,7 @@ Default grouping
 `;
 
 exports[`Groups should compile index page for project: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs**](index.md)
+"**typedoc-stubs** • [Readme](index.md) | [Documentation](modules.md)
 
 ***
 
@@ -1239,7 +1239,7 @@ A module named index
 `;
 
 exports[`Groups should compile index page for project: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs**](index.md)
+"**typedoc-stubs** • [Readme](index.md) | [Documentation](modules.md)
 
 ***
 
@@ -1392,7 +1392,7 @@ A module named index
 `;
 
 exports[`Groups should compile module index for a namespace: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs**](../../../index.md)
+"**typedoc-stubs** • [Readme](../../../index.md) | [Documentation](../../../modules.md)
 
 ***
 
@@ -1476,7 +1476,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 `;
 
 exports[`Groups should compile module index for a namespace: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs**](../../../index.md)
+"**typedoc-stubs** • [Readme](../../../index.md) | [Documentation](../../../modules.md)
 
 ***
 
@@ -1505,7 +1505,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 # \\_Namespace\\_A\\_
 
-<a id="namespaceinterface"></a>
+<a id="has-namespaces-namespacea-namespaceinterface"></a>
 
 ## NamespaceInterface
 
@@ -1539,7 +1539,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 `;
 
 exports[`Groups should compile module index with namespaces index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs**](../index.md)
+"**typedoc-stubs** • [Readme](../index.md) | [Documentation](../modules.md)
 
 ***
 
@@ -1579,7 +1579,7 @@ A module that contains namespaces
 
 ## Type Aliases
 
-| Type alias | Description |
+| Type Alias | Description |
 | :------ | :------ |
 | [\\_Type\\_A\\_](type-aliases/Type_A.md) | - |
 | [TypeB](type-aliases/TypeB.md) | - |
@@ -1801,7 +1801,7 @@ A module that contains namespaces
 <table>
 <thead>
 <tr>
-<th align="left">Type alias</th>
+<th align="left">Type Alias</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -1833,7 +1833,7 @@ A module that contains namespaces
 </tbody>
 </table>
 
-<a id="_variable_a_"></a>
+<a id="has-namespaces-variablea"></a>
 
 ## \\_variable\\_A\\_
 
@@ -1841,7 +1841,7 @@ A module that contains namespaces
 
 ***
 
-<a id="variableb"></a>
+<a id="has-namespaces-variableb"></a>
 
 ## variableB
 
@@ -1850,7 +1850,7 @@ A module that contains namespaces
 `;
 
 exports[`Groups should compile module index with namespaces index page: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs**](../index.md)
+"**typedoc-stubs** • [Readme](../index.md) | [Documentation](../modules.md)
 
 ***
 
@@ -1907,13 +1907,13 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ### \\_Type\\_A\\_
 
-> **\\_Type\\_A\\_**: \`string\`
+> **\\_Type\\_A\\_** = \`string\`
 
 ***
 
 ### TypeB
 
-> **TypeB**: \`string\`
+> **TypeB** = \`string\`
 
 ## Variables
 
@@ -1952,7 +1952,7 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 
 A module that contains namespaces
 
-<a id="_function_a_"></a>
+<a id="has-namespaces-functiona"></a>
 
 ## \\_function\\_A\\_()
 
@@ -1960,7 +1960,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="functionb"></a>
+<a id="has-namespaces-functionb"></a>
 
 ## functionB()
 
@@ -1968,25 +1968,25 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="_interface_a_"></a>
+<a id="has-namespaces-interfacea"></a>
 
 ## \\_Interface\\_A\\_
 
 ***
 
-<a id="interfaceb"></a>
+<a id="has-namespaces-interfaceb"></a>
 
 ## InterfaceB
 
 ***
 
-<a id="__class_a_"></a>
+<a id="has-namespaces-classa"></a>
 
 ## \\_\\_Class\\_A\\_
 
 ### Constructors
 
-<a id="constructors"></a>
+<a id="has-namespaces-classa-constructor"></a>
 
 #### new \\_\\_Class\\_A\\_()
 
@@ -1994,13 +1994,13 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="classb"></a>
+<a id="has-namespaces-classb"></a>
 
 ## ClassB
 
 ### Constructors
 
-<a id="constructors-1"></a>
+<a id="has-namespaces-classb-constructor-1"></a>
 
 #### new ClassB()
 
@@ -2008,13 +2008,13 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="_enum_a_"></a>
+<a id="has-namespaces-enuma"></a>
 
 ## \\_Enum\\_A\\_
 
 ***
 
-<a id="enumb"></a>
+<a id="has-namespaces-enumb"></a>
 
 ## EnumB
 
@@ -2057,23 +2057,23 @@ _SIGNATURE_MEMBER_PARTIAL_
 </tbody>
 </table>
 
-<a id="_type_a_"></a>
+<a id="has-namespaces-typea"></a>
 
 ## \\_Type\\_A\\_
 
-> **\\_Type\\_A\\_**: \`string\`
+> **\\_Type\\_A\\_** = \`string\`
 
 ***
 
-<a id="typeb"></a>
+<a id="has-namespaces-typeb"></a>
 
 ## TypeB
 
-> **TypeB**: \`string\`
+> **TypeB** = \`string\`
 
 ***
 
-<a id="_variable_a_"></a>
+<a id="has-namespaces-variablea"></a>
 
 ## \\_variable\\_A\\_
 
@@ -2081,7 +2081,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="variableb"></a>
+<a id="has-namespaces-variableb"></a>
 
 ## variableB
 
@@ -2090,7 +2090,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 `;
 
 exports[`Groups should compile readme for a project: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"**typedoc-stubs**
+"**typedoc-stubs** • [Readme](index.md) | [Documentation](modules.md)
 
 ***
 
@@ -2107,7 +2107,7 @@ Some text.
 `;
 
 exports[`Groups should compile references group page: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"[**typedoc-stubs**](index.md)
+"**typedoc-stubs** • [Readme](index.md) | [Documentation](modules.md)
 
 ***
 
@@ -2127,7 +2127,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ### default
 
-Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
+Renames and re-exports [defaultFunction](#defaultfunction)
 
 ### InterfaceA
 
@@ -2150,7 +2150,7 @@ exports[`Groups should compile references group page: (Output File Strategy "mod
 
 A module that contains references
 
-<a id="defaultfunction"></a>
+<a id="has-references-defaultfunction"></a>
 
 ## defaultFunction()
 
@@ -2158,28 +2158,28 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ***
 
-<a id="default"></a>
+<a id="has-references-default"></a>
 
 ## default
 
-Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
+Renames and re-exports [defaultFunction](#has-references-defaultfunction)
 
-<a id="interfacea"></a>
+<a id="has-references-interfacea"></a>
 
 ## InterfaceA
 
-Re-exports [InterfaceA](basic.md#interfacea)
+Re-exports [InterfaceA](basic.md#basic-interfacea)
 
-<a id="renamedinterfaceb"></a>
+<a id="has-references-renamedinterfaceb"></a>
 
 ## RenamedInterfaceB
 
-Renames and re-exports [InterfaceB](basic.md#interfaceb)
+Renames and re-exports [InterfaceB](basic.md#basic-interfaceb)
 "
 `;
 
 exports[`Groups should compile references index page: (Output File Strategy "members") (Option Group "1") 1`] = `
-"[**typedoc-stubs**](../index.md)
+"**typedoc-stubs** • [Readme](../index.md) | [Documentation](../modules.md)
 
 ***
 
@@ -2251,7 +2251,7 @@ A module that contains references
 </tbody>
 </table>
 
-<a id="default"></a>
+<a id="has-references-default"></a>
 
 ## default
 
@@ -2259,7 +2259,7 @@ Renames and re-exports [defaultFunction](functions/defaultFunction.md)
 
 ***
 
-<a id="interfacea"></a>
+<a id="has-references-interfacea"></a>
 
 ## InterfaceA
 
@@ -2267,7 +2267,7 @@ Re-exports [InterfaceA](../basic/interfaces/InterfaceA.md)
 
 ***
 
-<a id="renamedinterfaceb"></a>
+<a id="has-references-renamedinterfaceb"></a>
 
 ## RenamedInterfaceB
 

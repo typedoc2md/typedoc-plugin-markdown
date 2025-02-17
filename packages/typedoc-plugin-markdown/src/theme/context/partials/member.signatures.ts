@@ -1,6 +1,6 @@
 import { heading } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { DeclarationReflection } from 'typedoc';
+import { DeclarationReflection, i18n } from 'typedoc';
 
 export function signatures(
   this: MarkdownThemeContext,
@@ -32,9 +32,7 @@ export function signatures(
 
   model.signatures?.forEach((signature) => {
     if (multipleSignatures) {
-      md.push(
-        heading(options.headingLevel + 1, this.i18n.kind_call_signature()),
-      );
+      md.push(heading(options.headingLevel + 1, i18n.kind_call_signature()));
     }
     md.push(
       this.partials.signature(signature, {

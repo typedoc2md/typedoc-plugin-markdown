@@ -1,6 +1,5 @@
 {
   "entryPoints": ["./src/index.ts", "./src/module-1.ts", "./src/module-2.ts"],
   "readme": "none",
-  "outputFileStrategy": "members",
   "projectDocuments": "../../../PACKAGE_DOC_1.md"
 }

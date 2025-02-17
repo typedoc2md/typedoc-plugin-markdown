@@ -1,11 +1,7 @@
 import { htmlTable, link, table } from '@plugin/libs/markdown/index.js';
-import {
-  escapeChars,
-  getFileNameWithExtension,
-} from '@plugin/libs/utils/index.js';
+import { escapeChars, replaceFilename } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import * as path from 'path';
-import { ProjectReflection } from 'typedoc';
+import { DeclarationReflection, i18n, ProjectReflection } from 'typedoc';
 
 export function packagesIndex(
   this: MarkdownThemeContext,
@@ -21,37 +17,25 @@ export function packagesIndex(
     Boolean(projectPackage.packageVersion),
   );
 
-  const fileExtension = this.options.getValue('fileExtension');
-
-  const entryFileName = getFileNameWithExtension(
-    this.options.getValue('entryFileName'),
-    fileExtension,
-  );
-
   if (this.options.getValue('indexFormat').toLowerCase().includes('table')) {
-    const headers = [this.i18n.theme_package()];
+    const headers = [i18n.theme_package()];
     if (includeVersion) {
-      headers.push(this.i18n.theme_version());
+      headers.push(i18n.theme_version());
     }
-    headers.push(this.i18n.theme_description());
+    headers.push(i18n.theme_description());
 
     const packageRows = model.children?.map((projectPackage) => {
       const packageMeta = this.getPackageMetaData(projectPackage.name);
-
-      const urlTo = projectPackage.readme
-        ? `${path.dirname(projectPackage.url || '')}/${entryFileName}`
-        : projectPackage.url;
-
       const rows = [
-        urlTo
-          ? link(escapeChars(projectPackage.name), this.getRelativeUrl(urlTo))
-          : escapeChars(projectPackage.name),
+        link(
+          `${escapeChars(projectPackage.name)}`,
+          getPackageLink(this, projectPackage),
+        ),
       ];
       if (includeVersion) {
         rows.push(projectPackage.packageVersion || '-');
       }
       rows.push(packageMeta?.description || '-');
-
       return rows;
     });
     const output =
@@ -61,13 +45,10 @@ export function packagesIndex(
     md.push(output);
   } else {
     const packagesList = model.children?.map((projectPackage) => {
-      const urlTo = projectPackage.readme
-        ? `${path.dirname(projectPackage.url || '')}/${entryFileName}`
-        : projectPackage.url;
-      return urlTo
+      return this.router.hasUrl(projectPackage)
         ? `- ${link(
             `${escapeChars(projectPackage.name)}${projectPackage.packageVersion ? ` - v${projectPackage.packageVersion}` : ''}`,
-            this.getRelativeUrl(urlTo),
+            getPackageLink(this, projectPackage),
           )}`
         : '';
     });
@@ -75,4 +56,27 @@ export function packagesIndex(
   }
 
   return md.join('\n\n');
+}
+
+function getPackageLink(
+  context: MarkdownThemeContext,
+  reflection: DeclarationReflection,
+) {
+  const packageEntryModule = context.router.getPackageEntryModule(reflection);
+
+  if (packageEntryModule) {
+    return context.urlTo(packageEntryModule);
+  }
+
+  if (reflection.readme?.length && !context.options.getValue('mergeReadme')) {
+    return replaceFilename(
+      context.urlTo(reflection),
+      context.router.getModulesFileName(reflection),
+    );
+  }
+
+  return replaceFilename(
+    context.urlTo(reflection),
+    context.router.getPackageEntryFileName(reflection) || '',
+  );
 }

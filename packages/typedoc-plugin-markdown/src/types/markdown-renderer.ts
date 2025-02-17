@@ -59,12 +59,6 @@ export interface MarkdownRenderer extends Renderer {
   markdownHooks: EventHooks<MarkdownRendererHooks, string>;
 
   /**
-   * Configure pre and post async jobs
-   *
-   * When used with "outputs" is preMarkdownRenderAsyncJobs and postMarkdownRenderAsyncJobs should be used.
-   */
-
-  /**
    * A list of async jobs which must be completed before rendering output.
    *
    * Note: This array is cleared after calling the contained functions on each call.

@@ -95,7 +95,7 @@ function getOtherType(
   parameter: ParameterReflection,
   skipHeading = false,
 ) {
-  const rest = parameter.flags.isRest ? '...' : '';
+  const rest = parameter.flags?.isRest ? '...' : '';
   const identifier: string[] = [];
   const md: string[] = [];
   if (!skipHeading) {

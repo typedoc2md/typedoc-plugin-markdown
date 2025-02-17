@@ -3,7 +3,12 @@ import * as path from 'path';
 
 export function expectFileToEqual(
   key: string,
-  outputFileStrategy: 'modules' | 'members' | ('modules' | 'members')[],
+  outputFileStrategy:
+    | 'modules'
+    | 'members'
+    | 'categories'
+    | 'groups'
+    | ('modules' | 'members')[],
   file: string | string[],
   limit?: number,
   range?: Array<number>,
@@ -41,7 +46,7 @@ export function expectFileToEqual(
 
 export function expectUrlsToEqual(
   outDir: string,
-  outputFileStrategies: ('modules' | 'members')[],
+  outputFileStrategies: ('members' | 'modules' | 'categories' | 'groups')[],
 ) {
   outputFileStrategies.forEach((outputFileStrategy) => {
     const basePath = getBasePath(outDir, outputFileStrategy);
@@ -78,7 +83,10 @@ export function expectUrlsToEqual(
   });
 }
 
-function getBasePath(key: string, outputFileStrategy: 'modules' | 'members') {
+function getBasePath(
+  key: string,
+  outputFileStrategy: 'modules' | 'members' | 'categories' | 'groups',
+) {
   const basePath = path.join(
     process.cwd(),
     'test',

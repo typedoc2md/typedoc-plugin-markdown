@@ -10,15 +10,15 @@ export function memberContainer(
   const md: string[] = [];
 
   if (
-    !model.hasOwnDocument &&
-    model.url &&
+    !this.router.hasOwnDocument(model) &&
+    this.router.getAnchor(model) &&
     this.options.getValue('useHTMLAnchors')
   ) {
-    md.push(`<a id="${model.anchor}"></a>`);
+    md.push(`<a id="${this.router.getUniqueAnchor(model)}"></a>`);
   }
 
   if (
-    !model.hasOwnDocument &&
+    !this.router.hasOwnDocument(model) &&
     ![ReflectionKind.Constructor].includes(model.kind)
   ) {
     md.push(heading(options.headingLevel, this.partials.memberTitle(model)));

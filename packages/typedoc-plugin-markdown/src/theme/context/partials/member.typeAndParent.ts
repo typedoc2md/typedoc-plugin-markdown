@@ -23,16 +23,14 @@ export function typeAndParent(
     const parent = reflection?.parent;
     if (parent) {
       const resultWithParent: string[] = [];
-      if (parent?.url) {
-        resultWithParent.push(
-          link(backTicks(parent.name), this.getRelativeUrl(parent.url)),
-        );
+      if (this.router.hasUrl(parent)) {
+        resultWithParent.push(link(backTicks(parent.name), this.urlTo(parent)));
       } else {
         resultWithParent.push(backTicks(parent?.name));
       }
-      if (reflection?.url) {
+      if (this.router.hasUrl(reflection)) {
         resultWithParent.push(
-          link(backTicks(reflection.name), this.getRelativeUrl(reflection.url)),
+          link(backTicks(reflection.name), this.urlTo(reflection)),
         );
       } else {
         resultWithParent.push(backTicks(reflection?.name));

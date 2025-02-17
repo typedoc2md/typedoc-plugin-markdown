@@ -1,6 +1,6 @@
 import { heading } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { DeclarationReflection, i18n, ReflectionKind } from 'typedoc';
 
 export function accessor(
   this: MarkdownThemeContext,
@@ -12,12 +12,7 @@ export function accessor(
   const showSources = model?.parent?.kind !== ReflectionKind.TypeLiteral;
 
   if (model.getSignature) {
-    md.push(
-      heading(
-        options.headingLevel,
-        this.internationalization.proxy.kind_get_signature(),
-      ),
-    );
+    md.push(heading(options.headingLevel, i18n.kind_get_signature()));
     md.push(
       this.partials.signatureTitle(model.getSignature, {
         accessor: 'get',
@@ -46,12 +41,7 @@ export function accessor(
     }
   }
   if (model.setSignature) {
-    md.push(
-      heading(
-        options.headingLevel,
-        this.internationalization.proxy.kind_set_signature(),
-      ),
-    );
+    md.push(heading(options.headingLevel, i18n.kind_set_signature()));
     md.push(
       this.partials.signatureTitle(model.setSignature, {
         accessor: 'set',
@@ -76,7 +66,7 @@ export function accessor(
       md.push(
         heading(
           options.headingLevel + 1,
-          this.internationalization.kindPluralString(ReflectionKind.Parameter),
+          ReflectionKind.pluralString(ReflectionKind.Parameter),
         ),
       );
       if (this.helpers.useTableFormat('parameters')) {

@@ -695,59 +695,20 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       {
         "title": "index",
         "kind": 2,
-        "path": "@scope/package-3/module_index.md",
-        "isDeprecated": false,
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterfaceForIndexModule",
-                "kind": 256,
-                "path": "@scope/package-3/interfaces/PackageInterfaceForIndexModule.md",
-                "isDeprecated": false
-              }
-            ]
-          }
-        ]
+        "path": "@scope/package-3/index-1.md",
+        "isDeprecated": false
       },
       {
         "title": "module-1",
         "kind": 2,
         "path": "@scope/package-3/module-1.md",
-        "isDeprecated": false,
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterface1",
-                "kind": 256,
-                "path": "@scope/package-3/interfaces/PackageInterface1.md",
-                "isDeprecated": false
-              }
-            ]
-          }
-        ]
+        "isDeprecated": false
       },
       {
         "title": "module-2",
         "kind": 2,
         "path": "@scope/package-3/module-2.md",
-        "isDeprecated": false,
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterface2",
-                "kind": 256,
-                "path": "@scope/package-3/interfaces/PackageInterface2.md",
-                "isDeprecated": false
-              }
-            ]
-          }
-        ]
+        "isDeprecated": false
       }
     ],
     "path": "@scope/package-3/index.md"
@@ -755,7 +716,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   {
     "title": "package-1b",
     "kind": 2,
-    "path": "package-1b/index.md"
+    "path": "package-1b.md"
   },
   {
     "title": "package-2",
@@ -779,20 +740,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   {
     "title": "package-4",
     "kind": 2,
-    "children": [
-      {
-        "title": "Interfaces",
-        "children": [
-          {
-            "title": "PackageInterface",
-            "kind": 256,
-            "path": "package-4/interfaces/PackageInterface.md",
-            "isDeprecated": false
-          }
-        ]
-      }
-    ],
-    "path": "package-4/index.md"
+    "path": "package-4.md"
   },
   {
     "title": "package-5",
@@ -871,7 +819,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   {
     "title": "@scope/package-1",
     "kind": 2,
-    "path": "package-1/README.md"
+    "path": "package-1.md"
   },
   {
     "title": "@scope/package-3",
@@ -881,58 +829,19 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
         "title": "index",
         "kind": 2,
         "path": "package-3/index.md",
-        "isDeprecated": false,
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterfaceForIndexModule",
-                "kind": 256,
-                "path": "package-3/interfaces/PackageInterfaceForIndexModule.md",
-                "isDeprecated": false
-              }
-            ]
-          }
-        ]
+        "isDeprecated": false
       },
       {
         "title": "module-1",
         "kind": 2,
         "path": "package-3/module-1.md",
-        "isDeprecated": false,
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterface1",
-                "kind": 256,
-                "path": "package-3/interfaces/PackageInterface1.md",
-                "isDeprecated": false
-              }
-            ]
-          }
-        ]
+        "isDeprecated": false
       },
       {
         "title": "module-2",
         "kind": 2,
         "path": "package-3/module-2.md",
-        "isDeprecated": false,
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterface2",
-                "kind": 256,
-                "path": "package-3/interfaces/PackageInterface2.md",
-                "isDeprecated": false
-              }
-            ]
-          }
-        ]
+        "isDeprecated": false
       }
     ],
     "path": "package-3/README.md"
@@ -940,7 +849,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   {
     "title": "package-1b",
     "kind": 2,
-    "path": "package-1b/README.md"
+    "path": "package-1b.md"
   },
   {
     "title": "package-2",
@@ -964,20 +873,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   {
     "title": "package-4",
     "kind": 2,
-    "children": [
-      {
-        "title": "Interfaces",
-        "children": [
-          {
-            "title": "PackageInterface",
-            "kind": 256,
-            "path": "package-4/interfaces/PackageInterface.md",
-            "isDeprecated": false
-          }
-        ]
-      }
-    ],
-    "path": "package-4/README.md"
+    "path": "package-4.md"
   },
   {
     "title": "package-5",
@@ -1276,6 +1172,248 @@ exports[`Navigation should get with and without groups and categories: (Output F
         "kind": 2,
         "path": "Module3.md",
         "isDeprecated": false
+      }
+    ]
+  }
+]"
+`;
+
+exports[`Navigation should gets Navigation Json for categories multi module: (Output File Strategy "categories") (Option Group "1") 1`] = `
+"[
+  {
+    "title": "module-1",
+    "kind": 2,
+    "path": "module-1/README.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "Category 1",
+        "path": "module-1/Category-1.md"
+      },
+      {
+        "title": "Category 2",
+        "path": "module-1/Category-2.md"
+      }
+    ]
+  },
+  {
+    "title": "module-2",
+    "kind": 2,
+    "path": "module-2/README.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "Category 1",
+        "path": "module-2/Category-1.md",
+        "children": [
+          {
+            "title": "NamespaceCategoryOne",
+            "kind": 4,
+            "path": "module-2/namespaces/NamespaceCategoryOne/README.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Category 2",
+        "path": "module-2/Category-2.md"
+      },
+      {
+        "title": "Category 3",
+        "path": "module-2/Category-3.md"
+      },
+      {
+        "title": "Other",
+        "path": "module-2/Other.md",
+        "children": [
+          {
+            "title": "NamespaceNoCategory",
+            "kind": 4,
+            "path": "module-2/namespaces/NamespaceNoCategory/README.md",
+            "isDeprecated": false,
+            "children": [
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "NamespaceInterface",
+                    "kind": 256,
+                    "path": "module-2/namespaces/NamespaceNoCategory/interfaces/NamespaceInterface.md",
+                    "isDeprecated": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-3",
+    "kind": 2,
+    "path": "module-3/README.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "Enumerations",
+        "children": [
+          {
+            "title": "SomeEnum",
+            "kind": 8,
+            "path": "module-3/enumerations/SomeEnum.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "SomeClass",
+            "kind": 128,
+            "path": "module-3/classes/SomeClass.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "SomeClass2",
+            "kind": 128,
+            "path": "module-3/classes/SomeClass2.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "SomeInterface",
+            "kind": 256,
+            "path": "module-3/interfaces/SomeInterface.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "SomeInterface2",
+            "kind": 256,
+            "path": "module-3/interfaces/SomeInterface2.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Functions",
+        "children": [
+          {
+            "title": "someFunction",
+            "kind": 64,
+            "path": "module-3/functions/someFunction.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "someFunction2",
+            "kind": 64,
+            "path": "module-3/functions/someFunction2.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ]
+  }
+]"
+`;
+
+exports[`Navigation should gets Navigation Json for categories packages: (Output File Strategy "categories") (Option Group "1") 1`] = `
+"[
+  {
+    "title": "package-1",
+    "kind": 2,
+    "path": "package-1/README.md"
+  },
+  {
+    "title": "package-2",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module-1",
+        "kind": 2,
+        "path": "package-2/module-1/README.md",
+        "isDeprecated": false,
+        "children": [
+          {
+            "title": "Some Category",
+            "path": "package-2/module-1/Some-Category.md"
+          }
+        ]
+      },
+      {
+        "title": "module-2",
+        "kind": 2,
+        "path": "package-2/module-2/README.md",
+        "isDeprecated": false,
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "PackageInterface2",
+                "kind": 256,
+                "path": "package-2/module-2/interfaces/PackageInterface2.md",
+                "isDeprecated": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "path": "package-2/README.md"
+  }
+]"
+`;
+
+exports[`Navigation should gets Navigation Json for categories single module: (Output File Strategy "categories") (Option Group "1") 1`] = `
+"[
+  {
+    "title": "Category 1",
+    "path": "Category-1.md",
+    "children": [
+      {
+        "title": "NamespaceCategoryOne",
+        "kind": 4,
+        "path": "namespaces/NamespaceCategoryOne/README.md",
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "title": "Category 2",
+    "path": "Category-2.md"
+  },
+  {
+    "title": "Category 3",
+    "path": "Category-3.md"
+  },
+  {
+    "title": "Other",
+    "path": "Other.md",
+    "children": [
+      {
+        "title": "NamespaceNoCategory",
+        "kind": 4,
+        "path": "namespaces/NamespaceNoCategory/README.md",
+        "isDeprecated": false,
+        "children": [
+          {
+            "title": "Interfaces",
+            "children": [
+              {
+                "title": "NamespaceInterface",
+                "kind": 256,
+                "path": "namespaces/NamespaceNoCategory/interfaces/NamespaceInterface.md",
+                "isDeprecated": false
+              }
+            ]
+          }
+        ]
       }
     ]
   }
@@ -2741,6 +2879,214 @@ exports[`Navigation should gets Navigation Json for entry modules: (Output File 
   }
 ]"
 `;
+
+exports[`Navigation should gets Navigation Json for groups multi module: (Output File Strategy "groups") (Option Group "1") 1`] = `
+"[
+  {
+    "title": "<internal>",
+    "kind": 2,
+    "path": "-internal-/README.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "42-module-name",
+    "kind": 2,
+    "path": "42-module-name/README.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "basic",
+    "kind": 2,
+    "path": "basic/README.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "Enumerations",
+        "path": "basic/Enumerations.md"
+      },
+      {
+        "title": "Classes",
+        "path": "basic/Classes.md"
+      },
+      {
+        "title": "Interfaces",
+        "path": "basic/Interfaces.md"
+      },
+      {
+        "title": "Type Aliases",
+        "path": "basic/Type-Aliases.md"
+      },
+      {
+        "title": "Variables",
+        "path": "basic/Variables.md"
+      },
+      {
+        "title": "Functions",
+        "path": "basic/Functions.md"
+      }
+    ]
+  },
+  {
+    "title": "has-categories",
+    "kind": 2,
+    "path": "has-categories/README.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "has-custom-groups",
+    "kind": 2,
+    "path": "has-custom-groups/README.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "Variables",
+        "path": "has-custom-groups/Variables.md"
+      },
+      {
+        "title": "CustomGroupA",
+        "path": "has-custom-groups/CustomGroupA.md"
+      },
+      {
+        "title": "CustomGroupB",
+        "path": "has-custom-groups/CustomGroupB.md"
+      }
+    ]
+  },
+  {
+    "title": "has-namespaces",
+    "kind": 2,
+    "path": "has-namespaces/README.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "Namespaces",
+        "path": "has-namespaces/Namespaces.md"
+      },
+      {
+        "title": "Enumerations",
+        "path": "has-namespaces/Enumerations.md"
+      },
+      {
+        "title": "Classes",
+        "path": "has-namespaces/Classes.md"
+      },
+      {
+        "title": "Interfaces",
+        "path": "has-namespaces/Interfaces.md"
+      },
+      {
+        "title": "Type Aliases",
+        "path": "has-namespaces/Type-Aliases.md"
+      },
+      {
+        "title": "Variables",
+        "path": "has-namespaces/Variables.md"
+      },
+      {
+        "title": "Functions",
+        "path": "has-namespaces/Functions.md"
+      }
+    ]
+  },
+  {
+    "title": "has-references",
+    "kind": 2,
+    "path": "has-references/README.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "Functions",
+        "path": "has-references/Functions.md"
+      },
+      {
+        "title": "References",
+        "path": "has-references/References.md"
+      }
+    ]
+  },
+  {
+    "title": "has-same-exports",
+    "kind": 2,
+    "path": "has-same-exports/README.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "Classes",
+        "path": "has-same-exports/Classes.md"
+      },
+      {
+        "title": "group1",
+        "path": "has-same-exports/group1.md"
+      },
+      {
+        "title": "group2",
+        "path": "has-same-exports/group2.md"
+      }
+    ]
+  },
+  {
+    "title": "index",
+    "kind": 2,
+    "path": "index/README.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "Classes",
+        "path": "index/Classes.md"
+      }
+    ]
+  }
+]"
+`;
+
+exports[`Navigation should gets Navigation Json for groups packages: (Output File Strategy "groups") (Option Group "1") 1`] = `
+"[
+  {
+    "title": "package-1",
+    "kind": 2,
+    "children": [
+      {
+        "title": "Some Group",
+        "path": "package-1/Some-Group.md"
+      }
+    ],
+    "path": "package-1/README.md"
+  },
+  {
+    "title": "package-2",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module-1",
+        "kind": 2,
+        "path": "package-2/module-1/README.md",
+        "isDeprecated": false,
+        "children": [
+          {
+            "title": "Some Group",
+            "path": "package-2/module-1/Some-Group.md"
+          }
+        ]
+      },
+      {
+        "title": "module-2",
+        "kind": 2,
+        "path": "package-2/module-2/README.md",
+        "isDeprecated": false,
+        "children": [
+          {
+            "title": "Interfaces",
+            "path": "package-2/module-2/Interfaces.md"
+          }
+        ]
+      }
+    ],
+    "path": "package-2/README.md"
+  }
+]"
+`;
+
+exports[`Navigation should gets Navigation Json for groups single module: (Output File Strategy "groups") (Option Group "1") 1`] = `"[]"`;
 
 exports[`Navigation should gets Navigation Json for modules with parts: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[
@@ -5209,6 +5555,12 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
     "title": "Variables",
     "children": [
       {
+        "title": "curriedFunction",
+        "kind": 32,
+        "path": "variables/curriedFunction.md",
+        "isDeprecated": false
+      },
+      {
         "title": "objectLiteralVariable",
         "kind": 32,
         "path": "variables/objectLiteralVariable.md",
@@ -5265,12 +5617,6 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "title": "basicFunctionWithReturns",
         "kind": 64,
         "path": "functions/basicFunctionWithReturns.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "curriedFunction",
-        "kind": 64,
-        "path": "functions/curriedFunction.md",
         "isDeprecated": false
       },
       {

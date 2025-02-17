@@ -1,5 +1,3 @@
-import { MarkdownPageEvent } from '@plugin/events/index.js';
-import { OutputFileStrategy } from '@plugin/options/maps.js';
 import { Options, ReflectionKind } from 'typedoc';
 
 /**
@@ -12,17 +10,6 @@ export interface PackageMetaData {
 }
 
 /**
- * The model used to define the URL mapping structure.
- *
- */
-export interface UrlMapping</** @ignore */ Model> {
-  url: string;
-  model: Model;
-  group?: string;
-  template: (data: MarkdownPageEvent<Model>) => string;
-}
-
-/**
  * The model used to define the navigation structure.
  *
  */
@@ -32,28 +19,6 @@ export interface NavigationItem {
   kind?: ReflectionKind;
   isDeprecated?: boolean;
   children?: NavigationItem[];
-}
-
-/**
- * Defines how reflections are mapped to urls.
- */
-export interface TemplateMapping {
-  directory: string | null;
-  template: any;
-  kind: ReflectionKind;
-}
-
-/**
- * Used internally when building the URL mapping.
- */
-export interface UrlOption {
-  parentUrl?: string;
-  directory?: string | null;
-  forceDirectory?: boolean;
-  outputFileStrategy?: OutputFileStrategy;
-  entryModule?: string;
-  entryFileName?: string;
-  group?: string;
 }
 
 /**

@@ -6,6 +6,10 @@ on:
       - '!packages/typedoc-vitepress-theme/README.md'
       - '!packages/typedoc-vitepress-theme/CHANGELOG.md'
       - '!packages/typedoc-vitepress-theme/package.json'
+    branches:
+      - main
+      - release
+      - beta
   pull_request:
     paths:
       - 'packages/typedoc-vitepress-theme/**'

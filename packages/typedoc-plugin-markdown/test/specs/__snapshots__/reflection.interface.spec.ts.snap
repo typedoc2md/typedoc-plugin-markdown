@@ -234,18 +234,18 @@ Comments for BasicInterface
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| <a id="deprecatedprop"></a> ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated** This prop is deprecated **See** Comments for some tag |
-| <a id="functionprop"></a> \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper |
-| <a id="optionalprop"></a> \`optionalProp?\` | \`string\` | Comments for optional prop |
-| <a id="prop"></a> \`prop\` | \`string\` | Comments for prop |
-| <a id="propreturningobjectdeclaration"></a> \`propReturningObjectDeclaration\` | \`object\` | Comments for propReturningObjectDeclaration |
+| <a id="basicinterface-deprecatedprop"></a> ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated** This prop is deprecated **See** Comments for some tag |
+| <a id="basicinterface-functionprop"></a> \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper |
+| <a id="basicinterface-optionalprop"></a> \`optionalProp?\` | \`string\` | Comments for optional prop |
+| <a id="basicinterface-prop"></a> \`prop\` | \`string\` | Comments for prop |
+| <a id="basicinterface-propreturningobjectdeclaration"></a> \`propReturningObjectDeclaration\` | \`object\` | Comments for propReturningObjectDeclaration |
 | \`propReturningObjectDeclaration.a\` | \`boolean\` | - |
 | \`propReturningObjectDeclaration.b\` | \`string\` | - |
-| <a id="propreturningobjectdeclarations"></a> \`propReturningObjectDeclarations\` | \`object\` & \`object\` | Comments for propReturningObjectDeclarations |
-| <a id="propreturningsignaturedeclaration"></a> \`propReturningSignatureDeclaration?\` | () => \`string\` \\| \`number\` \\| \`boolean\` | Comments for propReturningSignatureDeclaration |
-| <a id="propreturningsignaturedeclarations"></a> \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations |
-| <a id="propwithfunction"></a> \`propWithFunction\` | (\`options\`: \`object\`) => \`boolean\` | Comments for propWithFunction |
-| <a id="propwithprops"></a> \`propWithProps\` | \`object\` | Comments for propWithProps |
+| <a id="basicinterface-propreturningobjectdeclarations"></a> \`propReturningObjectDeclarations\` | \`object\` & \`object\` | Comments for propReturningObjectDeclarations |
+| <a id="basicinterface-propreturningsignaturedeclaration"></a> \`propReturningSignatureDeclaration?\` | () => \`string\` \\| \`number\` \\| \`boolean\` | Comments for propReturningSignatureDeclaration |
+| <a id="basicinterface-propreturningsignaturedeclarations"></a> \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations |
+| <a id="basicinterface-propwithfunction"></a> \`propWithFunction\` | (\`options\`: \`object\`) => \`boolean\` | Comments for propWithFunction |
+| <a id="basicinterface-propwithprops"></a> \`propWithProps\` | \`object\` | Comments for propWithProps |
 | \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB |
@@ -537,19 +537,19 @@ Comments for ExtendedInterface
 
 | Property | Type | Description | Inherited from |
 | :------ | :------ | :------ | :------ |
-| <a id="deprecatedprop"></a> ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated** This prop is deprecated **See** Comments for some tag | [\`BasicInterface\`](BasicInterface.md).[\`deprecatedProp\`](BasicInterface.md#deprecatedprop) |
-| <a id="extendedprop"></a> \`extendedProp\` | \`string\` | - | - |
-| <a id="functionprop"></a> \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper | [\`BasicInterface\`](BasicInterface.md).[\`functionProp\`](BasicInterface.md#functionprop) |
-| <a id="optionalprop"></a> \`optionalProp?\` | \`string\` | Comments for optional prop | [\`BasicInterface\`](BasicInterface.md).[\`optionalProp\`](BasicInterface.md#optionalprop) |
-| <a id="prop"></a> \`prop\` | \`string\` | Comments for prop | [\`BasicInterface\`](BasicInterface.md).[\`prop\`](BasicInterface.md#prop) |
-| <a id="propreturningobjectdeclaration"></a> \`propReturningObjectDeclaration\` | \`object\` | Comments for propReturningObjectDeclaration | [\`BasicInterface\`](BasicInterface.md).[\`propReturningObjectDeclaration\`](BasicInterface.md#propreturningobjectdeclaration) |
+| <a id="extendedinterface-deprecatedprop"></a> ~~\`deprecatedProp\`~~ | \`string\` | **Deprecated** This prop is deprecated **See** Comments for some tag | [\`BasicInterface\`](BasicInterface.md).[\`deprecatedProp\`](BasicInterface.md#basicinterface-deprecatedprop) |
+| <a id="extendedinterface-extendedprop"></a> \`extendedProp\` | \`string\` | - | - |
+| <a id="extendedinterface-functionprop"></a> \`functionProp\` | (\`s\`: \`string\`) => \`boolean\` | Comments for functionProper | [\`BasicInterface\`](BasicInterface.md).[\`functionProp\`](BasicInterface.md#basicinterface-functionprop) |
+| <a id="extendedinterface-optionalprop"></a> \`optionalProp?\` | \`string\` | Comments for optional prop | [\`BasicInterface\`](BasicInterface.md).[\`optionalProp\`](BasicInterface.md#basicinterface-optionalprop) |
+| <a id="extendedinterface-prop"></a> \`prop\` | \`string\` | Comments for prop | [\`BasicInterface\`](BasicInterface.md).[\`prop\`](BasicInterface.md#basicinterface-prop) |
+| <a id="extendedinterface-propreturningobjectdeclaration"></a> \`propReturningObjectDeclaration\` | \`object\` | Comments for propReturningObjectDeclaration | [\`BasicInterface\`](BasicInterface.md).[\`propReturningObjectDeclaration\`](BasicInterface.md#basicinterface-propreturningobjectdeclaration) |
 | \`propReturningObjectDeclaration.a\` | \`boolean\` | - | - |
 | \`propReturningObjectDeclaration.b\` | \`string\` | - | - |
-| <a id="propreturningobjectdeclarations"></a> \`propReturningObjectDeclarations\` | \`object\` & \`object\` | Comments for propReturningObjectDeclarations | [\`BasicInterface\`](BasicInterface.md).[\`propReturningObjectDeclarations\`](BasicInterface.md#propreturningobjectdeclarations) |
-| <a id="propreturningsignaturedeclaration"></a> \`propReturningSignatureDeclaration?\` | () => \`string\` \\| \`number\` \\| \`boolean\` | Comments for propReturningSignatureDeclaration | [\`BasicInterface\`](BasicInterface.md).[\`propReturningSignatureDeclaration\`](BasicInterface.md#propreturningsignaturedeclaration) |
-| <a id="propreturningsignaturedeclarations"></a> \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations | [\`BasicInterface\`](BasicInterface.md).[\`propReturningSignatureDeclarations\`](BasicInterface.md#propreturningsignaturedeclarations) |
-| <a id="propwithfunction"></a> \`propWithFunction\` | (\`options\`: \`object\`) => \`boolean\` | Comments for propWithFunction | [\`BasicInterface\`](BasicInterface.md).[\`propWithFunction\`](BasicInterface.md#propwithfunction) |
-| <a id="propwithprops"></a> \`propWithProps\` | \`object\` | Comments for propWithProps | [\`BasicInterface\`](BasicInterface.md).[\`propWithProps\`](BasicInterface.md#propwithprops) |
+| <a id="extendedinterface-propreturningobjectdeclarations"></a> \`propReturningObjectDeclarations\` | \`object\` & \`object\` | Comments for propReturningObjectDeclarations | [\`BasicInterface\`](BasicInterface.md).[\`propReturningObjectDeclarations\`](BasicInterface.md#basicinterface-propreturningobjectdeclarations) |
+| <a id="extendedinterface-propreturningsignaturedeclaration"></a> \`propReturningSignatureDeclaration?\` | () => \`string\` \\| \`number\` \\| \`boolean\` | Comments for propReturningSignatureDeclaration | [\`BasicInterface\`](BasicInterface.md).[\`propReturningSignatureDeclaration\`](BasicInterface.md#basicinterface-propreturningsignaturedeclaration) |
+| <a id="extendedinterface-propreturningsignaturedeclarations"></a> \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations | [\`BasicInterface\`](BasicInterface.md).[\`propReturningSignatureDeclarations\`](BasicInterface.md#basicinterface-propreturningsignaturedeclarations) |
+| <a id="extendedinterface-propwithfunction"></a> \`propWithFunction\` | (\`options\`: \`object\`) => \`boolean\` | Comments for propWithFunction | [\`BasicInterface\`](BasicInterface.md).[\`propWithFunction\`](BasicInterface.md#basicinterface-propwithfunction) |
+| <a id="extendedinterface-propwithprops"></a> \`propWithProps\` | \`object\` | Comments for propWithProps | [\`BasicInterface\`](BasicInterface.md).[\`propWithProps\`](BasicInterface.md#basicinterface-propwithprops) |
 | \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks | - |
 | \`propWithProps.nestedPropA\` | \`string\` | Comments for nestedPropA | - |
 | \`propWithProps.nestedPropB\` | \`boolean\` | Comments for nestedPropB | - |
@@ -597,7 +597,7 @@ Comments for IndexableInterface
 
 | Property | Type |
 | :------ | :------ |
-| <a id="prop"></a> \`prop\` | \`string\` |
+| <a id="indexableinterface-prop"></a> \`prop\` | \`string\` |
 "
 `;
 
@@ -613,22 +613,30 @@ And some more comments
 
 ## Type Parameters
 
-• **A**
+### A
+
+\`A\`
 
 This is a parameter.
 
-• **B**
+### B
+
+\`B\`
 
 Comments for a parameter.
 This sentence is on a soft new line.
 
-• **C**
+### C
+
+\`C\`
 
 This is a parameter.
 
  Documentation with a double line
 
-• **D**
+### D
+
+\`D\`
 
 <p>These are comments with paras</p>
 <p>These are comments with paras</p>
@@ -683,7 +691,7 @@ And some more comments
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| <a id="propertywithcomments"></a> ~~\`propertyWithComments\`~~ | \`string\` | Some text. - list item - list item **Deprecated** This is a deprecated property **See** https://example.com |
+| <a id="interfacewithcomments-propertywithcomments"></a> ~~\`propertyWithComments\`~~ | \`string\` | Some text. - list item - list item **Deprecated** This is a deprecated property **See** https://example.com |
 "
 `;
 
@@ -747,14 +755,14 @@ Defined in: [interfaces.ts:1](http://source-url)
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| <a id="someprop"></a> \`someProp?\` | \`boolean\` | Description for prop someProp |
+| <a id="interfacewitheventproperties-someprop"></a> \`someProp?\` | \`boolean\` | Description for prop someProp |
 
 ## Events
 
 | Event | Type | Description |
 | :------ | :------ | :------ |
-| <a id="anotherevent"></a> \`anotherEvent\` | \`MouseEvent\` | - |
-| <a id="someevent"></a> ~~\`someEvent?\`~~ | (\`eventParam\`: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>) => \`void\` | Description for event someEvent **Deprecated** Deprectaed comments |
+| <a id="interfacewitheventproperties-anotherevent"></a> \`anotherEvent\` | \`MouseEvent\` | - |
+| <a id="interfacewitheventproperties-someevent"></a> ~~\`someEvent?\`~~ | (\`eventParam\`: [\`CustomEventInterface\`](CustomEventInterface.md)\\<\`MouseEvent\`\\>) => \`void\` | Description for event someEvent **Deprecated** Deprectaed comments |
 "
 `;
 
@@ -800,8 +808,8 @@ Comments for InterfaceWithFlags
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| <a id="expermintalprop"></a> \`expermintalProp?\` | \`string\` | **\`Experimental\`** |
-| <a id="internalprop"></a> \`internalProp\` | \`string\` | **\`Internal\`** Comments for internalProp |
+| <a id="interfacewithflags-expermintalprop"></a> \`expermintalProp?\` | \`string\` | **\`Experimental\`** |
+| <a id="interfacewithflags-internalprop"></a> \`internalProp\` | \`string\` | **\`Internal\`** Comments for internalProp |
 "
 `;
 
@@ -814,7 +822,9 @@ Comments for InterfaceWithTypeParameters
 
 ## Type Parameters
 
-• **A**
+### A
+
+\`A\`
 
 ## Properties
 
@@ -845,7 +855,7 @@ Comments for InterfaceWithTypeParameters
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| <a id="prop"></a> \`prop\` | \`A\` | Comments for prop |
+| <a id="interfacewithtypeparameters-prop"></a> \`prop\` | \`A\` | Comments for prop |
 "
 `;
 
@@ -891,6 +901,6 @@ Defined in: [interfaces.ts:1](http://source-url)
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| <a id="prop"></a> \`prop\` | \`string\` | Prop |
+| <a id="multipleindexableinterface-prop"></a> \`prop\` | \`string\` | Prop |
 "
 `;

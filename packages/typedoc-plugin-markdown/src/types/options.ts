@@ -210,6 +210,11 @@ export interface PluginOptions {
   };
 
   /**
+   * Sets the format of style for type alias properties.
+   */
+  typeAliasPropertiesFormat: 'list' | 'table' | 'htmlTable';
+
+  /**
    * Sets the format of style for type declaration members.
    */
   typeDeclarationFormat: 'list' | 'table' | 'htmlTable';

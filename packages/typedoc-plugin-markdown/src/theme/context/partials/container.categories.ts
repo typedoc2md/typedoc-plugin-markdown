@@ -13,7 +13,7 @@ export function categories(
 ) {
   const md: string[] = [];
   models.forEach((category) => {
-    if (category.allChildrenHaveOwnDocument()) {
+    if (category.children.every((child) => this.router.hasOwnDocument(child))) {
       md.push(heading(options.headingLevel, category.title));
       if (category.description) {
         md.push(this.helpers.getCommentParts(category.description));

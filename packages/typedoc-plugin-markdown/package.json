@@ -33,9 +33,6 @@
     "directory": "packages/typedoc-plugin-markdown"
   },
   "homepage": "https://typedoc-plugin-markdown.org",
-  "peerDependencies": {
-    "typedoc": "0.27.x"
-  },
   "engines": {
     "node": ">= 18"
   },

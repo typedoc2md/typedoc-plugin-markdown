@@ -1,6 +1,15 @@
 /**
  * Module comments
  *
+ * - {@link BasicClass#prop}
+ * - {@link BasicClass#Prop}
+ * - {@link BasicEnum#MemberB}
+ * - {@link BasicInterface#functionProp}
+ * - {@link LiteralType#y}
+ * - {@link LiteralType#y.x}
+ * - {@link objectLiteralVariable#valueX}
+ * - {@link objectLiteralVariable#valueX.valueY}
+ *
  * @module
  */
 

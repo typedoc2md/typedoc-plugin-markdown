@@ -3,6 +3,7 @@ export interface DocsConfig {
   translatablePath?: string;
   presetsPath?: string;
   optionsPath: string;
+  optionsFile?: string;
   docsPath: string;
   declarations: boolean;
   presets: boolean;

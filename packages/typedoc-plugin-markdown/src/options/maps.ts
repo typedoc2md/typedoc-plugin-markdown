@@ -28,3 +28,12 @@ export enum TypeDeclarationVisibility {
   Compact = 'compact',
   Verbose = 'verbose',
 }
+
+/**
+ * The allowed values for formatting reflections and indexes.
+ */
+/*export enum HeadingAnchorStrategy {
+  Auto = 'auto',
+  Explicit = 'explicit',
+  Html = 'html',
+}*/

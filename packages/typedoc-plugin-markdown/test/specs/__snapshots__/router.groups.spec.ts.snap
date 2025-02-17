@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Groups Router should get groups index page: (Output File Strategy "groups") (Option Group "1") 1`] = `
+"# basic
+
+A basic module
+
+## Groups
+
+- [Enumerations](Enumerations.md)
+- [Classes](Classes.md)
+- [Interfaces](Interfaces.md)
+- [Type Aliases](Type-Aliases.md)
+- [Variables](Variables.md)
+- [Functions](Functions.md)
+"
+`;
+
+exports[`Groups Router should get groups page with single module: (Output File Strategy "groups") (Option Group "1") 1`] = `
+"# Classes
+
+## ClassA
+
+Defined in: [basic.ts:45](http://source-url)
+
+ClassA function.
+
+### Constructors
+
+#### new ClassA()
+
+> **new ClassA**(): \`ClassA\`
+
+##### Returns
+
+\`ClassA\`
+
+***
+
+## ClassB
+
+Defined in: [basic.ts:46](http://source-url)
+
+### Constructors
+
+#### new ClassB()
+
+> **new ClassB**(): \`ClassB\`
+
+##### Returns
+
+\`ClassB\`
+"
+`;
+
+exports[`Groups Router should get groups page: (Output File Strategy "groups") (Option Group "1") 1`] = `
+"# Classes
+
+## ClassA
+
+Defined in: [basic.ts:45](http://source-url)
+
+ClassA function.
+
+### Constructors
+
+#### new ClassA()
+
+> **new ClassA**(): \`ClassA\`
+
+##### Returns
+
+\`ClassA\`
+
+***
+
+## ClassB
+
+Defined in: [basic.ts:46](http://source-url)
+
+### Constructors
+
+#### new ClassB()
+
+> **new ClassB**(): \`ClassB\`
+
+##### Returns
+
+\`ClassB\`
+"
+`;
+
+exports[`Groups Router should get index page for groups with packages: (Output File Strategy "groups") (Option Group "1") 1`] = `
+"# package-1
+
+Comments for package-1
+
+## Groups
+
+- [Some Group](Some-Group.md)
+"
+`;
+
+exports[`Groups Router should get index page for groups with single module: (Output File Strategy "groups") (Option Group "1") 1`] = `
+"# MY README
+
+> Some block quote
+
+Some text.
+
+## Readme heading
+
+Some text.
+"
+`;

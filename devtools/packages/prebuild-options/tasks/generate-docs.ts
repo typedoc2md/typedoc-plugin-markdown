@@ -17,7 +17,14 @@ export async function generateOptionsDocs(docsConfig: DocsConfig) {
     tsConfigFilePath: 'tsconfig.json',
   });
 
-  const outputPage: string[] = [`import { Callout } from 'nextra/components';`];
+  const outputPage: string[] = [];
+
+  if (docsConfig.optionsFile === 'options/index.mdx')
+    outputPage.push(`---
+asIndexPage: true
+---`);
+
+  outputPage.push(`import { Callout } from 'nextra/components';`);
 
   outputPage.push('# Options');
   if (docsConfig.docsPath === '/docs') {
@@ -231,6 +238,7 @@ ${JSON.stringify(exampleJson, null, 2)}
         );
         const formattedOut = await prettier.format(out.join('\n\n'), {
           parser: 'mdx',
+          singleQuote: true,
         });
         fs.writeFileSync(catDocPath, formattedOut);
       } else {
@@ -249,6 +257,7 @@ ${JSON.stringify(exampleJson, null, 2)}
         )}`,
         {
           parser: 'typescript',
+          singleQuote: true,
         },
       );
 
@@ -263,11 +272,12 @@ ${JSON.stringify(exampleJson, null, 2)}
 
     const optionDocPath = path.join(
       getPagesPath(docsConfig.optionsPath),
-      'options.mdx',
+      docsConfig.optionsFile || 'options.mdx',
     );
 
     const formattedOut = await prettier.format(outputPage.join('\n\n'), {
       parser: 'mdx',
+      singleQuote: true,
     });
 
     fs.writeFileSync(optionDocPath, formattedOut);
@@ -364,7 +374,7 @@ function getPagesPath(docsPath: string) {
     '..',
     '..',
     'docs',
-    'pages',
+    'content',
   );
   return path.join(pagesPath, docsPath);
 }

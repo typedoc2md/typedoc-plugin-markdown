@@ -28,4 +28,8 @@ describe(`Variable Reflection`, () => {
       'variables/objectWithSymbol.md',
     );
   });
+
+  test(`should compile curried function`, () => {
+    expectFileToEqual('reflections', 'members', 'variables/curriedFunction.md');
+  });
 });

@@ -1,6 +1,6 @@
-// @ts-check
-
 import * as fs from 'fs';
+
+// @ts-check
 
 /**
  * @param {import('typedoc-plugin-markdown').MarkdownApplication} app

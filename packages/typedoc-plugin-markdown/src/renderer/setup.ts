@@ -1,3 +1,10 @@
+import {
+  CategoryRouter,
+  GroupRouter,
+  KindRouter,
+  MarkdownRouter,
+  ModuleRouter,
+} from '@plugin/router/index.js';
 import { MarkdownTheme } from '@plugin/theme/index.js';
 import {
   MarkdownRenderer,
@@ -17,6 +24,15 @@ export function setupRenderer(app: Application) {
     value: new EventHooks<MarkdownRendererHooks, string>(),
   });
 
+  Object.defineProperty(app.renderer, 'routers', {
+    value: new Map<string, new (app: Application) => MarkdownRouter>([
+      ['kind', KindRouter],
+      ['module', ModuleRouter],
+      ['category', CategoryRouter],
+      ['group', GroupRouter],
+    ]),
+  });
+
   Object.defineProperty(app.renderer, 'preMarkdownRenderAsyncJobs', {
     value: [],
   });
@@ -25,7 +41,7 @@ export function setupRenderer(app: Application) {
     value: [],
   });
 
-  app.converter.on(Converter.EVENT_RESOLVE_END, (context: Context) => {
+  app.converter.on(Converter.EVENT_RESOLVE_END, (context) => {
     if (app.options.packageDir) {
       resolvePackages(app, context, app.options.packageDir);
     }
@@ -54,7 +70,7 @@ function resolvePackages(
     ? JSON.parse(packageJsonContents)
     : {};
 
-  const renderer = app.renderer as unknown as MarkdownRenderer;
+  const renderer = app.renderer as MarkdownRenderer;
 
   renderer.packagesMeta = {
     ...(renderer.packagesMeta || {}),

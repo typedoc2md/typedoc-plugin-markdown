@@ -40,28 +40,17 @@ import { templates, partials, helpers } from './index.js';
 
 export const resourceTemplates = (context: MarkdownThemeContext) => {
   return {
-    /**
-     * Template that maps to a project document.
-     */
-
     document: (page: MarkdownPageEvent<DocumentReflection>) =>
       templates.document.apply(context, [page]) as string,
-    /**
-     * Template that maps to the root project reflection. This will be the index page / documentation root page.
-     */
-
-    project: (page: MarkdownPageEvent<ProjectReflection>) =>
-      templates.project.apply(context, [page]) as string,
+    groupAndCategory: (
+      page: MarkdownPageEvent<DeclarationReflection | ProjectReflection>,
+    ) => templates.groupAndCategory.apply(context, [page]) as string,
     /**
      * Template that specifically maps to the resolved readme file. This template is not used when 'readme' is set to 'none'.
      */
 
     readme: (page: MarkdownPageEvent<ProjectReflection>) =>
       templates.readme.apply(context, [page]) as string,
-    /**
-     * Template that maps to individual reflection models.
-     */
-
     reflection: (page: MarkdownPageEvent<DeclarationReflection>) =>
       templates.reflection.apply(context, [page]) as string,
   };
@@ -85,6 +74,8 @@ export const resourcePartials = (context: MarkdownThemeContext) => {
       models: ReflectionCategory[],
       options: { headingLevel: number },
     ) => partials.categories.apply(context, [models, options]) as string,
+    groupAndCategoryIndex: (model: ReflectionCategory[] | ReflectionGroup[]) =>
+      partials.groupAndCategoryIndex.apply(context, [model]) as string,
     groups: (
       model: ContainerReflection,
       options: { headingLevel: number; kind: ReflectionKind },
@@ -119,13 +110,15 @@ export const resourcePartials = (context: MarkdownThemeContext) => {
     declarationTitle: (model: DeclarationReflection) =>
       partials.declarationTitle.apply(context, [model]) as string,
     documents: (
-      model: ProjectReflection | DeclarationReflection | ContainerReflection,
+      model: DeclarationReflection | ProjectReflection | ContainerReflection,
       options: { headingLevel: number },
     ) => partials.documents.apply(context, [model, options]) as string,
     enumMembersTable: (model: DeclarationReflection[]) =>
       partials.enumMembersTable.apply(context, [model]) as string,
-    groupIndex: (group: ReflectionCategory | ReflectionGroup) =>
-      partials.groupIndex.apply(context, [group]) as string,
+    groupIndex: (
+      group: ReflectionCategory | ReflectionGroup,
+      options?: { filterKinds: ReflectionKind[] } | undefined,
+    ) => partials.groupIndex.apply(context, [group, options]) as string,
     hierarchy: (
       model: DeclarationHierarchy,
       options: { headingLevel: number },
@@ -197,7 +190,7 @@ There is no association list partial for properties as these are handled as a st
       model: DeclarationReflection,
       options: { headingLevel: number; nested?: boolean | undefined },
     ) => partials.member.apply(context, [model, options]) as string,
-    typeAndParent: (model: ArrayType | ReferenceType) =>
+    typeAndParent: (model: ReferenceType | ArrayType) =>
       partials.typeAndParent.apply(context, [model]) as string,
     typeArguments: (
       model: SomeType[],
@@ -227,8 +220,10 @@ There is no association list partial for properties as these are handled as a st
       options: { kind?: ReflectionKind | undefined },
     ) =>
       partials.typeDeclarationTable.apply(context, [model, options]) as string,
-    typeParametersList: (model: TypeParameterReflection[]) =>
-      partials.typeParametersList.apply(context, [model]) as string,
+    typeParametersList: (
+      model: TypeParameterReflection[],
+      options: { headingLevel: number },
+    ) => partials.typeParametersList.apply(context, [model, options]) as string,
     typeParametersTable: (model: TypeParameterReflection[]) =>
       partials.typeParametersTable.apply(context, [model]) as string,
     breadcrumbs: () => partials.breadcrumbs.apply(context, []) as string,
@@ -350,5 +345,7 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
       reflectionKind?: ReflectionKind | undefined,
     ) =>
       helpers.useTableFormat.apply(context, [key, reflectionKind]) as boolean,
+    useUniqueAnchor: (reflection: Reflection) =>
+      helpers.useUniqueAnchor.apply(context, [reflection]) as boolean,
   };
 };

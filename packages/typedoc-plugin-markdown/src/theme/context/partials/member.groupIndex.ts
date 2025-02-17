@@ -9,21 +9,29 @@ import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {
   DeclarationReflection,
   DocumentReflection,
+  i18n,
   ReflectionCategory,
   ReflectionGroup,
   ReflectionKind,
 } from 'typedoc';
 
-export function groupIndex(group: ReflectionGroup | ReflectionCategory) {
+export function groupIndex(
+  group: ReflectionGroup | ReflectionCategory,
+  options?: { filterKinds: ReflectionKind[] },
+) {
+  const children = options?.filterKinds?.length
+    ? group.children.filter((child) => options.filterKinds.includes(child.kind))
+    : group.children;
+
   if (this.options.getValue('indexFormat').toLowerCase().includes('table')) {
     return getGroupIndexTable(
       this,
-      group.children as DeclarationReflection[] | DocumentReflection[],
+      children as DeclarationReflection[] | DocumentReflection[],
     );
   }
   return getGroupIndexList(
     this,
-    group.children as DeclarationReflection[] | DocumentReflection[],
+    children as DeclarationReflection[] | DocumentReflection[],
   );
 }
 
@@ -33,13 +41,13 @@ export function getGroupIndexList(
 ) {
   const filteredChildren =
     children
-      .filter((child) => Boolean(child.url))
+      .filter((child) => context.router.hasUrl(child))
       .map((child) => {
         const name = child.isDeprecated()
           ? strikeThrough(escapeChars(child.name))
           : escapeChars(child.name);
-        return child.url
-          ? `- ${link(name, context.getRelativeUrl(child.url))}`
+        return context.router.hasUrl(child)
+          ? `- ${link(name, context.urlTo(child))}`
           : '';
       }) || [];
 
@@ -48,7 +56,7 @@ export function getGroupIndexList(
 
 export function getGroupIndexTable(
   context: MarkdownThemeContext,
-  children: DeclarationReflection[] | DocumentReflection[],
+  children: (DeclarationReflection | DocumentReflection)[],
 ) {
   const leftAlignHeadings = context.options.getValue(
     'tableColumnSettings',
@@ -62,21 +70,19 @@ export function getGroupIndexTable(
 
   const headerKinds = [...new Set(childKindStrings)];
 
-  const headers = [
-    headerKinds.length > 1 ? context.i18n.theme_name() : headerKinds[0],
-  ];
+  const headers = [headerKinds.length > 1 ? i18n.theme_name() : headerKinds[0]];
 
-  headers.push(context.i18n.theme_description());
+  headers.push(i18n.theme_description());
 
   const rows: string[][] = [];
   children.forEach((child) => {
     const row: string[] = [];
 
-    if (child.url) {
+    if (context.router.getFullUrl(child)) {
       const name = child.isDeprecated()
         ? strikeThrough(escapeChars(child.name))
         : escapeChars(child.name);
-      row.push(link(name, context.getRelativeUrl(child.url)));
+      row.push(link(name, context.urlTo(child)));
     }
 
     const description = () => {

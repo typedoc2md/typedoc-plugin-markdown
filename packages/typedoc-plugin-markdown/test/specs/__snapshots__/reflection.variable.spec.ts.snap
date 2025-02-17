@@ -1,5 +1,124 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Variable Reflection should compile curried function: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Variable: curriedFunction()
+
+> **curriedFunction**: (\`searchElement\`) => \\<\`Value\`\\>(\`iterable\`) => \`boolean\`\\<\`Value\`\\>(\`searchElement\`, \`iterable\`) => \`string\`
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for main curriedFunction
+
+Comments for current function 1
+
+## Parameters
+
+### searchElement
+
+\`unknown\`
+
+## Returns
+
+\`Function\`
+
+### Type Parameters
+
+#### Value
+
+\`Value\`
+
+### Parameters
+
+#### iterable
+
+\`Iterable\`\\<\`Value\`\\>
+
+Comments for iterable arg
+
+### Returns
+
+\`boolean\`
+
+## Type Parameters
+
+### Value
+
+\`Value\`
+
+## Parameters
+
+### searchElement
+
+\`unknown\`
+
+### iterable
+
+\`Iterable\`\\<\`Value\`\\>
+
+## Returns
+
+\`string\`
+"
+`;
+
+exports[`Variable Reflection should compile curried function: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Variable: curriedFunction()
+
+\`\`\`ts
+curriedFunction: (searchElement: unknown) => <Value>(iterable: Iterable<Value>) => boolean<Value>(searchElement: unknown, iterable: Iterable<Value>) => string;
+\`\`\`
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for main curriedFunction
+
+Comments for current function 1
+
+## Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`searchElement\` | \`unknown\` |
+
+## Returns
+
+\`Function\`
+
+### Type Parameters
+
+| Type Parameter |
+| :------ |
+| \`Value\` |
+
+### Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| \`iterable\` | \`Iterable\`\\<\`Value\`\\> | Comments for iterable arg |
+
+### Returns
+
+\`boolean\`
+
+## Type Parameters
+
+| Type Parameter |
+| :------ |
+| \`Value\` |
+
+## Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`searchElement\` | \`unknown\` |
+| \`iterable\` | \`Iterable\`\\<\`Value\`\\> |
+
+## Returns
+
+\`string\`
+"
+`;
+
 exports[`Variable Reflection should compile object with symbol: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: objectWithSymbol
 
@@ -34,7 +153,7 @@ Comments variable with symbol
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| <a id="sym"></a> \`[sym]\` | \`string\` | 'value' | Comments for symbol |
+| <a id="objectwithsymbol-sym"></a> \`[sym]\` | \`string\` | 'value' | Comments for symbol |
 "
 `;
 
@@ -200,12 +319,12 @@ xyz.com
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| <a id="valuea"></a> \`valueA\` | \`number\` | 100 | Comments for valueA |
-| <a id="valueb"></a> \`valueB\` | \`boolean\` | true | - |
-| <a id="valuex"></a> \`valueX\` | \`object\` | - | Comments for valueX |
+| <a id="objectliteralvariable-valuea"></a> \`valueA\` | \`number\` | 100 | Comments for valueA |
+| <a id="objectliteralvariable-valueb"></a> \`valueB\` | \`boolean\` | true | - |
+| <a id="objectliteralvariable-valuex"></a> \`valueX\` | \`object\` | - | Comments for valueX |
 | \`valueX.valueA\` | \`number\`[] | - | Comment for valueX.valueA |
 | \`valueX.valueY\` | (\`z\`: \`string\`) => \`object\` | - | - |
 | \`valueX.valueZ\` | \`string\` | 'foo' | - |
-| <a id="valuey"></a> \`valueY\` | (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\` | - | - |
+| <a id="objectliteralvariable-valuey"></a> \`valueY\` | (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\` | - | - |
 "
 `;

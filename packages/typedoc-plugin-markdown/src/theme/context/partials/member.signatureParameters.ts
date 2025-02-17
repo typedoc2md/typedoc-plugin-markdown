@@ -15,7 +15,7 @@ export function signatureParameters(
     model
       .map((param, i) => {
         const paramsmd: string[] = [];
-        if (param.flags.isRest) {
+        if (param.flags?.isRest) {
           paramsmd.push('...');
         }
         const paramType = this.partials.someType(param.type as SomeType);

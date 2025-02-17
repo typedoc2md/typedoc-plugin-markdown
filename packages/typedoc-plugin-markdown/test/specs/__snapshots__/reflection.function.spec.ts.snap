@@ -1,138 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Function Reflection should compile curried function: (Output File Strategy "members") (Option Group "1") 1`] = `
-"# Function: curriedFunction()
-
-Comments for main curriedFunction
-
-## Call Signature
-
-> **curriedFunction**(\`searchElement\`): \\<\`Value\`\\>(\`iterable\`) => \`boolean\`
-
-Defined in: [functions.ts:1](http://source-url)
-
-Comments for current function 1
-
-### Parameters
-
-#### searchElement
-
-\`unknown\`
-
-### Returns
-
-\`Function\`
-
-#### Type Parameters
-
-• **Value**
-
-#### Parameters
-
-##### iterable
-
-\`Iterable\`\\<\`Value\`\\>
-
-Comments for iterable arg
-
-#### Returns
-
-\`boolean\`
-
-## Call Signature
-
-> **curriedFunction**\\<\`Value\`\\>(\`searchElement\`, \`iterable\`): \`string\`
-
-Defined in: [functions.ts:1](http://source-url)
-
-### Type Parameters
-
-• **Value**
-
-### Parameters
-
-#### searchElement
-
-\`unknown\`
-
-#### iterable
-
-\`Iterable\`\\<\`Value\`\\>
-
-### Returns
-
-\`string\`
-"
-`;
-
-exports[`Function Reflection should compile curried function: (Output File Strategy "members") (Option Group "2") 1`] = `
-"# Function: curriedFunction()
-
-Comments for main curriedFunction
-
-## Call Signature
-
-\`\`\`ts
-function curriedFunction(searchElement: unknown): <Value>(iterable: Iterable<Value>) => boolean
-\`\`\`
-
-Defined in: [functions.ts:1](http://source-url)
-
-Comments for current function 1
-
-### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| \`searchElement\` | \`unknown\` |
-
-### Returns
-
-\`Function\`
-
-#### Type Parameters
-
-| Type Parameter |
-| :------ |
-| \`Value\` |
-
-#### Parameters
-
-| Parameter | Type | Description |
-| :------ | :------ | :------ |
-| \`iterable\` | \`Iterable\`\\<\`Value\`\\> | Comments for iterable arg |
-
-#### Returns
-
-\`boolean\`
-
-## Call Signature
-
-\`\`\`ts
-function curriedFunction<Value>(searchElement: unknown, iterable: Iterable<Value>): string
-\`\`\`
-
-Defined in: [functions.ts:1](http://source-url)
-
-### Type Parameters
-
-| Type Parameter |
-| :------ |
-| \`Value\` |
-
-### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| \`searchElement\` | \`unknown\` |
-| \`iterable\` | \`Iterable\`\\<\`Value\`\\> |
-
-### Returns
-
-\`string\`
-"
-`;
-
 exports[`Function Reflection should compile function returning a function: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAFunction()
 
@@ -148,7 +15,9 @@ Comments for function
 
 ### Type Parameters
 
-• **T**
+#### T
+
+\`T\`
 
 ### Parameters
 
@@ -351,8 +220,8 @@ Return comments
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |
-| <a id="x"></a> \`x\` | \`number\` | 1 |
-| <a id="y"></a> \`y\` | \`number\` | 2 |
+| \`x\` | \`number\` | 1 |
+| \`y\` | \`number\` | 2 |
 "
 `;
 
@@ -1258,11 +1127,15 @@ Function with type parameters
 
 ## Type Parameters
 
-• **T**
+### T
+
+\`T\`
 
 Comments for T
 
-• **Item** = \`string\` \\| \`boolean\`
+### Item
+
+\`Item\` = \`string\` \\| \`boolean\`
 
 ## Returns
 

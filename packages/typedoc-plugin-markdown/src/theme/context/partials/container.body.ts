@@ -3,6 +3,7 @@ import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {
   ContainerReflection,
   DeclarationReflection,
+  i18n,
   ReflectionKind,
 } from 'typedoc';
 
@@ -14,11 +15,16 @@ export function body(
   const md: string[] = [];
 
   if (model.categories?.length) {
-    md.push(
-      this.partials.categories(model.categories, {
-        headingLevel: options.headingLevel,
-      }),
-    );
+    if (this.options.getValue('router') === 'category') {
+      md.push(heading(options.headingLevel, i18n.theme_categories()) + '\n');
+      md.push(this.partials.groupAndCategoryIndex(model.categories));
+    } else {
+      md.push(
+        this.partials.categories(model.categories, {
+          headingLevel: options.headingLevel,
+        }),
+      );
+    }
   } else {
     const containerKinds = [
       ReflectionKind.Project,
@@ -39,7 +45,9 @@ export function body(
       } else {
         if (model.groups?.length) {
           model.groups.forEach((group, i) => {
-            if (group.allChildrenHaveOwnDocument()) {
+            if (
+              group.children.every((child) => this.router.hasOwnDocument(child))
+            ) {
               md.push(heading(options.headingLevel, group.title));
               md.push(this.partials.groupIndex(group));
             } else {
@@ -60,15 +68,22 @@ export function body(
       }
     } else {
       if (model.groups?.length) {
-        md.push(
-          this.partials.groups(model, {
-            headingLevel: options.headingLevel,
-            kind: model.kind,
-          }),
-        );
+        if (
+          this.options.getValue('router') === 'group' &&
+          model.kind === ReflectionKind.Module
+        ) {
+          md.push(heading(options.headingLevel, i18n.theme_groups()) + '\n');
+          md.push(this.partials.groupAndCategoryIndex(model.groups));
+        } else {
+          md.push(
+            this.partials.groups(model, {
+              headingLevel: options.headingLevel,
+              kind: model.kind,
+            }),
+          );
+        }
       }
     }
   }
-
   return md.join('\n\n');
 }

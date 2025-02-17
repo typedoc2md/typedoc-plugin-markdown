@@ -1,18 +1,12 @@
-import { MarkdownPageEvent } from '@plugin/events/index.js';
-import {
-  NavigationItem,
-  RenderTemplate,
-  UrlMapping,
-} from '@plugin/types/index.js';
-import * as path from 'path';
-import { ProjectReflection, Reflection } from 'typedoc';
+import { NavigationItem } from '@plugin/types/index.js';
+import { PageDefinition, ProjectReflection } from 'typedoc';
 
 /**
  * An event emitted at the beginning and end of the rendering process.
  *
  * @event
  */
-export class MarkdownRendererEvent extends Event {
+export class MarkdownRendererEvent {
   /**
    * The project the renderer is currently processing.
    */
@@ -24,9 +18,9 @@ export class MarkdownRendererEvent extends Event {
   readonly outputDirectory: string;
 
   /**
-   * A list of all pages that should be generated.
+   * A list of all pages that will be generated.
    */
-  urls?: UrlMapping<Reflection>[];
+  pages: PageDefinition[];
 
   /**
    * The navigation structure of the project that can be utilised by plugins.
@@ -49,29 +43,12 @@ export class MarkdownRendererEvent extends Event {
    * @ignore
    */
   constructor(
-    name: string,
     outputDirectory: string,
     project: ProjectReflection,
+    pages: PageDefinition[],
   ) {
-    super(name);
     this.outputDirectory = outputDirectory;
     this.project = project;
-  }
-
-  /**
-   * @ignore
-   */
-  public createPageEvent<Model>(
-    mapping: UrlMapping<Model>,
-  ): [RenderTemplate<MarkdownPageEvent<Model>>, MarkdownPageEvent<Model>] {
-    const event = new MarkdownPageEvent<Model>(
-      MarkdownPageEvent.BEGIN,
-      mapping.model,
-    );
-    event.group = mapping.group;
-    event.project = this.project;
-    event.url = mapping.url;
-    event.filename = path.join(this.outputDirectory, mapping.url);
-    return [mapping.template, event];
+    this.pages = pages;
   }
 }

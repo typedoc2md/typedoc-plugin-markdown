@@ -31,13 +31,14 @@ export function declarationType(
       children.map((obj) => {
         const name: string[] = [];
 
-        if (obj.getSignature || Boolean(obj.setSignature)) {
-          if (obj.getSignature) {
-            name.push('get');
-          }
-          if (obj.setSignature) {
-            name.push('set');
-          }
+        if (obj.getSignature) {
+          name.push('get');
+          name.push(backTicks(obj.name) + '\n ');
+        }
+
+        if (obj.setSignature) {
+          name.push('set');
+          name.push(backTicks(obj.name));
         }
 
         name.push(backTicks(obj.name));

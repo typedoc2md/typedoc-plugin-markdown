@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Categories should get category index page: (Output File Strategy "categories") (Option Group "1") 1`] = `
+"# module-1
+
+Module description para 1
+
+Module description para 2
+
+## Categories
+
+- [Category 1](Category-1.md)
+- [Category 2](Category-2.md)
+"
+`;
+
+exports[`Categories should get category page with single module: (Output File Strategy "categories") (Option Group "1") 1`] = `
+"# Category 3
+
+## SomeInterfaceTwoB
+"
+`;
+
+exports[`Categories should get category page: (Output File Strategy "categories") (Option Group "1") 1`] = `
+"# Category 3
+
+## SomeInterfaceTwoB
+"
+`;
+
+exports[`Categories should get category with namespace single module: (Output File Strategy "categories") (Option Group "1") 1`] = `
+"# Category 2
+
+Description for module-2 Category 2
+
+## SomeClass2
+
+### Constructors
+
+#### new SomeClass2()
+
+> **new SomeClass2**(): \`SomeClass2\`
+
+##### Returns
+
+\`SomeClass2\`
+
+***
+
+## SomeInterface2
+
+***
+
+## someFunction2()
+
+> **someFunction2**(): \`void\`
+
+### Returns
+
+\`void\`
+"
+`;
+
+exports[`Categories should get category with namespace: (Output File Strategy "categories") (Option Group "1") 1`] = `
+"# Category 2
+
+Description for module-2 Category 2
+
+## SomeClass2
+
+### Constructors
+
+#### new SomeClass2()
+
+> **new SomeClass2**(): \`SomeClass2\`
+
+##### Returns
+
+\`SomeClass2\`
+
+***
+
+## SomeInterface2
+
+***
+
+## someFunction2()
+
+> **someFunction2**(): \`void\`
+
+### Returns
+
+\`void\`
+"
+`;
+
+exports[`Categories should get index page for categories with packages: (Output File Strategy "categories") (Option Group "1") 1`] = `
+"# package-1
+
+Comments for package-1
+
+## Categories
+
+- [Some Category](Some-Category.md)
+"
+`;
+
+exports[`Categories should get index page for categories with single module: (Output File Strategy "categories") (Option Group "1") 1`] = `
+"# categories-out-single-module
+
+## Categories
+
+| Category | Description |
+| ------ | ------ |
+| [Category 1](Category-1.md) | Description for module-2 category 1 |
+| [Category 2](Category-2.md) | Description for module-2 Category 2 |
+| [Category 3](Category-3.md) | - |
+| [Other](Other.md) | - |
+"
+`;

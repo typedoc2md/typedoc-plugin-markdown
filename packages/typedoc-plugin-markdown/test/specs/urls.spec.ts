@@ -12,6 +12,10 @@ describe(`Urls`, () => {
     expectUrlsToEqual('packages', ['members', 'modules']);
   });
 
+  test(`should gets Urls for packages with categories entry points`, () => {
+    expectUrlsToEqual('packagesCategories', ['categories']);
+  });
+
   test(`should gets Urls for single package entry points`, () => {
     expectUrlsToEqual('package', ['members', 'modules']);
   });
@@ -38,5 +42,25 @@ describe(`Urls`, () => {
 
   test(`should gets Urls with media assets`, () => {
     expectUrlsToEqual('comments', ['members']);
+  });
+
+  test(`should gets for categories with multi modules`, () => {
+    expectUrlsToEqual('categories', ['categories']);
+  });
+
+  test(`should gets for categories with single module`, () => {
+    expectUrlsToEqual('categoriesSingleModule', ['categories']);
+  });
+
+  test(`should gets for groups with multi modules`, () => {
+    expectUrlsToEqual('groupsRouter', ['groups']);
+  });
+
+  test(`should gets for groups with single module`, () => {
+    expectUrlsToEqual('groupsRouterSingleModule', ['groups']);
+  });
+
+  test(`should gets Urls for packages with groups entry points`, () => {
+    expectUrlsToEqual('packagesGroups', ['groups']);
   });
 });
