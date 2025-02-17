@@ -24,7 +24,6 @@
   ],
   "plugin": [
     "./packages/typedoc-plugin-markdown/dist/index.js",
-    "./devtools/typedoc-plugins/typedoc-default-values.mjs",
     "./devtools/typedoc-plugins/typedoc-replace-filetree.mjs",
     "./devtools/typedoc-plugins/typedoc-symbols.mjs"
   ],
@@ -34,15 +33,7 @@
   "excludePrivate": false,
   "readme": "none",
   "projectDocuments": ["./GETTING_STARTED.md"],
-  "packageOptions": {
-    "includeVersion": false,
-    "excludePrivate": false,
-    "readme": "./internal-docs/introduction.md",
-    "sortEntryPoints": false,
-    "sort": "source-order",
-    "excludeExternals": true,
-    "gitRevision": "main"
-  },
+  "gitRevision": "main",
 
   // typedoc-plugin-markdown options
   "mergeReadme": true,

@@ -5,5 +5,6 @@
  *
  * @module
  */
+export * from './markdown-theme-context.js';
 export * from './markdown-theme.js';
-export * from './markdown-themeContext.js';
+export * from './navigation/navigation-builder.js';

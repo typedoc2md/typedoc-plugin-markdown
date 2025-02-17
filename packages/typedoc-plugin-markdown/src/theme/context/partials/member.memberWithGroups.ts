@@ -1,6 +1,6 @@
 import { heading, unorderedList } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { DeclarationReflection, i18n, ReflectionKind } from 'typedoc';
 
 /**
  * Renders a top-level member that contains group and child members such as Classes, Interfaces and Enums.
@@ -11,6 +11,10 @@ export function memberWithGroups(
   options: { headingLevel: number },
 ): string {
   const md: string[] = [];
+
+  if (model.kind === ReflectionKind.TypeAlias) {
+    md.push(this.partials.declarationTitle(model));
+  }
 
   if (
     ![ReflectionKind.Module, ReflectionKind.Namespace].includes(model.kind) &&
@@ -40,20 +44,22 @@ export function memberWithGroups(
     md.push(
       heading(
         options.headingLevel,
-        this.internationalization.kindPluralString(
-          ReflectionKind.TypeParameter,
-        ),
+        ReflectionKind.pluralString(ReflectionKind.TypeParameter),
       ),
     );
     if (this.helpers.useTableFormat('parameters')) {
       md.push(this.partials.typeParametersTable(model.typeParameters));
     } else {
-      md.push(this.partials.typeParametersList(model.typeParameters));
+      md.push(
+        this.partials.typeParametersList(model.typeParameters, {
+          headingLevel: options.headingLevel,
+        }),
+      );
     }
   }
 
   if (model.implementedTypes?.length) {
-    md.push(heading(options.headingLevel, this.i18n.theme_implements()));
+    md.push(heading(options.headingLevel, i18n.theme_implements()));
     md.push(
       unorderedList(
         model.implementedTypes.map((implementedType) =>
@@ -65,11 +71,9 @@ export function memberWithGroups(
 
   if (model.kind === ReflectionKind.Class && model.categories?.length) {
     model.groups
-      ?.filter((group) => group.title === this.i18n.kind_plural_constructor())
+      ?.filter((group) => group.title === i18n.kind_plural_constructor())
       .forEach((group) => {
-        md.push(
-          heading(options.headingLevel, this.i18n.kind_plural_constructor()),
-        );
+        md.push(heading(options.headingLevel, i18n.kind_plural_constructor()));
         group.children.forEach((child) => {
           md.push(
             this.partials.constructor(child as DeclarationReflection, {
@@ -91,7 +95,7 @@ export function memberWithGroups(
   }
 
   if (model.indexSignatures?.length) {
-    md.push(heading(options.headingLevel, this.i18n.theme_indexable()));
+    md.push(heading(options.headingLevel, i18n.theme_indexable()));
     model.indexSignatures.forEach((indexSignature) => {
       md.push(this.partials.indexSignature(indexSignature));
     });

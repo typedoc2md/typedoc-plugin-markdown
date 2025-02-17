@@ -14,6 +14,6 @@ describe(`EntryFiles`, () => {
   });
 
   test(`should get readme file`, () => {
-    expectFileToEqual('entryfiles', 'members', 'readme_.mdx', 1);
+    expectFileToEqual('entryfiles', 'members', 'README-1.mdx', 1);
   });
 });

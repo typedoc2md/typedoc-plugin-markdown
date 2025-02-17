@@ -32,9 +32,9 @@ declare module 'typedoc' {
     mergeReadme: boolean;
     modulesFileName: string;
     navigationModel: {
-      excludeGroups: boolean;
-      excludeCategories: boolean;
-      excludeFolders: boolean;
+      excludeGroups?: boolean;
+      excludeCategories?: boolean;
+      excludeFolders?: boolean;
     };
     outputFileStrategy: 'members' | 'modules';
     pageTitleTemplates: {
@@ -54,13 +54,13 @@ declare module 'typedoc' {
     publicPath: string;
     sanitizeComments: boolean;
     tableColumnSettings: {
-      hideDefaults: boolean;
-      hideInherited: boolean;
-      hideModifiers: boolean;
-      hideOverrides: boolean;
-      hideSources: boolean;
-      hideValues: boolean;
-      leftAlignHeaders: boolean;
+      hideDefaults?: boolean;
+      hideInherited?: boolean;
+      hideModifiers?: boolean;
+      hideOverrides?: boolean;
+      hideSources?: boolean;
+      hideValues?: boolean;
+      leftAlignHeaders?: boolean;
     };
     textContentMappings: ManuallyValidatedOption<{
       'header.title': string;
@@ -69,6 +69,7 @@ declare module 'typedoc' {
       'title.memberPage': string;
       'title.modulePage': string;
     }>;
+    typeAliasPropertiesFormat: 'list' | 'table' | 'htmlTable';
     typeDeclarationFormat: 'list' | 'table' | 'htmlTable';
     typeDeclarationVisibility: 'compact' | 'verbose';
     useCodeBlocks: boolean;

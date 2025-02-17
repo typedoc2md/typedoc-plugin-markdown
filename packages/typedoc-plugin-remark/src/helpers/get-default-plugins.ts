@@ -1,9 +1,9 @@
 import { RemarkPlugin } from '../types/options.js';
 
 export function getDefaultPlugins(defaultPluginsFlag: {
-  gfm: boolean;
-  frontmatter: boolean;
-  mdx: boolean;
+  gfm?: boolean;
+  frontmatter?: boolean;
+  mdx?: boolean;
 }) {
   const defaultPlugins: RemarkPlugin[] = [];
 

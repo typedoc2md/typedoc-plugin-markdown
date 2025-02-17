@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Comments should compile @links with anchors: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"- [CommentInterface](README.md#commentinterface) - Links to CommentInterface
-- [Links to CommentInterface.prop](README.md#prop)
-- [\`Links to CommentInterface.propb\`](README.md#propb-3)
-- [Links to CommentInterface.\\_prop\\_with\\_underscore\\_](README.md#_prop_with_underscore_)
-- [CommentEnum.MemberB](README.md#memberb)
-- [SameName.prop](README.md#prop-2)
-- [TypeWithGenerics](README.md#typewithgenericsc-d)
-- [TypeDeclarationType](README.md#typedeclarationtype)
-- [TypeDeclarationType#declaration1](README.md#declaration1)
-- [TypeDeclarationType2#declaration1](README.md#declaration1-1)"
+"- [CommentInterface](#commentinterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](#prop)
+- [\`Links to CommentInterface.propb\`](#propb-3)
+- [Links to CommentInterface.\\_prop\\_with\\_underscore\\_](#_prop_with_underscore_)
+- [CommentEnum.MemberB](#memberb)
+- [SameName.prop](#prop-2)
+- [TypeWithGenerics](#typewithgenerics)
+- [TypeDeclarationType](#typedeclarationtype)
+- [TypeDeclarationType#declaration1](#declaration1)
+- [TypeDeclarationType2#declaration1](#declaration1-1)"
 `;
 
 exports[`Comments should compile comments for module: (Output File Strategy "members") (Option Group "1") 1`] = `
@@ -322,19 +322,19 @@ Defined in: [index.ts:1](http://source-url)
 
 ## Constructors
 
-<a id="constructors"></a>
+<a id="constructor"></a>
 
 ### new ClassPropertiesTable()
 
-> **new ClassPropertiesTable**(): [\`ClassPropertiesTable\`](ClassPropertiesTable.md)
+> **new ClassPropertiesTable**(): \`ClassPropertiesTable\`
 
 #### Returns
 
-[\`ClassPropertiesTable\`](ClassPropertiesTable.md)
+\`ClassPropertiesTable\`
 
 #### Inherited from
 
-[\`BaseClassProperties\`](BaseClassProperties.md).[\`constructor\`](BaseClassProperties.md#constructors)
+[\`BaseClassProperties\`](BaseClassProperties.md).[\`constructor\`](BaseClassProperties.md#constructor)
 
 ## Properties
 
@@ -360,19 +360,19 @@ Defined in: [index.ts:1](http://source-url)
 
 ## Constructors
 
-<a id="constructors"></a>
+<a id="constructor"></a>
 
 ### new ClassPropertiesTable()
 
-> **new ClassPropertiesTable**(): [\`ClassPropertiesTable\`](https://example.com/Class.ClassPropertiesTable.md)
+> **new ClassPropertiesTable**(): \`ClassPropertiesTable\`
 
 #### Returns
 
-[\`ClassPropertiesTable\`](https://example.com/Class.ClassPropertiesTable.md)
+\`ClassPropertiesTable\`
 
 #### Inherited from
 
-[\`BaseClassProperties\`](https://example.com/Class.BaseClassProperties.md).[\`constructor\`](https://example.com/Class.BaseClassProperties.md#constructors)
+[\`BaseClassProperties\`](https://example.com/Class.BaseClassProperties.md).[\`constructor\`](https://example.com/Class.BaseClassProperties.md#constructor)
 
 ## Properties
 
@@ -449,7 +449,7 @@ print("Hello, " + name + "!")
 <tr>
 <td>
 
-<a id="propA"></a> ~~\`propA\`~~
+<a id="propa"></a> ~~\`propA\`~~
 
 </td>
 <td>
@@ -466,7 +466,7 @@ print("Hello, " + name + "!")
 <tr>
 <td>
 
-<a id="propB"></a> \`propB\`
+<a id="propb"></a> \`propB\`
 
 </td>
 <td>
@@ -483,7 +483,7 @@ print("Hello, " + name + "!")
 <tr>
 <td>
 
-<a id="propWithFlag"></a> \`propWithFlag\`
+<a id="propwithflag"></a> \`propWithFlag\`
 
 </td>
 <td>
@@ -507,13 +507,13 @@ Experimental flag comments
 exports[`Comments should get tables for type declarations: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: TypeDeclarationType
 
-> **TypeDeclarationType**: \`object\`
+> **TypeDeclarationType** = \`object\`
 
 Defined in: [index.ts:1](http://source-url)
 
-## Type declaration
+## Properties
 
-| Name | Type | Description | Defined in |
+| Property | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
 | <a id="declaration1"></a> \`declaration1\` | \`boolean\` | Comments for declaration1 | [index.ts:1](http://source-url) |
 | <a id="declaration2"></a> \`declaration2\` | \`boolean\` | Comments for declaration2 | [index.ts:1](http://source-url) |
@@ -540,16 +540,16 @@ Defined in: [index.ts:1](http://source-url)
 exports[`Comments should get tables for type declarations: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Type Alias: TypeDeclarationType
 
-> **TypeDeclarationType**: \\{ \`declaration1\`: \`boolean\`; \`declaration2\`: \`boolean\`; \`declaration3\`: \`100\`; \\}
+> **TypeDeclarationType** = \\{ \`declaration1\`: \`boolean\`; \`declaration2\`: \`boolean\`; \`declaration3\`: \`100\`; \\}
 
 Defined in: [index.ts:1](http://source-url)
 
-## Type declaration
+## Properties
 
 <table>
 <thead>
 <tr>
-<th align="left">Name</th>
+<th align="left">Property</th>
 <th align="left">Type</th>
 <th align="left">Description</th>
 </tr>
@@ -671,17 +671,11 @@ Defined in: [index.ts:1](http://source-url)
 exports[`Comments should get variable with block tags: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: typeWithBlockTags
 
-> **typeWithBlockTags**: \`object\`
+> **typeWithBlockTags** = \`object\`
 
 Defined in: [index.ts:1](http://source-url)
 
 Variable with block tags summary
-
-## Type declaration
-
-| Name | Type | Defined in |
-| ------ | ------ | ------ |
-| <a id="x"></a> \`x\` | \`string\` | [index.ts:1](http://source-url) |
 
 ## Example
 
@@ -692,13 +686,19 @@ const x = 1;
 ## Remarks
 
 Other block tags
+
+## Properties
+
+| Property | Type | Defined in |
+| ------ | ------ | ------ |
+| <a id="x"></a> \`x\` | \`string\` | [index.ts:1](http://source-url) |
 "
 `;
 
 exports[`Comments should get variable with block tags: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Type Alias: typeWithBlockTags
 
-> **typeWithBlockTags**: \\{ \`x\`: \`string\`; \\}
+> **typeWithBlockTags** = \\{ \`x\`: \`string\`; \\}
 
 Defined in: [index.ts:1](http://source-url)
 
@@ -710,12 +710,16 @@ Variable with block tags summary
 const x = 1;
 \`\`\`
 
-## Type declaration
+## Remarks
+
+Other block tags
+
+## Properties
 
 <table>
 <thead>
 <tr>
-<th align="left">Name</th>
+<th align="left">Property</th>
 <th align="left">Type</th>
 </tr>
 </thead>
@@ -734,10 +738,6 @@ const x = 1;
 </tr>
 </tbody>
 </table>
-
-## Remarks
-
-Other block tags
 "
 `;
 

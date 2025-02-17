@@ -76,15 +76,17 @@ export function signature(
     md.push(
       heading(
         options.headingLevel,
-        this.internationalization.kindPluralString(
-          ReflectionKind.TypeParameter,
-        ),
+        ReflectionKind.pluralString(ReflectionKind.TypeParameter),
       ),
     );
     if (this.helpers.useTableFormat('parameters')) {
       md.push(this.partials.typeParametersTable(model.typeParameters));
     } else {
-      md.push(this.partials.typeParametersList(model.typeParameters));
+      md.push(
+        this.partials.typeParametersList(model.typeParameters, {
+          headingLevel: options.headingLevel,
+        }),
+      );
     }
   }
 
@@ -92,7 +94,7 @@ export function signature(
     md.push(
       heading(
         options.headingLevel,
-        this.internationalization.kindPluralString(ReflectionKind.Parameter),
+        ReflectionKind.pluralString(ReflectionKind.Parameter),
       ),
     );
     if (this.helpers.useTableFormat('parameters')) {

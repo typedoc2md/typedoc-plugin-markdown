@@ -1,0 +1,31 @@
+# Versioning
+
+This page should help you understand the versioning rules of the plugin and its compatibility with TypeDoc.
+
+## Package Version
+
+Please note that TypeDoc is still released within the 0.x.x range and may include breaking changes within each minor version release.
+
+A new minor version of the plugin and be released with each minor TypeDoc version, and we will attempt to release in a non-breaking manner.
+
+Besides the TypeDoc release versions, we aim to follow semantic versioning for the plugin:
+
+- Bug fixes including minor UI tweaks will be released as patch versions.
+- New features/options will be released as minor versions.
+- UI changes implemented in a non-breaking manner will be released as minor versions.
+- Breaking changes including option changes and fundamental UI changes will be released as major versions.
+
+## Compatibility Table
+
+We will follow the Node.js and TypeScript versions as specified in the TypeDoc `package.json` file.
+
+Version compatibility for the plugin and TypeDoc is as follows:
+
+| Plugin        | TypeDoc | Node  | TypeScript    |
+| ------------- | ------- | ----- | ------------- |
+| 4.5.x         | 0.28.x  | >= 18 | 5.0.x - 5.8.x |
+| 4.3.x - 4.4.x | 0.27.x  | >= 18 | 5.0.x - 5.7.x |
+| 4.1.x - 4.2.x | 0.26.x  | >= 18 | 4.6.x - 5.5.x |
+| 4.0.x         | 0.25.x  | >= 16 | 4.6.x - 5.4.x |
+
+For more information please visit [TypeDoc requirements](https://typedoc.org/documents/Overview.html).

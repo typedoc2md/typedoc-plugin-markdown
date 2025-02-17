@@ -59,7 +59,7 @@ const config = {
           '../../../packages/typedoc-plugin-markdown/test/fixtures/tsconfig.json',
         ),
         entryPoints: [
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/comments/index.ts',
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/groups/**/*.ts',
         ],
         expandObjects: true,
         readme: 'none',

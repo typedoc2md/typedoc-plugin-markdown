@@ -1,0 +1,50 @@
+---
+asIndexPage: true
+---
+
+import Image from 'next/image';
+import { Callout, Steps } from 'nextra/components';
+import { Cards } from 'nextra/components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+
+# typedoc-vitepress-theme
+
+<PackageVersion name={'typedoc-vitepress-theme'} />
+
+## Overview
+
+This plugin generates Markdown tailored to VitePress.
+
+## Features
+
+- Updates internal anchors to be compatible with VitePress.
+- Auto generates a VitePress sidebar that can be referenced from the VitePress config.
+
+## What about VuePress?
+
+This theme is also compatible with VuePress and the configuration is almost identical. However this theme supersedes previous VuePress TypeDoc plugins and is specifically targetted for VitePress.
+
+See https://vitepress.dev/guide/what-is-vitepress#what-about-vuepress.
+
+## Example
+
+The following is a simple example of a VitePress project running TypeDoc.
+
+<Cards num={2}>
+  <Cards.Card
+    title="View Demo Site"
+    icon={<FontAwesomeIcon icon={faGlobe} />}
+    arrow={true}
+    href="https://typedoc-vitepress-theme-example-docs-rf58bio35.vercel.app/"
+    target="_blank"
+  />
+  <Cards.Card
+    title="View Code on GitHub"
+    icon={<FontAwesomeIcon icon={faGithub} />}
+    arrow={true}
+    href="https://github.com/typedoc2md/typedoc-vitepress-theme-example"
+    target="_blank"
+  />
+</Cards>

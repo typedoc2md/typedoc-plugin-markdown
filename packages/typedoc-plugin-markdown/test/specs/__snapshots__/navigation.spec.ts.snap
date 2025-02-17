@@ -695,59 +695,20 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       {
         "title": "index",
         "kind": 2,
-        "path": "@scope/package-3/module_index.md",
-        "isDeprecated": false,
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterfaceForIndexModule",
-                "kind": 256,
-                "path": "@scope/package-3/interfaces/PackageInterfaceForIndexModule.md",
-                "isDeprecated": false
-              }
-            ]
-          }
-        ]
+        "path": "@scope/package-3/index-1.md",
+        "isDeprecated": false
       },
       {
         "title": "module-1",
         "kind": 2,
         "path": "@scope/package-3/module-1.md",
-        "isDeprecated": false,
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterface1",
-                "kind": 256,
-                "path": "@scope/package-3/interfaces/PackageInterface1.md",
-                "isDeprecated": false
-              }
-            ]
-          }
-        ]
+        "isDeprecated": false
       },
       {
         "title": "module-2",
         "kind": 2,
         "path": "@scope/package-3/module-2.md",
-        "isDeprecated": false,
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterface2",
-                "kind": 256,
-                "path": "@scope/package-3/interfaces/PackageInterface2.md",
-                "isDeprecated": false
-              }
-            ]
-          }
-        ]
+        "isDeprecated": false
       }
     ],
     "path": "@scope/package-3/index.md"
@@ -755,7 +716,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   {
     "title": "package-1b",
     "kind": 2,
-    "path": "package-1b/index.md"
+    "path": "package-1b.md"
   },
   {
     "title": "package-2",
@@ -779,20 +740,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   {
     "title": "package-4",
     "kind": 2,
-    "children": [
-      {
-        "title": "Interfaces",
-        "children": [
-          {
-            "title": "PackageInterface",
-            "kind": 256,
-            "path": "package-4/interfaces/PackageInterface.md",
-            "isDeprecated": false
-          }
-        ]
-      }
-    ],
-    "path": "package-4/index.md"
+    "path": "package-4.md"
   },
   {
     "title": "package-5",
@@ -871,7 +819,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   {
     "title": "@scope/package-1",
     "kind": 2,
-    "path": "package-1/README.md"
+    "path": "package-1.md"
   },
   {
     "title": "@scope/package-3",
@@ -881,58 +829,19 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
         "title": "index",
         "kind": 2,
         "path": "package-3/index.md",
-        "isDeprecated": false,
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterfaceForIndexModule",
-                "kind": 256,
-                "path": "package-3/interfaces/PackageInterfaceForIndexModule.md",
-                "isDeprecated": false
-              }
-            ]
-          }
-        ]
+        "isDeprecated": false
       },
       {
         "title": "module-1",
         "kind": 2,
         "path": "package-3/module-1.md",
-        "isDeprecated": false,
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterface1",
-                "kind": 256,
-                "path": "package-3/interfaces/PackageInterface1.md",
-                "isDeprecated": false
-              }
-            ]
-          }
-        ]
+        "isDeprecated": false
       },
       {
         "title": "module-2",
         "kind": 2,
         "path": "package-3/module-2.md",
-        "isDeprecated": false,
-        "children": [
-          {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterface2",
-                "kind": 256,
-                "path": "package-3/interfaces/PackageInterface2.md",
-                "isDeprecated": false
-              }
-            ]
-          }
-        ]
+        "isDeprecated": false
       }
     ],
     "path": "package-3/README.md"
@@ -940,7 +849,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   {
     "title": "package-1b",
     "kind": 2,
-    "path": "package-1b/README.md"
+    "path": "package-1b.md"
   },
   {
     "title": "package-2",
@@ -964,20 +873,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   {
     "title": "package-4",
     "kind": 2,
-    "children": [
-      {
-        "title": "Interfaces",
-        "children": [
-          {
-            "title": "PackageInterface",
-            "kind": 256,
-            "path": "package-4/interfaces/PackageInterface.md",
-            "isDeprecated": false
-          }
-        ]
-      }
-    ],
-    "path": "package-4/README.md"
+    "path": "package-4.md"
   },
   {
     "title": "package-5",

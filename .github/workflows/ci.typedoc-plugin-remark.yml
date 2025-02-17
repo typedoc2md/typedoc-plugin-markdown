@@ -6,6 +6,10 @@ on:
       - '!packages/typedoc-plugin-remark/README.md'
       - '!packages/typedoc-plugin-remark/CHANGELOG.md'
       - '!packages/typedoc-plugin-remark/package.json'
+    branches:
+      - main
+      - release
+      - beta
   pull_request:
     paths:
       - 'packages/typedoc-plugin-remark/**'

@@ -2,7 +2,12 @@ import { backTicks, htmlTable, table } from '@plugin/libs/markdown/index.js';
 import { escapeChars } from '@plugin/libs/utils/index.js';
 import { TypeDeclarationVisibility } from '@plugin/options/maps.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { DeclarationReflection, ReflectionKind, ReflectionType } from 'typedoc';
+import {
+  DeclarationReflection,
+  i18n,
+  ReflectionKind,
+  ReflectionType,
+} from 'typedoc';
 
 export function typeDeclarationTable(
   this: MarkdownThemeContext,
@@ -37,20 +42,20 @@ export function typeDeclarationTable(
     Boolean(declaration.comment),
   );
 
-  headers.push(this.i18n.theme_name());
+  headers.push(i18n.theme_name());
 
-  headers.push(this.i18n.theme_type());
+  headers.push(i18n.theme_type());
 
   if (hasDefaultValues) {
-    headers.push(this.i18n.theme_default_value());
+    headers.push(i18n.theme_default_value());
   }
 
   if (hasComments) {
-    headers.push(this.i18n.theme_description());
+    headers.push(i18n.theme_description());
   }
 
   if (hasSources) {
-    headers.push(this.i18n.theme_defined_in());
+    headers.push(i18n.theme_defined_in());
   }
 
   const rows: string[][] = [];
@@ -60,8 +65,8 @@ export function typeDeclarationTable(
 
     const nameColumn: string[] = [];
 
-    if (declaration.anchor) {
-      nameColumn.push(`<a id="${declaration.anchor}"></a>`);
+    if (this.router.hasUrl(declaration) && this.router.getAnchor(declaration)) {
+      nameColumn.push(`<a id="${this.router.getAnchor(declaration)}"></a>`);
     }
 
     const name: string[] = [declaration.name];
@@ -72,7 +77,7 @@ export function typeDeclarationTable(
 
     const optional = declaration.flags.isOptional ? '?' : '';
 
-    nameColumn.push(`${backTicks(name.join(''))}${optional}`);
+    nameColumn.push(backTicks(`${name.join('')}${optional}`));
 
     row.push(nameColumn.join(' '));
 

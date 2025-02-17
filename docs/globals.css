@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+
+.nextra-toc a[href='#parameters'],
+.nextra-toc a[href^='#parameters-'],
+.nextra-toc a[href^='#returns'],
+.nextra-toc a[href^='#source'],
+.nextra-toc a[href^='#overrides'],
+.nextra-toc a[href^='#see'],
+.nextra-toc a[href^='#new-features'],
+.nextra-toc a[href^='#bug-fixes'],
+.nextra-toc a[href^='#minor-changes'],
+.nextra-toc a[href^='#patch-changes'],
+.nextra-toc a[href^='#non-breaking-changes'],
+.nextra-toc a[href^='#architectural-changes'],
+.nextra-toc a[href^='#structural-changes'],
+.nextra-toc a[href^='#breaking-changes'] {
+  display: none;
+}
+blockquote {
+  font-style: normal !important;
+}

@@ -13,4 +13,4 @@ export * from './get-reflection-flags.js';
 export * from './get-return-type.js';
 export * from './has-useful-type-details.js';
 export * from './is-group-kind.js';
-export * from './use-table.format.js';
+export * from './use-table-format.js';

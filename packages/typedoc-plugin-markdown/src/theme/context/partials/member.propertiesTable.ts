@@ -6,7 +6,7 @@ import {
 } from '@plugin/libs/markdown/index.js';
 import { removeLineBreaks } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { DeclarationReflection, i18n, ReflectionKind } from 'typedoc';
 
 /**
  * Renders a collection of properties in a table.
@@ -58,34 +58,34 @@ export function propertiesTable(
 
   headers.push(
     options?.isEventProps
-      ? this.i18n.theme_event()
-      : this.internationalization.kindSingularString(ReflectionKind.Property),
+      ? i18n.theme_event()
+      : ReflectionKind.singularString(ReflectionKind.Property),
   );
 
   if (hasModifiers) {
-    headers.push(this.i18n.theme_modifier());
+    headers.push(i18n.theme_modifier());
   }
 
-  headers.push(this.i18n.theme_type());
+  headers.push(i18n.theme_type());
 
   if (hasDefaults) {
-    headers.push(this.i18n.theme_default_value());
+    headers.push(i18n.theme_default_value());
   }
 
   if (hasComments) {
-    headers.push(this.i18n.theme_description());
+    headers.push(i18n.theme_description());
   }
 
   if (hasOverrides) {
-    headers.push(this.i18n.theme_overrides());
+    headers.push(i18n.theme_overrides());
   }
 
   if (hasInheritance) {
-    headers.push(this.i18n.theme_inherited_from());
+    headers.push(i18n.theme_inherited_from());
   }
 
   if (hasSources) {
-    headers.push(this.i18n.theme_defined_in());
+    headers.push(i18n.theme_defined_in());
   }
 
   const rows: string[][] = [];
@@ -96,18 +96,18 @@ export function propertiesTable(
 
     const nameColumn: string[] = [];
 
-    if (property.anchor) {
-      nameColumn.push(`<a id="${property.anchor}"></a>`);
+    if (this.router.hasUrl(property) && this.router.getAnchor(property)) {
+      nameColumn.push(`<a id="${this.router.getAnchor(property)}"></a>`);
     }
 
-    const propertyName = `${property.name}${
-      property.flags.isOptional ? '?' : ''
-    }`;
+    const propertyName = backTicks(
+      `${property.name}${property.flags.isOptional ? '?' : ''}`,
+    );
 
     if (property.isDeprecated && property.isDeprecated()) {
-      nameColumn.push(strikeThrough(backTicks(propertyName)));
+      nameColumn.push(strikeThrough(propertyName));
     } else {
-      nameColumn.push(backTicks(propertyName));
+      nameColumn.push(propertyName);
     }
 
     row.push(nameColumn.join(' '));

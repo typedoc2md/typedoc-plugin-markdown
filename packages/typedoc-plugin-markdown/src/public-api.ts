@@ -11,9 +11,7 @@ export {
 export { MarkdownTheme, MarkdownThemeContext } from '@plugin/theme/index.js';
 export {
   MarkdownApplication,
-  MarkdownRenderer,
   MarkdownRendererHooks,
   NavigationItem,
   PluginOptions,
-  UrlMapping,
 } from '@plugin/types/index.js';

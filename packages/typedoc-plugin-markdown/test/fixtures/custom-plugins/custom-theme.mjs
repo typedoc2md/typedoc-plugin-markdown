@@ -57,7 +57,7 @@ export function load(app) {
     () => '> **Generated using `index.page.end` hook**',
   );
 
-  app.renderer.preMarkdownRenderAsyncJobs.push(async (renderer) => {
+  app.renderer.preRenderAsyncJobs.push(async (renderer) => {
     await new Promise((r) => setTimeout(r, 5));
     fs.writeFileSync(
       `${renderer.outputDirectory}/pre-render-async-job.txt`,
@@ -65,7 +65,7 @@ export function load(app) {
     );
   });
 
-  app.renderer.postMarkdownRenderAsyncJobs.push(async (renderer) => {
+  app.renderer.postRenderAsyncJobs.push(async (renderer) => {
     await new Promise((r) => setTimeout(r, 5));
     fs.writeFileSync(
       `${renderer.outputDirectory}/post-render-async-job.txt`,

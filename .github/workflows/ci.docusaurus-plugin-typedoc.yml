@@ -6,6 +6,10 @@ on:
       - '!packages/docusaurus-plugin-typedoc/README.md'
       - '!packages/docusaurus-plugin-typedoc/CHANGELOG.md'
       - '!packages/docusaurus-plugin-typedoc/package.json'
+    branches:
+      - main
+      - release
+      - beta
   pull_request:
     paths:
       - 'packages/docusaurus-plugin-typedoc/**'

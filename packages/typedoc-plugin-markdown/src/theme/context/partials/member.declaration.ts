@@ -3,6 +3,7 @@ import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {
   ArrayType,
   DeclarationReflection,
+  i18n,
   IntersectionType,
   ReflectionKind,
   ReflectionType,
@@ -77,9 +78,7 @@ export function declaration(
         !intersectionType.declaration.signatures
       ) {
         if (intersectionType.declaration.children) {
-          md.push(
-            heading(opts.headingLevel, this.i18n.theme_type_declaration()),
-          );
+          md.push(heading(opts.headingLevel, i18n.theme_type_declaration()));
 
           md.push(
             this.partials.typeDeclaration(intersectionType.declaration, {
@@ -95,22 +94,24 @@ export function declaration(
     md.push(
       heading(
         opts.headingLevel,
-        this.internationalization.kindPluralString(
-          ReflectionKind.TypeParameter,
-        ),
+        ReflectionKind.pluralString(ReflectionKind.TypeParameter),
       ),
     );
     if (this.helpers.useTableFormat('parameters')) {
       md.push(this.partials.typeParametersTable(model.typeParameters));
     } else {
-      md.push(this.partials.typeParametersList(model.typeParameters));
+      md.push(
+        this.partials.typeParametersList(model.typeParameters, {
+          headingLevel: opts.headingLevel,
+        }),
+      );
     }
   }
 
   if (hasTypeDeclaration) {
     if (model.type instanceof UnionType) {
       if (this.helpers.hasUsefulTypeDetails(model.type)) {
-        md.push(heading(opts.headingLevel, this.i18n.theme_type_declaration()));
+        md.push(heading(opts.headingLevel, i18n.theme_type_declaration()));
 
         model.type.types.forEach((type) => {
           if (type instanceof ReflectionType) {
@@ -133,7 +134,7 @@ export function declaration(
         (model.kind !== ReflectionKind.Property ||
           this.helpers.useTableFormat('properties'));
       if (useHeading) {
-        md.push(heading(opts.headingLevel, this.i18n.theme_type_declaration()));
+        md.push(heading(opts.headingLevel, i18n.theme_type_declaration()));
       }
       md.push(
         this.partials.typeDeclarationContainer(model, typeDeclaration, options),

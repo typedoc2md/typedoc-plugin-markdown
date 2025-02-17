@@ -1,18 +1,26 @@
 import { MarkdownPageEvent } from '@plugin/events/index.js';
 import { heading } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import {
+  DeclarationReflection,
+  ProjectReflection,
+  ReflectionKind,
+} from 'typedoc';
 
-/**
- * Template that maps to individual reflection models.
- */
 export function reflection(
   this: MarkdownThemeContext,
   page: MarkdownPageEvent<DeclarationReflection>,
 ) {
   const md: string[] = [];
 
-  md.push(this.hook('page.begin', this).join('\n'));
+  md.push(
+    this.hook(
+      page.model instanceof ProjectReflection
+        ? 'index.page.begin'
+        : 'page.begin',
+      this,
+    ).join('\n'),
+  );
 
   if (!this.options.getValue('hidePageHeader')) {
     md.push(this.partials.header());
@@ -22,7 +30,14 @@ export function reflection(
     md.push(this.partials.breadcrumbs());
   }
 
-  if (!this.options.getValue('hidePageTitle')) {
+  const includeReadme =
+    this.options.getValue('mergeReadme') && Boolean(page.model.readme);
+
+  if (includeReadme && page.model.readme) {
+    md.push(this.helpers.getCommentParts(page.model.readme));
+  }
+
+  if (!this.options.getValue('hidePageTitle') && !includeReadme) {
     md.push(heading(1, this.partials.pageTitle()));
   }
 
@@ -35,16 +50,30 @@ export function reflection(
       ReflectionKind.Enum,
       ReflectionKind.Class,
       ReflectionKind.Interface,
-    ].includes(page.model.kind)
+    ].includes(page.model.kind) ||
+    (page.model.kind === ReflectionKind.TypeAlias && page.model.groups)
   ) {
-    md.push(this.partials.memberWithGroups(page.model, { headingLevel: 2 }));
+    md.push(
+      this.partials.memberWithGroups(page.model, {
+        headingLevel: 2,
+      }),
+    );
   } else {
-    md.push(this.partials.memberContainer(page.model, { headingLevel: 1 }));
+    md.push(
+      this.partials.memberContainer(page.model, {
+        headingLevel: 1,
+      }),
+    );
   }
 
   md.push(this.partials.footer());
 
-  md.push(this.hook('page.end', this).join('\n'));
+  md.push(
+    this.hook(
+      page.model instanceof ProjectReflection ? 'index.page.end' : 'page.end',
+      this,
+    ).join('\n'),
+  );
 
   return md.join('\n\n');
 }

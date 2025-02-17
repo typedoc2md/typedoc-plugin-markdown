@@ -1,37 +1,40 @@
-import { bold, italic } from '@plugin/libs/markdown/index.js';
+import { backTicks, heading, italic } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { TypeParameterReflection } from 'typedoc';
 
 export function typeParametersList(
   this: MarkdownThemeContext,
   model: TypeParameterReflection[],
+  options: { headingLevel: number },
 ): string {
-  const rows: string[] = [];
+  const md: string[] = [];
   model?.forEach((typeParameter) => {
-    const row: string[] = [];
+    const typeParamOut: string[] = [];
 
-    const nameCol: string[] = [bold(typeParameter.name)];
+    typeParamOut.push(heading(options.headingLevel + 1, typeParameter.name));
+
+    const nameDescription: string[] = [backTicks(typeParameter.name)];
 
     if (typeParameter.type) {
-      nameCol.push(
+      nameDescription.push(
         `${italic('extends')} ${this.partials.someType(typeParameter.type)}`,
       );
     }
 
     if (typeParameter.default) {
-      nameCol.push(
+      nameDescription.push(
         `= ${this.partials.someType(typeParameter.default, { forceCollapse: true })}`,
       );
     }
 
-    row.push('• ' + nameCol.join(' '));
+    typeParamOut.push(nameDescription.join(' '));
 
     if (typeParameter.comment) {
-      row.push(this.partials.comment(typeParameter.comment));
+      typeParamOut.push(this.partials.comment(typeParameter.comment));
     }
 
-    rows.push(row.join('\n\n'));
+    md.push(typeParamOut.join('\n\n'));
   });
 
-  return rows.join('\n\n');
+  return md.join('\n\n');
 }

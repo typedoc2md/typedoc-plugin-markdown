@@ -18,7 +18,7 @@ exports[`EntryFiles should get entry module: (Output File Strategy "members") (O
 
 ***
 
-# entry-module
+# @scope/entryfile
 
 ## Classes
 
@@ -31,7 +31,7 @@ exports[`EntryFiles should get module member for members: (Output File Strategy 
 
 ***
 
-[@scope/entryfile](../../modules.mdx) / ModuleClass
+[@scope/entryfile](../../README.mdx) / ModuleClass
 
 # Class: ModuleClass
 
@@ -39,11 +39,11 @@ exports[`EntryFiles should get module member for members: (Output File Strategy 
 
 ### new ModuleClass()
 
-> **new ModuleClass**(): [\`ModuleClass\`](ModuleClass.mdx)
+> **new ModuleClass**(): \`ModuleClass\`
 
 #### Returns
 
-[\`ModuleClass\`](ModuleClass.mdx)
+\`ModuleClass\`
 "
 `;
 
@@ -52,7 +52,7 @@ exports[`EntryFiles should get module member for members: (Output File Strategy 
 
 ***
 
-[@scope/entryfile](../../modules.mdx) / ModuleClass
+[@scope/entryfile](../../index.mdx) / ModuleClass
 
 # Class: ModuleClass
 
@@ -60,11 +60,11 @@ exports[`EntryFiles should get module member for members: (Output File Strategy 
 
 ### new ModuleClass()
 
-> **new ModuleClass**(): [\`ModuleClass\`](ModuleClass.mdx)
+> **new ModuleClass**(): \`ModuleClass\`
 
 #### Returns
 
-[\`ModuleClass\`](ModuleClass.mdx)
+\`ModuleClass\`
 "
 `;
 
@@ -72,8 +72,6 @@ exports[`EntryFiles should get readme file: (Output File Strategy "members") (Op
 "[**@scope/entryfile**](README.mdx)
 
 ***
-
-[@scope/entryfile](modules.mdx) / @scope/entryfile
 
 # MY README
 

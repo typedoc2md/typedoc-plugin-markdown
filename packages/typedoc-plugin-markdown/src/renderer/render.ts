@@ -3,13 +3,14 @@ import {
   MarkdownRendererEvent,
 } from '@plugin/events/index.js';
 import { MarkdownTheme } from '@plugin/theme/index.js';
-import { MarkdownRenderer } from '@plugin/types/index.js';
+import { MarkdownRenderer } from '@plugin/types/markdown-renderer.js';
 import * as fs from 'fs';
 import * as path from 'path';
 import {
+  i18n,
   normalizePath,
+  PageDefinition,
   ProjectReflection,
-  Reflection,
   Renderer,
 } from 'typedoc';
 
@@ -29,43 +30,53 @@ export async function render(
   project: ProjectReflection,
   outputDirectory: string,
 ) {
-  renderer.renderStartTime = Date.now();
+  const formatWithPrettier =
+    renderer.application.options.getValue('formatWithPrettier');
 
-  // Clean or create output directory
-  if (!(await prepareOutputDirectory(renderer, outputDirectory))) {
+  // Setup output directory
+  if (
+    !prepareRouter(renderer) ||
+    !(await prepareOutputDirectory(renderer, outputDirectory))
+  ) {
     return;
   }
 
-  // Prepare theme
-  renderer.theme = initializeTheme(renderer);
+  prepareTheme(renderer);
 
-  // Prepare output
-  const output = new MarkdownRendererEvent(
-    MarkdownRendererEvent.BEGIN,
-    outputDirectory,
-    project,
-  );
-  output.urls = (renderer.theme as MarkdownTheme).getUrls(project);
+  const pages = renderer.router!.buildPages(project);
+
+  const output = new MarkdownRendererEvent(outputDirectory, project, pages);
+
   output.navigation = (renderer.theme as MarkdownTheme).getNavigation(project);
 
   renderer.trigger(MarkdownRendererEvent.BEGIN, output);
 
-  await executeJobs(renderer.preMarkdownRenderAsyncJobs, output);
-  await executeJobs(renderer.preRenderAsyncJobs, output); // for backward compatibility
+  await executeJobs(renderer.preRenderAsyncJobs, output);
 
-  await renderPages(renderer, output);
+  renderer.application.logger.verbose(
+    `There are ${pages.length} pages to write.`,
+  );
 
-  copyMediaFiles(project, outputDirectory);
+  for (const page of pages) {
+    await renderDocument(
+      renderer,
+      outputDirectory,
+      page,
+      project,
+      formatWithPrettier,
+    );
+  }
 
-  await executeJobs(renderer.postMarkdownRenderAsyncJobs, output);
-  await executeJobs(renderer.postRenderAsyncJobs, output); // for backward compatibility
+  await executeJobs(renderer.postRenderAsyncJobs, output);
 
   renderer.trigger(MarkdownRendererEvent.END, output);
 
+  copyMediaFiles(project, outputDirectory);
+
+  renderer.router = void 0;
   renderer.theme = void 0;
 }
 
-// Helper to prepare output directory
 async function prepareOutputDirectory(
   renderer: Renderer,
   outputDirectory: string,
@@ -103,69 +114,97 @@ async function prepareOutputDirectory(
   return true;
 }
 
-// Helper to initialize theme
-function initializeTheme(renderer: Renderer): MarkdownTheme {
+function prepareRouter(renderer: Renderer) {
+  let routerOption = renderer.application.options.getValue('router');
+  if (!renderer.application.options.isSet('router')) {
+    if (renderer.application.options.isSet('outputFileStrategy')) {
+      const outputFileStrategy =
+        renderer.application.options.getValue('outputFileStrategy');
+      routerOption =
+        outputFileStrategy === 'modules' ? 'module' : 'kind-structure';
+    } else {
+      routerOption = 'kind-structure';
+    }
+  }
+
+  const routers = (renderer as any).routers;
+  const ctor = routers.get(routerOption);
+
+  if (!ctor) {
+    renderer.application.logger.error(
+      i18n.router_0_is_not_defined_available_are_1(
+        routerOption,
+        ['kind-structure', 'module'].join(', '),
+      ),
+    );
+    return false;
+  }
+
+  renderer.router = new ctor(renderer.application);
+
+  return true;
+}
+
+function prepareTheme(renderer: Renderer) {
   const themeOption = renderer.application.options.getValue('theme');
   const themes = (renderer as any).themes;
   const ThemeConstructor = themes.get(
     themeOption === 'default' ? 'markdown' : themeOption,
   );
-  const themeInstance = new ThemeConstructor(renderer);
-  if (themeInstance instanceof MarkdownTheme) {
-    return themeInstance;
+  const ctor = new ThemeConstructor(renderer);
+  if (ctor instanceof MarkdownTheme) {
+    renderer.theme = ctor;
+    return;
   }
   renderer.application.logger.warn(
     `[typedoc-plugin-markdown]: Skipping theme "${themeOption}" as it is not an instance of the Markdown theme.`,
   );
-  return new (themes.get('markdown'))(renderer);
+  renderer.theme = new (themes.get('markdown'))(renderer);
 }
 
-// Helper to render all pages
-async function renderPages(renderer: Renderer, output: MarkdownRendererEvent) {
-  const formatWithPrettier =
-    renderer.application.options.getValue('formatWithPrettier');
+async function renderDocument(
+  renderer: MarkdownRenderer,
+  outputDirectory: string,
+  page: PageDefinition,
+  project: ProjectReflection,
+  formatWithPrettier: boolean,
+) {
+  const event = new MarkdownPageEvent(page.model);
+  event.url = page.url;
+  event.filename = path.join(outputDirectory, page.url);
+  event.pageKind = page.kind;
+  event.project = project;
 
-  renderer.application.logger.verbose(
-    `There are ${output.urls?.length} pages to write.`,
-  );
+  renderer.trigger(MarkdownPageEvent.BEGIN, event);
 
-  const pages =
-    output.urls?.filter(
-      (urlMapping) => urlMapping.model instanceof Reflection,
-    ) || [];
-  for (const urlMapping of pages) {
-    const [template, page] = output.createPageEvent(urlMapping);
-    page.contents = '';
+  const markdownFromTheme = renderer.theme!.render(event);
 
-    renderer.trigger(MarkdownPageEvent.BEGIN, page);
+  event.contents = event.contents || '';
 
-    if (page.model instanceof Reflection) {
-      const markdownFromTheme = renderer.theme!.render(page, template);
+  if (formatWithPrettier) {
+    event.contents =
+      event.contents +
+      (await formatWithPrettierIfAvailable(renderer, markdownFromTheme));
+  } else {
+    event.contents = event.contents + markdownFromTheme;
+  }
 
-      if (formatWithPrettier) {
-        page.contents =
-          page.contents +
-          (await formatWithPrettierIfAvailable(renderer, markdownFromTheme));
-      } else {
-        page.contents = page.contents + markdownFromTheme;
-      }
+  renderer.trigger(MarkdownPageEvent.END, event);
 
-      renderer.trigger(MarkdownPageEvent.END, page);
-
-      try {
-        writeFileSync(page.filename, page.contents || '');
-      } catch {
-        renderer.application.logger.error(
-          renderer.application.i18n.could_not_write_0(page.filename),
-        );
-      }
-    } else {
-      throw new Error('Unreachable code encountered.');
-    }
+  try {
+    writeFileSync(event.filename, event?.contents || '');
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (error) {
+    renderer.application.logger.error(
+      'renderer.application.i18n.could_not_write_0(event.filename)',
+    );
   }
 }
 
-async function formatWithPrettierIfAvailable(renderer: Renderer, code: string) {
+export async function formatWithPrettierIfAvailable(
+  renderer: Renderer,
+  code: string,
+) {
   const prettier = await getPrettier();
   if (!prettier) {
     renderer.application.logger.warn(
@@ -219,13 +258,14 @@ async function getPrettier() {
 function copyMediaFiles(project: ProjectReflection, outputDirectory: string) {
   const media = path.join(outputDirectory, '_media');
   const toCopy = project.files.getNameToAbsoluteMap();
+
   for (const [fileName, absolute] of toCopy.entries()) {
     copySync(absolute, path.join(media, fileName));
   }
 }
 
 // Helper to execute async jobs
-async function executeJobs(
+export async function executeJobs(
   jobs: Array<(output: MarkdownRendererEvent) => Promise<void>>,
   output: MarkdownRendererEvent,
 ) {

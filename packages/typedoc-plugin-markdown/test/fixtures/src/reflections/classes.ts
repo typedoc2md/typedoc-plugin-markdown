@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /**
  * @module
  */
@@ -10,6 +11,10 @@ export class BasicClass {
    * Comments for prop
    */
   prop!: string;
+  /**
+   * Comments for Prop
+   */
+  Prop!: string;
   /**
    * Comments for method
    */

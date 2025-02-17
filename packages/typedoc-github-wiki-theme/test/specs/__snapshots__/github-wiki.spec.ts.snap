@@ -67,11 +67,11 @@ exports[`GithubWiki should output member docs 1`] = `
 
 ### new ClassA()
 
-> **new ClassA**(): [\`ClassA\`](../wiki/module-1.Class.ClassA)
+> **new ClassA**(): \`ClassA\`
 
 #### Returns
 
-[\`ClassA\`](../wiki/module-1.Class.ClassA)
+\`ClassA\`
 "
 `;
 

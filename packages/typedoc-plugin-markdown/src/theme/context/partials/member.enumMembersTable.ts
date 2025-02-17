@@ -1,7 +1,12 @@
 import { backTicks, htmlTable, table } from '@plugin/libs/markdown/index.js';
 import { removeLineBreaks } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { DeclarationReflection, ReflectionKind, ReflectionType } from 'typedoc';
+import {
+  DeclarationReflection,
+  i18n,
+  ReflectionKind,
+  ReflectionType,
+} from 'typedoc';
 
 export function enumMembersTable(
   this: MarkdownThemeContext,
@@ -17,16 +22,16 @@ export function enumMembersTable(
     !this.options.getValue('disableSources');
 
   const headers = [
-    this.internationalization.kindSingularString(ReflectionKind.EnumMember),
-    this.i18n.theme_value(),
+    ReflectionKind.singularString(ReflectionKind.EnumMember),
+    i18n.theme_value(),
   ];
 
   if (hasComments) {
-    headers.push(this.i18n.theme_description());
+    headers.push(i18n.theme_description());
   }
 
   if (hasSources) {
-    headers.push(this.i18n.theme_defined_in());
+    headers.push(i18n.theme_defined_in());
   }
 
   const rows: string[][] = [];
@@ -37,8 +42,8 @@ export function enumMembersTable(
     const row: string[] = [];
     const nameColumn: string[] = [];
 
-    if (property.anchor) {
-      nameColumn.push(`<a id="${property.anchor}"></a>`);
+    if (this.router.hasUrl(property) && this.router.getAnchor(property)) {
+      nameColumn.push(`<a id="${this.router.getAnchor(property)}"></a>`);
     }
 
     nameColumn.push(backTicks(property.name));

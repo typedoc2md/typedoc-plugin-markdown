@@ -14,11 +14,11 @@ Defined in: [classes.ts:1](http://source-url)
 
 ### new AbstractClass()
 
-> **new AbstractClass**(): [\`AbstractClass\`](AbstractClass.md)
+> **new AbstractClass**(): \`AbstractClass\`
 
 #### Returns
 
-[\`AbstractClass\`](AbstractClass.md)
+\`AbstractClass\`
 
 ## Properties
 
@@ -66,7 +66,7 @@ new AbstractClass(): AbstractClass
 
 #### Returns
 
-[\`AbstractClass\`](AbstractClass.md)
+\`AbstractClass\`
 
 ## Properties
 
@@ -103,11 +103,11 @@ Comments for BasicClass
 
 ### new BasicClass()
 
-> **new BasicClass**(): [\`BasicClass\`](BasicClass.md)
+> **new BasicClass**(): \`BasicClass\`
 
 #### Returns
 
-[\`BasicClass\`](BasicClass.md)
+\`BasicClass\`
 
 ## Properties
 
@@ -118,6 +118,16 @@ Comments for BasicClass
 Defined in: [classes.ts:1](http://source-url)
 
 Comments for prop
+
+***
+
+### Prop
+
+> **Prop**: \`string\`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for Prop
 
 ## Methods
 
@@ -152,13 +162,14 @@ new BasicClass(): BasicClass
 
 #### Returns
 
-[\`BasicClass\`](BasicClass.md)
+\`BasicClass\`
 
 ## Properties
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
 | <a id="prop"></a> \`prop\` | \`string\` | Comments for prop |
+| <a id="prop-1"></a> \`Prop\` | \`string\` | Comments for Prop |
 
 ## Methods
 
@@ -187,11 +198,11 @@ Defined in: [classes.ts:1](http://source-url)
 
 ### new ClassWithAccessorKeywords()
 
-> **new ClassWithAccessorKeywords**(): [\`ClassWithAccessorKeywords\`](ClassWithAccessorKeywords.md)
+> **new ClassWithAccessorKeywords**(): \`ClassWithAccessorKeywords\`
 
 #### Returns
 
-[\`ClassWithAccessorKeywords\`](ClassWithAccessorKeywords.md)
+\`ClassWithAccessorKeywords\`
 
 ## Accessors
 
@@ -244,7 +255,7 @@ new ClassWithAccessorKeywords(): ClassWithAccessorKeywords
 
 #### Returns
 
-[\`ClassWithAccessorKeywords\`](ClassWithAccessorKeywords.md)
+\`ClassWithAccessorKeywords\`
 
 ## Accessors
 
@@ -293,11 +304,11 @@ Comments for ClassWithAccessors
 
 ### new ClassWithAccessors()
 
-> **new ClassWithAccessors**(): [\`ClassWithAccessors\`](ClassWithAccessors.md)
+> **new ClassWithAccessors**(): \`ClassWithAccessors\`
 
 #### Returns
 
-[\`ClassWithAccessors\`](ClassWithAccessors.md)
+\`ClassWithAccessors\`
 
 ## Properties
 
@@ -396,7 +407,7 @@ new ClassWithAccessors(): ClassWithAccessors
 
 #### Returns
 
-[\`ClassWithAccessors\`](ClassWithAccessors.md)
+\`ClassWithAccessors\`
 
 ## Properties
 
@@ -493,11 +504,11 @@ Comments for ClassWithComplexProps
 
 ### new ClassWithComplexProps()
 
-> **new ClassWithComplexProps**(): [\`ClassWithComplexProps\`](ClassWithComplexProps.md)
+> **new ClassWithComplexProps**(): \`ClassWithComplexProps\`
 
 #### Returns
 
-[\`ClassWithComplexProps\`](ClassWithComplexProps.md)
+\`ClassWithComplexProps\`
 
 ## Properties
 
@@ -548,7 +559,7 @@ new ClassWithComplexProps(): ClassWithComplexProps
 
 #### Returns
 
-[\`ClassWithComplexProps\`](ClassWithComplexProps.md)
+\`ClassWithComplexProps\`
 
 ## Properties
 
@@ -571,7 +582,7 @@ Comments for ClassWithConstructorOverloads
 
 ### new ClassWithConstructorOverloads()
 
-> **new ClassWithConstructorOverloads**(\`x\`, \`y\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+> **new ClassWithConstructorOverloads**(\`x\`, \`y\`): \`ClassWithConstructorOverloads\`
 
 Defined in: [classes.ts:1](http://source-url)
 
@@ -589,11 +600,11 @@ Comments for x number
 
 #### Returns
 
-[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+\`ClassWithConstructorOverloads\`
 
 ### new ClassWithConstructorOverloads()
 
-> **new ClassWithConstructorOverloads**(\`x\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+> **new ClassWithConstructorOverloads**(\`x\`): \`ClassWithConstructorOverloads\`
 
 Defined in: [classes.ts:1](http://source-url)
 
@@ -607,11 +618,11 @@ Comments for x string
 
 #### Returns
 
-[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+\`ClassWithConstructorOverloads\`
 
 ### new ClassWithConstructorOverloads()
 
-> **new ClassWithConstructorOverloads**(\`s\`): [\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+> **new ClassWithConstructorOverloads**(\`s\`): \`ClassWithConstructorOverloads\`
 
 Defined in: [classes.ts:1](http://source-url)
 
@@ -623,7 +634,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
-[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+\`ClassWithConstructorOverloads\`
 "
 `;
 
@@ -653,7 +664,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
-[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+\`ClassWithConstructorOverloads\`
 
 ### new ClassWithConstructorOverloads()
 
@@ -671,7 +682,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
-[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+\`ClassWithConstructorOverloads\`
 
 ### new ClassWithConstructorOverloads()
 
@@ -689,7 +700,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
-[\`ClassWithConstructorOverloads\`](ClassWithConstructorOverloads.md)
+\`ClassWithConstructorOverloads\`
 "
 `;
 
@@ -704,11 +715,11 @@ Comment for ClassWithFlags
 
 ### new ClassWithFlags()
 
-> **new ClassWithFlags**(): [\`ClassWithFlags\`](ClassWithFlags.md)
+> **new ClassWithFlags**(): \`ClassWithFlags\`
 
 #### Returns
 
-[\`ClassWithFlags\`](ClassWithFlags.md)
+\`ClassWithFlags\`
 
 ## Properties
 
@@ -777,7 +788,7 @@ new ClassWithFlags(): ClassWithFlags
 
 #### Returns
 
-[\`ClassWithFlags\`](ClassWithFlags.md)
+\`ClassWithFlags\`
 
 ## Properties
 
@@ -831,11 +842,11 @@ Comments for ClassWithModifiers
 
 ### new ClassWithModifiers()
 
-> **new ClassWithModifiers**(): [\`ClassWithModifiers\`](ClassWithModifiers.md)
+> **new ClassWithModifiers**(): \`ClassWithModifiers\`
 
 #### Returns
 
-[\`ClassWithModifiers\`](ClassWithModifiers.md)
+\`ClassWithModifiers\`
 
 ## Properties
 
@@ -948,7 +959,7 @@ new ClassWithModifiers(): ClassWithModifiers
 
 #### Returns
 
-[\`ClassWithModifiers\`](ClassWithModifiers.md)
+\`ClassWithModifiers\`
 
 ## Properties
 
@@ -1019,7 +1030,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 ### new ClassWithPropCategories()
 
-> **new ClassWithPropCategories**(\`opts\`): [\`ClassWithPropCategories\`](ClassWithPropCategories.md)
+> **new ClassWithPropCategories**(\`opts\`): \`ClassWithPropCategories\`
 
 Defined in: [classes.ts:1](http://source-url)
 
@@ -1037,7 +1048,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
-[\`ClassWithPropCategories\`](ClassWithPropCategories.md)
+\`ClassWithPropCategories\`
 
 ## CatA
 
@@ -1106,7 +1117,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
-[\`ClassWithPropCategories\`](ClassWithPropCategories.md)
+\`ClassWithPropCategories\`
 
 ## CatA
 
@@ -1169,11 +1180,11 @@ Comments for ClassWithSimpleProps
 
 ### new ClassWithSimpleProps()
 
-> **new ClassWithSimpleProps**(): [\`ClassWithSimpleProps\`](ClassWithSimpleProps.md)
+> **new ClassWithSimpleProps**(): \`ClassWithSimpleProps\`
 
 #### Returns
 
-[\`ClassWithSimpleProps\`](ClassWithSimpleProps.md)
+\`ClassWithSimpleProps\`
 
 ## Properties
 
@@ -1247,7 +1258,7 @@ new ClassWithSimpleProps(): ClassWithSimpleProps
 
 #### Returns
 
-[\`ClassWithSimpleProps\`](ClassWithSimpleProps.md)
+\`ClassWithSimpleProps\`
 
 ## Properties
 
@@ -1269,11 +1280,11 @@ Defined in: [classes.ts:1](http://source-url)
 
 ### new ClassWithSymbols()
 
-> **new ClassWithSymbols**(): [\`ClassWithSymbols\`](ClassWithSymbols.md)
+> **new ClassWithSymbols**(): \`ClassWithSymbols\`
 
 #### Returns
 
-[\`ClassWithSymbols\`](ClassWithSymbols.md)
+\`ClassWithSymbols\`
 
 ## Properties
 
@@ -1310,13 +1321,19 @@ Comments for ClassWithTypeParameters
 
 ## Type Parameters
 
-• **A**
+### A
 
-• **B** *extends* \`string\`
+\`A\`
+
+### B
+
+\`B\` *extends* \`string\`
 
 Comments for param B
 
-• **C** = \`boolean\`
+### C
+
+\`C\` = \`boolean\`
 
 Comments for param C
 
@@ -1324,11 +1341,11 @@ Comments for param C
 
 ### new ClassWithTypeParameters()
 
-> **new ClassWithTypeParameters**\\<\`A\`, \`B\`, \`C\`\\>(): [\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\<\`A\`, \`B\`, \`C\`\\>
+> **new ClassWithTypeParameters**\\<\`A\`, \`B\`, \`C\`\\>(): \`ClassWithTypeParameters\`\\<\`A\`, \`B\`, \`C\`\\>
 
 #### Returns
 
-[\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\<\`A\`, \`B\`, \`C\`\\>
+\`ClassWithTypeParameters\`\\<\`A\`, \`B\`, \`C\`\\>
 "
 `;
 
@@ -1357,7 +1374,7 @@ new ClassWithTypeParameters<A, B, C>(): ClassWithTypeParameters<A, B, C>
 
 #### Returns
 
-[\`ClassWithTypeParameters\`](ClassWithTypeParameters.md)\\<\`A\`, \`B\`, \`C\`\\>
+\`ClassWithTypeParameters\`\\<\`A\`, \`B\`, \`C\`\\>
 "
 `;
 
@@ -1370,7 +1387,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 ### new ClassWithoutPropCategories()
 
-> **new ClassWithoutPropCategories**(\`opts\`): [\`ClassWithoutPropCategories\`](ClassWithoutPropCategories.md)
+> **new ClassWithoutPropCategories**(\`opts\`): \`ClassWithoutPropCategories\`
 
 Defined in: [classes.ts:1](http://source-url)
 
@@ -1388,7 +1405,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
-[\`ClassWithoutPropCategories\`](ClassWithoutPropCategories.md)
+\`ClassWithoutPropCategories\`
 
 ## Properties
 
@@ -1457,7 +1474,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 #### Returns
 
-[\`ClassWithoutPropCategories\`](ClassWithoutPropCategories.md)
+\`ClassWithoutPropCategories\`
 
 ## Properties
 
@@ -1511,15 +1528,15 @@ Comments for DerivedClassA
 
 ### new DerivedClassA()
 
-> **new DerivedClassA**(): [\`DerivedClassA\`](DerivedClassA.md)
+> **new DerivedClassA**(): \`DerivedClassA\`
 
 #### Returns
 
-[\`DerivedClassA\`](DerivedClassA.md)
+\`DerivedClassA\`
 
 #### Inherited from
 
-[\`AbstractClass\`](AbstractClass.md).[\`constructor\`](AbstractClass.md#constructors)
+[\`AbstractClass\`](AbstractClass.md).[\`constructor\`](AbstractClass.md#constructor)
 
 ## Properties
 
@@ -1596,11 +1613,11 @@ new DerivedClassA(): DerivedClassA
 
 #### Returns
 
-[\`DerivedClassA\`](DerivedClassA.md)
+\`DerivedClassA\`
 
 #### Inherited from
 
-[\`AbstractClass\`](AbstractClass.md).[\`constructor\`](AbstractClass.md#constructors)
+[\`AbstractClass\`](AbstractClass.md).[\`constructor\`](AbstractClass.md#constructor)
 
 ## Properties
 
@@ -1658,11 +1675,11 @@ Defined in: [classes.ts:1](http://source-url)
 
 ### new DisposableClass()
 
-> **new DisposableClass**(): [\`DisposableClass\`](DisposableClass.md)
+> **new DisposableClass**(): \`DisposableClass\`
 
 #### Returns
 
-[\`DisposableClass\`](DisposableClass.md)
+\`DisposableClass\`
 
 ## Methods
 
@@ -1696,11 +1713,11 @@ Defined in: [classes.ts:1](http://source-url)
 
 ### new BaseClass()
 
-> **new BaseClass**(): [\`BaseClass\`](BaseClass.md)
+> **new BaseClass**(): \`BaseClass\`
 
 #### Returns
 
-[\`BaseClass\`](BaseClass.md)
+\`BaseClass\`
 "
 `;
 
@@ -1722,15 +1739,15 @@ Defined in: [classes.ts:1](http://source-url)
 
 ### new ChildClassA()
 
-> **new ChildClassA**(): [\`ChildClassA\`](ChildClassA.md)
+> **new ChildClassA**(): \`ChildClassA\`
 
 #### Returns
 
-[\`ChildClassA\`](ChildClassA.md)
+\`ChildClassA\`
 
 #### Inherited from
 
-[\`BaseClass\`](BaseClass.md).[\`constructor\`](BaseClass.md#constructors)
+[\`BaseClass\`](BaseClass.md).[\`constructor\`](BaseClass.md#constructor)
 "
 `;
 
@@ -1747,15 +1764,15 @@ Defined in: [classes.ts:1](http://source-url)
 
 ### new GrandChildClassA()
 
-> **new GrandChildClassA**(): [\`GrandChildClassA\`](GrandChildClassA.md)
+> **new GrandChildClassA**(): \`GrandChildClassA\`
 
 #### Returns
 
-[\`GrandChildClassA\`](GrandChildClassA.md)
+\`GrandChildClassA\`
 
 #### Inherited from
 
-[\`ChildClassA\`](ChildClassA.md).[\`constructor\`](ChildClassA.md#constructors)
+[\`ChildClassA\`](ChildClassA.md).[\`constructor\`](ChildClassA.md#constructor)
 "
 `;
 
@@ -1778,10 +1795,10 @@ new GrandChildClassA(): GrandChildClassA
 
 #### Returns
 
-[\`GrandChildClassA\`](GrandChildClassA.md)
+\`GrandChildClassA\`
 
 #### Inherited from
 
-[\`ChildClassA\`](ChildClassA.md).[\`constructor\`](ChildClassA.md#constructors)
+[\`ChildClassA\`](ChildClassA.md).[\`constructor\`](ChildClassA.md#constructor)
 "
 `;

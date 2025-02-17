@@ -1,0 +1,75 @@
+import { Callout, FileTree } from 'nextra/components';
+
+# Output File Structure
+
+TypeDoc generates documentation models according to exports derived from the given [entryPoints](https://typedoc.org/documents/Options.Input.html#entrypoints) and [entryPointsStrategy](https://typedoc.org/documents/Options.Input.html#entrypointstrategy) TypeDoc configurations.
+
+TypeDoc 0.28.0 introduced an additional [router](https://typedoc.org/documents/Options.Output.html#router) option which can be used to modify the output folder structure.
+
+This plugin now utilises this mechanism for output file generation.
+
+## Built-In Plugin Routers
+
+The plugin ships with the following custom built-in routers:
+
+### "kind-structure" (default)
+
+```json filename="typedoc.json"
+{
+  "router": "kind-structure"
+}
+```
+
+_Note: This is equivalent to the deprecated `outputFileStrategy="members"`._
+
+Generates an individual file for each exported module member kind. Pages are grouped by kind within their respective module hierarchy.
+
+This mirrors a combination of TypeDoc's `kind` and `structure` routers hence the name.
+
+This is the default router of the plugin.
+
+<FileTree>
+  <FileTree.File name="README.md" />
+  <FileTree.Folder name="module-a" defaultOpen>
+    <FileTree.Folder name="classes" defaultOpen>
+      <FileTree.File name="ClassA.md" />
+      <FileTree.File name="ClassB.md" />
+    </FileTree.Folder>
+    <FileTree.Folder name="functions" defaultOpen>
+      <FileTree.File name="FunctionA.md" />
+      <FileTree.File name="FunctionB.md" />
+    </FileTree.Folder>
+  </FileTree.Folder>
+  <FileTree.Folder name="module-b" defaultOpen>
+    <FileTree.Folder name="classes" defaultOpen>
+      <FileTree.File name="ClassA.md" />
+      <FileTree.File name="ClassB.md" />
+    </FileTree.Folder>
+  </FileTree.Folder>
+</FileTree>
+
+### "module"
+
+```json filename="typedoc.json"
+{
+  "router": "module"
+}
+```
+
+_Note: This is equivalent to the deprecated `outputFileStrategy="modules"`._
+
+Generates a single file for every module and namespace where all module member kinds are hoisted to a single file.
+
+This creates a flat navigation structure and reduces the amount of files generated.
+
+<FileTree>
+  <FileTree.File name="README.md" />
+  <FileTree.File name="module-a.md" />
+  <FileTree.File name="module-b.md" />
+</FileTree>
+
+## TypeDoc Core Routers
+
+Support for the TypeDoc core routers is planned for a future release.
+
+This will provide the ability to generate output files in a similar structure to the default HTML theme but rendered in Markdown.

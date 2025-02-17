@@ -4,7 +4,7 @@ import {
   sanitizeComments,
 } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { Comment, CommentTag } from 'typedoc';
+import { Comment, CommentTag, translateTagName } from 'typedoc';
 
 export function comment(
   this: MarkdownThemeContext,
@@ -113,9 +113,7 @@ export function comment(
           (opts.isTableColumn && tag.tag !== '@defaultValue'),
       )
       .map((tag) => {
-        const tagText = this.internationalization.translateTagName(
-          tag.tag as `@${string}`,
-        );
+        const tagText = translateTagName(tag.tag as `@${string}`);
         const tagMd = [
           opts.headingLevel
             ? heading(opts.headingLevel, tagText) + '\n'

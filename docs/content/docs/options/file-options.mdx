@@ -1,0 +1,120 @@
+import { Callout, FileTree } from 'nextra/components';
+
+# File Options
+
+Options that are used to configure how files are output.
+
+## ~outputFileStrategy~
+
+<Callout type="warning">Deprecated in favour of `--router`.</Callout>
+
+> Accepts either `"members"` or `"modules"`. Defaults to `"members"`.
+
+Please also see the [Output File Structure](/docs/output-file-structure) guide for updated implementation details.
+
+```json filename="typedoc.json"
+{
+  "outputFileStrategy": "members"
+}
+```
+
+## flattenOutputFiles
+
+<Callout emoji="💡">Flatten output files to a single directory.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default output files are generated in a directory structure that mirrors the project's module hierarchy including folders for member kinds eg `classes`, `enums`, `functions` etc.
+
+This option will flatten the output files to a single directory as follows:
+
+<FileTree>
+  <FileTree.File name="README.md" />
+  <FileTree.File name="module-a.Class.ClassA.md" />
+  <FileTree.File name="module-a.Class.ClassB.md" />
+  <FileTree.File name="module-a.Function.FunctionA.md" />
+  <FileTree.File name="module-a.Function.FunctionB.md" />
+  <FileTree.File name="module-b.Class.ClassA.md" />
+  <FileTree.File name="module-b.Class.ClassB.md" />
+</FileTree>
+
+```json filename="typedoc.json"
+{
+  "flattenOutputFiles": false
+}
+```
+
+## fileExtension
+
+<Callout emoji="💡">
+  Specify the file extension for generated output files.
+</Callout>
+
+> Accepts a string value. Defaults to `".md"`.
+
+Typically Markdown files are recognised by the `.md` or `.markdown` file extensions.`.mdx` maybe required for compatibility with certain Markdown parsers.
+
+```json filename="typedoc.json"
+{
+  "fileExtension": ".mdx"
+}
+```
+
+## entryFileName
+
+<Callout emoji="💡">The file name of the entry page.</Callout>
+
+> Accepts a string value. Defaults to `"README"`.
+
+The `entryFileName` in this context is the root page of the documentation and each module directory.
+This is essentially the equivalent to `index.html` for web pages.
+
+`README` is recognised when browsing folders on repos and Wikis and is the plugin default. `index` might be more suitable for static site generators.
+
+The content of root documentation file will be resolved in the following order:
+
+1. The value of the `--entryModule` option (if defined).
+2. The resolved Readme file (skipped if the [`--readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
+3. The documentation index page.
+
+```json filename="typedoc.json"
+{
+  "entryFileName": "index"
+}
+```
+
+## modulesFileName
+
+<Callout emoji="💡">
+  The file name of the separate modules / index page.
+</Callout>
+
+> Accepts a string value. Defaults to `"modules | packages | globals"`.
+
+Please note this option is not applicable when [`--readme`](https://typedoc.org/options/input/#readme) is set to "none" or `--mergeReadme` is set to "true".
+
+```json filename="typedoc.json"
+{
+  "modulesFileName": "documentation"
+}
+```
+
+## mergeReadme
+
+<Callout emoji="💡">
+  Appends the documentation index page to the readme page.
+</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default when a readme file is resolved, a separate readme page is created.
+
+This option appends the documentation main/index page to the readme page so only a single root page is generated.
+
+This option has no effect when [`--readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
+
+```json filename="typedoc.json"
+{
+  "mergeReadme": false
+}
+```

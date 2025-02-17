@@ -3,23 +3,23 @@ var copyfiles = require('copyfiles');
 const changelogs = [
   {
     from: '../packages/typedoc-plugin-markdown/CHANGELOG.md',
-    to: 'pages/docs',
+    to: 'content/docs',
   },
   {
     from: '../packages/typedoc-vitepress-theme/CHANGELOG.md',
-    to: 'pages/plugins/vitepress',
+    to: 'content/plugins/vitepress',
   },
   {
     from: '../packages/docusaurus-plugin-typedoc/CHANGELOG.md',
-    to: 'pages/plugins/docusaurus',
+    to: 'content/plugins/docusaurus',
   },
   {
     from: '../packages/typedoc-plugin-remark/CHANGELOG.md',
-    to: 'pages/plugins/remark',
+    to: 'content/plugins/remark',
   },
   {
     from: '../packages/typedoc-plugin-frontmatter/CHANGELOG.md',
-    to: 'pages/plugins/frontmatter',
+    to: 'content/plugins/frontmatter',
   },
 ];
 

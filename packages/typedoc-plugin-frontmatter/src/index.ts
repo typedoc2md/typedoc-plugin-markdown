@@ -25,36 +25,42 @@ export function load(app: MarkdownApplication) {
     } as DeclarationOption);
   });
 
-  app.renderer.on(MarkdownPageEvent.BEGIN, (page) => {
-    const entryFileName = app.options.getValue('entryFileName') as any;
+  app.renderer.on(
+    MarkdownPageEvent.BEGIN,
+    (page: MarkdownPageEvent<DeclarationReflection>) => {
+      const entryFileName = app.options.getValue('entryFileName') as any;
+      const frontmatterGlobals = app.options.getValue('frontmatterGlobals');
+      const readmeFrontmatter = app.options.getValue('readmeFrontmatter');
+      const indexFrontmatter = app.options.getValue('indexFrontmatter');
+      const resolvedFrontmatterTags = getResolvedTags(
+        app,
+        (page.model as DeclarationReflection)?.comment,
+      );
 
-    const frontmatterGlobals = app.options.getValue('frontmatterGlobals');
-    const readmeFrontmatter = app.options.getValue('readmeFrontmatter');
-    const indexFrontmatter = app.options.getValue('indexFrontmatter');
-    const resolvedFrontmatterTags = getResolvedTags(app, page.model?.comment);
-
-    page.frontmatter = {
-      ...(page.frontmatter || {}),
-      ...frontmatterGlobals,
-      ...resolvedFrontmatterTags,
-    };
-
-    if (path.parse(page.url).name === path.parse(entryFileName).name) {
       page.frontmatter = {
-        ...page.frontmatter,
-        ...readmeFrontmatter,
+        ...(page.frontmatter || {}),
+        ...frontmatterGlobals,
+        ...resolvedFrontmatterTags,
       };
-    }
 
-    if (
-      path.parse(page.url).name === path.parse(page.project?.url || '').name
-    ) {
-      page.frontmatter = {
-        ...page.frontmatter,
-        ...indexFrontmatter,
-      };
-    }
-  });
+      if (path.parse(page.url).name === path.parse(entryFileName).name) {
+        page.frontmatter = {
+          ...page.frontmatter,
+          ...readmeFrontmatter,
+        };
+      }
+
+      if (
+        path.parse(page.url).name ===
+        path.parse(app.renderer.router?.getFullUrl(page.project) || '').name
+      ) {
+        page.frontmatter = {
+          ...page.frontmatter,
+          ...indexFrontmatter,
+        };
+      }
+    },
+  );
 
   app.renderer.on(
     MarkdownPageEvent.END,

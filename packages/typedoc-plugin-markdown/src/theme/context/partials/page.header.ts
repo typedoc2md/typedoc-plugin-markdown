@@ -40,7 +40,7 @@ export function header(this: MarkdownThemeContext): string {
     if (this.page.url === entryFileName) {
       md.push(bold(title));
     } else {
-      md.push(link(bold(title), this.getRelativeUrl(entryFileName)));
+      md.push(link(bold(title), this.relativeURL(entryFileName)));
     }
 
     return `${md.join(' • ')}\n\n***\n`;
@@ -76,9 +76,7 @@ export function header(this: MarkdownThemeContext): string {
     if (this.page.url === packageEntryFile || Boolean(entryModule)) {
       md.push(bold(packageItemName));
     } else {
-      md.push(
-        link(bold(packageItemName), this.getRelativeUrl(packageEntryFile)),
-      );
+      md.push(link(bold(packageItemName), this.relativeURL(packageEntryFile)));
     }
 
     return `${md.join(' • ')}\n\n***\n`;

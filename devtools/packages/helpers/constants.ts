@@ -8,6 +8,7 @@ export const DOCS_CONFIG: Record<string, DocsConfig> = {
     declarationsPath: `${process.cwd()}/src/options/declarations.ts`,
     translatablePath: `${process.cwd()}/src/internationalization/locales/en.ts`,
     optionsPath: '/docs',
+    optionsFile: 'options/index.mdx',
     docsPath: '/docs',
     declarations: true,
     presets: false,

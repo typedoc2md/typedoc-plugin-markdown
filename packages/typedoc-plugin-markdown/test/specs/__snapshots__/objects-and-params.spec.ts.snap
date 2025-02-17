@@ -466,7 +466,7 @@ Some nested params.
 exports[`Objects And Params should compile intersection type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: IntersectionType
 
-> **IntersectionType**: [\`TupleType\`](TupleType.md) & [\`ArrayType\`](ArrayType.md) & \\{ \`bar\`: \`number\`; \\}
+> **IntersectionType** = [\`TupleType\`](TupleType.md) & [\`ArrayType\`](ArrayType.md) & \\{ \`bar\`: \`number\`; \\}
 
 Comments for IntersectionType
 
@@ -502,11 +502,13 @@ bar: number;
 exports[`Objects And Params should compile literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: LiteralType
 
-> **LiteralType**: \\{ \`someFunctionWithArrow\`: () => \`string\`; \`x\`: \`string\`; \`y\`: \\{ \`x\`: \`string\`; \`y\`: \`boolean\` \\| \`string\`; \`z\`: (\`x\`: \`string\`) => \`string\`; \\}; \`z\`: (\`x\`: \`string\`) => \`string\`; get set \`accessorA\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>; get set \`accessorB\`: \`string\`; \`someFunction\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>; \\}
+> **LiteralType** = \\{ \`someFunctionWithArrow\`: () => \`string\`; \`x\`: \`string\`; \`y\`: \\{ \`x\`: \`string\`; \`y\`: \`boolean\` \\| \`string\`; \`z\`: (\`x\`: \`string\`) => \`string\`; \\}; \`z\`: (\`x\`: \`string\`) => \`string\`; get \`accessorA\`
+  set \`accessorA\` \`accessorA\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>; get \`accessorB\`
+  set \`accessorB\` \`accessorB\`: \`string\`; \`someFunction\`: [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>; \\}
 
 Comments for LiteralType
 
-## Type declaration
+## Properties
 
 ### someFunctionWithArrow()
 
@@ -518,11 +520,15 @@ Comments for someFunctionWithArrow
 
 \`string\`
 
+***
+
 ### x?
 
 > \`optional\` **x**: \`string\`
 
 comment for x
+
+***
 
 ### y
 
@@ -530,19 +536,19 @@ comment for x
 
 comment for y
 
-#### y.x
+#### x
 
 > **x**: \`string\`
 
 comment for y.x
 
-#### y.y?
+#### y?
 
 > \`optional\` **y**: \`boolean\` \\| \`string\`
 
 comment for y.y
 
-#### y.z()
+#### z()
 
 > **z**: (\`x\`: \`string\`) => \`string\`
 
@@ -558,6 +564,8 @@ comment for y.z
 
 \`string\`
 
+***
+
 ### z()
 
 > **z**: (\`x\`: \`string\`) => \`string\`
@@ -571,6 +579,8 @@ comment for y.z
 #### Returns
 
 \`string\`
+
+## Accessors
 
 ### accessorA
 
@@ -600,6 +610,8 @@ Comments for accessorA setter
 
 \`void\`
 
+***
+
 ### accessorB
 
 #### Get Signature
@@ -624,7 +636,11 @@ Comments for accessorA setter
 
 \`void\`
 
+## Methods
+
 ### someFunction()
+
+> **someFunction**(\`param\`: \`string\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>
 
 Comments for someFunction
 
@@ -653,23 +669,31 @@ type LiteralType = {
      z: (x: string) => string;
     };
   z: (x: string) => string;
-  get set accessorA: Promise<string>;
-  get set accessorB: string;
+  get accessorA
+  set accessorA accessorA: Promise<string>;
+  get accessorB
+  set accessorB accessorB: string;
   someFunction: Promise<any>;
 };
 \`\`\`
 
 Comments for LiteralType
 
-## Type declaration
+## Properties
 
 ### someFunctionWithArrow()
 
 \`\`\`ts
-() => string
+someFunctionWithArrow: () => string;
 \`\`\`
 
 Comments for someFunctionWithArrow
+
+#### Returns
+
+\`string\`
+
+***
 
 ### x?
 
@@ -679,23 +703,63 @@ optional x: string;
 
 comment for x
 
+***
+
 ### y
 
 \`\`\`ts
-{
+y: {
   x: string;
   y: boolean | string;
   z: (x: string) => string;
-}
+};
 \`\`\`
 
 comment for y
 
-### z()
+#### x
+
+\`\`\`ts
+x: string;
+\`\`\`
+
+comment for y.x
+
+#### y?
+
+\`\`\`ts
+optional y: boolean | string;
+\`\`\`
+
+comment for y.y
+
+#### z()
 
 \`\`\`ts
 (x: string) => string
 \`\`\`
+
+comment for y.z
+
+***
+
+### z()
+
+\`\`\`ts
+z: (x: string) => string;
+\`\`\`
+
+#### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`x\` | \`string\` |
+
+#### Returns
+
+\`string\`
+
+## Accessors
 
 ### accessorA
 
@@ -729,6 +793,8 @@ Comments for accessorA setter
 
 \`void\`
 
+***
+
 ### accessorB
 
 #### Get Signature
@@ -757,7 +823,13 @@ set accessorB(x: string): void
 
 \`void\`
 
+## Methods
+
 ### someFunction()
+
+\`\`\`ts
+someFunction(param: string): Promise<any>
+\`\`\`
 
 Comments for someFunction
 
@@ -816,7 +888,7 @@ Comments for symbol
 exports[`Objects And Params should compile union type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: UnionType
 
-> **UnionType**: \`string\` \\| \`boolean\` \\| \\{ \`z\`: \`string\`; \\}
+> **UnionType** = \`string\` \\| \`boolean\` \\| \\{ \`z\`: \`string\`; \\}
 
 Comments for UnionType
 "

@@ -36,6 +36,7 @@ const config = {
         typeDeclarationFormat: 'table',
         enumMembersFormat: 'table',
         propertyMembersFormat: 'table',
+        typeAliasPropertiesFormat: 'table',
         indexFormat: 'table',
         useCodeBlocks: true,
         expandParameters: true,
@@ -58,13 +59,15 @@ const config = {
       tableColumnSettings: {
         leftAlignHeaders: true,
       },
+      router: 'kind-structure',
       blockTagsPreserveOrder: ['@deprecated', '@see'],
     },
     options: [
       {},
       {
         parametersFormat: 'table',
-        propertiesFormat: 'table',
+        classPropertiesFormat: 'table',
+        interfacePropertiesFormat: 'table',
         typeDeclarationVisibility: 'compact',
         useCodeBlocks: true,
       },
@@ -100,6 +103,7 @@ const config = {
     only: false,
     entryPoints: '/groups/**/*.ts',
     commonOptions: {
+      name: 'typedoc-stubs',
       plugin: [
         path.join(__dirname, 'custom-plugins', 'stub-groups-theme.mjs'),
         path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
@@ -110,6 +114,7 @@ const config = {
       tableColumnSettings: {
         leftAlignHeaders: true,
       },
+      readme: './test/fixtures/README.md',
     },
     options: [
       {
@@ -158,6 +163,7 @@ const config = {
         classPropertiesFormat: 'table',
         propertyMembersFormat: 'table',
         typeDeclarationFormat: 'table',
+        typeAliasPropertiesFormat: 'table',
       },
       {
         preserveAnchorCasing: true,
@@ -186,6 +192,7 @@ const config = {
   packages: {
     only: false,
     entryPoints: '/packages/*',
+    outputFileStrategies: ['members', 'modules'],
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
       entryPointStrategy: 'packages',
@@ -217,6 +224,7 @@ const config = {
       name: 'package-example',
       includeVersion: true,
       disableSources: true,
+      readme: './test/fixtures/src/packages/package-1/README.md',
     },
     options: [{}],
   },

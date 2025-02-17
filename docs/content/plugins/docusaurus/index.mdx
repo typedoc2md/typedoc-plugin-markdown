@@ -1,0 +1,45 @@
+---
+asIndexPage: true
+---
+
+import { Cards } from 'nextra/components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+
+# docusaurus-plugin-typedoc
+
+<PackageVersion name={'docusaurus-plugin-typedoc'} />
+
+## Overview
+
+This plugin integrates TypeDoc into the Docusaurus lifecycle and generates static TypeDoc pages in Markdown.
+
+It is a Docusaurus plugin (not a TypeDoc plugin) and is designed to work within the Docusaurus lifecycle.
+
+## Features
+
+- Presets relevant options of typedoc-plugin-markdown.
+- Bootstraps TypeDoc from the Docusaurus CLI.
+- Generates a sidebar file with configurable structure.
+
+## Example
+
+The following is a simple example of a Docusaurus project running TypeDoc.
+
+<Cards num={2}>
+  <Cards.Card
+    title="View Demo Site"
+    icon={<FontAwesomeIcon icon={faGlobe} />}
+    arrow={true}
+    href="https://docusaurus-plugin-typedoc-example-docs-website.vercel.app"
+    target="_blank"
+  />
+  <Cards.Card
+    title="View Code on GitHub"
+    icon={<FontAwesomeIcon icon={faGithub} />}
+    arrow={true}
+    href="https://github.com/typedoc2md/docusaurus-plugin-typedoc-example"
+    target="_blank"
+  />
+</Cards>

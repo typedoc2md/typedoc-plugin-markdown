@@ -40,28 +40,14 @@ import { templates, partials, helpers } from './index.js';
 
 export const resourceTemplates = (context: MarkdownThemeContext) => {
   return {
-    /**
-     * Template that maps to a project document.
-     */
-
     document: (page: MarkdownPageEvent<DocumentReflection>) =>
       templates.document.apply(context, [page]) as string,
-    /**
-     * Template that maps to the root project reflection. This will be the index page / documentation root page.
-     */
-
-    project: (page: MarkdownPageEvent<ProjectReflection>) =>
-      templates.project.apply(context, [page]) as string,
     /**
      * Template that specifically maps to the resolved readme file. This template is not used when 'readme' is set to 'none'.
      */
 
     readme: (page: MarkdownPageEvent<ProjectReflection>) =>
       templates.readme.apply(context, [page]) as string,
-    /**
-     * Template that maps to individual reflection models.
-     */
-
     reflection: (page: MarkdownPageEvent<DeclarationReflection>) =>
       templates.reflection.apply(context, [page]) as string,
   };
@@ -197,7 +183,7 @@ There is no association list partial for properties as these are handled as a st
       model: DeclarationReflection,
       options: { headingLevel: number; nested?: boolean | undefined },
     ) => partials.member.apply(context, [model, options]) as string,
-    typeAndParent: (model: ArrayType | ReferenceType) =>
+    typeAndParent: (model: ReferenceType | ArrayType) =>
       partials.typeAndParent.apply(context, [model]) as string,
     typeArguments: (
       model: SomeType[],
@@ -227,8 +213,10 @@ There is no association list partial for properties as these are handled as a st
       options: { kind?: ReflectionKind | undefined },
     ) =>
       partials.typeDeclarationTable.apply(context, [model, options]) as string,
-    typeParametersList: (model: TypeParameterReflection[]) =>
-      partials.typeParametersList.apply(context, [model]) as string,
+    typeParametersList: (
+      model: TypeParameterReflection[],
+      options: { headingLevel: number },
+    ) => partials.typeParametersList.apply(context, [model, options]) as string,
     typeParametersTable: (model: TypeParameterReflection[]) =>
       partials.typeParametersTable.apply(context, [model]) as string,
     breadcrumbs: () => partials.breadcrumbs.apply(context, []) as string,

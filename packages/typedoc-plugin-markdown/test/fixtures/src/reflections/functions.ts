@@ -248,6 +248,8 @@ export function functionWithUnionParams(
 
 /**
  * Comments for main curriedFunction
+ *
+ * @function
  */
 export let curriedFunction: {
   /**

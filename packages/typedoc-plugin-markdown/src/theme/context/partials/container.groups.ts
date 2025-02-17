@@ -3,6 +3,7 @@ import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {
   ContainerReflection,
   DeclarationReflection,
+  i18n,
   ProjectReflection,
   ReflectionKind,
 } from 'typedoc';
@@ -20,16 +21,16 @@ export function groups(
 
   model.groups?.forEach((group) => {
     if (
-      group.title === this.i18n.kind_plural_module() ||
-      group.allChildrenHaveOwnDocument()
+      group.title === i18n.kind_plural_module() ||
+      group.children.every((child) => this.router.hasOwnDocument(child))
     ) {
       const isPackages =
         this.options.getValue('entryPointStrategy') === 'packages' &&
         this.getPackagesCount() > 1 &&
-        group.title === this.i18n.kind_plural_module() &&
+        group.title === i18n.kind_plural_module() &&
         model.kind === ReflectionKind.Project;
       if (isPackages) {
-        md.push(heading(options.headingLevel, this.i18n.theme_packages()));
+        md.push(heading(options.headingLevel, i18n.theme_packages()));
       } else {
         md.push(heading(options.headingLevel, group.title));
       }

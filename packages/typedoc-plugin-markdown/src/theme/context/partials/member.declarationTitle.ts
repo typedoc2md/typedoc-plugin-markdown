@@ -21,7 +21,7 @@ export function declarationTitle(
     prefix.push(flagsString);
   }
 
-  if (model.flags.isRest) {
+  if (model.flags?.isRest) {
     prefix.push('...');
   }
 
@@ -72,16 +72,23 @@ export function declarationTitle(
     );
   }
 
-  if (declarationType) {
-    const delimiter =
-      useCodeBlocks && model.kind === ReflectionKind.TypeAlias ? ' = ' : ': ';
-    name.push(delimiter);
-  }
+  const delimiter = model.kind === ReflectionKind.TypeAlias ? ' = ' : ': ';
+
+  name.push(delimiter);
 
   md.push(name.join(''));
 
   if (declarationType) {
     md.push(this.partials.someType(declarationType));
+  } else {
+    if (model.kind === ReflectionKind.TypeAlias) {
+      const expandObjects = this.options.getValue('expandObjects');
+      md.push(
+        expandObjects
+          ? this.partials.declarationType(model)
+          : backTicks('object'),
+      );
+    }
   }
 
   if (

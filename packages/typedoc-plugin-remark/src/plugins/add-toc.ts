@@ -1,5 +1,6 @@
 import { Heading } from 'mdast';
-import { DeclarationReflection, Options, ReflectionKind } from 'typedoc';
+import { DeclarationReflection, ReflectionKind, Router } from 'typedoc';
+import { MarkdownApplication } from 'typedoc-plugin-markdown';
 import { Node } from 'unist';
 import { visit } from 'unist-util-visit';
 
@@ -8,13 +9,13 @@ import { visit } from 'unist-util-visit';
  */
 export default function (options: {
   reflection: DeclarationReflection;
-  typedocOptions: Options;
+  app: MarkdownApplication;
   remarkTocOptions: { heading: string };
 }) {
-  const { reflection, typedocOptions, remarkTocOptions } = options;
+  const { reflection, remarkTocOptions } = options;
 
   return (tree: Node) => {
-    if (!shouldAddToc(reflection, typedocOptions)) {
+    if (!shouldAddToc(reflection, options.app.renderer.router as Router)) {
       return tree;
     }
     visit(
@@ -41,28 +42,20 @@ export default function (options: {
 }
 
 /**
- * Determine if the current page is already an index page.
- *
- * Returns false if
- *
- * - The reflection is a module or project and outputFileStrategy is equal to "members".
- * - The reflection is a project and all children are modules.
- * - The reflection kind is not in the list of allowed kinds.
- * -
+ * Determine if the current should have a TOC.
  */
-function shouldAddToc(
-  reflection: DeclarationReflection,
-  typedocOptions: Options,
-) {
+function shouldAddToc(reflection: DeclarationReflection, router: Router) {
   if (
-    [ReflectionKind.Project, ReflectionKind.Module].includes(reflection.kind) &&
-    typedocOptions?.getValue('outputFileStrategy') === 'members'
+    reflection.children?.every((child) => {
+      router.hasOwnDocument(child);
+    })
   ) {
     return false;
   }
   if (
-    reflection.kind === ReflectionKind.Project &&
-    reflection.children?.every((child) => child.kind === ReflectionKind.Module)
+    reflection.groups?.every((group) =>
+      group.children.every((child) => router.hasOwnDocument(child)),
+    )
   ) {
     return false;
   }
@@ -74,5 +67,6 @@ function shouldAddToc(
     ReflectionKind.Enum,
     ReflectionKind.Interface,
     ReflectionKind.Document,
+    ReflectionKind.TypeAlias,
   ].includes(reflection.kind);
 }

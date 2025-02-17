@@ -1,9 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Reflection Indexes should compile reflection indexes for modules: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"
+Module comments
+
+- [BasicClass#prop](#prop-2)
+- [BasicClass#Prop](#prop-3)
+- [BasicEnum#MemberB](#memberb)
+- [BasicInterface#functionProp](#functionprop)
+- [LiteralType#y](#y)
+- [LiteralType#y.x](#y)
+- [objectLiteralVariable#valueX](#valuex)
+- [objectLiteralVariable#valueX.valueY](#valuex)"
+`;
+
+exports[`Reflection Indexes should compile reflection indexes for modules: (Output File Strategy "modules") (Option Group "2") 1`] = `
+"
+Module comments
+
+- [BasicClass#prop](#prop-2)
+- [BasicClass#Prop](#prop-3)
+- [BasicEnum#MemberB](#memberb)
+- [BasicInterface#functionProp](#functionprop)
+- [LiteralType#y](#y)
+- [LiteralType#y.x](#y)
+- [objectLiteralVariable#valueX](#valuex)
+- [objectLiteralVariable#valueX.valueY](#valuex)"
+`;
+
 exports[`Reflection Indexes should compile reflection indexes: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# typedoc-stubs
 
 Module comments
+
+- [BasicClass#prop](classes/BasicClass.md#prop)
+- [BasicClass#Prop](classes/BasicClass.md#prop-1)
+- [BasicEnum#MemberB](enumerations/BasicEnum.md#memberb)
+- [BasicInterface#functionProp](interfaces/BasicInterface.md#functionprop)
+- [LiteralType#y](type-aliases/LiteralType.md#y)
+- [LiteralType#y.x](type-aliases/LiteralType.md#y)
+- [objectLiteralVariable#valueX](variables/objectLiteralVariable.md#valuex)
+- [objectLiteralVariable#valueX.valueY](variables/objectLiteralVariable.md#valuex)
 
 ## Enumerations
 
@@ -122,6 +159,15 @@ exports[`Reflection Indexes should compile reflection indexes: (Output File Stra
 
 Module comments
 
+- [BasicClass#prop](classes/BasicClass.md#prop)
+- [BasicClass#Prop](classes/BasicClass.md#prop-1)
+- [BasicEnum#MemberB](enumerations/BasicEnum.md#memberb)
+- [BasicInterface#functionProp](interfaces/BasicInterface.md#functionprop)
+- [LiteralType#y](type-aliases/LiteralType.md#y)
+- [LiteralType#y.x](type-aliases/LiteralType.md#y)
+- [objectLiteralVariable#valueX](variables/objectLiteralVariable.md#valuex)
+- [objectLiteralVariable#valueX.valueY](variables/objectLiteralVariable.md#valuex)
+
 ## Enumerations
 
 | Enumeration | Description |
@@ -175,7 +221,7 @@ Module comments
 
 ## Type Aliases
 
-| Type alias | Description |
+| Type Alias | Description |
 | :------ | :------ |
 | [\\_\\_TypeDeclarationWithSpecialCharacters\\_](type-aliases/TypeDeclarationWithSpecialCharacters.md) | Comments for object with special characters |
 | [ArrayOfObjectsType](type-aliases/ArrayOfObjectsType.md) | - |

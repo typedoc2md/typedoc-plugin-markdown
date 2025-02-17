@@ -4,6 +4,10 @@
 dist
 .nyc_output/
 
+# yalc
+yalc.lock
+.yalc
+
 # testing
 samples
 typedoc-examples
@@ -15,26 +19,12 @@ html
 node_modules
 
 # IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
 .settings/
 
 # misc
-/.sass-cache
-/connect.lock
-coverage
-/libpeerconnection.log
 npm-debug.log
-testem.log
 /typings
 .npmrc
-
-# e2e
-/e2e/*.js
-/e2e/*.map
 
 #System Files
 .DS_Store

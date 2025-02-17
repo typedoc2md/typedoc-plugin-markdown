@@ -1,7 +1,7 @@
 import { link } from '@plugin/libs/markdown/index.js';
 import { escapeChars } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { DeclarationReflection, SignatureReflection } from 'typedoc';
+import { DeclarationReflection, i18n, SignatureReflection } from 'typedoc';
 
 export function sources(
   this: MarkdownThemeContext,
@@ -11,7 +11,7 @@ export function sources(
   const md: string[] = [];
 
   if (!options?.hideLabel) {
-    md.push(`${this.i18n.theme_defined_in()}:`);
+    md.push(`${i18n.theme_defined_in()}:`);
   }
 
   model.sources?.forEach((source, index) => {

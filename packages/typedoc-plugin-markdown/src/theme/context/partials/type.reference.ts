@@ -1,6 +1,6 @@
 import { backTicks, link } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { ReferenceType } from 'typedoc';
+import { ReferenceType, ReflectionKind } from 'typedoc';
 
 export function referenceType(
   this: MarkdownThemeContext,
@@ -8,20 +8,29 @@ export function referenceType(
 ): string {
   if (model.reflection || (model.name && model.typeArguments)) {
     const reflection: string[] = [];
-
-    if (model.reflection?.url) {
-      reflection.push(
-        link(
-          backTicks(model.reflection.name),
-          this.getRelativeUrl(model.reflection.url),
-        ),
-      );
+    const pageUrl = this.router.getFullUrl(this.page.model);
+    const modelUrl =
+      model.reflection && this.router.hasUrl(model.reflection)
+        ? this.router.getFullUrl(model.reflection)
+        : null;
+    if (model.reflection && modelUrl && pageUrl !== modelUrl) {
+      if (model.reflection.kind === ReflectionKind.TypeParameter) {
+        reflection.push(backTicks(model.name));
+      } else {
+        reflection.push(
+          link(backTicks(model.reflection.name), this.urlTo(model.reflection)),
+        );
+      }
     } else {
-      reflection.push(
-        model.externalUrl
-          ? link(backTicks(model.name), model.externalUrl)
-          : backTicks(model.name),
-      );
+      if (model.externalUrl) {
+        reflection.push(
+          model.externalUrl
+            ? link(backTicks(model.name), model.externalUrl)
+            : backTicks(model.name),
+        );
+      } else {
+        reflection.push(backTicks(model.name));
+      }
     }
     if (model.typeArguments && model.typeArguments.length) {
       reflection.push(

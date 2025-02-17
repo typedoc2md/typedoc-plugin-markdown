@@ -613,22 +613,30 @@ And some more comments
 
 ## Type Parameters
 
-• **A**
+### A
+
+\`A\`
 
 This is a parameter.
 
-• **B**
+### B
+
+\`B\`
 
 Comments for a parameter.
 This sentence is on a soft new line.
 
-• **C**
+### C
+
+\`C\`
 
 This is a parameter.
 
  Documentation with a double line
 
-• **D**
+### D
+
+\`D\`
 
 <p>These are comments with paras</p>
 <p>These are comments with paras</p>
@@ -814,7 +822,9 @@ Comments for InterfaceWithTypeParameters
 
 ## Type Parameters
 
-• **A**
+### A
+
+\`A\`
 
 ## Properties
 

@@ -5,7 +5,7 @@ import {
   table,
 } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { ReflectionKind, TypeParameterReflection } from 'typedoc';
+import { i18n, ReflectionKind, TypeParameterReflection } from 'typedoc';
 
 export function typeParametersTable(
   this: MarkdownThemeContext,
@@ -21,16 +21,14 @@ export function typeParametersTable(
     Boolean(typeParameter.comment),
   );
 
-  const headers = [
-    this.internationalization.kindSingularString(ReflectionKind.TypeParameter),
-  ];
+  const headers = [ReflectionKind.singularString(ReflectionKind.TypeParameter)];
 
   if (hasDefault) {
-    headers.push(this.i18n.theme_default_type());
+    headers.push(i18n.theme_default_type());
   }
 
   if (hasComments) {
-    headers.push(this.i18n.theme_description());
+    headers.push(i18n.theme_description());
   }
   const rows: string[][] = [];
   model?.forEach((typeParameter) => {

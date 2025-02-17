@@ -1,6 +1,6 @@
 import { heading } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { DeclarationReflection, i18n, ReflectionKind } from 'typedoc';
 
 export function typeDeclarationContainer(
   this: MarkdownThemeContext,
@@ -14,7 +14,7 @@ export function typeDeclarationContainer(
   const md: string[] = [];
 
   if (typeDeclaration?.indexSignatures?.length) {
-    md.push(heading(opts.headingLevel, this.i18n.kind_index_signature()));
+    md.push(heading(opts.headingLevel, i18n.kind_index_signature()));
     typeDeclaration?.indexSignatures?.forEach((indexSignature) => {
       md.push(this.partials.indexSignature(indexSignature));
     });

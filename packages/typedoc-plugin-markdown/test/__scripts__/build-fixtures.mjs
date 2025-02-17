@@ -138,13 +138,17 @@ export function writeHtml(key, entryPoints) {
         '-out',
         fullPath,
         '-readme',
-        'none',
+        './test/fixtures/README.md',
         '-projectDocuments',
         path.join(fixturesRoot, 'PROJECT_DOC_1.md'),
         '-projectDocuments',
         path.join(fixturesRoot, 'docs/project/PROJECT_DOC_2.md'),
         '-projectDocuments',
         path.join(fixturesRoot, 'docs/project/PROJECT_DOC_3.md'),
+        '-includeVersion',
+        true,
+        '-router',
+        'structure-dir',
         //'-plugin',
         //path.join(__dirname, '../../typedoc-plugins/typedoc-default-values.js'),
       ],
@@ -161,11 +165,11 @@ function toEntryPoints(entryPoints) {
     return entryPoints.reduce((prev, curr) => {
       return [
         ...prev,
-        ...[`--entryPoints`, `${process.cwd()}/test/fixtures/src/${curr}`],
+        ...[`--entryPoints`, `${process.cwd()}/test/fixtures/src${curr}`],
       ];
     }, []);
   }
-  return ['--entryPoints', `${process.cwd()}/test/fixtures/src/${entryPoints}`];
+  return ['--entryPoints', `${process.cwd()}/test/fixtures/src${entryPoints}`];
 }
 
 function objectToOptions(obj) {

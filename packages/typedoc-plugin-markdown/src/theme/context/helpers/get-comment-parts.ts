@@ -1,8 +1,7 @@
 import { backTicks, link } from '@plugin/libs/markdown/index.js';
-import { escapeChars } from '@plugin/libs/utils/escape-chars.js';
+import { escapeChars } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import * as fs from 'fs';
-import { CommentDisplayPart, InlineTagDisplayPart } from 'typedoc';
+import { CommentDisplayPart, Reflection } from 'typedoc';
 
 export function getCommentParts(
   this: MarkdownThemeContext,
@@ -26,27 +25,33 @@ export function getCommentParts(
           case '@linkcode':
           case '@linkplain': {
             if (part.target) {
-              const url = getUrl(part);
-              if (url) {
-                if (part.tag === '@linkcode') {
-                  md.push(
-                    `${link(backTicks(part.text), this.getRelativeUrl(url))}`,
-                  );
-                } else {
-                  md.push(
-                    `${link(escapeChars(part.text), this.getRelativeUrl(url))}`,
-                  );
+              let url: string | undefined;
+              if (typeof part.target === 'string') {
+                url = part.target;
+              } else if ('id' in part.target) {
+                if (this.router.hasUrl(part.target)) {
+                  url = getReflectionUrl(this, part.target);
                 }
-              } else {
-                md.push(escapeChars(part.text));
+                if (typeof url === 'undefined') {
+                  let target = part.target.parent!;
+                  while (!this.router.hasUrl(target)) {
+                    target = target.parent!;
+                  }
+                  url = getReflectionUrl(this, target);
+                }
               }
+              const text =
+                part.tag === '@linkcode'
+                  ? backTicks(part.text)
+                  : escapeChars(part.text);
+              md.push(url ? link(text, url) : text);
             } else {
               md.push(escapeChars(part.text));
             }
             break;
           }
           default:
-            md.push(`{${part.tag} ${part.text}}`);
+            md.push(escapeChars(part.text));
             break;
         }
         break;
@@ -58,16 +63,18 @@ export function getCommentParts(
               this.page.model.project,
             );
             let url: string | undefined;
-            if (typeof reflection === 'object' && reflection.url) {
-              url = this.getRelativeUrl(reflection.url);
+            if (
+              typeof reflection === 'object' &&
+              this.router.hasUrl(reflection)
+            ) {
+              url = this.urlTo(reflection);
             } else {
               const fileName = this.page.project.files.getName(part.target);
               if (fileName) {
                 const anchor = part.targetAnchor ? `#${part.targetAnchor}` : '';
-                url = this.getRelativeUrl(`_media/${fileName}${anchor}`);
+                url = this.relativeURL(`_media/${fileName}${anchor}`);
               }
             }
-
             if (url) {
               md.push(url);
               break;
@@ -86,22 +93,9 @@ export function getCommentParts(
   return md.join('');
 }
 
-function getUrl(part: InlineTagDisplayPart) {
-  if ((part.target as any).url) {
-    return (part.target as any).url;
-  }
-
-  if ((part.target as any)?.parent?.url) {
-    return (part.target as any)?.parent?.url;
-  }
-
-  return typeof part.target === 'string' ? part.target : '';
-}
-
-export function isFile(file: string) {
-  try {
-    return fs.statSync(file).isFile();
-  } catch {
-    return false;
-  }
+export function getReflectionUrl(
+  context: MarkdownThemeContext,
+  reflection: Reflection,
+) {
+  return context.urlTo(reflection);
 }

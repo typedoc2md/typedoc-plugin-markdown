@@ -39,7 +39,9 @@ export function body(
       } else {
         if (model.groups?.length) {
           model.groups.forEach((group, i) => {
-            if (group.allChildrenHaveOwnDocument()) {
+            if (
+              group.children.every((child) => this.router.hasOwnDocument(child))
+            ) {
               md.push(heading(options.headingLevel, group.title));
               md.push(this.partials.groupIndex(group));
             } else {
@@ -69,6 +71,5 @@ export function body(
       }
     }
   }
-
   return md.join('\n\n');
 }

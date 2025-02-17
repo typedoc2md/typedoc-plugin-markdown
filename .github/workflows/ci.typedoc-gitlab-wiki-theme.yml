@@ -6,6 +6,10 @@ on:
       - '!packages/typedoc-gitlab-wiki-theme/README.md'
       - '!packages/typedoc-gitlab-wiki-theme/CHANGELOG.md'
       - '!packages/typedoc-gitlab-wiki-theme/package.json'
+    branches:
+      - main
+      - release
+      - beta
   pull_request:
     paths:
       - 'packages/typedoc-gitlab-wiki-theme/**'

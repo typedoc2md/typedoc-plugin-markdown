@@ -3,7 +3,7 @@
 exports[`Type Alias Reflection should compile array of objects type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: ArrayOfObjectsType
 
-> **ArrayOfObjectsType**: \`object\`[]
+> **ArrayOfObjectsType** = \`object\`[]
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -42,7 +42,7 @@ Defined in: [types.ts:1](http://source-url)
 exports[`Type Alias Reflection should compile array type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: ArrayType
 
-> **ArrayType**: \`string\`[]
+> **ArrayType** = \`string\`[]
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -66,7 +66,7 @@ Comments for ArrayType
 exports[`Type Alias Reflection should compile conditional type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: ConditionalType\\<T\\>
 
-> **ConditionalType**\\<\`T\`\\>: \`T\` *extends* \`string\` ? \`"string"\` : \`T\` *extends* \`number\` ? \`"number"\` : \`T\` *extends* \`boolean\` ? \`"boolean"\` : \`T\` *extends* \`undefined\` ? \`"undefined"\` : \`"object"\`
+> **ConditionalType**\\<\`T\`\\> = \`T\` *extends* \`string\` ? \`"string"\` : \`T\` *extends* \`number\` ? \`"number"\` : \`T\` *extends* \`boolean\` ? \`"boolean"\` : \`T\` *extends* \`undefined\` ? \`"undefined"\` : \`"object"\`
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -74,7 +74,9 @@ Comments for ConditionalType
 
 ## Type Parameters
 
-• **T**
+### T
+
+\`T\`
 "
 `;
 
@@ -100,7 +102,7 @@ Comments for ConditionalType
 exports[`Type Alias Reflection should compile external link symbol type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: TypeWithExternalSymbolLinkMapping
 
-> **TypeWithExternalSymbolLinkMapping**: [\`Application\`](https://typedoc.org/api/classes/Application.html)
+> **TypeWithExternalSymbolLinkMapping** = [\`Application\`](https://typedoc.org/api/classes/Application.html)
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -124,17 +126,19 @@ Comments for TypeWithExternalSymbolLinkMapping
 exports[`Type Alias Reflection should compile external literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: LiteralType
 
-> **LiteralType**: \`object\`
+> **LiteralType** = \`object\`
 
 Defined in: [types.ts:1](http://source-url)
 
 Comments for LiteralType
 
-## Type declaration
+## Properties
 
 ### someFunctionWithArrow()
 
 > **someFunctionWithArrow**: () => \`string\`
+
+Defined in: [types.ts:1](http://source-url)
 
 Comments for someFunctionWithArrow
 
@@ -142,31 +146,39 @@ Comments for someFunctionWithArrow
 
 \`string\`
 
+***
+
 ### x?
 
 > \`optional\` **x**: \`string\`
 
+Defined in: [types.ts:1](http://source-url)
+
 comment for x
+
+***
 
 ### y
 
 > **y**: \`object\`
 
+Defined in: [types.ts:1](http://source-url)
+
 comment for y
 
-#### y.x
+#### x
 
 > **x**: \`string\`
 
 comment for y.x
 
-#### y.y?
+#### y?
 
 > \`optional\` **y**: \`boolean\` \\| \`string\`
 
 comment for y.y
 
-#### y.z()
+#### z()
 
 > **z**: (\`x\`) => \`string\`
 
@@ -182,9 +194,13 @@ comment for y.z
 
 \`string\`
 
+***
+
 ### z()
 
 > **z**: (\`x\`) => \`string\`
+
+Defined in: [types.ts:1](http://source-url)
 
 #### Parameters
 
@@ -196,11 +212,15 @@ comment for y.z
 
 \`string\`
 
+## Accessors
+
 ### accessorA
 
 #### Get Signature
 
 > **get** **accessorA**(): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+
+Defined in: [types.ts:1](http://source-url)
 
 Comments for accessorA getter
 
@@ -211,6 +231,8 @@ Comments for accessorA getter
 #### Set Signature
 
 > **set** **accessorA**(\`x\`): \`void\`
+
+Defined in: [types.ts:1](http://source-url)
 
 Comments for accessorA setter
 
@@ -224,11 +246,15 @@ Comments for accessorA setter
 
 \`void\`
 
+***
+
 ### accessorB
 
 #### Get Signature
 
 > **get** **accessorB**(): \`string\`
+
+Defined in: [types.ts:1](http://source-url)
 
 ##### Returns
 
@@ -237,6 +263,8 @@ Comments for accessorA setter
 #### Set Signature
 
 > **set** **accessorB**(\`x\`): \`void\`
+
+Defined in: [types.ts:1](http://source-url)
 
 ##### Parameters
 
@@ -248,7 +276,13 @@ Comments for accessorA setter
 
 \`void\`
 
+## Methods
+
 ### someFunction()
+
+> **someFunction**(\`param\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>
+
+Defined in: [types.ts:1](http://source-url)
 
 Comments for someFunction
 
@@ -275,29 +309,118 @@ Defined in: [types.ts:1](http://source-url)
 
 Comments for LiteralType
 
-## Type declaration
+## Properties
 
-| Name | Type | Description |
+| Property | Type | Description |
 | :------ | :------ | :------ |
 | <a id="somefunctionwitharrow"></a> \`someFunctionWithArrow\` | () => \`string\` | Comments for someFunctionWithArrow |
-| <a id="x"></a> \`x\`? | \`string\` | comment for x |
+| <a id="x"></a> \`x?\` | \`string\` | comment for x |
 | <a id="y"></a> \`y\` | \`object\` | comment for y |
 | \`y.x\` | \`string\` | comment for y.x |
-| \`y.y\`? | \`boolean\` \\| \`string\` | comment for y.y |
+| \`y.y?\` | \`boolean\` \\| \`string\` | comment for y.y |
 | \`y.z\` | (\`x\`: \`string\`) => \`string\` | comment for y.z |
 | <a id="z"></a> \`z\` | (\`x\`: \`string\`) => \`string\` | - |
-| <a id="accessora"></a> \`get accessorA\` | [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\> | Comments for accessorA getter |
-| <a id="accessora"></a> \`set accessorA\` | \`void\` | Comments for accessorA setter |
-| <a id="accessorb"></a> \`get accessorB\` | \`string\` | - |
-| <a id="accessorb"></a> \`set accessorB\` | \`void\` | - |
-| <a id="somefunction"></a> \`someFunction()\` | [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\> | Comments for someFunction |
+
+## Accessors
+
+### accessorA
+
+#### Get Signature
+
+\`\`\`ts
+get accessorA(): Promise<string>
+\`\`\`
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for accessorA getter
+
+##### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\>
+
+#### Set Signature
+
+\`\`\`ts
+set accessorA(x: Promise<string>): void
+\`\`\`
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for accessorA setter
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`x\` | [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`string\`\\> |
+
+##### Returns
+
+\`void\`
+
+***
+
+### accessorB
+
+#### Get Signature
+
+\`\`\`ts
+get accessorB(): string
+\`\`\`
+
+Defined in: [types.ts:1](http://source-url)
+
+##### Returns
+
+\`string\`
+
+#### Set Signature
+
+\`\`\`ts
+set accessorB(x: string): void
+\`\`\`
+
+Defined in: [types.ts:1](http://source-url)
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`x\` | \`string\` |
+
+##### Returns
+
+\`void\`
+
+## Methods
+
+### someFunction()
+
+\`\`\`ts
+someFunction(param: string): Promise<any>
+\`\`\`
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for someFunction
+
+#### Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| \`param\` | \`string\` |  |
+
+#### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`any\`\\>
 "
 `;
 
 exports[`Type Alias Reflection should compile external reference type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: ExternalReferenceType
 
-> **ExternalReferenceType**: [\`ClassWithTypeParameters\`](../classes/ClassWithTypeParameters.md)\\<\`"x"\`, \`"y"\`\\>
+> **ExternalReferenceType** = [\`ClassWithTypeParameters\`](../classes/ClassWithTypeParameters.md)\\<\`"x"\`, \`"y"\`\\>
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -321,7 +444,7 @@ Comments for ExternalReferenceType
 exports[`Type Alias Reflection should compile function type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: FunctionType()
 
-> **FunctionType**: (\`name\`, \`value\`) => \`void\`
+> **FunctionType** = (\`name\`, \`value\`) => \`void\`
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -384,7 +507,7 @@ Comments for FunctionType
 exports[`Type Alias Reflection should compile index access type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: IndexAccessType
 
-> **IndexAccessType**: [\`ArrayOfObjectsType\`](ArrayOfObjectsType.md)\\[\`number\`\\]
+> **IndexAccessType** = [\`ArrayOfObjectsType\`](ArrayOfObjectsType.md)\\[\`number\`\\]
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -408,7 +531,7 @@ Comments for IndexAccessType
 exports[`Type Alias Reflection should compile intersection type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: IntersectionType
 
-> **IntersectionType**: [\`TupleType\`](TupleType.md) & [\`ArrayType\`](ArrayType.md) & \`object\`
+> **IntersectionType** = [\`TupleType\`](TupleType.md) & [\`ArrayType\`](ArrayType.md) & \`object\`
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -444,7 +567,7 @@ Comments for IntersectionType
 exports[`Type Alias Reflection should compile partial mapped type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: PartialMappedType\\<T\\>
 
-> **PartialMappedType**\\<\`T\`\\>: \`{ [P in keyof T]?: T[P] }\`
+> **PartialMappedType**\\<\`T\`\\> = \`{ [P in keyof T]?: T[P] }\`
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -452,7 +575,9 @@ Comments for PartialMappedType
 
 ## Type Parameters
 
-• **T**
+### T
+
+\`T\`
 "
 `;
 
@@ -478,7 +603,7 @@ Comments for PartialMappedType
 exports[`Type Alias Reflection should compile primitive type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: PrimitiveType
 
-> **PrimitiveType**: \`boolean\`
+> **PrimitiveType** = \`boolean\`
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -502,7 +627,7 @@ Comments for PrimitiveType
 exports[`Type Alias Reflection should compile query type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: QueryType
 
-> **QueryType**: *typeof* [\`someQuery\`](../variables/someQuery.md)
+> **QueryType** = *typeof* [\`someQuery\`](../variables/someQuery.md)
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -526,7 +651,7 @@ Comments for query type
 exports[`Type Alias Reflection should compile readonly mapped type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: ReadonlyMappedType\\<T\\>
 
-> **ReadonlyMappedType**\\<\`T\`\\>: \`{ readonly [P in keyof T]: T[P] }\`
+> **ReadonlyMappedType**\\<\`T\`\\> = \`{ readonly [P in keyof T]: T[P] }\`
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -534,7 +659,9 @@ Comments for ReadonlyMapedType
 
 ## Type Parameters
 
-• **T**
+### T
+
+\`T\`
 "
 `;
 
@@ -560,7 +687,7 @@ Comments for ReadonlyMapedType
 exports[`Type Alias Reflection should compile string literal type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: StringLiteralType
 
-> **StringLiteralType**: \`" "\` \\| \`"string"\` \\| "string\\|with\\|pipes" \\| \`\` "string\`with\`backticks" \`\` \\| \`"<foo>"\` \\| \`"*"\`
+> **StringLiteralType** = \`" "\` \\| \`"string"\` \\| "string\\|with\\|pipes" \\| \`\` "string\`with\`backticks" \`\` \\| \`"<foo>"\` \\| \`"*"\`
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -590,7 +717,7 @@ Comments for StringLiteralType
 exports[`Type Alias Reflection should compile string tuple type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: TupleType
 
-> **TupleType**: \\[\`string\`, \`number\`\\]
+> **TupleType** = \\[\`string\`, \`number\`\\]
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -614,7 +741,7 @@ Comments for TupleType
 exports[`Type Alias Reflection should compile type parameter type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: TypeWithTypeParams\\<T, R\\>
 
-> **TypeWithTypeParams**\\<\`T\`, \`R\`\\>: \\[\`T\`, \`R\`\\]
+> **TypeWithTypeParams**\\<\`T\`, \`R\`\\> = \\[\`T\`, \`R\`\\]
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -622,9 +749,13 @@ Comments for TypeWithTypeParams
 
 ## Type Parameters
 
-• **T**
+### T
 
-• **R**
+\`T\`
+
+### R
+
+\`R\`
 "
 `;
 
@@ -651,7 +782,7 @@ Comments for TypeWithTypeParams
 exports[`Type Alias Reflection should compile type with returns: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: TypeWithReturns
 
-> **TypeWithReturns**: \`string\`
+> **TypeWithReturns** = \`string\`
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -683,7 +814,7 @@ Comments for TypeWithReturns
 exports[`Type Alias Reflection should compile union type with template strings: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: UnionTypeWithTemplateStrings
 
-> **UnionTypeWithTemplateStrings**: \`\` \`v\${number}\` \`\` \\| \`\` \`v\${number}.\${number}\` \`\` \\| \`\` \`v\${number}.\${number}.\${number}\` \`\`
+> **UnionTypeWithTemplateStrings** = \`\` \`v\${number}\` \`\` \\| \`\` \`v\${number}.\${number}\` \`\` \\| \`\` \`v\${number}.\${number}.\${number}\` \`\`
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -710,7 +841,7 @@ Union with template strings
 exports[`Type Alias Reflection should compile union type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: UnionType
 
-> **UnionType**: \`string\` \\| \`boolean\` \\| \\{ \`z\`: \`string\`; \\}
+> **UnionType** = \`string\` \\| \`boolean\` \\| \\{ \`z\`: \`string\`; \\}
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -739,7 +870,7 @@ Comments for UnionType
 exports[`Type Alias Reflection should compile useful union type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: UsefulUnionType
 
-> **UsefulUnionType**: \`string\` \\| \`boolean\` \\| \\{ \`z\`: \`string\`; \\}
+> **UsefulUnionType** = \`string\` \\| \`boolean\` \\| \\{ \`z\`: \`string\`; \\}
 
 Defined in: [types.ts:1](http://source-url)
 

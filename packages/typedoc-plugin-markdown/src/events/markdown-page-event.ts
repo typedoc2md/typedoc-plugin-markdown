@@ -1,45 +1,48 @@
-import { ProjectReflection, Reflection } from 'typedoc';
+import {
+  PageHeading,
+  PageKind,
+  ProjectReflection,
+  Reflection,
+  RouterTarget,
+} from 'typedoc';
 
 /**
  * An event emitted before and after the markdown of a page is rendered.
  *
  * @event
  */
-export class MarkdownPageEvent<
-  /** @ignore **/ Model = Reflection,
-> extends Event {
+export class MarkdownPageEvent<out Model extends RouterTarget = RouterTarget> {
   /**
-   * The {@linkcode typedoc!ProjectReflection ProjectReflection} instance the renderer is currently processing.
+   * The project the renderer is currently processing.
    */
   project!: ProjectReflection;
 
   /**
-   * The model that that is being rendered on this page.
-   * Either a {@linkcode typedoc!DeclarationReflection DeclarationReflection} or {@linkcode typedoc!ProjectReflection ProjectReflection}.
+   * The filename the page will be written to.
    */
-  readonly model: Model;
+  filename!: string;
 
   /**
-   * The group title of the group reflection belongs to.
-   */
-  group?: string;
-
-  /**
-   * The final markdown `string` content of the page.
-   *
-   * Should be rendered by layout templates and can be modified by plugins.
-   */
-  contents?: string;
-
-  /**
-   * The url `string` of the page.
+   * The url this page will be located at.
    */
   url!: string;
 
   /**
-   * The complete `string` filename where the file will be written..
+   * The type of page this is.
    */
-  filename!: string;
+  pageKind!: PageKind;
+
+  /**
+   * The model that should be rendered on this page.
+   */
+  readonly model: Model;
+
+  /**
+   * The final html content of this page.
+   *
+   * Should be rendered by layout templates and can be modified by plugins.
+   */
+  contents?: string;
 
   /**
    * The frontmatter of this page represented as a key value object. This property can be utilised by other plugins.
@@ -48,11 +51,24 @@ export class MarkdownPageEvent<
 
   // required for typing purposes but not used
   /** @hidden */
-  pageHeadings: any;
+  pageHeadings: PageHeading[] = [];
+
   /** @hidden */
-  pageSections: any;
+  pageSections = [
+    {
+      title: '',
+      headings: this.pageHeadings,
+    },
+  ];
+
   /** @hidden */
-  startNewSection: any;
+  startNewSection(title: string) {
+    this.pageHeadings = [];
+    this.pageSections.push({
+      title,
+      headings: this.pageHeadings,
+    });
+  }
 
   /**
    * Triggered before a document will be rendered.
@@ -66,11 +82,11 @@ export class MarkdownPageEvent<
    */
   static readonly END = 'endPage';
 
-  /**
-   * @ignore
-   */
-  constructor(name: string, model: Model) {
-    super(name);
+  constructor(model: Model) {
     this.model = model;
+  }
+
+  isReflectionEvent(): this is MarkdownPageEvent<Reflection> {
+    return this.model instanceof Reflection;
   }
 }

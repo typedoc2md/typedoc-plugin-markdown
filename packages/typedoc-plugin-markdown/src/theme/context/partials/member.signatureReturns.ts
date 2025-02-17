@@ -1,6 +1,6 @@
 import { backTicks, heading } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { DeclarationReflection, SignatureReflection } from 'typedoc';
+import { DeclarationReflection, i18n, SignatureReflection } from 'typedoc';
 
 export function signatureReturns(
   this: MarkdownThemeContext,
@@ -12,7 +12,7 @@ export function signatureReturns(
   const typeDeclaration = (model.type as any)
     ?.declaration as DeclarationReflection;
 
-  md.push(heading(options.headingLevel, this.i18n.theme_returns()));
+  md.push(heading(options.headingLevel, i18n.theme_returns()));
 
   if (typeDeclaration?.signatures) {
     md.push(backTicks('Function'));
@@ -20,11 +20,10 @@ export function signatureReturns(
     md.push(this.helpers.getReturnType(model.type));
   }
 
-  if (model.comment?.blockTags.length) {
-    const tags = model.comment.blockTags
-      .filter((tag) => tag.tag === '@returns')
-      .map((tag) => this.helpers.getCommentParts(tag.content));
-    md.push(tags.join('\n\n'));
+  const returnsTag = model.comment?.getTag('@returns');
+
+  if (returnsTag) {
+    md.push(this.helpers.getCommentParts(returnsTag.content));
   }
 
   if (typeDeclaration?.signatures) {

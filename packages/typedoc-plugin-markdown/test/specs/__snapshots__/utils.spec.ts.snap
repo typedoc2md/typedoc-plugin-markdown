@@ -3,7 +3,7 @@
 exports[`Utils should format index signature type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: LongIndexSignature
 
-> **LongIndexSignature**: \\{\\}
+> **LongIndexSignature** = \\{\\}
 
 ## Index Signature
 
@@ -43,11 +43,11 @@ exports[`Utils should format type with constructor overrides: (Output File Strat
 
 ### new Cache()
 
-> **new Cache**(): [\`Cache\`](Cache.md)
+> **new Cache**(): \`Cache\`
 
 #### Returns
 
-[\`Cache\`](Cache.md)
+\`Cache\`
 
 #### Overrides
 
@@ -72,7 +72,7 @@ new Cache(): Cache
 
 #### Returns
 
-[\`Cache\`](Cache.md)
+\`Cache\`
 
 #### Overrides
 
@@ -99,11 +99,11 @@ exports[`Utils should get class with brackets: (Output File Strategy "members") 
 
 ### new ClassWithChars()
 
-> **new ClassWithChars**&lt;\`T\`&gt;(): [\`ClassWithChars\`](ClassWithChars.md)&lt;\`T\`&gt;
+> **new ClassWithChars**&lt;\`T\`&gt;(): \`ClassWithChars\`&lt;\`T\`&gt;
 
 #### Returns
 
-[\`ClassWithChars\`](ClassWithChars.md)&lt;\`T\`&gt;
+\`ClassWithChars\`&lt;\`T\`&gt;
 
 ## Properties
 
@@ -132,7 +132,7 @@ new ClassWithChars<T>(): ClassWithChars<T>
 
 #### Returns
 
-[\`ClassWithChars\`](ClassWithChars.md)&lt;\`T\`&gt;
+\`ClassWithChars\`&lt;\`T\`&gt;
 
 ## Properties
 
@@ -257,7 +257,7 @@ const originalDoubleQuote = "hello"
 exports[`Utils should get prettified function: (Output File Strategy "members") (Option Group "1") 2`] = `
 "# Type Alias: SomePrettierTypeAlias
 
-> **SomePrettierTypeAlias**: \`string\` \\| \\{ \`x\`: \`1\`; \\} \\| \`boolean\` \\| \\{ \`y\`: \`2\`; \\}
+> **SomePrettierTypeAlias** = \`string\` \\| \\{ \`x\`: \`1\`; \\} \\| \`boolean\` \\| \\{ \`y\`: \`2\`; \\}
 "
 `;
 

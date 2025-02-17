@@ -10,6 +10,7 @@ on:
     branches:
       - main
       - release
+      - beta
   pull_request:
     paths:
       - 'packages/typedoc-plugin-markdown/**'

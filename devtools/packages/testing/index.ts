@@ -41,7 +41,7 @@ export function expectFileToEqual(
 
 export function expectUrlsToEqual(
   outDir: string,
-  outputFileStrategies: ('modules' | 'members')[],
+  outputFileStrategies: ('members' | 'modules')[],
 ) {
   outputFileStrategies.forEach((outputFileStrategy) => {
     const basePath = getBasePath(outDir, outputFileStrategy);

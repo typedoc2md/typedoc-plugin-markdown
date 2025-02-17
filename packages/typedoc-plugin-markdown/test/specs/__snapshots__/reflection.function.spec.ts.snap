@@ -25,7 +25,9 @@ Comments for current function 1
 
 #### Type Parameters
 
-• **Value**
+##### Value
+
+\`Value\`
 
 #### Parameters
 
@@ -47,7 +49,9 @@ Defined in: [functions.ts:1](http://source-url)
 
 ### Type Parameters
 
-• **Value**
+#### Value
+
+\`Value\`
 
 ### Parameters
 
@@ -148,7 +152,9 @@ Comments for function
 
 ### Type Parameters
 
-• **T**
+#### T
+
+\`T\`
 
 ### Parameters
 
@@ -351,8 +357,8 @@ Return comments
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |
-| <a id="x"></a> \`x\` | \`number\` | 1 |
-| <a id="y"></a> \`y\` | \`number\` | 2 |
+| \`x\` | \`number\` | 1 |
+| \`y\` | \`number\` | 2 |
 "
 `;
 
@@ -1258,11 +1264,15 @@ Function with type parameters
 
 ## Type Parameters
 
-• **T**
+### T
+
+\`T\`
 
 Comments for T
 
-• **Item** = \`string\` \\| \`boolean\`
+### Item
+
+\`Item\` = \`string\` \\| \`boolean\`
 
 ## Returns
 

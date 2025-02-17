@@ -4,18 +4,16 @@
  * @module
  */
 
-import { ReflectionKind } from 'typedoc';
-
 /**
  * Default values for `membersWithOwnFile` option.
  */
 export const ALLOWED_OWN_FILE_MEMBERS = [
-  ReflectionKind[ReflectionKind.Enum],
-  ReflectionKind[ReflectionKind.Variable],
-  ReflectionKind[ReflectionKind.Function],
-  ReflectionKind[ReflectionKind.Class],
-  ReflectionKind[ReflectionKind.Interface],
-  ReflectionKind[ReflectionKind.TypeAlias],
+  'Enum',
+  'Variable',
+  'Function',
+  'Class',
+  'Interface',
+  'TypeAlias',
 ];
 
 /**

@@ -12,10 +12,13 @@ export function member(
 ): string {
   if (
     [
+      ReflectionKind.Project,
+      ReflectionKind.Module,
       ReflectionKind.Class,
       ReflectionKind.Interface,
       ReflectionKind.Enum,
-    ].includes(model.kind)
+    ].includes(model.kind) ||
+    (model.kind === ReflectionKind.TypeAlias && model.groups)
   ) {
     return this.partials.memberWithGroups(model, {
       headingLevel: options.headingLevel + 1,

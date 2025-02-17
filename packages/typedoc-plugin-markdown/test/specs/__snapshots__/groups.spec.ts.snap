@@ -34,7 +34,7 @@ A basic module
 
 ## Type Aliases
 
-| Type alias | Description |
+| Type Alias | Description |
 | :------ | :------ |
 | [TypeA](type-aliases/TypeA.md) | TypeA function. |
 | [TypeB](type-aliases/TypeB.md) | TypeB function. |
@@ -221,7 +221,7 @@ EnumA function.
 <table>
 <thead>
 <tr>
-<th align="left">Type alias</th>
+<th align="left">Type Alias</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -331,7 +331,7 @@ const a = new InterfaceA();
 
 Block tag content.
 
-- [InterfaceB.propA](basic.md#propa-1)
+- [InterfaceB.propA](#propa-1)
 
 #### Properties
 
@@ -349,7 +349,7 @@ Block tag content.
 
 InterfaceB function.
 
-- [InterfaceA.propA](basic.md#propa)
+- [InterfaceA.propA](#propa)
 
 #### Properties
 
@@ -365,21 +365,21 @@ InterfaceB function.
 
 ### TypeA
 
-> **TypeA**: \`string\`
+> **TypeA** = \`string\`
 
 TypeA function.
 
-[TypeB#propB](basic.md#propb-2)
+[TypeB#propB](#propb-2)
 
 ***
 
 ### TypeB
 
-> **TypeB**: \`object\`
+> **TypeB** = \`object\`
 
 TypeB function.
 
-#### Type declaration
+#### Properties
 
 ##### propA
 
@@ -445,7 +445,7 @@ const a = new InterfaceA();
 
 Block tag content.
 
-- [InterfaceB.propA](basic.md#propa-1)
+- [InterfaceB.propA](#propa-1)
 
 ### Properties
 
@@ -469,7 +469,7 @@ Block tag content.
 
 InterfaceB function.
 
-- [InterfaceA.propA](basic.md#propa)
+- [InterfaceA.propA](#propa)
 
 ### Properties
 
@@ -495,7 +495,7 @@ ClassA function.
 
 ### Constructors
 
-<a id="constructors"></a>
+<a id="constructor"></a>
 
 #### new ClassA()
 
@@ -509,7 +509,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ### Constructors
 
-<a id="constructors-1"></a>
+<a id="constructor-1"></a>
 
 #### new ClassB()
 
@@ -535,11 +535,11 @@ EnumA function.
 
 ## TypeA
 
-> **TypeA**: \`string\`
+> **TypeA** = \`string\`
 
 TypeA function.
 
-[TypeB#propB](basic.md#propb-2)
+[TypeB#propB](#propb-2)
 
 ***
 
@@ -547,11 +547,11 @@ TypeA function.
 
 ## TypeB
 
-> **TypeB**: \`object\`
+> **TypeB** = \`object\`
 
 TypeB function.
 
-### Type declaration
+### Properties
 
 <a id="propa-2"></a>
 
@@ -1579,7 +1579,7 @@ A module that contains namespaces
 
 ## Type Aliases
 
-| Type alias | Description |
+| Type Alias | Description |
 | :------ | :------ |
 | [\\_Type\\_A\\_](type-aliases/Type_A.md) | - |
 | [TypeB](type-aliases/TypeB.md) | - |
@@ -1801,7 +1801,7 @@ A module that contains namespaces
 <table>
 <thead>
 <tr>
-<th align="left">Type alias</th>
+<th align="left">Type Alias</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -1907,13 +1907,13 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ### \\_Type\\_A\\_
 
-> **\\_Type\\_A\\_**: \`string\`
+> **\\_Type\\_A\\_** = \`string\`
 
 ***
 
 ### TypeB
 
-> **TypeB**: \`string\`
+> **TypeB** = \`string\`
 
 ## Variables
 
@@ -1986,7 +1986,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ### Constructors
 
-<a id="constructors"></a>
+<a id="constructor"></a>
 
 #### new \\_\\_Class\\_A\\_()
 
@@ -2000,7 +2000,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ### Constructors
 
-<a id="constructors-1"></a>
+<a id="constructor-1"></a>
 
 #### new ClassB()
 
@@ -2061,7 +2061,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ## \\_Type\\_A\\_
 
-> **\\_Type\\_A\\_**: \`string\`
+> **\\_Type\\_A\\_** = \`string\`
 
 ***
 
@@ -2069,7 +2069,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ## TypeB
 
-> **TypeB**: \`string\`
+> **TypeB** = \`string\`
 
 ***
 
@@ -2127,7 +2127,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ### default
 
-Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
+Renames and re-exports [defaultFunction](#defaultfunction)
 
 ### InterfaceA
 
@@ -2162,7 +2162,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ## default
 
-Renames and re-exports [defaultFunction](has-references.md#defaultfunction)
+Renames and re-exports [defaultFunction](#defaultfunction)
 
 <a id="interfacea"></a>
 

@@ -11,6 +11,8 @@ export function getFlattenedDeclarations(
         const childObj = {
           ...child,
           name: `${current.name}.${child.name}`,
+          getFullName: () => `${current.getFullName()}`,
+          getFriendlyFullName: () => `${current.getFriendlyFullName()}`,
         } as DeclarationReflection;
         return parseDeclarations(childObj, acc);
       },
@@ -32,6 +34,8 @@ export function getFlattenedDeclarations(
         if (current.getSignature) {
           accessors.push({
             ...current,
+            getFullName: () => `${current.getFullName()}`,
+            getFriendlyFullName: () => `${current.getFriendlyFullName()}`,
             name: `get ${current.name}`,
             type: current.getSignature.type,
             comment: current.getSignature?.comment,
@@ -40,6 +44,8 @@ export function getFlattenedDeclarations(
         if (current.setSignature) {
           accessors.push({
             ...current,
+            getFullName: () => `${current.getFullName()}`,
+            getFriendlyFullName: () => `${current.getFriendlyFullName()}`,
             name: `set ${current.name}`,
             type: current.setSignature.type,
             comment: current.setSignature?.comment,
@@ -52,6 +58,8 @@ export function getFlattenedDeclarations(
         const signatures = current.signatures.map((signature) => {
           return {
             ...current,
+            getFullName: () => `${current.getFullName()}`,
+            getFriendlyFullName: () => `${current.getFriendlyFullName()}`,
             name: signature.name,
             type: signature.type,
             comment: signature.comment,

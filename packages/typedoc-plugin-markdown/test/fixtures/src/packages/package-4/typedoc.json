@@ -1,5 +1,4 @@
 {
   "entryPoints": ["index.ts"],
-  "readme": "none",
-  "outputFileStrategy": "members"
+  "readme": "none"
 }
