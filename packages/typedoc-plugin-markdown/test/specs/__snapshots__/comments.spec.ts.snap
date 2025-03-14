@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Comments should compile @links with anchors: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"- [CommentInterface](#commentinterface-commentinterface) - Links to CommentInterface
+"- [CommentInterface](#typedoc-stubs-commentinterface) - Links to CommentInterface
 - [Links to CommentInterface.prop](#commentinterface-prop)
 - [\`Links to CommentInterface.propb\`](#commentinterface-propb-3)
 - [Links to CommentInterface.\\_prop\\_with\\_underscore\\_](#commentinterface-propwithunderscore)
 - [CommentEnum.MemberB](#commentenum-memberb)
 - [SameName.prop](#samename-prop-2)
-- [TypeWithGenerics](#typewithgenerics-typewithgenerics)
-- [TypeDeclarationType](#typedeclarationtype-typedeclarationtype)
+- [TypeWithGenerics](#typedoc-stubs-typewithgenerics)
+- [TypeDeclarationType](#typedoc-stubs-typedeclarationtype)
 - [TypeDeclarationType#declaration1](#typedeclarationtype-declaration1)
 - [TypeDeclarationType2#declaration1](#typedeclarationtype2-declaration1-1)"
 `;

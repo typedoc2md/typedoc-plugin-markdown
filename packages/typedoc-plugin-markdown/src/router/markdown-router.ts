@@ -136,23 +136,17 @@ export abstract class MarkdownRouter extends BaseRouter {
   }
 
   getUniqueAnchor(reflection: Reflection) {
-    let friendlyFullName = reflection
-      .getFriendlyFullName()
-      .replace(/__type\./g, '')
-      .replace(/\./g, '-');
+    let prefix = reflection?.parent?.name;
 
-    const lastDashIndex = friendlyFullName.lastIndexOf('-');
-    if (lastDashIndex !== -1) {
-      friendlyFullName = friendlyFullName.substring(0, lastDashIndex);
+    if (prefix === '__type') {
+      prefix = reflection?.parent?.parent?.name;
     }
 
     if (this.sluggerConfiguration.lowercase) {
-      friendlyFullName = friendlyFullName.toLowerCase();
+      prefix = prefix?.toLowerCase();
     }
 
-    return `${friendlyFullName.replace(/_/g, '')}-${this.getAnchor(
-      reflection,
-    )?.replace(/_/g, '')}`;
+    return `${prefix}-${this.getAnchor(reflection)?.replace(/_/g, '')}`;
   }
 
   parseChildPages(project: ProjectReflection, pages: PageDefinition[]) {

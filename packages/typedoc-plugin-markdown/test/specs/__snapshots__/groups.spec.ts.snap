@@ -121,7 +121,7 @@ const a = new InterfaceA();
 
 Block tag content.
 
-- [InterfaceB.propA](interfaces/InterfaceB.md#basic-interfaceb-propa)
+- [InterfaceB.propA](interfaces/InterfaceB.md#interfaceb-propa)
 
 </td>
 </tr>
@@ -135,7 +135,7 @@ Block tag content.
 
 InterfaceB function.
 
-- [InterfaceA.propA](interfaces/InterfaceA.md#basic-interfacea-propa)
+- [InterfaceA.propA](interfaces/InterfaceA.md#interfacea-propa)
 
 </td>
 </tr>
@@ -236,7 +236,7 @@ EnumA function.
 
 TypeA function.
 
-[TypeB#propB](type-aliases/TypeB.md#basic-typeb-propb)
+[TypeB#propB](type-aliases/TypeB.md#typeb-propb)
 
 </td>
 </tr>
@@ -445,17 +445,17 @@ const a = new InterfaceA();
 
 Block tag content.
 
-- [InterfaceB.propA](#basic-interfaceb-propa-1)
+- [InterfaceB.propA](#interfaceb-propa-1)
 
 ### Properties
 
-<a id="basic-interfacea-propa"></a>
+<a id="interfacea-propa"></a>
 
 #### propA
 
 > **propA**: \`string\`
 
-<a id="basic-interfacea-propb"></a>
+<a id="interfacea-propb"></a>
 
 #### propB
 
@@ -469,17 +469,17 @@ Block tag content.
 
 InterfaceB function.
 
-- [InterfaceA.propA](#basic-interfacea-propa)
+- [InterfaceA.propA](#interfacea-propa)
 
 ### Properties
 
-<a id="basic-interfaceb-propa-1"></a>
+<a id="interfaceb-propa-1"></a>
 
 #### propA
 
 > **propA**: \`string\`
 
-<a id="basic-interfaceb-propb-1"></a>
+<a id="interfaceb-propb-1"></a>
 
 #### propB
 
@@ -495,7 +495,7 @@ ClassA function.
 
 ### Constructors
 
-<a id="basic-classa-constructor"></a>
+<a id="classa-constructor"></a>
 
 #### new ClassA()
 
@@ -509,7 +509,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ### Constructors
 
-<a id="basic-classb-constructor-1"></a>
+<a id="classb-constructor-1"></a>
 
 #### new ClassB()
 
@@ -539,7 +539,7 @@ EnumA function.
 
 TypeA function.
 
-[TypeB#propB](#basic-typeb-propb-2)
+[TypeB#propB](#typeb-propb-2)
 
 ***
 
@@ -553,13 +553,13 @@ TypeB function.
 
 ### Properties
 
-<a id="basic-typeb-propa-2"></a>
+<a id="typeb-propa-2"></a>
 
 #### propA
 
 > **propA**: \`string\`
 
-<a id="basic-typeb-propb-2"></a>
+<a id="typeb-propb-2"></a>
 
 #### propB?
 
@@ -1505,7 +1505,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 # \\_Namespace\\_A\\_
 
-<a id="has-namespaces-namespacea-namespaceinterface"></a>
+<a id="_namespace_a_-namespaceinterface"></a>
 
 ## NamespaceInterface
 
@@ -1986,7 +1986,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ### Constructors
 
-<a id="has-namespaces-classa-constructor"></a>
+<a id="__class_a_-constructor"></a>
 
 #### new \\_\\_Class\\_A\\_()
 
@@ -2000,7 +2000,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 ### Constructors
 
-<a id="has-namespaces-classb-constructor-1"></a>
+<a id="classb-constructor-1"></a>
 
 #### new ClassB()
 

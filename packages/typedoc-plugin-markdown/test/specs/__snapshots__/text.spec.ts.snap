@@ -47,13 +47,13 @@ exports[`Text should get translations for member page: (Output File Strategy "me
 
 | プロパティ | Type (ja) | 説明 |
 | :------ | :------ | :------ |
-| <a id="module-1-someinterface-someprop"></a> \`someProp?\` | \`boolean\` | Description for prop someProp |
+| <a id="someinterface-someprop"></a> \`someProp?\` | \`boolean\` | Description for prop someProp |
 
 ## Events
 
 | イベント | Type (ja) |
 | :------ | :------ |
-| <a id="module-1-someinterface-someevent"></a> \`someEvent\` | \`MouseEvent\` |
+| <a id="someinterface-someevent"></a> \`someEvent\` | \`MouseEvent\` |
 
 ***
 
@@ -74,13 +74,13 @@ exports[`Text should get translations for member page: (Output File Strategy "me
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| <a id="module-1-someinterface-someprop"></a> \`someProp?\` | \`boolean\` | Description for prop someProp |
+| <a id="someinterface-someprop"></a> \`someProp?\` | \`boolean\` | Description for prop someProp |
 
 ## Events
 
 | Event | Type |
 | :------ | :------ |
-| <a id="module-1-someinterface-someevent"></a> \`someEvent\` | \`MouseEvent\` |
+| <a id="someinterface-someevent"></a> \`someEvent\` | \`MouseEvent\` |
 "
 `;
 
