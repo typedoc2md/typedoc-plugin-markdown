@@ -20,7 +20,7 @@ export function breadcrumbs(this: MarkdownThemeContext): string {
     ),
   ];
 
-  const path: Reflection[] = [];
+  const reflectionPath: Reflection[] = [];
   let reflection: Reflection = this.page.model;
   while (reflection.parent) {
     if (isPackages) {
@@ -29,17 +29,17 @@ export function breadcrumbs(this: MarkdownThemeContext): string {
       );
 
       if (reflection.name !== packageEntryModule?.name) {
-        path.push(reflection);
+        reflectionPath.push(reflection);
       }
     } else {
       if (reflection.name !== entryModule) {
-        path.push(reflection);
+        reflectionPath.push(reflection);
       }
     }
     reflection = reflection.parent;
   }
   const b = link(name.join(' - '), this.relativeURL(this.router.entryUrl));
-  const c = path.reverse().map((r) => {
+  const c = reflectionPath.reverse().map((r) => {
     if (this.router.getFullUrl(this.page.model) === this.router.getFullUrl(r)) {
       return escapeChars(r.name);
     }

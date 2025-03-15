@@ -1,7 +1,5 @@
-import { isQuoted } from '@plugin/libs/utils/is-quoted.js';
-import { toPascalCase } from '@plugin/libs/utils/to-pascal-case.js';
-import { NavigationItem } from '@plugin/public-api.js';
-import { MarkdownRenderer } from '@plugin/types/markdown-renderer.js';
+import { isQuoted, toPascalCase } from '@plugin/libs/utils/index.js';
+import { MarkdownRenderer, NavigationItem } from '@plugin/types/index.js';
 import path from 'path';
 import {
   BaseRouter,

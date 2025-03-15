@@ -5,7 +5,7 @@ exports[`Groups Router should get groups index page: (Output File Strategy "grou
 
 A basic module
 
-## Groups
+## Index
 
 - [Enumerations](Enumerations.md)
 - [Classes](Classes.md)
@@ -95,7 +95,7 @@ exports[`Groups Router should get index page for groups with packages: (Output F
 
 Comments for package-1
 
-## Groups
+## Index
 
 - [Some Group](Some-Group.md)
 "

@@ -7,7 +7,7 @@ Module description para 1
 
 Module description para 2
 
-## Categories
+## Index
 
 - [Category 1](Category-1.md)
 - [Category 2](Category-2.md)
@@ -99,7 +99,7 @@ exports[`Categories should get index page for categories with packages: (Output 
 
 Comments for package-1
 
-## Categories
+## Index
 
 - [Some Category](Some-Category.md)
 "
@@ -108,9 +108,9 @@ Comments for package-1
 exports[`Categories should get index page for categories with single module: (Output File Strategy "categories") (Option Group "1") 1`] = `
 "# categories-out-single-module
 
-## Categories
+## Index
 
-| Category | Description |
+| Name | Description |
 | ------ | ------ |
 | [Category 1](Category-1.md) | Description for module-2 category 1 |
 | [Category 2](Category-2.md) | Description for module-2 Category 2 |

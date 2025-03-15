@@ -16,7 +16,7 @@ export function body(
 
   if (model.categories?.length) {
     if (this.options.getValue('router') === 'category') {
-      md.push(heading(options.headingLevel, i18n.theme_categories()) + '\n');
+      md.push(heading(options.headingLevel, i18n.theme_index()) + '\n');
       md.push(this.partials.groupAndCategoryIndex(model.categories));
     } else {
       md.push(
@@ -72,7 +72,7 @@ export function body(
           this.options.getValue('router') === 'group' &&
           model.kind === ReflectionKind.Module
         ) {
-          md.push(heading(options.headingLevel, i18n.theme_groups()) + '\n');
+          md.push(heading(options.headingLevel, i18n.theme_index() + '\n'));
           md.push(this.partials.groupAndCategoryIndex(model.groups));
         } else {
           md.push(

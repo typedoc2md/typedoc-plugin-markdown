@@ -35,12 +35,7 @@ function getTable(
 
   const isHtmlTable = context.options.getValue('indexFormat') === 'htmlTable';
 
-  const headers = [
-    items[0] instanceof ReflectionGroup
-      ? i18n.theme_group()
-      : i18n.theme_category(),
-    i18n.theme_description(),
-  ];
+  const headers = [i18n.theme_name(), i18n.theme_description()];
 
   const rows: string[][] = [];
   items.forEach((item) => {

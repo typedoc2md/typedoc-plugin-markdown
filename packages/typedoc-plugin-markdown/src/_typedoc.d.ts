@@ -83,16 +83,12 @@ declare module 'typedoc' {
       theme_default_type: [];
       theme_description: [];
       theme_documentation: [];
-      theme_category: [];
-      theme_categories: [];
       theme_event: [];
       theme_re_exports: [];
       theme_renames_and_re_exports: [];
       theme_extends: [];
       theme_extended_by: [];
       theme_globals: [];
-      theme_group: [];
-      theme_groups: [];
       theme_member: [];
       theme_member_plural: [];
       theme_modifier: [];

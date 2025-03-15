@@ -1,7 +1,6 @@
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {
   DeclarationReflection,
-  i18n,
   ReflectionCategory,
   ReflectionGroup,
   ReflectionKind,
@@ -35,13 +34,8 @@ export function pageTitle(this: MarkdownThemeContext): string {
   }
 
   const name = this.partials.memberTitle(page.model as DeclarationReflection);
-  let kind = ReflectionKind.singularString(page.model.kind);
-  if (page.model instanceof ReflectionCategory) {
-    kind = i18n.theme_category();
-  }
-  if (page.model instanceof ReflectionGroup) {
-    kind = i18n.theme_group();
-  }
+
+  const kind = ReflectionKind.singularString(page.model.kind);
 
   const group = (page.model?.parent as DeclarationReflection)?.groups?.[0]
     ?.title;
@@ -57,7 +51,11 @@ export function pageTitle(this: MarkdownThemeContext): string {
 
     return modulePageTitle({
       name,
-      kind,
+      kind:
+        page.model instanceof ReflectionCategory ||
+        page.model instanceof ReflectionGroup
+          ? null
+          : kind,
     });
   }
 

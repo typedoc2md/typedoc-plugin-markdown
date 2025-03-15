@@ -12,16 +12,12 @@ export interface TranslatableStrings {
   theme_default_type: string;
   theme_description: string;
   theme_documentation: string;
-  theme_category: string;
-  theme_categories: string;
   theme_event: string;
   theme_re_exports: string;
   theme_renames_and_re_exports: string;
   theme_extends: string;
   theme_extended_by: string;
   theme_globals: string;
-  theme_group: string;
-  theme_groups: string;
   theme_member: string;
   theme_member_plural: string;
   theme_modifier: string;
