@@ -115,10 +115,8 @@ export const resourcePartials = (context: MarkdownThemeContext) => {
     ) => partials.documents.apply(context, [model, options]) as string,
     enumMembersTable: (model: DeclarationReflection[]) =>
       partials.enumMembersTable.apply(context, [model]) as string,
-    groupIndex: (
-      group: ReflectionCategory | ReflectionGroup,
-      options?: { filterKinds: ReflectionKind[] } | undefined,
-    ) => partials.groupIndex.apply(context, [group, options]) as string,
+    groupIndex: (group: ReflectionCategory | ReflectionGroup) =>
+      partials.groupIndex.apply(context, [group]) as string,
     hierarchy: (
       model: DeclarationHierarchy,
       options: { headingLevel: number },

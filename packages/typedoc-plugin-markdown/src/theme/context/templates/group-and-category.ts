@@ -5,6 +5,7 @@ import {
   DeclarationReflection,
   i18n,
   ProjectReflection,
+  ReflectionCategory,
   ReflectionKind,
 } from 'typedoc';
 
@@ -36,18 +37,26 @@ export function groupAndCategory(
     md.push(this.helpers.getCommentParts(model.description));
   }
 
-  const hasNamespaces = model.children.some(
-    (child) => child.kind === ReflectionKind.Namespace,
-  );
+  const index = model.children.reduce((acc, child) => {
+    if (child.kind === ReflectionKind.Document) {
+      if (!acc[i18n.kind_plural_document()]) {
+        acc[i18n.kind_plural_document()] = { children: [] };
+      }
+      acc[i18n.kind_plural_document()].children.push(child);
+    }
+    if (child.kind === ReflectionKind.Namespace) {
+      if (!acc[i18n.kind_plural_namespace()]) {
+        acc[i18n.kind_plural_namespace()] = { children: [] };
+      }
+      acc[i18n.kind_plural_namespace()].children.push(child);
+    }
+    return acc;
+  }, {});
 
-  if (hasNamespaces) {
-    md.push(heading(2, i18n.kind_plural_namespace()));
-    md.push(
-      this.partials.groupIndex(model, {
-        filterKinds: [ReflectionKind.Namespace],
-      }),
-    );
-  }
+  Object.entries(index).forEach(([key, value]) => {
+    md.push(heading(2, key));
+    md.push(this.partials.groupIndex(value as ReflectionCategory));
+  });
 
   md.push(
     this.partials.members(model.children as DeclarationReflection[], {

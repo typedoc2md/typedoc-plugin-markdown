@@ -127,9 +127,9 @@ export interface PluginOptions {
    * @deprecated This option has been deprecated in favour of TypeDoc `navigation` option.
    */
   navigationModel: {
-    excludeGroups: boolean;
-    excludeCategories: boolean;
-    excludeFolders: boolean;
+    excludeGroups?: boolean;
+    excludeCategories?: boolean;
+    excludeFolders?: boolean;
   };
 
   /**
@@ -189,13 +189,13 @@ export interface PluginOptions {
    * Control how table columns are configured and displayed.
    */
   tableColumnSettings: {
-    hideDefaults: boolean;
-    hideInherited: boolean;
-    hideModifiers: boolean;
-    hideOverrides: boolean;
-    hideSources: boolean;
-    hideValues: boolean;
-    leftAlignHeaders: boolean;
+    hideDefaults?: boolean;
+    hideInherited?: boolean;
+    hideModifiers?: boolean;
+    hideOverrides?: boolean;
+    hideSources?: boolean;
+    hideValues?: boolean;
+    leftAlignHeaders?: boolean;
   };
 
   /**

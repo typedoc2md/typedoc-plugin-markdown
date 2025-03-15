@@ -8,6 +8,8 @@
  *
  * Description for module-2 Category 2
  *
+ * @document ../../docs/category/CATEGORY_DOC.md
+ *
  * @module
  */
 /**
@@ -26,6 +28,7 @@ export class SomeClass {}
 export interface SomeInterface {}
 
 /**
+ *
  * @category Category 1
  */
 export namespace NamespaceCategoryOne {

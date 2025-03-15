@@ -71,7 +71,11 @@ export class CategoryRouter extends KindRouter {
             });
 
             category.children.forEach((catChild: Reflection) => {
-              if (catChild.kind === ReflectionKind.Namespace) {
+              if (
+                [ReflectionKind.Namespace, ReflectionKind.Document].includes(
+                  catChild.kind,
+                )
+              ) {
                 this.buildChildPages(catChild, outPages);
               }
             });
@@ -134,12 +138,9 @@ export class CategoryRouter extends KindRouter {
   }
 
   getNamespaceDirectory(reflection: Reflection): string {
-    if (
-      reflection.parent &&
-      reflection.parent.kind === ReflectionKind.Project
-    ) {
-      return `${this.directories.get(reflection.kind)!}/${this.getReflectionAlias(reflection)}`;
+    if (reflection.parent) {
+      return `a${this.getReflectionDirectory(reflection).replace(/\/[^/]+$/, '')}/${reflection.name}/${this.directories.get(reflection.kind)!}/${this.getReflectionAlias(reflection)}`;
     }
-    return super.getNamespaceDirectory(reflection);
+    return 'b' + this.getReflectionAlias(reflection);
   }
 }

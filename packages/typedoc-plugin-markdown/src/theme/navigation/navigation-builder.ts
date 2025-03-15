@@ -20,9 +20,9 @@ export class NavigationBuilder {
   private options: Options;
   private packagesMeta: any;
   private navigationOptions: {
-    excludeCategories: boolean;
-    excludeGroups: boolean;
-    excludeFolders: boolean;
+    excludeCategories?: boolean;
+    excludeGroups?: boolean;
+    excludeFolders?: boolean;
   };
   private navigation: NavigationItem[] = [];
   private isPackages: boolean;

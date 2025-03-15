@@ -4,6 +4,8 @@
  *
  * Module description para 2
  *
+ * @document ../../docs/category/CATEGORY_DOC.md
+ *
  * @module
  *
  * @categoryDescription Category 1

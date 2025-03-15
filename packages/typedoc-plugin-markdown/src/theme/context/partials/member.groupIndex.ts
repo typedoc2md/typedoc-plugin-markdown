@@ -15,23 +15,16 @@ import {
   ReflectionKind,
 } from 'typedoc';
 
-export function groupIndex(
-  group: ReflectionGroup | ReflectionCategory,
-  options?: { filterKinds: ReflectionKind[] },
-) {
-  const children = options?.filterKinds?.length
-    ? group.children.filter((child) => options.filterKinds.includes(child.kind))
-    : group.children;
-
+export function groupIndex(group: ReflectionGroup | ReflectionCategory) {
   if (this.options.getValue('indexFormat').toLowerCase().includes('table')) {
     return getGroupIndexTable(
       this,
-      children as DeclarationReflection[] | DocumentReflection[],
+      group.children as DeclarationReflection[] | DocumentReflection[],
     );
   }
   return getGroupIndexList(
     this,
-    children as DeclarationReflection[] | DocumentReflection[],
+    group.children as DeclarationReflection[] | DocumentReflection[],
   );
 }
 

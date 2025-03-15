@@ -455,7 +455,7 @@ const config = {
     options: [{}],
   },
   categories: {
-    only: false,
+    only: true,
     entryPoints: [
       '/categories/module-1.ts',
       '/categories/module-2.ts',
@@ -475,6 +475,7 @@ const config = {
       {
         plugin: [
           path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+          path.join(__dirname, 'custom-plugins', 'urls-plugin.mjs'),
         ],
       },
     ],
