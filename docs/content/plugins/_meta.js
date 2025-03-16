@@ -12,7 +12,7 @@ export default {
   },
   'github-wiki': 'Github Wiki',
   'gitlab-wiki': 'Gitlab Wiki',
-  vitepress: '',
+  vitepress: 'VitePress',
   '-- Integrations': {
     type: 'separator',
     title: 'Integrations',

@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.5.0 ()
+## 4.5.0 (2025-03-16)
 
 This release introduces support for [TypeDoc 0.28](https://github.com/TypeStrong/typedoc/blob/v0.28.0/CHANGELOG.md#v0280-2025-03-15) that contains several under-the-hood breaking API changes.
 
@@ -14,8 +14,17 @@ From a consumer perspective there should be no direct breaking change from the p
 ### Structural Changes
 
 - As per TypeDoc model updates, Object literal Type Alias members are now rendered in groups ("Properties", "Methods") etc rather than under a single "Type Declaration" heading.
-- Type parameter list views have been updated to separate items with markdown headings for consistency and to improve readability when parameters have detailed explanations or complex properties. If type parameters are straightforward and few in number switching to `typeParametersFormat=table` might be preferable.
 - A new option "`typeAliasPropertiesFormat`" has been exposed to place properties rendered from the updated structure to a table format.
+- Type parameter list views have been updated to separate items with markdown headings for consistency and to improve readability when parameters have detailed explanations or complex properties. If type parameters are straightforward and few in number switching to `typeParametersFormat=table` might be preferable.
+
+### Minor Changes
+
+- Implemented custom routers for plugin to support TypeDoc 0.28 router implementation.
+- Added "typeAliasPropertiesFormat" option to support TypeDoc 0.28 updated behaviour for Object literal type alias types.
+
+### Patch Changes
+
+- Mark object properties as optional in PluginOptions interface ([#777](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/777)).
 
 ## 4.4.2 (2025-02-09)
 

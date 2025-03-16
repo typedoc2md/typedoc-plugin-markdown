@@ -1,0 +1,15 @@
+# MDX vs. CommonMark
+
+By default, Docusaurus treats Markdown files as MDX.
+
+This means that non-conformant MDX syntax in your documentation comments will cause a compilation error.
+
+If you don't need MDX features, you can opt into CommonMark, which allows for more relaxed Markdown parsing.
+
+```json filename="docusaurus.config.js"
+markdown: {
+    format: 'detect',
+}
+```
+
+See https://docusaurus.io/docs/markdown-features#mdx-vs-commonmark for more information.
