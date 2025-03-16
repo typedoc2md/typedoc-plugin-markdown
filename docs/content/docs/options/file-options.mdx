@@ -2,47 +2,7 @@ import { Callout, FileTree } from 'nextra/components';
 
 # File Options
 
-Options that are used to configure how files are output.
-
-## ~outputFileStrategy~
-
-<Callout type="warning">Deprecated in favour of `--router`.</Callout>
-
-> Accepts either `"members"` or `"modules"`. Defaults to `"members"`.
-
-Please also see the [Output File Structure](/docs/output-file-structure) guide for updated implementation details.
-
-```json filename="typedoc.json"
-{
-  "outputFileStrategy": "members"
-}
-```
-
-## flattenOutputFiles
-
-<Callout emoji="💡">Flatten output files to a single directory.</Callout>
-
-> Accepts a boolean value. Defaults to `false`.
-
-By default output files are generated in a directory structure that mirrors the project's module hierarchy including folders for member kinds eg `classes`, `enums`, `functions` etc.
-
-This option will flatten the output files to a single directory as follows:
-
-<FileTree>
-  <FileTree.File name="README.md" />
-  <FileTree.File name="module-a.Class.ClassA.md" />
-  <FileTree.File name="module-a.Class.ClassB.md" />
-  <FileTree.File name="module-a.Function.FunctionA.md" />
-  <FileTree.File name="module-a.Function.FunctionB.md" />
-  <FileTree.File name="module-b.Class.ClassA.md" />
-  <FileTree.File name="module-b.Class.ClassB.md" />
-</FileTree>
-
-```json filename="typedoc.json"
-{
-  "flattenOutputFiles": false
-}
-```
+Options that are used by [routers](/docs/output-file-structure) to configure how files are output.
 
 ## fileExtension
 
@@ -110,6 +70,8 @@ Please note this option is not applicable when [`--readme`](https://typedoc.org/
 By default when a readme file is resolved, a separate readme page is created.
 
 This option appends the documentation main/index page to the readme page so only a single root page is generated.
+
+Please note that for packages readmes (when `outputFileStrategy` is set to `packages`) this is the default behaviour.
 
 This option has no effect when [`--readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
 

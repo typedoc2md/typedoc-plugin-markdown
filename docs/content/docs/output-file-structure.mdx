@@ -48,6 +48,28 @@ This is the default router of the plugin.
   </FileTree.Folder>
 </FileTree>
 
+### "member-flat"
+
+```json filename="typedoc.json"
+{
+  "router": "member-flat"
+}
+```
+
+_Note: This is equivalent to the deprecated `outputFileStrategy="members"` and `flattenOutputFiles=true`._
+
+Like "member", but flattens output to a single directory.
+
+<FileTree>
+  <FileTree.File name="README.md" />
+  <FileTree.File name="module-a.Class.ClassA.md" />
+  <FileTree.File name="module-a.Class.ClassB.md" />
+  <FileTree.File name="module-a.Function.FunctionA.md" />
+  <FileTree.File name="module-a.Function.FunctionB.md" />
+  <FileTree.File name="module-b.Class.ClassA.md" />
+  <FileTree.File name="module-b.Class.ClassB.md" />
+</FileTree>
+
 ### "module"
 
 ```json filename="typedoc.json"
@@ -68,8 +90,39 @@ This creates a flat navigation structure and reduces the amount of files generat
   <FileTree.File name="module-b.md" />
 </FileTree>
 
+### "module-flat"
+
+```json filename="typedoc.json"
+{
+  "router": "module-flat"
+}
+```
+
+_Note: This is equivalent to the deprecated `outputFileStrategy="modules"` and `flattenOutputFiles=true`._
+
+Like "module", but flattens output to a single directory.
+
+<FileTree>
+  <FileTree.File name="README.md" />
+  <FileTree.File name="package-1.module-a.md" />
+  <FileTree.File name="package-1.module-b.md" />
+  <FileTree.File name="package-2.module-a.md" />
+  <FileTree.File name="package-2.module-b.md" />
+</FileTree>
+
 ## TypeDoc Core Routers
 
-Support for the TypeDoc core routers is planned for a future release.
+```json filename="typedoc.json"
+{
+  "router": "kind"
+}
+```
 
-This will provide the ability to generate output files in a similar structure to the default HTML theme but rendered in Markdown.
+TypeDoc ships with several built-in routers that can be be used with this plugin.
+This provides the ability to generate output files in the same structure as the default HTML theme but rendered in Markdown.
+
+Available routers are **"kind"**, **"kind-dir"**, **"structure"** ,**"structure-dir"**, **"group"**, **"category"**.
+
+Please see [router](https://typedoc.org/documents/Options.Output.html#router) documentation for details.
+
+The routers are decorated to additionally support the file options of this plugin.

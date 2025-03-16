@@ -133,7 +133,7 @@ export interface PluginOptions {
   };
 
   /**
-   * Determines how output files are generated.
+   * @deprecated Deprecated in favour of `--router`.
    */
   outputFileStrategy?: 'members' | 'modules';
 

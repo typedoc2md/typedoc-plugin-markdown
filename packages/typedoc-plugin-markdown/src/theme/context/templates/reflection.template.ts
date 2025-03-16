@@ -13,14 +13,7 @@ export function reflection(
 ) {
   const md: string[] = [];
 
-  md.push(
-    this.hook(
-      page.model instanceof ProjectReflection
-        ? 'index.page.begin'
-        : 'page.begin',
-      this,
-    ).join('\n'),
-  );
+  md.push(this.hook(getBeginHookName(page.model), this).join('\n'));
 
   if (!this.options.getValue('hidePageHeader')) {
     md.push(this.partials.header());
@@ -30,8 +23,7 @@ export function reflection(
     md.push(this.partials.breadcrumbs());
   }
 
-  const includeReadme =
-    this.options.getValue('mergeReadme') && Boolean(page.model.readme);
+  const includeReadme = shouldIncludeReadme(this, page.model);
 
   if (includeReadme && page.model.readme) {
     md.push(this.helpers.getCommentParts(page.model.readme));
@@ -68,12 +60,25 @@ export function reflection(
 
   md.push(this.partials.footer());
 
-  md.push(
-    this.hook(
-      page.model instanceof ProjectReflection ? 'index.page.end' : 'page.end',
-      this,
-    ).join('\n'),
-  );
+  md.push(this.hook(getEndHookName(page.model), this).join('\n'));
 
   return md.join('\n\n');
+}
+
+function getBeginHookName(model: DeclarationReflection) {
+  return model instanceof ProjectReflection ? 'index.page.begin' : 'page.begin';
+}
+
+function getEndHookName(model: DeclarationReflection) {
+  return model instanceof ProjectReflection ? 'index.page.end' : 'page.end';
+}
+
+function shouldIncludeReadme(
+  context: MarkdownThemeContext,
+  model: DeclarationReflection,
+) {
+  if (model.kind === ReflectionKind.Project) {
+    return context.options.getValue('mergeReadme') && Boolean(model.readme);
+  }
+  return Boolean(model.readme);
 }

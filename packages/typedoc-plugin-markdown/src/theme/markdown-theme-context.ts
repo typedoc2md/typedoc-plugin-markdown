@@ -1,5 +1,4 @@
 import { MarkdownPageEvent } from '@plugin/events/index.js';
-import { MarkdownRouter } from '@plugin/router/markdown-router.js';
 import {
   resourceHelpers,
   resourcePartials,
@@ -7,7 +6,7 @@ import {
 } from '@plugin/theme/context/resources.js';
 import { MarkdownTheme } from '@plugin/theme/index.js';
 import { MarkdownRenderer, PackageMetaData } from '@plugin/types/index.js';
-import { Options, Reflection } from 'typedoc';
+import { Options, Reflection, Router } from 'typedoc';
 
 /**
  * The theme context class that is provided as context on the rendering of every page.
@@ -36,7 +35,7 @@ export class MarkdownThemeContext {
   /**
    * The markdown router instance.
    */
-  public router: MarkdownRouter;
+  public router: Router;
 
   /**
    * Holds meta data for individual packages (if entryPointStrategy equals `packages`).
@@ -62,7 +61,7 @@ export class MarkdownThemeContext {
      */
     readonly options: Options,
   ) {
-    this.router = theme.router as MarkdownRouter;
+    this.router = theme.router;
     this.packagesMetaData = (this.theme.owner as MarkdownRenderer).packagesMeta;
   }
 

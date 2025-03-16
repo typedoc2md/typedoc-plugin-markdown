@@ -316,7 +316,9 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 
 Defined in: [index.ts:1](http://source-url)
 
-## Extends
+## Hierarchy
+
+### Extends
 
 - [\`BaseClassProperties\`](BaseClassProperties.md)
 
@@ -324,7 +326,7 @@ Defined in: [index.ts:1](http://source-url)
 
 <a id="constructor"></a>
 
-### new ClassPropertiesTable()
+### Constructor
 
 > **new ClassPropertiesTable**(): \`ClassPropertiesTable\`
 
@@ -354,7 +356,9 @@ exports[`Comments should get tables for properties: (Output File Strategy "membe
 
 Defined in: [index.ts:1](http://source-url)
 
-## Extends
+## Hierarchy
+
+### Extends
 
 - [\`BaseClassProperties\`](https://example.com/Class.BaseClassProperties.md)
 
@@ -362,7 +366,7 @@ Defined in: [index.ts:1](http://source-url)
 
 <a id="constructor"></a>
 
-### new ClassPropertiesTable()
+### Constructor
 
 > **new ClassPropertiesTable**(): \`ClassPropertiesTable\`
 

@@ -43,6 +43,7 @@ const config = {
         navigationModel: {
           excludeGroups: true,
         },
+        includeHierarchySummary: false,
       },
     ],
   },
@@ -61,6 +62,7 @@ const config = {
       },
       router: 'member',
       blockTagsPreserveOrder: ['@deprecated', '@see'],
+      includeHierarchySummary: false,
     },
     options: [
       {},
@@ -87,10 +89,12 @@ const config = {
       disableSources: true,
       excludeScopesInPaths: true,
       entryPointStrategy: 'expand',
+      includeHierarchySummary: false,
     },
     options: [
       {},
       {
+        router: '*-flat',
         flattenOutputFiles: true,
         navigationModel: {
           excludeFolders: true,
@@ -115,6 +119,7 @@ const config = {
         leftAlignHeaders: true,
       },
       readme: './test/fixtures/README.md',
+      includeHierarchySummary: false,
     },
     options: [
       {
@@ -154,6 +159,7 @@ const config = {
       readme: 'none',
       excludePrivate: false,
       useHTMLAnchors: true,
+      includeHierarchySummary: false,
     },
     options: [
       {
@@ -201,6 +207,7 @@ const config = {
       tableColumnSettings: {
         leftAlignHeaders: true,
       },
+      includeHierarchySummary: false,
     },
     options: [
       {
@@ -225,6 +232,7 @@ const config = {
       includeVersion: true,
       disableSources: true,
       readme: './test/fixtures/src/packages/package-1/README.md',
+      includeHierarchySummary: false,
     },
     options: [{}],
   },
@@ -238,6 +246,7 @@ const config = {
       disableSources: true,
       fileExtension: '.mdx',
       name: '@scope/entryfile',
+      includeHierarchySummary: false,
     },
     options: [
       { entryFileName: 'README.md', githubPages: true },
@@ -253,6 +262,7 @@ const config = {
     entryPoints: '/readme/index.ts',
     commonOptions: {
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
+      includeHierarchySummary: false,
     },
     options: [
       {
@@ -274,6 +284,7 @@ const config = {
       includeVersion: true,
       propertiesFormat: 'table',
       readme: 'none',
+      includeHierarchySummary: false,
     },
     options: [
       {
@@ -296,6 +307,7 @@ const config = {
       expandObjects: true,
       useHTMLEncodedBrackets: true,
       parametersFormat: 'table',
+      includeHierarchySummary: false,
     },
     options: [
       {},
@@ -318,9 +330,12 @@ const config = {
       {
         plugin: [
           path.join(__dirname, 'custom-plugins', 'custom-theme.mjs'),
+          path.join(__dirname, 'custom-plugins', 'custom-router.mjs'),
           path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+          path.join(__dirname, 'custom-plugins', 'urls-plugin.mjs'),
         ],
         theme: 'custom-theme',
+        router: 'custom-router',
       },
     ],
   },
@@ -341,10 +356,12 @@ const config = {
         './test/fixtures/docs/project/PROJECT_DOC_2.md',
         './test/fixtures/docs/project/PROJECT_DOC_3.md',
       ],
+      includeHierarchySummary: false,
     },
     options: [
       {},
       {
+        router: '*-flat',
         indexFormat: 'htmlTable',
         flattenOutputFiles: true,
       },
@@ -363,6 +380,7 @@ const config = {
       theme: 'stub-documents',
       readme: 'none',
       disableSources: true,
+      includeHierarchySummary: false,
     },
     options: [
       {},
@@ -382,6 +400,7 @@ const config = {
       hidePageHeader: true,
       readme: 'none',
       plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
+      includeHierarchySummary: false,
     },
     options: [
       {
@@ -401,6 +420,54 @@ const config = {
         categorizeByGroup: false,
       },
     ],
+  },
+  coreRouters: {
+    only: false,
+    entryPoints: '/groups/**/*.ts',
+    routers: ['kind', 'kind-dir'],
+    commonOptions: {
+      name: 'core-router',
+      plugin: [
+        // path.join(__dirname, 'custom-plugins', 'stub-groups-theme.mjs'),
+        path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+      ],
+      // theme: 'stub-groups',
+      disableSources: true,
+      readme: './test/fixtures/README.md',
+      projectDocuments: ['./test/fixtures/PROJECT_DOC_1.md'],
+    },
+    options: [
+      {
+        modulesFileName: 'documentation.md',
+      },
+    ],
+  },
+  coreRoutersSingleModule: {
+    only: false,
+    entryPoints: '/reflections/index.ts',
+    routers: ['kind'],
+    commonOptions: {
+      name: 'core-router-single-module',
+      plugin: [
+        // path.join(__dirname, 'custom-plugins', 'stub-groups-theme.mjs'),
+        path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+      ],
+      //theme: 'stub-groups',
+      disableSources: true,
+    },
+    options: [{}],
+  },
+  coreRoutersPackages: {
+    only: false,
+    entryPoints: '/packages-simple/*',
+    routers: ['kind'],
+    commonOptions: {
+      plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
+      entryPointStrategy: 'packages',
+      name: 'packages-example',
+      disableSources: true,
+    },
+    options: [{ mergeReadme: true }, { indexFormat: 'table' }],
   },
 };
 

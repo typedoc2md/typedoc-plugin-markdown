@@ -5,14 +5,18 @@ exports[`Class Reflection should compile abstract class: (Output File Strategy "
 
 Defined in: [classes.ts:1](http://source-url)
 
-## Extended by
+## Hierarchy
+
+[View Summary](../hierarchy.md)
+
+### Extended by
 
 - [\`DerivedClassA\`](DerivedClassA.md)
 - [\`DerivedClassB\`](DerivedClassB.md)
 
 ## Constructors
 
-### new AbstractClass()
+### Constructor
 
 > **new AbstractClass**(): \`AbstractClass\`
 
@@ -51,14 +55,16 @@ exports[`Class Reflection should compile abstract class: (Output File Strategy "
 
 Defined in: [classes.ts:1](http://source-url)
 
-## Extended by
+## Hierarchy
+
+### Extended by
 
 - [\`DerivedClassA\`](DerivedClassA.md)
 - [\`DerivedClassB\`](DerivedClassB.md)
 
 ## Constructors
 
-### new AbstractClass()
+### Constructor
 
 \`\`\`ts
 new AbstractClass(): AbstractClass
@@ -101,7 +107,7 @@ Comments for BasicClass
 
 ## Constructors
 
-### new BasicClass()
+### Constructor
 
 > **new BasicClass**(): \`BasicClass\`
 
@@ -154,7 +160,7 @@ Comments for BasicClass
 
 ## Constructors
 
-### new BasicClass()
+### Constructor
 
 \`\`\`ts
 new BasicClass(): BasicClass
@@ -196,7 +202,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 ## Constructors
 
-### new ClassWithAccessorKeywords()
+### Constructor
 
 > **new ClassWithAccessorKeywords**(): \`ClassWithAccessorKeywords\`
 
@@ -247,7 +253,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 ## Constructors
 
-### new ClassWithAccessorKeywords()
+### Constructor
 
 \`\`\`ts
 new ClassWithAccessorKeywords(): ClassWithAccessorKeywords
@@ -302,7 +308,7 @@ Comments for ClassWithAccessors
 
 ## Constructors
 
-### new ClassWithAccessors()
+### Constructor
 
 > **new ClassWithAccessors**(): \`ClassWithAccessors\`
 
@@ -399,7 +405,7 @@ Comments for ClassWithAccessors
 
 ## Constructors
 
-### new ClassWithAccessors()
+### Constructor
 
 \`\`\`ts
 new ClassWithAccessors(): ClassWithAccessors
@@ -502,7 +508,7 @@ Comments for ClassWithComplexProps
 
 ## Constructors
 
-### new ClassWithComplexProps()
+### Constructor
 
 > **new ClassWithComplexProps**(): \`ClassWithComplexProps\`
 
@@ -551,7 +557,7 @@ Comments for ClassWithComplexProps
 
 ## Constructors
 
-### new ClassWithComplexProps()
+### Constructor
 
 \`\`\`ts
 new ClassWithComplexProps(): ClassWithComplexProps
@@ -580,7 +586,7 @@ Comments for ClassWithConstructorOverloads
 
 ## Constructors
 
-### new ClassWithConstructorOverloads()
+### Constructor
 
 > **new ClassWithConstructorOverloads**(\`x\`, \`y\`): \`ClassWithConstructorOverloads\`
 
@@ -602,7 +608,7 @@ Comments for x number
 
 \`ClassWithConstructorOverloads\`
 
-### new ClassWithConstructorOverloads()
+### Constructor
 
 > **new ClassWithConstructorOverloads**(\`x\`): \`ClassWithConstructorOverloads\`
 
@@ -620,7 +626,7 @@ Comments for x string
 
 \`ClassWithConstructorOverloads\`
 
-### new ClassWithConstructorOverloads()
+### Constructor
 
 > **new ClassWithConstructorOverloads**(\`s\`): \`ClassWithConstructorOverloads\`
 
@@ -647,7 +653,7 @@ Comments for ClassWithConstructorOverloads
 
 ## Constructors
 
-### new ClassWithConstructorOverloads()
+### Constructor
 
 \`\`\`ts
 new ClassWithConstructorOverloads(x: number, y: string): ClassWithConstructorOverloads
@@ -666,7 +672,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 \`ClassWithConstructorOverloads\`
 
-### new ClassWithConstructorOverloads()
+### Constructor
 
 \`\`\`ts
 new ClassWithConstructorOverloads(x: string): ClassWithConstructorOverloads
@@ -684,7 +690,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 \`ClassWithConstructorOverloads\`
 
-### new ClassWithConstructorOverloads()
+### Constructor
 
 \`\`\`ts
 new ClassWithConstructorOverloads(s: string): ClassWithConstructorOverloads
@@ -713,7 +719,7 @@ Comment for ClassWithFlags
 
 ## Constructors
 
-### new ClassWithFlags()
+### Constructor
 
 > **new ClassWithFlags**(): \`ClassWithFlags\`
 
@@ -780,7 +786,7 @@ Comment for ClassWithFlags
 
 ## Constructors
 
-### new ClassWithFlags()
+### Constructor
 
 \`\`\`ts
 new ClassWithFlags(): ClassWithFlags
@@ -840,7 +846,7 @@ Comments for ClassWithModifiers
 
 ## Constructors
 
-### new ClassWithModifiers()
+### Constructor
 
 > **new ClassWithModifiers**(): \`ClassWithModifiers\`
 
@@ -951,7 +957,7 @@ Comments for ClassWithModifiers
 
 ## Constructors
 
-### new ClassWithModifiers()
+### Constructor
 
 \`\`\`ts
 new ClassWithModifiers(): ClassWithModifiers
@@ -1028,7 +1034,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 ## Constructors
 
-### new ClassWithPropCategories()
+### Constructor
 
 > **new ClassWithPropCategories**(\`opts\`): \`ClassWithPropCategories\`
 
@@ -1099,7 +1105,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 ## Constructors
 
-### new ClassWithPropCategories()
+### Constructor
 
 \`\`\`ts
 new ClassWithPropCategories(opts: object): ClassWithPropCategories
@@ -1178,7 +1184,7 @@ Comments for ClassWithSimpleProps
 
 ## Constructors
 
-### new ClassWithSimpleProps()
+### Constructor
 
 > **new ClassWithSimpleProps**(): \`ClassWithSimpleProps\`
 
@@ -1250,7 +1256,7 @@ Comments for ClassWithSimpleProps
 
 ## Constructors
 
-### new ClassWithSimpleProps()
+### Constructor
 
 \`\`\`ts
 new ClassWithSimpleProps(): ClassWithSimpleProps
@@ -1278,7 +1284,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 ## Constructors
 
-### new ClassWithSymbols()
+### Constructor
 
 > **new ClassWithSymbols**(): \`ClassWithSymbols\`
 
@@ -1339,7 +1345,7 @@ Comments for param C
 
 ## Constructors
 
-### new ClassWithTypeParameters()
+### Constructor
 
 > **new ClassWithTypeParameters**\\<\`A\`, \`B\`, \`C\`\\>(): \`ClassWithTypeParameters\`\\<\`A\`, \`B\`, \`C\`\\>
 
@@ -1366,7 +1372,7 @@ Comments for ClassWithTypeParameters
 
 ## Constructors
 
-### new ClassWithTypeParameters()
+### Constructor
 
 \`\`\`ts
 new ClassWithTypeParameters<A, B, C>(): ClassWithTypeParameters<A, B, C>
@@ -1385,7 +1391,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 ## Constructors
 
-### new ClassWithoutPropCategories()
+### Constructor
 
 > **new ClassWithoutPropCategories**(\`opts\`): \`ClassWithoutPropCategories\`
 
@@ -1456,7 +1462,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 ## Constructors
 
-### new ClassWithoutPropCategories()
+### Constructor
 
 \`\`\`ts
 new ClassWithoutPropCategories(opts: object): ClassWithoutPropCategories
@@ -1520,13 +1526,17 @@ Defined in: [classes.ts:1](http://source-url)
 
 Comments for DerivedClassA
 
-## Extends
+## Hierarchy
+
+[View Summary](../hierarchy.md)
+
+### Extends
 
 - [\`AbstractClass\`](AbstractClass.md)
 
 ## Constructors
 
-### new DerivedClassA()
+### Constructor
 
 > **new DerivedClassA**(): \`DerivedClassA\`
 
@@ -1599,13 +1609,15 @@ Defined in: [classes.ts:1](http://source-url)
 
 Comments for DerivedClassA
 
-## Extends
+## Hierarchy
+
+### Extends
 
 - [\`AbstractClass\`](AbstractClass.md)
 
 ## Constructors
 
-### new DerivedClassA()
+### Constructor
 
 \`\`\`ts
 new DerivedClassA(): DerivedClassA
@@ -1673,7 +1685,7 @@ Defined in: [classes.ts:1](http://source-url)
 
 ## Constructors
 
-### new DisposableClass()
+### Constructor
 
 > **new DisposableClass**(): \`DisposableClass\`
 
@@ -1704,14 +1716,18 @@ exports[`Class Reflection should compile hierarchy for BaseClass: (Output File S
 
 Defined in: [classes.ts:1](http://source-url)
 
-## Extended by
+## Hierarchy
+
+[View Summary](../hierarchy.md)
+
+### Extended by
 
 - [\`ChildClassA\`](ChildClassA.md)
 - [\`ChildClassB\`](ChildClassB.md)
 
 ## Constructors
 
-### new BaseClass()
+### Constructor
 
 > **new BaseClass**(): \`BaseClass\`
 
@@ -1726,18 +1742,22 @@ exports[`Class Reflection should compile hierarchy for ChildClassA: (Output File
 
 Defined in: [classes.ts:1](http://source-url)
 
-## Extends
+## Hierarchy
+
+[View Summary](../hierarchy.md)
+
+### Extends
 
 - [\`BaseClass\`](BaseClass.md)
 
-## Extended by
+### Extended by
 
 - [\`GrandChildClassA\`](GrandChildClassA.md)
 - [\`GrandChildClassB\`](GrandChildClassB.md)
 
 ## Constructors
 
-### new ChildClassA()
+### Constructor
 
 > **new ChildClassA**(): \`ChildClassA\`
 
@@ -1756,13 +1776,17 @@ exports[`Class Reflection should compile hierarchy for GrandChildClassA: (Output
 
 Defined in: [classes.ts:1](http://source-url)
 
-## Extends
+## Hierarchy
+
+[View Summary](../hierarchy.md)
+
+### Extends
 
 - [\`ChildClassA\`](ChildClassA.md)
 
 ## Constructors
 
-### new GrandChildClassA()
+### Constructor
 
 > **new GrandChildClassA**(): \`GrandChildClassA\`
 
@@ -1781,13 +1805,15 @@ exports[`Class Reflection should compile hierarchy for GrandChildClassA: (Output
 
 Defined in: [classes.ts:1](http://source-url)
 
-## Extends
+## Hierarchy
+
+### Extends
 
 - [\`ChildClassA\`](ChildClassA.md)
 
 ## Constructors
 
-### new GrandChildClassA()
+### Constructor
 
 \`\`\`ts
 new GrandChildClassA(): GrandChildClassA

@@ -7,6 +7,9 @@
       "@plugin/*": ["./*"]
     }
   },
-  "include": ["src/**/*.ts"],
+  "include": [
+    "src/**/*.ts",
+    "src/theme/context/templates/reflection.template.ts"
+  ],
   "exclude": ["./dist", "./test", "__scripts__", "**/*.spec.ts"]
 }

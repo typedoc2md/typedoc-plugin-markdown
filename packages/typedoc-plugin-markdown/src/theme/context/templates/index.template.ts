@@ -2,10 +2,7 @@ import { MarkdownPageEvent } from '@plugin/events/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { CommentDisplayPart, ProjectReflection } from 'typedoc';
 
-/**
- * Template that specifically maps to the resolved readme file. This template is not used when 'readme' is set to 'none'.
- */
-export function readme(
+export function index(
   this: MarkdownThemeContext,
   page: MarkdownPageEvent<ProjectReflection>,
 ) {
@@ -23,6 +20,10 @@ export function readme(
     md.push(
       this.helpers.getCommentParts(page.model.readme as CommentDisplayPart[]),
     );
+  }
+
+  if (this.options.getValue('mergeReadme')) {
+    md.push(this.partials.body(page.model, { headingLevel: 2 }));
   }
 
   md.push(this.partials.footer());

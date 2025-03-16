@@ -7,7 +7,7 @@
  *
  * @categoryDescription File
  *
- * Options that are used to configure how files are output.
+ * Options that are used by [routers](/docs/output-file-structure) to configure how files are output.
  *
  * @categoryDescription Display
  *
@@ -32,16 +32,14 @@ import {
 } from './maps.js';
 
 /**
- * Please also see the [Output File Structure](/docs/output-file-structure) guide for updated implementation details.
- *
- * @deprecated
- *
- * Deprecated in favour of `--router`.
  *
  * @category File
+ *
+ * @hidden
+ *
  */
 export const outputFileStrategy: Partial<DeclarationOption> = {
-  help: 'Determines how output files are generated.',
+  help: '@deprecated Deprecated in favour of `--router`.',
   type: ParameterType.Map,
   map: OutputFileStrategy,
   defaultValue: OutputFileStrategy.Members,
@@ -54,9 +52,9 @@ export const outputFileStrategy: Partial<DeclarationOption> = {
  *
  * @example ["Class", "Enum", "Interface"]
  *
- * @hidden
- *
  * @category File
+ *
+ * @hidden
  */
 export const membersWithOwnFile: Partial<DeclarationOption> = {
   help: 'Determines which members are exported to their own file.',
@@ -92,6 +90,8 @@ export const membersWithOwnFile: Partial<DeclarationOption> = {
  *  </FileTree>
  *
  * @category File
+ *
+ * @hidden
  */
 export const flattenOutputFiles: Partial<DeclarationOption> = {
   help: 'Flatten output files to a single directory.',
@@ -161,6 +161,8 @@ export const modulesFileName: Partial<DeclarationOption> = {
  * By default when a readme file is resolved, a separate readme page is created.
  *
  * This option appends the documentation main/index page to the readme page so only a single root page is generated.
+ *
+ * Please note that for packages readmes (when `outputFileStrategy` is set to `packages`) this is the default behaviour.
  *
  * This option has no effect when [`--readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
  *

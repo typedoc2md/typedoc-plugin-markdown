@@ -8,6 +8,10 @@ export {
   MarkdownPageEvent,
   MarkdownRendererEvent,
 } from '@plugin/events/index.js';
+export {
+  MemberRouter,
+  ModuleRouter,
+} from '@plugin/router/custom-routers/index.js';
 export { MarkdownTheme, MarkdownThemeContext } from '@plugin/theme/index.js';
 export {
   MarkdownApplication,

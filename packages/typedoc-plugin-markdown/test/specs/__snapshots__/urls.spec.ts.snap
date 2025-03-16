@@ -596,8 +596,8 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: mo
   "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace.md",
   "has-references.md",
   "has-same-exports.md",
+  "index-1.md",
   "index.md",
-  "module_index.md",
   "modules.md",
 ]
 `;
@@ -615,8 +615,8 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: mo
   "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace.md",
   "has-references.md",
   "has-same-exports.md",
+  "index-1.md",
   "index.md",
-  "module_index.md",
 ]
 `;
 
@@ -839,6 +839,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "functions/tupleTypeFunctionInlineExplicit.md",
   "functions/tupleTypeFunctionOptional.md",
   "globals.md",
+  "hierarchy.md",
   "interfaces/BasicInterface.md",
   "interfaces/CustomEventInterface.md",
   "interfaces/ExtendedInterface.md",
@@ -986,6 +987,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: modu
 [
   "README.md",
   "globals.md",
+  "hierarchy.md",
 ]
 `;
 

@@ -26,7 +26,6 @@ export function groups(
     ) {
       const isPackages =
         this.options.getValue('entryPointStrategy') === 'packages' &&
-        this.getPackagesCount() > 1 &&
         group.title === i18n.kind_plural_module() &&
         model.kind === ReflectionKind.Project;
       if (isPackages) {

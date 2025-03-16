@@ -3,6 +3,5 @@
  *
  * @module
  */
-export * from './markdown-router.js';
-export * from './routers/member-router.js';
-export * from './routers/module-router.js';
+export * from './core-routers.js';
+export * from './custom-routers/index.js';

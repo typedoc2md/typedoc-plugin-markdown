@@ -24,4 +24,8 @@ describe(`Customization`, () => {
   test(`should action renderer-event-end jobs`, () => {
     expectFileToEqual('customize', 'members', ['renderer-event-end.txt']);
   });
+
+  test(`should render custom urls`, () => {
+    expectFileToEqual('customize', ['members'], 'urls.json');
+  });
 });

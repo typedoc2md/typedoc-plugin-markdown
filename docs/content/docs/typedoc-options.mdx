@@ -1,12 +1,10 @@
 import { Callout, FileTree } from 'nextra/components';
 
-# TypeDoc Usage
+# TypeDoc Options
 
 This plugin is like any other TypeDoc plugin and is fully compatible with the TypeDoc ecosystem, supporting other plugins (not specifically targetting HTML output) and the majority of TypeDoc's options.
 
-## Supported TypeDoc Options
-
-### Pre-Render Options
+## Pre-Render Options
 
 The majority of [TypeDoc's options](https://typedoc.org/options/) are used internally by TypeDoc to convert a project and define the structure of the models.
 
@@ -19,51 +17,18 @@ These options are output/theme agnostic and can be set in the same way as you wo
 - [Validation](https://typedoc.org/options/validation/) ✅
 - [Other](https://typedoc.org/options/other/) ✅
 
-### Output Options
+## Output Options
 
 TypeDoc's [Output](https://typedoc.org/options/output/) options are used by the renderer and theme. The majority of these options are specific to HTML output and are not applicable to markdown output.
 
 Below is a list of which TypeDoc Output options are supported:
 
 - [`--out`](https://typedoc.org/documents/Options.Output.html#out) ✅
-- [`--navigation`](https://typedoc.org/documents/Options.Output.html#navigation) ✅ ([See Utilizing Navigation](/api-docs/Document.Utilizing-Navigation))
+- [`--router`](https://typedoc.org/documents/Options.Output.html#out) ✅ ([See Output File Structure](/docs/output-file-structure))
+- [`--navigation`](https://typedoc.org/documents/Options.Output.html#navigation) ✅ ([See Utilizing Navigation](/docs/utilizing-navigation))
 - [`--cleanOutputDir`](https://typedoc.org/documents/Options.Output.html#cleanoutputdir) ✅
 - [`--lang`](https://typedoc.org/documents/Options.Output.html#lang) ✅
 - [`--locales`](https://typedoc.org/documents/Options.Output.html#locales) ✅
 - [`--githubPages`](https://typedoc.org/documents/Options.Output.html#githubpages) ✅ (defaults to `false`)
 
 All other output options will have no effect on the markdown output.
-
-## Option Typings
-
-You can inform your IDE about the shape of the exported options the plugin provides.
-
-### JSON Files
-
-You can utilize the provided JSON schema at https://typedoc-plugin-markdown.org/schema.json. For simplicity of configuration, this schema consolidates all options from TypeDoc and the plugin.
-
-```json filename="typedoc.json"
-{
-  "$schema": "https://typedoc-plugin-markdown.org/schema.json",
-  "entryPoints": ["./src/index.ts", "./src/secondary-entry.ts"],
-  "out": "docs",
-  "plugin": ["typedoc-plugin-markdown", "some-other-plugin"],
-};
-```
-
-### JavaScript Files
-
-For JavaScript files, the `PluginOptions` interface can be imported to a `typedoc.config.js` file with a `@type` annotation.
-
-You can use intersection types to combine the TypeDoc options with the plugin options.
-
-```js filename="typedoc.config.cjs"
-// @ts-check
-
-/** @type {import('typedoc').TypeDocOptions & import('typedoc-plugin-markdown').PluginOptions} */
-module.exports = {
-  entryPoints: ['./src/index.ts', './src/secondary-entry.ts'],
-  out: 'doc',
-  plugin: ['typedoc-plugin-markdown', 'some-other-plugin'],
-};
-```

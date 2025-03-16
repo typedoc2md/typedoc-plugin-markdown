@@ -4610,7 +4610,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   {
     "title": "index",
     "kind": 2,
-    "path": "module_index.md",
+    "path": "index-1.md",
     "isDeprecated": false
   }
 ]"
@@ -4701,7 +4701,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   {
     "title": "index",
     "kind": 2,
-    "path": "module_index.md",
+    "path": "index-1.md",
     "isDeprecated": false
   }
 ]"
@@ -4709,6 +4709,10 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 
 exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[
+  {
+    "title": "Hierarchy",
+    "path": "hierarchy.md"
+  },
   {
     "title": "Enumerations",
     "children": [
@@ -5294,4 +5298,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
 ]"
 `;
 
-exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "modules") (Option Group "1") 1`] = `"[]"`;
+exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"[
+  {
+    "title": "Hierarchy",
+    "path": "hierarchy.md"
+  }
+]"
+`;

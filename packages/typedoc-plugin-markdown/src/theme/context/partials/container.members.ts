@@ -1,6 +1,6 @@
 import { horizontalRule } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { DeclarationReflection } from 'typedoc';
+import { DeclarationReflection, Reflection } from 'typedoc';
 
 export function members(
   this: MarkdownThemeContext,
@@ -9,10 +9,7 @@ export function members(
 ): string {
   const md: string[] = [];
   const displayHr = (reflection: DeclarationReflection) => {
-    if (
-      this.options.getValue('outputFileStrategy') === 'modules' ||
-      this.options.getValue('router') === 'module'
-    ) {
+    if (!this.router.hasOwnDocument(reflection.parent as Reflection)) {
       return this.helpers.isGroupKind(reflection);
     }
     return true;

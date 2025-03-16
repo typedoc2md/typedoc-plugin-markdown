@@ -84,6 +84,7 @@ function getBasePath(key: string, outputFileStrategy: 'modules' | 'members') {
     'test',
     'fixtures',
     'out',
+    'md',
     key,
     outputFileStrategy,
   );

@@ -5,7 +5,9 @@ exports[`Objects And Params should compile basic interface: (Output File Strateg
 
 Comments for BasicInterface
 
-## Extended by
+## Hierarchy
+
+### Extended by
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
 
@@ -202,7 +204,9 @@ exports[`Objects And Params should compile basic interface: (Output File Strateg
 
 Comments for BasicInterface
 
-## Extended by
+## Hierarchy
+
+### Extended by
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
 

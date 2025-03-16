@@ -1,7 +1,14 @@
 import {
-  KindStructureRouter,
-  MarkdownRouter,
+  CategoryRouter,
+  GroupRouter,
+  KindDirRouter,
+  KindRouter,
+  MemberFlatRouter,
+  MemberRouter,
+  ModuleFlatRouter,
   ModuleRouter,
+  StructureDirRouter,
+  StructureRouter,
 } from '@plugin/router/index.js';
 import { MarkdownTheme } from '@plugin/theme/index.js';
 import {
@@ -10,7 +17,7 @@ import {
 } from '@plugin/types/index.js';
 import * as fs from 'fs';
 import * as path from 'path';
-import { Application, Context, Converter, EventHooks } from 'typedoc';
+import { Application, Context, Converter, EventHooks, Router } from 'typedoc';
 
 /**
  *  Create dedicated hooks and async job collections for markdown rendering.
@@ -23,9 +30,20 @@ export function setupRenderer(app: Application) {
   });
 
   Object.defineProperty(app.renderer, 'routers', {
-    value: new Map<string, new (app: Application) => MarkdownRouter>([
-      ['member', KindStructureRouter],
+    value: new Map<string, new (app: Application) => Router>([
+      // custom routers
+      ['member', MemberRouter],
+      ['member-flat', MemberFlatRouter],
       ['module', ModuleRouter],
+      ['module-flat', ModuleFlatRouter],
+
+      // core routers (decorated)
+      ['kind', KindRouter],
+      ['kind-dir', KindDirRouter],
+      ['structure', StructureRouter],
+      ['structure-dir', StructureDirRouter],
+      ['group', GroupRouter],
+      ['category', CategoryRouter],
     ]),
   });
 

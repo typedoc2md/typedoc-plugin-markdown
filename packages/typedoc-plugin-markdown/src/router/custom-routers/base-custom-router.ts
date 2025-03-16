@@ -1,11 +1,10 @@
-import { isQuoted, toPascalCase } from '@plugin/libs/utils/index.js';
-import { MarkdownRenderer, NavigationItem } from '@plugin/types/index.js';
+import { getHierarchyRoots } from '@plugin/theme/lib/index.js';
+import { MarkdownRenderer } from '@plugin/types/index.js';
 import path from 'path';
 import {
   BaseRouter,
   DeclarationReflection,
   EntryPointStrategy,
-  i18n,
   PageDefinition,
   PageKind,
   ProjectReflection,
@@ -14,7 +13,7 @@ import {
   Slugger,
 } from 'typedoc';
 
-export abstract class MarkdownRouter extends BaseRouter {
+export abstract class BaseCustomRouter extends BaseRouter {
   override extension = this.application.options.getValue('fileExtension');
 
   outputFileStrategy = this.application.options.getValue('outputFileStrategy');
@@ -30,13 +29,6 @@ export abstract class MarkdownRouter extends BaseRouter {
     EntryPointStrategy.Packages;
   membersWithOwnFile = this.application.options.getValue('membersWithOwnFile');
   mergeReadme = this.application.options.getValue('mergeReadme');
-  useHTMLAnchors = this.application.options.getValue('useHTMLAnchors');
-  enumMembersFormat = this.application.options.getValue('enumMembersFormat');
-
-  entryUrl: string;
-  readmeURL: string;
-
-  navigation: NavigationItem[] = [];
 
   directories = new Map<ReflectionKind, string>([
     [ReflectionKind.Class, 'classes'],
@@ -47,17 +39,6 @@ export abstract class MarkdownRouter extends BaseRouter {
     [ReflectionKind.Function, 'functions'],
     [ReflectionKind.Variable, 'variables'],
     [ReflectionKind.Document, 'documents'],
-  ]);
-
-  labels = new Map<ReflectionKind, string>([
-    [ReflectionKind.Class, i18n.kind_plural_class()],
-    [ReflectionKind.Interface, i18n.kind_plural_interface()],
-    [ReflectionKind.Enum, i18n.kind_plural_enum()],
-    [ReflectionKind.Namespace, i18n.kind_plural_namespace()],
-    [ReflectionKind.TypeAlias, i18n.kind_plural_type_alias()],
-    [ReflectionKind.Function, i18n.kind_plural_function()],
-    [ReflectionKind.Variable, i18n.kind_plural_variable()],
-    [ReflectionKind.Document, i18n.kind_plural_document()],
   ]);
 
   kindsToString = new Map<ReflectionKind, string>([
@@ -71,8 +52,6 @@ export abstract class MarkdownRouter extends BaseRouter {
     [ReflectionKind.Function, 'Function'],
     [ReflectionKind.Variable, 'Variable'],
   ]);
-
-  protected abstract getIdealBaseNameVerbose(reflection: Reflection): string;
 
   override buildPages(project: ProjectReflection) {
     this.usedFileNames = new Set();
@@ -98,10 +77,8 @@ export abstract class MarkdownRouter extends BaseRouter {
           kind: PageKind.Index,
           model: project,
         });
-        this.readmeURL = pages[1].url;
         this.fullUrls.set(project, pages[0].url);
       }
-      this.entryUrl = pages[0].url;
     } else {
       if (project.readme?.length && !this.mergeReadme) {
         pages.push({
@@ -114,18 +91,23 @@ export abstract class MarkdownRouter extends BaseRouter {
           kind: PageKind.Reflection,
           model: project,
         });
-        this.readmeURL = pages[0].url;
-        this.entryUrl = pages[1].url;
       } else {
         pages.push({
           url: this.getFileName(this.entryFileName),
           kind: PageKind.Reflection,
           model: project,
         });
-        this.entryUrl = pages[0].url;
       }
 
       this.fullUrls.set(project, pages[pages.length - 1].url);
+    }
+
+    if (this.includeHierarchySummary && getHierarchyRoots(project)) {
+      pages.push({
+        url: this.getFileName('hierarchy'),
+        kind: PageKind.Hierarchy,
+        model: project,
+      });
     }
 
     this.parseChildPages(project, pages);
@@ -133,59 +115,10 @@ export abstract class MarkdownRouter extends BaseRouter {
     return pages;
   }
 
-  parseChildPages(project: ProjectReflection, pages: PageDefinition[]) {
+  private parseChildPages(project: ProjectReflection, pages: PageDefinition[]) {
     for (const child of project.childrenIncludingDocuments || []) {
       this.buildChildPages(child, pages);
     }
-  }
-
-  getIdealBaseName(reflection: Reflection): string {
-    if (this.application.options.getValue('flattenOutputFiles')) {
-      return this.getIdealBaseNameFlattened(reflection);
-    } else {
-      return this.getIdealBaseNameVerbose(reflection);
-    }
-  }
-
-  getIdealBaseNameFlattened(reflection: Reflection): string {
-    const fullName = reflection.getFullName();
-
-    const fullNameParts = fullName.replace(/\//g, '.').split('.');
-    if (reflection.kind !== ReflectionKind.Module) {
-      if (
-        reflection.kind === ReflectionKind.Document &&
-        reflection?.parent?.kind === ReflectionKind.Project
-      ) {
-        fullNameParts.splice(
-          0,
-          0,
-          toPascalCase(ReflectionKind.singularString(reflection.kind)),
-        );
-      } else {
-        fullNameParts.splice(
-          fullNameParts.length - 1,
-          0,
-          toPascalCase(ReflectionKind.singularString(reflection.kind)),
-        );
-      }
-    }
-    return `${fullNameParts.join('.')}`
-      .replace(/"/g, '')
-      .replace(/ /g, '-')
-      .replace(/^\./g, '');
-  }
-
-  getReflectionAlias(reflection: Reflection): string {
-    let name = reflection.name;
-
-    if (isQuoted(reflection.name)) {
-      name = name.replace(/\//g, '_');
-    }
-
-    return name
-      .replace(/"/g, '')
-      .replace(/^_+|_+$/g, '')
-      .replace(/[<>]/g, '-');
   }
 
   getModulesFileName(reflection: Reflection): string {
@@ -211,30 +144,5 @@ export abstract class MarkdownRouter extends BaseRouter {
       );
     }
     return undefined;
-  }
-  getPackageEntryFileName(reflection: Reflection): string | undefined {
-    const meta = (this.application.renderer as MarkdownRenderer)?.packagesMeta[
-      reflection.name
-    ];
-    return meta.options.isSet('entryFileName')
-      ? meta.options.getValue('entryFileName')
-      : this.entryFileName;
-  }
-
-  getPackageLink(reflection: Reflection) {
-    const meta = (this.application.renderer as MarkdownRenderer)?.packagesMeta[
-      reflection.name
-    ];
-    if (meta && (reflection as DeclarationReflection).readme) {
-      return `${this.getModulesFileName(reflection)}${this.extension}`;
-    }
-    return `${this.getPackageEntryFileName(reflection)}${this.extension}`;
-  }
-
-  getMarkdownFileName(baseName: string, allowDuplicate = false): string {
-    if (allowDuplicate) {
-      return `${baseName}${this.extension}`;
-    }
-    return this.getFileName(baseName);
   }
 }
