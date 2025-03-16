@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.0
+
+### Minor Changes
+
+- Exposed toc heading to Type Alias members.
+- typedoc-plugin-markdown 4.5 compatibility fixes.
+
 ## 1.2.4 (2025-01-02)
 
 ### Patch Changes
