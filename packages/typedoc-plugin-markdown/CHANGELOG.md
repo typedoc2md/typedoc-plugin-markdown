@@ -2,6 +2,10 @@
 
 ## 4.5.0 (2025-03-16)
 
+This release introduces support for [TypeDoc 0.28](https://github.com/TypeStrong/typedoc/blob/v0.28.0/CHANGELOG.md#v0280-2025-03-15) that contains several under-the-hood breaking API changes.
+
+From a consumer perspective there should be no direct breaking change from the plugin itself, but there are some architectural and output structure changes to consider.
+
 ### Architectural Changes
 
 - This plugin now utilizes TypeDoc's [router](https://typedoc.org/documents/Options.Output.html#router) feature. This implementation replaces the now deprecated `"outputFileStrategy"` option. `"outputFileStrategy"` is still supported for now, but will now point to the "kind-structure" and "module" router keys respectively. Further details are contained in the documentation website.
@@ -21,10 +25,6 @@
 ### Patch Changes
 
 - Mark object properties as optional in PluginOptions interface ([#777](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/777)).
-
-This release introduces support for [TypeDoc 0.28](https://github.com/TypeStrong/typedoc/blob/v0.28.0/CHANGELOG.md#v0280-2025-03-15) that contains several under-the-hood breaking API changes.
-
-From a consumer perspective there should be no direct breaking change from the plugin itself, but there are some architectural and output structure changes to consider.
 
 ## 4.4.2 (2025-02-09)
 
