@@ -78,12 +78,17 @@ export function expectUrlsToEqual(
   });
 }
 
+export function getOutDir() {
+  return path.join(process.cwd(), 'test', 'fixtures', 'out');
+}
+
 function getBasePath(key: string, outputFileStrategy: 'modules' | 'members') {
   const basePath = path.join(
     process.cwd(),
     'test',
     'fixtures',
     'out',
+    'md',
     key,
     outputFileStrategy,
   );

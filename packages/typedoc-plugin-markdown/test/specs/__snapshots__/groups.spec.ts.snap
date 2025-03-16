@@ -300,7 +300,7 @@ ClassA function.
 
 #### Constructors
 
-##### new ClassA()
+##### Constructor
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -310,7 +310,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 #### Constructors
 
-##### new ClassB()
+##### Constructor
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -497,7 +497,7 @@ ClassA function.
 
 <a id="constructor"></a>
 
-#### new ClassA()
+#### Constructor
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -511,7 +511,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="constructor-1"></a>
 
-#### new ClassB()
+#### Constructor
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -1257,7 +1257,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 | [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
 | [has-references](has-references.md) | A module that contains references |
 | [has-same-exports](has-same-exports.md) | - |
-| [index](module_index.md) | A module named index |
+| [index](index-1.md) | A module named index |
 "
 `;
 
@@ -1377,7 +1377,7 @@ A module that contains references
 <tr>
 <td>
 
-[index](module_index.md)
+[index](index-1.md)
 
 </td>
 <td>
@@ -1881,7 +1881,7 @@ A module that contains namespaces
 
 #### Constructors
 
-##### new \\_\\_Class\\_A\\_()
+##### Constructor
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -1891,7 +1891,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 #### Constructors
 
-##### new ClassB()
+##### Constructor
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -1988,7 +1988,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="constructor"></a>
 
-#### new \\_\\_Class\\_A\\_()
+#### Constructor
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -2002,7 +2002,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="constructor-1"></a>
 
-#### new ClassB()
+#### Constructor
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -2129,9 +2129,13 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 Renames and re-exports [defaultFunction](#defaultfunction)
 
+***
+
 ### InterfaceA
 
 Re-exports [InterfaceA](basic.md#interfacea)
+
+***
 
 ### RenamedInterfaceB
 
@@ -2164,11 +2168,15 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 Renames and re-exports [defaultFunction](#defaultfunction)
 
+***
+
 <a id="interfacea"></a>
 
 ## InterfaceA
 
 Re-exports [InterfaceA](basic.md#interfacea)
+
+***
 
 <a id="renamedinterfaceb"></a>
 

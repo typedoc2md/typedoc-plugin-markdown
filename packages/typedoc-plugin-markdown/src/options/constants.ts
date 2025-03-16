@@ -32,3 +32,14 @@ export const DEFAULT_PAGE_TITLES = {
   member: '{kind}: {name}',
   module: '{name}',
 };
+
+export const AVAILABLE_ROUTERS = [
+  'member',
+  'module',
+  'kind',
+  'kind-dir',
+  'structure',
+  'structure-dir',
+  'group',
+  'category',
+];

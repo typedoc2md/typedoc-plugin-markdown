@@ -10,7 +10,7 @@ describe(`Reflection Indexes`, () => {
       'modules',
       ['globals.md', 'README.md'],
       2,
-      [1, 12],
+      [1, 10],
     );
   });
 });

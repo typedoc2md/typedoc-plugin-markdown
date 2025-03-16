@@ -27,9 +27,17 @@ Module commments
 
 Some other comments
 
+## Classes
+
+- [SomeClass](wiki/custom-class-directory/SomeClass.md)
+
+## Interfaces
+
+- [SomeInterface](wiki/interfaces/SomeInterface.md)
+
 ## Functions
 
-- [someFunction](functions/someFunction.md)
+- [someFunction](wiki/functions/someFunction.md)
 
 > **Generated using \`index.page.end\` hook**
 
@@ -46,7 +54,7 @@ exports[`Customization should insert content from hooks and apply custom theme m
   <em>Welcome to typedoc-stubs with a customised header partial!!</em>
 </div>
 
-[typedoc-stubs](../README.md) / someFunction
+[typedoc-stubs](wiki/../README.md) / someFunction
 
 # Function: someFunction()
 

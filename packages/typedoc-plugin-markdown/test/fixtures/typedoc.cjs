@@ -2,6 +2,9 @@ module.exports = {
   cleanOutputDir: true,
   sourceLinkTemplate: 'http://source-url',
   tsconfig: process.cwd() + '/test/fixtures/tsconfig.json',
+  navigationLinks: {
+    'Fixtures Home': process.cwd() + '/test/fixtures/out/',
+  },
   externalSymbolLinkMappings: {
     typedoc: {
       Application: 'https://typedoc.org/api/classes/Application.html',

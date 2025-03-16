@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.5.2
+
+### Patch Changes
+
+- Ensure all file paths use forward slashes in windows ([#782](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/782)).
+
+## 4.5.1 (2025-03-18)
+
+### Patch Changes
+
+- Correctly handle package index paths ([#782](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/782)).
+- Make all options optional in PluginOptions interface ([#781](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/781)).
+
 ## 4.5.0 (2025-03-16)
 
 This release introduces support for [TypeDoc 0.28](https://github.com/TypeStrong/typedoc/blob/v0.28.0/CHANGELOG.md#v0280-2025-03-15) that contains several under-the-hood breaking API changes.

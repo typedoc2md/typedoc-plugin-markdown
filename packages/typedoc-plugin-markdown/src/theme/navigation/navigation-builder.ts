@@ -1,6 +1,7 @@
 import { isQuoted } from '@plugin/libs/utils/index.js';
 import { OutputFileStrategy } from '@plugin/options/maps.js';
 import { MarkdownTheme } from '@plugin/theme/index.js';
+import { getHierarchyRoots } from '@plugin/theme/lib/index.js';
 import { MarkdownRenderer, NavigationItem } from '@plugin/types/index.js';
 import * as path from 'path';
 import {
@@ -27,6 +28,8 @@ export class NavigationBuilder {
   private navigation: NavigationItem[] = [];
   private isPackages: boolean;
   private isModules: boolean;
+  private includeHierarchySummary: boolean;
+  private fileExtension: string;
 
   constructor(
     public router: Router,
@@ -46,6 +49,10 @@ export class NavigationBuilder {
     this.isModules =
       this.options.getValue('outputFileStrategy') === 'modules' ||
       this.options.getValue('router') === 'module';
+    this.includeHierarchySummary = this.options.getValue(
+      'includeHierarchySummary',
+    );
+    this.fileExtension = this.options.getValue('fileExtension');
   }
 
   getNavigation() {
@@ -144,6 +151,16 @@ export class NavigationBuilder {
     project: ProjectReflection | DeclarationReflection,
   ) {
     const entryModule = this.options.getValue('entryModule');
+
+    if (
+      this.includeHierarchySummary &&
+      getHierarchyRoots(project as ProjectReflection)
+    ) {
+      this.navigation.push({
+        title: i18n.theme_hierarchy(),
+        path: `hierarchy${this.fileExtension}`,
+      });
+    }
 
     if (
       !this.navigationOptions.excludeCategories &&

@@ -2,47 +2,7 @@ import { Callout, FileTree } from 'nextra/components';
 
 # File Options
 
-Options that are used to configure how files are output.
-
-## ~outputFileStrategy~
-
-<Callout type="warning">Deprecated in favour of `--router`.</Callout>
-
-> Accepts either `"members"` or `"modules"`. Defaults to `"members"`.
-
-Please also see the [Output File Structure](/docs/output-file-structure) guide for updated implementation details.
-
-```json filename="typedoc.json"
-{
-  "outputFileStrategy": "members"
-}
-```
-
-## flattenOutputFiles
-
-<Callout emoji="💡">Flatten output files to a single directory.</Callout>
-
-> Accepts a boolean value. Defaults to `false`.
-
-By default output files are generated in a directory structure that mirrors the project's module hierarchy including folders for member kinds eg `classes`, `enums`, `functions` etc.
-
-This option will flatten the output files to a single directory as follows:
-
-<FileTree>
-  <FileTree.File name="README.md" />
-  <FileTree.File name="module-a.Class.ClassA.md" />
-  <FileTree.File name="module-a.Class.ClassB.md" />
-  <FileTree.File name="module-a.Function.FunctionA.md" />
-  <FileTree.File name="module-a.Function.FunctionB.md" />
-  <FileTree.File name="module-b.Class.ClassA.md" />
-  <FileTree.File name="module-b.Class.ClassB.md" />
-</FileTree>
-
-```json filename="typedoc.json"
-{
-  "flattenOutputFiles": false
-}
-```
+Options that are used by the plugin's [routers](/docs/output-file-structure) to configure how files are output.
 
 ## fileExtension
 
@@ -73,9 +33,8 @@ This is essentially the equivalent to `index.html` for web pages.
 
 The content of root documentation file will be resolved in the following order:
 
-1. The value of the `--entryModule` option (if defined).
-2. The resolved Readme file (skipped if the [`--readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
-3. The documentation index page.
+- The resolved Readme file (skipped if the "readme" option is set to `none`).
+- The documentation index page.
 
 ```json filename="typedoc.json"
 {
@@ -89,9 +48,11 @@ The content of root documentation file will be resolved in the following order:
   The file name of the separate modules / index page.
 </Callout>
 
-> Accepts a string value. Defaults to `"modules | packages | globals"`.
+> Accepts a string value. Defaults to `"undefined"`.
 
-Please note this option is not applicable when [`--readme`](https://typedoc.org/options/input/#readme) is set to "none" or `--mergeReadme` is set to "true".
+By default the page is named either "modules", "packages" or "globals" depending on the context.
+
+_Note: this option is NOT applicable when `"readme"` is set to `"none"` or `"mergeReadme"` is set to `true`._
 
 ```json filename="typedoc.json"
 {
@@ -108,13 +69,62 @@ Please note this option is not applicable when [`--readme`](https://typedoc.org/
 > Accepts a boolean value. Defaults to `false`.
 
 By default when a readme file is resolved, a separate readme page is created.
-
 This option appends the documentation main/index page to the readme page so only a single root page is generated.
 
-This option has no effect when [`--readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
+_Note:_
+
+- _This option has no affect when `"readme"` is set to `"none"`._
+- _For packages readmes (when `"outputFileStrategy"` is set to `"packages"`) this is the default behaviour._
 
 ```json filename="typedoc.json"
 {
   "mergeReadme": false
+}
+```
+
+## flattenOutputFiles
+
+<Callout emoji="💡">Flatten output files to a single directory.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default output files are generated in a directory structure.
+
+This option will flatten the output files to a single directory as follows:
+
+<FileTree>
+  <FileTree.File name="README.md" />
+  <FileTree.File name="module-a.Class.ClassA.md" />
+  <FileTree.File name="module-a.Class.ClassB.md" />
+  <FileTree.File name="module-a.Function.FunctionA.md" />
+  <FileTree.File name="module-a.Function.FunctionB.md" />
+  <FileTree.File name="module-b.Class.ClassA.md" />
+  <FileTree.File name="module-b.Class.ClassB.md" />
+</FileTree>
+
+_Note: This option only affects custom routers._
+
+```json filename="typedoc.json"
+{
+  "flattenOutputFiles": false
+}
+```
+
+## excludeScopesInPaths
+
+<Callout emoji="💡">Exclude writing @ scope directories in paths.</Callout>
+
+> Accepts a boolean value. Defaults to `false`.
+
+By default, directories are split by scopes when generating file paths.
+
+This option removes the `@scope` reference from the path when generating files and directories.
+It does not affect the name of the package or module in the output.
+
+_Note: This option only affects custom routers._
+
+```json filename="typedoc.json"
+{
+  "excludeScopesInPaths": false
 }
 ```

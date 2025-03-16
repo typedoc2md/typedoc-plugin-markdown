@@ -1,8 +1,3 @@
-import {
-  KindStructureRouter,
-  MarkdownRouter,
-  ModuleRouter,
-} from '@plugin/router/index.js';
 import { MarkdownTheme } from '@plugin/theme/index.js';
 import {
   MarkdownRenderer,
@@ -16,17 +11,11 @@ import { Application, Context, Converter, EventHooks } from 'typedoc';
  *  Create dedicated hooks and async job collections for markdown rendering.
  */
 export function setupRenderer(app: Application) {
+  // Define the markdown theme
   app.renderer.defineTheme('markdown', MarkdownTheme);
 
   Object.defineProperty(app.renderer, 'markdownHooks', {
     value: new EventHooks<MarkdownRendererHooks, string>(),
-  });
-
-  Object.defineProperty(app.renderer, 'routers', {
-    value: new Map<string, new (app: Application) => MarkdownRouter>([
-      ['member', KindStructureRouter],
-      ['module', ModuleRouter],
-    ]),
   });
 
   app.converter.on(Converter.EVENT_RESOLVE_END, (context) => {

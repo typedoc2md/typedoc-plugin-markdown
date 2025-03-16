@@ -4,11 +4,11 @@ import { Callout, FileTree } from 'nextra/components';
 
 TypeDoc generates documentation models according to exports derived from the given [entryPoints](https://typedoc.org/documents/Options.Input.html#entrypoints) and [entryPointsStrategy](https://typedoc.org/documents/Options.Input.html#entrypointstrategy) TypeDoc configurations.
 
-TypeDoc 0.28.0 introduced an additional [router](https://typedoc.org/documents/Options.Output.html#router) option which can be used to modify the output folder structure.
+TypeDoc 0.28.0 introduced an additional `"router"` option which can be used to modify the output folder structure.
 
-This plugin now utilises this mechanism for output file generation.
+The plugin now utilises this mechanism for output file generation.
 
-## Built-In Plugin Routers
+## Plugin Routers
 
 The plugin ships with the following custom built-in routers:
 
@@ -58,7 +58,7 @@ This is the default router of the plugin.
 
 _Note: This is equivalent to the deprecated `outputFileStrategy="modules"`._
 
-Generates a single file for every module and namespace where all module member kinds are hoisted to a single file.
+Generates a single file for every module and namespace where all module members are hoisted to a single file.
 
 This creates a flat navigation structure and reduces the amount of files generated.
 
@@ -68,8 +68,17 @@ This creates a flat navigation structure and reduces the amount of files generat
   <FileTree.File name="module-b.md" />
 </FileTree>
 
-## TypeDoc Core Routers
+## Core Routers
 
-Support for the TypeDoc core routers is planned for a future release.
+```json filename="typedoc.json"
+{
+  "router": "kind"
+}
+```
 
-This will provide the ability to generate output files in a similar structure to the default HTML theme but rendered in Markdown.
+TypeDoc ships with several built-in routers used by the HTML theme.
+These routers are decorated to fix the `.html` extension and additionally support the file options of this plugin.
+
+This provides the ability to generate output files in the same structure as the default HTML theme but rendered using the plugin's Markdown theme.
+
+Please see TypeDoc's [router](https://typedoc.org/documents/Options.Output.html#router) documentation for details of available core routers.

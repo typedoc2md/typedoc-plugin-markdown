@@ -35,13 +35,15 @@ type LongIndexSignature = {};
 exports[`Utils should format type with constructor overrides: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Class: Cache
 
-## Extends
+## Hierarchy
+
+### Extends
 
 - \`LRUCache\`&lt;\`CacheFetchContext\`, \`CacheFetchContext\`, \`CacheFetchContext\`&gt;
 
 ## Constructors
 
-### new Cache()
+### Constructor
 
 > **new Cache**(): \`Cache\`
 
@@ -58,13 +60,15 @@ exports[`Utils should format type with constructor overrides: (Output File Strat
 exports[`Utils should format type with constructor overrides: (Output File Strategy "members") (Option Group "2") 1`] = `
 "# Class: Cache
 
-## Extends
+## Hierarchy
+
+### Extends
 
 - \`LRUCache\`&lt;\`CacheFetchContext\`, \`CacheFetchContext\`, \`CacheFetchContext\`&gt;
 
 ## Constructors
 
-### new Cache()
+### Constructor
 
 \`\`\`ts
 new Cache(): Cache
@@ -97,7 +101,7 @@ exports[`Utils should get class with brackets: (Output File Strategy "members") 
 
 ## Constructors
 
-### new ClassWithChars()
+### Constructor
 
 > **new ClassWithChars**&lt;\`T\`&gt;(): \`ClassWithChars\`&lt;\`T\`&gt;
 
@@ -124,7 +128,7 @@ exports[`Utils should get class with brackets: (Output File Strategy "members") 
 
 ## Constructors
 
-### new ClassWithChars()
+### Constructor
 
 \`\`\`ts
 new ClassWithChars<T>(): ClassWithChars<T>

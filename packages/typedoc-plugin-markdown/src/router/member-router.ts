@@ -12,10 +12,10 @@ import {
   ReflectionKind,
   Slugger,
 } from 'typedoc';
-import { MarkdownRouter } from '../markdown-router.js';
+import { MarkdownRouter } from './markdown-router.js';
 
-export class KindStructureRouter extends MarkdownRouter {
-  protected buildChildPages(
+export class MemberRouter extends MarkdownRouter {
+  override buildChildPages(
     reflection: Reflection,
     outPages: PageDefinition[],
   ): void {
@@ -24,7 +24,9 @@ export class KindStructureRouter extends MarkdownRouter {
     if (kind) {
       const shouldWritePage = this.shouldWritePage(reflection);
       const idealName = this.getIdealBaseName(reflection);
-      const actualName = this.getMarkdownFileName(idealName, !shouldWritePage);
+      const actualName = shouldWritePage
+        ? this.getFileName(idealName)
+        : `${idealName}${this.extension}`;
 
       this.fullUrls.set(reflection, actualName);
 
@@ -82,31 +84,11 @@ export class KindStructureRouter extends MarkdownRouter {
     }
   }
 
-  shouldWritePage(reflection: Reflection): boolean {
-    if (this.isPackages) {
-      const meta = (this.application.renderer as MarkdownRenderer)
-        ?.packagesMeta[reflection.name];
-
-      const hasEntryModule =
-        meta?.options?.isSet('entryModule') &&
-        Boolean(
-          (reflection as DeclarationReflection).children?.find(
-            (child) => child.name === meta?.options?.getValue('entryModule'),
-          ),
-        );
-
-      if (meta) {
-        return !hasEntryModule;
-      }
-    }
-    if (reflection.name === this.entryModule) {
-      return false;
+  override getIdealBaseName(reflection: Reflection): string {
+    if (this.application.options.getValue('flattenOutputFiles')) {
+      return this.getIdealBaseNameFlattened(reflection);
     }
 
-    return true;
-  }
-
-  override getIdealBaseNameVerbose(reflection: Reflection): string {
     let dir: string | null = null;
     let fileName = '';
     switch (reflection.kind) {
@@ -138,7 +120,31 @@ export class KindStructureRouter extends MarkdownRouter {
     return fullName;
   }
 
-  getModuleDirectory(reflection: Reflection): string | null {
+  private shouldWritePage(reflection: Reflection): boolean {
+    if (this.isPackages) {
+      const meta = (this.application.renderer as MarkdownRenderer)
+        ?.packagesMeta[reflection.name];
+
+      const hasEntryModule =
+        meta?.options?.isSet('entryModule') &&
+        Boolean(
+          (reflection as DeclarationReflection).children?.find(
+            (child) => child.name === meta?.options?.getValue('entryModule'),
+          ),
+        );
+
+      if (meta) {
+        return !hasEntryModule;
+      }
+    }
+    if (reflection.name === this.entryModule) {
+      return false;
+    }
+
+    return true;
+  }
+
+  private getModuleDirectory(reflection: Reflection): string | null {
     if (this.entryModule && reflection.name === this.entryModule) {
       return null;
     }
@@ -156,7 +162,7 @@ export class KindStructureRouter extends MarkdownRouter {
     return this.getReflectionAlias(reflection);
   }
 
-  getModuleFileName(reflection: Reflection): string {
+  private getModuleFileName(reflection: Reflection): string {
     if (this.isPackages && !this.mergeReadme) {
       const meta = (this.application.renderer as MarkdownRenderer)
         ?.packagesMeta[reflection.name];
@@ -185,14 +191,15 @@ export class KindStructureRouter extends MarkdownRouter {
     }
     return this.entryFileName;
   }
-  getNamespaceDirectory(reflection: Reflection): string {
+
+  private getNamespaceDirectory(reflection: Reflection): string {
     if (reflection.parent) {
       return `${this.getIdealBaseName(reflection.parent).replace(/\/[^/]+$/, '')}/${this.directories.get(reflection.kind)!}/${this.getReflectionAlias(reflection)}`;
     }
     return this.getReflectionAlias(reflection);
   }
 
-  getDocumentDirectory(reflection: Reflection): string {
+  private getDocumentDirectory(reflection: Reflection): string {
     if (
       reflection.parent &&
       reflection.parent.kind !== ReflectionKind.Project
@@ -202,7 +209,7 @@ export class KindStructureRouter extends MarkdownRouter {
     return `${this.directories.get(reflection.kind)!}`;
   }
 
-  getReflectionDirectory(reflection: Reflection): string {
+  private getReflectionDirectory(reflection: Reflection): string {
     if (reflection.parent) {
       if (reflection.parent?.kind === ReflectionKind.Namespace) {
         return `${this.getIdealBaseName(reflection.parent).replace(/\/[^/]+$/, '')}/${this.directories.get(reflection.kind)!}`;
@@ -231,7 +238,21 @@ export class KindStructureRouter extends MarkdownRouter {
     return '';
   }
 
-  getReflectionFileName(reflection: Reflection) {
+  private getReflectionFileName(reflection: Reflection) {
     return this.getReflectionAlias(reflection);
+  }
+
+  private getPackageEntryModule(
+    reflection: Reflection,
+  ): Reflection | undefined {
+    const meta = (this.application.renderer as MarkdownRenderer)?.packagesMeta[
+      reflection.name
+    ];
+    if (meta?.options?.isSet('entryModule')) {
+      return (reflection as DeclarationReflection).children?.find(
+        (child) => child.name === meta?.options?.getValue('entryModule'),
+      );
+    }
+    return undefined;
   }
 }

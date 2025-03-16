@@ -291,6 +291,10 @@ exports[`Documents Project should compile a project document: (Output File Strat
 ## Project Document 1
 
 Document content
+
+### Anchor
+
+Link to anchor
 "
 `;
 
@@ -300,6 +304,10 @@ exports[`Documents Project should compile a project document: (Output File Strat
 ## Project Document 1
 
 Document content
+
+### Anchor
+
+Link to anchor
 "
 `;
 

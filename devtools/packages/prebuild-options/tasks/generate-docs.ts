@@ -26,10 +26,10 @@ asIndexPage: true
 
   outputPage.push(`import { Callout } from 'nextra/components';`);
 
-  outputPage.push('# Options');
+  outputPage.push('# Plugin Options');
   if (docsConfig.docsPath === '/docs') {
     outputPage.push(
-      `<Callout type="info">These options should be used in conjunction with the core TypeDoc options (see [TypeDoc Usage](/docs/typedoc-usage)).</Callout>`,
+      `This section documents options that are additionally exposed by this plugin.`,
     );
   } else {
     if (docsConfig.presets) {
