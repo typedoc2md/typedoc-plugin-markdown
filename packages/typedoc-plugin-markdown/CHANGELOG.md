@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.5.0
+
+### Minor Changes
+
+- Implemented custom routers for plugin to support TypeDoc 0.28 router implementation.
+- Added "typeAliasPropertiesFormat" option to support TypeDoc 0.28 updated behaviour for Object literal type alias types.
+
+### Patch Changes
+
+- Mark object properties as optional in PluginOptions interface ([#777](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/777)).
+
 ## 4.5.0 ()
 
 This release introduces support for [TypeDoc 0.28](https://github.com/TypeStrong/typedoc/blob/v0.28.0/CHANGELOG.md#v0280-2025-03-15) that contains several under-the-hood breaking API changes.

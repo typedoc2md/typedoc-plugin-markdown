@@ -36,7 +36,7 @@
     "unist-util-visit": "^5.0.0"
   },
   "peerDependencies": {
-    "typedoc-plugin-markdown": ">=4.4.1"
+    "typedoc-plugin-markdown": ">=4.5.0"
   },
   "keywords": [
     "typedoc",
