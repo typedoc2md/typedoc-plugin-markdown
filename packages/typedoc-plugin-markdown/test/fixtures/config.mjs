@@ -27,7 +27,9 @@ const config = {
       blockTagsPreserveOrder: ['@deprecated', '@see'],
     },
     options: [
-      {},
+      {
+        includeHierarchySummary: true,
+      },
       {
         readme: 'none',
         parametersFormat: 'table',
@@ -154,6 +156,7 @@ const config = {
       readme: 'none',
       excludePrivate: false,
       useHTMLAnchors: true,
+      anchorPrefix: 'api-',
     },
     options: [
       {
@@ -318,9 +321,12 @@ const config = {
       {
         plugin: [
           path.join(__dirname, 'custom-plugins', 'custom-theme.mjs'),
+          path.join(__dirname, 'custom-plugins', 'custom-router.mjs'),
           path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+          path.join(__dirname, 'custom-plugins', 'urls-plugin.mjs'),
         ],
         theme: 'custom-theme',
+        router: 'custom-router',
       },
     ],
   },
@@ -399,6 +405,14 @@ const config = {
           includeFolders: true,
         },
         categorizeByGroup: false,
+      },
+    ],
+  },
+  outputs: {
+    only: false,
+    options: [
+      {
+        options: './test/fixtures/typedoc.outputs.cjs',
       },
     ],
   },

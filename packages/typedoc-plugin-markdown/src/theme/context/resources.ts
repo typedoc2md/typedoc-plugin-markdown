@@ -42,12 +42,10 @@ export const resourceTemplates = (context: MarkdownThemeContext) => {
   return {
     document: (page: MarkdownPageEvent<DocumentReflection>) =>
       templates.document.apply(context, [page]) as string,
-    /**
-     * Template that specifically maps to the resolved readme file. This template is not used when 'readme' is set to 'none'.
-     */
-
-    readme: (page: MarkdownPageEvent<ProjectReflection>) =>
-      templates.readme.apply(context, [page]) as string,
+    hierarchy: (page: MarkdownPageEvent<ProjectReflection>) =>
+      templates.hierarchy.apply(context, [page]) as string,
+    index: (page: MarkdownPageEvent<ProjectReflection>) =>
+      templates.index.apply(context, [page]) as string,
     reflection: (page: MarkdownPageEvent<DeclarationReflection>) =>
       templates.reflection.apply(context, [page]) as string,
   };

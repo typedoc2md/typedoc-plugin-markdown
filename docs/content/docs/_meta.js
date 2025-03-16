@@ -5,15 +5,16 @@ export default {
     title: 'Getting Started',
   },
   'quick-start': '',
+  'typedoc-options': '',
   options: '',
   '-- Guides': {
     type: 'separator',
     title: 'Guides',
   },
-  'typedoc-usage': '',
   'output-file-structure': '',
   'customizing-output': '',
   'utilizing-navigation': '',
+  'option-typings': '',
   '-- Support': {
     type: 'separator',
     title: 'Support',

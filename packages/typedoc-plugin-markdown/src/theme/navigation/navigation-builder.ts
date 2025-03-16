@@ -1,8 +1,8 @@
 import { isQuoted } from '@plugin/libs/utils/index.js';
 import { OutputFileStrategy } from '@plugin/options/maps.js';
 import { MarkdownTheme } from '@plugin/theme/index.js';
+import { getHierarchyRoots } from '@plugin/theme/lib/index.js';
 import { MarkdownRenderer, NavigationItem } from '@plugin/types/index.js';
-import * as path from 'path';
 import {
   DeclarationReflection,
   DocumentReflection,
@@ -26,7 +26,8 @@ export class NavigationBuilder {
   };
   private navigation: NavigationItem[] = [];
   private isPackages: boolean;
-  private isModules: boolean;
+  private includeHierarchySummary: boolean;
+  private fileExtension: string;
 
   constructor(
     public router: Router,
@@ -43,9 +44,10 @@ export class NavigationBuilder {
     this.isPackages =
       this.options.getValue('entryPointStrategy') ===
       EntryPointStrategy.Packages;
-    this.isModules =
-      this.options.getValue('outputFileStrategy') === 'modules' ||
-      this.options.getValue('router') === 'module';
+    this.includeHierarchySummary =
+      this.options.isSet('includeHierarchySummary') &&
+      this.options.getValue('includeHierarchySummary');
+    this.fileExtension = this.options.getValue('fileExtension');
   }
 
   getNavigation() {
@@ -93,37 +95,16 @@ export class NavigationBuilder {
   }
 
   private buildNavigationFromPackage(projectChild: DeclarationReflection) {
-    const fileExtension = this.options.getValue('fileExtension');
-    const entryFileName = `${path.parse(this.options.getValue('entryFileName')).name}${fileExtension}`;
-
-    const preservePackageReadme =
-      Boolean(projectChild.readme) && !this.options.getValue('mergeReadme');
-
     const packageOptions = this.packagesMeta[projectChild.name]?.options;
 
     const entryModule = packageOptions?.isSet('entryModule')
       ? packageOptions.getValue('entryModule')
       : this.options.getValue('entryModule');
 
-    const projectChildUrl = preservePackageReadme
-      ? `${path.dirname(this.router.getFullUrl(projectChild))}/${entryFileName}`
-      : this.router.getFullUrl(projectChild);
-
-    const isModulesGroup =
-      projectChild?.groups &&
-      projectChild?.groups[0].children.every(
-        (child) => child.kind === ReflectionKind.Module,
-      );
+    const projectChildUrl = this.router.getFullUrl(projectChild);
 
     const children: NavigationItem[] = [];
 
-    if (preservePackageReadme && !isModulesGroup && this.isModules) {
-      children.push({
-        title: i18n.theme_globals(),
-        path: this.router.getFullUrl(projectChild),
-        kind: projectChild.kind,
-      });
-    }
     const childGroups = this.getReflectionGroups(projectChild);
 
     if (childGroups) {
@@ -144,6 +125,16 @@ export class NavigationBuilder {
     project: ProjectReflection | DeclarationReflection,
   ) {
     const entryModule = this.options.getValue('entryModule');
+
+    if (
+      this.includeHierarchySummary &&
+      getHierarchyRoots(project as ProjectReflection)?.length
+    ) {
+      this.navigation.push({
+        title: i18n.theme_hierarchy(),
+        path: `hierarchy${this.fileExtension}`,
+      });
+    }
 
     if (
       !this.navigationOptions.excludeCategories &&

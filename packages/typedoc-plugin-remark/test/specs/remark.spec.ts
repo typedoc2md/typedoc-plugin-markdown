@@ -2,12 +2,12 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 describe(`Remark`, () => {
-  test(`should parse members index`, () => {
+  /*test(`should parse members index`, () => {
     const contents = fs
       .readFileSync(path.join(__dirname, '../out/members/README.md'))
       .toString();
     expect(contents).toMatchSnapshot();
-  });
+  });*/
 
   test(`should parse members module page`, async () => {
     const contents = fs

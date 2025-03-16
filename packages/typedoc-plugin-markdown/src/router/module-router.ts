@@ -1,19 +1,17 @@
 import {
   removeFirstScopedDirectory,
-  replaceFilename,
   toPascalCase,
 } from '@plugin/libs/utils/index.js';
-import { MarkdownRenderer } from '@plugin/types/markdown-renderer.js';
+import { MarkdownRenderer } from '@plugin/types/index.js';
 import * as path from 'path';
 import {
   DeclarationReflection,
   PageDefinition,
-  PageKind,
   Reflection,
   ReflectionKind,
   Slugger,
 } from 'typedoc';
-import { MarkdownRouter } from '../markdown-router.js';
+import { MarkdownRouter } from './markdown-router.js';
 
 export class ModuleRouter extends MarkdownRouter {
   override buildChildPages(
@@ -25,28 +23,13 @@ export class ModuleRouter extends MarkdownRouter {
       const shouldWritePage = this.shouldWritePage(reflection);
 
       const idealName = this.getIdealBaseName(reflection);
-      const actualName = this.getMarkdownFileName(idealName, !shouldWritePage);
+
+      const actualName = shouldWritePage
+        ? this.getFileName(idealName)
+        : `${idealName}${this.extension}`;
 
       this.fullUrls.set(reflection, actualName);
 
-      if (this.isPackages) {
-        const meta = (this.application.renderer as MarkdownRenderer)
-          ?.packagesMeta[reflection.name];
-        if (
-          meta &&
-          (reflection as DeclarationReflection).readme &&
-          !this.mergeReadme
-        ) {
-          const packageEntryFileName = meta.options.isSet('entryFileName')
-            ? meta.options.getValue('entryFileName')
-            : this.entryFileName;
-          outPages.push({
-            kind: PageKind.Index,
-            model: reflection,
-            url: replaceFilename(actualName, packageEntryFileName),
-          });
-        }
-      }
       if (
         [
           ReflectionKind.Module,
@@ -74,31 +57,11 @@ export class ModuleRouter extends MarkdownRouter {
     }
   }
 
-  shouldWritePage(reflection: Reflection): boolean {
-    if (this.isPackages) {
-      const meta = (this.application.renderer as MarkdownRenderer)
-        ?.packagesMeta[reflection.name];
-
-      const hasEntryModule =
-        meta?.options?.isSet('entryModule') &&
-        Boolean(
-          (reflection as DeclarationReflection).children?.find(
-            (child) => child.name === meta?.options?.getValue('entryModule'),
-          ),
-        );
-
-      if (meta) {
-        return !hasEntryModule;
-      }
-    }
-    if (reflection.name === this.entryModule) {
-      return false;
+  override getIdealBaseName(reflection: Reflection): string {
+    if (this.application.options.getValue('flattenOutputFiles')) {
+      return this.getIdealBaseNameFlattened(reflection);
     }
 
-    return true;
-  }
-
-  override getIdealBaseNameVerbose(reflection: Reflection): string {
     let dir: string | null = null;
     let fileName = '';
 
@@ -136,7 +99,31 @@ export class ModuleRouter extends MarkdownRouter {
     return fullName;
   }
 
-  moduleHasFolder(reflection: Reflection) {
+  private shouldWritePage(reflection: Reflection): boolean {
+    if (this.isPackages) {
+      const meta = (this.application.renderer as MarkdownRenderer)
+        ?.packagesMeta[reflection.name];
+
+      const hasEntryModule =
+        meta?.options?.isSet('entryModule') &&
+        Boolean(
+          (reflection as DeclarationReflection).children?.find(
+            (child) => child.name === meta?.options?.getValue('entryModule'),
+          ),
+        );
+
+      if (meta) {
+        return !hasEntryModule;
+      }
+    }
+    if (reflection.name === this.entryModule) {
+      return false;
+    }
+
+    return true;
+  }
+
+  private moduleHasFolder(reflection: Reflection) {
     return (
       reflection as DeclarationReflection
     )?.childrenIncludingDocuments?.some((child) => {
@@ -150,7 +137,7 @@ export class ModuleRouter extends MarkdownRouter {
     });
   }
 
-  getModuleDirectory(reflection: Reflection): string | null {
+  private getModuleDirectory(reflection: Reflection): string | null {
     if (this.isPackages) {
       if (this.getPackageEntryModule(reflection)) {
         return null;
@@ -162,27 +149,13 @@ export class ModuleRouter extends MarkdownRouter {
     return hasFolder ? this.getReflectionAlias(reflection) : null;
   }
 
-  getModuleFileName(reflection: Reflection): string {
+  private getModuleFileName(reflection: Reflection): string {
     const hasFolder = this.moduleHasFolder(reflection);
 
     if (this.isPackages) {
       const packageEntryModule = this.getPackageEntryModule(reflection);
       if (packageEntryModule) {
         return this.getModuleFileName(packageEntryModule);
-      }
-    }
-
-    const meta = (this.application.renderer as MarkdownRenderer)
-      ?.packagesMeta?.[reflection.name];
-    if (this.isPackages) {
-      if (
-        meta &&
-        (reflection as DeclarationReflection).readme &&
-        !this.mergeReadme
-      ) {
-        return hasFolder
-          ? this.getModulesFileName(reflection)
-          : `${this.getReflectionAlias(reflection)}/${this.getModulesFileName(reflection)}`;
       }
     }
 
@@ -208,14 +181,10 @@ export class ModuleRouter extends MarkdownRouter {
       return this.entryFileName;
     }
 
-    if (reflection.name === this.entryFileName) {
-      return `module_${this.entryFileName}`;
-    }
-
     return this.getReflectionAlias(reflection);
   }
 
-  getNamespaceDirectory(reflection: Reflection): string {
+  private getNamespaceDirectory(reflection: Reflection): string {
     if (reflection.parent) {
       const namespaceRoot = `${this.getIdealBaseName(reflection.parent).replace(/\/[^/]+$/, '')}/${this.directories.get(reflection.kind)!}`;
       return this.moduleHasSubfolders(reflection)
@@ -226,13 +195,13 @@ export class ModuleRouter extends MarkdownRouter {
     }
   }
 
-  getNamespaceFileName(reflection: Reflection): string {
+  private getNamespaceFileName(reflection: Reflection): string {
     return this.moduleHasSubfolders(reflection)
       ? this.entryFileName
       : this.getReflectionAlias(reflection);
   }
 
-  moduleHasSubfolders(reflection: Reflection) {
+  private moduleHasSubfolders(reflection: Reflection) {
     return (
       reflection as DeclarationReflection
     )?.childrenIncludingDocuments?.some((child) =>
@@ -240,7 +209,7 @@ export class ModuleRouter extends MarkdownRouter {
     );
   }
 
-  getDocumentDirectory(reflection: Reflection): string {
+  private getDocumentDirectory(reflection: Reflection): string {
     if (
       reflection.parent &&
       reflection.parent.kind !== ReflectionKind.Project
@@ -253,7 +222,7 @@ export class ModuleRouter extends MarkdownRouter {
     return `${this.directories.get(reflection.kind)!}`;
   }
 
-  getDocumentFileName(reflection: Reflection): string {
+  private getDocumentFileName(reflection: Reflection): string {
     if (
       reflection.parent &&
       ![
@@ -268,7 +237,7 @@ export class ModuleRouter extends MarkdownRouter {
     }
   }
 
-  getReflectionDirectory(reflection: Reflection): string | null {
+  private getReflectionDirectory(reflection: Reflection): string | null {
     if (reflection.parent) {
       if (reflection.parent?.kind === ReflectionKind.Namespace) {
         return `${this.getIdealBaseName(reflection.parent).replace(/\/[^/]+$/, '')}`;
@@ -277,5 +246,19 @@ export class ModuleRouter extends MarkdownRouter {
       }
     }
     return null;
+  }
+
+  private getPackageEntryModule(
+    reflection: Reflection,
+  ): Reflection | undefined {
+    const meta = (this.application.renderer as MarkdownRenderer)?.packagesMeta[
+      reflection.name
+    ];
+    if (meta?.options?.isSet('entryModule')) {
+      return (reflection as DeclarationReflection).children?.find(
+        (child) => child.name === meta?.options?.getValue('entryModule'),
+      );
+    }
+    return undefined;
   }
 }

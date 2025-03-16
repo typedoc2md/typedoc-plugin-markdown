@@ -1,6 +1,23 @@
 # Changelog
 
-## 4.5.2
+## 4.6.0 (2025-03-23)
+
+This release continues the effort to further align to TypeDoc’s default theme, with improvements that make the plugin more consistent and predictable.
+
+### Architectural Changes
+
+- Introduced support for TypeDoc core routers. This allows output files to be generated in the same structure as the default HTML theme, while still using the plugin’s Markdown theme.
+- Exported routers to the public API, enabling customization by other plugins.
+
+### Structural Changes
+
+- Package readme's (when "entryPointStrategy" is "packages") are now merged with the package index page producing a single entrypoint for packages with an associated readme.
+  This aligns with the default theme and improves navigation.
+- To support core routers, a "Hierarchy Summary" page has been introduced to all routers. This feature is turned off by default but can be enabled by setting "includeHierarchySummary" to "true".
+- When "includeHierarchySummary" is "true", symbols with an available hierarchy now include an associated "Hierarchy" Markdown heading with a "View Summary" link as per the default theme.
+- Class constructor headings now read "Constructor". This aligns to the TypeDoc internal reflection name and fixes issues with internal anchoring not resolving correctly.
+
+## 4.5.2 (2025-03-19)
 
 ### Patch Changes
 

@@ -7,7 +7,11 @@ Defined in: [interfaces.ts:1](http://source-url)
 
 Comments for BasicInterface
 
-## Extended by
+## Hierarchy
+
+[View Summary](../hierarchy.md)
+
+### Extended by
 
 - [\`ExtendedInterface\`](ExtendedInterface.md)
 
@@ -262,7 +266,11 @@ Defined in: [interfaces.ts:1](http://source-url)
 
 Comments for ExtendedInterface
 
-## Extends
+## Hierarchy
+
+[View Summary](../hierarchy.md)
+
+### Extends
 
 - [\`BasicInterface\`](BasicInterface.md)
 

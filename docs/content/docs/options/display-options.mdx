@@ -331,3 +331,51 @@ In addition you can control the alignment of the header text.
   }
 }
 ```
+
+## pageTitleTemplates
+
+<Callout emoji="💡">Change specific text placeholders in the template.</Callout>
+
+> Accepts a key/value object.
+
+Customizes the page titles for index, module, and member pages in the documentation.
+
+This option is provided as an object, with keys corresponding to the page types.
+
+Each value can be either:
+
+- A string supporting placeholders.
+- A function that receives input arguments.
+
+Available placeholders / arguments:
+
+- `{projectName}` – The project's name, resolved by TypeDoc.
+- `{version}` – The project version, resolved by TypeDoc (when `includeVersion` is `true`).
+- `{kind}` – The reflection kind of the item.
+- `{name}` – The name of the module or member.
+
+Available keys:
+
+- `index` – For the main documentation index page. Supports `projectName` and `version`.
+- `module` – For module and namespace pages. Supports `kind` and `name`.
+- `member` – For individual member pages. Supports `kind` and `name`.
+
+Examples showing usage of both string (JS config) and function (JS/JSON config) values:
+
+```js filename="typedoc.cjs"
+pageTitleTemplates: {
+  index: (args) => `${args.projectName}: ${args.version}`,
+  module: (args) => `${args.kind}: ${args.name}`,
+  member: (args) => `${args.kind}: ${args.name}`,
+}
+```
+
+```json filename="typedoc.json"
+{
+  "pageTitleTemplates": {
+    "index": "{projectName} {version}",
+    "member": "{kind}: {name}",
+    "module": "{name}"
+  }
+}
+```

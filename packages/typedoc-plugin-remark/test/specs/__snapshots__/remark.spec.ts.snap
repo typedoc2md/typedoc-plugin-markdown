@@ -167,7 +167,7 @@ title: "test"
 
 * [Type Parameters](#type-parameters)
 * [Constructors](#constructors)
-  * [new SomeClass()](#new-someclass)
+  * [Constructor](#constructor)
 * [Properties](#properties)
   * [someProp](#someprop)
 
@@ -192,7 +192,7 @@ title: "test"
 
 ## Constructors
 
-### new SomeClass()
+### Constructor
 
 > **new SomeClass**<\`T\`>(): \`SomeClass\`<\`T\`>
 
@@ -205,16 +205,6 @@ title: "test"
 ### someProp
 
 > **someProp**: \`string\`
-"
-`;
-
-exports[`Remark should parse members index 1`] = `
-"# typedoc-plugin-remark
-
-## Modules
-
-* [module-1](module-1/README.md)
-* [module-2](module-2/README.md)
 "
 `;
 
@@ -298,7 +288,7 @@ const x = 1
 
 #### Constructors
 
-##### new SomeClass()
+##### Constructor
 
 > **new SomeClass**<\`T\`>(): [\`SomeClass\`](#someclass)<\`T\`>
 

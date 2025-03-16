@@ -4,25 +4,24 @@ asIndexPage: true
 
 import { Callout } from 'nextra/components';
 
-# Options
+# Plugin Options
 
-<Callout type="info">
-  These options should be used in conjunction with the core TypeDoc options (see
-  [TypeDoc Usage](/docs/typedoc-usage)).
-</Callout>
+This page documents additional options that are exposed by this plugin.
+
+_Note: The options must be set at root level and will be ignored inside [packageOptions](https://typedoc.org/documents/Options.Package_Options.html)._
 
 ## File Options
 
-Options that are used to configure how files are output.
+Options that are used by the plugin's [routers](/docs/output-file-structure) to configure how files are output.
 
-| Option                                                                | Description                                              |
-| --------------------------------------------------------------------- | -------------------------------------------------------- |
-| [~outputFileStrategy~](./options/file-options.mdx#outputfilestrategy) | Determines how output files are generated.               |
-| [flattenOutputFiles](./options/file-options.mdx#flattenoutputfiles)   | Flatten output files to a single directory.              |
-| [fileExtension](./options/file-options.mdx#fileextension)             | Specify the file extension for generated output files.   |
-| [entryFileName](./options/file-options.mdx#entryfilename)             | The file name of the entry page.                         |
-| [modulesFileName](./options/file-options.mdx#modulesfilename)         | The file name of the separate modules / index page.      |
-| [mergeReadme](./options/file-options.mdx#mergereadme)                 | Appends the documentation index page to the readme page. |
+| Option                                                                  | Description                                              |
+| ----------------------------------------------------------------------- | -------------------------------------------------------- |
+| [fileExtension](./options/file-options.mdx#fileextension)               | Specify the file extension for generated output files.   |
+| [entryFileName](./options/file-options.mdx#entryfilename)               | The file name of the entry page.                         |
+| [modulesFileName](./options/file-options.mdx#modulesfilename)           | The file name of the separate modules / index page.      |
+| [mergeReadme](./options/file-options.mdx#mergereadme)                   | Appends the documentation index page to the readme page. |
+| [flattenOutputFiles](./options/file-options.mdx#flattenoutputfiles)     | Flatten output files to a single directory.              |
+| [excludeScopesInPaths](./options/file-options.mdx#excludescopesinpaths) | Exclude writing @ scope directories in paths.            |
 
 ## Display Options
 
@@ -48,6 +47,7 @@ Options that are used to configure how the output is structured and displayed.
 | [typeDeclarationFormat](./options/display-options.mdx#typedeclarationformat)         | Sets the format of style for type declaration members.                    |
 | [typeDeclarationVisibility](./options/display-options.mdx#typedeclarationvisibility) | Set the visibility level for type declaration documentation.              |
 | [tableColumnSettings](./options/display-options.mdx#tablecolumnsettings)             | Control how table columns are configured and displayed.                   |
+| [pageTitleTemplates](./options/display-options.mdx#pagetitletemplates)               | Change specific text placeholders in the template.                        |
 
 ## Utility Options
 
@@ -57,8 +57,8 @@ Options that are used for general configuration and utility purposes.
 | ------------------------------------------------------------------------------ | ------------------------------------------------------ |
 | [formatWithPrettier](./options/utility-options.mdx#formatwithprettier)         | Apply additional output formatting with Prettier.      |
 | [prettierConfigFile](./options/utility-options.mdx#prettierconfigfile)         | Specify a custom Prettier configuration file location. |
-| [sanitizeComments](./options/utility-options.mdx#sanitizecomments)             | Sanitize HTML and JSX inside JsDoc comments.           |
 | [publicPath](./options/utility-options.mdx#publicpath)                         | Specify the base path for all urls.                    |
 | [useHTMLEncodedBrackets](./options/utility-options.mdx#usehtmlencodedbrackets) | Use HTML encoded entities for angle brackets.          |
 | [useHTMLAnchors](./options/utility-options.mdx#usehtmlanchors)                 | Add HTML anchors to page headings.                     |
-| [pageTitleTemplates](./options/utility-options.mdx#pagetitletemplates)         | Change specific text placeholders in the template.     |
+| [anchorPrefix](./options/utility-options.mdx#anchorprefix)                     | Custom anchor prefix to add to anchor links.           |
+| [sanitizeComments](./options/utility-options.mdx#sanitizecomments)             | Sanitize HTML and JSX inside JsDoc comments.           |

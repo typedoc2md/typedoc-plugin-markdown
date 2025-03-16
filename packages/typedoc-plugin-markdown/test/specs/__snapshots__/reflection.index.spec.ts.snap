@@ -9,9 +9,7 @@ Module comments
 - [BasicEnum#MemberB](#memberb)
 - [BasicInterface#functionProp](#functionprop)
 - [LiteralType#y](#y)
-- [LiteralType#y.x](#y)
-- [objectLiteralVariable#valueX](#valuex)
-- [objectLiteralVariable#valueX.valueY](#valuex)"
+- [objectLiteralVariable#valueX](#valuex)"
 `;
 
 exports[`Reflection Indexes should compile reflection indexes for modules: (Output File Strategy "modules") (Option Group "2") 1`] = `
@@ -23,9 +21,7 @@ Module comments
 - [BasicEnum#MemberB](#memberb)
 - [BasicInterface#functionProp](#functionprop)
 - [LiteralType#y](#y)
-- [LiteralType#y.x](#y)
-- [objectLiteralVariable#valueX](#valuex)
-- [objectLiteralVariable#valueX.valueY](#valuex)"
+- [objectLiteralVariable#valueX](#valuex)"
 `;
 
 exports[`Reflection Indexes should compile reflection indexes: (Output File Strategy "members") (Option Group "1") 1`] = `
@@ -38,9 +34,7 @@ Module comments
 - [BasicEnum#MemberB](enumerations/BasicEnum.md#memberb)
 - [BasicInterface#functionProp](interfaces/BasicInterface.md#functionprop)
 - [LiteralType#y](type-aliases/LiteralType.md#y)
-- [LiteralType#y.x](type-aliases/LiteralType.md#y)
 - [objectLiteralVariable#valueX](variables/objectLiteralVariable.md#valuex)
-- [objectLiteralVariable#valueX.valueY](variables/objectLiteralVariable.md#valuex)
 
 ## Enumerations
 
@@ -164,9 +158,7 @@ Module comments
 - [BasicEnum#MemberB](enumerations/BasicEnum.md#memberb)
 - [BasicInterface#functionProp](interfaces/BasicInterface.md#functionprop)
 - [LiteralType#y](type-aliases/LiteralType.md#y)
-- [LiteralType#y.x](type-aliases/LiteralType.md#y)
 - [objectLiteralVariable#valueX](variables/objectLiteralVariable.md#valuex)
-- [objectLiteralVariable#valueX.valueY](variables/objectLiteralVariable.md#valuex)
 
 ## Enumerations
 

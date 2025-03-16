@@ -373,15 +373,6 @@ exports[`Urls should gets Urls for modules parts: outputFileStrategy: members 1`
 
 exports[`Urls should gets Urls for modules parts: outputFileStrategy: members 2`] = `
 [
-  "@scope.namespace.Class.ClassA.md",
-  "@scope.namespace.Class.ClassB.md",
-  "@scope.namespace.Enumeration.EnumA.md",
-  "@scope.namespace.Enumeration.EnumB.md",
-  "@scope.namespace.Interface.InterfaceA.md",
-  "@scope.namespace.Interface.InterfaceB.md",
-  "@scope.namespace.TypeAlias.TypeA.md",
-  "@scope.namespace.TypeAlias.TypeB.md",
-  "@scope.namespace.md",
   "README.md",
   "Test.Module.Name.Interface.InterfaceA.md",
   "Test.Module.Name.md",
@@ -431,6 +422,15 @@ exports[`Urls should gets Urls for modules parts: outputFileStrategy: members 2`
   "module-2.TypeAlias.TypeA.md",
   "module-2.TypeAlias.TypeB.md",
   "module-2.md",
+  "namespace.Class.ClassA.md",
+  "namespace.Class.ClassB.md",
+  "namespace.Enumeration.EnumA.md",
+  "namespace.Enumeration.EnumB.md",
+  "namespace.Interface.InterfaceA.md",
+  "namespace.Interface.InterfaceB.md",
+  "namespace.TypeAlias.TypeA.md",
+  "namespace.TypeAlias.TypeB.md",
+  "namespace.md",
 ]
 `;
 
@@ -450,7 +450,6 @@ exports[`Urls should gets Urls for modules parts: outputFileStrategy: modules 1`
 
 exports[`Urls should gets Urls for modules parts: outputFileStrategy: modules 2`] = `
 [
-  "@scope.namespace.md",
   "README.md",
   "Test.Module.Name.md",
   "documentation.md",
@@ -459,6 +458,7 @@ exports[`Urls should gets Urls for modules parts: outputFileStrategy: modules 2`
   "module-1.submodules.submodule-3-with-modules.nested-submodule-1.md",
   "module-1.submodules.submodule-3-with-modules.nested-submodule-2.md",
   "module-2.md",
+  "namespace.md",
 ]
 `;
 
@@ -596,8 +596,8 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: mo
   "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace.md",
   "has-references.md",
   "has-same-exports.md",
+  "index-1.md",
   "index.md",
-  "module_index.md",
   "modules.md",
 ]
 `;
@@ -615,14 +615,13 @@ exports[`Urls should gets Urls for multiple entry points: outputFileStrategy: mo
   "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace.md",
   "has-references.md",
   "has-same-exports.md",
+  "index-1.md",
   "index.md",
-  "module_index.md",
 ]
 `;
 
 exports[`Urls should gets Urls for packages entry points: outputFileStrategy: members 1`] = `
 [
-  "@scope/package-1/globals.md",
   "@scope/package-1/index.md",
   "@scope/package-1/interfaces/PackageInterface.md",
   "@scope/package-3/documents/Package-Document-1.md",
@@ -642,7 +641,6 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: me
   "package-2/module-1/interfaces/PackageInterface1.md",
   "package-2/module-2/index.md",
   "package-2/module-2/interfaces/PackageInterface2.md",
-  "package-2/modules.md",
   "package-4/index.md",
   "package-4/interfaces/PackageInterface.md",
   "package-5/module1/interfaces/PackageInterface1.md",
@@ -718,8 +716,7 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: me
 
 exports[`Urls should gets Urls for packages entry points: outputFileStrategy: modules 1`] = `
 [
-  "@scope/package-1/globals.md",
-  "@scope/package-1/index.md",
+  "@scope/package-1.md",
   "@scope/package-3/documents/Package-Document-1.md",
   "@scope/package-3/index-1.md",
   "@scope/package-3/index.md",
@@ -731,7 +728,6 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: mo
   "package-2/index.md",
   "package-2/module-1.md",
   "package-2/module-2.md",
-  "package-2/modules.md",
   "package-4.md",
   "package-5/module2.md",
   "package-5/package-5.md",
@@ -839,6 +835,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: memb
   "functions/tupleTypeFunctionInlineExplicit.md",
   "functions/tupleTypeFunctionOptional.md",
   "globals.md",
+  "hierarchy.md",
   "interfaces/BasicInterface.md",
   "interfaces/CustomEventInterface.md",
   "interfaces/ExtendedInterface.md",
@@ -986,6 +983,7 @@ exports[`Urls should gets Urls for single entry points: outputFileStrategy: modu
 [
   "README.md",
   "globals.md",
+  "hierarchy.md",
 ]
 `;
 

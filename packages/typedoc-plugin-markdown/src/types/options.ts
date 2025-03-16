@@ -7,7 +7,7 @@
  */
 export interface PluginOptions {
   /**
-   * Custom anchor prefix when anchoring to in-page symbols.
+   * Custom anchor prefix to add to anchor links.
    */
   anchorPrefix?: string;
 
@@ -133,7 +133,7 @@ export interface PluginOptions {
   };
 
   /**
-   * Determines how output files are generated.
+   * @deprecated Deprecated in favour of `--router`.
    */
   outputFileStrategy?: 'members' | 'modules';
 

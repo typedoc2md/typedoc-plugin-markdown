@@ -9,3 +9,7 @@
  */
 
 export function someFunction() {}
+
+export class SomeClass {}
+
+export interface SomeInterface {}

@@ -59,13 +59,8 @@ const config = {
           '../../../packages/typedoc-plugin-markdown/test/fixtures/tsconfig.json',
         ),
         entryPoints: [
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/groups/**/*.ts',
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/reflections/index.ts',
         ],
-        expandObjects: true,
-        readme: 'none',
-        sidebar: { pretty: true },
-        outputFileStrategy: 'modules',
-        cleanOutputDir: true,
       },
     ],
     [
@@ -84,10 +79,9 @@ const config = {
           '../../../packages/typedoc-plugin-markdown/test/fixtures/tsconfig.json',
         ),
         entryPoints: [
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/modules/module-1',
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/modules/module-2',
+          '../../../packages/typedoc-plugin-markdown/test/fixtures/src//packages/*',
         ],
-        entryPointStrategy: 'expand',
+        entryPointStrategy: 'packages',
         cleanOutputDir: true,
         navigation: {
           includeFolders: false,

@@ -1,0 +1,35 @@
+import { Callout, FileTree } from 'nextra/components';
+
+# TypeDoc Options
+
+This plugin is like any other TypeDoc plugin and is fully compatible with the TypeDoc ecosystem, supporting other plugins (not specifically targetting HTML output) and the majority of TypeDoc's options.
+
+## Conversion Options
+
+The majority of [TypeDoc's options](https://typedoc.org/options/) are used internally by TypeDoc during conversion.
+
+These options are output/theme agnostic and can be set in the same way as you would with the HTML theme:
+
+- [Configuration](https://typedoc.org/options/configuration/) ✅
+- [Input](https://typedoc.org/options/input/) ✅
+- [Comments](https://typedoc.org/options/comments/) ✅
+- [Organization](https://typedoc.org/options/organization/) ✅
+- [Validation](https://typedoc.org/options/validation/) ✅
+- [Other](https://typedoc.org/options/other/) ✅
+
+## Output Options
+
+TypeDoc's [Output](https://typedoc.org/options/output/) options are used by the renderer and theme. The majority of these options are specific to HTML output and are not applicable to Markdown output.
+
+Below is a list of which TypeDoc Output options are supported:
+
+- [`--out`](https://typedoc.org/documents/Options.Output.html#out) ✅
+- [`--cleanOutputDir`](https://typedoc.org/documents/Options.Output.html#cleanoutputdir) ✅
+- [`--router`](https://typedoc.org/documents/Options.Output.html#router) ✅ ([See Output File Structure](/docs/output-file-structure))
+- [`--lang`](https://typedoc.org/documents/Options.Output.html#lang) ✅
+- [`--locales`](https://typedoc.org/documents/Options.Output.html#locales) ✅
+- [`--githubPages`](https://typedoc.org/documents/Options.Output.html#githubpages) ✅ (defaults to `false`)
+- [`--includeHierarchySummary`](https://typedoc.org/documents/Options.Output.html#includehierarchysummary) ✅ (defaults to `false`)
+- [`--navigation`](https://typedoc.org/documents/Options.Output.html#navigation) ✅ ([See Utilizing Navigation](/docs/utilizing-navigation))
+
+All other output options will have no effect on the Markdown output.

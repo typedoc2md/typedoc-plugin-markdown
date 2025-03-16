@@ -679,14 +679,7 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
   {
     "title": "@scope/package-1",
     "kind": 2,
-    "children": [
-      {
-        "title": "Globals",
-        "path": "@scope/package-1/globals.md",
-        "kind": 2
-      }
-    ],
-    "path": "@scope/package-1/index.md"
+    "path": "@scope/package-1.md"
   },
   {
     "title": "@scope/package-3",
@@ -3157,7 +3150,7 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
   {
     "title": "@scope/namespace",
     "kind": 2,
-    "path": "@scope.namespace.md",
+    "path": "namespace.md",
     "isDeprecated": false,
     "children": [
       {
@@ -3166,13 +3159,13 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
           {
             "title": "EnumA",
             "kind": 8,
-            "path": "@scope.namespace.Enumeration.EnumA.md",
+            "path": "namespace.Enumeration.EnumA.md",
             "isDeprecated": false
           },
           {
             "title": "EnumB",
             "kind": 8,
-            "path": "@scope.namespace.Enumeration.EnumB.md",
+            "path": "namespace.Enumeration.EnumB.md",
             "isDeprecated": false
           }
         ]
@@ -3183,13 +3176,13 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
           {
             "title": "ClassA",
             "kind": 128,
-            "path": "@scope.namespace.Class.ClassA.md",
+            "path": "namespace.Class.ClassA.md",
             "isDeprecated": true
           },
           {
             "title": "ClassB",
             "kind": 128,
-            "path": "@scope.namespace.Class.ClassB.md",
+            "path": "namespace.Class.ClassB.md",
             "isDeprecated": true
           }
         ]
@@ -3200,13 +3193,13 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
           {
             "title": "InterfaceA",
             "kind": 256,
-            "path": "@scope.namespace.Interface.InterfaceA.md",
+            "path": "namespace.Interface.InterfaceA.md",
             "isDeprecated": false
           },
           {
             "title": "InterfaceB",
             "kind": 256,
-            "path": "@scope.namespace.Interface.InterfaceB.md",
+            "path": "namespace.Interface.InterfaceB.md",
             "isDeprecated": false
           }
         ]
@@ -3217,13 +3210,13 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
           {
             "title": "TypeA",
             "kind": 2097152,
-            "path": "@scope.namespace.TypeAlias.TypeA.md",
+            "path": "namespace.TypeAlias.TypeA.md",
             "isDeprecated": false
           },
           {
             "title": "TypeB",
             "kind": 2097152,
-            "path": "@scope.namespace.TypeAlias.TypeB.md",
+            "path": "namespace.TypeAlias.TypeB.md",
             "isDeprecated": false
           }
         ]
@@ -3686,7 +3679,7 @@ exports[`Navigation should gets Navigation Json for modules with parts: (Output 
   {
     "title": "@scope/namespace",
     "kind": 2,
-    "path": "@scope.namespace.md",
+    "path": "namespace.md",
     "isDeprecated": false
   },
   {
@@ -4610,7 +4603,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   {
     "title": "index",
     "kind": 2,
-    "path": "module_index.md",
+    "path": "index-1.md",
     "isDeprecated": false
   }
 ]"
@@ -4701,7 +4694,7 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
   {
     "title": "index",
     "kind": 2,
-    "path": "module_index.md",
+    "path": "index-1.md",
     "isDeprecated": false
   }
 ]"
@@ -4709,6 +4702,10 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
 
 exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "members") (Option Group "1") 1`] = `
 "[
+  {
+    "title": "Hierarchy",
+    "path": "hierarchy.md"
+  },
   {
     "title": "Enumerations",
     "children": [
@@ -5294,4 +5291,11 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
 ]"
 `;
 
-exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "modules") (Option Group "1") 1`] = `"[]"`;
+exports[`Navigation should gets Navigation Json for single entry point: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"[
+  {
+    "title": "Hierarchy",
+    "path": "hierarchy.md"
+  }
+]"
+`;

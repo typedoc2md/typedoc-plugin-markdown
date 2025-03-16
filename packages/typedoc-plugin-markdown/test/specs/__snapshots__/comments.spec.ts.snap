@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Comments should compile @links with anchors: (Output File Strategy "modules") (Option Group "1") 1`] = `
-"- [CommentInterface](#commentinterface) - Links to CommentInterface
-- [Links to CommentInterface.prop](#prop)
-- [\`Links to CommentInterface.propb\`](#propb-3)
-- [Links to CommentInterface.\\_prop\\_with\\_underscore\\_](#_prop_with_underscore_)
-- [CommentEnum.MemberB](#memberb)
-- [SameName.prop](#prop-2)
-- [TypeWithGenerics](#typewithgenerics)
-- [TypeDeclarationType](#typedeclarationtype)
-- [TypeDeclarationType#declaration1](#declaration1)
-- [TypeDeclarationType2#declaration1](#declaration1-1)"
+"- [CommentInterface](#api-commentinterface) - Links to CommentInterface
+- [Links to CommentInterface.prop](#api-prop)
+- [\`Links to CommentInterface.propb\`](#api-propb-3)
+- [Links to CommentInterface.\\_prop\\_with\\_underscore\\_](#api-_prop_with_underscore_)
+- [CommentEnum.MemberB](#api-memberb)
+- [SameName.prop](#api-prop-2)
+- [TypeWithGenerics](#api-typewithgenerics)
+- [TypeDeclarationType](#api-typedeclarationtype)
+- [TypeDeclarationType#declaration1](#api-declaration1)
+- [TypeDeclarationType2#declaration1](#api-declaration1-1)"
 `;
 
 exports[`Comments should compile comments for module: (Output File Strategy "members") (Option Group "1") 1`] = `
@@ -240,7 +240,7 @@ Defined in: [index.ts:1](http://source-url)
 
 | Enumeration Member | Value | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="member1"></a> \`member1\` | \`"member1"\` | The subroutine recursively parsed the hexadecimal data. | [index.ts:1](http://source-url) |
+| <a id="api-member1"></a> \`member1\` | \`"member1"\` | The subroutine recursively parsed the hexadecimal data. | [index.ts:1](http://source-url) |
 "
 `;
 
@@ -263,7 +263,7 @@ Defined in: [index.ts:1](http://source-url)
 <tr>
 <td>
 
-<a id="member1"></a> \`member1\`
+<a id="api-member1"></a> \`member1\`
 
 </td>
 <td>
@@ -322,9 +322,9 @@ Defined in: [index.ts:1](http://source-url)
 
 ## Constructors
 
-<a id="constructor"></a>
+<a id="api-constructor"></a>
 
-### new ClassPropertiesTable()
+### Constructor
 
 > **new ClassPropertiesTable**(): \`ClassPropertiesTable\`
 
@@ -340,12 +340,12 @@ Defined in: [index.ts:1](http://source-url)
 
 | Property | Modifier | Type | Default value | Description | Overrides | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="prop1"></a> \`prop1\` | \`private\` | \`boolean\` | \`undefined\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | - | - | [index.ts:1](http://source-url) |
-| <a id="prop2"></a> \`prop2\` | \`readonly\` | \`RegExp\` | \`undefined\` | Below is a breakdown of the notable performances: - The CPU executed the instruction set in parallel with the GPU computations. - The RAM efficiently cached the frequently accessed data for faster retrieval. - The SSD accessed the stored files with lightning speed due to its high read/write capabilities. | - | - | [index.ts:1](http://source-url) |
-| <a id="prop3"></a> \`prop3?\` | \`public\` | \`string\` | \`undefined\` | > Example of Triple Code Block \`def greet(name): print("Hello, " + name + "!")\` | - | - | [index.ts:1](http://source-url) |
-| <a id="propa"></a> ~~\`propA\`~~ | \`public\` | \`string\` | \`'propAValue'\` | **Deprecated** | [\`BaseClassProperties\`](BaseClassProperties.md).[\`propA\`](BaseClassProperties.md#propa) | - | [index.ts:1](http://source-url) |
-| <a id="propb"></a> \`propB\` | \`public\` | \`string\` | \`undefined\` | - | - | [\`BaseClassProperties\`](BaseClassProperties.md).[\`propB\`](BaseClassProperties.md#propb) | [index.ts:1](http://source-url) |
-| <a id="propwithflag"></a> \`propWithFlag\` | \`public\` | \`string\` | \`undefined\` | **\`Experimental\`** Experimental flag comments | - | - | [index.ts:1](http://source-url) |
+| <a id="api-prop1"></a> \`prop1\` | \`private\` | \`boolean\` | \`undefined\` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | - | - | [index.ts:1](http://source-url) |
+| <a id="api-prop2"></a> \`prop2\` | \`readonly\` | \`RegExp\` | \`undefined\` | Below is a breakdown of the notable performances: - The CPU executed the instruction set in parallel with the GPU computations. - The RAM efficiently cached the frequently accessed data for faster retrieval. - The SSD accessed the stored files with lightning speed due to its high read/write capabilities. | - | - | [index.ts:1](http://source-url) |
+| <a id="api-prop3"></a> \`prop3?\` | \`public\` | \`string\` | \`undefined\` | > Example of Triple Code Block \`def greet(name): print("Hello, " + name + "!")\` | - | - | [index.ts:1](http://source-url) |
+| <a id="api-propa"></a> ~~\`propA\`~~ | \`public\` | \`string\` | \`'propAValue'\` | **Deprecated** | [\`BaseClassProperties\`](BaseClassProperties.md).[\`propA\`](BaseClassProperties.md#propa) | - | [index.ts:1](http://source-url) |
+| <a id="api-propb"></a> \`propB\` | \`public\` | \`string\` | \`undefined\` | - | - | [\`BaseClassProperties\`](BaseClassProperties.md).[\`propB\`](BaseClassProperties.md#propb) | [index.ts:1](http://source-url) |
+| <a id="api-propwithflag"></a> \`propWithFlag\` | \`public\` | \`string\` | \`undefined\` | **\`Experimental\`** Experimental flag comments | - | - | [index.ts:1](http://source-url) |
 "
 `;
 
@@ -360,9 +360,9 @@ Defined in: [index.ts:1](http://source-url)
 
 ## Constructors
 
-<a id="constructor"></a>
+<a id="api-constructor"></a>
 
-### new ClassPropertiesTable()
+### Constructor
 
 > **new ClassPropertiesTable**(): \`ClassPropertiesTable\`
 
@@ -388,7 +388,7 @@ Defined in: [index.ts:1](http://source-url)
 <tr>
 <td>
 
-<a id="prop1"></a> \`prop1\`
+<a id="api-prop1"></a> \`prop1\`
 
 </td>
 <td>
@@ -406,7 +406,7 @@ to generate the binary output for input validation.
 <tr>
 <td>
 
-<a id="prop2"></a> \`prop2\`
+<a id="api-prop2"></a> \`prop2\`
 
 </td>
 <td>
@@ -427,7 +427,7 @@ Below is a breakdown of the notable performances:
 <tr>
 <td>
 
-<a id="prop3"></a> \`prop3?\`
+<a id="api-prop3"></a> \`prop3?\`
 
 </td>
 <td>
@@ -449,7 +449,7 @@ print("Hello, " + name + "!")
 <tr>
 <td>
 
-<a id="propa"></a> ~~\`propA\`~~
+<a id="api-propa"></a> ~~\`propA\`~~
 
 </td>
 <td>
@@ -466,7 +466,7 @@ print("Hello, " + name + "!")
 <tr>
 <td>
 
-<a id="propb"></a> \`propB\`
+<a id="api-propb"></a> \`propB\`
 
 </td>
 <td>
@@ -483,7 +483,7 @@ print("Hello, " + name + "!")
 <tr>
 <td>
 
-<a id="propwithflag"></a> \`propWithFlag\`
+<a id="api-propwithflag"></a> \`propWithFlag\`
 
 </td>
 <td>
@@ -515,9 +515,9 @@ Defined in: [index.ts:1](http://source-url)
 
 | Property | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="declaration1"></a> \`declaration1\` | \`boolean\` | Comments for declaration1 | [index.ts:1](http://source-url) |
-| <a id="declaration2"></a> \`declaration2\` | \`boolean\` | Comments for declaration2 | [index.ts:1](http://source-url) |
-| <a id="declaration3"></a> \`declaration3\` | \`100\` | - | [index.ts:1](http://source-url) |
+| <a id="api-declaration1"></a> \`declaration1\` | \`boolean\` | Comments for declaration1 | [index.ts:1](http://source-url) |
+| <a id="api-declaration2"></a> \`declaration2\` | \`boolean\` | Comments for declaration2 | [index.ts:1](http://source-url) |
+| <a id="api-declaration3"></a> \`declaration3\` | \`100\` | - | [index.ts:1](http://source-url) |
 "
 `;
 
@@ -532,8 +532,8 @@ Defined in: [index.ts:1](http://source-url)
 
 | Name | Type | Default value | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="declaration1"></a> \`declaration1\` | \`string\` | 'declaration3' | [index.ts:1](http://source-url) |
-| <a id="declaration2"></a> \`declaration2\` | \`number\` | 100 | [index.ts:1](http://source-url) |
+| <a id="api-declaration1"></a> \`declaration1\` | \`string\` | 'declaration3' | [index.ts:1](http://source-url) |
+| <a id="api-declaration2"></a> \`declaration2\` | \`number\` | 100 | [index.ts:1](http://source-url) |
 "
 `;
 
@@ -558,7 +558,7 @@ Defined in: [index.ts:1](http://source-url)
 <tr>
 <td>
 
-<a id="declaration1"></a> \`declaration1\`
+<a id="api-declaration1"></a> \`declaration1\`
 
 </td>
 <td>
@@ -575,7 +575,7 @@ Comments for declaration1
 <tr>
 <td>
 
-<a id="declaration2"></a> \`declaration2\`
+<a id="api-declaration2"></a> \`declaration2\`
 
 </td>
 <td>
@@ -592,7 +592,7 @@ Comments for declaration2
 <tr>
 <td>
 
-<a id="declaration3"></a> \`declaration3\`
+<a id="api-declaration3"></a> \`declaration3\`
 
 </td>
 <td>
@@ -632,7 +632,7 @@ Defined in: [index.ts:1](http://source-url)
 <tr>
 <td>
 
-<a id="declaration1"></a> \`declaration1\`
+<a id="api-declaration1"></a> \`declaration1\`
 
 </td>
 <td>
@@ -649,7 +649,7 @@ Defined in: [index.ts:1](http://source-url)
 <tr>
 <td>
 
-<a id="declaration2"></a> \`declaration2\`
+<a id="api-declaration2"></a> \`declaration2\`
 
 </td>
 <td>
@@ -691,7 +691,7 @@ Other block tags
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="x"></a> \`x\` | \`string\` | [index.ts:1](http://source-url) |
+| <a id="api-x"></a> \`x\` | \`string\` | [index.ts:1](http://source-url) |
 "
 `;
 
@@ -727,7 +727,7 @@ Other block tags
 <tr>
 <td>
 
-<a id="x"></a> \`x\`
+<a id="api-x"></a> \`x\`
 
 </td>
 <td>

@@ -7,7 +7,7 @@
  *
  * @categoryDescription File
  *
- * Options that are used to configure how files are output.
+ * Options that are used by the plugin's [routers](/docs/output-file-structure) to configure how files are output.
  *
  * @categoryDescription Display
  *
@@ -32,16 +32,14 @@ import {
 } from './maps.js';
 
 /**
- * Please also see the [Output File Structure](/docs/output-file-structure) guide for updated implementation details.
- *
- * @deprecated
- *
- * Deprecated in favour of `--router`.
  *
  * @category File
+ *
+ * @hidden
+ *
  */
 export const outputFileStrategy: Partial<DeclarationOption> = {
-  help: 'Determines how output files are generated.',
+  help: '@deprecated Deprecated in favour of `--router`.',
   type: ParameterType.Map,
   map: OutputFileStrategy,
   defaultValue: OutputFileStrategy.Members,
@@ -54,9 +52,9 @@ export const outputFileStrategy: Partial<DeclarationOption> = {
  *
  * @example ["Class", "Enum", "Interface"]
  *
- * @hidden
- *
  * @category File
+ *
+ * @hidden
  */
 export const membersWithOwnFile: Partial<DeclarationOption> = {
   help: 'Determines which members are exported to their own file.',
@@ -74,29 +72,6 @@ export const membersWithOwnFile: Partial<DeclarationOption> = {
     }
   },
   defaultValue: ALLOWED_OWN_FILE_MEMBERS,
-};
-
-/**
- * By default output files are generated in a directory structure that mirrors the project's module hierarchy including folders for member kinds eg `classes`, `enums`, `functions` etc.
- *
- * This option will flatten the output files to a single directory as follows:
- *
- *  <FileTree>
- *    <FileTree.File name="README.md" />
- *    <FileTree.File name="module-a.Class.ClassA.md" />
- *    <FileTree.File name="module-a.Class.ClassB.md" />
- *    <FileTree.File name="module-a.Function.FunctionA.md" />
- *    <FileTree.File name="module-a.Function.FunctionB.md" />
- *    <FileTree.File name="module-b.Class.ClassA.md" />
- *    <FileTree.File name="module-b.Class.ClassB.md" />
- *  </FileTree>
- *
- * @category File
- */
-export const flattenOutputFiles: Partial<DeclarationOption> = {
-  help: 'Flatten output files to a single directory.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
 };
 
 /**
@@ -127,9 +102,8 @@ export const fileExtension: Partial<DeclarationOption> = {
  *
  * The content of root documentation file will be resolved in the following order:
  *
- * 1. The value of the `--entryModule` option (if defined).
- * 2. The resolved Readme file (skipped if the [`--readme`](https://typedoc.org/options/input/#readme) option is set to `none`).
- * 3. The documentation index page.
+ * - The resolved Readme file (skipped if the "readme" option is set to `none`).
+ * - The documentation index page.
  *
  * @example "index"
  *
@@ -143,11 +117,12 @@ export const entryFileName: Partial<DeclarationOption> = {
 };
 
 /**
- * Please note this option is not applicable when [`--readme`](https://typedoc.org/options/input/#readme) is set to "none" or `--mergeReadme` is set to "true".
+ *
+ * By default the page is named either  "modules", "packages" or "globals" depending on the context.
+ *
+ * *Note: this option is NOT applicable when `"readme"` is set to `"none"` or `"mergeReadme"` is set to `true`.*
  *
  * @example "documentation"
- *
- * @defaultValue "modules | packages | globals"
  *
  * @category File
  *
@@ -159,15 +134,57 @@ export const modulesFileName: Partial<DeclarationOption> = {
 
 /**
  * By default when a readme file is resolved, a separate readme page is created.
- *
  * This option appends the documentation main/index page to the readme page so only a single root page is generated.
  *
- * This option has no effect when [`--readme`](https://typedoc.org/options/input/#readme) is set to `"none"`.
+ * *Note:*
+ * - *This option has no affect when `"readme"` is set to `"none"`.*
+ * - *For packages readmes (when `"outputFileStrategy"` is set to `"packages"`) this is the default behaviour.*
  *
  * @category File
  */
 export const mergeReadme: Partial<DeclarationOption> = {
   help: 'Appends the documentation index page to the readme page.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
+ * By default output files are generated in a directory structure.
+ *
+ * This option will flatten the output files to a single directory as follows:
+ *
+ * <FileTree>
+ *   <FileTree.File name="README.md" />
+ *   <FileTree.File name="module-a.Class.ClassA.md" />
+ *   <FileTree.File name="module-a.Class.ClassB.md" />
+ *   <FileTree.File name="module-a.Function.FunctionA.md" />
+ *   <FileTree.File name="module-a.Function.FunctionB.md" />
+ *   <FileTree.File name="module-b.Class.ClassA.md" />
+ *   <FileTree.File name="module-b.Class.ClassB.md" />
+ * </FileTree>
+ *
+ * *Note: This option only affects custom routers.*
+ *
+ *  @category File
+ */
+export const flattenOutputFiles: Partial<DeclarationOption> = {
+  help: 'Flatten output files to a single directory.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
+ * By default, directories are split by scopes when generating file paths.
+ *
+ * This option removes the `@scope` reference from the path when generating files and directories.
+ * It does not affect the name of the package or module in the output.
+ *
+ * *Note: This option only affects custom routers.*
+ *
+ * @category File
+ */
+export const excludeScopesInPaths: Partial<DeclarationOption> = {
+  help: 'Exclude writing @ scope directories in paths.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };
@@ -188,41 +205,6 @@ export const mergeReadme: Partial<DeclarationOption> = {
 export const entryModule: Partial<DeclarationOption> = {
   help: 'The name of a module that should act as the root page for the documentation.',
   type: ParameterType.String,
-};
-
-/**
- * By default directories are split by scopes when generating file paths.
- *
- * This option will remove reference to `@scope` in the path when generating files and directories. It does not affect the name of the package or module in the output.
- *
- * The following will be the directory structure for packages named `@scope/package-1` and `@scope/package-2`:
- *
- *  Output when set to `false` (default):
- *
- * <FileTree>
- *   <FileTree.Folder name="@scope" defaultOpen>
- *     <FileTree.Folder name="package-1" ></FileTree.Folder>
- *     <FileTree.Folder name="package-2" ></FileTree.Folder>
- *    </FileTree.Folder>
- *  </FileTree>
- *
- * Output when set to `true`:
- *
- * <FileTree>
- *   <FileTree.Folder name="package-1" ></FileTree.Folder>
- *   <FileTree.Folder name="package-2" ></FileTree.Folder>
- *  </FileTree>
- *
- * Ignored if `flattenOutputFiles` is set to `true`.
- *
- * @category File
- *
- * @hidden
- */
-export const excludeScopesInPaths: Partial<DeclarationOption> = {
-  help: 'Exclude writing @ scope directories in paths.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
 };
 
 /**
@@ -525,6 +507,61 @@ export const tableColumnSettings: Partial<DeclarationOption> = {
 };
 
 /**
+ * Customizes the page titles for index, module, and member pages in the documentation.
+ *
+ * This option is provided as an object, with keys corresponding to the page types.
+ *
+ * Each value can be either:
+ * - A string supporting placeholders.
+ * - A function that receives input arguments.
+ *
+ * Available placeholders / arguments:
+ *
+ * - `{projectName}` – The project's name, resolved by TypeDoc.
+ * - `{version}` – The project version, resolved by TypeDoc (when `includeVersion` is `true`).
+ * - `{kind}` – The reflection kind of the item.
+ * - `{name}` – The name of the module or member.
+ *
+ * Available keys:
+ *
+ * - `index` – For the main documentation index page. Supports `projectName` and `version`.
+ * - `module` – For module and namespace pages. Supports `kind` and `name`.
+ * - `member` – For individual member pages. Supports `kind` and `name`.
+ *
+ * Examples showing usage of both string (JS config) and function (JS/JSON config) values:
+ *
+ * ```js filename="typedoc.cjs"
+ * pageTitleTemplates: {
+ *   index: (args) => `${args.projectName}: ${args.version}`,
+ *   module: (args) => `${args.kind}: ${args.name}`,
+ *   member: (args) => `${args.kind}: ${args.name}`,
+ * }
+ * ```
+ *
+ * @category Display
+ */
+export const pageTitleTemplates: Partial<DeclarationOption> = {
+  help: 'Change specific text placeholders in the template.',
+  type: ParameterType.Object,
+  defaultValue: DEFAULT_PAGE_TITLES,
+  configFileOnly: true,
+  validate(value) {
+    if (!value || typeof value !== 'object') {
+      throw new Error(
+        '[typedoc-plugin-markdown] pageTitleTemplates must be an object.',
+      );
+    }
+    for (const val of Object.values(value)) {
+      if (typeof val !== 'string' && typeof val !== 'function') {
+        throw new Error(
+          `[typedoc-plugin-markdown] All values of pageTitleTemplates must be strings or functions.`,
+        );
+      }
+    }
+  },
+};
+
+/**
  * This plugin generates well-formatted Markdown, however, integrating the popular formatting package [Prettier](https://prettier.io/) can provide additional enhancements, such as:
  *
  * - Formats code inside fenced blocks within comments blocks, using the respective Prettier configuration for that language.
@@ -563,27 +600,6 @@ export const prettierConfigFile: Partial<DeclarationOption> = {
 };
 
 /**
- * *Please note this options does not affect the rendering of inline code or code blocks (using single/triple backticks).*
- *
- * By default all comments written inside JsDoc comments will be passed to the output as written, and parsers will interpret un-escaped angle brackets as HTML/JSX tags..
- *
- * This option will escape angle brackets `<` `>` and curly braces `{` `}` written inside JsDoc comments.
- *
- * This option would typically be used when source code comes from an external source exposing the following potential issues:
- *
- * - Comments contain raw tags that should be interpreted as code examples.
- * - Comments contain invalid syntax that (in the case of MDX) will cause breaking parsing errors.
- * - Although most parsers use XSS filters, this option provides an additional layer of XSS security.
- *
- * @category Utility
- */
-export const sanitizeComments: Partial<DeclarationOption> = {
-  help: 'Sanitize HTML and JSX inside JsDoc comments.',
-  type: ParameterType.Boolean,
-  defaultValue: false,
-};
-
-/**
  * If undefined all urls will be relative.
  *
  * @example "http://abc.com"
@@ -592,17 +608,6 @@ export const sanitizeComments: Partial<DeclarationOption> = {
  */
 export const publicPath: Partial<DeclarationOption> = {
   help: 'Specify the base path for all urls.',
-  type: ParameterType.String,
-  defaultValue: undefined,
-};
-
-/**
- * @hidden
- *
- * @deprecated
- */
-export const anchorPrefix: Partial<DeclarationOption> = {
-  help: 'Custom anchor prefix when anchoring to in-page symbols.',
   type: ParameterType.String,
   defaultValue: undefined,
 };
@@ -620,16 +625,19 @@ export const useHTMLEncodedBrackets: Partial<DeclarationOption> = {
 };
 
 /**
- * This option allows you to control whether additional unique HTML anchors(`<a id="...">`) are added to headings.
+ * Controls whether HTML anchors (`<a id="...">`) are added to headings.
  *
- * Markdown processors usually auto generate anchor IDs for headings found in a document. This plugin attempts to generate cross-links to symbols based on these IDs.
+ * Markdown processors usually auto-generate anchor IDs for headings found in a document.
+ * This plugin attempts to generate cross-links to symbols based on these IDs.
  *
- * This option should be used in the following scenarios:
+ * Enable this option if:
  *
- * - Your Markdown parser does not generate heading IDs, meaning there is no way to link to headings.
- * - The plugin cannot reliably resolve auto-generated IDs, for example, if additional headings are added dynamically.
+ * - Your Markdown parser does not generate heading IDs, making it impossible to link to headings in the document.
+ * - The plugin cannot reliably resolve auto-generated IDs — for example, if additional headings are added dynamically.
+ *   In this case, use this option together with `anchorPrefix` to ensure unique and predictable anchors.
  *
- * *Note that unique HTML anchors will always be added to linkable symbols listed in table rows as there is no alternative way to link to these items.*
+ * *Note: HTML anchors will always be added to linkable symbols listed in table rows,
+ * as there is no alternative way to link to these items.*
  *
  * @category Utility
  */
@@ -637,6 +645,24 @@ export const useHTMLAnchors: Partial<DeclarationOption> = {
   help: 'Add HTML anchors to page headings.',
   type: ParameterType.Boolean,
   defaultValue: false,
+};
+
+/**
+ * Prefix to prepend to all generated anchor links.
+ *
+ * Use this option when:
+ *
+ * - Your Markdown parser automatically assigns a custom anchor prefix.
+ * - You are using `useHTMLAnchors` and want to avoid ID conflicts with other elements in the document.
+ *
+ * @example "api-"
+ *
+ * @category Utility
+ */
+export const anchorPrefix: Partial<DeclarationOption> = {
+  help: 'Custom anchor prefix to add to anchor links.',
+  type: ParameterType.String,
+  defaultValue: undefined,
 };
 
 /**
@@ -652,8 +678,6 @@ export const preserveAnchorCasing: Partial<DeclarationOption> = {
 
 /**
  * @hidden
- *
- * @deprecated
  */
 export const textContentMappings: Partial<DeclarationOption> = {
   help: '@deprecated This option has been deprecated in favour of `--pageTitleTemplates`.',
@@ -677,57 +701,24 @@ export const textContentMappings: Partial<DeclarationOption> = {
 };
 
 /**
- * Customizes the page titles for index, module, and member pages in the documentation.
+ * *Please note this options does not affect the rendering of inline code or code blocks (using single/triple backticks).*
  *
- * The option is provided as an object with keys corresponding to the page type.
+ * By default all comments written inside JsDoc comments will be passed to the output as written, and parsers will interpret un-escaped angle brackets as HTML/JSX tags..
  *
- * The Values of each key can be either:
+ * This option will escape angle brackets `<` `>` and curly braces `{` `}` written inside JsDoc comments.
  *
- * - A function accepting input arguments.
- * - A strings supporting placeholders.
+ * This option would typically be used when source code comes from an external source exposing the following potential issues:
  *
- * Available placeholders / arguments:
- *
- * - `{projectName}` - the project's name resolved by TypeDoc.
- * - `{version}` - the project version  resolved by TypeDoc (when includeVersion is `true`).
- * - `{kind}` - the reflection kind of the item.
- * - `{group}` - the group title that the item belongs to.
- *
- * Available keys:
- *
- * - The `index` key (main documentation index page) accepts the `projectName` and `version` placeholder/args.
- * - The `module` key (module, namespace, group and category pages) accepts the `kind` and `name` placeholder/args.
- * - The `member` key (individual module member pages) accepts the `kind`, `name`, and `group` placeholder/args.
- *
- * ```js filename="typedoc.cjs"
- * pageTitleTemplates: {
- *  index: (args) => `${args.projectName}: ${args.version}`,
- *  module: (args) => args.name,
- *  member: (args) => `${args.kind}: ${args.name}`,
- * }
- * ```
+ * - Comments contain raw tags that should be interpreted as code examples.
+ * - Comments contain invalid syntax that (in the case of MDX) will cause breaking parsing errors.
+ * - Although most parsers use XSS filters, this option provides an additional layer of XSS security.
  *
  * @category Utility
  */
-export const pageTitleTemplates: Partial<DeclarationOption> = {
-  help: 'Change specific text placeholders in the template.',
-  type: ParameterType.Object,
-  defaultValue: DEFAULT_PAGE_TITLES,
-  configFileOnly: true,
-  validate(value) {
-    if (!value || typeof value !== 'object') {
-      throw new Error(
-        '[typedoc-plugin-markdown] textContentMappings must be an object.',
-      );
-    }
-    for (const val of Object.values(value)) {
-      if (typeof val !== 'string' && typeof val !== 'function') {
-        throw new Error(
-          `[typedoc-plugin-markdown] All values of textContentMappings must be strings or functions.`,
-        );
-      }
-    }
-  },
+export const sanitizeComments: Partial<DeclarationOption> = {
+  help: 'Sanitize HTML and JSX inside JsDoc comments.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
 };
 
 /**

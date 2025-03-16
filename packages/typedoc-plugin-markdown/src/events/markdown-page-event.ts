@@ -42,7 +42,7 @@ export class MarkdownPageEvent<out Model extends RouterTarget = RouterTarget> {
    *
    * Should be rendered by layout templates and can be modified by plugins.
    */
-  contents?: string;
+  contents: string = '';
 
   /**
    * The frontmatter of this page represented as a key value object. This property can be utilised by other plugins.
@@ -85,6 +85,12 @@ export class MarkdownPageEvent<out Model extends RouterTarget = RouterTarget> {
   constructor(model: Model) {
     this.model = model;
   }
+
+  preWriteAsyncJobs: Array<(page: MarkdownPageEvent) => Promise<void>> = [];
+
+  // async parseContentsWithCallback() {
+  //   this.contents = await this.callback(this.contents as string);
+  // }
 
   isReflectionEvent(): this is MarkdownPageEvent<Reflection> {
     return this.model instanceof Reflection;

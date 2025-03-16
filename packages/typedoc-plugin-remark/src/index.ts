@@ -23,6 +23,30 @@ export function load(app: MarkdownApplication) {
     } as DeclarationOption);
   });
 
+  /**
+    app.renderer.on(
+    MarkdownPageEvent.END,
+    (page: MarkdownPageEvent<DeclarationReflection>) => {
+      const defaultPlugins = getDefaultPlugins(
+        app.options.getValue('defaultRemarkPlugins'),
+      );
+      const userPlugins = app.options.getValue('remarkPlugins') as string[];
+      const remarkStringifyOptions = app.options.getValue(
+        'remarkStringifyOptions',
+      );
+
+      page.preWriteAsyncJobs.push(async (page) => {
+        console.log('start parseMarkdownString');
+        page.contents = await parseMarkdownString(
+          page.contents,
+          [...defaultPlugins, ...userPlugins],
+          remarkStringifyOptions,
+        );
+        console.log('end parseMarkdownString');
+      });
+    },
+  );*/
+
   app.renderer.postRenderAsyncJobs.push(async (output) => {
     const remarkPlugins = app.options.getValue('remarkPlugins') as [];
     const defaultPlugins = getDefaultPlugins(
@@ -51,7 +75,7 @@ export function load(app: MarkdownApplication) {
               pathToFileURL(path.join(__dirname, 'plugins', 'add-toc.js')).href,
               {
                 reflection: page.model,
-                app: app,
+                app,
                 remarkTocOptions,
               },
             ]);

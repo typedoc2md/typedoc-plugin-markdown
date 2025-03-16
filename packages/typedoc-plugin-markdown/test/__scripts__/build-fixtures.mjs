@@ -23,16 +23,17 @@ async function main() {
 
   const fixtures = Object.entries(config.default);
 
-  const filtered = fixtures.filter(([, config]) => {
-    return config.only;
-  });
+  const filtered = fixtures.filter(([, config]) => config.only);
 
   const fixturesToBuild = filtered.length ? filtered : fixtures;
 
   const fixtureCount = fixturesToBuild.reduce(
     (prev, curr) =>
       prev +
-      curr[1].options.length * (curr[1].outputFileStrategies?.length || 2),
+      curr[1].options.length *
+        (curr[1].routers?.length
+          ? curr[1].routers?.length
+          : curr[1].outputFileStrategies?.length || 2),
     0,
   );
 
@@ -40,7 +41,6 @@ async function main() {
     `[${getPackageName()}] Building ${fixtureCount} test fixtures...`,
   );
 
-  // Create tasks for each fixture with limited concurrency
   const tasks = fixturesToBuild.map(([key, config]) =>
     limit(() => processFixture(key, config, filtered?.length > 0)),
   );
@@ -55,20 +55,67 @@ async function processFixture(key, config, writeHTML) {
     'members',
     'modules',
   ];
+
+  if (key.includes('outputs')) {
+    spawn(
+      'typedoc',
+      ['-logLevel', 'Warn', '-options', config.options[0].options],
+      {
+        stdio: 'inherit',
+      },
+    );
+    return;
+  }
+
+  if (config.routers) {
+    config.routers.forEach((router) => {
+      if (writeHTML) {
+        writeHtml(key, config.entryPoints, router);
+      }
+      config.options.forEach((optionGroup, index) => {
+        const options = {
+          router,
+          ...config.commonOptions,
+          ...optionGroup,
+        };
+        writeMarkdown(
+          key,
+          config.entryPoints,
+          null,
+          router,
+          options,
+          'opts-' + Number(index + 1),
+        );
+      });
+    });
+    return;
+  }
   if (writeHTML) {
-    writeHtml(key, config.entryPoints);
+    writeHtml(key, config.entryPoints, null);
   }
   outputFileStrategies.forEach((outputFileStrategy) => {
     config.options.forEach((optionGroup, index) => {
+      let router = null;
+
+      const routerParts = optionGroup?.router?.split('*-');
+      if (routerParts?.length > 1) {
+        router =
+          outputFileStrategy === 'modules'
+            ? `module-${routerParts[1]}`
+            : `member-${routerParts[1]}`;
+      }
       const options = {
         outputFileStrategy,
         ...config.commonOptions,
         ...optionGroup,
+        ...(router && { router }),
       };
+
       writeMarkdown(
         key,
         config.entryPoints,
         outputFileStrategy,
+        null,
         options,
         'opts-' + Number(index + 1),
       );
@@ -80,6 +127,7 @@ function writeMarkdown(
   key,
   entryPoints,
   outputFileStrategy,
+  router,
   options,
   optionDir,
 ) {
@@ -88,8 +136,9 @@ function writeMarkdown(
     'test',
     'fixtures',
     'out',
+    'md',
     key,
-    outputFileStrategy,
+    router || outputFileStrategy,
     optionDir,
   );
 
@@ -117,16 +166,12 @@ function writeMarkdown(
   }
 }
 
-export function writeHtml(key, entryPoints) {
+export function writeHtml(key, entryPoints, router) {
   const fixturesRoot = path.join(__dirname, '..', 'fixtures');
-  const fullPath = path.join(
-    process.cwd(),
-    'test',
-    'fixtures',
-    'out',
-    'html',
-    key,
-  );
+  const fullPath = router
+    ? path.join(process.cwd(), 'test', 'fixtures', 'out', 'html', key, router)
+    : path.join(process.cwd(), 'test', 'fixtures', 'out', 'html', key);
+
   spawn(
     'typedoc',
     [
@@ -134,23 +179,25 @@ export function writeHtml(key, entryPoints) {
         '-options',
         path.join(__dirname, '..', 'fixtures', 'typedoc.cjs'),
         '-logLevel',
-        'None',
+        'Warn',
         '-out',
         fullPath,
-        '-readme',
-        './test/fixtures/README.md',
+        //'-readme',
+        //'./test/fixtures/README.md',
+        '-entryPointStrategy',
+        key.toLowerCase().includes('package') ? 'packages' : 'resolve',
+        '-router',
+        router || 'kind',
+        '-includeVersion',
+        true,
+        '-name',
+        'html-docs',
         '-projectDocuments',
-        path.join(fixturesRoot, 'PROJECT_DOC_1.md'),
+        path.join(fixturesRoot, 'PROJECT_DOC_1.md') /*
         '-projectDocuments',
         path.join(fixturesRoot, 'docs/project/PROJECT_DOC_2.md'),
         '-projectDocuments',
-        path.join(fixturesRoot, 'docs/project/PROJECT_DOC_3.md'),
-        '-includeVersion',
-        true,
-        '-router',
-        'structure-dir',
-        //'-plugin',
-        //path.join(__dirname, '../../typedoc-plugins/typedoc-default-values.js'),
+        path.join(fixturesRoot, 'docs/project/PROJECT_DOC_3.md'),*/,
       ],
       ...toEntryPoints(entryPoints),
     ],
@@ -162,12 +209,13 @@ export function writeHtml(key, entryPoints) {
 
 function toEntryPoints(entryPoints) {
   if (Array.isArray(entryPoints)) {
-    return entryPoints.reduce((prev, curr) => {
-      return [
+    return entryPoints.reduce(
+      (prev, curr) => [
         ...prev,
         ...[`--entryPoints`, `${process.cwd()}/test/fixtures/src${curr}`],
-      ];
-    }, []);
+      ],
+      [],
+    );
   }
   return ['--entryPoints', `${process.cwd()}/test/fixtures/src${entryPoints}`];
 }
@@ -178,17 +226,22 @@ function objectToOptions(obj) {
       if (Array.isArray(curr[1])) {
         return [
           ...prev,
-          ...curr[1].reduce((prev1, curr1) => {
-            return [...prev1, ...[`-${curr[0]}`, curr1]];
-          }, []),
+          ...curr[1].reduce(
+            (prev1, curr1) => [...prev1, ...[`-${curr[0]}`, curr1]],
+            [],
+          ),
         ];
       }
       if (typeof curr[1] === 'object') {
         return [
           ...prev,
-          ...Object.entries(curr[1]).reduce((prev1, curr1) => {
-            return [...prev1, ...[`-${curr[0]}.${curr1[0]}`, curr1[1]]];
-          }, []),
+          ...Object.entries(curr[1]).reduce(
+            (prev1, curr1) => [
+              ...prev1,
+              ...[`-${curr[0]}.${curr1[0]}`, curr1[1]],
+            ],
+            [],
+          ),
         ];
       }
       return [...prev, ...[`-${curr[0]}`, curr[1]]];

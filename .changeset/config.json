@@ -12,6 +12,8 @@
   "updateInternalDependencies": "minor",
   "ignore": [
     "@devtools/*",
+    "typedoc-plugin-frontmatter",
+    "typedoc-plugin-remark",
     "typedoc-github-wiki-theme",
     "typedoc-gitlab-wiki-theme",
     "typedoc-vitepress-theme",

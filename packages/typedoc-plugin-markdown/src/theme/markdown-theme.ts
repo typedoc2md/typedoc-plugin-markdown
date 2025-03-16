@@ -39,9 +39,9 @@ export class MarkdownTheme extends Theme {
       string,
       (_: MarkdownPageEvent<Reflection>) => string
     > = {
-      [PageKind.Index]: this.readmeTemplate,
+      [PageKind.Index]: this.indexTemplate,
       [PageKind.Document]: this.documentTemplate,
-      //[PageKind.Hierarchy]: this.hierarchyTemplate,
+      [PageKind.Hierarchy]: this.hierarchyTemplate,
       [PageKind.Reflection]: this.reflectionTemplate,
     };
 
@@ -70,15 +70,19 @@ export class MarkdownTheme extends Theme {
     return new MarkdownThemeContext(this, page, this.application.options);
   }
 
-  documentTemplate = (page: MarkdownPageEvent<DocumentReflection>) => {
-    return this.getRenderContext(page).templates.document(page);
-  };
-
-  readmeTemplate = (page: MarkdownPageEvent<ProjectReflection>) => {
-    return this.getRenderContext(page).templates.readme(page);
+  indexTemplate = (page: MarkdownPageEvent<ProjectReflection>) => {
+    return this.getRenderContext(page).templates.index(page);
   };
 
   reflectionTemplate = (page: MarkdownPageEvent<DeclarationReflection>) => {
     return this.getRenderContext(page).templates.reflection(page);
+  };
+
+  documentTemplate = (page: MarkdownPageEvent<DocumentReflection>) => {
+    return this.getRenderContext(page).templates.document(page);
+  };
+
+  hierarchyTemplate = (page: MarkdownPageEvent<ProjectReflection>) => {
+    return this.getRenderContext(page).templates.hierarchy(page);
   };
 }

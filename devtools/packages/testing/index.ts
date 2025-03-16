@@ -12,7 +12,7 @@ export function expectFileToEqual(
     ? outputFileStrategy
     : [outputFileStrategy];
   outputFileStrategies.forEach((outputFileStrategy) => {
-    const basePath = getBasePath(key, outputFileStrategy);
+    const basePath = getOutputFileStrategyPath(key, outputFileStrategy);
 
     const optionDirs = fs.readdirSync(basePath);
     optionDirs.forEach((optionDir, index) => {
@@ -44,7 +44,7 @@ export function expectUrlsToEqual(
   outputFileStrategies: ('members' | 'modules')[],
 ) {
   outputFileStrategies.forEach((outputFileStrategy) => {
-    const basePath = getBasePath(outDir, outputFileStrategy);
+    const basePath = getOutputFileStrategyPath(outDir, outputFileStrategy);
     const optionDirs = fs.readdirSync(basePath);
     optionDirs.forEach((optionDir) => {
       const optionsBasePath = path.join(basePath, optionDir);
@@ -78,12 +78,51 @@ export function expectUrlsToEqual(
   });
 }
 
-function getBasePath(key: string, outputFileStrategy: 'modules' | 'members') {
+export function getOutDir() {
+  return path.join(process.cwd(), 'test', 'fixtures', 'out');
+}
+
+export function expectDirToEqual(outDir: string) {
+  const basePath = getPath(outDir);
+  const rootDirectory = fs.readdirSync(path.join(basePath));
+  const reduceDirectory = (
+    basePath: string,
+    baseDirectory: string,
+    directory: string[],
+  ) => {
+    return directory.reduce((prev: any, item) => {
+      if (fs.lstatSync(`${basePath}/${item}`).isDirectory()) {
+        const nestedDir = fs.readdirSync(`${basePath}/${item}`);
+        return [
+          ...prev,
+          ...reduceDirectory(
+            `${basePath}/${item}`,
+            `${baseDirectory}/${item}`,
+            nestedDir,
+          ),
+        ];
+      }
+      return [...prev, `${baseDirectory}/${item}`.replace(/^\/+/, '')];
+    }, []);
+  };
+  const urls = reduceDirectory(basePath, '', rootDirectory);
+  expect(urls).toMatchSnapshot(`dir: ${outDir}`);
+}
+
+function getPath(dir: string) {
+  return path.join(process.cwd(), 'test', 'fixtures', 'out', dir);
+}
+
+function getOutputFileStrategyPath(
+  key: string,
+  outputFileStrategy: 'modules' | 'members',
+) {
   const basePath = path.join(
     process.cwd(),
     'test',
     'fixtures',
     'out',
+    'md',
     key,
     outputFileStrategy,
   );

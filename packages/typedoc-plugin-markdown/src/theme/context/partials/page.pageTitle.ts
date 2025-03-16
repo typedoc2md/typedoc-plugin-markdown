@@ -1,10 +1,5 @@
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import {
-  DeclarationReflection,
-  ReflectionCategory,
-  ReflectionGroup,
-  ReflectionKind,
-} from 'typedoc';
+import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
 export function pageTitle(this: MarkdownThemeContext): string {
   const textContentMappings = this.options.getValue('textContentMappings');
@@ -44,8 +39,6 @@ export function pageTitle(this: MarkdownThemeContext): string {
     ?.title;
 
   if (
-    page.model instanceof ReflectionCategory ||
-    page.model instanceof ReflectionGroup ||
     [ReflectionKind.Module, ReflectionKind.Namespace].includes(page.model.kind)
   ) {
     if (typeof modulePageTitle === 'string') {
@@ -54,11 +47,7 @@ export function pageTitle(this: MarkdownThemeContext): string {
 
     return modulePageTitle({
       name,
-      kind:
-        page.model instanceof ReflectionCategory ||
-        page.model instanceof ReflectionGroup
-          ? null
-          : kind,
+      kind,
     });
   }
 

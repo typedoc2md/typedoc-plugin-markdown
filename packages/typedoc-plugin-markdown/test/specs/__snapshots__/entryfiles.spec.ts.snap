@@ -5,6 +5,8 @@ exports[`EntryFiles should get entry module: (Output File Strategy "members") (O
 
 ***
 
+[@scope/entryfile](README.mdx) / entry-module
+
 # entry-module
 
 ## Classes
@@ -17,6 +19,8 @@ exports[`EntryFiles should get entry module: (Output File Strategy "members") (O
 "**@scope/entryfile**
 
 ***
+
+[@scope/entryfile]() / entry-module
 
 # @scope/entryfile
 
@@ -31,13 +35,13 @@ exports[`EntryFiles should get module member for members: (Output File Strategy 
 
 ***
 
-[@scope/entryfile](../../README.mdx) / ModuleClass
+[@scope/entryfile](../../README.mdx) / [entry-module](../../README.mdx) / ModuleClass
 
 # Class: ModuleClass
 
 ## Constructors
 
-### new ModuleClass()
+### Constructor
 
 > **new ModuleClass**(): \`ModuleClass\`
 
@@ -52,13 +56,13 @@ exports[`EntryFiles should get module member for members: (Output File Strategy 
 
 ***
 
-[@scope/entryfile](../../index.mdx) / ModuleClass
+[@scope/entryfile]() / [entry-module](../../index.mdx) / ModuleClass
 
 # Class: ModuleClass
 
 ## Constructors
 
-### new ModuleClass()
+### Constructor
 
 > **new ModuleClass**(): \`ModuleClass\`
 

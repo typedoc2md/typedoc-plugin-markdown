@@ -1,4 +1,4 @@
-import { heading, unorderedList } from '@plugin/libs/markdown/index.js';
+import { heading, link, unorderedList } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { DeclarationReflection, i18n, ReflectionKind } from 'typedoc';
 
@@ -33,9 +33,23 @@ export function memberWithGroups(
   }
 
   if (model.typeHierarchy?.next) {
+    const includeHierarchySummary =
+      this.options.isSet('includeHierarchySummary') &&
+      this.options.getValue('includeHierarchySummary');
+    if (includeHierarchySummary) {
+      md.push(heading(options.headingLevel, i18n.theme_hierarchy()));
+      md.push(
+        link(
+          i18n.theme_hierarchy_view_summary(),
+          `${this.relativeURL('hierarchy')}${this.options.getValue('fileExtension')}`,
+        ),
+      );
+    }
     md.push(
       this.partials.hierarchy(model.typeHierarchy, {
-        headingLevel: options.headingLevel,
+        headingLevel: includeHierarchySummary
+          ? options.headingLevel + 1
+          : options.headingLevel,
       }),
     );
   }
