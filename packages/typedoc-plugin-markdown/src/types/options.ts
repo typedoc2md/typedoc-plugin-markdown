@@ -9,102 +9,102 @@ export interface PluginOptions {
   /**
    * Custom anchor prefix when anchoring to in-page symbols.
    */
-  anchorPrefix: string;
+  anchorPrefix?: string;
 
   /**
    * Specifies comment block tags that should preserve their position.
    */
-  blockTagsPreserveOrder: string[];
+  blockTagsPreserveOrder?: string[];
 
   /**
    * Sets the format of property groups for classes.
    */
-  classPropertiesFormat: 'list' | 'table' | 'htmlTable';
+  classPropertiesFormat?: 'list' | 'table' | 'htmlTable';
 
   /**
    * The file name of the entry page.
    */
-  entryFileName: string;
+  entryFileName?: string;
 
   /**
    * The name of a module that should act as the root page for the documentation.
    */
-  entryModule: string;
+  entryModule?: string;
 
   /**
    * Sets the format of enumeration members.
    */
-  enumMembersFormat: 'list' | 'table' | 'htmlTable';
+  enumMembersFormat?: 'list' | 'table' | 'htmlTable';
 
   /**
    * @deprecated This option has been renamed hideGroupHeadings to better reflect its purpose.
    */
-  excludeGroups: boolean;
+  excludeGroups?: boolean;
 
   /**
    * Exclude writing @ scope directories in paths.
    */
-  excludeScopesInPaths: boolean;
+  excludeScopesInPaths?: boolean;
 
   /**
    * Expand objects inside declarations.
    */
-  expandObjects: boolean;
+  expandObjects?: boolean;
 
   /**
    * Expand parameters in signature parentheses to display type information.
    */
-  expandParameters: boolean;
+  expandParameters?: boolean;
 
   /**
    * Specify the file extension for generated output files.
    */
-  fileExtension: string;
+  fileExtension?: string;
 
   /**
    * Flatten output files to a single directory.
    */
-  flattenOutputFiles: boolean;
+  flattenOutputFiles?: boolean;
 
   /**
    * Apply additional output formatting with Prettier.
    */
-  formatWithPrettier: boolean;
+  formatWithPrettier?: boolean;
 
   /**
    * Do not print breadcrumbs.
    */
-  hideBreadcrumbs: boolean;
+  hideBreadcrumbs?: boolean;
 
   /**
    * Excludes grouping by kind so all members are rendered at the same level.
    */
-  hideGroupHeadings: boolean;
+  hideGroupHeadings?: boolean;
 
   /**
    * Do not print page header.
    */
-  hidePageHeader: boolean;
+  hidePageHeader?: boolean;
 
   /**
    * Do not print page title.
    */
-  hidePageTitle: boolean;
+  hidePageTitle?: boolean;
 
   /**
    * Sets the format of index items.
    */
-  indexFormat: 'list' | 'table' | 'htmlTable';
+  indexFormat?: 'list' | 'table' | 'htmlTable';
 
   /**
    * Sets the format of property groups for interfaces.
    */
-  interfacePropertiesFormat: 'list' | 'table' | 'htmlTable';
+  interfacePropertiesFormat?: 'list' | 'table' | 'htmlTable';
 
   /**
    * Determines which members are exported to their own file.
    */
-  membersWithOwnFile: (
+  membersWithOwnFile?: (
     | 'Enum'
     | 'Variable'
     | 'Function'
@@ -116,17 +116,17 @@ export interface PluginOptions {
   /**
    * Appends the documentation index page to the readme page.
    */
-  mergeReadme: boolean;
+  mergeReadme?: boolean;
 
   /**
    * The file name of the separate modules / index page.
    */
-  modulesFileName: string;
+  modulesFileName?: string;
 
   /**
    * @deprecated This option has been deprecated in favour of TypeDoc `navigation` option.
    */
-  navigationModel: {
+  navigationModel?: {
     excludeGroups?: boolean;
     excludeCategories?: boolean;
     excludeFolders?: boolean;
@@ -135,12 +135,12 @@ export interface PluginOptions {
   /**
    * Determines how output files are generated.
    */
-  outputFileStrategy: 'members' | 'modules';
+  outputFileStrategy?: 'members' | 'modules';
 
   /**
    * Change specific text placeholders in the template.
    */
-  pageTitleTemplates: {
+  pageTitleTemplates?: {
     index:
       | string
       | ((name: { projectName: string; version: string }) => string);
@@ -153,42 +153,42 @@ export interface PluginOptions {
   /**
    * Sets the format of parameter and type parameter groups.
    */
-  parametersFormat: 'list' | 'table' | 'htmlTable';
+  parametersFormat?: 'list' | 'table' | 'htmlTable';
 
   /**
    * Preserve anchor casing when generating link to symbols.
    */
-  preserveAnchorCasing: boolean;
+  preserveAnchorCasing?: boolean;
 
   /**
    * Specify a custom Prettier configuration file location.
    */
-  prettierConfigFile: string;
+  prettierConfigFile?: string;
 
   /**
    * @deprecated  This option has been deprecated in favour of `--interfacePropertiesFormat` and `--classPropertiesFormat`.
    */
-  propertiesFormat: 'list' | 'table' | 'htmlTable';
+  propertiesFormat?: 'list' | 'table' | 'htmlTable';
 
   /**
    * Sets the format of style for property members for interfaces and classes.
    */
-  propertyMembersFormat: 'list' | 'table' | 'htmlTable';
+  propertyMembersFormat?: 'list' | 'table' | 'htmlTable';
 
   /**
    * Specify the base path for all urls.
    */
-  publicPath: string;
+  publicPath?: string;
 
   /**
    * Sanitize HTML and JSX inside JsDoc comments.
    */
-  sanitizeComments: boolean;
+  sanitizeComments?: boolean;
 
   /**
    * Control how table columns are configured and displayed.
    */
-  tableColumnSettings: {
+  tableColumnSettings?: {
     hideDefaults?: boolean;
     hideInherited?: boolean;
     hideModifiers?: boolean;
@@ -201,7 +201,7 @@ export interface PluginOptions {
   /**
    * @deprecated This option has been deprecated in favour of `--pageTitleTemplates`.
    */
-  textContentMappings: {
+  textContentMappings?: {
     'header.title': string;
     'breadcrumbs.home': string;
     'title.indexPage': string;
@@ -212,30 +212,30 @@ export interface PluginOptions {
   /**
    * Sets the format of style for type alias properties.
    */
-  typeAliasPropertiesFormat: 'list' | 'table' | 'htmlTable';
+  typeAliasPropertiesFormat?: 'list' | 'table' | 'htmlTable';
 
   /**
    * Sets the format of style for type declaration members.
    */
-  typeDeclarationFormat: 'list' | 'table' | 'htmlTable';
+  typeDeclarationFormat?: 'list' | 'table' | 'htmlTable';
 
   /**
    * Set the visibility level for type declaration documentation.
    */
-  typeDeclarationVisibility: 'compact' | 'verbose';
+  typeDeclarationVisibility?: 'compact' | 'verbose';
 
   /**
    * Wraps signatures and declarations in code blocks.
    */
-  useCodeBlocks: boolean;
+  useCodeBlocks?: boolean;
 
   /**
    * Add HTML anchors to page headings.
    */
-  useHTMLAnchors: boolean;
+  useHTMLAnchors?: boolean;
 
   /**
    * Use HTML encoded entities for angle brackets.
    */
-  useHTMLEncodedBrackets: boolean;
+  useHTMLEncodedBrackets?: boolean;
 }

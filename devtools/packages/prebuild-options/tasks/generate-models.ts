@@ -120,7 +120,7 @@ async function writeOptionsTypes(
 /**
  * ${option.help}
  */
-${name}: ${getType(name, option, true)};`,
+${name}?: ${getType(name, option, true)};`,
       )
       .join('\n')}
   }
