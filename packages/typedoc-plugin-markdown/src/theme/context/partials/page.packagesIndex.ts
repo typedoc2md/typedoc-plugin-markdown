@@ -60,23 +60,12 @@ export function packagesIndex(
 
 function getPackageLink(
   context: MarkdownThemeContext,
-  reflection: DeclarationReflection,
+  projectPackage: DeclarationReflection,
 ) {
-  const packageEntryModule = context.router.getPackageEntryModule(reflection);
-
-  if (packageEntryModule) {
-    return context.urlTo(packageEntryModule);
-  }
-
-  if (reflection.readme?.length && !context.options.getValue('mergeReadme')) {
-    return replaceFilename(
-      context.urlTo(reflection),
-      context.router.getModulesFileName(reflection),
-    );
-  }
-
-  return replaceFilename(
-    context.urlTo(reflection),
-    context.router.getPackageEntryFileName(reflection) || '',
-  );
+  return projectPackage.readme
+    ? replaceFilename(
+        context.urlTo(projectPackage),
+        context.router.getPackageEntryFileName(projectPackage) || '',
+      )
+    : context.urlTo(projectPackage);
 }
