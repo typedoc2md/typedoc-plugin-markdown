@@ -8,7 +8,7 @@ From a consumer perspective there should be no direct breaking change from the p
 
 ### Architectural Changes
 
-- This plugin now utilizes TypeDoc's [router](https://typedoc.org/documents/Options.Output.html#router) feature. This implementation replaces the now deprecated `"outputFileStrategy"` option. `"outputFileStrategy"` is still supported for now, but will now point to the "kind-structure" and "module" router keys respectively. Further details are contained in the documentation website.
+- This plugin now utilizes TypeDoc's [router](https://typedoc.org/documents/Options.Output.html#router) feature. This implementation replaces the now deprecated `"outputFileStrategy"` option. `"outputFileStrategy"` is still supported for now, but will now point to the "member" and "module" router keys respectively. Further details are contained in the documentation website.
 - Please note that separate strategies for output generation in different packages (when entryPointStrategy=packages) is no longer possible with this new architecture.
 
 ### Structural Changes

@@ -12,11 +12,11 @@ This plugin now utilises this mechanism for output file generation.
 
 The plugin ships with the following custom built-in routers:
 
-### "kind-structure" (default)
+### "member" (default)
 
 ```json filename="typedoc.json"
 {
-  "router": "kind-structure"
+  "router": "member"
 }
 ```
 
@@ -24,7 +24,7 @@ _Note: This is equivalent to the deprecated `outputFileStrategy="members"`._
 
 Generates an individual file for each exported module member kind. Pages are grouped by kind within their respective module hierarchy.
 
-This mirrors a combination of TypeDoc's `kind` and `structure` routers hence the name.
+This mirrors a combination of TypeDoc's `kind` and `structure` routers.
 
 This is the default router of the plugin.
 

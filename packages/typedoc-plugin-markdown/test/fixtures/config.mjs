@@ -59,7 +59,7 @@ const config = {
       tableColumnSettings: {
         leftAlignHeaders: true,
       },
-      router: 'kind-structure',
+      router: 'member',
       blockTagsPreserveOrder: ['@deprecated', '@see'],
     },
     options: [

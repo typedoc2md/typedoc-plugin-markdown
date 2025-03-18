@@ -120,10 +120,9 @@ function prepareRouter(renderer: Renderer) {
     if (renderer.application.options.isSet('outputFileStrategy')) {
       const outputFileStrategy =
         renderer.application.options.getValue('outputFileStrategy');
-      routerOption =
-        outputFileStrategy === 'modules' ? 'module' : 'kind-structure';
+      routerOption = outputFileStrategy === 'modules' ? 'module' : 'member';
     } else {
-      routerOption = 'kind-structure';
+      routerOption = 'member';
     }
   }
 
@@ -134,7 +133,7 @@ function prepareRouter(renderer: Renderer) {
     renderer.application.logger.error(
       i18n.router_0_is_not_defined_available_are_1(
         routerOption,
-        ['kind-structure', 'module'].join(', '),
+        ['member', 'module'].join(', '),
       ),
     );
     return false;

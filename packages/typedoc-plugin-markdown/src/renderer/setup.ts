@@ -24,7 +24,7 @@ export function setupRenderer(app: Application) {
 
   Object.defineProperty(app.renderer, 'routers', {
     value: new Map<string, new (app: Application) => MarkdownRouter>([
-      ['kind-structure', KindStructureRouter],
+      ['member', KindStructureRouter],
       ['module', ModuleRouter],
     ]),
   });
