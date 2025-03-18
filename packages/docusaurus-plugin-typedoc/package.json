@@ -19,7 +19,7 @@
   },
   "homepage": "http://typedoc-plugin-markdown.org/plugins/docusaurus",
   "peerDependencies": {
-    "typedoc-plugin-markdown": ">=4.5.0"
+    "typedoc-plugin-markdown": ">=4.5.1"
   },
   "scripts": {
     "lint": "eslint ./src",
