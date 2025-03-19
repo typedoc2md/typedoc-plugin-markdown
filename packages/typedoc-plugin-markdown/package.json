@@ -12,7 +12,7 @@
   "scripts": {
     "lint": "eslint ./src",
     "prepublishOnly": "npm run lint && npm run build",
-    "prebuild": "rm -rf dist && prebuild-options && tsx ./.scripts/prebuild",
+    "prebuild": "rm -rf dist && prebuild-options && tsx ./__scripts__/prebuild",
     "build": "tsc && tsc-alias",
     "build-and-run": "npm run build && npm run fixtures",
     "fixtures": "rm -rf ./test/fixtures/out && node test/__scripts__/build-fixtures.mjs -c test/fixtures/config.mjs",
@@ -20,7 +20,7 @@
     "pretest": "npm run fixtures -- -isCI",
     "test": "npm run validate && jest",
     "test:update": "npm run build-and-run && npm run validate && jest -u",
-    "schema": "tsx ./.scripts/schema/generate-schema.ts"
+    "schema": "tsx ./__scripts__/schema/generate-schema.ts"
   },
   "author": "Thomas Grey",
   "license": "MIT",

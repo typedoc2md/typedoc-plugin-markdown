@@ -326,7 +326,8 @@
             "table",
             "htmlTable"
           ],
-          "description": "[typedoc-plugin-markdown] Sets the format of property groups for interfaces and classes.",
+          "deprecated": "This option has been deprecated in favour of `--interfacePropertiesFormat` and `--classPropertiesFormat`.",
+          "description": "[typedoc-plugin-markdown] This option has been deprecated in favour of `--interfacePropertiesFormat` and `--classPropertiesFormat`.",
           "default": "list"
         },
         "propertyMembersFormat": {
@@ -402,7 +403,8 @@
               "type": "string"
             }
           },
-          "description": "[typedoc-plugin-markdown] Change specific text placeholders in the template.",
+          "deprecated": "This option has been deprecated in favour of `--pageTitleTemplates`.",
+          "description": "[typedoc-plugin-markdown] This option has been deprecated in favour of `--pageTitleTemplates`.",
           "default": {
             "header.title": "{projectName} {version}",
             "breadcrumbs.home": "{projectName} {version}",
@@ -410,6 +412,16 @@
             "title.memberPage": "{kind}: {name}",
             "title.modulePage": "{name}"
           }
+        },
+        "typeAliasPropertiesFormat": {
+          "type": "string",
+          "enum": [
+            "list",
+            "table",
+            "htmlTable"
+          ],
+          "description": "[typedoc-plugin-markdown] Sets the format of style for type alias properties.",
+          "default": "list"
         },
         "typeDeclarationFormat": {
           "type": "string",

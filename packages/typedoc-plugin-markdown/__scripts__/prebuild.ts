@@ -1,5 +1,5 @@
 import { consola } from 'consola';
-import { prebuildResources } from './prebuild-resources';
+import { prebuildResources } from './prebuild-resources.js';
 
 main();
 
