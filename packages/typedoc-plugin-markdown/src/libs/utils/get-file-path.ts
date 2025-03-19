@@ -7,8 +7,9 @@ export function getFilePath(filePathWithExtension: string) {
   if (!filePathWithExtension) {
     return '';
   }
-  return path.join(
+  const filePath = path.join(
     path.dirname(filePathWithExtension),
     path.basename(filePathWithExtension, path.extname(filePathWithExtension)),
   );
+  return filePath.replace(/\\/g, '/');
 }

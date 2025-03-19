@@ -1,4 +1,7 @@
-import { removeFirstScopedDirectory } from '@plugin/libs/utils/index.js';
+import {
+  removeFirstScopedDirectory,
+  replaceFilename,
+} from '@plugin/libs/utils/index.js';
 import { MarkdownRenderer } from '@plugin/types/markdown-renderer.js';
 import * as path from 'path';
 import {
@@ -28,12 +31,6 @@ export class KindStructureRouter extends MarkdownRouter {
       if (this.isPackages) {
         const meta = (this.application.renderer as MarkdownRenderer)
           ?.packagesMeta[reflection.name];
-        const replaceFilename = (originalPath: string, newFileName: string) => {
-          return originalPath.replace(
-            /\/[^/]+(\.[^/.]+)$/,
-            `/${newFileName}$1`,
-          );
-        };
         if (
           meta &&
           (reflection as DeclarationReflection).readme &&
@@ -132,6 +129,7 @@ export class KindStructureRouter extends MarkdownRouter {
     }
     let fullName = path
       .join([dir, fileName].filter((part) => !!part).join('/'))
+      .replace(/\\/g, '/')
       .replace(/ /g, '-');
 
     if (this.ignoreScopes) {
