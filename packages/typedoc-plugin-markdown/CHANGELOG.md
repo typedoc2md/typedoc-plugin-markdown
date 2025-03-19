@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.5.2
+
+### Patch Changes
+
+- Ensure all file paths use forward slashes in windows ([#782](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/782)).
+
 ## 4.5.1 (2025-03-18)
 
 ### Patch Changes
