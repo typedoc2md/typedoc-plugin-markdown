@@ -439,12 +439,14 @@ const config = {
     },
     options: [
       {
+        useHTMLAnchors: true,
+        anchorPrefix: 'api-',
         modulesFileName: 'documentation.md',
       },
     ],
   },
   coreRoutersSingleModule: {
-    only: false,
+    only: true,
     entryPoints: '/reflections/index.ts',
     routers: ['kind'],
     commonOptions: {
@@ -455,6 +457,7 @@ const config = {
       ],
       //theme: 'stub-groups',
       disableSources: true,
+      includeHierarchySummary: false,
     },
     options: [{}],
   },

@@ -3,7 +3,7 @@ import * as path from 'path';
 /**
  * Returns file path without extension
  */
-export function getFilePathWithoutExtension(filePathWithExtension: string) {
+export function getPathWithoutExt(filePathWithExtension: string) {
   if (!filePathWithExtension) {
     return '';
   }

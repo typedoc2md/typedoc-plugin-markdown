@@ -1,4 +1,4 @@
-import { getFilePathWithoutExtension } from '@plugin/libs/utils/index.js';
+import { getPathWithoutExt } from '@plugin/libs/utils/index.js';
 import {
   CategoryRouter as CoreCategoryRouter,
   GroupRouter as CoreGroupRouter,
@@ -7,19 +7,27 @@ import {
   StructureDirRouter as CoreStructureDirRouter,
   StructureRouter as CoreStructureRouter,
   Options,
+  RouterTarget,
 } from 'typedoc';
 
 /**
- * This decorator is used to amend the core routers to handle file options of the plugin.
+ * This decorator is used to amend the core routers to handle options of the plugin.
  */
 function CoreRouter<T extends new (...args: any[]) => any>(constructor: T) {
   return class extends constructor {
+    private options = this.application.options as Options;
+    private anchorPrefix = this.options.getValue('anchorPrefix');
+    private mergeReadme = this.options.getValue('mergeReadme');
+    private entryFileName = getPathWithoutExt(
+      this.options.getValue('entryFileName'),
+    );
+    private modulesFileName = getPathWithoutExt(
+      this.options.getValue('modulesFileName'),
+    );
     /**
      * Expose the "fileExtension" option to the extension property.
      */
-    protected extension = (this.application.options as Options).getValue(
-      'fileExtension',
-    );
+    protected extension = this.options.getValue('fileExtension');
 
     /**
      * Intercepts getFileName method to handle file options.
@@ -30,22 +38,23 @@ function CoreRouter<T extends new (...args: any[]) => any>(constructor: T) {
      * -
      */
     protected getFileName(baseName: string): string {
-      const options = this.application.options as Options;
-      const entryFileName = getFilePathWithoutExtension(
-        options.getValue('entryFileName'),
-      );
       if (baseName === 'index') {
-        return super.getFileName(entryFileName);
+        return super.getFileName(this.entryFileName);
       }
-      if (baseName === 'modules' && options.getValue('mergeReadme')) {
-        return `${entryFileName}${this.extension}`;
+      if (baseName === 'modules' && this.mergeReadme) {
+        return `${this.entryFileName}${this.extension}`;
       }
-      if (baseName === 'modules' && options.isSet('modulesFileName')) {
-        return super.getFileName(
-          getFilePathWithoutExtension(options.getValue('modulesFileName')),
-        );
+      if (baseName === 'modules' && this.options.isSet('modulesFileName')) {
+        return super.getFileName(this.modulesFileName);
       }
       return super.getFileName(baseName);
+    }
+
+    getAnchor(target: RouterTarget) {
+      if (this.anchorPrefix) {
+        return `${this.anchorPrefix}${super.getAnchor(target)}`;
+      }
+      return super.getAnchor(target);
     }
   };
 }
