@@ -7,7 +7,7 @@
  */
 export interface PluginOptions {
   /**
-   * Custom anchor prefix when anchoring to in-page symbols.
+   * Custom anchor prefix to add to anchor links.
    */
   anchorPrefix?: string;
 

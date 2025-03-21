@@ -10,6 +10,7 @@ import {
   ProjectReflection,
   Reflection,
   ReflectionKind,
+  RouterTarget,
   Slugger,
 } from 'typedoc';
 
@@ -29,6 +30,7 @@ export abstract class BaseCustomRouter extends BaseRouter {
     EntryPointStrategy.Packages;
   membersWithOwnFile = this.application.options.getValue('membersWithOwnFile');
   mergeReadme = this.application.options.getValue('mergeReadme');
+  anchorPrefix = this.application.options.getValue('anchorPrefix');
 
   directories = new Map<ReflectionKind, string>([
     [ReflectionKind.Class, 'classes'],
@@ -113,6 +115,13 @@ export abstract class BaseCustomRouter extends BaseRouter {
     this.parseChildPages(project, pages);
 
     return pages;
+  }
+
+  override getAnchor(target: RouterTarget) {
+    if (this.anchorPrefix) {
+      return `${this.anchorPrefix}${super.getAnchor(target)}`;
+    }
+    return super.getAnchor(target);
   }
 
   private parseChildPages(project: ProjectReflection, pages: PageDefinition[]) {

@@ -159,6 +159,7 @@ const config = {
       readme: 'none',
       excludePrivate: false,
       useHTMLAnchors: true,
+      anchorPrefix: 'api-',
       includeHierarchySummary: false,
     },
     options: [

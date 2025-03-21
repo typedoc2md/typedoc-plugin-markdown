@@ -599,17 +599,6 @@ export const publicPath: Partial<DeclarationOption> = {
 };
 
 /**
- * @hidden
- *
- * @deprecated
- */
-export const anchorPrefix: Partial<DeclarationOption> = {
-  help: 'Custom anchor prefix when anchoring to in-page symbols.',
-  type: ParameterType.String,
-  defaultValue: undefined,
-};
-
-/**
  * By default, opening and closing angle brackets (`<` and `>`) are escaped using backslashes, and most modern Markdown processors handle them consistently.
  * However, using HTML entities (`&lt;` and `&gt;`) might be preferable to avoid any inconsistencies with some Markdown processors.
  *
@@ -622,16 +611,19 @@ export const useHTMLEncodedBrackets: Partial<DeclarationOption> = {
 };
 
 /**
- * This option allows you to control whether additional unique HTML anchors(`<a id="...">`) are added to headings.
+ * Controls whether HTML anchors (`<a id="...">`) are added to headings.
  *
- * Markdown processors usually auto generate anchor IDs for headings found in a document. This plugin attempts to generate cross-links to symbols based on these IDs.
+ * Markdown processors usually auto-generate anchor IDs for headings found in a document.
+ * This plugin attempts to generate cross-links to symbols based on these IDs.
  *
- * This option should be used in the following scenarios:
+ * Enable this option if:
  *
- * - Your Markdown parser does not generate heading IDs, meaning there is no way to link to headings.
- * - The plugin cannot reliably resolve auto-generated IDs, for example, if additional headings are added dynamically.
+ * - Your Markdown parser does not generate heading IDs, making it impossible to link to headings in the document.
+ * - The plugin cannot reliably resolve auto-generated IDs — for example, if additional headings are added dynamically.
+ *   In this case, use this option together with `anchorPrefix` to ensure unique and predictable anchors.
  *
- * *Note that unique HTML anchors will always be added to linkable symbols listed in table rows as there is no alternative way to link to these items.*
+ * *Note: HTML anchors will always be added to linkable symbols listed in table rows,
+ * as there is no alternative way to link to these items.*
  *
  * @category Utility
  */
@@ -639,6 +631,24 @@ export const useHTMLAnchors: Partial<DeclarationOption> = {
   help: 'Add HTML anchors to page headings.',
   type: ParameterType.Boolean,
   defaultValue: false,
+};
+
+/**
+ * Prefix to prepend to all generated anchor links.
+ *
+ * Use this option when:
+ *
+ * - Your Markdown parser automatically assigns a custom anchor prefix.
+ * - You are using `useHTMLAnchors` and want to avoid ID conflicts with other elements in the document.
+ *
+ * @example "api-"
+ *
+ * @category Utility
+ */
+export const anchorPrefix: Partial<DeclarationOption> = {
+  help: 'Custom anchor prefix to add to anchor links.',
+  type: ParameterType.String,
+  defaultValue: undefined,
 };
 
 /**
@@ -654,8 +664,6 @@ export const preserveAnchorCasing: Partial<DeclarationOption> = {
 
 /**
  * @hidden
- *
- * @deprecated
  */
 export const textContentMappings: Partial<DeclarationOption> = {
   help: '@deprecated This option has been deprecated in favour of `--pageTitleTemplates`.',
@@ -710,6 +718,8 @@ export const textContentMappings: Partial<DeclarationOption> = {
  * ```
  *
  * @category Utility
+ *
+ * @hidden
  */
 export const pageTitleTemplates: Partial<DeclarationOption> = {
   help: 'Change specific text placeholders in the template.',
