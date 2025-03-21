@@ -110,6 +110,34 @@ Like "module", but flattens output to a single directory.
   <FileTree.File name="package-2.module-b.md" />
 </FileTree>
 
+## Custom Routers
+
+For the adventurous, you can extend the routers to a custom output.
+
+### Extend Custom Router
+
+```json filename="custom-router.js"
+{
+  "plugin": ["./custom-router.mjs"],
+  "router": "custom-router"
+}
+```
+
+```js filename="custom-router.mjs"
+import { ReflectionKind } from 'typedoc';
+import { MemberRouter } from 'typedoc-plugin-markdown';
+
+export function load(app) {
+  app.renderer.defineRouter('custom-router', CustomRouter);
+}
+
+export class CustomRouter extends MemberRouter {
+  relativeUrl(from, to) {
+    return `wiki/${super.relativeUrl(from, to)}`;
+  }
+}
+```
+
 ## TypeDoc Core Routers
 
 ```json filename="typedoc.json"

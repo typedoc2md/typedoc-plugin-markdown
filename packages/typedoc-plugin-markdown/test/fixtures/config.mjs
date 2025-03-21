@@ -320,7 +320,7 @@ const config = {
     ],
   },
   customize: {
-    only: false,
+    only: true,
     entryPoints: '/customize/index.ts',
     outputFileStrategies: ['members'],
     commonOptions: {
@@ -336,6 +336,11 @@ const config = {
           path.join(__dirname, 'custom-plugins', 'urls-plugin.mjs'),
         ],
         theme: 'custom-theme',
+        router: 'custom-router',
+      },
+      {
+        plugin: [path.join(__dirname, 'custom-plugins', 'custom-router-2.mjs')],
+
         router: 'custom-router',
       },
     ],
@@ -425,12 +430,13 @@ const config = {
   coreRouters: {
     only: false,
     entryPoints: '/groups/**/*.ts',
-    routers: ['kind', 'kind-dir'],
+    routers: ['custom-router'],
     commonOptions: {
       name: 'core-router',
       plugin: [
         // path.join(__dirname, 'custom-plugins', 'stub-groups-theme.mjs'),
         path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
+        path.join(__dirname, 'custom-plugins', 'custom-router-2.mjs'),
       ],
       // theme: 'stub-groups',
       disableSources: true,
@@ -446,7 +452,7 @@ const config = {
     ],
   },
   coreRoutersSingleModule: {
-    only: true,
+    only: false,
     entryPoints: '/reflections/index.ts',
     routers: ['kind'],
     commonOptions: {

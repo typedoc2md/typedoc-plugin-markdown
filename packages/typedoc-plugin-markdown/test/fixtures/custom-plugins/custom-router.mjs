@@ -12,18 +12,6 @@ export function load(app) {
 
 export class CustomRouter extends MemberRouter {
   /**
-   * @param {import('typedoc').ProjectReflection} project
-   */
-
-  /*buildPages(project) {
-    return super.buildPages(project).map((page) => {
-      return {
-        ...page,
-      };
-    });
-  }*/
-
-  /**
    * @param {import('typedoc').ProjectReflection} reflection
    */
   getIdealBaseName(reflection) {
