@@ -1,19 +1,5 @@
 # Changelog
 
-## 4.6.0
-
-### Minor Changes
-
-- Implemented support for consuming TypeDoc core routers.
-- Exported routers to public api.
-- Implemented a hierarchy summary page as per default theme.
-- Updated "Constructor" titles of classes to fix internal anchor issues.
-
-### Patch Changes
-
-- Fix incompatibility when used with "outputs" ([#788](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/788)).
-- Utilize "anchorPrefix" option to ensure unique anchors linking if required ([#764](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/764)).
-
 ## 4.6.0 (2025-03-23)
 
 This release continues the effort to further align to TypeDoc’s default theme, with improvements that make the plugin more consistent and predictable.
@@ -30,6 +16,18 @@ This release continues the effort to further align to TypeDoc’s default theme,
 - To support core routers, a "Hierarchy Summary" page has been introduced to all routers. This feature is turned off by default but can be enabled by setting "includeHierarchySummary" to "true".
 - When "includeHierarchySummary" is "true", symbols with an available hierarchy now include an associated "Hierarchy" Markdown heading with a "View Summary" link as per the default theme.
 - Class constructor headings now read "Constructor". This aligns to the TypeDoc internal reflection name and fixes issues with internal anchoring not resolving correctly.
+
+### Minor Changes
+
+- Implemented support for consuming TypeDoc core routers.
+- Exported routers to public api.
+- Implemented a hierarchy summary page as per default theme.
+- Updated "Constructor" titles of classes to fix internal anchor issues.
+
+### Patch Changes
+
+- Fix incompatibility when used with "outputs" ([#788](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/788)).
+- Utilize "anchorPrefix" option to ensure unique anchors linking if required ([#764](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/764)).
 
 ## 4.5.2 (2025-03-19)
 
