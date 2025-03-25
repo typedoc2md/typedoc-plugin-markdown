@@ -1,7 +1,8 @@
-import { Cards } from 'nextra/components';
-import Image from 'next/image';
-import { faFileLines, faBook } from '@fortawesome/free-solid-svg-icons';
+{/* prettier-ignore */}
+import { faBook, faFileLines } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
+import { Cards } from 'nextra/components';
 
 # Utils & Themes
 
@@ -14,13 +15,22 @@ Utility plugins that can be used to provide metadata or adjust the output of the
 <Cards num={2}>
   <Cards.Card
     title="typedoc-plugin-frontmatter"
-    icon={<FontAwesomeIcon icon={faBook} />}
+    icon={
+      <Image
+        src="/logos/yaml-logo.png"
+        alt="YAML Frontmatter"
+        width={18}
+        height={18}
+      />
+    }
     arrow={true}
     href="plugins/frontmatter"
   />
   <Cards.Card
     title="typedoc-plugin-remark"
-    icon={<FontAwesomeIcon icon={faFileLines} />}
+    icon={
+      <Image src="/logos/remark-logo.png" alt="Remark" width={26} height={26} />
+    }
     arrow={true}
     href="plugins/remark"
   />

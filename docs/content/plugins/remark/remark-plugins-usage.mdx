@@ -1,0 +1,97 @@
+# Remark Plugins Usage
+
+## Useful Plugins
+
+Here are a selection of remark plugins that might be useful. For a full list please visit the [remark plugins page](https://github.com/remarkjs/remark/blob/main/doc/plugins.md)
+
+### remark-mdx
+
+https://mdxjs.com/packages/remark-mdx
+
+- If you are using MDX, this plugin is required to correctly parse to MDX.
+
+```sh npm2yarn
+npm install remark-mdx --save-dev
+```
+
+```json filename="typedoc.json"
+{
+  "remarkPlugins": ["remark-mdx"]
+}
+```
+
+### remark-github
+
+https://github.com/remarkjs/remark-github
+
+- Links references to commits, issues, and users in the same way that GitHub does in comments.
+
+```sh npm2yarn
+npm install remark-github --save-dev
+```
+
+```json filename="typedoc.json"
+{
+  "remarkPlugins": ["remark-github", { "repository": "myorg/myrepo" }]
+}
+```
+
+### remark-toc
+
+https://github.com/remarkjs/remark-toc
+
+- Adds inline table of contents to pages.
+
+_Note: Also requires [`remark-insert-headings`](https://github.com/tgreyuk/remark-insert-headings) to add insert placeholder heading._
+
+```sh npm2yarn
+npm install remark-insert-headings remark-toc --save-dev
+```
+
+```json filename="typedoc.json"
+{
+  "remarkPlugins": [
+    ["remark-insert-headings", { "text": "Contents" }],
+    ["remark-toc", { "maxDepth": 2 }]
+  ]
+}
+```
+
+## Example Configuration
+
+The following example shows how you might conditionally use the above plugins in your `typedoc.json`.
+
+_This is for illustration purposes only, and you can use any combination of plugins you like._
+
+```json filename="typedoc.json"
+{
+  "plugin": ["typedoc-plugin-markdown", "typedoc-plugin-remark"],
+  "remarkPlugins": [
+    // Apply remark-mdx and remark-github to all files.
+    {
+      "applyTo": "*",
+      "plugins": [
+        "remark-mdx",
+        ["remark-github", { "repository": "myorg/myrepo" }]
+      ]
+    },
+    // Apply remark-toc to Readme page and members kinds of Document, Class and Interface only.
+    {
+      "applyTo": ["Readme", "Document", "Class", "Interface"],
+      "plugins": [
+        // remark-insert-headings is additionally required
+        // (only display toc heading if there are more than two headings)
+        [
+          "remark-insert-headings",
+          {
+            "text": "Contents",
+            "position": "start",
+            "minHeadingCount": 2
+          }
+        ],
+        ["remark-toc", { "maxDepth": 2 }]
+      ]
+    }
+  ]
+}
+```

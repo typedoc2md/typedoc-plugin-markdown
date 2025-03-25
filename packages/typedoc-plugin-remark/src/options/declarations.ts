@@ -1,50 +1,81 @@
 import { DeclarationOption, ParameterType } from 'typedoc';
+import { validateRemarkPlugins } from './validation.js';
 
 /**
  * You can include any compatible [remark plugins](https://github.com/remarkjs/remark/blob/main/doc/plugins.md)  or create and reference your own locally.
  *
  * Each plugin you wish to use must be installed individually.
  *
- * Options can be provided as either an array of strings or an array of strings with associated options.
+ * You can apply plugins globally to all pages, or selectively to specific kinds of pages.
  *
- * @example  ["remark-github", ["remark-toc", { "maxDepth": 3 }] ]
+ * *Note: If a YAML frontmatter block is detected in the markdown, the [`remark-frontmatter`](https://github.com/remarkjs/remark-frontmatter) plugin will be automatically applied to parse it.*
+ *
+ * **Basic Usage (Global Plugins)**
+ *
+ * To apply Remark plugins to all documentation pages:
+ *
+ * Each item can be:
+ *
+ * - A plugin name (string)
+ * - A tuple of [plugin, pluginOptions]
+ *
+ * ```json
+ * {
+ *  "remarkPlugins": [
+ *    "remark-mdx",
+ *    ["remark-github", { "repository": "myorg/myrepo" }]
+ *  ]
+ * }
+ * ```
+ *
+ * **Conditional Usage (Selective by Page Type)**
+ *
+ * To apply plugins only to specific page kinds, use grouped objects:
+ *
+ * ```json
+ * {
+ * "remarkPlugins": [
+ *   {
+ *    "applyTo": "*",
+ *     "plugins": [
+ *       "remark-mdx",
+ *    ]
+ *   },
+ *   {
+ *    "applyTo": ["Class", "Interface"],
+ *    "plugins": ["remark-github", { "repository": "myorg/myrepo" }]
+ *   },
+ *  ]
+ * }
+ * ```
+ *
+ * **Supported applyTo Values**
+ *
+ * You can target specific pages using the `applyTo` field.
+ *
+ * The following applyTo values are supported:
+ *
+ * - `"*"` applies to all pages
+ * - An array of on or more of the following page kinds: [`"Readme"`, `"Index"`, `"Module"`, `"Namespace"`, `"Document"`, `"Class"`, `"Interface"`, `"Enum"`, `"TypeAlias"`, `"Function"`, `"Variable"`].
+ *
+ * @omitExample
  */
 export const remarkPlugins: Partial<DeclarationOption> = {
   help: 'An array of remark plugin names to be executed.',
   type: ParameterType.Mixed,
   defaultValue: [],
   validate(value) {
-    if (!Array.isArray(value)) {
-      throw new Error(
-        '[typedoc-plugin-remark] remarkPlugins must be an array.',
-      );
+    const errors = validateRemarkPlugins(value);
+    if (errors.length > 0) {
+      throw new Error(`[typedoc-plugin-remark] ${errors.join(', ')}`);
     }
-  },
-};
-
-/**
- * By default, the plugins [`remark-gfm`](https://github.com/remarkjs/remark-gfm), [`remark-frontmatter`](https://github.com/remarkjs/remark-frontmatter), and [`remark-mdx`](https://github.com/mdx-js/mdx/tree/main/packages/remark-mdx) are included, as these are considered the most common use cases.
- *
- * However, these plugins modify the default parsing behavior of remark, which may not be ideal for all scenarios.
- *
- * If you'd like to disable any of these default plugins, simply set the corresponding flag to `false`.
- */
-export const defaultRemarkPlugins: Partial<DeclarationOption> = {
-  help: 'A set of flags that control the enabling or disabling of remark plugins that are loaded by default.',
-  type: ParameterType.Flags,
-  defaults: {
-    gfm: true,
-    frontmatter: true,
-    mdx: true,
   },
 };
 
 /**
  * Under the hood, the [`remark-stringify`](https://github.com/remarkjs/remark/tree/main/packages/remark-stringify) plugin is used to serialize the markdown into final output.
  *
- * You can pass in options to the `remark-stringify` plugin using this option.
- *
- * Please see https://github.com/remarkjs/remark/tree/main/packages/remark-stringify#options
+ * Please see https://github.com/remarkjs/remark/tree/main/packages/remark-stringify#options for available options to pass to the plugin.
  *
  * @example {  "bullet": "+", "fence": "~" }
  */

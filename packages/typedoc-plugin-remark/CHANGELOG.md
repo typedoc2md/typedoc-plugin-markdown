@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.0.0
+
+This release includes fundamental architectural improvements and support for loading plugins conditionally based on page kind.
+
+### Architectural Changes
+
+- The plugin now constructs virtual files directly from TypeDoc's output before writing to disk rather than re-reading the corresponding file from the filesystem. This change improves performance and reliability by eliminating unnecessary disk I/O.
+- `remark-gfm`, `remark-frontmatter` and `remark-mdx` are no longer loaded by default.
+  - `remark-frontmatter` is only loaded if a frontmatter YAML block is observed in the input document.
+  - `remark-mdx` will need to be manually added if targetting MDX.
+  - `remark-gfm` will need to be manually added if other plugins require it.
+- The plugin no longer adds a placeholder heading when `remark-toc` is added. Instead this logic has been decoupled in favour of the external plugin `remark-insert-headings`.
+
 ## 1.3.0 (2025-03-16)
 
 ### Minor Changes

@@ -1,5 +1,23 @@
 # Changelog
 
+## 4.6.2 (2025-04-09)
+
+### Patch Changes
+
+- Expose full declaration for returned union types ([#799](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/799)).
+- Move isOptional flag inside backTicks ([#797](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/797)) - thanks @LekoArts.
+- Added support for TypeDoc's v0.28.2 features `@group none`, `@category none` and `@disableGroups`.
+
+## 4.6.1 (2025-04-02)
+
+### Patch Changes
+
+- Correctly render html table when interfacePropertiesFormat=htmlTable ([#794](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/794)).
+- Correctly handle overloaded function display in list and table views ([#793](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/793)).
+- Expose comments and signatures to index signature members.
+- Wrap default values in back ticks on table views to be consistent with list views.
+- Append semi colons to signature in code blocks.
+
 ## 4.6.0 (2025-03-23)
 
 This release continues the effort to further align to TypeDoc’s default theme, with improvements that make the plugin more consistent and predictable.
@@ -57,7 +75,7 @@ From a consumer perspective there should be no direct breaking change from the p
 
 - As per TypeDoc model updates, Object literal Type Alias members are now rendered in groups ("Properties", "Methods") etc rather than under a single "Type Declaration" heading.
 - A new option "`typeAliasPropertiesFormat`" has been exposed to place properties rendered from the updated structure to a table format.
-- Type parameter list views have been updated to separate items with markdown headings for consistency and to improve readability when parameters have detailed explanations or complex properties. If type parameters are straightforward and few in number switching to `typeParametersFormat=table` might be preferable.
+- Type parameter list views have been updated to separate items with markdown headings for consistency and to improve readability when parameters have detailed explanations or complex properties. If type parameters are straightforward and few in number switching to `parametersFormat=table` might be preferable.
 
 ### Minor Changes
 

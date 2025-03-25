@@ -1,8 +1,0 @@
-{
-  "extends": "./typedoc.base.json",
-  "remarkPlugins": ["remark-github", ["remark-toc", { "maxDepth": 3 }]],
-  "defaultRemarkPlugins": {
-    "mdx": false
-  },
-  "out": "./out/members"
-}

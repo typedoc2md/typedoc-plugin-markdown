@@ -132,7 +132,12 @@ ${name}?: ${getType(name, option, true)};`,
     ${
       // this is a hack need to fix properly
       name === 'remarkPlugins'
-        ? 'export type RemarkPlugin = string | [string, Record<string, any>];'
+        ? `export type RemarkPlugin =
+  | [string, Record<string, any>]
+  | {
+      applyTo: string[];
+      plugins: [string, Record<string, any>][];
+    };`
         : `export interface ${capitalize(name)} {
       ${Object.entries(option.defaultValue as any)
         .map(

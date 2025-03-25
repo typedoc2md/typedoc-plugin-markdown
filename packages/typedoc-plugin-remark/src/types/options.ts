@@ -7,15 +7,6 @@
  */
 export interface PluginOptions {
   /**
-   * A set of flags that control the enabling or disabling of remark plugins that are loaded by default.
-   */
-  defaultRemarkPlugins?: {
-    gfm?: boolean;
-    frontmatter?: boolean;
-    mdx?: boolean;
-  };
-
-  /**
    * An array of remark plugin names to be executed.
    */
   remarkPlugins?: RemarkPlugin[];
@@ -26,4 +17,9 @@ export interface PluginOptions {
   remarkStringifyOptions?: Record<string, any>;
 }
 
-export type RemarkPlugin = string | [string, Record<string, any>];
+export type RemarkPlugin =
+  | [string, Record<string, any>]
+  | {
+      applyTo: string[];
+      plugins: [string, Record<string, any>][];
+    };

@@ -1,377 +1,153 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Remark should parse globals page 1`] = `
-"# typedoc-plugin-remark
-
-## CustomTOC
-
-* [Variables](#variables)
-  * [someVariable](#somevariable)
-* [Functions](#functions)
-  * [some\\_function()](#some_function)
-
-## Variables
-
-### someVariable
-
-> \`const\` **someVariable**: \`true\` = \`true\`
-
-## Functions
-
-### some\\_function()
-
-> **some\\_function**(\`param\`): \`void\`
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`param\`
-
-</td>
-<td>
-
-\`string\`
-
-</td>
-<td>
-
-Default text content for \`@category\` tag.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-#### Returns
-
-\`void\`
-"
-`;
-
-exports[`Remark should parse globals page without toc 1`] = `
-"# typedoc-plugin-remark
-
-## Variables
-
-### someVariable
-
-> \`const\` **someVariable**: \`true\` = \`true\`
-
-## Functions
-
-### some\\_function()
-
-> **some\\_function**(\`param\`): \`void\`
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`param\`
-
-</td>
-<td>
-
-\`string\`
-
-</td>
-<td>
-
-Default text content for \`@category\` tag.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-#### Returns
-
-\`void\`
-"
-`;
-
-exports[`Remark should parse mdx 1`] = `
+exports[`Remark Conditional should parse Index page kind 1`] = `
 "---
 title: "test"
 ---
 
-# Function: some\\_function()
+# typedoc-plugin-remark
 
-> **some\\_function**(\`param\`): \`void\`
+## Documents
 
-## Parameters
++ [toc-doc](documents/toc-doc.md)
++ [toc-doc-2](documents/toc-doc-2.md)
 
-<table>
-  <thead>
-    <tr>
-      <th>Parameter</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
+## Modules
 
-  <tbody>
-    <tr>
-      <td>
-        \`param\`
-      </td>
++ [remark](remark/README.md)
 
-      <td>
-        \`string\`
-      </td>
+> thanks [**@tgreyuk**](https://github.com/tgreyuk)
 
-      <td>
-        Default text content for \`@category\` tag.
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-## Returns
-
-\`void\`
+## New Index Heading
 "
 `;
 
-exports[`Remark should parse members class page 1`] = `
+exports[`Remark Conditional should parse README page kind 1`] = `
+"# Project README
+
+Some text
+
+## Some heading 2
+
+Some text
+
++ list item 1
++ list item 2
+
+## Another heading 2
+
+thanks [**@tgreyuk**](https://github.com/tgreyuk)
+
+\`\`\`ts
+const x = 1;
+\`\`\`
+
+## New Readme Heading
+"
+`;
+
+exports[`Remark Conditional should parse class page 1`] = `
 "---
 title: "test"
 ---
 
-# Class: SomeClass\\<T>
-
-* list item 1
-
-## Contents
-
-* [Type Parameters](#type-parameters)
-* [Constructors](#constructors)
-  * [Constructor](#constructor)
-* [Properties](#properties)
-  * [someProp](#someprop)
-
-## Type Parameters
-
-<table>
-<thead>
-<tr>
-<th>Type Parameter</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`T\`
-
-</td>
-</tr>
-</tbody>
-</table>
+# Class: Class
 
 ## Constructors
 
 ### Constructor
 
-> **new SomeClass**<\`T\`>(): \`SomeClass\`<\`T\`>
+> **new Class**(): \`Class\`
 
 #### Returns
 
-\`SomeClass\`<\`T\`>
+\`Class\`
 
 ## Properties
 
-### someProp
+### a
 
-> **someProp**: \`string\`
+> **a**: \`string\`
+
+***
+
+### b
+
+> **b**: \`number\`
+
+> thanks [**@tgreyuk**](https://github.com/tgreyuk)
 "
 `;
 
-exports[`Remark should parse members module page 1`] = `
+exports[`Remark Conditional should parse documents page 1`] = `
+"# TOC Document
+
+Some text
+
+## Some heading 2
+
+Some text
+
+## Another heading 2
+
+thanks [**@tgreyuk**](https://github.com/tgreyuk)
+"
+`;
+
+exports[`Remark Conditional should parse interface page 1`] = `
 "---
 title: "test"
 ---
 
-# module-1
+# Interface: Interface
 
-Comments form module comments
+## Properties
 
-Thanks [**@tgrey**](https://github.com/tgrey) please see issue [#1](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/1).
+### a
 
-\`\`\`js
-const x = 1
-\`\`\`
+> **a**: \`string\`
 
-## Classes
+***
 
-* [SomeClass](classes/SomeClass.md)
+### b
 
-## Interfaces
+> **b**: \`number\`
 
-* [SomeInterface](interfaces/SomeInterface.md)
-
-## Functions
-
-* [some\\_function](functions/some_function.md)
+> thanks [**@tgreyuk**](https://github.com/tgreyuk)
 "
 `;
 
-exports[`Remark should parse modules module page 1`] = `
+exports[`Remark Simple should parse documents page 1`] = `
+"# TOC Document
+
+Some text
+
+## Some heading 2
+
+Some text
+
+## Another heading 2
+
+thanks [**@tgreyuk**](https://github.com/tgreyuk)
+"
+`;
+
+exports[`Remark Simple should parse modules page 1`] = `
 "---
 title: "test"
 ---
 
-# module-1
+# typedoc-plugin-remark
 
-Comments form module comments
+## Documents
 
-Thanks [**@tgrey**](https://github.com/tgrey) please see issue [#1](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/1).
+* [toc-doc](documents/toc-doc.md)
+* [toc-doc-2](documents/toc-doc-2.md)
 
-~~~js playground
-const x = 1
-~~~
+## Modules
 
-## Contents
+* [remark](remark/README.md)
 
-+ [Classes](#classes)
-  + [SomeClass\\<T>](#someclasst)
-+ [Interfaces](#interfaces)
-  + [SomeInterface\\<T>](#someinterfacet)
-+ [Functions](#functions)
-  + [some\\_function()](#some_function)
-
-## Classes
-
-### SomeClass\\<T>
-
-+ list item 1
-
-#### Type Parameters
-
-<table>
-<thead>
-<tr>
-<th>Type Parameter</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`T\`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-#### Constructors
-
-##### Constructor
-
-> **new SomeClass**<\`T\`>(): [\`SomeClass\`](#someclass)<\`T\`>
-
-###### Returns
-
-[\`SomeClass\`](#someclass)<\`T\`>
-
-#### Properties
-
-##### someProp
-
-> **someProp**: \`string\`
-
-## Interfaces
-
-### SomeInterface\\<T>
-
-#### Type Parameters
-
-<table>
-<thead>
-<tr>
-<th>Type Parameter</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`T\`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-#### Properties
-
-##### anotherProp
-
-> **anotherProp**: \`T\`
-
-##### somePromise
-
-> **somePromise**: \`Promise\`<\`T\`>
-
-##### someProp
-
-> **someProp**: \`string\`
-
-## Functions
-
-### some\\_function()
-
-> **some\\_function**(\`param\`): \`void\`
-
-#### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-\`param\`
-
-</td>
-<td>
-
-\`string\` | \`boolean\`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-#### Returns
-
-\`void\`
+> thanks [**@tgreyuk**](https://github.com/tgreyuk)
 "
 `;

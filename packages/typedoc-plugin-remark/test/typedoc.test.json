@@ -1,0 +1,79 @@
+{
+  "entryPoints": ["./stubs/remark.ts"],
+  "tsconfig": "./stubs/tsconfig.json",
+  "plugin": [
+    "typedoc-plugin-markdown",
+    "typedoc-plugin-remark",
+    "./stubs/typedoc-plugin.mjs"
+  ],
+  "hidePageHeader": true,
+  "hideBreadcrumbs": true,
+  "disableSources": true,
+  "projectDocuments": ["./stubs/toc-doc.md", "./stubs/toc-doc-2.md"],
+  "readme": "./stubs/README.md",
+  "outputs": [
+    {
+      "name": "html",
+      "path": "./out/html"
+    },
+    {
+      "name": "markdown",
+      "path": "./out/md/simple",
+      "options": {
+        "remarkPlugins": ["remark-github"]
+      }
+    },
+    {
+      "name": "markdown",
+      "path": "./out/md/conditional",
+      "options": {
+        "remarkStringifyOptions": { "bullet": "+" },
+        "remarkPlugins": [
+          {
+            "applyTo": "*",
+            "plugins": ["remark-github"]
+          },
+          {
+            "applyTo": ["Index"],
+            "plugins": [
+              [
+                "remark-insert-headings",
+                {
+                  "text": "New Index Heading",
+                  "position": "end"
+                }
+              ]
+            ]
+          },
+          {
+            "applyTo": ["Readme"],
+            "plugins": [
+              "remark-gfm",
+              [
+                "remark-insert-headings",
+                {
+                  "text": "New Readme Heading",
+                  "position": "end"
+                }
+              ]
+            ]
+          },
+          {
+            "applyTo": ["Class", "Interface", "Document"],
+            "plugins": [
+              [
+                "remark-insert-headings",
+                {
+                  "text": "Contents",
+                  "position": "start",
+                  "minHeadingCount": 2
+                }
+              ],
+              ["remark-toc", { "maxDepth": 2 }]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

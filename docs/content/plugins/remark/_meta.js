@@ -1,5 +1,7 @@
 export default {
   'quick-start': '',
   options: '',
-  'useful-plugins': '',
+  'remark-plugins-usage': '',
+  'writing-a-plugin': '',
+  CHANGELOG: '',
 };

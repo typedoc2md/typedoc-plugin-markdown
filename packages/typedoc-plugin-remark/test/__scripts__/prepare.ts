@@ -9,14 +9,7 @@ consola.start(`Building test fixtures...`);
 // remove output dir
 fs.removeSync(`./test/out`);
 
-const fixtures = [
-  { options: 'typedoc.modules.json' },
-  { options: 'typedoc.members.json' },
-  { options: 'typedoc.toc.json' },
-  { options: 'typedoc.globals.json' },
-  { options: 'typedoc.globals-mdx.json' },
-  { options: 'typedoc.globals-notoc.json' },
-];
+const fixtures = [{ options: 'typedoc.test.json' }];
 
 // write fixtures
 fixtures.forEach((fixture) => {

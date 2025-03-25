@@ -62,12 +62,9 @@ export class MarkdownPageEvent<out Model extends RouterTarget = RouterTarget> {
   ];
 
   /** @hidden */
-  startNewSection(title: string) {
+  startNewSection() {
     this.pageHeadings = [];
-    this.pageSections.push({
-      title,
-      headings: this.pageHeadings,
-    });
+    this.pageSections = [];
   }
 
   /**

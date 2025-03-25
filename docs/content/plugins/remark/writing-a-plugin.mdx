@@ -1,0 +1,23 @@
+# Writing A Plugin
+
+It is straightforward to create a remark plugin locally if you would like to create your own functionality.
+
+This example shows how to create a very simple plugin that adds a `meta` property to all code blocks in the documentation.
+
+```js filename="my-custom-plugin.mjs"
+import { visit } from 'unist-util-visit';
+
+export default function mySimpleRemarkPlugin() {
+  return (tree) => {
+    visit(tree, 'code', (node) => {
+      node.meta = `playground`;
+    });
+  };
+}
+```
+
+```json filename="typedoc.json"
+{
+  "remarkPlugins": ["./my-custom-plugin.mjs"]
+}
+```
