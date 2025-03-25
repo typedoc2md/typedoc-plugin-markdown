@@ -23,7 +23,7 @@
   },
   "scripts": {
     "lint": "eslint ./src",
-    "prebuild": "rm -rf dist && copyfiles --up 1 ./src/**/*.cjs ./dist/",
+    "prebuild": "rm -rf dist && prebuild-options && copyfiles --up 1 ./src/**/*.cjs ./dist/",
     "prepublishOnly": "npm run lint && npm run build",
     "build": "tsc",
     "pretest": "rm -rf ./test/out && docusaurus generate-typedoc",

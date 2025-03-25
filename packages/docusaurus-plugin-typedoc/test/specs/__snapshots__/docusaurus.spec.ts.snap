@@ -172,3 +172,48 @@ const typedocSidebar = { items: [
 ]};
 module.exports = typedocSidebar.items;"
 `;
+
+exports[`Docusaurus: Typescript should render typescript sidebar 1`] = `
+"import { SidebarsConfig } from '@docusaurus/plugin-content-docs';
+const typedocSidebar: SidebarsConfig = { items: [
+  {
+    "type": "category",
+    "label": "CategoryA",
+    "items": [
+      {
+        "type": "doc",
+        "id": "out/typescript/classes/ClassA",
+        "label": "ClassA"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "CategoryB",
+    "items": [
+      {
+        "type": "doc",
+        "id": "out/typescript/classes/ClassB",
+        "label": "ClassB"
+      },
+      {
+        "type": "doc",
+        "id": "out/typescript/classes/ClassC",
+        "label": "ClassC",
+        "className": "typedoc-sidebar-item-deprecated"
+      },
+      {
+        "type": "doc",
+        "id": "out/typescript/interfaces/InterfaceA",
+        "label": "InterfaceA"
+      },
+      {
+        "type": "doc",
+        "id": "out/typescript/interfaces/InterfaceB",
+        "label": "InterfaceB"
+      }
+    ]
+  }
+]};
+export default typedocSidebar;"
+`;

@@ -3,7 +3,6 @@ import { ManuallyValidatedOption } from 'typedoc';
 import { Sidebar } from './types/options.js';
 declare module 'typedoc' {
   export interface TypeDocOptionMap {
-    docusaurusConfigOptions: string;
     sidebar: ManuallyValidatedOption<Sidebar>;
   }
 }

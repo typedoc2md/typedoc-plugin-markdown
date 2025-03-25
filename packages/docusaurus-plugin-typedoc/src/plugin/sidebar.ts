@@ -13,7 +13,10 @@ export function writeSidebar(
   numberPrefixParser: any,
 ) {
   if (sidebar?.autoConfiguration) {
-    const sidebarPath = path.resolve(outputDir, 'typedoc-sidebar.cjs');
+    const sidebarFileName = sidebar.typescript
+      ? 'typedoc-sidebar.ts'
+      : 'typedoc-sidebar.cjs';
+    const sidebarPath = path.resolve(outputDir, sidebarFileName);
 
     let baseDir = path
       .relative(siteDir, outputDir)
@@ -32,18 +35,33 @@ export function writeSidebar(
       numberPrefixParser,
     );
 
-    fs.writeFileSync(
-      sidebarPath,
-      `// @ts-check
+    const sidebarContent = sidebar.typescript
+      ? getTypescriptSidebar(sidebarJson, sidebar)
+      : getJsSidebar(sidebarJson, sidebar);
+
+    fs.writeFileSync(sidebarPath, sidebarContent);
+  }
+}
+
+function getTypescriptSidebar(sidebarJson: any, sidebar: Sidebar) {
+  return `import { SidebarsConfig } from '@docusaurus/plugin-content-docs';
+const typedocSidebar: SidebarsConfig = { items: ${JSON.stringify(
+    sidebarJson,
+    null,
+    sidebar.pretty ? 2 : 0,
+  )}};
+export default typedocSidebar;`;
+}
+
+function getJsSidebar(sidebarJson: any, sidebar: Sidebar) {
+  return `// @ts-check
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const typedocSidebar = { items: ${JSON.stringify(
-        sidebarJson,
-        null,
-        sidebar.pretty ? 2 : 0,
-      )}};
-module.exports = typedocSidebar.items;`,
-    );
-  }
+    sidebarJson,
+    null,
+    sidebar.pretty ? 2 : 0,
+  )}};
+module.exports = typedocSidebar.items;`;
 }
 
 function getSidebar(

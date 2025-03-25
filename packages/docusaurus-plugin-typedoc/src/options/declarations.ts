@@ -6,15 +6,19 @@ import { DEFAULT_SIDEBAR_OPTIONS } from './options.js';
  *
  * Set to `false` to disable sidebar generation. Defaults to `true`.
  *
+ * **typescript**
+ *
+ * Set to `true` to generate a TypeScript file. Defaults to `false` (CommonJs).
+ *
  * **pretty**
  *
- * Pretty format the sidebar JSON.
+ * Pretty format the sidebar JSON. Defaults to `false`.
  *
  * **deprecatedItemClassName**
  *
  * The class name to apply to deprecated items in the sidebar. Defaults to `"typedoc-sidebar-item-deprecated"`.
  *
- * Please see the [sidebar guide](https:/typedoc-plugin-markdown.org/plugins/docusaurus/sidebar) for additional information on sidebar setup.
+ * Please see the [sidebar guide](/plugins/docusaurus/guides/sidebar) for additional information on sidebar setup.
  *
  */
 export const sidebar: Partial<DeclarationOption> = {

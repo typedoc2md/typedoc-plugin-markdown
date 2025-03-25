@@ -44,4 +44,15 @@ describe(`Docusaurus:`, () => {
       expect(contents).toMatchSnapshot();
     });
   });
+
+  describe(`Typescript`, () => {
+    test(`should render typescript sidebar`, () => {
+      const contents = fs
+        .readFileSync(
+          path.join(__dirname, '../out/typescript/typedoc-sidebar.ts'),
+        )
+        .toString();
+      expect(contents).toMatchSnapshot();
+    });
+  });
 });

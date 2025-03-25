@@ -22,6 +22,7 @@ const config = {
         hidePageHeader: true,
         hideBreadcrumbs: true,
         plugin: ['./frontmatter-plugin.mjs'],
+        logLevel: 'Warn',
       },
     ],
     [
@@ -37,6 +38,7 @@ const config = {
         disableSources: true,
         hidePageHeader: true,
         hideBreadcrumbs: true,
+        logLevel: 'Warn',
       },
     ],
     [
@@ -52,6 +54,26 @@ const config = {
         disableSources: true,
         hidePageHeader: true,
         hideBreadcrumbs: true,
+        logLevel: 'Warn',
+      },
+    ],
+    [
+      docusaurusPlugin,
+      {
+        id: 'api-4',
+        tsconfig: './test/stubs/tsconfig.json',
+        entryPoints: ['./test/stubs/src/module-1.ts'],
+        out: './test/out/typescript',
+        sidebar: {
+          typescript: true,
+          pretty: true,
+        },
+        readme: 'none',
+        cleanOutputDir: true,
+        disableSources: true,
+        hidePageHeader: true,
+        hideBreadcrumbs: true,
+        logLevel: 'Warn',
       },
     ],
   ],

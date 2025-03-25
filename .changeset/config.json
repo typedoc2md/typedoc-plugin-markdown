@@ -16,7 +16,6 @@
     "typedoc-plugin-remark",
     "typedoc-github-wiki-theme",
     "typedoc-gitlab-wiki-theme",
-    "typedoc-vitepress-theme",
-    "docusaurus-plugin-typedoc"
+    "typedoc-vitepress-theme"
   ]
 }
