@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.0
+
+### Minor Changes
+
+- Exposed "typescript" key to sidebar options to generate ts sidebar file ([#790](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/790)).
+
 ## 1.2.3 (2025-02-02)
 
 ### Patch Changes
