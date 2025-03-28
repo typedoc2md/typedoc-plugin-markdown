@@ -57,7 +57,7 @@ From a consumer perspective there should be no direct breaking change from the p
 
 - As per TypeDoc model updates, Object literal Type Alias members are now rendered in groups ("Properties", "Methods") etc rather than under a single "Type Declaration" heading.
 - A new option "`typeAliasPropertiesFormat`" has been exposed to place properties rendered from the updated structure to a table format.
-- Type parameter list views have been updated to separate items with markdown headings for consistency and to improve readability when parameters have detailed explanations or complex properties. If type parameters are straightforward and few in number switching to `typeParametersFormat=table` might be preferable.
+- Type parameter list views have been updated to separate items with markdown headings for consistency and to improve readability when parameters have detailed explanations or complex properties. If type parameters are straightforward and few in number switching to `parametersFormat=table` might be preferable.
 
 ### Minor Changes
 

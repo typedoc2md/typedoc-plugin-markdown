@@ -144,7 +144,7 @@ There is no association list partial for properties as these are handled as a st
 
     propertiesTable: (
       model: DeclarationReflection[],
-      options?: { isEventProps: boolean } | undefined,
+      options?: { isEventProps: boolean; kind: ReflectionKind } | undefined,
     ) => partials.propertiesTable.apply(context, [model, options]) as string,
     referenceMember: (model: ReferenceReflection) =>
       partials.referenceMember.apply(context, [model]) as string,

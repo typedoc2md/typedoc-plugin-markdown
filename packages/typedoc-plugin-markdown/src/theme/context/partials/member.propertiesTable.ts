@@ -16,7 +16,7 @@ import { DeclarationReflection, i18n, ReflectionKind } from 'typedoc';
 export function propertiesTable(
   this: MarkdownThemeContext,
   model: DeclarationReflection[],
-  options?: { isEventProps: boolean },
+  options?: { isEventProps: boolean; kind: ReflectionKind },
 ): string {
   const tableColumnsOptions = this.options.getValue('tableColumnSettings');
   const leftAlignHeadings = tableColumnsOptions.leftAlignHeaders;
@@ -165,10 +165,37 @@ export function propertiesTable(
     rows.push(row);
   });
 
-  const displayHtmlTable =
-    this.options.getValue('propertiesFormat') === 'htmlTable';
+  const displayHtmlTable = shouldDisplayHTMLTable(this, options?.kind);
 
   return displayHtmlTable
     ? htmlTable(headers, rows, leftAlignHeadings)
     : table(headers, rows, leftAlignHeadings);
+}
+
+function shouldDisplayHTMLTable(
+  context: MarkdownThemeContext,
+  kind?: ReflectionKind,
+) {
+  if (context.options.getValue('propertiesFormat') === 'htmlTable') {
+    return true;
+  }
+  if (
+    kind === ReflectionKind.Interface &&
+    context.options.getValue('interfacePropertiesFormat') === 'htmlTable'
+  ) {
+    return true;
+  }
+  if (
+    kind === ReflectionKind.Class &&
+    context.options.getValue('classPropertiesFormat') === 'htmlTable'
+  ) {
+    return true;
+  }
+  if (
+    kind === ReflectionKind.TypeAlias &&
+    context.options.getValue('typeAliasPropertiesFormat') === 'htmlTable'
+  ) {
+    return true;
+  }
+  return false;
 }

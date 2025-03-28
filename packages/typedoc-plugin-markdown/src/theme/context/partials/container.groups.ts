@@ -86,6 +86,7 @@ export function groups(
               group.children as DeclarationReflection[],
               {
                 isEventProps,
+                kind: options.kind,
               },
             ),
           );
