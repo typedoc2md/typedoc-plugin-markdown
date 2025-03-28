@@ -48,13 +48,19 @@ The class name to apply to deprecated items in the sidebar. Defaults to `"typedo
 
 Please see the [sidebar guide](/plugins/docusaurus/guides/sidebar) for additional information on sidebar setup.
 
-```json filename="typedoc.json"
+```js filename="docusaurus.config.js"
 {
-  "sidebar": {
-    "autoConfiguration": true,
-    "pretty": false,
-    "typescript": false,
-    "deprecatedItemClassName": "typedoc-sidebar-item-deprecated"
-  }
+  plugins: [
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        "sidebar": {
+          "autoConfiguration": true,
+          "pretty": false,
+          "typescript": false,
+          "deprecatedItemClassName": "typedoc-sidebar-item-deprecated"
+       }
+    ]
+  ]
 }
 ```

@@ -6,7 +6,7 @@
 
 ## Documentation
 
-Please visit the [https://typedoc-plugin-markdown.org/plugins/vitepress](https://typedoc-plugin-markdown.org/plugins/vitepress) for comprehensive documentation, including options and usage guides.
+Please visit [https://typedoc-plugin-markdown.org/plugins/vitepress](https://typedoc-plugin-markdown.org/plugins/vitepress) for comprehensive documentation, including options and usage guides.
 
 ## License
 

@@ -12,7 +12,7 @@ npm install typedoc typedoc-plugin-markdown --save-dev
 
 ## Documentation
 
-Please visit the [https://typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org) for comprehensive documentation, including options and usage guides.
+Please visit [https://typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org) for comprehensive documentation, including options and usage guides.
 
 ## License
 

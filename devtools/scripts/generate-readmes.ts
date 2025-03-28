@@ -126,5 +126,5 @@ npm install typedoc typedoc-plugin-markdown --save-dev
 }
 
 function docText(docLink?: string) {
-  return `Please visit the [${docLink}](${docLink}) for comprehensive documentation, including options and usage guides.`;
+  return `Please visit [${docLink}](${docLink}) for comprehensive documentation, including options and usage guides.`;
 }

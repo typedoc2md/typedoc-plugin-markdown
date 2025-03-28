@@ -6,7 +6,7 @@
 
 ## Documentation
 
-Please visit the [https://typedoc-plugin-markdown.org/plugins/github-wiki](https://typedoc-plugin-markdown.org/plugins/github-wiki) for comprehensive documentation, including options and usage guides.
+Please visit [https://typedoc-plugin-markdown.org/plugins/github-wiki](https://typedoc-plugin-markdown.org/plugins/github-wiki) for comprehensive documentation, including options and usage guides.
 
 ## License
 
