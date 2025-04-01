@@ -241,3 +241,17 @@ export type __TypeDeclarationWithSpecialCharacters_<T, U> = {
  * - return comments.
  */
 export type TypeWithReturns = string;
+
+/**
+ * Comments for TypeWithIndexSignature
+ */
+export type TypeWithIndexSignature = {
+  /**
+   * Comments for key
+   *
+   * @remarks
+   *
+   * Some remarks
+   */
+  [key: string]: string;
+};

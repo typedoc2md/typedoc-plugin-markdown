@@ -7,15 +7,19 @@ export function reflectionType(
   model: ReflectionType,
   options?: { forceCollapse?: boolean },
 ): string {
-  const root = model instanceof ReflectionType ? model.declaration : model;
-  if (root.signatures) {
-    return this.partials.functionType(root.signatures);
-  }
-
   const expandObjects =
     options?.forceCollapse || this.options.getValue('expandObjects');
 
-  return expandObjects
-    ? this.partials.declarationType(root, options)
-    : backTicks('object');
+  if (
+    model.declaration?.signatures?.length === 1 &&
+    !model.declaration.children
+  ) {
+    return this.partials.functionType(model.declaration.signatures);
+  }
+
+  if (expandObjects || model.declaration.signatures?.length) {
+    return this.partials.declarationType(model.declaration, options);
+  }
+
+  return backTicks('object');
 }

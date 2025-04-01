@@ -28,7 +28,21 @@ export const typeOperatorVariable: unique symbol = Symbol.for('__type__');
  * @see xyz.com
  */
 export const objectLiteralVariable = {
-  valueY: function (unionParam: 'a' | 'b', _undercoreParam_: string) {
+  /**
+   * Comments for valueY
+   */
+  // eslint-disable-next-line object-shorthand
+  valueY:
+    /**
+     * comments for valueY function
+     */
+    function (unionParam: 'a' | 'b', _undercoreParam_: string) {
+      return 'foo';
+    },
+  /**
+   * Comments for valueZ
+   */
+  valueZ(param: string) {
     return 'foo';
   },
   /**
@@ -36,6 +50,9 @@ export const objectLiteralVariable = {
    */
   valueX: {
     valueZ: 'foo',
+    /**
+     * Comments for valueX.valueY
+     */
     valueY: (z: string) => {
       return { a: 'test', b: z, c: { a: 1, b: 2 } };
     },

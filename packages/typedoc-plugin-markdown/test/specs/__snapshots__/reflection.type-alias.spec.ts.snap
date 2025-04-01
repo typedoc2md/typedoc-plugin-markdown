@@ -328,7 +328,7 @@ Comments for LiteralType
 #### Get Signature
 
 \`\`\`ts
-get accessorA(): Promise<string>
+get accessorA(): Promise<string>;
 \`\`\`
 
 Defined in: [types.ts:1](http://source-url)
@@ -342,7 +342,7 @@ Comments for accessorA getter
 #### Set Signature
 
 \`\`\`ts
-set accessorA(x: Promise<string>): void
+set accessorA(x: Promise<string>): void;
 \`\`\`
 
 Defined in: [types.ts:1](http://source-url)
@@ -366,7 +366,7 @@ Comments for accessorA setter
 #### Get Signature
 
 \`\`\`ts
-get accessorB(): string
+get accessorB(): string;
 \`\`\`
 
 Defined in: [types.ts:1](http://source-url)
@@ -378,7 +378,7 @@ Defined in: [types.ts:1](http://source-url)
 #### Set Signature
 
 \`\`\`ts
-set accessorB(x: string): void
+set accessorB(x: string): void;
 \`\`\`
 
 Defined in: [types.ts:1](http://source-url)
@@ -398,7 +398,7 @@ Defined in: [types.ts:1](http://source-url)
 ### someFunction()
 
 \`\`\`ts
-someFunction(param: string): Promise<any>
+someFunction(param: string): Promise<any>;
 \`\`\`
 
 Defined in: [types.ts:1](http://source-url)
@@ -779,6 +779,52 @@ Comments for TypeWithTypeParams
 "
 `;
 
+exports[`Type Alias Reflection should compile type with index signature: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Type Alias: TypeWithIndexSignature
+
+> **TypeWithIndexSignature** = \`object\`
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for TypeWithIndexSignature
+
+## Index Signature
+
+\\[\`key\`: \`string\`\\]: \`string\`
+
+Comments for key
+
+### Remarks
+
+Some remarks
+"
+`;
+
+exports[`Type Alias Reflection should compile type with index signature: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Type Alias: TypeWithIndexSignature
+
+\`\`\`ts
+type TypeWithIndexSignature = object;
+\`\`\`
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for TypeWithIndexSignature
+
+## Index Signature
+
+\`\`\`ts
+[key: string]: string
+\`\`\`
+
+Comments for key
+
+### Remarks
+
+Some remarks
+"
+`;
+
 exports[`Type Alias Reflection should compile type with returns: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: TypeWithReturns
 
@@ -916,7 +962,7 @@ Comments for useful UnionType
 
 \\{
   \`z\`: \`string\`;
- \\}
+\\}
 
 | Name | Type | Description |
 | :------ | :------ | :------ |

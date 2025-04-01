@@ -54,6 +54,10 @@ export function signatureTitle(
     md.push(`: ${this.partials.someType(model.type)}`);
   }
 
+  if (useCodeBlocks) {
+    md.push(';');
+  }
+
   const result = md.join('');
   return useCodeBlocks ? codeBlock(result) : `> ${result}`;
 }

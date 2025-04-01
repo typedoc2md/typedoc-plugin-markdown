@@ -3,6 +3,13 @@
  * @module
  */
 
+import {
+  InterfaceWithFunctionOverloads,
+  InterfaceWithMixedOverloads,
+  InterfaceWithProps,
+  InterfaceWithSingleFunction,
+} from './interfaces.js';
+
 /**
  * This is a function that is assigned to a variable.
  *
@@ -317,3 +324,39 @@ export const tupleTypeFunctionOptional = (
 export const tupleTypeFunctionInlineExplicit = (
   opts: [ExplicitTypeDefOptions],
 ) => {};
+
+/**
+ *
+ * @returns Return comments
+ */
+export function functionReturningFunctionOverloads(): {
+  /**
+   * Member 1 comments
+   */
+  member1: InterfaceWithMixedOverloads;
+
+  member2: InterfaceWithFunctionOverloads;
+  /**
+   * Member 3 comments
+   */
+  member3: InterfaceWithSingleFunction;
+
+  member4: InterfaceWithProps;
+} {
+  return {
+    member1: Object.assign(
+      async (callback?: any, options?: any): Promise<void> => {
+        callback();
+      },
+    ),
+    member2: Object.assign(async (options?: any): Promise<void> => {
+      return;
+    }),
+    member3: Object.assign(async (options?: any): Promise<void> => {
+      return;
+    }),
+    member4: Object.assign(async (options?: any): Promise<void> => {
+      return;
+    }),
+  };
+}

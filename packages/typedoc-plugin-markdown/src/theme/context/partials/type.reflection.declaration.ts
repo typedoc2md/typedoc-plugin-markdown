@@ -9,24 +9,32 @@ export function declarationType(
 ): string {
   const shouldFormat = this.options.getValue('useCodeBlocks');
 
-  if (model.indexSignatures || model.children) {
+  const md: string[] = ['\\{'];
+  if (model.indexSignatures?.length) {
     const indexSignatureMd: string[] = [];
+    model.indexSignatures.forEach((indexSignature) => {
+      const key = indexSignature.parameters
+        ? indexSignature.parameters.map(
+            (param) =>
+              `[${backTicks(param.name)}: ${this.partials.someType(param.type)}]`,
+          )
+        : '';
+      const obj = this.partials.someType(indexSignature.type as SomeType);
+      indexSignatureMd.push(`${key}: ${obj};`);
+    });
+    md.push(indexSignatureMd.join('\n'));
+  }
 
-    if (model.indexSignatures?.length) {
-      model.indexSignatures.forEach((indexSignature) => {
-        const key = indexSignature.parameters
-          ? indexSignature.parameters.map(
-              (param) => `\`[${param.name}: ${param.type}]\``,
-            )
-          : '';
-        const obj = this.partials.someType(indexSignature.type as SomeType);
-        indexSignatureMd.push(`${key}: ${obj}; `);
-      });
-    }
+  if (model.signatures) {
+    md.push(
+      `${this.partials.functionType(model.signatures, { typeSeparator: ': ' })};`,
+    );
+  }
 
+  if (model.children) {
     const children = model.children;
 
-    const types =
+    const declarationTypes =
       children &&
       children.map((obj) => {
         const name: string[] = [];
@@ -48,21 +56,19 @@ export function declarationType(
         const typeString = this.partials.someType(theType, options);
 
         if (shouldFormat) {
-          return `  ${name.join(' ')}: ${indentBlock(typeString)};\n`;
+          return `  ${name.join(' ')}: ${indentBlock(typeString)};`;
         }
         return `${name.join(' ')}: ${indentBlock(typeString)};`;
       });
 
-    if (indexSignatureMd) {
-      indexSignatureMd.forEach((indexSignature) => {
-        types?.unshift(indexSignature);
-      });
+    if (declarationTypes) {
+      md.push(
+        `${shouldFormat ? `${declarationTypes.join('\n')}` : ` ${declarationTypes.join(' ')}`}`,
+      );
     }
-    return types
-      ? `\\{${shouldFormat ? `\n${types.join('')}` : ` ${types.join(' ')}`} \\}`
-      : '\\{\\}';
   }
-  return '\\{\\}';
+  md.push(`${shouldFormat ? '' : ' '}\\}`);
+  return md.join(shouldFormat ? '\n' : '');
 }
 
 function indentBlock(content: string) {
@@ -74,7 +80,7 @@ function indentBlock(content: string) {
         return line;
       }
       if (i === lines.length - 1) {
-        return line.trim().startsWith('}') ? line : `   ${line}`;
+        return line.trim().startsWith('}') ? line : `  ${line}`;
       }
       return `   ${line}`;
     })

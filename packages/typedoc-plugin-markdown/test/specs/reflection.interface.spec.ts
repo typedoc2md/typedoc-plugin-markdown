@@ -60,4 +60,12 @@ describe(`Interface Reflection`, () => {
       'interfaces/InterfaceWithComments.md',
     );
   });
+
+  test(`should compile interface with function overloads`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'interfaces/InterfaceWithFunctionOverloads.md',
+    );
+  });
 });

@@ -1,4 +1,4 @@
-import { backTicks, heading } from '@plugin/libs/markdown/index.js';
+import { heading } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { DeclarationReflection, i18n, SignatureReflection } from 'typedoc';
 
@@ -14,9 +14,7 @@ export function signatureReturns(
 
   md.push(heading(options.headingLevel, i18n.theme_returns()));
 
-  if (typeDeclaration?.signatures) {
-    md.push(backTicks('Function'));
-  } else {
+  if (!typeDeclaration?.signatures) {
     md.push(this.helpers.getReturnType(model.type));
   }
 

@@ -464,6 +464,8 @@ export const typeDeclarationFormat: Partial<DeclarationOption> = {
  * - **"compact"**: Summarizes nested types as JSON, reducing verbosity while retaining key information.
  *
  * @category Display
+ *
+ * @hidden
  */
 export const typeDeclarationVisibility: Partial<DeclarationOption> = {
   help: 'Set the visibility level for type declaration documentation.',

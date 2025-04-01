@@ -23,8 +23,9 @@ export function memberTitle(
   );
 
   if (
-    model.signatures?.length ||
-    (model.type as ReflectionType)?.declaration?.signatures?.length
+    !(model.type as ReflectionType)?.declaration?.children?.length &&
+    (model.signatures?.length ||
+      (model.type as ReflectionType)?.declaration?.signatures?.length)
   ) {
     name.push('()');
   }

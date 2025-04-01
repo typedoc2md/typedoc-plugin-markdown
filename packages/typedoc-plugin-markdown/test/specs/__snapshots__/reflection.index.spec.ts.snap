@@ -78,6 +78,10 @@ Module comments
 - [InterfaceWithComments](interfaces/InterfaceWithComments.md)
 - [InterfaceWithEventProperties](interfaces/InterfaceWithEventProperties.md)
 - [InterfaceWithFlags](interfaces/InterfaceWithFlags.md)
+- [InterfaceWithFunctionOverloads](interfaces/InterfaceWithFunctionOverloads.md)
+- [InterfaceWithMixedOverloads](interfaces/InterfaceWithMixedOverloads.md)
+- [InterfaceWithProps](interfaces/InterfaceWithProps.md)
+- [InterfaceWithSingleFunction](interfaces/InterfaceWithSingleFunction.md)
 - [InterfaceWithTypeParameters](interfaces/InterfaceWithTypeParameters.md)
 - [MultipleIndexableInterface](interfaces/MultipleIndexableInterface.md)
 
@@ -104,6 +108,7 @@ Module comments
 - [TupleType](type-aliases/TupleType.md)
 - [TypeDefOptions](type-aliases/TypeDefOptions.md)
 - [TypeWithExternalSymbolLinkMapping](type-aliases/TypeWithExternalSymbolLinkMapping.md)
+- [TypeWithIndexSignature](type-aliases/TypeWithIndexSignature.md)
 - [TypeWithReturns](type-aliases/TypeWithReturns.md)
 - [TypeWithTypeParams](type-aliases/TypeWithTypeParams.md)
 - [UnionType](type-aliases/UnionType.md)
@@ -130,6 +135,7 @@ Module comments
 - [functionReturningAPromise](functions/functionReturningAPromise.md)
 - [functionReturningAString](functions/functionReturningAString.md)
 - [functionReturningAUnionType](functions/functionReturningAUnionType.md)
+- [functionReturningFunctionOverloads](functions/functionReturningFunctionOverloads.md)
 - [functionWithArrayOfOptionalStuff](functions/functionWithArrayOfOptionalStuff.md)
 - [functionWithArrayOfStuff](functions/functionWithArrayOfStuff.md)
 - [functionWithArrayOfUnionStuff](functions/functionWithArrayOfUnionStuff.md)
@@ -208,6 +214,10 @@ Module comments
 | [InterfaceWithComments](interfaces/InterfaceWithComments.md) | Comments for interface over two lines |
 | [InterfaceWithEventProperties](interfaces/InterfaceWithEventProperties.md) | - |
 | [InterfaceWithFlags](interfaces/InterfaceWithFlags.md) | Comments for InterfaceWithFlags |
+| [InterfaceWithFunctionOverloads](interfaces/InterfaceWithFunctionOverloads.md) | Comments for InterfaceWithFunction |
+| [InterfaceWithMixedOverloads](interfaces/InterfaceWithMixedOverloads.md) | Comments for InterfaceWithFunctionOverloads |
+| [InterfaceWithProps](interfaces/InterfaceWithProps.md) | Comments for InterfaceWithFunction |
+| [InterfaceWithSingleFunction](interfaces/InterfaceWithSingleFunction.md) | Comments for InterfaceWithFunction |
 | [InterfaceWithTypeParameters](interfaces/InterfaceWithTypeParameters.md) | Comments for InterfaceWithTypeParameters |
 | [MultipleIndexableInterface](interfaces/MultipleIndexableInterface.md) | - |
 
@@ -236,6 +246,7 @@ Module comments
 | [TupleType](type-aliases/TupleType.md) | Comments for TupleType |
 | [TypeDefOptions](type-aliases/TypeDefOptions.md) | - |
 | [TypeWithExternalSymbolLinkMapping](type-aliases/TypeWithExternalSymbolLinkMapping.md) | Comments for TypeWithExternalSymbolLinkMapping |
+| [TypeWithIndexSignature](type-aliases/TypeWithIndexSignature.md) | Comments for TypeWithIndexSignature |
 | [TypeWithReturns](type-aliases/TypeWithReturns.md) | Comments for TypeWithReturns |
 | [TypeWithTypeParams](type-aliases/TypeWithTypeParams.md) | Comments for TypeWithTypeParams |
 | [UnionType](type-aliases/UnionType.md) | Comments for UnionType |
@@ -266,6 +277,7 @@ Module comments
 | [functionReturningAPromise](functions/functionReturningAPromise.md) | Comments for function |
 | [functionReturningAString](functions/functionReturningAString.md) | Comments for function |
 | [functionReturningAUnionType](functions/functionReturningAUnionType.md) | Comments for function |
+| [functionReturningFunctionOverloads](functions/functionReturningFunctionOverloads.md) | - |
 | [functionWithArrayOfOptionalStuff](functions/functionWithArrayOfOptionalStuff.md) | Comments for array of stuff? |
 | [functionWithArrayOfStuff](functions/functionWithArrayOfStuff.md) | Comments for array of stuff |
 | [functionWithArrayOfUnionStuff](functions/functionWithArrayOfUnionStuff.md) | Comments for array of union stuff |

@@ -5,9 +5,10 @@ import { SignatureReflection } from 'typedoc';
 export function indexSignature(
   this: MarkdownThemeContext,
   model: SignatureReflection,
+  options?: { headingLevel: number },
 ): string {
   const useCodeBlocks = this.options.getValue('useCodeBlocks');
-
+  const md: string[] = [];
   const params = model.parameters
     ? model.parameters.map((parameter) => {
         return parameter.type
@@ -19,11 +20,25 @@ export function indexSignature(
     : [];
   if (model.type) {
     if (this.options.getValue('useCodeBlocks')) {
-      return codeBlock(
-        `[${params.join('')}]: ${this.partials.someType(model.type)}`,
+      md.push(
+        codeBlock(
+          `[${params.join('')}]: ${this.partials.someType(model.type)}`,
+        ),
+      );
+    } else {
+      md.push(
+        `\\[${params.join('')}\\]: ${this.partials.someType(model.type)}`,
       );
     }
-    return `\\[${params.join('')}\\]: ${this.partials.someType(model.type)}`;
   }
-  return '';
+
+  if (model.comment) {
+    md.push(
+      this.partials.comment(model.comment, {
+        headingLevel: options?.headingLevel,
+      }),
+    );
+  }
+
+  return md.join('\n');
 }

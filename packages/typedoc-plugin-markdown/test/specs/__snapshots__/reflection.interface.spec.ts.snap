@@ -821,6 +821,100 @@ Comments for InterfaceWithFlags
 "
 `;
 
+exports[`Interface Reflection should compile interface with function overloads: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Interface: InterfaceWithFunctionOverloads()
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for InterfaceWithFunction
+
+## Call Signature
+
+> **InterfaceWithFunctionOverloads**(\`options\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for InterfaceWithFunction
+
+### Parameters
+
+#### options?
+
+\`any\`
+
+### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+
+## Call Signature
+
+> **InterfaceWithFunctionOverloads**(\`options2\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for InterfaceWithFunction
+
+### Parameters
+
+#### options2?
+
+\`any\`
+
+### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+"
+`;
+
+exports[`Interface Reflection should compile interface with function overloads: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Interface: InterfaceWithFunctionOverloads()
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for InterfaceWithFunction
+
+## Call Signature
+
+\`\`\`ts
+InterfaceWithFunctionOverloads(options?: any): Promise<void>;
+\`\`\`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for InterfaceWithFunction
+
+### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`options\`? | \`any\` |
+
+### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+
+## Call Signature
+
+\`\`\`ts
+InterfaceWithFunctionOverloads(options2?: any): Promise<void>;
+\`\`\`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for InterfaceWithFunction
+
+### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`options2\`? | \`any\` |
+
+### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+"
+`;
+
 exports[`Interface Reflection should compile interface with type parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Interface: InterfaceWithTypeParameters\\<A\\>
 
@@ -876,7 +970,11 @@ Defined in: [interfaces.ts:1](http://source-url)
 
 \\[\`key\`: \`string\`\\]: \`string\`
 
+First index signature
+
 \\[\`index\`: \`number\`\\]: \`string\`
+
+Second index signature
 
 ## Properties
 
@@ -901,9 +999,13 @@ Defined in: [interfaces.ts:1](http://source-url)
 [key: string]: string
 \`\`\`
 
+First index signature
+
 \`\`\`ts
 [index: number]: string
 \`\`\`
+
+Second index signature
 
 ## Properties
 

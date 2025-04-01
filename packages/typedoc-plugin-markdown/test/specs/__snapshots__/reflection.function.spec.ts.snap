@@ -21,7 +21,7 @@ Comments for current function 1
 
 ### Returns
 
-\`Function\`
+> \\<\`Value\`\\>(\`iterable\`): \`boolean\`
 
 #### Type Parameters
 
@@ -77,7 +77,7 @@ Comments for main curriedFunction
 ## Call Signature
 
 \`\`\`ts
-function curriedFunction(searchElement: unknown): <Value>(iterable: Iterable<Value>) => boolean
+function curriedFunction(searchElement: unknown): <Value>(iterable: Iterable<Value>) => boolean;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -92,7 +92,9 @@ Comments for current function 1
 
 ### Returns
 
-\`Function\`
+\`\`\`ts
+<Value>(iterable: Iterable<Value>): boolean;
+\`\`\`
 
 #### Type Parameters
 
@@ -113,7 +115,7 @@ Comments for current function 1
 ## Call Signature
 
 \`\`\`ts
-function curriedFunction<Value>(searchElement: unknown, iterable: Iterable<Value>): string
+function curriedFunction<Value>(searchElement: unknown, iterable: Iterable<Value>): string;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -148,7 +150,7 @@ Comments for function
 
 ## Returns
 
-\`Function\`
+> \\<\`T\`\\>(\`x\`): \`boolean\`
 
 ### Type Parameters
 
@@ -172,7 +174,7 @@ exports[`Function Reflection should compile function returning a function: (Outp
 "# Function: functionReturningAFunction()
 
 \`\`\`ts
-function functionReturningAFunction(): <T>(x: string) => boolean
+function functionReturningAFunction(): <T>(x: string) => boolean;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -181,7 +183,9 @@ Comments for function
 
 ## Returns
 
-\`Function\`
+\`\`\`ts
+<T>(x: string): boolean;
+\`\`\`
 
 ### Type Parameters
 
@@ -224,7 +228,7 @@ exports[`Function Reflection should compile function returning a promise: (Outpu
 \`\`\`ts
 function functionReturningAPromise(): Promise<{
   prop: string;
-}>
+}>;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -235,7 +239,7 @@ Comments for function
 
 [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\\{
   \`prop\`: \`string\`;
- \\}\\>
+\\}\\>
 
 Return comments
 "
@@ -262,7 +266,7 @@ exports[`Function Reflection should compile function returning a string: (Output
 "# Function: functionReturningAString()
 
 \`\`\`ts
-function functionReturningAString(): string
+function functionReturningAString(): string;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -298,7 +302,7 @@ exports[`Function Reflection should compile function returning a union: (Output 
 "# Function: functionReturningAUnionType()
 
 \`\`\`ts
-function functionReturningAUnionType(): string | boolean
+function functionReturningAUnionType(): string | boolean;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -342,7 +346,7 @@ exports[`Function Reflection should compile function returning an object: (Outpu
 "# Function: functionReturningAnObject()
 
 \`\`\`ts
-function functionReturningAnObject(): object
+function functionReturningAnObject(): object;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -357,8 +361,168 @@ Return comments
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |
-| \`x\` | \`number\` | 1 |
-| \`y\` | \`number\` | 2 |
+| \`x\` | \`number\` | \`1\` |
+| \`y\` | \`number\` | \`2\` |
+"
+`;
+
+exports[`Function Reflection should compile function returning function overloads: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: functionReturningFunctionOverloads()
+
+> **functionReturningFunctionOverloads**(): \`object\`
+
+Defined in: [functions.ts:1](http://source-url)
+
+## Returns
+
+\`object\`
+
+Return comments
+
+### member1
+
+> **member1**: \\{(\`options\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; (\`signOutCallback\`?, \`options\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; \`prop1\`: \`string\`; \`prop2\`: \`string\`; \\}
+
+Member 1 comments
+
+#### Call Signature
+
+> (\`options\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+
+Comments for function 1
+
+##### Parameters
+
+###### options?
+
+\`any\`
+
+##### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+
+#### Call Signature
+
+> (\`signOutCallback\`?, \`options\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+
+Comments for function 2
+
+##### Parameters
+
+###### signOutCallback?
+
+\`any\`
+
+###### options?
+
+\`any\`
+
+##### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+
+#### member1.prop1
+
+> **prop1**: \`string\`
+
+Comments for prop 1
+
+#### member1.prop2
+
+> **prop2**: \`string\`
+
+Comments for prop 2
+
+### member2()
+
+> **member2**: \\{(\`options\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; (\`options2\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; \\}
+
+#### Call Signature
+
+> (\`options\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+
+Comments for function 1
+
+##### Parameters
+
+###### options?
+
+\`any\`
+
+##### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+
+#### Call Signature
+
+> (\`options2\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+
+Comments for function 2
+
+##### Parameters
+
+###### options2?
+
+\`any\`
+
+##### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+
+### member3()
+
+> **member3**: (\`options\`?) => [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+
+Member 3 comments
+
+Comments for function
+
+#### Parameters
+
+##### options?
+
+\`any\`
+
+#### Returns
+
+[\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+
+### member4
+
+> **member4**: \`object\`
+
+#### member4.prop
+
+> **prop**: \`string\`
+
+Comments for prop
+"
+`;
+
+exports[`Function Reflection should compile function returning function overloads: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Function: functionReturningFunctionOverloads()
+
+\`\`\`ts
+function functionReturningFunctionOverloads(): object;
+\`\`\`
+
+Defined in: [functions.ts:1](http://source-url)
+
+## Returns
+
+\`object\`
+
+Return comments
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| \`member1()\` | \\{ (\`options\`?: \`any\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; (\`signOutCallback\`?: \`any\`, \`options\`?: \`any\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; \`prop1\`: \`string\`; \`prop2\`: \`string\`; \\} | Member 1 comments Comments for function 1 Comments for function 2 |
+| \`member1.prop1\` | \`string\` | Comments for prop 1 |
+| \`member1.prop2\` | \`string\` | Comments for prop 2 |
+| \`member2()\` | \\{ (\`options\`?: \`any\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; (\`options2\`?: \`any\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; \\} | Comments for function 1 Comments for function 2 |
+| \`member3()\` | (\`options\`?: \`any\`) => [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\> | Member 3 comments Comments for function |
+| \`member4\` | \`object\` | - |
+| \`member4.prop\` | \`string\` | Comments for prop |
 "
 `;
 
@@ -393,7 +557,7 @@ exports[`Function Reflection should compile function with a parameter: (Output F
 "# Function: basicFunction()
 
 \`\`\`ts
-function basicFunction(someParam: number): number
+function basicFunction(someParam: number): number;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -441,7 +605,7 @@ exports[`Function Reflection should compile function with array of optional stuf
 "# Function: functionWithArrayOfOptionalStuff()
 
 \`\`\`ts
-function functionWithArrayOfOptionalStuff(a: [Stuff?]): void
+function functionWithArrayOfOptionalStuff(a: [Stuff?]): void;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -485,7 +649,7 @@ exports[`Function Reflection should compile function with array of stuff: (Outpu
 "# Function: functionWithArrayOfStuff()
 
 \`\`\`ts
-function functionWithArrayOfStuff(a: [Stuff]): void
+function functionWithArrayOfStuff(a: [Stuff]): void;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -529,7 +693,7 @@ exports[`Function Reflection should compile function with array of union stuff: 
 "# Function: functionWithArrayOfUnionStuff()
 
 \`\`\`ts
-function functionWithArrayOfUnionStuff(a: [Stuff?]): void
+function functionWithArrayOfUnionStuff(a: [Stuff?]): void;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -579,7 +743,7 @@ exports[`Function Reflection should compile function with complex params: (Outpu
 "# Function: functionWithComplexParams()
 
 \`\`\`ts
-function functionWithComplexParams(paramA: (a: string) => true, paramB: object): boolean
+function functionWithComplexParams(paramA: (a: string) => true, paramB: object): boolean;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -661,7 +825,7 @@ function functionWithDefaultParameters(
    valueC: number, 
    valueD: boolean, 
    valueE: boolean, 
-   valueF: string): string
+   valueF: string): string;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -711,7 +875,7 @@ exports[`Function Reflection should compile function with explicit inline tuple 
 function tupleTypeFunctionInlineExplicit(opts: [{
   a: string;
   b: string;
- }]): void
+}]): void;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -787,7 +951,7 @@ Main function comment.
 ## Call Signature
 
 \`\`\`ts
-function functionWithMultipleSignatures(value: string): string
+function functionWithMultipleSignatures(value: string): string;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -807,7 +971,7 @@ This is the first signature of a function with multiple signatures.
 ## Call Signature
 
 \`\`\`ts
-function functionWithMultipleSignatures(value: object): string
+function functionWithMultipleSignatures(value: object): string;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -864,7 +1028,7 @@ exports[`Function Reflection should compile function with named params: (Output 
 "# Function: functionWithNamedParams()
 
 \`\`\`ts
-function functionWithNamedParams(__namedParameters: object, anotherParam: string): void
+function functionWithNamedParams(__namedParameters: object, anotherParam: string): void;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -954,7 +1118,7 @@ exports[`Function Reflection should compile function with nested parameters: (Ou
 function functionWithNestedParameters(
    params: object, 
    context: any, 
-   somethingElse?: string): boolean
+   somethingElse?: string): boolean;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -1064,7 +1228,7 @@ function functionWithOptionalParameters(
    firstParamWithDefault: boolean, 
    requiredParam: string, 
    optionalParam?: string, 
-   paramWithDefault?: number): void
+   paramWithDefault?: number): void;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -1094,7 +1258,7 @@ function functionWithOptionalParameters(
    firstParamWithDefault: boolean, 
    requiredParam: string, 
    optionalParam?: string, 
-   paramWithDefault?: number): void
+   paramWithDefault?: number): void;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -1145,7 +1309,7 @@ exports[`Function Reflection should compile function with rest params: (Output F
 "# Function: functionWithRestParams()
 
 \`\`\`ts
-function functionWithRestParams(param: string, ...restParams: string[]): boolean
+function functionWithRestParams(param: string, ...restParams: string[]): boolean;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -1191,7 +1355,7 @@ exports[`Function Reflection should compile function with tuple type optional pa
 function tupleTypeFunctionOptional(opts: [{
   a: string;
   b: string;
- }?]): void
+}?]): void;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -1236,7 +1400,7 @@ exports[`Function Reflection should compile function with tuple type params: (Ou
 function tupleTypeFunction(opts: [{
   a: string;
   b: string;
- }]): void
+}]): void;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -1284,7 +1448,7 @@ exports[`Function Reflection should compile function with type parameters: (Outp
 "# Function: functionWithTypeParameters()
 
 \`\`\`ts
-function functionWithTypeParameters<T, Item>(): boolean
+function functionWithTypeParameters<T, Item>(): boolean;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)
@@ -1389,28 +1553,28 @@ function functionWithUnionParams(
   | {
   a: string;
   b: 1;
- }
+}
   | {
   a: number;
   b: 1;
   c: {
      x: string;
-    };
- }, 
+  };
+}, 
    mixedUnions: 
   | string
   | number
   | {
   a: string;
   b: string;
- }
+}
   | {
   a: {
      y: string;
      z: string;
-    };
- }, 
-   noUnions: string): any
+  };
+}, 
+   noUnions: string): any;
 \`\`\`
 
 Defined in: [functions.ts:1](http://source-url)

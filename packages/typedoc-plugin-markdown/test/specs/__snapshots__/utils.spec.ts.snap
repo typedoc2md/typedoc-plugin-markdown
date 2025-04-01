@@ -3,7 +3,7 @@
 exports[`Utils should format index signature type: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Type Alias: LongIndexSignature
 
-> **LongIndexSignature** = \\{\\}
+> **LongIndexSignature** = \\{[\`key\`: \`\` \`git·\${string}·\${string} \${string}\` \`\` \\| \`\` \`remote·\${string}·\${string} \${string}\` \`\`]: \`\` \`dev git·\${string}·\${string}\` \`\` \\| \`\` \`dev remote·\${string}·\${string}\` \`\` \\| \`\` \`prod git·\${string}·\${string}\` \`\` \\| \`\` \`prod remote·\${string}·\${string}\` \`\`; \\}
 
 ## Index Signature
 
@@ -15,7 +15,17 @@ exports[`Utils should format index signature type: (Output File Strategy "member
 "# Type Alias: LongIndexSignature
 
 \`\`\`ts
-type LongIndexSignature = {};
+type LongIndexSignature = {
+  [
+    key:
+      | \`git·\${string}·\${string} \${string}\`
+      | \`remote·\${string}·\${string} \${string}\`
+  ]:
+    | \`dev git·\${string}·\${string}\`
+    | \`dev remote·\${string}·\${string}\`
+    | \`prod git·\${string}·\${string}\`
+    | \`prod remote·\${string}·\${string}\`;
+};
 \`\`\`
 
 ## Index Signature
@@ -67,7 +77,7 @@ exports[`Utils should format type with constructor overrides: (Output File Strat
 ### Constructor
 
 \`\`\`ts
-new Cache(): Cache
+new Cache(): Cache;
 \`\`\`
 
 #### Returns
@@ -127,7 +137,7 @@ exports[`Utils should get class with brackets: (Output File Strategy "members") 
 ### Constructor
 
 \`\`\`ts
-new ClassWithChars<T>(): ClassWithChars<T>
+new ClassWithChars<T>(): ClassWithChars<T>;
 \`\`\`
 
 #### Returns

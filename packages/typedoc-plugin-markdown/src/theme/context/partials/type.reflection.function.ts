@@ -5,14 +5,16 @@ import { SignatureReflection, SomeType } from 'typedoc';
 export function functionType(
   this: MarkdownThemeContext,
   model: SignatureReflection[],
-  options?: { forceParameterType: boolean },
+  options?: { forceParameterType?: boolean; typeSeparator?: string },
 ): string {
+  const shouldFormat = this.options.getValue('useCodeBlocks');
+  const typeSeparator = options?.typeSeparator || ' => ';
   const functions = model.map((fn) => {
     const typeParams = fn.typeParameters
       ? `${this.helpers.getAngleBracket('<')}${fn.typeParameters
           .map((typeParameter) => backTicks(typeParameter.name))
           .join(', ')}${this.helpers.getAngleBracket('>')}`
-      : [];
+      : '';
     const showParameterType =
       options?.forceParameterType || this.options.getValue('expandParameters');
 
@@ -31,7 +33,11 @@ export function functionType(
         })
       : [];
     const returns = this.partials.someType(fn.type as SomeType);
-    return typeParams + `(${params.join(', ')}) => ${returns}`;
+    return (
+      typeParams +
+      `${shouldFormat && model.length > 1 ? '  ' : ''}(${params.join(', ')})${typeSeparator}${returns}`
+    );
   });
-  return functions.join('');
+  const join = shouldFormat ? ';\n' : '; ';
+  return functions.join(join);
 }

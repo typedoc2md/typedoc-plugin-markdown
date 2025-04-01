@@ -79,7 +79,6 @@ export function declaration(
       ) {
         if (intersectionType.declaration.children) {
           md.push(heading(opts.headingLevel, i18n.theme_type_declaration()));
-
           md.push(
             this.partials.typeDeclaration(intersectionType.declaration, {
               headingLevel: opts.headingLevel,
@@ -112,7 +111,6 @@ export function declaration(
     if (model.type instanceof UnionType) {
       if (this.helpers.hasUsefulTypeDetails(model.type)) {
         md.push(heading(opts.headingLevel, i18n.theme_type_declaration()));
-
         model.type.types.forEach((type) => {
           if (type instanceof ReflectionType) {
             md.push(this.partials.someType(type, { forceCollapse: true }));

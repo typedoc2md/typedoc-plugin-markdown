@@ -136,4 +136,12 @@ describe(`Type Alias Reflection`, () => {
       'type-aliases/TypeWithReturns.md',
     );
   });
+
+  test(`should compile type with index signature`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'type-aliases/TypeWithIndexSignature.md',
+    );
+  });
 });

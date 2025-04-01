@@ -12,20 +12,31 @@ export function typeDeclarationContainer(
   },
 ): string {
   const md: string[] = [];
-
   if (typeDeclaration?.indexSignatures?.length) {
     md.push(heading(opts.headingLevel, i18n.kind_index_signature()));
     typeDeclaration?.indexSignatures?.forEach((indexSignature) => {
-      md.push(this.partials.indexSignature(indexSignature));
+      md.push(
+        this.partials.indexSignature(indexSignature, {
+          headingLevel: opts.headingLevel + 1,
+        }),
+      );
     });
   }
+  const signatureCount = typeDeclaration?.signatures?.length;
+  if (signatureCount) {
+    typeDeclaration.signatures?.forEach((signature) => {
+      const multipleSignatures = signatureCount > 1;
+      if (multipleSignatures) {
+        md.push(heading(opts.headingLevel, i18n.kind_call_signature()));
+      }
 
-  if (typeDeclaration?.signatures?.length) {
-    typeDeclaration.signatures.forEach((signature) => {
       md.push(
         this.partials.signature(signature, {
-          headingLevel: opts.headingLevel,
+          headingLevel: multipleSignatures
+            ? opts.headingLevel + 1
+            : opts.headingLevel,
           nested: true,
+          hideTitle: !multipleSignatures,
         }),
       );
     });

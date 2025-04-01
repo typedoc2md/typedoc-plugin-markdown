@@ -532,8 +532,8 @@ Defined in: [index.ts:1](http://source-url)
 
 | Name | Type | Default value | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="api-declaration1"></a> \`declaration1\` | \`string\` | 'declaration3' | [index.ts:1](http://source-url) |
-| <a id="api-declaration2"></a> \`declaration2\` | \`number\` | 100 | [index.ts:1](http://source-url) |
+| <a id="api-declaration1"></a> \`declaration1\` | \`string\` | \`'declaration3'\` | [index.ts:1](http://source-url) |
+| <a id="api-declaration2"></a> \`declaration2\` | \`number\` | \`100\` | [index.ts:1](http://source-url) |
 "
 `;
 
@@ -642,7 +642,7 @@ Defined in: [index.ts:1](http://source-url)
 </td>
 <td>
 
-'declaration3'
+\`'declaration3'\`
 
 </td>
 </tr>
@@ -659,7 +659,7 @@ Defined in: [index.ts:1](http://source-url)
 </td>
 <td>
 
-100
+\`100\`
 
 </td>
 </tr>

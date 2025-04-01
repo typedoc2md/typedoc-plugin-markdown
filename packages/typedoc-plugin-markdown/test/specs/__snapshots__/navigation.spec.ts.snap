@@ -4924,6 +4924,30 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "isDeprecated": false
       },
       {
+        "title": "InterfaceWithFunctionOverloads",
+        "kind": 256,
+        "path": "interfaces/InterfaceWithFunctionOverloads.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "InterfaceWithMixedOverloads",
+        "kind": 256,
+        "path": "interfaces/InterfaceWithMixedOverloads.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "InterfaceWithProps",
+        "kind": 256,
+        "path": "interfaces/InterfaceWithProps.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "InterfaceWithSingleFunction",
+        "kind": 256,
+        "path": "interfaces/InterfaceWithSingleFunction.md",
+        "isDeprecated": false
+      },
+      {
         "title": "InterfaceWithTypeParameters",
         "kind": 256,
         "path": "interfaces/InterfaceWithTypeParameters.md",
@@ -5067,6 +5091,12 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "isDeprecated": false
       },
       {
+        "title": "TypeWithIndexSignature",
+        "kind": 2097152,
+        "path": "type-aliases/TypeWithIndexSignature.md",
+        "isDeprecated": false
+      },
+      {
         "title": "TypeWithReturns",
         "kind": 2097152,
         "path": "type-aliases/TypeWithReturns.md",
@@ -5194,6 +5224,12 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "title": "functionReturningAUnionType",
         "kind": 64,
         "path": "functions/functionReturningAUnionType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionReturningFunctionOverloads",
+        "kind": 64,
+        "path": "functions/functionReturningFunctionOverloads.md",
         "isDeprecated": false
       },
       {

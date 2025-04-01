@@ -25,6 +25,7 @@ const config = {
       },
       excludePrivate: false,
       blockTagsPreserveOrder: ['@deprecated', '@see'],
+      expandObjects: false,
     },
     options: [
       {

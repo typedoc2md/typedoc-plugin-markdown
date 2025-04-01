@@ -252,7 +252,7 @@ exports[`Objects And Params should compile function returning a promise: (Output
 \`\`\`ts
 function functionReturningAPromise(): Promise<{
   prop: string;
-}>
+}>;
 \`\`\`
 
 Comments for function
@@ -261,7 +261,7 @@ Comments for function
 
 [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\\{
   \`prop\`: \`string\`;
- \\}\\>
+\\}\\>
 
 Return comments
 "
@@ -286,7 +286,7 @@ exports[`Objects And Params should compile function returning a union: (Output F
 "# Function: functionReturningAUnionType()
 
 \`\`\`ts
-function functionReturningAUnionType(): string | boolean
+function functionReturningAUnionType(): string | boolean;
 \`\`\`
 
 Comments for function
@@ -329,7 +329,7 @@ exports[`Objects And Params should compile function returning an object: (Output
 function functionReturningAnObject(): {
   x: number;
   y: number;
-}
+};
 \`\`\`
 
 Comments for function
@@ -431,13 +431,13 @@ function functionWithNestedParameters(
      name: string;
      obj: {
         name: () => void;
-       };
+     };
      value: number;
-    };
+  };
   parent: number;
- }, 
+}, 
    context: any, 
-   somethingElse?: string): boolean
+   somethingElse?: string): boolean;
 \`\`\`
 
 Some nested params.
@@ -667,7 +667,7 @@ type LiteralType = {
      x: string;
      y: boolean | string;
      z: (x: string) => string;
-    };
+  };
   z: (x: string) => string;
   get accessorA
   set accessorA accessorA: Promise<string>;
@@ -766,7 +766,7 @@ z: (x: string) => string;
 #### Get Signature
 
 \`\`\`ts
-get accessorA(): Promise<string>
+get accessorA(): Promise<string>;
 \`\`\`
 
 Comments for accessorA getter
@@ -778,7 +778,7 @@ Comments for accessorA getter
 #### Set Signature
 
 \`\`\`ts
-set accessorA(x: Promise<string>): void
+set accessorA(x: Promise<string>): void;
 \`\`\`
 
 Comments for accessorA setter
@@ -800,7 +800,7 @@ Comments for accessorA setter
 #### Get Signature
 
 \`\`\`ts
-get accessorB(): string
+get accessorB(): string;
 \`\`\`
 
 ##### Returns
@@ -810,7 +810,7 @@ get accessorB(): string
 #### Set Signature
 
 \`\`\`ts
-set accessorB(x: string): void
+set accessorB(x: string): void;
 \`\`\`
 
 ##### Parameters
@@ -828,7 +828,7 @@ set accessorB(x: string): void
 ### someFunction()
 
 \`\`\`ts
-someFunction(param: string): Promise<any>
+someFunction(param: string): Promise<any>;
 \`\`\`
 
 Comments for someFunction
@@ -913,7 +913,7 @@ Comments for UnionType
 exports[`Objects And Params should compile variable assigned to an object literal: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Variable: objectLiteralVariable
 
-> \`const\` **objectLiteralVariable**: \\{ \`valueA\`: \`number\`; \`valueB\`: \`boolean\`; \`valueX\`: \\{ \`valueA\`: \`number\`[]; \`valueY\`: (\`z\`: \`string\`) => \\{ \`a\`: \`string\`; \`b\`: \`string\`; \`c\`: \\{ \`a\`: \`number\`; \`b\`: \`number\`; \\}; \\}; \`valueZ\`: \`string\`; \\}; \`valueY\`: (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\`; \\}
+> \`const\` **objectLiteralVariable**: \\{ \`valueA\`: \`number\`; \`valueB\`: \`boolean\`; \`valueX\`: \\{ \`valueA\`: \`number\`[]; \`valueY\`: (\`z\`: \`string\`) => \\{ \`a\`: \`string\`; \`b\`: \`string\`; \`c\`: \\{ \`a\`: \`number\`; \`b\`: \`number\`; \\}; \\}; \`valueZ\`: \`string\`; \\}; \`valueY\`: (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\`; \`valueZ\`: \`string\`; \\}
 
 Comments for objectLiteralVariable
 
@@ -948,6 +948,8 @@ Comment for valueX.valueA
 #### valueX.valueY()
 
 > **valueY**: (\`z\`: \`string\`) => \\{ \`a\`: \`string\`; \`b\`: \`string\`; \`c\`: \\{ \`a\`: \`number\`; \`b\`: \`number\`; \\}; \\}
+
+Comments for valueX.valueY
 
 ##### Parameters
 
@@ -987,6 +989,10 @@ Comment for valueX.valueA
 
 > **valueY**: (\`unionParam\`: \`"a"\` \\| \`"b"\`, \`_undercoreParam_\`: \`string\`) => \`string\`
 
+Comments for valueY
+
+comments for valueY function
+
 #### Parameters
 
 ##### unionParam
@@ -994,6 +1000,22 @@ Comment for valueX.valueA
 \`"a"\` | \`"b"\`
 
 ##### \\_undercoreParam\\_
+
+\`string\`
+
+#### Returns
+
+\`string\`
+
+### valueZ()
+
+> **valueZ**(\`param\`: \`string\`): \`string\`
+
+Comments for valueZ
+
+#### Parameters
+
+##### param
 
 \`string\`
 
@@ -1018,11 +1040,12 @@ const objectLiteralVariable: {
         c: {
            a: number;
            b: number;
-          };
-       };
+        };
+     };
      valueZ: string;
-    };
+  };
   valueY: (unionParam: "a" | "b", _undercoreParam_: string) => string;
+  valueZ: string;
 };
 \`\`\`
 
@@ -1059,8 +1082,8 @@ valueB: boolean = true;
      c: {
         a: number;
         b: number;
-       };
-    };
+     };
+  };
   valueZ: string;
 }
 \`\`\`
@@ -1072,5 +1095,25 @@ Comments for valueX
 \`\`\`ts
 (unionParam: "a" | "b", _undercoreParam_: string) => string
 \`\`\`
+
+Comments for valueY
+
+### valueZ()
+
+\`\`\`ts
+valueZ(param: string): string;
+\`\`\`
+
+Comments for valueZ
+
+#### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| \`param\` | \`string\` |
+
+#### Returns
+
+\`string\`
 "
 `;

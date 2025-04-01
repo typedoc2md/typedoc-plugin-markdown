@@ -99,10 +99,16 @@ export function memberWithGroups(
   }
 
   if ('signatures' in model && model.signatures?.length) {
+    const multipleSignatures = model.signatures?.length > 1;
     model.signatures.forEach((signature) => {
+      if (multipleSignatures) {
+        md.push(heading(options.headingLevel, i18n.kind_call_signature()));
+      }
       md.push(
         this.partials.signature(signature, {
-          headingLevel: options.headingLevel,
+          headingLevel: multipleSignatures
+            ? options.headingLevel + 1
+            : options.headingLevel,
         }),
       );
     });
@@ -111,7 +117,11 @@ export function memberWithGroups(
   if (model.indexSignatures?.length) {
     md.push(heading(options.headingLevel, i18n.theme_indexable()));
     model.indexSignatures.forEach((indexSignature) => {
-      md.push(this.partials.indexSignature(indexSignature));
+      md.push(
+        this.partials.indexSignature(indexSignature, {
+          headingLevel: options.headingLevel + 1,
+        }),
+      );
     });
   }
 

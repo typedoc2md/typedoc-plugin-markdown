@@ -117,12 +117,7 @@ export function propertiesTable(
     }
 
     if (propertyType) {
-      const type = (propertyType as any).declaration?.signatures?.length
-        ? this.partials.functionType(
-            (propertyType as any)?.declaration?.signatures,
-            { forceParameterType: true },
-          )
-        : this.partials.someType(propertyType);
+      const type = this.partials.someType(propertyType);
       row.push(removeLineBreaks(type));
     }
 

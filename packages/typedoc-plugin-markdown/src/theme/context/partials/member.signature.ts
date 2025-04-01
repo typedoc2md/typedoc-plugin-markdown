@@ -10,11 +10,12 @@ export function signature(
     nested?: boolean;
     accessor?: string;
     multipleSignatures?: boolean;
+    hideTitle?: boolean;
   },
 ): string {
   const md: string[] = [];
 
-  if (!options.nested) {
+  if (!options.hideTitle) {
     md.push(
       this.partials.signatureTitle(model, {
         accessor: options.accessor,

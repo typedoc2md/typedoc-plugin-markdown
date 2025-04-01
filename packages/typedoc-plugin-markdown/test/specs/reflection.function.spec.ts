@@ -176,4 +176,12 @@ describe(`Function Reflection`, () => {
       'functions/tupleTypeFunctionInlineExplicit.md',
     );
   });
+
+  test(`should compile function returning function overloads`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionReturningFunctionOverloads.md',
+    );
+  });
 });

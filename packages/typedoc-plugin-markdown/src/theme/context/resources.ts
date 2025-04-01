@@ -114,8 +114,10 @@ export const resourcePartials = (context: MarkdownThemeContext) => {
       model: DeclarationHierarchy,
       options: { headingLevel: number },
     ) => partials.hierarchy.apply(context, [model, options]) as string,
-    indexSignature: (model: SignatureReflection) =>
-      partials.indexSignature.apply(context, [model]) as string,
+    indexSignature: (
+      model: SignatureReflection,
+      options?: { headingLevel: number } | undefined,
+    ) => partials.indexSignature.apply(context, [model, options]) as string,
     inheritance: (
       model: DeclarationReflection | SignatureReflection,
       options: { headingLevel: number },
@@ -155,6 +157,7 @@ There is no association list partial for properties as these are handled as a st
         nested?: boolean | undefined;
         accessor?: string | undefined;
         multipleSignatures?: boolean | undefined;
+        hideTitle?: boolean | undefined;
       },
     ) => partials.signature.apply(context, [model, options]) as string,
     signatureParameters: (model: ParameterReflection[]) =>
@@ -253,7 +256,12 @@ There is no association list partial for properties as these are handled as a st
     ) => partials.declarationType.apply(context, [model, options]) as string,
     functionType: (
       model: SignatureReflection[],
-      options?: { forceParameterType: boolean } | undefined,
+      options?:
+        | {
+            forceParameterType?: boolean | undefined;
+            typeSeparator?: string | undefined;
+          }
+        | undefined,
     ) => partials.functionType.apply(context, [model, options]) as string,
     reflectionType: (
       model: ReflectionType,

@@ -65,7 +65,7 @@ Defined in: [classes.ts:1](http://source-url)
 ### Constructor
 
 \`\`\`ts
-new AbstractClass(): AbstractClass
+new AbstractClass(): AbstractClass;
 \`\`\`
 
 #### Returns
@@ -83,7 +83,7 @@ new AbstractClass(): AbstractClass
 ### abstractMethod()
 
 \`\`\`ts
-abstract abstractMethod(): string
+abstract abstractMethod(): string;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -161,7 +161,7 @@ Comments for BasicClass
 ### Constructor
 
 \`\`\`ts
-new BasicClass(): BasicClass
+new BasicClass(): BasicClass;
 \`\`\`
 
 #### Returns
@@ -180,7 +180,7 @@ new BasicClass(): BasicClass
 ### method()
 
 \`\`\`ts
-method(): string
+method(): string;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -254,7 +254,7 @@ Defined in: [classes.ts:1](http://source-url)
 ### Constructor
 
 \`\`\`ts
-new ClassWithAccessorKeywords(): ClassWithAccessorKeywords
+new ClassWithAccessorKeywords(): ClassWithAccessorKeywords;
 \`\`\`
 
 #### Returns
@@ -406,7 +406,7 @@ Comments for ClassWithAccessors
 ### Constructor
 
 \`\`\`ts
-new ClassWithAccessors(): ClassWithAccessors
+new ClassWithAccessors(): ClassWithAccessors;
 \`\`\`
 
 #### Returns
@@ -426,7 +426,7 @@ new ClassWithAccessors(): ClassWithAccessors
 #### Get Signature
 
 \`\`\`ts
-get accessor(): string
+get accessor(): string;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -440,7 +440,7 @@ Comments for getter
 #### Set Signature
 
 \`\`\`ts
-set accessor(value: string): void
+set accessor(value: string): void;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -464,7 +464,7 @@ Comments for setter
 #### Set Signature
 
 \`\`\`ts
-set noGetter(x: string): void
+set noGetter(x: string): void;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -486,7 +486,7 @@ Defined in: [classes.ts:1](http://source-url)
 #### Get Signature
 
 \`\`\`ts
-get noSetter(): string
+get noSetter(): string;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -558,7 +558,7 @@ Comments for ClassWithComplexProps
 ### Constructor
 
 \`\`\`ts
-new ClassWithComplexProps(): ClassWithComplexProps
+new ClassWithComplexProps(): ClassWithComplexProps;
 \`\`\`
 
 #### Returns
@@ -654,7 +654,7 @@ Comments for ClassWithConstructorOverloads
 ### Constructor
 
 \`\`\`ts
-new ClassWithConstructorOverloads(x: number, y: string): ClassWithConstructorOverloads
+new ClassWithConstructorOverloads(x: number, y: string): ClassWithConstructorOverloads;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -673,7 +673,7 @@ Defined in: [classes.ts:1](http://source-url)
 ### Constructor
 
 \`\`\`ts
-new ClassWithConstructorOverloads(x: string): ClassWithConstructorOverloads
+new ClassWithConstructorOverloads(x: string): ClassWithConstructorOverloads;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -691,7 +691,7 @@ Defined in: [classes.ts:1](http://source-url)
 ### Constructor
 
 \`\`\`ts
-new ClassWithConstructorOverloads(s: string): ClassWithConstructorOverloads
+new ClassWithConstructorOverloads(s: string): ClassWithConstructorOverloads;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -787,7 +787,7 @@ Comment for ClassWithFlags
 ### Constructor
 
 \`\`\`ts
-new ClassWithFlags(): ClassWithFlags
+new ClassWithFlags(): ClassWithFlags;
 \`\`\`
 
 #### Returns
@@ -806,7 +806,7 @@ new ClassWithFlags(): ClassWithFlags
 ### expermintalMethod()
 
 \`\`\`ts
-expermintalMethod(): void
+expermintalMethod(): void;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -822,7 +822,7 @@ Defined in: [classes.ts:1](http://source-url)
 ### internalMethod()
 
 \`\`\`ts
-protected internalMethod(): void
+protected internalMethod(): void;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -958,7 +958,7 @@ Comments for ClassWithModifiers
 ### Constructor
 
 \`\`\`ts
-new ClassWithModifiers(): ClassWithModifiers
+new ClassWithModifiers(): ClassWithModifiers;
 \`\`\`
 
 #### Returns
@@ -980,7 +980,7 @@ new ClassWithModifiers(): ClassWithModifiers
 ### privateMethod()
 
 \`\`\`ts
-private privateMethod(): void
+private privateMethod(): void;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -996,7 +996,7 @@ Comment for privateMethod
 ### publicMethod()
 
 \`\`\`ts
-publicMethod(): void
+publicMethod(): void;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -1012,7 +1012,7 @@ Comment for publicMethod
 ### staticMethod()
 
 \`\`\`ts
-static staticMethod(): void
+static staticMethod(): void;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -1106,7 +1106,7 @@ Defined in: [classes.ts:1](http://source-url)
 ### Constructor
 
 \`\`\`ts
-new ClassWithPropCategories(opts: object): ClassWithPropCategories
+new ClassWithPropCategories(opts: object): ClassWithPropCategories;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -1148,7 +1148,7 @@ Defined in: [classes.ts:1](http://source-url)
 ### method1()
 
 \`\`\`ts
-method1(): void
+method1(): void;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -1162,7 +1162,7 @@ Defined in: [classes.ts:1](http://source-url)
 ### method2()
 
 \`\`\`ts
-method2(): void
+method2(): void;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -1257,7 +1257,7 @@ Comments for ClassWithSimpleProps
 ### Constructor
 
 \`\`\`ts
-new ClassWithSimpleProps(): ClassWithSimpleProps
+new ClassWithSimpleProps(): ClassWithSimpleProps;
 \`\`\`
 
 #### Returns
@@ -1373,7 +1373,7 @@ Comments for ClassWithTypeParameters
 ### Constructor
 
 \`\`\`ts
-new ClassWithTypeParameters<A, B, C>(): ClassWithTypeParameters<A, B, C>
+new ClassWithTypeParameters<A, B, C>(): ClassWithTypeParameters<A, B, C>;
 \`\`\`
 
 #### Returns
@@ -1463,7 +1463,7 @@ Defined in: [classes.ts:1](http://source-url)
 ### Constructor
 
 \`\`\`ts
-new ClassWithoutPropCategories(opts: object): ClassWithoutPropCategories
+new ClassWithoutPropCategories(opts: object): ClassWithoutPropCategories;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -1492,7 +1492,7 @@ Defined in: [classes.ts:1](http://source-url)
 ### method1()
 
 \`\`\`ts
-method1(): void
+method1(): void;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -1506,7 +1506,7 @@ Defined in: [classes.ts:1](http://source-url)
 ### method2()
 
 \`\`\`ts
-method2(): void
+method2(): void;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -1616,7 +1616,7 @@ Comments for DerivedClassA
 ### Constructor
 
 \`\`\`ts
-new DerivedClassA(): DerivedClassA
+new DerivedClassA(): DerivedClassA;
 \`\`\`
 
 #### Returns
@@ -1639,7 +1639,7 @@ new DerivedClassA(): DerivedClassA
 ### abstractMethod()
 
 \`\`\`ts
-abstractMethod(): string
+abstractMethod(): string;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -1659,7 +1659,7 @@ Comments for abstractMethod
 ### derivedMethod()
 
 \`\`\`ts
-derivedMethod(): string
+derivedMethod(): string;
 \`\`\`
 
 Defined in: [classes.ts:1](http://source-url)
@@ -1810,7 +1810,7 @@ Defined in: [classes.ts:1](http://source-url)
 ### Constructor
 
 \`\`\`ts
-new GrandChildClassA(): GrandChildClassA
+new GrandChildClassA(): GrandChildClassA;
 \`\`\`
 
 #### Returns

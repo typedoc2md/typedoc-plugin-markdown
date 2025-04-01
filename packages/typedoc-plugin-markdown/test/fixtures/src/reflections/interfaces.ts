@@ -211,3 +211,67 @@ export interface InterfaceWithComments<A, B, C, D> {
    */
   propertyWithComments: string;
 }
+
+/**
+ * Comments for InterfaceWithFunctionOverloads
+ *
+ * @inline
+ */
+export interface InterfaceWithMixedOverloads {
+  /**
+   * Comments for prop 1
+   */
+  prop1: string;
+  /**
+   * Comments for function 1
+   */
+  (options?: any): Promise<void>;
+  /**
+   * Comments for function 2
+   */
+  (signOutCallback?: any, options?: any): Promise<void>;
+  /**
+   * Comments for prop 2
+   */
+  prop2: string;
+}
+
+/**
+ * Comments for InterfaceWithFunction
+ *
+ * @inline
+ */
+export interface InterfaceWithSingleFunction {
+  /**
+   * Comments for function
+   */
+  (options?: any): Promise<void>;
+}
+
+/**
+ * Comments for InterfaceWithFunction
+ *
+ * @inline
+ */
+export interface InterfaceWithFunctionOverloads {
+  /**
+   * Comments for function 1
+   */
+  (options?: any): Promise<void>;
+  /**
+   * Comments for function 2
+   */
+  (options2?: any): Promise<void>;
+}
+
+/**
+ * Comments for InterfaceWithFunction
+ *
+ * @inline
+ */
+export interface InterfaceWithProps {
+  /**
+   * Comments for prop
+   */
+  prop: string;
+}
