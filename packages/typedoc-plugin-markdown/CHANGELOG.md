@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.6.1
+
+### Patch Changes
+
+- Correctly render html table when interfacePropertiesFormat=htmlTable ([#794](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/794)).
+- Correctly handle overloaded function display in list and table views ([#793](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/793)).
+- Expose comments and signatures to index signature members.
+- Wrap default values in back ticks on table views to be consistent with list views.
+- Append semi colons to signature in code blocks.
+
 ## 4.6.0 (2025-03-23)
 
 This release continues the effort to further align to TypeDoc’s default theme, with improvements that make the plugin more consistent and predictable.
