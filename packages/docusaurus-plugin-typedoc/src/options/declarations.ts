@@ -31,7 +31,8 @@ import { DEFAULT_SIDEBAR_OPTIONS } from './options.js';
  *           "pretty": false,
  *           "typescript": false,
  *           "deprecatedItemClassName": "typedoc-sidebar-item-deprecated"
- *        }
+ *         }
+ *       }
  *     ]
  *   ]
  * }
