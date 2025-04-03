@@ -346,7 +346,7 @@ export const indexFormat: Partial<DeclarationOption> = {
 /**
  * This option specifies the output format for parameters and type parameters of functions and class methods:
  *
- * - **"list"**: parameters are output as bullet points in a linear list, suitable for more detailed comments.
+ * - **"list"**: parameters are output in linear blocks with headings, suitable for more detailed comments.
  * - **"table"**: parameters are output within a Markdown table, condensed into a single paragraph.
  * - **"htmlTable"**: parameters are output in an HTML table, enabling block elements to render in table cells.
  *
