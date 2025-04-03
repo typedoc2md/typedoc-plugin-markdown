@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.6.2
+
+### Patch Changes
+
+- Move isOptional flag inside backTicks ([#797](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/797)) - thanks @LekoArts
+
 ## 4.6.1 (2025-04-02)
 
 ### Patch Changes
