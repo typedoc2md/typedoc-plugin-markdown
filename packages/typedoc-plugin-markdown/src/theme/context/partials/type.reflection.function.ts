@@ -22,9 +22,7 @@ export function functionType(
       ? fn.parameters.map((param) => {
           const paramType = this.partials.someType(param.type as SomeType);
           const paramItem = [
-            `${param.flags?.isRest ? '...' : ''}${backTicks(param.name)}${
-              param.flags?.isOptional ? '?' : ''
-            }`,
+            `${param.flags?.isRest ? '...' : ''}${backTicks(`${param.name}${param.flags?.isOptional ? '?' : ''}`)}`,
           ];
           if (showParameterType) {
             paramItem.push(paramType);

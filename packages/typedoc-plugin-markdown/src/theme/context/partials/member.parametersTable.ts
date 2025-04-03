@@ -77,7 +77,7 @@ export function parametersTable(
 
     const optional = isOptional ? '?' : '';
 
-    row.push(`${rest}${backTicks(parameter.name)}${optional}`);
+    row.push(`${rest}${backTicks(`${parameter.name}${optional}`)}`);
 
     if (parameter.type) {
       const displayType =

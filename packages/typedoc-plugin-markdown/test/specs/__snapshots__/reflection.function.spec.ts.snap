@@ -381,13 +381,13 @@ Return comments
 
 ### member1
 
-> **member1**: \\{(\`options\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; (\`signOutCallback\`?, \`options\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; \`prop1\`: \`string\`; \`prop2\`: \`string\`; \\}
+> **member1**: \\{(\`options?\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; (\`signOutCallback?\`, \`options?\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; \`prop1\`: \`string\`; \`prop2\`: \`string\`; \\}
 
 Member 1 comments
 
 #### Call Signature
 
-> (\`options\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+> (\`options?\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
 
 Comments for function 1
 
@@ -403,7 +403,7 @@ Comments for function 1
 
 #### Call Signature
 
-> (\`signOutCallback\`?, \`options\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+> (\`signOutCallback?\`, \`options?\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
 
 Comments for function 2
 
@@ -435,11 +435,11 @@ Comments for prop 2
 
 ### member2()
 
-> **member2**: \\{(\`options\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; (\`options2\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; \\}
+> **member2**: \\{(\`options?\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; (\`options2?\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; \\}
 
 #### Call Signature
 
-> (\`options\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+> (\`options?\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
 
 Comments for function 1
 
@@ -455,7 +455,7 @@ Comments for function 1
 
 #### Call Signature
 
-> (\`options2\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+> (\`options2?\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
 
 Comments for function 2
 
@@ -471,7 +471,7 @@ Comments for function 2
 
 ### member3()
 
-> **member3**: (\`options\`?) => [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+> **member3**: (\`options?\`) => [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
 
 Member 3 comments
 
@@ -516,11 +516,11 @@ Return comments
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| \`member1()\` | \\{ (\`options\`?: \`any\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; (\`signOutCallback\`?: \`any\`, \`options\`?: \`any\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; \`prop1\`: \`string\`; \`prop2\`: \`string\`; \\} | Member 1 comments Comments for function 1 Comments for function 2 |
+| \`member1()\` | \\{ (\`options?\`: \`any\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; (\`signOutCallback?\`: \`any\`, \`options?\`: \`any\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; \`prop1\`: \`string\`; \`prop2\`: \`string\`; \\} | Member 1 comments Comments for function 1 Comments for function 2 |
 | \`member1.prop1\` | \`string\` | Comments for prop 1 |
 | \`member1.prop2\` | \`string\` | Comments for prop 2 |
-| \`member2()\` | \\{ (\`options\`?: \`any\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; (\`options2\`?: \`any\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; \\} | Comments for function 1 Comments for function 2 |
-| \`member3()\` | (\`options\`?: \`any\`) => [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\> | Member 3 comments Comments for function |
+| \`member2()\` | \\{ (\`options?\`: \`any\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; (\`options2?\`: \`any\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>; \\} | Comments for function 1 Comments for function 2 |
+| \`member3()\` | (\`options?\`: \`any\`) => [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\> | Member 3 comments Comments for function |
 | \`member4\` | \`object\` | - |
 | \`member4.prop\` | \`string\` | Comments for prop |
 "
@@ -1038,8 +1038,8 @@ Defined in: [functions.ts:1](http://source-url)
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
 | \`__namedParameters\` | \\{ \`bar\`: \`number\`; \`foo\`: \`number\`; \\} | various options |
-| \`__namedParameters.bar\`? | \`number\` | - |
-| \`__namedParameters.foo\`? | \`number\` | - |
+| \`__namedParameters.bar?\` | \`number\` | - |
+| \`__namedParameters.foo?\` | \`number\` | - |
 | \`anotherParam\` | \`string\` | Another param comment |
 
 ## Returns
@@ -1051,7 +1051,7 @@ Defined in: [functions.ts:1](http://source-url)
 exports[`Function Reflection should compile function with nested parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionWithNestedParameters()
 
-> **functionWithNestedParameters**(\`params\`, \`context\`, \`somethingElse\`?): \`boolean\`
+> **functionWithNestedParameters**(\`params\`, \`context\`, \`somethingElse?\`): \`boolean\`
 
 Defined in: [functions.ts:1](http://source-url)
 
@@ -1132,13 +1132,13 @@ Some nested params.
 | \`params\` | \\{ \`name\`: \`string\`; \`nestedObj\`: \\{ \`name\`: \`string\`; \`obj\`: \\{ \`name\`: () => \`void\`; \\}; \`value\`: \`number\`; \\}; \`parent\`: \`number\`; \\} | The parameters passed to the method. |
 | \`params.name\` | \`string\` | The name of the new group. |
 | \`params.nestedObj\` | \\{ \`name\`: \`string\`; \`obj\`: \\{ \`name\`: () => \`void\`; \\}; \`value\`: \`number\`; \\} | A nested object. |
-| \`params.nestedObj.name\`? | \`string\` | - |
-| \`params.nestedObj.obj\`? | \\{ \`name\`: () => \`void\`; \\} | - |
-| \`params.nestedObj.obj.name\`? | () => \`void\` | - |
-| \`params.nestedObj.value\`? | \`number\` | - |
-| \`params.parent\`? | \`number\` | - |
-| \`context\`? | \`any\` | The context of the method call. |
-| \`somethingElse\`? | \`string\` | - |
+| \`params.nestedObj.name?\` | \`string\` | - |
+| \`params.nestedObj.obj?\` | \\{ \`name\`: () => \`void\`; \\} | - |
+| \`params.nestedObj.obj.name?\` | () => \`void\` | - |
+| \`params.nestedObj.value?\` | \`number\` | - |
+| \`params.parent?\` | \`number\` | - |
+| \`context?\` | \`any\` | The context of the method call. |
+| \`somethingElse?\` | \`string\` | - |
 
 ## Returns
 
@@ -1149,7 +1149,7 @@ Some nested params.
 exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionWithOptionalParameters()
 
-> **functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam\`?, \`paramWithDefault\`?): \`void\`
+> **functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam?\`, \`paramWithDefault?\`): \`void\`
 
 Defined in: [functions.ts:1](http://source-url)
 
@@ -1186,7 +1186,7 @@ An optional parameter.
 exports[`Function Reflection should compile function with optional parameters: (Output File Strategy "members") (Option Group "1") 2`] = `
 "# Function: functionWithOptionalParameters()
 
-> **functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam\`?, \`paramWithDefault\`?): \`void\`
+> **functionWithOptionalParameters**(\`firstParamWithDefault\`, \`requiredParam\`, \`optionalParam?\`, \`paramWithDefault?\`): \`void\`
 
 Defined in: [functions.ts:1](http://source-url)
 
@@ -1241,8 +1241,8 @@ This is a function with a parameters.
 | :------ | :------ | :------ | :------ |
 | \`firstParamWithDefault\` | \`boolean\` | \`true\` | - |
 | \`requiredParam\` | \`string\` | \`undefined\` | A normal parameter. |
-| \`optionalParam\`? | \`string\` | \`undefined\` | An optional parameter. |
-| \`paramWithDefault\`? | \`number\` | \`0\` | - |
+| \`optionalParam?\` | \`string\` | \`undefined\` | An optional parameter. |
+| \`paramWithDefault?\` | \`number\` | \`0\` | - |
 
 ## Returns
 
@@ -1271,8 +1271,8 @@ This is a function with a parameters.
 | :------ | :------ | :------ | :------ |
 | \`firstParamWithDefault\` | \`boolean\` | \`true\` | - |
 | \`requiredParam\` | \`string\` | \`undefined\` | A normal parameter. |
-| \`optionalParam\`? | \`string\` | \`undefined\` | An optional parameter. |
-| \`paramWithDefault\`? | \`number\` | \`0\` | - |
+| \`optionalParam?\` | \`string\` | \`undefined\` | An optional parameter. |
+| \`paramWithDefault?\` | \`number\` | \`0\` | - |
 
 ## Returns
 

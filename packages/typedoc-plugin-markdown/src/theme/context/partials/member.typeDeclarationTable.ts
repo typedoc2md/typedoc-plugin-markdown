@@ -73,7 +73,7 @@ export function typeDeclarationTable(
     }
 
     const name =
-      backTicks(`${declaration.name}${isSignature ? '()' : ''}`) + optional;
+      backTicks(`${declaration.name}${isSignature ? '()' : ''}${optional}`);
 
     nameColumn.push(name);
 
