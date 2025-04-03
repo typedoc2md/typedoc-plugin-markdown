@@ -29,13 +29,13 @@ Finally, you can build all the packages and run the tests to ensure everything i
 Build all packages in the workspace:
 
 ```bash
-npm run build
+npm run build-all
 ```
 
 Test all packages in the workspace:
 
 ```bash
-npm run test
+npm run test-all
 ```
 
 ## 2. Contributing to packages
