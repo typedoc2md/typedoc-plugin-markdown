@@ -119,7 +119,7 @@ Comments for propReturningSignatureDeclaration
 
 ### propReturningSignatureDeclarations
 
-> **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\`
+> **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB?\`: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\`
 
 Comments for propReturningSignatureDeclarations
 
@@ -219,7 +219,7 @@ Comments for BasicInterface
 | \`propReturningObjectDeclaration.b\` | \`string\` | - |
 | <a id="propreturningobjectdeclarations"></a> \`propReturningObjectDeclarations\` | \\{ \`a\`: \`boolean\`; \`b\`: \`string\`; \\} & \\{ \`c\`: \`boolean\`; \`d\`: \`string\`; \\} | Comments for propReturningObjectDeclarations |
 | <a id="propreturningsignaturedeclaration"></a> \`propReturningSignatureDeclaration?\` | () => \`string\` \\| \`number\` \\| \`boolean\` | Comments for propReturningSignatureDeclaration |
-| <a id="propreturningsignaturedeclarations"></a> \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations |
+| <a id="propreturningsignaturedeclarations"></a> \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB?\`: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations |
 | <a id="propwithfunction"></a> \`propWithFunction\` | (\`options\`: \\{ \`a\`: \`boolean\`; \`b\`: \`string\`; \\}) => \`boolean\` | Comments for propWithFunction |
 | <a id="propwithprops"></a> \`propWithProps\` | \\{ \`callbacks\`: \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\>; \`nestedPropA\`: \`string\`; \`nestedPropB\`: \`boolean\`; \`nestedPropC\`: \\{ \`nestedPropCA\`: \`string\`; \\}; \`nestedPropD\`: () => \`boolean\`; \\} | Comments for propWithProps |
 | \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks |
@@ -362,7 +362,7 @@ y: number = 2;
 exports[`Objects And Params should compile function with nested parameters: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionWithNestedParameters()
 
-> **functionWithNestedParameters**(\`params\`: \\{ \`name\`: \`string\`; \`nestedObj\`: \\{ \`name\`: \`string\`; \`obj\`: \\{ \`name\`: () => \`void\`; \\}; \`value\`: \`number\`; \\}; \`parent\`: \`number\`; \\}, \`context\`: \`any\`, \`somethingElse\`?: \`string\`): \`boolean\`
+> **functionWithNestedParameters**(\`params\`: \\{ \`name\`: \`string\`; \`nestedObj\`: \\{ \`name\`: \`string\`; \`obj\`: \\{ \`name\`: () => \`void\`; \\}; \`value\`: \`number\`; \\}; \`parent\`: \`number\`; \\}, \`context\`: \`any\`, \`somethingElse?\`: \`string\`): \`boolean\`
 
 Some nested params.
 
@@ -449,13 +449,13 @@ Some nested params.
 | \`params\` | \\{ \`name\`: \`string\`; \`nestedObj\`: \\{ \`name\`: \`string\`; \`obj\`: \\{ \`name\`: () => \`void\`; \\}; \`value\`: \`number\`; \\}; \`parent\`: \`number\`; \\} | The parameters passed to the method. |
 | \`params.name\` | \`string\` | The name of the new group. |
 | \`params.nestedObj\` | \\{ \`name\`: \`string\`; \`obj\`: \\{ \`name\`: () => \`void\`; \\}; \`value\`: \`number\`; \\} | A nested object. |
-| \`params.nestedObj.name\`? | \`string\` | - |
-| \`params.nestedObj.obj\`? | \\{ \`name\`: () => \`void\`; \\} | - |
-| \`params.nestedObj.obj.name\`? | () => \`void\` | - |
-| \`params.nestedObj.value\`? | \`number\` | - |
-| \`params.parent\`? | \`number\` | - |
-| \`context\`? | \`any\` | The context of the method call. |
-| \`somethingElse\`? | \`string\` | - |
+| \`params.nestedObj.name?\` | \`string\` | - |
+| \`params.nestedObj.obj?\` | \\{ \`name\`: () => \`void\`; \\} | - |
+| \`params.nestedObj.obj.name?\` | () => \`void\` | - |
+| \`params.nestedObj.value?\` | \`number\` | - |
+| \`params.parent?\` | \`number\` | - |
+| \`context?\` | \`any\` | The context of the method call. |
+| \`somethingElse?\` | \`string\` | - |
 
 ## Returns
 

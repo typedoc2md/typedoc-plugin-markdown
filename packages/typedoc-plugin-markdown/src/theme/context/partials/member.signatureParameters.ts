@@ -20,13 +20,12 @@ export function signatureParameters(
         }
         const paramType = this.partials.someType(param.type as SomeType);
         const showParamType = this.options.getValue('expandParameters');
+        const optional = param.flags.isOptional ||
+        (firstOptionalParamIndex !== -1 && i > firstOptionalParamIndex)
+          ? '?'
+          : ''
         const paramItem = [
-          `${backTicks(param.name)}${
-            param.flags.isOptional ||
-            (firstOptionalParamIndex !== -1 && i > firstOptionalParamIndex)
-              ? '?'
-              : ''
-          }`,
+          `${backTicks(`${param.name}${optional}`)}`,
         ];
         if (showParamType) {
           paramItem.push(paramType);

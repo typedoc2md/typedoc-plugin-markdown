@@ -139,7 +139,7 @@ Comments for propReturningSignatureDeclaration
 
 ### propReturningSignatureDeclarations
 
-> **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`, \`paramsB\`?) => \`any\` & (\`paramsC\`) => \`any\`
+> **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`, \`paramsB?\`) => \`any\` & (\`paramsC\`) => \`any\`
 
 Defined in: [interfaces.ts:1](http://source-url)
 
@@ -247,7 +247,7 @@ Comments for BasicInterface
 | \`propReturningObjectDeclaration.b\` | \`string\` | - |
 | <a id="propreturningobjectdeclarations"></a> \`propReturningObjectDeclarations\` | \`object\` & \`object\` | Comments for propReturningObjectDeclarations |
 | <a id="propreturningsignaturedeclaration"></a> \`propReturningSignatureDeclaration?\` | () => \`string\` \\| \`number\` \\| \`boolean\` | Comments for propReturningSignatureDeclaration |
-| <a id="propreturningsignaturedeclarations"></a> \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations |
+| <a id="propreturningsignaturedeclarations"></a> \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB?\`: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations |
 | <a id="propwithfunction"></a> \`propWithFunction\` | (\`options\`: \`object\`) => \`boolean\` | Comments for propWithFunction |
 | <a id="propwithprops"></a> \`propWithProps\` | \`object\` | Comments for propWithProps |
 | \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks |
@@ -434,7 +434,7 @@ Comments for propReturningSignatureDeclaration
 
 ### propReturningSignatureDeclarations
 
-> **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`, \`paramsB\`?) => \`any\` & (\`paramsC\`) => \`any\`
+> **propReturningSignatureDeclarations**: () => \`any\` & (\`paramsA\`, \`paramsB?\`) => \`any\` & (\`paramsC\`) => \`any\`
 
 Defined in: [interfaces.ts:1](http://source-url)
 
@@ -555,7 +555,7 @@ Comments for ExtendedInterface
 | \`propReturningObjectDeclaration.b\` | \`string\` | - | - |
 | <a id="propreturningobjectdeclarations"></a> \`propReturningObjectDeclarations\` | \`object\` & \`object\` | Comments for propReturningObjectDeclarations | [\`BasicInterface\`](BasicInterface.md).[\`propReturningObjectDeclarations\`](BasicInterface.md#propreturningobjectdeclarations) |
 | <a id="propreturningsignaturedeclaration"></a> \`propReturningSignatureDeclaration?\` | () => \`string\` \\| \`number\` \\| \`boolean\` | Comments for propReturningSignatureDeclaration | [\`BasicInterface\`](BasicInterface.md).[\`propReturningSignatureDeclaration\`](BasicInterface.md#propreturningsignaturedeclaration) |
-| <a id="propreturningsignaturedeclarations"></a> \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB\`?: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations | [\`BasicInterface\`](BasicInterface.md).[\`propReturningSignatureDeclarations\`](BasicInterface.md#propreturningsignaturedeclarations) |
+| <a id="propreturningsignaturedeclarations"></a> \`propReturningSignatureDeclarations\` | () => \`any\` & (\`paramsA\`: \`true\` \\| \`any\`[], \`paramsB?\`: \`any\`) => \`any\` & (\`paramsC\`: \`any\`) => \`any\` | Comments for propReturningSignatureDeclarations | [\`BasicInterface\`](BasicInterface.md).[\`propReturningSignatureDeclarations\`](BasicInterface.md#propreturningsignaturedeclarations) |
 | <a id="propwithfunction"></a> \`propWithFunction\` | (\`options\`: \`object\`) => \`boolean\` | Comments for propWithFunction | [\`BasicInterface\`](BasicInterface.md).[\`propWithFunction\`](BasicInterface.md#propwithfunction) |
 | <a id="propwithprops"></a> \`propWithProps\` | \`object\` | Comments for propWithProps | [\`BasicInterface\`](BasicInterface.md).[\`propWithProps\`](BasicInterface.md#propwithprops) |
 | \`propWithProps.callbacks?\` | \`Partial\`\\<[\`CallbacksOptions\`](../classes/CallbacksOptions.md)\\<[\`DisposableClass\`](../classes/DisposableClass.md), [\`ClassWithModifiers\`](../classes/ClassWithModifiers.md)\\>\\> | Comments for callbacks | - |
@@ -830,7 +830,7 @@ Comments for InterfaceWithFunction
 
 ## Call Signature
 
-> **InterfaceWithFunctionOverloads**(\`options\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+> **InterfaceWithFunctionOverloads**(\`options?\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
 
 Defined in: [interfaces.ts:1](http://source-url)
 
@@ -848,7 +848,7 @@ Comments for InterfaceWithFunction
 
 ## Call Signature
 
-> **InterfaceWithFunctionOverloads**(\`options2\`?): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+> **InterfaceWithFunctionOverloads**(\`options2?\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
 
 Defined in: [interfaces.ts:1](http://source-url)
 
@@ -887,7 +887,7 @@ Comments for InterfaceWithFunction
 
 | Parameter | Type |
 | :------ | :------ |
-| \`options\`? | \`any\` |
+| \`options?\` | \`any\` |
 
 ### Returns
 
@@ -907,7 +907,7 @@ Comments for InterfaceWithFunction
 
 | Parameter | Type |
 | :------ | :------ |
-| \`options2\`? | \`any\` |
+| \`options2?\` | \`any\` |
 
 ### Returns
 
