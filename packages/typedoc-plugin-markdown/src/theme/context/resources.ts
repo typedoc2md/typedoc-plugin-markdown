@@ -214,6 +214,14 @@ There is no association list partial for properties as these are handled as a st
       options: { kind?: ReflectionKind | undefined },
     ) =>
       partials.typeDeclarationTable.apply(context, [model, options]) as string,
+    typeDeclarationUnionContainer: (
+      model: DeclarationReflection,
+      options: { headingLevel: number },
+    ) =>
+      partials.typeDeclarationUnionContainer.apply(context, [
+        model,
+        options,
+      ]) as string,
     typeParametersList: (
       model: TypeParameterReflection[],
       options: { headingLevel: number },

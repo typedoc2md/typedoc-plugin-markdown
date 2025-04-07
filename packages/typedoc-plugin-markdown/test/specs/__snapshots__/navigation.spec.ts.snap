@@ -5233,6 +5233,12 @@ exports[`Navigation should gets Navigation Json for single entry point: (Output 
         "isDeprecated": false
       },
       {
+        "title": "functionReturningUsefulUnionType",
+        "kind": 64,
+        "path": "functions/functionReturningUsefulUnionType.md",
+        "isDeprecated": false
+      },
+      {
         "title": "functionWithArrayOfOptionalStuff",
         "kind": 64,
         "path": "functions/functionWithArrayOfOptionalStuff.md",

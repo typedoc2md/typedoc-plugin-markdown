@@ -9,6 +9,7 @@ import {
   InterfaceWithProps,
   InterfaceWithSingleFunction,
 } from './interfaces.js';
+import { UsefulUnionType } from './types.js';
 
 /**
  * This is a function that is assigned to a variable.
@@ -175,6 +176,14 @@ export function functionReturningAUnionType():
   | 'string1'
   | 'string2' {
   return 'hello';
+}
+
+/**
+ * Comments for function returning a useful union type
+ * @returns Return comments
+ */
+export function functionReturningUsefulUnionType(): UsefulUnionType {
+  return 'string';
 }
 
 /**

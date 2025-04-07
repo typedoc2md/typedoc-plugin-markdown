@@ -317,6 +317,74 @@ Return comments
 "
 `;
 
+exports[`Function Reflection should compile function returning a useful union: (Output File Strategy "members") (Option Group "1") 1`] = `
+"# Function: functionReturningUsefulUnionType()
+
+> **functionReturningUsefulUnionType**(): \`string\` \\| \`false\` \\| \`true\` \\| \\{ \`z\`: \`string\`; \\}
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function returning a useful union type
+
+## Returns
+
+\`string\`
+
+\`false\`
+
+\`true\`
+
+\\{ \`z\`: \`string\`; \\}
+
+### z
+
+> **z**: \`string\`
+
+Comments for z
+
+Return comments
+"
+`;
+
+exports[`Function Reflection should compile function returning a useful union: (Output File Strategy "members") (Option Group "2") 1`] = `
+"# Function: functionReturningUsefulUnionType()
+
+\`\`\`ts
+function functionReturningUsefulUnionType(): 
+  | string
+  | false
+  | true
+  | {
+  z: string;
+};
+\`\`\`
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function returning a useful union type
+
+## Returns
+
+\`string\`
+
+\`false\`
+
+\`true\`
+
+\`\`\`ts
+{
+  z: string;
+}
+\`\`\`
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| \`z\` | \`string\` | Comments for z |
+
+Return comments
+"
+`;
+
 exports[`Function Reflection should compile function returning an object: (Output File Strategy "members") (Option Group "1") 1`] = `
 "# Function: functionReturningAnObject()
 
@@ -374,8 +442,6 @@ exports[`Function Reflection should compile function returning function overload
 Defined in: [functions.ts:1](http://source-url)
 
 ## Returns
-
-\`object\`
 
 Return comments
 
@@ -509,8 +575,6 @@ function functionReturningFunctionOverloads(): object;
 Defined in: [functions.ts:1](http://source-url)
 
 ## Returns
-
-\`object\`
 
 Return comments
 

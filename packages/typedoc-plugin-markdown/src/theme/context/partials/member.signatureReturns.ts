@@ -1,6 +1,11 @@
 import { heading } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { DeclarationReflection, i18n, SignatureReflection } from 'typedoc';
+import {
+  DeclarationReflection,
+  i18n,
+  SignatureReflection,
+  UnionType,
+} from 'typedoc';
 
 export function signatureReturns(
   this: MarkdownThemeContext,
@@ -15,7 +20,18 @@ export function signatureReturns(
   md.push(heading(options.headingLevel, i18n.theme_returns()));
 
   if (!typeDeclaration?.signatures) {
-    md.push(this.helpers.getReturnType(model.type));
+    if (model.type && this.helpers.hasUsefulTypeDetails(model.type)) {
+      if (model.type instanceof UnionType) {
+        md.push(
+          this.partials.typeDeclarationUnionContainer(
+            model as unknown as DeclarationReflection,
+            options,
+          ),
+        );
+      }
+    } else {
+      md.push(this.helpers.getReturnType(model.type));
+    }
   }
 
   const returnsTag = model.comment?.getTag('@returns');

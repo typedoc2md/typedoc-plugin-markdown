@@ -33,6 +33,7 @@ export * from './member.typeDeclaration.js';
 export * from './member.typeDeclarationContainer.js';
 export * from './member.typeDeclarationList.js';
 export * from './member.typeDeclarationTable.js';
+export * from './member.typeDeclarationUnionContainer.js';
 export * from './member.typeParametersList.js';
 export * from './member.typeParametersTable.js';
 export * from './page.breadcrumbs.js';

@@ -926,6 +926,8 @@ Comments for useful UnionType
 
 \`string\`
 
+Comments for string
+
 \`boolean\`
 
 \\{ \`z\`: \`string\`; \\}
@@ -958,11 +960,15 @@ Comments for useful UnionType
 
 \`string\`
 
+Comments for string
+
 \`boolean\`
 
-\\{
-  \`z\`: \`string\`;
-\\}
+\`\`\`ts
+{
+  z: string;
+}
+\`\`\`
 
 | Name | Type | Description |
 | :------ | :------ | :------ |

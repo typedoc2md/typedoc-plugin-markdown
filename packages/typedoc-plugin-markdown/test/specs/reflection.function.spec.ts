@@ -89,6 +89,14 @@ describe(`Function Reflection`, () => {
     );
   });
 
+  test(`should compile function returning a useful union`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionReturningUsefulUnionType.md',
+    );
+  });
+
   test(`should compile function returning a function`, () => {
     expectFileToEqual(
       'reflections',

@@ -18,8 +18,13 @@ export type UnionType = string | boolean | { z: string };
 
 /**
  * Comments for useful UnionType
+ *
+ * @inline
  */
 export type UsefulUnionType =
+  /**
+   * Comments for string
+   */
   | string
   | boolean
   | {

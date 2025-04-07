@@ -111,20 +111,7 @@ export function declaration(
     if (model.type instanceof UnionType) {
       if (this.helpers.hasUsefulTypeDetails(model.type)) {
         md.push(heading(opts.headingLevel, i18n.theme_type_declaration()));
-        model.type.types.forEach((type) => {
-          if (type instanceof ReflectionType) {
-            md.push(this.partials.someType(type, { forceCollapse: true }));
-            md.push(
-              this.partials.typeDeclarationContainer(
-                model,
-                type.declaration,
-                options,
-              ),
-            );
-          } else {
-            md.push(`${this.partials.someType(type)}`);
-          }
-        });
+        md.push(this.partials.typeDeclarationUnionContainer(model, options));
       }
     } else {
       const useHeading =

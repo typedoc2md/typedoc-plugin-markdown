@@ -136,6 +136,7 @@ Module comments
 - [functionReturningAString](functions/functionReturningAString.md)
 - [functionReturningAUnionType](functions/functionReturningAUnionType.md)
 - [functionReturningFunctionOverloads](functions/functionReturningFunctionOverloads.md)
+- [functionReturningUsefulUnionType](functions/functionReturningUsefulUnionType.md)
 - [functionWithArrayOfOptionalStuff](functions/functionWithArrayOfOptionalStuff.md)
 - [functionWithArrayOfStuff](functions/functionWithArrayOfStuff.md)
 - [functionWithArrayOfUnionStuff](functions/functionWithArrayOfUnionStuff.md)
@@ -278,6 +279,7 @@ Module comments
 | [functionReturningAString](functions/functionReturningAString.md) | Comments for function |
 | [functionReturningAUnionType](functions/functionReturningAUnionType.md) | Comments for function |
 | [functionReturningFunctionOverloads](functions/functionReturningFunctionOverloads.md) | - |
+| [functionReturningUsefulUnionType](functions/functionReturningUsefulUnionType.md) | Comments for function returning a useful union type |
 | [functionWithArrayOfOptionalStuff](functions/functionWithArrayOfOptionalStuff.md) | Comments for array of stuff? |
 | [functionWithArrayOfStuff](functions/functionWithArrayOfStuff.md) | Comments for array of stuff |
 | [functionWithArrayOfUnionStuff](functions/functionWithArrayOfUnionStuff.md) | Comments for array of union stuff |
