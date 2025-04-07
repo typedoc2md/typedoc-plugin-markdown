@@ -45,7 +45,7 @@ The following example demonstrates how to use hooks to inject content into the o
 export function load(app) {
   app.renderer.markdownHooks.on(
     'page.begin',
-    () => `**Generated using \`page.end\` hook**`,
+    () => `**Generated using \`page.begin\` hook**`,
   );
 }
 ```
