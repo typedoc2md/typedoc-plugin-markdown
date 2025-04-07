@@ -39,13 +39,12 @@ The following example demonstrates how to use hooks to inject content into the o
 
 ```ts filename="custom-plugin.mjs"
 // @ts-check
-import { MarkdownHook } from 'typedoc-plugin-markdown';
 /**
  * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
  */
 export function load(app) {
   app.renderer.markdownHooks.on(
-    MarkdownHook.PageEnd,
+    'page.begin',
     () => `**Generated using \`page.end\` hook**`,
   );
 }
