@@ -1,6 +1,10 @@
 import { heading } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {
+  isNoneSection,
+  sortNoneSectionFirst,
+} from '@plugin/theme/lib/index.js';
+import {
   DeclarationReflection,
   ReflectionCategory,
   ReflectionKind,
@@ -12,9 +16,11 @@ export function categories(
   options: { headingLevel: number },
 ) {
   const md: string[] = [];
-  models.forEach((category) => {
+  models.sort(sortNoneSectionFirst).forEach((category) => {
     if (category.children.every((child) => this.router.hasOwnDocument(child))) {
-      md.push(heading(options.headingLevel, category.title));
+      if (!isNoneSection(category)) {
+        md.push(heading(options.headingLevel, category.title));
+      }
       if (category.description) {
         md.push(this.helpers.getCommentParts(category.description));
       }
@@ -24,13 +30,17 @@ export function categories(
         (child) => child.kind !== ReflectionKind.Constructor,
       );
       if (categoryChildren.length) {
-        md.push(heading(options.headingLevel, category.title));
+        if (!isNoneSection(category)) {
+          md.push(heading(options.headingLevel, category.title));
+        }
         if (category.description) {
           md.push(this.helpers.getCommentParts(category.description));
         }
         md.push(
           this.partials.members(categoryChildren as DeclarationReflection[], {
-            headingLevel: options.headingLevel + 1,
+            headingLevel: isNoneSection(category)
+              ? options.headingLevel
+              : options.headingLevel + 1,
           }),
         );
       }

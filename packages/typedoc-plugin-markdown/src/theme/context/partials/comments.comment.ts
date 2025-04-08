@@ -30,12 +30,12 @@ export function comment(
 
   //Add flags and summary
   if (opts.showSummary) {
-    // Add flags
     const flagsNotRendered: `@${string}`[] = [
       '@showCategories',
       '@showGroups',
       '@hideCategories',
       '@hideGroups',
+      '@disableGroups',
     ];
 
     const flags: string[] = [];

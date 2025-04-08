@@ -1,4 +1,9 @@
-import { Options, ReflectionKind } from 'typedoc';
+import {
+  Options,
+  ReflectionCategory,
+  ReflectionGroup,
+  ReflectionKind,
+} from 'typedoc';
 
 /**
  * The model used to define the package metadata when in packages mode.
@@ -25,3 +30,5 @@ export interface NavigationItem {
  * Defines the template type to use for rendering.
  */
 export type RenderTemplate<T> = (data: T) => string;
+
+export type MemberSection = ReflectionGroup | ReflectionCategory;

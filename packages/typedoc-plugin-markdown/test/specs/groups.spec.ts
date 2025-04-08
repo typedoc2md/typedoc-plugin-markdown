@@ -54,4 +54,12 @@ describe(`Groups`, () => {
   test(`should compile references index page`, () => {
     expectFileToEqual('groups', 'members', 'has-references/index.md', 2);
   });
+
+  test(`should compile has disabled group page`, () => {
+    expectFileToEqual('groups', 'modules', 'has-disabled-groups.md');
+  });
+
+  test(`should compile has disabled groups index page`, () => {
+    expectFileToEqual('groups', 'members', 'has-disabled-groups/index.md', 2);
+  });
 });

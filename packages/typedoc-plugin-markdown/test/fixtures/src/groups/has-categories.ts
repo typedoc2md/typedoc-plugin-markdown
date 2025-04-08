@@ -45,3 +45,13 @@ export interface CategoryCInterface2 {}
 
 export interface UnCategorizedInterace {}
 export enum UnCategorizedEnum {}
+
+/**
+ * @category None
+ */
+export interface ExplicitNoCategoryInterface {}
+
+/**
+ * @category None
+ */
+export enum ExplicitNoCategoryEnum {}

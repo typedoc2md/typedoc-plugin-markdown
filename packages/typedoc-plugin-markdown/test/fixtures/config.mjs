@@ -129,14 +129,6 @@ const config = {
       },
       {
         readme: 'none',
-        membersWithOwnFile: [
-          'Class',
-          'Interface',
-          'Enum',
-          'TypeAlias',
-          'Function',
-        ],
-        hideGroupHeadings: true,
         groupOrder: ['Functions', 'Interfaces', '*'],
         useHTMLAnchors: true,
         indexFormat: 'htmlTable',

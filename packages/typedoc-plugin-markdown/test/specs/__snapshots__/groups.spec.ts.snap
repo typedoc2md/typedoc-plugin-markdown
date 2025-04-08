@@ -255,19 +255,42 @@ TypeB function.
 </tbody>
 </table>
 
-<a id="variablea"></a>
+## Variables
 
-## variableA
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
 
-> \`const\` **variableA**: \`""\` = \`''\`
+[variableA](variables/variableA.md)
 
-***
+</td>
+<td>
 
-<a id="variableb"></a>
+&hyphen;
 
-## variableB
+</td>
+</tr>
+<tr>
+<td>
 
-> \`const\` **variableB**: \`""\` = \`''\`
+[variableB](variables/variableB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
 "
 `;
 
@@ -420,17 +443,19 @@ exports[`Groups should compile basic module index page: (Output File Strategy "m
 
 A basic module
 
+## Functions
+
 <a id="functiona"></a>
 
-## functionA()
+### functionA()
 
 _SIGNATURE_MEMBER_PARTIAL_
 
-***
+## Interfaces
 
 <a id="interfacea"></a>
 
-## InterfaceA
+### InterfaceA
 
 Interface A comments line 1
 and comments on a soft line.
@@ -441,23 +466,23 @@ Comments on double new line.
 const a = new InterfaceA();
 \`\`\`
 
-### Remarks
+#### Remarks
 
 Block tag content.
 
 - [InterfaceB.propA](#propa-1)
 
-### Properties
+#### Properties
 
 <a id="propa"></a>
 
-#### propA
+##### propA
 
 > **propA**: \`string\`
 
 <a id="propb"></a>
 
-#### propB
+##### propB
 
 > **propB**: \`string\`
 
@@ -465,39 +490,39 @@ Block tag content.
 
 <a id="interfaceb"></a>
 
-## InterfaceB
+### InterfaceB
 
 InterfaceB function.
 
 - [InterfaceA.propA](#propa)
 
-### Properties
+#### Properties
 
 <a id="propa-1"></a>
 
-#### propA
+##### propA
 
 > **propA**: \`string\`
 
 <a id="propb-1"></a>
 
-#### propB
+##### propB
 
 > **propB**: \`string\`
 
-***
+## Classes
 
 <a id="classa"></a>
 
-## ClassA
+### ClassA
 
 ClassA function.
 
-### Constructors
+#### Constructors
 
 <a id="constructor"></a>
 
-#### Constructor
+##### Constructor
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -505,21 +530,21 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="classb"></a>
 
-## ClassB
+### ClassB
 
-### Constructors
+#### Constructors
 
 <a id="constructor-1"></a>
 
-#### Constructor
+##### Constructor
 
 _SIGNATURE_MEMBER_PARTIAL_
 
-***
+## Enumerations
 
 <a id="enuma"></a>
 
-## EnumA
+### EnumA
 
 EnumA function.
 
@@ -527,13 +552,13 @@ EnumA function.
 
 <a id="enumb"></a>
 
-## EnumB
+### EnumB
 
-***
+## Type Aliases
 
 <a id="typea"></a>
 
-## TypeA
+### TypeA
 
 > **TypeA** = \`string\`
 
@@ -545,31 +570,31 @@ TypeA function.
 
 <a id="typeb"></a>
 
-## TypeB
+### TypeB
 
 > **TypeB** = \`object\`
 
 TypeB function.
 
-### Properties
+#### Properties
 
 <a id="propa-2"></a>
 
-#### propA
+##### propA
 
 > **propA**: \`string\`
 
 <a id="propb-2"></a>
 
-#### propB?
+##### propB?
 
 > \`optional\` **propB**: \`number\`
 
-***
+## Variables
 
 <a id="variablea"></a>
 
-## variableA
+### variableA
 
 > \`const\` **variableA**: \`""\` = \`''\`
 
@@ -577,7 +602,7 @@ TypeB function.
 
 <a id="variableb"></a>
 
-## variableB
+### variableB
 
 > \`const\` **variableB**: \`""\` = \`''\`
 "
@@ -595,6 +620,8 @@ exports[`Groups should compile categories group page: (Output File Strategy "mod
 A module that contains categories
 
 ## Enumerations
+
+### ExplicitNoCategoryEnum
 
 ### Category A
 
@@ -617,6 +644,8 @@ A module that contains categories
 #### UnCategorizedEnum
 
 ## Interfaces
+
+### ExplicitNoCategoryInterface
 
 ### Category A
 
@@ -658,6 +687,16 @@ exports[`Groups should compile categories group page: (Output File Strategy "mod
 # has-categories
 
 A module that contains categories
+
+<a id="explicitnocategoryenum"></a>
+
+## ExplicitNoCategoryEnum
+
+***
+
+<a id="explicitnocategoryinterface"></a>
+
+## ExplicitNoCategoryInterface
 
 ## Category A
 
@@ -746,6 +785,10 @@ A module that contains categories
 
 ## Enumerations
 
+| Enumeration | Description |
+| :------ | :------ |
+| [ExplicitNoCategoryEnum](enumerations/ExplicitNoCategoryEnum.md) | - |
+
 ### Category A
 
 | Enumeration | Description |
@@ -767,6 +810,10 @@ A module that contains categories
 | [UnCategorizedEnum](enumerations/UnCategorizedEnum.md) | - |
 
 ## Interfaces
+
+| Interface | Description |
+| :------ | :------ |
+| [ExplicitNoCategoryInterface](interfaces/ExplicitNoCategoryInterface.md) | - |
 
 ### Category A
 
@@ -807,6 +854,41 @@ exports[`Groups should compile categories index page: (Output File Strategy "mem
 # has-categories
 
 A module that contains categories
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[ExplicitNoCategoryEnum](enumerations/ExplicitNoCategoryEnum.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ExplicitNoCategoryInterface](interfaces/ExplicitNoCategoryInterface.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ## Category A
 
@@ -1017,6 +1099,13 @@ exports[`Groups should compile custom groups index page: (Output File Strategy "
 
 A module that contains custom groupings
 
+| Name | Description |
+| :------ | :------ |
+| [InterfaceNoGroup1](interfaces/InterfaceNoGroup1.md) | - |
+| [InterfaceNoGroup2](interfaces/InterfaceNoGroup2.md) | - |
+| [variableNoGroup1](variables/variableNoGroup1.md) | - |
+| [variableNoGroup2](variables/variableNoGroup2.md) | - |
+
 ## Variables
 
 | Variable | Description |
@@ -1051,37 +1140,616 @@ exports[`Groups should compile custom groups index page: (Output File Strategy "
 
 A module that contains custom groupings
 
-<a id="variabela"></a>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
 
-## variabelA
+[InterfaceNoGroup1](interfaces/InterfaceNoGroup1.md)
 
-> \`const\` **variabelA**: \`true\` = \`true\`
+</td>
+<td>
 
-***
+&hyphen;
 
-<a id="variableb1"></a>
+</td>
+</tr>
+<tr>
+<td>
 
-## variableB1
+[InterfaceNoGroup2](interfaces/InterfaceNoGroup2.md)
 
-> \`const\` **variableB1**: \`true\` = \`true\`
+</td>
+<td>
 
-***
+&hyphen;
 
-<a id="variableb2"></a>
+</td>
+</tr>
+<tr>
+<td>
 
-## variableB2
+[variableNoGroup1](variables/variableNoGroup1.md)
 
-> \`const\` **variableB2**: \`true\` = \`true\`
+</td>
+<td>
 
-***
+&hyphen;
 
-<a id="variablec"></a>
+</td>
+</tr>
+<tr>
+<td>
 
-## variableC
+[variableNoGroup2](variables/variableNoGroup2.md)
 
-> \`const\` **variableC**: \`true\` = \`true\`
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## CustomGroupA
+
+Group description for CustomGroupA
+
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[variabelA](variables/variabelA.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## CustomGroupB
+
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[variableB1](variables/variableB1.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[variableB2](variables/variableB2.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Variables
+
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[variableC](variables/variableC.md)
+
+</td>
+<td>
 
 Default grouping
+
+</td>
+</tr>
+</tbody>
+</table>
+"
+`;
+
+exports[`Groups should compile has disabled group page: (Output File Strategy "modules") (Option Group "1") 1`] = `
+"[**typedoc-stubs**](index.md)
+
+***
+
+[typedoc-stubs](modules.md) / has-disabled-groups
+
+# has-disabled-groups
+
+A module with disabled groups
+
+## EnumA
+
+EnumA function.
+
+***
+
+## EnumB
+
+***
+
+## ClassA
+
+ClassA function.
+
+### Constructors
+
+#### Constructor
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+## ClassB
+
+### Constructors
+
+#### Constructor
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+## InterfaceA
+
+Interface A
+
+### Properties
+
+#### propA
+
+> **propA**: \`string\`
+
+#### propB
+
+> **propB**: \`string\`
+
+***
+
+## InterfaceB
+
+InterfaceB function.
+
+### Properties
+
+#### propA
+
+> **propA**: \`string\`
+
+#### propB
+
+> **propB**: \`string\`
+
+***
+
+## TypeA
+
+> **TypeA** = \`string\`
+
+TypeA function.
+
+***
+
+## TypeB
+
+> **TypeB** = \`object\`
+
+TypeB function.
+
+### Properties
+
+#### propA
+
+> **propA**: \`string\`
+
+#### propB?
+
+> \`optional\` **propB**: \`number\`
+
+***
+
+## variableA
+
+> \`const\` **variableA**: \`""\` = \`''\`
+
+Comments for variableA
+
+***
+
+## variableB
+
+> \`const\` **variableB**: \`""\` = \`''\`
+
+***
+
+## functionA()
+
+_SIGNATURE_MEMBER_PARTIAL_
+"
+`;
+
+exports[`Groups should compile has disabled group page: (Output File Strategy "modules") (Option Group "2") 1`] = `
+"[**typedoc-stubs**](index.md)
+
+***
+
+[typedoc-stubs](index.md) / has-disabled-groups
+
+# has-disabled-groups
+
+A module with disabled groups
+
+<a id="enuma"></a>
+
+## EnumA
+
+EnumA function.
+
+***
+
+<a id="enumb"></a>
+
+## EnumB
+
+***
+
+<a id="classa"></a>
+
+## ClassA
+
+ClassA function.
+
+### Constructors
+
+<a id="constructor"></a>
+
+#### Constructor
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+<a id="classb"></a>
+
+## ClassB
+
+### Constructors
+
+<a id="constructor-1"></a>
+
+#### Constructor
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+<a id="interfacea"></a>
+
+## InterfaceA
+
+Interface A
+
+### Properties
+
+<a id="propa"></a>
+
+#### propA
+
+> **propA**: \`string\`
+
+<a id="propb"></a>
+
+#### propB
+
+> **propB**: \`string\`
+
+***
+
+<a id="interfaceb"></a>
+
+## InterfaceB
+
+InterfaceB function.
+
+### Properties
+
+<a id="propa-1"></a>
+
+#### propA
+
+> **propA**: \`string\`
+
+<a id="propb-1"></a>
+
+#### propB
+
+> **propB**: \`string\`
+
+***
+
+<a id="typea"></a>
+
+## TypeA
+
+> **TypeA** = \`string\`
+
+TypeA function.
+
+***
+
+<a id="typeb"></a>
+
+## TypeB
+
+> **TypeB** = \`object\`
+
+TypeB function.
+
+### Properties
+
+<a id="propa-2"></a>
+
+#### propA
+
+> **propA**: \`string\`
+
+<a id="propb-2"></a>
+
+#### propB?
+
+> \`optional\` **propB**: \`number\`
+
+***
+
+<a id="variablea"></a>
+
+## variableA
+
+> \`const\` **variableA**: \`""\` = \`''\`
+
+Comments for variableA
+
+***
+
+<a id="variableb"></a>
+
+## variableB
+
+> \`const\` **variableB**: \`""\` = \`''\`
+
+***
+
+<a id="functiona"></a>
+
+## functionA()
+
+_SIGNATURE_MEMBER_PARTIAL_
+"
+`;
+
+exports[`Groups should compile has disabled groups index page: (Output File Strategy "members") (Option Group "1") 1`] = `
+"[**typedoc-stubs**](../index.md)
+
+***
+
+[typedoc-stubs](../modules.md) / has-disabled-groups
+
+# has-disabled-groups
+
+A module with disabled groups
+
+| Name | Description |
+| :------ | :------ |
+| [EnumA](enumerations/EnumA.md) | EnumA function. |
+| [EnumB](enumerations/EnumB.md) | - |
+| [ClassA](classes/ClassA.md) | ClassA function. |
+| [ClassB](classes/ClassB.md) | - |
+| [InterfaceA](interfaces/InterfaceA.md) | Interface A |
+| [InterfaceB](interfaces/InterfaceB.md) | InterfaceB function. |
+| [TypeA](type-aliases/TypeA.md) | TypeA function. |
+| [TypeB](type-aliases/TypeB.md) | TypeB function. |
+| [variableA](variables/variableA.md) | Comments for variableA |
+| [variableB](variables/variableB.md) | - |
+| [functionA](functions/functionA.md) | Comments for functionA |
+"
+`;
+
+exports[`Groups should compile has disabled groups index page: (Output File Strategy "members") (Option Group "2") 1`] = `
+"[**typedoc-stubs**](../index.md)
+
+***
+
+[typedoc-stubs](../index.md) / has-disabled-groups
+
+# has-disabled-groups
+
+A module with disabled groups
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[EnumA](enumerations/EnumA.md)
+
+</td>
+<td>
+
+EnumA function.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[EnumB](enumerations/EnumB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ClassA](classes/ClassA.md)
+
+</td>
+<td>
+
+ClassA function.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ClassB](classes/ClassB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[InterfaceA](interfaces/InterfaceA.md)
+
+</td>
+<td>
+
+Interface A
+
+</td>
+</tr>
+<tr>
+<td>
+
+[InterfaceB](interfaces/InterfaceB.md)
+
+</td>
+<td>
+
+InterfaceB function.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[TypeA](type-aliases/TypeA.md)
+
+</td>
+<td>
+
+TypeA function.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[TypeB](type-aliases/TypeB.md)
+
+</td>
+<td>
+
+TypeB function.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[variableA](variables/variableA.md)
+
+</td>
+<td>
+
+Comments for variableA
+
+</td>
+</tr>
+<tr>
+<td>
+
+[variableB](variables/variableB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[functionA](functions/functionA.md)
+
+</td>
+<td>
+
+Comments for functionA
+
+</td>
+</tr>
+</tbody>
+</table>
 "
 `;
 
@@ -1101,6 +1769,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "me
 | [basic](basic/index.md) | A basic module |
 | [has-categories](has-categories/index.md) | A module that contains categories |
 | [has-custom-groups](has-custom-groups/index.md) | A module that contains custom groupings |
+| [has-disabled-groups](has-disabled-groups/index.md) | A module with disabled groups |
 | [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
 | [has-references](has-references/index.md) | A module that contains references |
 | [has-same-exports](has-same-exports/index.md) | - |
@@ -1188,6 +1857,18 @@ A module that contains custom groupings
 <tr>
 <td>
 
+[has-disabled-groups](has-disabled-groups/index.md)
+
+</td>
+<td>
+
+A module with disabled groups
+
+</td>
+</tr>
+<tr>
+<td>
+
 [has-namespaces](has-namespaces/index.md)
 
 </td>
@@ -1254,6 +1935,7 @@ exports[`Groups should compile index page for project: (Output File Strategy "mo
 | [basic](basic.md) | A basic module |
 | [has-categories](has-categories.md) | A module that contains categories |
 | [has-custom-groups](has-custom-groups.md) | A module that contains custom groupings |
+| [has-disabled-groups](has-disabled-groups.md) | A module with disabled groups |
 | [has-namespaces](has-namespaces/index.md) | A module that contains namespaces |
 | [has-references](has-references.md) | A module that contains references |
 | [has-same-exports](has-same-exports.md) | - |
@@ -1335,6 +2017,18 @@ A module that contains categories
 <td>
 
 A module that contains custom groupings
+
+</td>
+</tr>
+<tr>
+<td>
+
+[has-disabled-groups](has-disabled-groups.md)
+
+</td>
+<td>
+
+A module with disabled groups
 
 </td>
 </tr>
@@ -1505,11 +2199,11 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 # \\_Namespace\\_A\\_
 
+## Interfaces
+
 <a id="namespaceinterface"></a>
 
-## NamespaceInterface
-
-***
+### NamespaceInterface
 
 ## Namespaces
 
@@ -1833,19 +2527,42 @@ A module that contains namespaces
 </tbody>
 </table>
 
-<a id="_variable_a_"></a>
+## Variables
 
-## \\_variable\\_A\\_
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
 
-> \`const\` **\\_variable\\_A\\_**: \`true\` = \`true\`
+[\\_variable\\_A\\_](variables/variable_A.md)
 
-***
+</td>
+<td>
 
-<a id="variableb"></a>
+&hyphen;
 
-## variableB
+</td>
+</tr>
+<tr>
+<td>
 
-> \`const\` **variableB**: \`true\` = \`true\`
+[variableB](variables/variableB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
 "
 `;
 
@@ -1952,9 +2669,11 @@ exports[`Groups should compile module index with namespaces index page: (Output 
 
 A module that contains namespaces
 
+## Functions
+
 <a id="_function_a_"></a>
 
-## \\_function\\_A\\_()
+### \\_function\\_A\\_()
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -1962,33 +2681,33 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="functionb"></a>
 
-## functionB()
+### functionB()
 
 _SIGNATURE_MEMBER_PARTIAL_
 
-***
+## Interfaces
 
 <a id="_interface_a_"></a>
 
-## \\_Interface\\_A\\_
+### \\_Interface\\_A\\_
 
 ***
 
 <a id="interfaceb"></a>
 
-## InterfaceB
+### InterfaceB
 
-***
+## Classes
 
 <a id="__class_a_"></a>
 
-## \\_\\_Class\\_A\\_
+### \\_\\_Class\\_A\\_
 
-### Constructors
+#### Constructors
 
 <a id="constructor"></a>
 
-#### Constructor
+##### Constructor
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -1996,29 +2715,27 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="classb"></a>
 
-## ClassB
+### ClassB
 
-### Constructors
+#### Constructors
 
 <a id="constructor-1"></a>
 
-#### Constructor
+##### Constructor
 
 _SIGNATURE_MEMBER_PARTIAL_
 
-***
+## Enumerations
 
 <a id="_enum_a_"></a>
 
-## \\_Enum\\_A\\_
+### \\_Enum\\_A\\_
 
 ***
 
 <a id="enumb"></a>
 
-## EnumB
-
-***
+### EnumB
 
 ## Namespaces
 
@@ -2057,9 +2774,11 @@ _SIGNATURE_MEMBER_PARTIAL_
 </tbody>
 </table>
 
+## Type Aliases
+
 <a id="_type_a_"></a>
 
-## \\_Type\\_A\\_
+### \\_Type\\_A\\_
 
 > **\\_Type\\_A\\_** = \`string\`
 
@@ -2067,15 +2786,15 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="typeb"></a>
 
-## TypeB
+### TypeB
 
 > **TypeB** = \`string\`
 
-***
+## Variables
 
 <a id="_variable_a_"></a>
 
-## \\_variable\\_A\\_
+### \\_variable\\_A\\_
 
 > \`const\` **\\_variable\\_A\\_**: \`true\` = \`true\`
 
@@ -2083,7 +2802,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="variableb"></a>
 
-## variableB
+### variableB
 
 > \`const\` **variableB**: \`true\` = \`true\`
 "
@@ -2154,17 +2873,19 @@ exports[`Groups should compile references group page: (Output File Strategy "mod
 
 A module that contains references
 
+## Functions
+
 <a id="defaultfunction"></a>
 
-## defaultFunction()
+### defaultFunction()
 
 _SIGNATURE_MEMBER_PARTIAL_
 
-***
+## References
 
 <a id="default"></a>
 
-## default
+### default
 
 Renames and re-exports [defaultFunction](#defaultfunction)
 
@@ -2172,7 +2893,7 @@ Renames and re-exports [defaultFunction](#defaultfunction)
 
 <a id="interfacea"></a>
 
-## InterfaceA
+### InterfaceA
 
 Re-exports [InterfaceA](basic.md#interfacea)
 
@@ -2180,7 +2901,7 @@ Re-exports [InterfaceA](basic.md#interfacea)
 
 <a id="renamedinterfaceb"></a>
 
-## RenamedInterfaceB
+### RenamedInterfaceB
 
 Renames and re-exports [InterfaceB](basic.md#interfaceb)
 "
@@ -2259,9 +2980,11 @@ A module that contains references
 </tbody>
 </table>
 
+## References
+
 <a id="default"></a>
 
-## default
+### default
 
 Renames and re-exports [defaultFunction](functions/defaultFunction.md)
 
@@ -2269,7 +2992,7 @@ Renames and re-exports [defaultFunction](functions/defaultFunction.md)
 
 <a id="interfacea"></a>
 
-## InterfaceA
+### InterfaceA
 
 Re-exports [InterfaceA](../basic/interfaces/InterfaceA.md)
 
@@ -2277,7 +3000,7 @@ Re-exports [InterfaceA](../basic/interfaces/InterfaceA.md)
 
 <a id="renamedinterfaceb"></a>
 
-## RenamedInterfaceB
+### RenamedInterfaceB
 
 Renames and re-exports [InterfaceB](../basic/interfaces/InterfaceB.md)
 "

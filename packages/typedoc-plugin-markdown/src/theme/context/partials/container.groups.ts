@@ -1,6 +1,10 @@
 import { heading } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {
+  isNoneSection,
+  sortNoneSectionFirst,
+} from '@plugin/theme/lib/index.js';
+import {
   ContainerReflection,
   DeclarationReflection,
   i18n,
@@ -19,7 +23,7 @@ export function groups(
     return groupTitle;
   };
 
-  model.groups?.forEach((group) => {
+  model.groups?.sort(sortNoneSectionFirst).forEach((group) => {
     if (
       group.title === i18n.kind_plural_module() ||
       group.children.every((child) => this.router.hasOwnDocument(child))
@@ -31,14 +35,18 @@ export function groups(
       if (isPackages) {
         md.push(heading(options.headingLevel, i18n.theme_packages()));
       } else {
-        md.push(heading(options.headingLevel, group.title));
+        if (!isNoneSection(group)) {
+          md.push(heading(options.headingLevel, group.title));
+        }
       }
       if (group.description) {
         md.push(this.helpers.getCommentParts(group.description));
       }
       if (group.categories) {
-        group.categories.forEach((categoryGroup) => {
-          md.push(heading(options.headingLevel + 1, categoryGroup.title));
+        group.categories.sort(sortNoneSectionFirst).forEach((categoryGroup) => {
+          if (!isNoneSection(categoryGroup)) {
+            md.push(heading(options.headingLevel + 1, categoryGroup.title));
+          }
           if (categoryGroup.description) {
             md.push(this.helpers.getCommentParts(categoryGroup.description));
           }
@@ -54,13 +62,17 @@ export function groups(
     } else {
       const isEventProps = getGroupTitle(group.title) === 'Events';
       if (group.categories) {
-        md.push(heading(options.headingLevel, getGroupTitle(group.title)));
+        if (!isNoneSection(group)) {
+          md.push(heading(options.headingLevel, getGroupTitle(group.title)));
+        }
         if (group.description) {
           md.push(this.helpers.getCommentParts(group.description));
         }
         md.push(
           this.partials.categories(group.categories, {
-            headingLevel: options.headingLevel + 1,
+            headingLevel: isNoneSection(group)
+              ? options.headingLevel
+              : options.headingLevel + 1,
           }),
         );
       } else {
@@ -72,7 +84,9 @@ export function groups(
           (child) => child.kind === ReflectionKind.EnumMember,
         );
 
-        md.push(heading(options.headingLevel, getGroupTitle(group.title)));
+        if (!isNoneSection(group)) {
+          md.push(heading(options.headingLevel, getGroupTitle(group.title)));
+        }
 
         if (group.description) {
           md.push(this.helpers.getCommentParts(group.description));
@@ -100,7 +114,9 @@ export function groups(
           if (group.children) {
             md.push(
               this.partials.members(group.children as DeclarationReflection[], {
-                headingLevel: options.headingLevel + 1,
+                headingLevel: isNoneSection(group)
+                  ? options.headingLevel
+                  : options.headingLevel + 1,
                 groupTitle: group.title,
               }),
             );

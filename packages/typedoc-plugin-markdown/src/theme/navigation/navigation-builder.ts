@@ -1,7 +1,11 @@
 import { isQuoted } from '@plugin/libs/utils/index.js';
 import { OutputFileStrategy } from '@plugin/options/maps.js';
 import { MarkdownTheme } from '@plugin/theme/index.js';
-import { getHierarchyRoots } from '@plugin/theme/lib/index.js';
+import {
+  getHierarchyRoots,
+  isNoneSection,
+  sortNoneSectionFirst,
+} from '@plugin/theme/lib/index.js';
 import { MarkdownRenderer, NavigationItem } from '@plugin/types/index.js';
 import {
   DeclarationReflection,
@@ -266,16 +270,19 @@ export class NavigationBuilder {
           !this.navigationOptions.excludeCategories &&
           child.categories?.length
             ? child.categories
+                .sort(sortNoneSectionFirst)
                 ?.map((category) => {
                   const catChildren = this.getCategoryGroupChildren(category);
                   return catChildren.length
-                    ? {
-                        title: category.title,
-                        ...(this.router.hasUrl(category as any) && {
-                          path: this.router.getFullUrl(category as any),
-                        }),
-                        children: catChildren,
-                      }
+                    ? isNoneSection(category)
+                      ? [...catChildren]
+                      : {
+                          title: category.title,
+                          ...(this.router.hasUrl(category as any) && {
+                            path: this.router.getFullUrl(category as any),
+                          }),
+                          children: catChildren,
+                        }
                     : null;
                 })
                 .filter((cat) => Boolean(cat))
@@ -317,11 +324,15 @@ export class NavigationBuilder {
       }
 
       return reflection.groups
+        ?.sort(sortNoneSectionFirst)
         ?.map((group) => {
           const groupChildren = this.getGroupChildren(group);
           if (groupChildren?.length) {
             if (group.owningReflection.kind === ReflectionKind.Document) {
               return groupChildren[0];
+            }
+            if (isNoneSection(group)) {
+              return [...groupChildren];
             }
             return {
               title: group.title,

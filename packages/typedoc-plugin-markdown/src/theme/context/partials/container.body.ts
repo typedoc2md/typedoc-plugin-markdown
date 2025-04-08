@@ -1,8 +1,13 @@
 import { heading, horizontalRule } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {
+  isNoneSection,
+  sortNoneSectionFirst,
+} from '@plugin/theme/lib/index.js';
+import {
   ContainerReflection,
   DeclarationReflection,
+  ReflectionGroup,
   ReflectionKind,
 } from 'typedoc';
 
@@ -38,11 +43,13 @@ export function body(
         );
       } else {
         if (model.groups?.length) {
-          model.groups.forEach((group, i) => {
+          model.groups.sort(sortNoneSectionFirst).forEach((group, i) => {
             if (
               group.children.every((child) => this.router.hasOwnDocument(child))
             ) {
-              md.push(heading(options.headingLevel, group.title));
+              if (!isNoneSection(group)) {
+                md.push(heading(options.headingLevel, group.title));
+              }
               md.push(this.partials.groupIndex(group));
             } else {
               md.push(
@@ -66,6 +73,20 @@ export function body(
           this.partials.groups(model, {
             headingLevel: options.headingLevel,
             kind: model.kind,
+          }),
+        );
+      } else if (
+        model.children?.every((child) => this.router.hasOwnDocument(child))
+      ) {
+        md.push(
+          this.partials.groupIndex({
+            children: model.children,
+          } as ReflectionGroup),
+        );
+      } else {
+        md.push(
+          this.partials.members(model.children as DeclarationReflection[], {
+            headingLevel: options.headingLevel,
           }),
         );
       }

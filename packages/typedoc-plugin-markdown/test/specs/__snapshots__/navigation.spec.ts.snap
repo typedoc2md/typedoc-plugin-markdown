@@ -3834,6 +3834,12 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "isDeprecated": false
       },
       {
+        "title": "ExplicitNoCategoryEnum",
+        "kind": 8,
+        "path": "has-categories/enumerations/ExplicitNoCategoryEnum.md",
+        "isDeprecated": false
+      },
+      {
         "title": "UnCategorizedEnum",
         "kind": 8,
         "path": "has-categories/enumerations/UnCategorizedEnum.md",
@@ -3876,6 +3882,12 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "isDeprecated": false
       },
       {
+        "title": "ExplicitNoCategoryInterface",
+        "kind": 256,
+        "path": "has-categories/interfaces/ExplicitNoCategoryInterface.md",
+        "isDeprecated": false
+      },
+      {
         "title": "UnCategorizedInterace",
         "kind": 256,
         "path": "has-categories/interfaces/UnCategorizedInterace.md",
@@ -3889,6 +3901,18 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "path": "has-custom-groups/index.md",
     "isDeprecated": false,
     "children": [
+      {
+        "title": "InterfaceNoGroup1",
+        "kind": 256,
+        "path": "has-custom-groups/interfaces/InterfaceNoGroup1.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "InterfaceNoGroup2",
+        "kind": 256,
+        "path": "has-custom-groups/interfaces/InterfaceNoGroup2.md",
+        "isDeprecated": false
+      },
       {
         "title": "variabelA",
         "kind": 32,
@@ -3911,6 +3935,92 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
         "title": "variableC",
         "kind": 32,
         "path": "has-custom-groups/variables/variableC.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "variableNoGroup1",
+        "kind": 32,
+        "path": "has-custom-groups/variables/variableNoGroup1.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "variableNoGroup2",
+        "kind": 32,
+        "path": "has-custom-groups/variables/variableNoGroup2.md",
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "title": "has-disabled-groups",
+    "kind": 2,
+    "path": "has-disabled-groups/index.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "EnumA",
+        "kind": 8,
+        "path": "has-disabled-groups/enumerations/EnumA.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "EnumB",
+        "kind": 8,
+        "path": "has-disabled-groups/enumerations/EnumB.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ClassA",
+        "kind": 128,
+        "path": "has-disabled-groups/classes/ClassA.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ClassB",
+        "kind": 128,
+        "path": "has-disabled-groups/classes/ClassB.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "InterfaceA",
+        "kind": 256,
+        "path": "has-disabled-groups/interfaces/InterfaceA.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "InterfaceB",
+        "kind": 256,
+        "path": "has-disabled-groups/interfaces/InterfaceB.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "TypeA",
+        "kind": 2097152,
+        "path": "has-disabled-groups/type-aliases/TypeA.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "TypeB",
+        "kind": 2097152,
+        "path": "has-disabled-groups/type-aliases/TypeB.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "variableA",
+        "kind": 32,
+        "path": "has-disabled-groups/variables/variableA.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "variableB",
+        "kind": 32,
+        "path": "has-disabled-groups/variables/variableB.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionA",
+        "kind": 64,
+        "path": "has-disabled-groups/functions/functionA.md",
         "isDeprecated": false
       }
     ]
@@ -4184,6 +4294,23 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
             "isDeprecated": false
           }
         ]
+      },
+      {
+        "title": "Variables",
+        "children": [
+          {
+            "title": "variableA",
+            "kind": 32,
+            "path": "basic/variables/variableA.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "variableB",
+            "kind": 32,
+            "path": "basic/variables/variableB.md",
+            "isDeprecated": false
+          }
+        ]
       }
     ]
   },
@@ -4193,6 +4320,20 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "path": "has-categories/index.md",
     "isDeprecated": false,
     "children": [
+      [
+        {
+          "title": "ExplicitNoCategoryEnum",
+          "kind": 8,
+          "path": "has-categories/enumerations/ExplicitNoCategoryEnum.md",
+          "isDeprecated": false
+        },
+        {
+          "title": "ExplicitNoCategoryInterface",
+          "kind": 256,
+          "path": "has-categories/interfaces/ExplicitNoCategoryInterface.md",
+          "isDeprecated": false
+        }
+      ],
       {
         "title": "Category A",
         "children": [
@@ -4291,6 +4432,79 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "title": "has-custom-groups",
     "kind": 2,
     "path": "has-custom-groups/index.md",
+    "isDeprecated": false,
+    "children": [
+      [
+        {
+          "title": "InterfaceNoGroup1",
+          "kind": 256,
+          "path": "has-custom-groups/interfaces/InterfaceNoGroup1.md",
+          "isDeprecated": false
+        },
+        {
+          "title": "InterfaceNoGroup2",
+          "kind": 256,
+          "path": "has-custom-groups/interfaces/InterfaceNoGroup2.md",
+          "isDeprecated": false
+        },
+        {
+          "title": "variableNoGroup1",
+          "kind": 32,
+          "path": "has-custom-groups/variables/variableNoGroup1.md",
+          "isDeprecated": false
+        },
+        {
+          "title": "variableNoGroup2",
+          "kind": 32,
+          "path": "has-custom-groups/variables/variableNoGroup2.md",
+          "isDeprecated": false
+        }
+      ],
+      {
+        "title": "CustomGroupA",
+        "children": [
+          {
+            "title": "variabelA",
+            "kind": 32,
+            "path": "has-custom-groups/variables/variabelA.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "CustomGroupB",
+        "children": [
+          {
+            "title": "variableB1",
+            "kind": 32,
+            "path": "has-custom-groups/variables/variableB1.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "variableB2",
+            "kind": 32,
+            "path": "has-custom-groups/variables/variableB2.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Variables",
+        "children": [
+          {
+            "title": "variableC",
+            "kind": 32,
+            "path": "has-custom-groups/variables/variableC.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "has-disabled-groups",
+    "kind": 2,
+    "path": "has-disabled-groups/index.md",
     "isDeprecated": false
   },
   {
@@ -4437,6 +4651,23 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
             "isDeprecated": false
           }
         ]
+      },
+      {
+        "title": "Variables",
+        "children": [
+          {
+            "title": "_variable_A_",
+            "kind": 32,
+            "path": "has-namespaces/variables/variable_A.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "variableB",
+            "kind": 32,
+            "path": "has-namespaces/variables/variableB.md",
+            "isDeprecated": false
+          }
+        ]
       }
     ]
   },
@@ -4561,6 +4792,12 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "isDeprecated": false
   },
   {
+    "title": "has-disabled-groups",
+    "kind": 2,
+    "path": "has-disabled-groups.md",
+    "isDeprecated": false
+  },
+  {
     "title": "has-namespaces",
     "kind": 2,
     "path": "has-namespaces/index.md",
@@ -4639,6 +4876,12 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "title": "has-custom-groups",
     "kind": 2,
     "path": "has-custom-groups.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "has-disabled-groups",
+    "kind": 2,
+    "path": "has-disabled-groups.md",
     "isDeprecated": false
   },
   {

@@ -240,6 +240,8 @@ export const hidePageTitle: Partial<DeclarationOption> = {
  * This creates a flat structure where all members are displayed at the same heading level.
  *
  * @category Display
+ *
+ * @hidden
  */
 export const hideGroupHeadings: Partial<DeclarationOption> = {
   help: 'Excludes grouping by kind so all members are rendered at the same level.',
