@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.6.2
+
+### Patch Changes
+
+- Expose full declaration for returned union types ([#799](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/799)).
+- Move isOptional flag inside backTicks ([#797](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/797)) - thanks @LekoArts.
+- Added support for TypeDoc's v0.28.2 features `@group none`, `@category none` and `@disableGroups`.
+
 ## 4.6.1 (2025-04-02)
 
 ### Patch Changes
