@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.6.2
+## 4.6.2 (2025-04-09)
 
 ### Patch Changes
 
