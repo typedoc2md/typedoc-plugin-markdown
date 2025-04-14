@@ -1101,7 +1101,7 @@ Defined in: [functions.ts:1](http://source-url)
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| \`__namedParameters\` | \\{ \`bar\`: \`number\`; \`foo\`: \`number\`; \\} | various options |
+| \`__namedParameters\` | \\{ \`bar?\`: \`number\`; \`foo?\`: \`number\`; \\} | various options |
 | \`__namedParameters.bar?\` | \`number\` | - |
 | \`__namedParameters.foo?\` | \`number\` | - |
 | \`anotherParam\` | \`string\` | Another param comment |
@@ -1193,7 +1193,7 @@ Some nested params.
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| \`params\` | \\{ \`name\`: \`string\`; \`nestedObj\`: \\{ \`name\`: \`string\`; \`obj\`: \\{ \`name\`: () => \`void\`; \\}; \`value\`: \`number\`; \\}; \`parent\`: \`number\`; \\} | The parameters passed to the method. |
+| \`params\` | \\{ \`name\`: \`string\`; \`nestedObj\`: \\{ \`name\`: \`string\`; \`obj\`: \\{ \`name\`: () => \`void\`; \\}; \`value\`: \`number\`; \\}; \`parent?\`: \`number\`; \\} | The parameters passed to the method. |
 | \`params.name\` | \`string\` | The name of the new group. |
 | \`params.nestedObj\` | \\{ \`name\`: \`string\`; \`obj\`: \\{ \`name\`: () => \`void\`; \\}; \`value\`: \`number\`; \\} | A nested object. |
 | \`params.nestedObj.name?\` | \`string\` | - |
