@@ -41,15 +41,20 @@ export function declarationType(
 
         if (obj.getSignature) {
           name.push('get');
-          name.push(backTicks(obj.name) + '\n ');
-        }
-
-        if (obj.setSignature) {
+          name.push(backTicks(obj.name) + '()');
+        } else if (obj.setSignature) {
           name.push('set');
-          name.push(backTicks(obj.name));
+          const params = obj.setSignature.parameters
+            ? this.partials.signatureParameters(obj.setSignature.parameters, {
+                forceExpandParameters: true,
+              })
+            : '()';
+          name.push(backTicks(obj.name) + params);
+        } else {
+          const displayObjectName =
+            obj.name + (obj.flags?.isOptional ? '?' : '');
+          name.push(backTicks(displayObjectName));
         }
-
-        name.push(backTicks(obj.name));
 
         const theType = this.helpers.getDeclarationType(obj) as SomeType;
 
@@ -67,6 +72,7 @@ export function declarationType(
       );
     }
   }
+
   md.push(`${shouldFormat ? '' : ' '}\\}`);
   return md.join(shouldFormat ? '\n' : '');
 }

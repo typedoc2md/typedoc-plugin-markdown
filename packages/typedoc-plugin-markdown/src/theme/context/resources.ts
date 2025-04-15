@@ -160,8 +160,11 @@ There is no association list partial for properties as these are handled as a st
         hideTitle?: boolean | undefined;
       },
     ) => partials.signature.apply(context, [model, options]) as string,
-    signatureParameters: (model: ParameterReflection[]) =>
-      partials.signatureParameters.apply(context, [model]) as string,
+    signatureParameters: (
+      model: ParameterReflection[],
+      options?: { forceExpandParameters?: boolean | undefined } | undefined,
+    ) =>
+      partials.signatureParameters.apply(context, [model, options]) as string,
     signatureReturns: (
       model: SignatureReflection,
       options: { headingLevel: number },

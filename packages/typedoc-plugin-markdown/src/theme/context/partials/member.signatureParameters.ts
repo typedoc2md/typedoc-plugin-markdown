@@ -5,6 +5,7 @@ import { ParameterReflection, SomeType } from 'typedoc';
 export function signatureParameters(
   this: MarkdownThemeContext,
   model: ParameterReflection[],
+  options?: { forceExpandParameters?: boolean },
 ) {
   const format = this.options.getValue('useCodeBlocks');
   const firstOptionalParamIndex = model.findIndex(
@@ -19,14 +20,15 @@ export function signatureParameters(
           paramsmd.push('...');
         }
         const paramType = this.partials.someType(param.type as SomeType);
-        const showParamType = this.options.getValue('expandParameters');
-        const optional = param.flags.isOptional ||
-        (firstOptionalParamIndex !== -1 && i > firstOptionalParamIndex)
-          ? '?'
-          : ''
-        const paramItem = [
-          `${backTicks(`${param.name}${optional}`)}`,
-        ];
+        const showParamType =
+          (options?.forceExpandParameters ?? false) ||
+          this.options.getValue('expandParameters');
+        const optional =
+          param.flags.isOptional ||
+          (firstOptionalParamIndex !== -1 && i > firstOptionalParamIndex)
+            ? '?'
+            : '';
+        const paramItem = [`${backTicks(`${param.name}${optional}`)}`];
         if (showParamType) {
           paramItem.push(paramType);
         }
