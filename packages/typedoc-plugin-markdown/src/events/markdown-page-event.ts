@@ -88,10 +88,6 @@ export class MarkdownPageEvent<out Model extends RouterTarget = RouterTarget> {
 
   preWriteAsyncJobs: Array<(page: MarkdownPageEvent) => Promise<void>> = [];
 
-  // async parseContentsWithCallback() {
-  //   this.contents = await this.callback(this.contents as string);
-  // }
-
   isReflectionEvent(): this is MarkdownPageEvent<Reflection> {
     return this.model instanceof Reflection;
   }

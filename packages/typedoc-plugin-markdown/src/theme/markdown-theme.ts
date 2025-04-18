@@ -55,7 +55,7 @@ export class MarkdownTheme extends Theme {
 
     if (!page.isReflectionEvent()) {
       throw new Error(
-        `[typedoc-plugin-markdown]: A page model be a reflection when rendering ${page.pageKind}`,
+        `[typedoc-plugin-markdown]: The page model should be a reflection when rendering the "${page.pageKind}" page kind.`,
       );
     }
 
