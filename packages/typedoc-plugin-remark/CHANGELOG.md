@@ -1,16 +1,6 @@
 # Changelog
 
-## 2.0.0
-
-### Major Changes
-
-- Removed "defaultRemarkPlugins" option - remark plugins are no longer added by default.
-
-### Minor Changes
-
-- Added support for conditional "remarkPlugins" configuration.
-
-## 2.0.0
+## 2.0.0 (2025-04-22)
 
 This release includes fundamental architectural improvements and support for loading plugins conditionally based on page kind.
 
@@ -22,6 +12,14 @@ This release includes fundamental architectural improvements and support for loa
   - `remark-mdx` will need to be manually added if targetting MDX.
   - `remark-gfm` will need to be manually added if other plugins require it.
 - The plugin no longer adds a placeholder heading when `remark-toc` is added. Instead this logic has been decoupled in favour of the external plugin `remark-insert-headings`.
+
+### Major Changes
+
+- Removed "defaultRemarkPlugins" option - remark plugins are no longer added by default.
+
+### Minor Changes
+
+- Added support for conditional "remarkPlugins" configuration.
 
 ## 1.3.0 (2025-03-16)
 
