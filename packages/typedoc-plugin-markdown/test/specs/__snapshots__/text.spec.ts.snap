@@ -1,5 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Text should get prefixed group titles: (Output File Strategy "members") (Option Group "1") 1`] = `
+"[**My API - v0.0**](../../README.md)
+
+***
+
+[typedoc-stubs](../../README.md) / [module-1](../README.md) / someOtherVar
+
+# someOtherVar
+
+> \`const\` **someOtherVar**: \`true\` = \`true\`
+
+***
+
+Copyright Test
+"
+`;
+
+exports[`Text should get prefixed group titles: (Output File Strategy "members") (Option Group "1") 2`] = `
+"[**My API - v0.0**](../../README.md)
+
+***
+
+[typedoc-stubs](../../README.md) / [module-1](../README.md) / SomeType
+
+# SomeType
+
+> **SomeType** = \`boolean\`
+
+***
+
+Copyright Test
+"
+`;
+
+exports[`Text should get prefixed group titles: (Output File Strategy "members") (Option Group "2") 1`] = `
+"[**typedoc-stubs v0.0**](../../README.md)
+
+***
+
+[Home](../../README.md) / [module-1](../README.md) / someOtherVar
+
+# CoolVars: Variable - someOtherVar
+
+> \`const\` **someOtherVar**: \`true\` = \`true\`
+"
+`;
+
+exports[`Text should get prefixed group titles: (Output File Strategy "members") (Option Group "2") 2`] = `
+"[**typedoc-stubs v0.0**](../../README.md)
+
+***
+
+[Home](../../README.md) / [module-1](../README.md) / SomeType
+
+# SomeGroup: Type Alias - SomeType
+
+> **SomeType** = \`boolean\`
+"
+`;
+
 exports[`Text should get translations for index page: (Output File Strategy "members") (Option Group "1") 1`] = `
 "**My API - v0.0**
 
@@ -97,6 +157,19 @@ exports[`Text should get translations for module page: (Output File Strategy "me
 
 - [SomeInterface](interfaces/SomeInterface.md)
 
+## 変数
+
+- [someOtherVar](variables/someOtherVar.md)
+- [someVar](variables/someVar.md)
+
+## SomeGroup
+
+- [SomeType](type-aliases/SomeType.md)
+
+## SomeOtherGroup
+
+- [SomeOtherType](type-aliases/SomeOtherType.md)
+
 ***
 
 Copyright Test
@@ -141,6 +214,45 @@ exports[`Text should get translations for sidebar: (Output File Strategy "member
             "title": "SomeInterface",
             "kind": 256,
             "path": "module-1/interfaces/SomeInterface.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "変数",
+        "children": [
+          {
+            "title": "someOtherVar",
+            "kind": 32,
+            "path": "module-1/variables/someOtherVar.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "someVar",
+            "kind": 32,
+            "path": "module-1/variables/someVar.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "SomeGroup",
+        "children": [
+          {
+            "title": "SomeType",
+            "kind": 2097152,
+            "path": "module-1/type-aliases/SomeType.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "SomeOtherGroup",
+        "children": [
+          {
+            "title": "SomeOtherType",
+            "kind": 2097152,
+            "path": "module-1/type-aliases/SomeOtherType.md",
             "isDeprecated": false
           }
         ]

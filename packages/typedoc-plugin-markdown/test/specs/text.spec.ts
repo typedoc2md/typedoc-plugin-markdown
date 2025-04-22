@@ -24,4 +24,9 @@ describe(`Text`, () => {
   test(`should get translations for sidebar`, () => {
     expectFileToEqual('text', 'members', ['sidebar.json']);
   });
+
+  test(`should get prefixed group titles`, () => {
+    expectFileToEqual('text', 'members', 'module-1/variables/someOtherVar.md');
+    expectFileToEqual('text', 'members', 'module-1/type-aliases/SomeType.md');
+  });
 });

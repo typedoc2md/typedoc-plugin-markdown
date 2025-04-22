@@ -1,5 +1,5 @@
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { DeclarationReflection, ReflectionKind } from 'typedoc';
+import { DeclarationReflection, Reflection, ReflectionKind } from 'typedoc';
 
 export function pageTitle(this: MarkdownThemeContext): string {
   const textContentMappings = this.options.getValue('textContentMappings');
@@ -35,9 +35,6 @@ export function pageTitle(this: MarkdownThemeContext): string {
 
   const kind = ReflectionKind.singularString(page.model.kind);
 
-  const group = (page.model?.parent as DeclarationReflection)?.groups?.[0]
-    ?.title;
-
   if (
     [ReflectionKind.Module, ReflectionKind.Namespace].includes(page.model.kind)
   ) {
@@ -55,11 +52,27 @@ export function pageTitle(this: MarkdownThemeContext): string {
     return getFromString(memberPageTitle, name, kind);
   }
 
+  const group = getOwningGroupTitle(page.model);
+
   return memberPageTitle({
     name,
     kind,
     group,
   });
+}
+
+function getOwningGroupTitle(reflection: Reflection): string | null {
+  const parent = reflection.parent as DeclarationReflection | undefined;
+
+  if (!parent?.groups) return null;
+
+  for (const group of parent.groups) {
+    if (group.children.some((child) => child.name === reflection.name)) {
+      return group.title;
+    }
+  }
+
+  return null;
 }
 
 function getFromString(textContent: string, name: string, kind: string) {
