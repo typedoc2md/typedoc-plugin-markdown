@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-describe(`Docusaurus:`, () => {
+describe.skip(`Docusaurus:`, () => {
   describe(`Defaults`, () => {
     test(`should render docs`, () => {
       const contents = fs

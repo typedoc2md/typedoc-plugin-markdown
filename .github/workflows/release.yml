@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 20.x
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1

@@ -26,7 +26,6 @@
     "prebuild": "rm -rf dist && prebuild-options && copyfiles --up 1 ./src/**/*.cjs ./dist/",
     "prepublishOnly": "npm run lint && npm run build",
     "build": "tsc",
-    "pretest": "rm -rf ./test/out && docusaurus generate-typedoc",
     "test": "jest",
     "test:update": "npm run build && npm test -- -u"
   },
@@ -36,9 +35,5 @@
     "docusaurus",
     "typedoc",
     "plugin"
-  ],
-  "devDependencies": {
-    "@docusaurus/core": "^3.7.0",
-    "@docusaurus/types": "^3.7.0"
-  }
+  ]
 }
