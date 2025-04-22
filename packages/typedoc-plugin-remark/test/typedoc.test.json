@@ -48,7 +48,6 @@
           {
             "applyTo": ["Readme"],
             "plugins": [
-              "remark-gfm",
               [
                 "remark-insert-headings",
                 {

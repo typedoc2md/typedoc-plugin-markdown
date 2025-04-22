@@ -70,6 +70,6 @@ export function load(app: Application) {
 }
 
 /**
- * Export anything that is available publicly
+ * Export anything that is available publicly.
  */
 export * from 'public-api.js';
