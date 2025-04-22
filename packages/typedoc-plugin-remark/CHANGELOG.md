@@ -2,6 +2,16 @@
 
 ## 2.0.0
 
+### Major Changes
+
+- Removed "defaultRemarkPlugins" option - remark plugins are no longer added by default.
+
+### Minor Changes
+
+- Added support for conditional "remarkPlugins" configuration.
+
+## 2.0.0
+
 This release includes fundamental architectural improvements and support for loading plugins conditionally based on page kind.
 
 ### Architectural Changes
