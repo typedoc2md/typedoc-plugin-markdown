@@ -63,7 +63,7 @@ export function load(app: Application) {
   /**
    * =====================================
    * 3. Setup up renderer and translations
-   * ======================================
+   * =====================================
    */
   setupRenderer(app);
   setupInternationalization(app);
