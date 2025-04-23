@@ -61,69 +61,9 @@ const config = {
         entryPoints: [
           '../../../packages/typedoc-plugin-markdown/test/fixtures/src/reflections/index.ts',
         ],
+        out: 'src/docs/api',
       },
     ],
-    [
-      docusaurusPlugin,
-      {
-        id: 'api-2',
-        out: './docs/api-2',
-        ...require(
-          path.join(
-            __dirname,
-            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
-          ),
-        ),
-        tsconfig: path.join(
-          __dirname,
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/tsconfig.json',
-        ),
-        entryPoints: [
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src//packages/*',
-        ],
-        entryPointStrategy: 'packages',
-        cleanOutputDir: true,
-        navigation: {
-          includeFolders: false,
-          includeGroups: false,
-          includeCategories: true,
-        },
-        excludeScopesInPaths: true,
-        sidebar: {
-          pretty: true,
-        },
-      },
-    ],
-    /*[
-      docusaurusPlugin,
-      {
-        id: 'api-3',
-        out: './docs/api-3',
-        ...require(
-          path.join(
-            __dirname,
-            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
-          ),
-        ),
-        tsconfig: path.join(
-          __dirname,
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/tsconfig.json',
-        ),
-        entryPoints:
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/packages/*',
-        entryPointStrategy: 'packages',
-        cleanOutputDir: true,
-        navigation: {
-          includeFolders: true,
-          includeGroups: true,
-          includeCategories: true,
-        },
-        excludeScopesInPaths: true,
-        sidebar: {
-          pretty: true,
-        },
-      },
-    ],*/
   ],
   presets: [
     [
@@ -131,6 +71,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          path: 'src/docs',
           sidebarPath: require.resolve('./sidebars.js'),
           sidebarCollapsed: true,
           numberPrefixParser: false,
