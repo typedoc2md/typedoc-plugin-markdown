@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.6.3 (2025-04-23)
+
+### Patch Changes
+
+- Correctly handle group title in pageTitleTemplates callback ([#807](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/807)).
+- Format of optional type and getter/setter ([#804](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/804)) - thanks @normanzb.
+
 ## 4.6.2 (2025-04-09)
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.1 (2025-04-23)
+
+### Patch Changes
+
+- Fix sidebar base ids with custom docs path ([#802](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/802)).
+
 ## 1.3.0 (2025-03-25)
 
 ### Minor Changes
