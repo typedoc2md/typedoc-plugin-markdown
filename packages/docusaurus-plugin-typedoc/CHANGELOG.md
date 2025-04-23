@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.3.1
+## 1.3.1 (2025-04-23)
 
 ### Patch Changes
 
