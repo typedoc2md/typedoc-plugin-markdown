@@ -18,15 +18,10 @@ export function writeSidebar(
       : 'typedoc-sidebar.cjs';
     const sidebarPath = path.resolve(outputDir, sidebarFileName);
 
-    let baseDir = path
-      .relative(siteDir, outputDir)
-      .split(path.sep)
-      .slice(1)
-      .join('/');
-
-    if (docsPresetPath) {
-      baseDir = adjustBaseDirectory(baseDir, docsPresetPath);
-    }
+    const baseDir = adjustBaseDirectory(
+      path.relative(siteDir, outputDir).split(path.sep).join('/'),
+      docsPresetPath || 'docs',
+    );
 
     const sidebarJson = getSidebar(
       navigation,

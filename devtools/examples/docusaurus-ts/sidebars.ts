@@ -10,7 +10,7 @@ const sidebars: SidebarsConfig = {
         type: 'doc',
         id: 'api/index',
       },
-      items: typedocSidebar,
+      items: typedocSidebar.items,
     },
   ],
 };

@@ -22,9 +22,9 @@ const sidebars = {
         type: 'doc',
         id: 'api/index',
       },
-      items: require('./docs/api/typedoc-sidebar.cjs'),
+      items: require('./src/docs/api/typedoc-sidebar.cjs'),
     },
-    {
+    /* {
       type: 'category',
       label: 'DOCS 2',
       link: {
@@ -41,7 +41,7 @@ const sidebars = {
         id: 'api-3/index',
       },
       items: require('./docs/api-3/typedoc-sidebar.cjs'),
-    },*/,
+    },*/
   ],
 };
 
