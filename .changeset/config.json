@@ -5,7 +5,7 @@
     { "repo": "typedoc2md/typedoc-plugin-markdown" }
   ],
   "commit": false,
-  "fixed": [],
+  "fixed": [["docusaurus-plugin-typedoc", "typedoc-docusaurus-theme"]],
   "linked": [],
   "access": "public",
   "baseBranch": "main",

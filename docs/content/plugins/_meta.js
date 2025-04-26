@@ -13,9 +13,5 @@ export default {
   'github-wiki': 'Github Wiki',
   'gitlab-wiki': 'Gitlab Wiki',
   vitepress: 'VitePress',
-  '-- Integrations': {
-    type: 'separator',
-    title: 'Integrations',
-  },
   docusaurus: 'Docusaurus',
 };

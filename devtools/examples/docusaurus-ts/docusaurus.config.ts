@@ -45,23 +45,26 @@ const config: Config = {
     [
       docusaurusPlugin,
       {
-        ...require(
-          path.join(
-            __dirname,
-            '../../../packages/typedoc-plugin-markdown/test/fixtures/typedoc.cjs',
-          ),
-        ),
-        tsconfig: path.join(
-          __dirname,
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/tsconfig.json',
-        ),
-        entryPoints: [
-          '../../../packages/typedoc-plugin-markdown/test/fixtures/src/reflections/index.ts',
-        ],
+        tsconfig: './stubs/tsconfig.json',
+        entryPoints: ['./stubs/src/*'],
+        readme: 'none',
+        cleanOutputDir: true,
+      },
+    ],
+    [
+      docusaurusPlugin,
+      {
+        id: 'api-2',
+        tsconfig: './stubs/tsconfig.json',
+        entryPoints: ['./stubs/src/*'],
+        out: './docs/api-2',
+        readme: 'none',
         sidebar: {
           typescript: true,
           pretty: true,
+          deprecatedItemClassName: 'is-deprecated',
         },
+        plugin: ['./stubs/custom-plugin.mjs'],
       },
     ],
   ],
@@ -112,6 +115,12 @@ const config: Config = {
           to: 'docs/api',
           activeBasePath: 'docs',
           label: 'API 1',
+          position: 'left',
+        },
+        {
+          to: 'docs/api-2',
+          activeBasePath: 'docs',
+          label: 'API 2',
           position: 'left',
         },
       ],

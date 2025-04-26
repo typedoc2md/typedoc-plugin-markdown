@@ -1,7 +1,8 @@
 /**
- * All plugin types are exported from this module.
+ * All plugin types are exported from here.
  *
  * @module
  */
 
-export * from './options.js';
+export * from './docusaurus.js';
+export * from './plugin.js';

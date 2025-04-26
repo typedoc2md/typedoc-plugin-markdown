@@ -1,0 +1,40 @@
+{
+  "name": "typedoc-docusaurus-theme",
+  "version": "1.3.1",
+  "description": "A TypeDoc ( + typedoc-plugin-markdown ) theme that generates Markdown compatible with Docusaurus.",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "type": "module",
+  "files": [
+    "dist/"
+  ],
+  "bugs": {
+    "url": "https://github.com/typedoc2md/typedoc-plugin-markdown/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/typedoc2md/typedoc-plugin-markdown.git",
+    "directory": "packages/typedoc-docusaurus-theme"
+  },
+  "homepage": "https://typedoc-plugin-markdown.org/plugins/docusaurus",
+  "author": "Thomas Grey",
+  "scripts": {
+    "lint": "eslint ./src",
+    "prepublishOnly": "npm run lint && npm run build",
+    "prebuild": "rm -rf dist && prebuild-options",
+    "build": "tsc",
+    "build-and-run": "npm run build && npm run pretest",
+    "pretest": "tsx ./test/__scripts__/prepare.ts",
+    "test": "jest",
+    "test:update": "npm run build && npm test -- -u"
+  },
+  "peerDependencies": {
+    "typedoc-plugin-markdown": ">=4.6.3"
+  },
+  "license": "MIT",
+  "keywords": [
+    "docusaurus",
+    "typedoc"
+  ]
+}

@@ -146,7 +146,7 @@ ${presetsJson}
           : '',
       ];
       const optionLevel =
-        categories.length === 1 && !docsConfig.presets ? '##' : '##';
+        categories.length === 1 && !docsConfig.presets ? '##' : '###';
       if (categories.length > 1) {
         out.push(`# ${getDocsTitle(categoryName)}`);
         if (Object.keys(categoryDescriptions)?.length) {
@@ -232,7 +232,7 @@ ${JSON.stringify(exampleJson, null, 2)}
       if (categories.length > 1) {
         outputPage.push(optionsTable.join('\n'));
         const catDocPath = path.join(
-          getPagesPath(docsConfig.optionsPath),
+          getPagesPath(docsConfig.optionsPath as string),
           'options',
           `${categoryName.toLowerCase()}-options.mdx`,
         );
@@ -262,7 +262,7 @@ ${JSON.stringify(exampleJson, null, 2)}
       );
 
       const metaJsPath = path.join(
-        getPagesPath(docsConfig.optionsPath),
+        getPagesPath(docsConfig.optionsPath as string),
         'options',
         '_meta.js',
       );
@@ -271,7 +271,7 @@ ${JSON.stringify(exampleJson, null, 2)}
     }
 
     const optionDocPath = path.join(
-      getPagesPath(docsConfig.optionsPath),
+      getPagesPath(docsConfig.optionsPath as string),
       docsConfig.optionsFile || 'options.mdx',
     );
 

@@ -1,5 +1,5 @@
-import { SidebarsConfig } from '@docusaurus/plugin-content-docs';
-import typedocSidebar from './docs/api/typedoc-sidebar';
+import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
+import typedocSidebar from './docs/api-2/typedoc-sidebar';
 
 const sidebars: SidebarsConfig = {
   typedocSidebar: [
@@ -8,7 +8,7 @@ const sidebars: SidebarsConfig = {
       label: 'Typedoc API',
       link: {
         type: 'doc',
-        id: 'api/index',
+        id: 'api-2/index',
       },
       items: typedocSidebar.items,
     },

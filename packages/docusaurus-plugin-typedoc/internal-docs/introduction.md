@@ -4,6 +4,4 @@
 
 Package features include:
 
-- Presets relevant options of typedoc-plugin-markdown.
 - Bootstraps TypeDoc from the Docusaurus CLI.
-- Generates a sidebar file with configurable structure.

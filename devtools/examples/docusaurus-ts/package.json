@@ -5,6 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "prestart": "rm -rf ./docs && cd ../../../packages/docusaurus-plugin-typedoc && npm run build",
+    "generate": "npm run prestart && docusaurus generate-typedoc",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",

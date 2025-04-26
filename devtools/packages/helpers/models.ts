@@ -2,11 +2,11 @@ export interface DocsConfig {
   declarationsPath?: string;
   translatablePath?: string;
   presetsPath?: string;
-  optionsPath: string;
+  optionsPath?: string;
   optionsFile?: string;
   docsPath: string;
-  declarations: boolean;
-  presets: boolean;
+  declarations?: boolean;
+  presets?: boolean;
   categories?: Record<string, string>;
 }
 

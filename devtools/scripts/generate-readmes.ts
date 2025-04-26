@@ -12,6 +12,7 @@ async function main() {
     'typedoc-github-wiki-theme',
     'typedoc-gitlab-wiki-theme',
     'typedoc-vitepress-theme',
+    'typedoc-docusaurus-theme',
     'docusaurus-plugin-typedoc',
   ].map(async (packageName) => {
     const packageJson = await import(

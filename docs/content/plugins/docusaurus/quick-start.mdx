@@ -2,7 +2,13 @@ import { Callout, Steps, FileTree } from 'nextra/components';
 
 # Quick Start
 
-## Installation
+## Docusaurus Plugin (Recommended)
+
+For fully integrated setup with Docusaurus, we recommend using the Docusaurus plugin `docusaurus-plugin-typedoc`.
+
+This will allow you to run TypeDoc with required plugins and preset options as part of the Docusaurus build process.
+
+### Installation
 
 Install Docusaurus in the root of your project and install the plugin dependencies in the same location as the Docusaurus website directory.
 
@@ -10,7 +16,7 @@ Install Docusaurus in the root of your project and install the plugin dependenci
 npm install typedoc typedoc-plugin-markdown docusaurus-plugin-typedoc --save-dev
 ```
 
-## Usage
+### Usage
 
 <Steps>
 
@@ -62,17 +68,39 @@ module.exports = {
 };
 ```
 
-### Run Docusaurus
+#### Run Docusaurus
 
 You can generate the docs by either:
 
 - Running Docusaurus by using the `start` or `build` [cli commands](https://docusaurus.io/docs/cli#docusaurus-cli-commands).
 - Building the docs independently by running the custom cli command `docusaurus generate-typedoc` and then running Docusaurus at another time.
 
-### View the docs
+#### View the docs
 
 Once built the docs will be available at `/docs/api` (or equivalent output directory).
 
 e.g. `http://localhost:3000/docs/api`
 
 </Steps>
+
+## Standalone
+
+If you would prefer to generate your docs entirely independently of a Docusaurus project (for later integration) you can run the `typedoc-docusaurus-theme` TypeDoc plugin independently.
+
+### Install
+
+```sh npm2yarn
+npm install typedoc typedoc-plugin-markdown typedoc-docusaurus-theme --save-dev
+```
+
+### Usage
+
+```json filename="typedoc.json"
+{
+  "plugin": ["typedoc-plugin-markdown", "typedoc-docusaurus-theme"]
+}
+```
+
+```bash filename="CLI"
+npm run typedoc
+```
