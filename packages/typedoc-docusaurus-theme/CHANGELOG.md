@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.4.0
+## 1.4.0 (2025-04-28)
 
 ### Minor Changes
 

@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.4.0
+## 1.4.0 (2025-04-28)
 
 ### Minor Changes
 
@@ -9,7 +9,7 @@
 
 ### Patch Changes
 
-- Updated peer dependencies
+- Updated dependencies
   - typedoc-docusaurus-theme@1.4.0
 
 ## 1.3.1 (2025-04-23)
