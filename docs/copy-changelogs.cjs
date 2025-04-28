@@ -10,7 +10,7 @@ const changelogs = [
     to: 'content/plugins/vitepress',
   },
   {
-    from: '../packages/docusaurus-plugin-typedoc/CHANGELOG.md',
+    from: '../packages/typedoc-docusaurus-theme/CHANGELOG.md',
     to: 'content/plugins/docusaurus',
   },
   {
