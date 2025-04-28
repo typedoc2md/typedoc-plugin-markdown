@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.4.0
+
+### Minor Changes
+
+- Decoupled TypeDoc logic into a separate plugin, "typedoc-docusaurus-theme". "docusaurus-plugin-typedoc" and "typedoc-docusaurus-theme" will now be published and versioned together as linked packages.
+- Unquoted object keys in generated sidebar.
+
+### Patch Changes
+
+- Updated peer dependencies
+  - typedoc-docusaurus-theme@1.4.0
+
 ## 1.3.1 (2025-04-23)
 
 ### Patch Changes
