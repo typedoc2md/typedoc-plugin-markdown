@@ -41,7 +41,7 @@ const footer = <Footer></Footer>;
 
 export default async function RootLayout({ children }) {
   return (
-    <html lang="en" dir="ltr" suppressHydrationWarning>
+    <html lang="en" dir="ltr">
       <Head>
         <link rel="icon" href="/logos/markdown-logo.svg" type="image/png" />
       </Head>

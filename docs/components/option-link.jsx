@@ -1,12 +1,10 @@
-import Link from 'next/link';
-
 export const OptionLink = ({ type, name }) => {
   return (
-    <Link
+    <a
       href={`/docs/options/${type}-options#${name.toLowerCase()}`}
-      className="whitespace-nowrap _text-primary-600 _underline _decoration-from-font [text-underline-position:from-font]"
+      className="x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]"
     >
-      <code class="nextra-code">{name}</code>
-    </Link>
+      <code className="nextra-code">{name}</code>
+    </a>
   );
 };

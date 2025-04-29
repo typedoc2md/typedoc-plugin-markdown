@@ -29,9 +29,7 @@ asIndexPage: true
   outputPage.push('# Plugin Options');
   if (docsConfig.docsPath === '/docs') {
     outputPage.push(
-      `This page documents additional options that are exposed by this plugin.
-
-*Note: The options must be set at root level and will be ignored inside [packageOptions](https://typedoc.org/documents/Options.Package_Options.html).*`,
+      `This page documents additional options that are exposed by this plugin.`,
     );
   } else {
     if (docsConfig.presets) {
@@ -145,10 +143,10 @@ ${presetsJson}
           ? `import { Callout, FileTree } from 'nextra/components';`
           : '',
       ];
-      const optionLevel =
-        categories.length === 1 && !docsConfig.presets ? '##' : '###';
+      let optionLevel = categories.length > 1 ? '##' : '###';
       if (categories.length > 1) {
         out.push(`# ${getDocsTitle(categoryName)}`);
+        optionLevel = '##';
         if (Object.keys(categoryDescriptions)?.length) {
           out.push(categoryDescriptions[categoryName]);
         }

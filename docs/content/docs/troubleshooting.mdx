@@ -1,0 +1,59 @@
+# Troubleshooting
+
+This guide covers common issues you may encounter when using the typedoc-plugin-markdown, along with solutions and explanations.
+
+## TypeDoc Loaded Multiple Times
+
+**Symptom:**
+
+You're running TypeDoc and see the following error which is preventing docs from being generated:
+
+> **[warning] TypeDoc has been loaded multiple times. This is commonly caused by plugins which have their own installation of TypeDoc.**
+
+**Why?**:
+
+This plugin declares TypeDoc as a peer dependency, so it won't install TypeDoc automatically.
+
+If you're running TypeDoc in a standard setup and you're seeing this warning, your package manager is likely resolving dependencies in a way that causes multiple instances of TypeDoc to be loaded.
+
+When installing globally, be aware of [npm/cli#7057](https://github.com/npm/cli/issues/7057).
+
+**Solution:**
+
+Use the `--legacy-peer-deps` flag when installing packages.
+
+## `packageOptions` Not Working
+
+**Symptom:**
+
+You are setting options inside `packageOptions`, but they are being ignored.
+
+**Why?**
+
+The `packageOptions` field only applies to conversion options. Options exposed by this plugin apply during rendering, not conversion. That's why they won't work if placed inside `packageOptions`.
+
+**Solution:**
+
+Place all plugin specific options at the root level of your TypeDoc configuration.
+
+See [TypeDoc packageOptions](https://typedoc.org/documents/Options.Package_Options.html).
+
+## MDX Compilation Failed
+
+**Symptom:**
+
+You're using an MDX parser and see this error (or similar):
+
+> **Error: MDX compilation failed**
+>
+> Cause: Could not parse expression with acorn
+
+**Why?**
+
+This is almost certainly caused by invalid MDX syntax in doc comments.
+
+**Solution:**
+
+- Wrap invalid MDX in backticks to treat it as a code block.
+- Enable <OptionLink type="utility" name="sanitizeComments" /> to automatically escape problematic characters.
+- Switch to CommonMark, if supported by your parser.
