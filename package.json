@@ -12,7 +12,7 @@
     "devtools/packages/*"
   ],
   "scripts": {
-    "docs": "tsx ./devtools/scripts/generate-readmes && node ./devtools/scripts/tocs.mjs && npm run build --workspace typedoc-plugin-markdown && typedoc",
+    "docs": "tsx ./devtools/scripts/generate-readmes && node ./devtools/scripts/tocs.mjs",
     "build-all": "npm run build --workspaces --if-present",
     "test-all": "npm run test --workspaces --if-present",
     "test-and-update-all": "npm run test:update --workspaces --if-present",

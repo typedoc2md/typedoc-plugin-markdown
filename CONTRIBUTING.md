@@ -7,6 +7,7 @@
 * [Introduction](#introduction)
 * [Contributing to the public docs](#contributing-to-the-public-docs)
 * [Contributing to the codebase](#contributing-to-the-codebase)
+  * [Getting Started](#getting-started)
 * [Submitting a PR](#submitting-a-pr)
 * [Acknowledgements](#acknowledgements)
 
@@ -28,7 +29,45 @@ When submitting a PR please use commit message in the format `chore(docs): my do
 
 ## Contributing to the codebase
 
-For contributing to the plugin codebase, please see the [Developer Guide](./devguide/README.md) for detailed information about the codebase and development practices.
+### Getting Started
+
+#### 1. Fork and clone the repository
+
+Start by forking the repository to your own GitHub account. Then, clone the repository to your local machine. Please replace `<your-username>` with your actual GitHub username.
+
+```bash
+git clone git@github.com:<your-username>/typedoc-plugin-markdown.git
+```
+
+#### 2. Install dependencies
+
+Navigate to the repository root and install the necessary dependencies:
+
+```bash
+cd typedoc-plugin-markdown
+
+npm install
+```
+
+#### 3. Build the packages and run tests
+
+Finally, you can build all the packages and run the tests to ensure everything is set up correctly.
+
+Build all packages in the workspace:
+
+```bash
+npm run build-all
+```
+
+Test all packages in the workspace:
+
+```bash
+npm run test-all
+```
+
+If the project builds and the tests run successfully you are ready to start contributing to the project.
+
+Please have a look at the codebase and follow documentation comments and provided internal docs.
 
 ## Submitting a PR
 
