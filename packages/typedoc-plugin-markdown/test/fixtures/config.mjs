@@ -1,415 +1,90 @@
-import * as path from 'path';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
 /**
  * @type {Record<string, import('@devtools/fixtures/models.js').Fixture>}
  */
 const config = {
-  reflections: {
+  reflections1: {
     only: false,
-    entryPoints: '/reflections/index.ts',
-    commonOptions: {
-      plugin: [
-        path.join(__dirname, 'custom-plugins', 'normalize-sources.mjs'),
-        path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
-      ],
-      hidePageHeader: true,
-      hideBreadcrumbs: true,
-      tableColumnSettings: {
-        hideSources: true,
-        leftAlignHeaders: true,
-      },
-      excludePrivate: false,
-      blockTagsPreserveOrder: ['@deprecated', '@see'],
-      expandObjects: false,
-    },
-    options: [
-      {
-        includeHierarchySummary: true,
-      },
-      {
-        readme: 'none',
-        parametersFormat: 'table',
-        classPropertiesFormat: 'table',
-        interfacePropertiesFormat: 'table',
-        typeDeclarationFormat: 'table',
-        enumMembersFormat: 'table',
-        propertyMembersFormat: 'table',
-        typeAliasPropertiesFormat: 'table',
-        indexFormat: 'table',
-        useCodeBlocks: true,
-        expandParameters: true,
-        navigationModel: {
-          excludeGroups: true,
-        },
-      },
-    ],
+    configFile: 'typedoc.reflections-1.cjs',
+  },
+  reflections2: {
+    only: false,
+    configFile: 'typedoc.reflections-2.cjs',
   },
   objectsAndParams: {
     only: false,
-    outputFileStrategies: ['members'],
-    entryPoints: '/reflections/index.ts',
-    commonOptions: {
-      hidePageHeader: true,
-      hideBreadcrumbs: true,
-      disableSources: true,
-      expandObjects: true,
-      expandParameters: true,
-      tableColumnSettings: {
-        leftAlignHeaders: true,
-      },
-      router: 'member',
-      blockTagsPreserveOrder: ['@deprecated', '@see'],
-    },
-    options: [
-      {},
-      {
-        parametersFormat: 'table',
-        classPropertiesFormat: 'table',
-        interfacePropertiesFormat: 'table',
-        typeDeclarationVisibility: 'compact',
-        useCodeBlocks: true,
-      },
-    ],
+    configFile: 'typedoc.objectsAndParams.cjs',
   },
   modules: {
     only: false,
-    entryPoints: [
-      '/modules/module-2',
-      '/modules/module-1',
-      '/modules/module-3',
-    ],
-    commonOptions: {
-      plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
-      hidePageHeader: true,
-      hideBreadcrumbs: true,
-      disableSources: true,
-      excludeScopesInPaths: true,
-      entryPointStrategy: 'expand',
-    },
-    options: [
-      {},
-      {
-        flattenOutputFiles: true,
-        navigationModel: {
-          excludeFolders: true,
-        },
-        modulesFileName: 'documentation.md',
-      },
-    ],
+    configFile: 'typedoc.modules.cjs',
   },
-  groups: {
+  groups1: {
     only: false,
-    entryPoints: '/groups/**/*.ts',
-    commonOptions: {
-      name: 'typedoc-stubs',
-      plugin: [
-        path.join(__dirname, 'custom-plugins', 'stub-groups-theme.mjs'),
-        path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
-      ],
-      theme: 'stub-groups',
-      disableSources: true,
-      entryFileName: 'index.md',
-      tableColumnSettings: {
-        leftAlignHeaders: true,
-      },
-      readme: './test/fixtures/README.md',
-    },
-    options: [
-      {
-        categorizeByGroup: true,
-        navigationModel: {
-          excludeGroups: true,
-        },
-        indexFormat: 'table',
-      },
-      {
-        readme: 'none',
-        groupOrder: ['Functions', 'Interfaces', '*'],
-        useHTMLAnchors: true,
-        indexFormat: 'htmlTable',
-        categorizeByGroup: false,
-      },
-    ],
+    configFile: 'typedoc.groups-1.cjs',
+  },
+  groups2: {
+    only: false,
+    configFile: 'typedoc.groups-2.cjs',
   },
   comments: {
     only: false,
-    entryPoints: '/comments/index.ts',
-    commonOptions: {
-      plugin: [
-        path.join(__dirname, 'custom-plugins', 'normalize-sources.mjs'),
-        path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
-      ],
-      hidePageHeader: true,
-      hideBreadcrumbs: true,
-      readme: 'none',
-      excludePrivate: false,
-      useHTMLAnchors: true,
-      anchorPrefix: 'api-',
-    },
-    options: [
-      {
-        enumMembersFormat: 'table',
-        parametersFormat: 'table',
-        propertiesFormat: 'list',
-        classPropertiesFormat: 'table',
-        propertyMembersFormat: 'table',
-        typeDeclarationFormat: 'table',
-        typeAliasPropertiesFormat: 'table',
-      },
-      {
-        preserveAnchorCasing: true,
-        publicPath: 'https://example.com',
-        sanitizeComments: true,
-        flattenOutputFiles: true,
-        enumMembersFormat: 'htmlTable',
-        parametersFormat: 'htmlTable',
-        classPropertiesFormat: 'htmlTable',
-        interfacePropertiesFormat: 'htmlTable',
-        typeAliasPropertiesFormat: 'htmlTable',
-        typeDeclarationFormat: 'htmlTable',
-        useCodeBlocks: false,
-        expandObjects: true,
-        tableColumnSettings: {
-          hideDefaults: true,
-          hideInherited: true,
-          hideModifiers: true,
-          hideOverrides: true,
-          hideSources: true,
-          hideValues: true,
-          leftAlignHeaders: true,
-        },
-        blockTagsPreserveOrder: ['@example'],
-      },
-    ],
+    configFile: 'typedoc.comments.cjs',
   },
-  packages: {
+  packages1: {
     only: false,
-    entryPoints: '/packages/*',
-    outputFileStrategies: ['members', 'modules'],
-    commonOptions: {
-      plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
-      entryPointStrategy: 'packages',
-      name: 'packages-example',
-      disableSources: true,
-      tableColumnSettings: {
-        leftAlignHeaders: true,
-      },
-    },
-    options: [
-      {
-        entryFileName: 'index.md',
-        projectDocuments: ['./test/fixtures/PROJECT_DOC_1.md'],
-      },
-      {
-        excludeScopesInPaths: true,
-        mergeReadme: true,
-        includeVersion: true,
-        indexFormat: 'table',
-      },
-    ],
+    configFile: 'typedoc.packages-1.cjs',
+  },
+  packages2: {
+    only: false,
+    configFile: 'typedoc.packages-2.cjs',
   },
   package: {
     only: false,
-    entryPoints: '/packages/package-1',
-    commonOptions: {
-      plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
-      entryPointStrategy: 'packages',
-      name: 'package-example',
-      includeVersion: true,
-      disableSources: true,
-      readme: './test/fixtures/src/packages/package-1/README.md',
-    },
-    options: [{}],
+    configFile: 'typedoc.package.cjs',
   },
-  entryfiles: {
+  entryfiles1: {
     only: false,
-    entryPoints: '/entryfiles/*',
-    commonOptions: {
-      plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
-      entryFileName: 'index.md',
-      entryModule: 'entry-module',
-      disableSources: true,
-      fileExtension: '.mdx',
-      name: '@scope/entryfile',
-    },
-    options: [
-      { entryFileName: 'README.md', githubPages: true },
-      {
-        readme: 'none',
-        excludeScopesInPaths: true,
-        githubPages: false,
-      },
-    ],
+    configFile: 'typedoc.entryfiles-1.cjs',
+  },
+  entryfiles2: {
+    only: false,
+    configFile: 'typedoc.entryfiles-2.cjs',
   },
   readme: {
     only: false,
-    entryPoints: '/readme/index.ts',
-    commonOptions: {
-      plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
-    },
-    options: [
-      {
-        entryFileName: 'index.md',
-        disableSources: true,
-        mergeReadme: true,
-        includeVersion: true,
-        options: './test/fixtures/typedoc.readme.cjs',
-      },
-    ],
+    configFile: 'typedoc.readme.cjs',
   },
-  text: {
+  text1: {
     only: false,
-    entryPoints: '/text/*.ts',
-    commonOptions: {
-      plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
-      disableSources: true,
-      tableColumnSettings: { leftAlignHeaders: true },
-      includeVersion: true,
-      propertiesFormat: 'table',
-      readme: 'none',
-    },
-    options: [
-      {
-        options: './test/fixtures/typedoc.text-1.cjs',
-      },
-      {
-        options: './test/fixtures/typedoc.text-2.cjs',
-        indexFormat: 'table',
-      },
-    ],
+    configFile: 'typedoc.text-1.cjs',
+  },
+  text2: {
+    only: false,
+    configFile: 'typedoc.text-2.cjs',
   },
   utils: {
     only: false,
-    entryPoints: '/utils/*.ts',
-    commonOptions: {
-      hidePageHeader: true,
-      hideBreadcrumbs: true,
-      disableSources: true,
-      readme: 'none',
-      expandObjects: true,
-      useHTMLEncodedBrackets: true,
-      parametersFormat: 'table',
-    },
-    options: [
-      {},
-      {
-        useCodeBlocks: true,
-        formatWithPrettier: true,
-        prettierConfigFile: './test/fixtures/prettier-config/.prettierrc.json',
-      },
-    ],
+    configFile: 'typedoc.utils.cjs',
   },
   customize: {
     only: false,
-    entryPoints: '/customize/index.ts',
-    outputFileStrategies: ['members'],
-    commonOptions: {
-      disableSources: true,
-      readme: 'none',
-    },
-    options: [
-      {
-        plugin: [
-          path.join(__dirname, 'custom-plugins', 'custom-theme.mjs'),
-          path.join(__dirname, 'custom-plugins', 'custom-router.mjs'),
-          path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
-          path.join(__dirname, 'custom-plugins', 'urls-plugin.mjs'),
-        ],
-        theme: 'custom-theme',
-        router: 'custom-router',
-      },
-    ],
+    configFile: 'typedoc.customize.cjs',
   },
   documents: {
     only: false,
-    entryPoints: ['/documents/module-1.ts', '/documents/module-2.ts'],
-    commonOptions: {
-      hidePageHeader: true,
-      plugin: [
-        path.join(__dirname, 'custom-plugins', 'stub-documents-theme.mjs'),
-        path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
-      ],
-      theme: 'stub-documents',
-      readme: 'none',
-      disableSources: true,
-      projectDocuments: [
-        './test/fixtures/PROJECT_DOC_1.md',
-        './test/fixtures/docs/project/PROJECT_DOC_2.md',
-        './test/fixtures/docs/project/PROJECT_DOC_3.md',
-      ],
-    },
-    options: [
-      {},
-      {
-        indexFormat: 'htmlTable',
-        flattenOutputFiles: true,
-      },
-    ],
+    configFile: 'typedoc.documents.cjs',
   },
   documentsSingleModule: {
     only: false,
-    entryPoints: ['/documents/module-1.ts'],
-    commonOptions: {
-      hidePageHeader: true,
-      plugin: [
-        path.join(__dirname, 'custom-plugins', 'stub-documents-theme.mjs'),
-        path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs'),
-      ],
-      projectDocuments: ['./test/fixtures/PROJECT_DOC_1.md'],
-      theme: 'stub-documents',
-      readme: 'none',
-      disableSources: true,
-    },
-    options: [
-      {},
-      {
-        indexFormat: 'table',
-      },
-    ],
+    configFile: 'typedoc.documentsSingleModule.cjs',
   },
   navigation: {
     only: false,
-    entryPoints: [
-      '/navigation/module-1/index.ts',
-      '/navigation/module-2/index.ts',
-      '/navigation/module-3/index.ts',
-    ],
-    commonOptions: {
-      hidePageHeader: true,
-      readme: 'none',
-      plugin: [path.join(__dirname, 'custom-plugins', 'navigation-plugin.mjs')],
-    },
-    options: [
-      {
-        navigation: {
-          includeCategories: false,
-          includeGroups: false,
-          includeFolders: false,
-        },
-        categorizeByGroup: true,
-      },
-      {
-        navigation: {
-          includeCategories: true,
-          includeGroups: true,
-          includeFolders: true,
-        },
-        categorizeByGroup: false,
-      },
-    ],
+    configFile: 'typedoc.navigation.cjs',
   },
   outputs: {
     only: false,
-    options: [
-      {
-        options: './test/fixtures/typedoc.outputs.cjs',
-      },
-    ],
+    configFile: 'typedoc.outputs.cjs',
   },
 };
 

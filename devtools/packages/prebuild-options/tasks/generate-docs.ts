@@ -143,7 +143,8 @@ ${presetsJson}
           ? `import { Callout, FileTree } from 'nextra/components';`
           : '',
       ];
-      let optionLevel = categories.length > 1 ? '##' : '###';
+      let optionLevel =
+        !docsConfig.presets || categories.length > 1 ? '##' : '###';
       if (categories.length > 1) {
         out.push(`# ${getDocsTitle(categoryName)}`);
         optionLevel = '##';

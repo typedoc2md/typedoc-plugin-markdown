@@ -1,27 +1,27 @@
 // @ts-check
 
-const baseOptions = require('./typedoc.cjs');
+const baseOptions = require('../typedoc.cjs');
 
 /** @type {import('typedoc').TypeDocOptions} */
 module.exports = {
   ...baseOptions,
-  entryPoints: ['./src/outputs/index.ts'],
+  entryPoints: ['../src/outputs/index.ts'],
   plugin: ['typedoc-plugin-markdown'],
   outputs: [
     {
       name: 'html',
-      path: './out/html/outputs',
+      path: '../out/html/outputs',
     },
     {
       name: 'markdown',
-      path: './out/md/outputs/kind',
+      path: '../out/md/outputs/kind',
       options: {
         router: 'kind',
       },
     },
     {
       name: 'markdown',
-      path: './out/md/outputs/kind-dir',
+      path: '../out/md/outputs/kind-dir',
       options: {
         router: 'kind-dir',
         includeHierarchySummary: true,
