@@ -9,7 +9,7 @@
       "properties": {
         "anchorPrefix": {
           "type": "string",
-          "description": "[typedoc-plugin-markdown] Custom anchor prefix when anchoring to in-page symbols."
+          "description": "[typedoc-plugin-markdown] Custom anchor prefix to add to anchor links."
         },
         "blockTagsPreserveOrder": {
           "type": "array",
@@ -172,7 +172,8 @@
             "members",
             "modules"
           ],
-          "description": "[typedoc-plugin-markdown] Determines how output files are generated.",
+          "deprecated": "Deprecated in favour of `--router`.",
+          "description": "[typedoc-plugin-markdown] Deprecated in favour of `--router`.",
           "default": "members"
         },
         "pageTitleTemplates": {
