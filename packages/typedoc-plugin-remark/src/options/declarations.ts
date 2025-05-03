@@ -56,7 +56,7 @@ import { validateRemarkPlugins } from './validation.js';
  * The following applyTo values are supported:
  *
  * - `"*"` applies to all pages
- * - An array of on or more of the following page kinds: [`"Readme"`, `"Index"`, `"Module"`, `"Namespace"`, `"Document"`, `"Class"`, `"Interface"`, `"Enum"`, `"TypeAlias"`, `"Function"`, `"Variable"`].
+ * - An array of one or more of the following page kinds: [`"Readme"`, `"Index"`, `"Module"`, `"Namespace"`, `"Document"`, `"Class"`, `"Interface"`, `"Enum"`, `"TypeAlias"`, `"Function"`, `"Variable"`].
  *
  * @omitExample
  */
