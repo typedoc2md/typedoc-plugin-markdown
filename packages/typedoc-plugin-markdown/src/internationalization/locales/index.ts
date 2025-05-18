@@ -8,9 +8,10 @@
  * @module
  */
 
+import de from './de.js';
 import en from './en.js';
 import ja from './ja.js';
 import ko from './ko.js';
 import zh from './zh.js';
 
-export { en, ja, ko, zh };
+export { de, en, ja, ko, zh };
