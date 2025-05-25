@@ -4,15 +4,19 @@
   ],
   "tsconfig": "../../../packages/typedoc-plugin-markdown/test/fixtures/tsconfig.json",
   "entryPoints": [
-    "../../../packages/typedoc-plugin-markdown/test/fixtures/src/reflections/index.ts"
+    "../../../packages/typedoc-plugin-markdown/test/fixtures/src/modules/module-1",
+    "../../../packages/typedoc-plugin-markdown/test/fixtures/src/modules/module-2"
   ],
-  "outputFileStrategy": "members",
+
   "plugin": [
     "../../../packages/typedoc-plugin-markdown/dist/index.js",
     "../../../packages/typedoc-vitepress-theme/dist/index.js"
   ],
+  "logLevel": "Info",
+  "readme": "none",
   "sidebar": {
     "collapse": false,
     "pretty": true
-  }
+  },
+  "out": "api-2"
 }

@@ -269,13 +269,13 @@ export class NavigationBuilder {
           child instanceof DeclarationReflection &&
           !this.navigationOptions.excludeCategories &&
           child.categories?.length
-            ? child.categories
+            ? (child.categories as any)
                 .sort(sortNoneSectionFirst)
-                ?.map((category) => {
+                ?.flatMap((category) => {
                   const catChildren = this.getCategoryGroupChildren(category);
                   return catChildren.length
                     ? isNoneSection(category)
-                      ? [...catChildren]
+                      ? catChildren
                       : {
                           title: category.title,
                           ...(this.router.hasUrl(category as any) && {
@@ -283,7 +283,7 @@ export class NavigationBuilder {
                           }),
                           children: catChildren,
                         }
-                    : null;
+                    : [];
                 })
                 .filter((cat) => Boolean(cat))
             : this.getReflectionGroups(child);
@@ -323,25 +323,22 @@ export class NavigationBuilder {
         return this.getGroupChildren(groupsWithOwnFilesOnly[0]);
       }
 
-      return reflection.groups
-        ?.sort(sortNoneSectionFirst)
-        ?.map((group) => {
-          const groupChildren = this.getGroupChildren(group);
-          if (groupChildren?.length) {
-            if (group.owningReflection.kind === ReflectionKind.Document) {
-              return groupChildren[0];
-            }
-            if (isNoneSection(group)) {
-              return [...groupChildren];
-            }
-            return {
-              title: group.title,
-              children: groupChildren,
-            };
+      return reflection.groups?.sort(sortNoneSectionFirst)?.flatMap((group) => {
+        const groupChildren = this.getGroupChildren(group);
+        if (groupChildren?.length) {
+          if (group.owningReflection.kind === ReflectionKind.Document) {
+            return groupChildren[0];
           }
-          return null;
-        })
-        .filter((group) => Boolean(group)) as NavigationItem[];
+          if (isNoneSection(group)) {
+            return groupChildren;
+          }
+          return {
+            title: group.title,
+            children: groupChildren,
+          };
+        }
+        return [];
+      }) as NavigationItem[];
     }
     return null;
   }

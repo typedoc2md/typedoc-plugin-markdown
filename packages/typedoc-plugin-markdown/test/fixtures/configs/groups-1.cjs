@@ -17,8 +17,8 @@ const commonOptions = {
   },
   readme: '../README.md',
   categorizeByGroup: true,
-  navigation: {
-    includeGroups: true,
+  navigationModel: {
+    excludeGroups: true,
   },
 };
 

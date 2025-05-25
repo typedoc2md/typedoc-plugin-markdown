@@ -4544,20 +4544,18 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "path": "has-categories/index.md",
     "isDeprecated": false,
     "children": [
-      [
-        {
-          "title": "ExplicitNoCategoryEnum",
-          "kind": 8,
-          "path": "has-categories/enumerations/ExplicitNoCategoryEnum.md",
-          "isDeprecated": false
-        },
-        {
-          "title": "ExplicitNoCategoryInterface",
-          "kind": 256,
-          "path": "has-categories/interfaces/ExplicitNoCategoryInterface.md",
-          "isDeprecated": false
-        }
-      ],
+      {
+        "title": "ExplicitNoCategoryEnum",
+        "kind": 8,
+        "path": "has-categories/enumerations/ExplicitNoCategoryEnum.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ExplicitNoCategoryInterface",
+        "kind": 256,
+        "path": "has-categories/interfaces/ExplicitNoCategoryInterface.md",
+        "isDeprecated": false
+      },
       {
         "title": "Category A",
         "children": [
@@ -4658,32 +4656,30 @@ exports[`Navigation should gets Navigation Json for multiple entry points: (Outp
     "path": "has-custom-groups/index.md",
     "isDeprecated": false,
     "children": [
-      [
-        {
-          "title": "InterfaceNoGroup1",
-          "kind": 256,
-          "path": "has-custom-groups/interfaces/InterfaceNoGroup1.md",
-          "isDeprecated": false
-        },
-        {
-          "title": "InterfaceNoGroup2",
-          "kind": 256,
-          "path": "has-custom-groups/interfaces/InterfaceNoGroup2.md",
-          "isDeprecated": false
-        },
-        {
-          "title": "variableNoGroup1",
-          "kind": 32,
-          "path": "has-custom-groups/variables/variableNoGroup1.md",
-          "isDeprecated": false
-        },
-        {
-          "title": "variableNoGroup2",
-          "kind": 32,
-          "path": "has-custom-groups/variables/variableNoGroup2.md",
-          "isDeprecated": false
-        }
-      ],
+      {
+        "title": "InterfaceNoGroup1",
+        "kind": 256,
+        "path": "has-custom-groups/interfaces/InterfaceNoGroup1.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "InterfaceNoGroup2",
+        "kind": 256,
+        "path": "has-custom-groups/interfaces/InterfaceNoGroup2.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "variableNoGroup1",
+        "kind": 32,
+        "path": "has-custom-groups/variables/variableNoGroup1.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "variableNoGroup2",
+        "kind": 32,
+        "path": "has-custom-groups/variables/variableNoGroup2.md",
+        "isDeprecated": false
+      },
       {
         "title": "CustomGroupA",
         "children": [
