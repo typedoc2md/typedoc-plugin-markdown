@@ -10,7 +10,6 @@ const commonOptions = {
     '../custom-plugins/navigation-plugin.mjs',
   ],
   name: 'typedoc-stubs',
-  theme: 'stub-groups',
   disableSources: true,
   entryFileName: 'index.md',
   tableColumnSettings: {
@@ -18,8 +17,8 @@ const commonOptions = {
   },
   readme: '../README.md',
   categorizeByGroup: true,
-  navigationModel: {
-    excludeGroups: true,
+  navigation: {
+    includeGroups: true,
   },
 };
 
@@ -36,17 +35,23 @@ module.exports = {
       name: 'markdown',
       path: '../out/md/groups/members/opts-1',
       options: {
+        theme: 'stub-groups',
         ...opts1,
       },
     },
-
     {
       name: 'markdown',
       path: '../out/md/groups/modules/opts-1',
       options: {
         router: 'module',
+        theme: 'stub-groups',
         ...opts1,
       },
+    },
+    {
+      name: 'html',
+      path: '../out/html/groups',
+      options: {},
     },
   ],
 };

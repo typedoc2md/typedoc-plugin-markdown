@@ -308,19 +308,19 @@ export class NavigationBuilder {
           }, []) as NavigationItem[];
       }
 
-      const groupsWithoutDocs = reflection.groups?.filter(
-        (group) =>
-          group.title !== ReflectionKind.pluralString(ReflectionKind.Document),
-      );
-
-      const isModulesGroup =
-        groupsWithoutDocs?.length &&
-        groupsWithoutDocs[0].children.every(
-          (child) => child.kind === ReflectionKind.Module,
+      const groupsWithOwnFilesOnly = reflection.groups?.filter((group) => {
+        return group.children.every((child) =>
+          this.router.hasOwnDocument(child),
         );
+      });
 
-      if (isModulesGroup) {
-        return this.getGroupChildren(groupsWithoutDocs[0]) || null;
+      if (
+        groupsWithOwnFilesOnly?.length === 1 &&
+        groupsWithOwnFilesOnly[0].children.every(
+          (child) => child.kind === ReflectionKind.Module,
+        )
+      ) {
+        return this.getGroupChildren(groupsWithOwnFilesOnly[0]);
       }
 
       return reflection.groups

@@ -25,57 +25,73 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "kind": 2,
     "children": [
       {
-        "title": "index",
-        "kind": 2,
-        "path": "@scope/package-3/index/index.md",
-        "isDeprecated": false,
+        "title": "Documents",
         "children": [
           {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterfaceForIndexModule",
-                "kind": 256,
-                "path": "@scope/package-3/index/interfaces/PackageInterfaceForIndexModule.md",
-                "isDeprecated": false
-              }
-            ]
+            "title": "Package Document 1",
+            "kind": 8388608,
+            "path": "@scope/package-3/documents/Package-Document-1.md",
+            "isDeprecated": false
           }
         ]
       },
       {
-        "title": "module-1",
-        "kind": 2,
-        "path": "@scope/package-3/module-1/index.md",
-        "isDeprecated": false,
+        "title": "Modules",
         "children": [
           {
-            "title": "Interfaces",
+            "title": "index",
+            "kind": 2,
+            "path": "@scope/package-3/index/index.md",
+            "isDeprecated": false,
             "children": [
               {
-                "title": "PackageInterface1",
-                "kind": 256,
-                "path": "@scope/package-3/module-1/interfaces/PackageInterface1.md",
-                "isDeprecated": false
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "PackageInterfaceForIndexModule",
+                    "kind": 256,
+                    "path": "@scope/package-3/index/interfaces/PackageInterfaceForIndexModule.md",
+                    "isDeprecated": false
+                  }
+                ]
               }
             ]
-          }
-        ]
-      },
-      {
-        "title": "module-2",
-        "kind": 2,
-        "path": "@scope/package-3/module-2/index.md",
-        "isDeprecated": false,
-        "children": [
+          },
           {
-            "title": "Interfaces",
+            "title": "module-1",
+            "kind": 2,
+            "path": "@scope/package-3/module-1/index.md",
+            "isDeprecated": false,
             "children": [
               {
-                "title": "PackageInterface2",
-                "kind": 256,
-                "path": "@scope/package-3/module-2/interfaces/PackageInterface2.md",
-                "isDeprecated": false
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "PackageInterface1",
+                    "kind": 256,
+                    "path": "@scope/package-3/module-1/interfaces/PackageInterface1.md",
+                    "isDeprecated": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "module-2",
+            "kind": 2,
+            "path": "@scope/package-3/module-2/index.md",
+            "isDeprecated": false,
+            "children": [
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "PackageInterface2",
+                    "kind": 256,
+                    "path": "@scope/package-3/module-2/interfaces/PackageInterface2.md",
+                    "isDeprecated": false
+                  }
+                ]
               }
             ]
           }
@@ -333,6 +349,67 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       }
     ],
     "path": "package-7/index.md"
+  },
+  {
+    "title": "package-8",
+    "kind": 2,
+    "children": [
+      {
+        "title": "Modules",
+        "children": [
+          {
+            "title": "module-1",
+            "kind": 2,
+            "path": "package-8/module-1/index.md",
+            "isDeprecated": false,
+            "children": [
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "Module1Interface",
+                    "kind": 256,
+                    "path": "package-8/module-1/interfaces/Module1Interface.md",
+                    "isDeprecated": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "module-2",
+            "kind": 2,
+            "path": "package-8/module-2/index.md",
+            "isDeprecated": false,
+            "children": [
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "Module2Interface",
+                    "kind": 256,
+                    "path": "package-8/module-2/interfaces/Module2Interface.md",
+                    "isDeprecated": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "RootModuleInterface",
+            "kind": 256,
+            "path": "package-8/interfaces/RootModuleInterface.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ],
+    "path": "package-8/index.md"
   }
 ]"
 `;
@@ -362,57 +439,73 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "kind": 2,
     "children": [
       {
-        "title": "index",
-        "kind": 2,
-        "path": "package-3/index/README.md",
-        "isDeprecated": false,
+        "title": "Documents",
         "children": [
           {
-            "title": "Interfaces",
-            "children": [
-              {
-                "title": "PackageInterfaceForIndexModule",
-                "kind": 256,
-                "path": "package-3/index/interfaces/PackageInterfaceForIndexModule.md",
-                "isDeprecated": false
-              }
-            ]
+            "title": "Package Document 1",
+            "kind": 8388608,
+            "path": "package-3/documents/Package-Document-1.md",
+            "isDeprecated": false
           }
         ]
       },
       {
-        "title": "module-1",
-        "kind": 2,
-        "path": "package-3/module-1/README.md",
-        "isDeprecated": false,
+        "title": "Modules",
         "children": [
           {
-            "title": "Interfaces",
+            "title": "index",
+            "kind": 2,
+            "path": "package-3/index/README.md",
+            "isDeprecated": false,
             "children": [
               {
-                "title": "PackageInterface1",
-                "kind": 256,
-                "path": "package-3/module-1/interfaces/PackageInterface1.md",
-                "isDeprecated": false
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "PackageInterfaceForIndexModule",
+                    "kind": 256,
+                    "path": "package-3/index/interfaces/PackageInterfaceForIndexModule.md",
+                    "isDeprecated": false
+                  }
+                ]
               }
             ]
-          }
-        ]
-      },
-      {
-        "title": "module-2",
-        "kind": 2,
-        "path": "package-3/module-2/README.md",
-        "isDeprecated": false,
-        "children": [
+          },
           {
-            "title": "Interfaces",
+            "title": "module-1",
+            "kind": 2,
+            "path": "package-3/module-1/README.md",
+            "isDeprecated": false,
             "children": [
               {
-                "title": "PackageInterface2",
-                "kind": 256,
-                "path": "package-3/module-2/interfaces/PackageInterface2.md",
-                "isDeprecated": false
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "PackageInterface1",
+                    "kind": 256,
+                    "path": "package-3/module-1/interfaces/PackageInterface1.md",
+                    "isDeprecated": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "module-2",
+            "kind": 2,
+            "path": "package-3/module-2/README.md",
+            "isDeprecated": false,
+            "children": [
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "PackageInterface2",
+                    "kind": 256,
+                    "path": "package-3/module-2/interfaces/PackageInterface2.md",
+                    "isDeprecated": false
+                  }
+                ]
               }
             ]
           }
@@ -670,6 +763,67 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       }
     ],
     "path": "package-7/README.md"
+  },
+  {
+    "title": "package-8",
+    "kind": 2,
+    "children": [
+      {
+        "title": "Modules",
+        "children": [
+          {
+            "title": "module-1",
+            "kind": 2,
+            "path": "package-8/module-1/README.md",
+            "isDeprecated": false,
+            "children": [
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "Module1Interface",
+                    "kind": 256,
+                    "path": "package-8/module-1/interfaces/Module1Interface.md",
+                    "isDeprecated": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "module-2",
+            "kind": 2,
+            "path": "package-8/module-2/README.md",
+            "isDeprecated": false,
+            "children": [
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "Module2Interface",
+                    "kind": 256,
+                    "path": "package-8/module-2/interfaces/Module2Interface.md",
+                    "isDeprecated": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "RootModuleInterface",
+            "kind": 256,
+            "path": "package-8/interfaces/RootModuleInterface.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ],
+    "path": "package-8/README.md"
   }
 ]"
 `;
@@ -686,22 +840,38 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "kind": 2,
     "children": [
       {
-        "title": "index",
-        "kind": 2,
-        "path": "@scope/package-3/index-1.md",
-        "isDeprecated": false
+        "title": "Documents",
+        "children": [
+          {
+            "title": "Package Document 1",
+            "kind": 8388608,
+            "path": "@scope/package-3/documents/Package-Document-1.md",
+            "isDeprecated": false
+          }
+        ]
       },
       {
-        "title": "module-1",
-        "kind": 2,
-        "path": "@scope/package-3/module-1.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "module-2",
-        "kind": 2,
-        "path": "@scope/package-3/module-2.md",
-        "isDeprecated": false
+        "title": "Modules",
+        "children": [
+          {
+            "title": "index",
+            "kind": 2,
+            "path": "@scope/package-3/index-1.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "module-1",
+            "kind": 2,
+            "path": "@scope/package-3/module-1.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "module-2",
+            "kind": 2,
+            "path": "@scope/package-3/module-2.md",
+            "isDeprecated": false
+          }
+        ]
       }
     ],
     "path": "@scope/package-3/index.md"
@@ -803,6 +973,25 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       }
     ],
     "path": "package-7/index.md"
+  },
+  {
+    "title": "package-8",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module-1",
+        "kind": 2,
+        "path": "package-8/module-1.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "module-2",
+        "kind": 2,
+        "path": "package-8/module-2.md",
+        "isDeprecated": false
+      }
+    ],
+    "path": "package-8/index.md"
   }
 ]"
 `;
@@ -819,22 +1008,38 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
     "kind": 2,
     "children": [
       {
-        "title": "index",
-        "kind": 2,
-        "path": "package-3/index.md",
-        "isDeprecated": false
+        "title": "Documents",
+        "children": [
+          {
+            "title": "Package Document 1",
+            "kind": 8388608,
+            "path": "package-3/documents/Package-Document-1.md",
+            "isDeprecated": false
+          }
+        ]
       },
       {
-        "title": "module-1",
-        "kind": 2,
-        "path": "package-3/module-1.md",
-        "isDeprecated": false
-      },
-      {
-        "title": "module-2",
-        "kind": 2,
-        "path": "package-3/module-2.md",
-        "isDeprecated": false
+        "title": "Modules",
+        "children": [
+          {
+            "title": "index",
+            "kind": 2,
+            "path": "package-3/index.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "module-1",
+            "kind": 2,
+            "path": "package-3/module-1.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "module-2",
+            "kind": 2,
+            "path": "package-3/module-2.md",
+            "isDeprecated": false
+          }
+        ]
       }
     ],
     "path": "package-3/README.md"
@@ -936,6 +1141,25 @@ exports[`Navigation should get Navigation Json for packages: (Output File Strate
       }
     ],
     "path": "package-7/README.md"
+  },
+  {
+    "title": "package-8",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module-1",
+        "kind": 2,
+        "path": "package-8/module-1.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "module-2",
+        "kind": 2,
+        "path": "package-8/module-2.md",
+        "isDeprecated": false
+      }
+    ],
+    "path": "package-8/README.md"
   }
 ]"
 `;

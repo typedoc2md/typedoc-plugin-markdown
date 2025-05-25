@@ -198,12 +198,14 @@ export const excludeScopesInPaths: Partial<DeclarationOption> = {
  *
  * @example "index"
  *
+ * @deprecated
+ *
  * @hidden
  *
  * @category File
  */
 export const entryModule: Partial<DeclarationOption> = {
-  help: 'The name of a module that should act as the root page for the documentation.',
+  help: '@deprecated This functionality has been deprecated in favour of the @mergeModuleWith tag.',
   type: ParameterType.String,
 };
 

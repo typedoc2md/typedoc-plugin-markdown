@@ -710,6 +710,12 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: me
   "package-7/module-2/classes/ClassA.md",
   "package-7/module-2/classes/ClassB.md",
   "package-7/module-2/index.md",
+  "package-8/index.md",
+  "package-8/interfaces/RootModuleInterface.md",
+  "package-8/module-1/index.md",
+  "package-8/module-1/interfaces/Module1Interface.md",
+  "package-8/module-2/index.md",
+  "package-8/module-2/interfaces/Module2Interface.md",
   "packages.md",
 ]
 `;
@@ -757,6 +763,12 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: me
   "package-7/module-2/README.md",
   "package-7/module-2/classes/ClassA.md",
   "package-7/module-2/classes/ClassB.md",
+  "package-8/README.md",
+  "package-8/interfaces/RootModuleInterface.md",
+  "package-8/module-1/README.md",
+  "package-8/module-1/interfaces/Module1Interface.md",
+  "package-8/module-2/README.md",
+  "package-8/module-2/interfaces/Module2Interface.md",
 ]
 `;
 
@@ -784,6 +796,9 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: mo
   "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2.md",
   "package-7/module-1.md",
   "package-7/module-2.md",
+  "package-8/index.md",
+  "package-8/module-1.md",
+  "package-8/module-2.md",
   "packages.md",
 ]
 `;
@@ -811,6 +826,9 @@ exports[`Urls should gets Urls for packages entry points: outputFileStrategy: mo
   "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2.md",
   "package-7/module-1.md",
   "package-7/module-2.md",
+  "package-8/README.md",
+  "package-8/module-1.md",
+  "package-8/module-2.md",
 ]
 `;
 

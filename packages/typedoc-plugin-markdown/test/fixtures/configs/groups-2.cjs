@@ -38,7 +38,6 @@ module.exports = {
         ...opts2,
       },
     },
-
     {
       name: 'markdown',
       path: '../out/md/groups/modules/opts-2',

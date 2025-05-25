@@ -15,6 +15,9 @@ const commonOptions = {
     leftAlignHeaders: true,
   },
   projectDocuments: ['../PROJECT_DOC_1.md'],
+  navigation: {
+    includeGroups: true,
+  },
 };
 
 const opts1 = {
@@ -33,7 +36,6 @@ module.exports = {
         ...opts1,
       },
     },
-
     {
       name: 'markdown',
       path: '../out/md/packages/modules/opts-1',
@@ -41,6 +43,10 @@ module.exports = {
         router: 'module',
         ...opts1,
       },
+    },
+    {
+      name: 'html',
+      path: '../out/html/packages',
     },
   ],
 };

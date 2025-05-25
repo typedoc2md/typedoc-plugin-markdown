@@ -30,13 +30,16 @@ module.exports = {
       name: 'markdown',
       path: '../out/md/reflections/members/opts-1',
     },
-
     {
       name: 'markdown',
       path: '../out/md/reflections/modules/opts-1',
       options: {
         router: 'module',
       },
+    },
+    {
+      name: 'html',
+      path: '../out/html/reflections',
     },
   ],
 };

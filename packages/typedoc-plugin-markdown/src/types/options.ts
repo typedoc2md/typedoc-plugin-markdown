@@ -27,7 +27,7 @@ export interface PluginOptions {
   entryFileName?: string;
 
   /**
-   * The name of a module that should act as the root page for the documentation.
+   * @deprecated This functionality has been deprecated in favour of the @mergeModuleWith tag.
    */
   entryModule?: string;
 

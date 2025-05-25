@@ -1,0 +1,4 @@
+{
+  "entryPoints": ["./src/index.ts", "./src/module-1.ts", "./src/module-2.ts"],
+  "includeVersion": true
+}
