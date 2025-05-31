@@ -18,8 +18,9 @@ export interface PluginOptions {
 }
 
 export type RemarkPlugin =
+  | string
   | [string, Record<string, any>]
   | {
       applyTo: string[];
-      plugins: [string, Record<string, any>][];
+      plugins: (string | [string, Record<string, any>])[];
     };
