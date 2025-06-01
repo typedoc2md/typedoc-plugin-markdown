@@ -53,12 +53,14 @@ export function load(app: MarkdownApplication) {
           new Promise((resolve) => {
             const name = Array.isArray(plugin) ? plugin[0] : plugin;
             const pluginOptions = Array.isArray(plugin) ? plugin[1] : {};
-            import(getFullPath(name)).then(({ default: pluginFn }) => {
-              resolve({
-                pluginFn,
-                pluginOptions,
-              });
-            });
+            import(getFullPath(name as string)).then(
+              ({ default: pluginFn }) => {
+                resolve({
+                  pluginFn,
+                  pluginOptions,
+                });
+              },
+            );
           }),
       );
 
