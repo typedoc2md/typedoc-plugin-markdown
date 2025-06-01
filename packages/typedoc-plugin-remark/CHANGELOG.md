@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.1
+
+### Patch Changes
+
+- Fix incorrect options interface - thanks @r4ai.
+
 ## 2.0.0 (2025-04-22)
 
 This release includes fundamental architectural improvements and support for loading plugins conditionally based on page kind.
