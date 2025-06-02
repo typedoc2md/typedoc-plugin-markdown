@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.6.4 (2025-06-01)
+
+### Patch Changes
+
+- Added theme translations for "de" locale.
+- Fix navigation items without group or categories (`@group/@category=none`) ([#815](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/815)).
+- Correctly handle sidebar groups for packages with merged modules.
+
 ## 4.6.3 (2025-04-23)
 
 ### Patch Changes
