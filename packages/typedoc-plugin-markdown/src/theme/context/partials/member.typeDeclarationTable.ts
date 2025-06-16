@@ -68,8 +68,9 @@ export function typeDeclarationTable(
 
     const nameColumn: string[] = [];
 
-    if (this.router.hasUrl(declaration) && this.router.getAnchor(declaration)) {
-      nameColumn.push(`<a id="${this.router.getAnchor(declaration)}"></a>`);
+    const anchor = this.router.hasUrl(declaration) ? this.router.getAnchor(declaration) : undefined
+    if (anchor) {
+      nameColumn.push(`<a id="${anchor}"></a>`);
     }
 
     const name =

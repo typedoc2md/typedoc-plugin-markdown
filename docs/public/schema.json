@@ -447,6 +447,20 @@
           "type": "boolean",
           "description": "[typedoc-plugin-markdown] Wraps signatures and declarations in code blocks."
         },
+        "useCustomAnchors": {
+          "type": "boolean",
+          "description": "[typedoc-plugin-markdown] Add custom anchors like `{#custom-id}` to headings."
+        },
+        "customAnchorsFormat": {
+          "type": "string",
+          "enum": [
+            "curlyBrace",
+            "escapedCurlyBrace",
+            "squareBracket"
+          ],
+          "description": "[typedoc-plugin-markdown] Sets the format of custom anchors.",
+          "default": "curlyBrace"
+        },
         "useHTMLAnchors": {
           "type": "boolean",
           "description": "[typedoc-plugin-markdown] Add HTML anchors to page headings."

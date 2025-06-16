@@ -22,6 +22,11 @@ export interface PluginOptions {
   classPropertiesFormat?: 'list' | 'table' | 'htmlTable';
 
   /**
+   * The format of custom anchors.
+   */
+  customAnchorsFormat?: 'curlyBrace' | 'escapedCurlyBrace' | 'squareBracket';
+
+  /**
    * The file name of the entry page.
    */
   entryFileName?: string;
@@ -228,6 +233,11 @@ export interface PluginOptions {
    * Wraps signatures and declarations in code blocks.
    */
   useCodeBlocks?: boolean;
+
+  /**
+   * Add custom anchors like `{#custom-id}` to headings.
+   */
+  useCustomAnchors?: boolean;
 
   /**
    * Add HTML anchors to page headings.

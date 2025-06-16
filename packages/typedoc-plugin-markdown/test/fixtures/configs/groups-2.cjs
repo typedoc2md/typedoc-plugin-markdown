@@ -22,6 +22,8 @@ const commonOptions = {
 };
 
 const opts2 = {
+  customAnchorsFormat: 'escapedCurlyBrace',
+  useCustomAnchors: true,
   useHTMLAnchors: true,
   indexFormat: 'htmlTable',
 };

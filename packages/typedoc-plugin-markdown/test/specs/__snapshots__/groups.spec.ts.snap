@@ -447,7 +447,7 @@ A basic module
 
 <a id="functiona"></a>
 
-### functionA()
+### functionA() \\{#functiona\\}
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -455,7 +455,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="interfacea"></a>
 
-### InterfaceA
+### InterfaceA \\{#interfacea\\}
 
 Interface A comments line 1
 and comments on a soft line.
@@ -476,13 +476,13 @@ Block tag content.
 
 <a id="propa"></a>
 
-##### propA
+##### propA \\{#propa\\}
 
 > **propA**: \`string\`
 
 <a id="propb"></a>
 
-##### propB
+##### propB \\{#propb\\}
 
 > **propB**: \`string\`
 
@@ -490,7 +490,7 @@ Block tag content.
 
 <a id="interfaceb"></a>
 
-### InterfaceB
+### InterfaceB \\{#interfaceb\\}
 
 InterfaceB function.
 
@@ -500,13 +500,13 @@ InterfaceB function.
 
 <a id="propa-1"></a>
 
-##### propA
+##### propA \\{#propa-1\\}
 
 > **propA**: \`string\`
 
 <a id="propb-1"></a>
 
-##### propB
+##### propB \\{#propb-1\\}
 
 > **propB**: \`string\`
 
@@ -514,7 +514,7 @@ InterfaceB function.
 
 <a id="classa"></a>
 
-### ClassA
+### ClassA \\{#classa\\}
 
 ClassA function.
 
@@ -530,7 +530,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="classb"></a>
 
-### ClassB
+### ClassB \\{#classb\\}
 
 #### Constructors
 
@@ -544,7 +544,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="enuma"></a>
 
-### EnumA
+### EnumA \\{#enuma\\}
 
 EnumA function.
 
@@ -552,13 +552,13 @@ EnumA function.
 
 <a id="enumb"></a>
 
-### EnumB
+### EnumB \\{#enumb\\}
 
 ## Type Aliases
 
 <a id="typea"></a>
 
-### TypeA
+### TypeA \\{#typea\\}
 
 > **TypeA** = \`string\`
 
@@ -570,7 +570,7 @@ TypeA function.
 
 <a id="typeb"></a>
 
-### TypeB
+### TypeB \\{#typeb\\}
 
 > **TypeB** = \`object\`
 
@@ -580,13 +580,13 @@ TypeB function.
 
 <a id="propa-2"></a>
 
-##### propA
+##### propA \\{#propa-2\\}
 
 > **propA**: \`string\`
 
 <a id="propb-2"></a>
 
-##### propB?
+##### propB? \\{#propb-2\\}
 
 > \`optional\` **propB**: \`number\`
 
@@ -594,7 +594,7 @@ TypeB function.
 
 <a id="variablea"></a>
 
-### variableA
+### variableA \\{#variablea\\}
 
 > \`const\` **variableA**: \`""\` = \`''\`
 
@@ -602,7 +602,7 @@ TypeB function.
 
 <a id="variableb"></a>
 
-### variableB
+### variableB \\{#variableb\\}
 
 > \`const\` **variableB**: \`""\` = \`''\`
 "
@@ -690,85 +690,85 @@ A module that contains categories
 
 <a id="explicitnocategoryenum"></a>
 
-## ExplicitNoCategoryEnum
+## ExplicitNoCategoryEnum \\{#explicitnocategoryenum\\}
 
 ***
 
 <a id="explicitnocategoryinterface"></a>
 
-## ExplicitNoCategoryInterface
+## ExplicitNoCategoryInterface \\{#explicitnocategoryinterface\\}
 
 ## Category A
 
 <a id="categoryaenum1"></a>
 
-### CategoryAEnum1
+### CategoryAEnum1 \\{#categoryaenum1\\}
 
 ***
 
 <a id="categoryaenum2"></a>
 
-### CategoryAEnum2
+### CategoryAEnum2 \\{#categoryaenum2\\}
 
 ***
 
 <a id="categoryainterface1"></a>
 
-### CategoryAInterface1
+### CategoryAInterface1 \\{#categoryainterface1\\}
 
 ***
 
 <a id="categoryainterface2"></a>
 
-### CategoryAInterface2
+### CategoryAInterface2 \\{#categoryainterface2\\}
 
 ## Category B
 
 <a id="categorybenum1"></a>
 
-### CategoryBEnum1
+### CategoryBEnum1 \\{#categorybenum1\\}
 
 ***
 
 <a id="categorybenum2"></a>
 
-### CategoryBEnum2
+### CategoryBEnum2 \\{#categorybenum2\\}
 
 ***
 
 <a id="categorybinterface1"></a>
 
-### CategoryBInterface1
+### CategoryBInterface1 \\{#categorybinterface1\\}
 
 ***
 
 <a id="categorybinterface2"></a>
 
-### CategoryBInterface2
+### CategoryBInterface2 \\{#categorybinterface2\\}
 
 ## Category C
 
 <a id="categorycinterface1"></a>
 
-### CategoryCInterface1
+### CategoryCInterface1 \\{#categorycinterface1\\}
 
 ## Other
 
 <a id="uncategorizedenum"></a>
 
-### UnCategorizedEnum
+### UnCategorizedEnum \\{#uncategorizedenum\\}
 
 ***
 
 <a id="categorycinterface2"></a>
 
-### CategoryCInterface2
+### CategoryCInterface2 \\{#categorycinterface2\\}
 
 ***
 
 <a id="uncategorizedinterace"></a>
 
-### UnCategorizedInterace
+### UnCategorizedInterace \\{#uncategorizedinterace\\}
 "
 `;
 
@@ -1424,7 +1424,7 @@ A module with disabled groups
 
 <a id="enuma"></a>
 
-## EnumA
+## EnumA \\{#enuma\\}
 
 EnumA function.
 
@@ -1432,13 +1432,13 @@ EnumA function.
 
 <a id="enumb"></a>
 
-## EnumB
+## EnumB \\{#enumb\\}
 
 ***
 
 <a id="classa"></a>
 
-## ClassA
+## ClassA \\{#classa\\}
 
 ClassA function.
 
@@ -1454,7 +1454,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="classb"></a>
 
-## ClassB
+## ClassB \\{#classb\\}
 
 ### Constructors
 
@@ -1468,7 +1468,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="interfacea"></a>
 
-## InterfaceA
+## InterfaceA \\{#interfacea\\}
 
 Interface A
 
@@ -1476,13 +1476,13 @@ Interface A
 
 <a id="propa"></a>
 
-#### propA
+#### propA \\{#propa\\}
 
 > **propA**: \`string\`
 
 <a id="propb"></a>
 
-#### propB
+#### propB \\{#propb\\}
 
 > **propB**: \`string\`
 
@@ -1490,7 +1490,7 @@ Interface A
 
 <a id="interfaceb"></a>
 
-## InterfaceB
+## InterfaceB \\{#interfaceb\\}
 
 InterfaceB function.
 
@@ -1498,13 +1498,13 @@ InterfaceB function.
 
 <a id="propa-1"></a>
 
-#### propA
+#### propA \\{#propa-1\\}
 
 > **propA**: \`string\`
 
 <a id="propb-1"></a>
 
-#### propB
+#### propB \\{#propb-1\\}
 
 > **propB**: \`string\`
 
@@ -1512,7 +1512,7 @@ InterfaceB function.
 
 <a id="typea"></a>
 
-## TypeA
+## TypeA \\{#typea\\}
 
 > **TypeA** = \`string\`
 
@@ -1522,7 +1522,7 @@ TypeA function.
 
 <a id="typeb"></a>
 
-## TypeB
+## TypeB \\{#typeb\\}
 
 > **TypeB** = \`object\`
 
@@ -1532,13 +1532,13 @@ TypeB function.
 
 <a id="propa-2"></a>
 
-#### propA
+#### propA \\{#propa-2\\}
 
 > **propA**: \`string\`
 
 <a id="propb-2"></a>
 
-#### propB?
+#### propB? \\{#propb-2\\}
 
 > \`optional\` **propB**: \`number\`
 
@@ -1546,7 +1546,7 @@ TypeB function.
 
 <a id="variablea"></a>
 
-## variableA
+## variableA \\{#variablea\\}
 
 > \`const\` **variableA**: \`""\` = \`''\`
 
@@ -1556,7 +1556,7 @@ Comments for variableA
 
 <a id="variableb"></a>
 
-## variableB
+## variableB \\{#variableb\\}
 
 > \`const\` **variableB**: \`""\` = \`''\`
 
@@ -1564,7 +1564,7 @@ Comments for variableA
 
 <a id="functiona"></a>
 
-## functionA()
+## functionA() \\{#functiona\\}
 
 _SIGNATURE_MEMBER_PARTIAL_
 "
@@ -2203,7 +2203,7 @@ exports[`Groups should compile module index for a namespace: (Output File Strate
 
 <a id="namespaceinterface"></a>
 
-### NamespaceInterface
+### NamespaceInterface \\{#namespaceinterface\\}
 
 ## Namespaces
 
@@ -2673,7 +2673,7 @@ A module that contains namespaces
 
 <a id="_function_a_"></a>
 
-### \\_function\\_A\\_()
+### \\_function\\_A\\_() \\{#_function_a_\\}
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -2681,7 +2681,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="functionb"></a>
 
-### functionB()
+### functionB() \\{#functionb\\}
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -2689,19 +2689,19 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="_interface_a_"></a>
 
-### \\_Interface\\_A\\_
+### \\_Interface\\_A\\_ \\{#_interface_a_\\}
 
 ***
 
 <a id="interfaceb"></a>
 
-### InterfaceB
+### InterfaceB \\{#interfaceb\\}
 
 ## Classes
 
 <a id="__class_a_"></a>
 
-### \\_\\_Class\\_A\\_
+### \\_\\_Class\\_A\\_ \\{#__class_a_\\}
 
 #### Constructors
 
@@ -2715,7 +2715,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="classb"></a>
 
-### ClassB
+### ClassB \\{#classb\\}
 
 #### Constructors
 
@@ -2729,13 +2729,13 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="_enum_a_"></a>
 
-### \\_Enum\\_A\\_
+### \\_Enum\\_A\\_ \\{#_enum_a_\\}
 
 ***
 
 <a id="enumb"></a>
 
-### EnumB
+### EnumB \\{#enumb\\}
 
 ## Namespaces
 
@@ -2778,7 +2778,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="_type_a_"></a>
 
-### \\_Type\\_A\\_
+### \\_Type\\_A\\_ \\{#_type_a_\\}
 
 > **\\_Type\\_A\\_** = \`string\`
 
@@ -2786,7 +2786,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="typeb"></a>
 
-### TypeB
+### TypeB \\{#typeb\\}
 
 > **TypeB** = \`string\`
 
@@ -2794,7 +2794,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="_variable_a_"></a>
 
-### \\_variable\\_A\\_
+### \\_variable\\_A\\_ \\{#_variable_a_\\}
 
 > \`const\` **\\_variable\\_A\\_**: \`true\` = \`true\`
 
@@ -2802,7 +2802,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="variableb"></a>
 
-### variableB
+### variableB \\{#variableb\\}
 
 > \`const\` **variableB**: \`true\` = \`true\`
 "
@@ -2877,7 +2877,7 @@ A module that contains references
 
 <a id="defaultfunction"></a>
 
-### defaultFunction()
+### defaultFunction() \\{#defaultfunction\\}
 
 _SIGNATURE_MEMBER_PARTIAL_
 
@@ -2885,7 +2885,7 @@ _SIGNATURE_MEMBER_PARTIAL_
 
 <a id="default"></a>
 
-### default
+### default \\{#default\\}
 
 Renames and re-exports [defaultFunction](#defaultfunction)
 
@@ -2893,7 +2893,7 @@ Renames and re-exports [defaultFunction](#defaultfunction)
 
 <a id="interfacea"></a>
 
-### InterfaceA
+### InterfaceA \\{#interfacea\\}
 
 Re-exports [InterfaceA](basic.md#interfacea)
 
@@ -2901,7 +2901,7 @@ Re-exports [InterfaceA](basic.md#interfacea)
 
 <a id="renamedinterfaceb"></a>
 
-### RenamedInterfaceB
+### RenamedInterfaceB \\{#renamedinterfaceb\\}
 
 Renames and re-exports [InterfaceB](basic.md#interfaceb)
 "
@@ -2984,7 +2984,7 @@ A module that contains references
 
 <a id="default"></a>
 
-### default
+### default \\{#default\\}
 
 Renames and re-exports [defaultFunction](functions/defaultFunction.md)
 
@@ -2992,7 +2992,7 @@ Renames and re-exports [defaultFunction](functions/defaultFunction.md)
 
 <a id="interfacea"></a>
 
-### InterfaceA
+### InterfaceA \\{#interfacea\\}
 
 Re-exports [InterfaceA](../basic/interfaces/InterfaceA.md)
 
@@ -3000,7 +3000,7 @@ Re-exports [InterfaceA](../basic/interfaces/InterfaceA.md)
 
 <a id="renamedinterfaceb"></a>
 
-### RenamedInterfaceB
+### RenamedInterfaceB \\{#renamedinterfaceb\\}
 
 Renames and re-exports [InterfaceB](../basic/interfaces/InterfaceB.md)
 "
