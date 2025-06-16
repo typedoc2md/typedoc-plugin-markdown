@@ -8,21 +8,39 @@ export function memberContainer(
   options: { headingLevel: number; nested?: boolean; groupTitle?: string },
 ): string {
   const md: string[] = [];
+  const anchor = this.router.hasUrl(model)
+    ? this.router.getAnchor(model)
+    : undefined;
 
   if (
     !this.router.hasOwnDocument(model) &&
-    this.router.hasUrl(model) &&
-    this.router.getAnchor(model) &&
+    anchor &&
     this.options.getValue('useHTMLAnchors')
   ) {
-    md.push(`<a id="${this.router.getAnchor(model)}"></a>`);
+    md.push(`<a id="${anchor}"></a>`);
   }
 
   if (
     !this.router.hasOwnDocument(model) &&
     ![ReflectionKind.Constructor].includes(model.kind)
   ) {
-    md.push(heading(options.headingLevel, this.partials.memberTitle(model)));
+    let title = this.partials.memberTitle(model);
+
+    if (anchor && this.options.getValue('useCustomAnchors')) {
+      const customAnchorsFormat = this.options.getValue('customAnchorsFormat');
+
+      if (customAnchorsFormat === 'curlyBrace') {
+        title = `${title} {#${anchor}}`;
+      } else if (customAnchorsFormat === 'escapedCurlyBrace') {
+        title = `${title} \\{#${anchor}\\}`;
+      } else if (customAnchorsFormat === 'squareBracket') {
+        title = `${title} [#${anchor}]`;
+      } else {
+        throw new Error(`Invalid custom anchors format`);
+      }
+    }
+
+    md.push(heading(options.headingLevel, title));
   }
 
   md.push(

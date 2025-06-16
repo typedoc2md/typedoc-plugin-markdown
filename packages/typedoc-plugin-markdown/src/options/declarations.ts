@@ -26,6 +26,7 @@ import {
   TEXT_CONTENT_MAPPINGS,
 } from './constants.js';
 import {
+  CustomAnchorsFormat,
   DisplayFormat,
   OutputFileStrategy,
   TypeDeclarationVisibility,
@@ -594,7 +595,7 @@ export const formatWithPrettier: Partial<DeclarationOption> = {
  *
  * Use this option to specify a separate Prettier configuration file in a custom location.
  *
- * Please note this option is only applicable when `formatWithPrettier` is set to `"true"`.
+ * Please note this option is only applicable when `formatWithPrettier` is set to `true`.
  *
  * @example "./path/to/.prettierrc.json"
  *
@@ -628,6 +629,48 @@ export const useHTMLEncodedBrackets: Partial<DeclarationOption> = {
   help: 'Use HTML encoded entities for angle brackets.',
   type: ParameterType.Boolean,
   defaultValue: false,
+};
+
+/**
+ * Controls whether HTML custom heading IDs ([`{#custom-id}`](https://www.markdownguide.org/extended-syntax/#heading-ids)) are added to headings.
+ * 
+ * This syntax is not included in standard Markdown specifications such as [GFM](https://github.github.com/gfm/) or [CommonMark](https://spec.commonmark.org/). You may need to configure your Markdown parser to enable this feature.
+ *
+ * Support for custom heading IDs in popular tools:
+ * 
+ * - Docusaurus - [native support](https://docusaurus.io/docs/3.7.0/markdown-features/toc#heading-ids)
+ * - Vitepress - [native support](https://vitepress.dev/guide/markdown#custom-anchors)
+ * - Remark - requires additional plugin like [remark-custom-heading-id](https://www.npmjs.com/package/remark-custom-heading-id)
+ * - Rehype - requires additional plugin like [rehype-slug-custom-id](https://www.npmjs.com/package/rehype-slug-custom-id)
+ *
+ * @category Utility
+ */
+export const useCustomAnchors: Partial<DeclarationOption> = {
+  help: 'Add custom anchors like `{#custom-id}` to headings.',
+  type: ParameterType.Boolean,
+  defaultValue: false,
+};
+
+/**
+ * This option specifies the output format for custom anchors. This is only
+ * applicable when `useCustomAnchors` is set to `true`.
+ *
+ * The following formats are supported:
+ *
+ * - `curlyBrace` - `{#custom-id}` This is the default format.
+ * - `escapedCurlyBrace` - `\{#custom-id\}` Use this if you want to parse the
+ *   output with a MDX parser. The `{#custom-id}` notation does not work in MDX
+ *   files because MDX treats `{}` as JSX syntax, causing a parsing error.
+ * - `squareBracket` - `[#custom-id]` Use this if you want to use with
+ *   [nextra](https://nextra.site/docs/guide/markdown#custom-heading-id).
+ *
+ * @category Utility
+ */
+export const customAnchorsFormat: Partial<DeclarationOption> = {
+  help: 'The format of custom anchors.',
+  type: ParameterType.Map,
+  map: CustomAnchorsFormat,
+  defaultValue: CustomAnchorsFormat.CurlyBrace,
 };
 
 /**
