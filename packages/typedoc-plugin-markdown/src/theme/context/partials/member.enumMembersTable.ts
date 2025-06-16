@@ -42,8 +42,9 @@ export function enumMembersTable(
     const row: string[] = [];
     const nameColumn: string[] = [];
 
-    if (this.router.hasUrl(property) && this.router.getAnchor(property)) {
-      nameColumn.push(`<a id="${this.router.getAnchor(property)}"></a>`);
+    const anchor = this.router.hasUrl(property) ? this.router.getAnchor(property) : undefined
+    if (anchor) {
+      nameColumn.push(`<a id="${anchor}"></a>`);
     }
 
     nameColumn.push(backTicks(property.name));

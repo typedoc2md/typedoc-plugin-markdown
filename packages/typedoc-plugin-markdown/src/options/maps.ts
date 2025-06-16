@@ -22,6 +22,15 @@ export enum DisplayFormat {
 }
 
 /**
+ * The allowed values for the custom anchors format.
+ */
+export enum CustomAnchorsFormat {
+  CurlyBrace = 'curlyBrace',
+  EscapedCurlyBrace = 'escapedCurlyBrace',
+  SquareBracket = 'squareBracket',
+}
+
+/**
  * The allowed values for formatting reflections and indexes.
  */
 export enum TypeDeclarationVisibility {

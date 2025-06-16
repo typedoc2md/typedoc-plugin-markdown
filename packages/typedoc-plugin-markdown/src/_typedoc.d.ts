@@ -5,6 +5,7 @@ declare module 'typedoc' {
     anchorPrefix: string;
     blockTagsPreserveOrder: string[];
     classPropertiesFormat: 'list' | 'table' | 'htmlTable';
+    customAnchorsFormat: 'curlyBrace' | 'escapedCurlyBrace' | 'squareBracket';
     entryFileName: string;
     entryModule: string;
     enumMembersFormat: 'list' | 'table' | 'htmlTable';
@@ -73,6 +74,7 @@ declare module 'typedoc' {
     typeDeclarationFormat: 'list' | 'table' | 'htmlTable';
     typeDeclarationVisibility: 'compact' | 'verbose';
     useCodeBlocks: boolean;
+    useCustomAnchors: boolean;
     useHTMLAnchors: boolean;
     useHTMLEncodedBrackets: boolean;
   }
