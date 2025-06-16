@@ -595,7 +595,7 @@ export const formatWithPrettier: Partial<DeclarationOption> = {
  *
  * Use this option to specify a separate Prettier configuration file in a custom location.
  *
- * Please note this option is only applicable when `formatWithPrettier` is set to `"true"`.
+ * Please note this option is only applicable when `formatWithPrettier` is set to `true`.
  *
  * @example "./path/to/.prettierrc.json"
  *
@@ -653,7 +653,7 @@ export const useCustomAnchors: Partial<DeclarationOption> = {
 
 /**
  * This option specifies the output format for custom anchors. This is only
- * applicable when `useCustomAnchors` is set to `"true"`.
+ * applicable when `useCustomAnchors` is set to `true`.
  *
  * The following formats are supported:
  *
