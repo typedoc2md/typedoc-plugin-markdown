@@ -77,7 +77,7 @@ function fullHierarchy(
   }
 
   const res: string[] = [
-    `${[...Array(level)].map(() => '  ').join('')}- ${link(root.name, context.urlTo(root))}`,
+    `${'  '.repeat(level)}- ${link(root.name, context.urlTo(root))}`,
   ];
 
   if (children.length) {
