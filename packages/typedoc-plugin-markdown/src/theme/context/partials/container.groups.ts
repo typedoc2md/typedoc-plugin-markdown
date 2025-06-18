@@ -6,7 +6,6 @@ import {
 } from '@plugin/theme/lib/index.js';
 import {
   ContainerReflection,
-  DeclarationReflection,
   i18n,
   ProjectReflection,
   ReflectionKind,
@@ -97,7 +96,7 @@ export function groups(
         ) {
           md.push(
             this.partials.propertiesTable(
-              group.children as DeclarationReflection[],
+              group.children.filter(child => child.isDeclaration()),
               {
                 isEventProps,
                 kind: options.kind,
@@ -107,13 +106,13 @@ export function groups(
         } else if (isEnumGroup && this.helpers.useTableFormat('enums')) {
           md.push(
             this.partials.enumMembersTable(
-              group.children as DeclarationReflection[],
+              group.children.filter(child => child.isDeclaration()),
             ),
           );
         } else {
           if (group.children) {
             md.push(
-              this.partials.members(group.children as DeclarationReflection[], {
+              this.partials.members(group.children.filter(child => child.isDeclaration()), {
                 headingLevel: isNoneSection(group)
                   ? options.headingLevel
                   : options.headingLevel + 1,

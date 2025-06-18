@@ -19,18 +19,18 @@ export function groupIndex(group: ReflectionGroup | ReflectionCategory) {
   if (this.options.getValue('indexFormat').toLowerCase().includes('table')) {
     return getGroupIndexTable(
       this,
-      group.children as DeclarationReflection[] | DocumentReflection[],
+      group.children,
     );
   }
   return getGroupIndexList(
     this,
-    group.children as DeclarationReflection[] | DocumentReflection[],
+    group.children,
   );
 }
 
 export function getGroupIndexList(
   context: MarkdownThemeContext,
-  children: DeclarationReflection[] | DocumentReflection[],
+  children: (DeclarationReflection | DocumentReflection)[],
 ) {
   const filteredChildren =
     children
