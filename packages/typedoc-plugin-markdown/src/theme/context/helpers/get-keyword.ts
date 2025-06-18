@@ -1,6 +1,6 @@
 import { ReflectionKind } from 'typedoc';
 
-export function getKeyword(model: ReflectionKind): string {
+export function getKeyword(model: ReflectionKind): string | undefined {
   const KEYWORD_MAP = {
     [ReflectionKind.Class]: 'class',
     [ReflectionKind.Enum]: 'enum',
