@@ -6,7 +6,6 @@ import {
 } from '@plugin/theme/lib/index.js';
 import {
   ContainerReflection,
-  DeclarationReflection,
   ReflectionGroup,
   ReflectionKind,
 } from 'typedoc';
