@@ -320,7 +320,7 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
       options?: { isTarget: boolean } | undefined,
     ) => helpers.getHierarchyType.apply(context, [model, options]) as string,
     getKeyword: (model: ReflectionKind) =>
-      helpers.getKeyword.apply(context, [model]) as string,
+      helpers.getKeyword.apply(context, [model]) as string | undefined,
     getModifier: (model: DeclarationReflection) =>
       helpers.getModifier.apply(context, [model]) as string | null,
     getParameterDefaultValue: (model: ParameterReflection) =>
