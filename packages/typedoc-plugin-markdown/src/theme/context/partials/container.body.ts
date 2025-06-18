@@ -54,7 +54,7 @@ export function body(
             } else {
               md.push(
                 this.partials.members(
-                  group.children as DeclarationReflection[],
+                  group.children.filter(child => child.isDeclaration()),
                   {
                     headingLevel: options.headingLevel,
                   },
@@ -83,9 +83,9 @@ export function body(
             children: model.children,
           } as ReflectionGroup),
         );
-      } else {
+      } else if (model.children) {
         md.push(
-          this.partials.members(model.children as DeclarationReflection[], {
+          this.partials.members(model.children, {
             headingLevel: options.headingLevel,
           }),
         );

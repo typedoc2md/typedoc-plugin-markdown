@@ -14,8 +14,8 @@ export function members(
     }
     return true;
   };
-  const items = model?.filter((item) => !this.router.hasOwnDocument(item));
-  items?.forEach((item, index) => {
+  const items = model.filter((item) => !this.router.hasOwnDocument(item));
+  items.forEach((item, index) => {
     md.push(
       this.partials.memberContainer(item, {
         headingLevel: options.headingLevel,

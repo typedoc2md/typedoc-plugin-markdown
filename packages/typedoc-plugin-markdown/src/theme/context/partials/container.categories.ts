@@ -5,7 +5,6 @@ import {
   sortNoneSectionFirst,
 } from '@plugin/theme/lib/index.js';
 import {
-  DeclarationReflection,
   ReflectionCategory,
   ReflectionKind,
 } from 'typedoc';
@@ -26,9 +25,9 @@ export function categories(
       }
       md.push(this.partials.groupIndex(category));
     } else {
-      const categoryChildren = category.children?.filter(
+      const categoryChildren = category.children.filter(
         (child) => child.kind !== ReflectionKind.Constructor,
-      );
+      ).filter(child => child.isDeclaration());
       if (categoryChildren.length) {
         if (!isNoneSection(category)) {
           md.push(heading(options.headingLevel, category.title));
@@ -37,7 +36,7 @@ export function categories(
           md.push(this.helpers.getCommentParts(category.description));
         }
         md.push(
-          this.partials.members(categoryChildren as DeclarationReflection[], {
+          this.partials.members(categoryChildren, {
             headingLevel: isNoneSection(category)
               ? options.headingLevel
               : options.headingLevel + 1,
