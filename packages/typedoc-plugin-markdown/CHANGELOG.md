@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.7.0
+
+### Minor Changes
+
+- Added `useCustomAnchors` and `customAnchorsFormat` options - thanks @ocavue.
+
+### Patch Changes
+
+- Fix incorrect overload function comments ([#827](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/827)).
+
 ## 4.6.4 (2025-06-01)
 
 ### Patch Changes
