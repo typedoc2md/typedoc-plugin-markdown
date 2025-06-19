@@ -1,49 +1,42 @@
-import * as fs from 'fs';
-import * as path from 'path';
-describe(`GithubWiki`, () => {
-  test(`should output index docs`, async () => {
-    const contents = fs
-      .readFileSync(path.join(__dirname, '../out/default/Home.md'))
-      .toString();
-    expect(contents).toMatchSnapshot();
+import {
+  assertToMatchSnapshot,
+  getDirContents,
+  getFileContents,
+} from '@devtools/testing';
+
+describe(`typedoc-githubwiki-theme`, () => {
+  it(`should output index docs`, async () => {
+    const contents = getFileContents('out/default/Home.md');
+    assertToMatchSnapshot('index-docs', contents);
   });
 
-  test(`should output member docs`, async () => {
-    const contents = fs
-      .readFileSync(
-        path.join(__dirname, '../out/default/module-1.Class.ClassA.md'),
-      )
-      .toString();
-    expect(contents).toMatchSnapshot();
+  it(`should output member docs`, async () => {
+    const contents = getFileContents('out/default/module-1.Class.ClassA.md');
+    assertToMatchSnapshot('member-docs', contents);
   });
 
-  test(`should get default files`, async () => {
-    const contents = fs.readdirSync(path.join(__dirname, '../out/default'));
-    expect(contents).toMatchSnapshot();
+  it(`should get default files`, async () => {
+    const contents = getDirContents('out/default');
+    assertToMatchSnapshot('default-files', contents);
   });
 
-  test(`should output default sidebar`, async () => {
-    const contents = fs
-      .readFileSync(path.join(__dirname, '../out/default/_Sidebar.md'))
-      .toString();
-    expect(contents).toMatchSnapshot();
+  it(`should output default sidebar`, async () => {
+    const contents = getFileContents('out/default/_Sidebar.md');
+    assertToMatchSnapshot('default-sidebar', contents);
   });
 
-  test(`should output globals sidebar`, async () => {
-    const contents = fs
-      .readFileSync(path.join(__dirname, '../out/globals/_Sidebar.md'))
-      .toString();
-    expect(contents).toMatchSnapshot();
-  });
-  test(`should output single modules sidebar`, async () => {
-    const contents = fs
-      .readFileSync(path.join(__dirname, '../out/single-modules/_Sidebar.md'))
-      .toString();
-    expect(contents).toMatchSnapshot();
+  it(`should output globals sidebar`, async () => {
+    const contents = getFileContents('out/globals/_Sidebar.md');
+    assertToMatchSnapshot('globals-sidebar', contents);
   });
 
-  test(`should not output single page sidebar`, async () => {
-    const contents = fs.readdirSync(path.join(__dirname, '../out/single-page'));
-    expect(contents).toMatchSnapshot();
+  it(`should output single modules sidebar`, async () => {
+    const contents = getFileContents('out/single-modules/_Sidebar.md');
+    assertToMatchSnapshot('single-modules', contents);
+  });
+
+  it(`should not output single page sidebar`, async () => {
+    const contents = getDirContents('out/single-page');
+    assertToMatchSnapshot('single-page-sidebar', contents);
   });
 });

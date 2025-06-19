@@ -1,0 +1,28 @@
+# Function: multipleExampleTags()
+
+> **multipleExampleTags**(): `boolean`
+
+Defined in: [index.ts:1](http://source-url)
+
+Function with multiple example tags
+
+## Returns
+
+`boolean`
+
+## Examples
+
+```ts
+// If there are no code blocks, TypeDoc assumes the whole tag
+// should be a code block. This is not valid TSDoc, but is recognized
+// by VSCode and enables better JSDoc support.
+
+factorial(1)
+```
+
+If there is a code block, then both TypeDoc and VSCode will treat
+text outside of the code block as regular text.
+
+```ts
+factorial(1)
+```

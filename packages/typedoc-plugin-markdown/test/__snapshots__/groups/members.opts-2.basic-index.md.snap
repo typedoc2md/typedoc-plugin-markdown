@@ -1,0 +1,236 @@
+[**typedoc-stubs**](../index.md)
+
+***
+
+[typedoc-stubs](../index.md) / basic
+
+# basic
+
+A basic module
+
+## Functions
+
+<table>
+<thead>
+<tr>
+<th align="left">Function</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[functionA](functions/functionA.md)
+
+</td>
+<td>
+
+Comments for functionA
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Interfaces
+
+<table>
+<thead>
+<tr>
+<th align="left">Interface</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[InterfaceA](interfaces/InterfaceA.md)
+
+</td>
+<td>
+
+Interface A comments line 1
+and comments on a soft line.
+
+Comments on double new line.
+
+```typescript
+const a = new InterfaceA();
+```
+
+**Remarks**
+
+Block tag content.
+
+- [InterfaceB.propA](interfaces/InterfaceB.md#propa)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[InterfaceB](interfaces/InterfaceB.md)
+
+</td>
+<td>
+
+InterfaceB function.
+
+- [InterfaceA.propA](interfaces/InterfaceA.md#propa)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Classes
+
+<table>
+<thead>
+<tr>
+<th align="left">Class</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[ClassA](classes/ClassA.md)
+
+</td>
+<td>
+
+ClassA function.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ClassB](classes/ClassB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Enumerations
+
+<table>
+<thead>
+<tr>
+<th align="left">Enumeration</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[EnumA](enumerations/EnumA.md)
+
+</td>
+<td>
+
+EnumA function.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[EnumB](enumerations/EnumB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Type Aliases
+
+<table>
+<thead>
+<tr>
+<th align="left">Type Alias</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[TypeA](type-aliases/TypeA.md)
+
+</td>
+<td>
+
+TypeA function.
+
+[TypeB#propB](type-aliases/TypeB.md#propb)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[TypeB](type-aliases/TypeB.md)
+
+</td>
+<td>
+
+TypeB function.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Variables
+
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[variableA](variables/variableA.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[variableB](variables/variableB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>

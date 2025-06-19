@@ -1,0 +1,66 @@
+# Class: DerivedClassA
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for DerivedClassA
+
+## Extends
+
+- [`AbstractClass`](AbstractClass.md)
+
+## Constructors
+
+### Constructor
+
+```ts
+new DerivedClassA(): DerivedClassA;
+```
+
+#### Returns
+
+`DerivedClassA`
+
+#### Inherited from
+
+[`AbstractClass`](AbstractClass.md).[`constructor`](AbstractClass.md#constructor)
+
+## Properties
+
+| Property | Type | Default value | Description | Overrides |
+| :------ | :------ | :------ | :------ | :------ |
+| <a id="abstractprop"></a> `abstractProp` | `string` | `'abstractProp'` | Comments for abstractProp | [`AbstractClass`](AbstractClass.md).[`abstractProp`](AbstractClass.md#abstractprop) |
+| <a id="derivedprop"></a> `derivedProp` | `string` | `undefined` | - | - |
+
+## Methods
+
+### abstractMethod()
+
+```ts
+abstractMethod(): string;
+```
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for abstractMethod
+
+#### Returns
+
+`string`
+
+#### Overrides
+
+[`AbstractClass`](AbstractClass.md).[`abstractMethod`](AbstractClass.md#abstractmethod)
+
+***
+
+### derivedMethod()
+
+```ts
+derivedMethod(): string;
+```
+
+Defined in: [classes.ts:1](http://source-url)
+
+#### Returns
+
+`string`

@@ -1,23 +1,24 @@
-import { expectDirToEqual, getOutDir } from '@devtools/testing';
+import { strict as assert } from 'assert';
 import * as fs from 'fs';
+import { expectDirToEqual, getOutDir } from '../helpers.js';
 
-describe(`Outputs`, () => {
-  test(`should output html`, () => {
-    expectDirToEqual(`html/outputs`);
+describe(`typedoc-plugin-markdown (Integration /Outputs)`, () => {
+  it(`should output html`, () => {
+    expectDirToEqual('outputs', `html/outputs`);
   });
 
-  test(`should output md (kind)`, () => {
-    expectDirToEqual(`md/outputs/kind`);
+  it(`should output md (kind)`, () => {
+    expectDirToEqual('outputs', `md/outputs/kind`);
   });
 
-  test(`should output md (kind-dir)`, () => {
-    expectDirToEqual(`md/outputs/kind-dir`);
+  it(`should output md (kind-dir)`, () => {
+    expectDirToEqual('outputs', `md/outputs/kind-dir`);
   });
 
-  test(`should output md with anchors (kind-dir)`, () => {
+  it(`should output md with anchors (kind-dir)`, () => {
     const readmeDoc = fs.existsSync(
       `${getOutDir()}/md/outputs/kind-dir/classes/ExtendedClass/index.md`,
     );
-    expect(readmeDoc).toBeTruthy();
+    assert.ok(readmeDoc);
   });
 });

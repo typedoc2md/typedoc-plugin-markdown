@@ -1,0 +1,23 @@
+# Interface: MultipleIndexableInterface
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+## Indexable
+
+```ts
+[key: string]: string
+```
+
+First index signature
+
+```ts
+[index: number]: string
+```
+
+Second index signature
+
+## Properties
+
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| <a id="prop"></a> `prop` | `string` | Prop |

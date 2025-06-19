@@ -1,7 +1,7 @@
-import { expectFileToEqual } from '@devtools/testing';
+import { expectFileToEqual } from '../helpers.js';
 
-describe(`Groups`, () => {
-  test(`should compile index page for project`, () => {
+describe(`typedoc-plugin-markdown (Integration /Groups)`, () => {
+  it(`should compile index page for project`, () => {
     expectFileToEqual(
       'groups',
       ['modules', 'members'],
@@ -9,17 +9,17 @@ describe(`Groups`, () => {
     );
   });
 
-  test(`should compile readme for a project`, () => {
+  it(`should compile readme for a project`, () => {
     expectFileToEqual('groups', 'modules', 'index.md', 1);
   });
 
-  test(`should compile basic module index page`, () => {
+  it(`should compile basic module index page`, () => {
     expectFileToEqual('groups', 'modules', 'basic.md');
 
     expectFileToEqual('groups', 'members', 'basic/index.md');
   });
 
-  test(`should compile module index with namespaces index page`, () => {
+  it(`should compile module index with namespaces index page`, () => {
     expectFileToEqual(
       'groups',
       ['modules', 'members'],
@@ -27,7 +27,7 @@ describe(`Groups`, () => {
     );
   });
 
-  test(`should compile module index for a namespace`, () => {
+  it(`should compile module index for a namespace`, () => {
     expectFileToEqual(
       'groups',
       ['modules', 'members'],
@@ -35,31 +35,31 @@ describe(`Groups`, () => {
     );
   });
 
-  test(`should compile categories group page`, () => {
+  it(`should compile categories group page`, () => {
     expectFileToEqual('groups', 'modules', 'has-categories.md');
   });
 
-  test(`should compile categories index page`, () => {
+  it(`should compile categories index page`, () => {
     expectFileToEqual('groups', 'members', 'has-categories/index.md', 2);
   });
 
-  test(`should compile custom groups index page`, () => {
+  it(`should compile custom groups index page`, () => {
     expectFileToEqual('groups', 'members', 'has-custom-groups/index.md', 2);
   });
 
-  test(`should compile references group page`, () => {
+  it(`should compile references group page`, () => {
     expectFileToEqual('groups', 'modules', 'has-references.md');
   });
 
-  test(`should compile references index page`, () => {
+  it(`should compile references index page`, () => {
     expectFileToEqual('groups', 'members', 'has-references/index.md', 2);
   });
 
-  test(`should compile has disabled group page`, () => {
+  it(`should compile has disabled group page`, () => {
     expectFileToEqual('groups', 'modules', 'has-disabled-groups.md');
   });
 
-  test(`should compile has disabled groups index page`, () => {
+  it(`should compile has disabled groups index page`, () => {
     expectFileToEqual('groups', 'members', 'has-disabled-groups/index.md', 2);
   });
 });

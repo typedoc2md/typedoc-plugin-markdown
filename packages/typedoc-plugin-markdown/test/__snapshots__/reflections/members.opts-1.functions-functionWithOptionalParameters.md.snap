@@ -1,0 +1,33 @@
+# Function: functionWithOptionalParameters()
+
+> **functionWithOptionalParameters**(`firstParamWithDefault`, `requiredParam`, `optionalParam?`, `paramWithDefault?`): `void`
+
+Defined in: [functions.ts:1](http://source-url)
+
+This is a function with a parameters.
+
+## Parameters
+
+### firstParamWithDefault
+
+`boolean` = `true`
+
+### requiredParam
+
+`string`
+
+A normal parameter.
+
+### optionalParam?
+
+`string`
+
+An optional parameter.
+
+### paramWithDefault?
+
+`number` = `0`
+
+## Returns
+
+`void`

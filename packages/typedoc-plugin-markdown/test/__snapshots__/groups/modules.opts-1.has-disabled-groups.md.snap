@@ -1,0 +1,117 @@
+[**typedoc-stubs**](index.md)
+
+***
+
+[typedoc-stubs](modules.md) / has-disabled-groups
+
+# has-disabled-groups
+
+A module with disabled groups
+
+## EnumA
+
+EnumA function.
+
+***
+
+## EnumB
+
+***
+
+## ClassA
+
+ClassA function.
+
+### Constructors
+
+#### Constructor
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+## ClassB
+
+### Constructors
+
+#### Constructor
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+## InterfaceA
+
+Interface A
+
+### Properties
+
+#### propA
+
+> **propA**: `string`
+
+#### propB
+
+> **propB**: `string`
+
+***
+
+## InterfaceB
+
+InterfaceB function.
+
+### Properties
+
+#### propA
+
+> **propA**: `string`
+
+#### propB
+
+> **propB**: `string`
+
+***
+
+## TypeA
+
+> **TypeA** = `string`
+
+TypeA function.
+
+***
+
+## TypeB
+
+> **TypeB** = `object`
+
+TypeB function.
+
+### Properties
+
+#### propA
+
+> **propA**: `string`
+
+#### propB?
+
+> `optional` **propB**: `number`
+
+***
+
+## variableA
+
+> `const` **variableA**: `""` = `''`
+
+Comments for variableA
+
+***
+
+## variableB
+
+> `const` **variableB**: `""` = `''`
+
+***
+
+## functionA()
+
+_SIGNATURE_MEMBER_PARTIAL_

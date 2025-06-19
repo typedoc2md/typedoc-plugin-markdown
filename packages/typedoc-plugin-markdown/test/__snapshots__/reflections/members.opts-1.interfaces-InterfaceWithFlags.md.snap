@@ -1,0 +1,27 @@
+# Interface: InterfaceWithFlags
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for InterfaceWithFlags
+
+## Properties
+
+### expermintalProp?
+
+> `optional` **expermintalProp**: `string`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+**`Experimental`**
+
+***
+
+### internalProp
+
+> **internalProp**: `string`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+**`Internal`**
+
+Comments for internalProp

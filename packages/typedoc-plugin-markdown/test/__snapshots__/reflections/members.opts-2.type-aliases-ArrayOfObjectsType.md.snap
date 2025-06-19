@@ -1,0 +1,14 @@
+# Type Alias: ArrayOfObjectsType
+
+```ts
+type ArrayOfObjectsType = object[];
+```
+
+Defined in: [types.ts:1](http://source-url)
+
+## Type declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `age` | `number` | - |
+| `name` | `string` | Comments for name |

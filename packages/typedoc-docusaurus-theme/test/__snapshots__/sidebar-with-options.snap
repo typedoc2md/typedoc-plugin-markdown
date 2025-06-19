@@ -1,0 +1,139 @@
+// @ts-check
+/** @type {import("@docusaurus/plugin-content-docs").SidebarsConfig} */
+const typedocSidebar = {
+  items: [
+    {
+      type: "category",
+      label: "3-module",
+      items: [
+        {
+          type: "category",
+          label: "Classes",
+          items: [
+            {
+              type: "doc",
+              id: "sidebar-js/3-module/classes/ClassA",
+              label: "ClassA",
+              className: "custom-deprecated-class"
+            },
+            {
+              type: "doc",
+              id: "sidebar-js/3-module/classes/ClassB",
+              label: "ClassB"
+            }
+          ]
+        },
+        {
+          type: "category",
+          label: "Interfaces",
+          items: [
+            {
+              type: "doc",
+              id: "sidebar-js/3-module/interfaces/InterfaceA",
+              label: "InterfaceA",
+              className: "custom-deprecated-class"
+            },
+            {
+              type: "doc",
+              id: "sidebar-js/3-module/interfaces/InterfaceB",
+              label: "InterfaceB"
+            }
+          ]
+        }
+      ],
+      link: {
+        type: "doc",
+        id: "sidebar-js/3-module/index"
+      }
+    },
+    {
+      type: "category",
+      label: "module-1",
+      items: [
+        {
+          type: "category",
+          label: "Classes",
+          items: [
+            {
+              type: "doc",
+              id: "sidebar-js/module-1/classes/ClassA",
+              label: "ClassA",
+              className: "custom-deprecated-class"
+            },
+            {
+              type: "doc",
+              id: "sidebar-js/module-1/classes/ClassB",
+              label: "ClassB"
+            }
+          ]
+        },
+        {
+          type: "category",
+          label: "Interfaces",
+          items: [
+            {
+              type: "doc",
+              id: "sidebar-js/module-1/interfaces/InterfaceA",
+              label: "InterfaceA",
+              className: "custom-deprecated-class"
+            },
+            {
+              type: "doc",
+              id: "sidebar-js/module-1/interfaces/InterfaceB",
+              label: "InterfaceB"
+            }
+          ]
+        }
+      ],
+      link: {
+        type: "doc",
+        id: "sidebar-js/module-1/index"
+      }
+    },
+    {
+      type: "category",
+      label: "module-2",
+      items: [
+        {
+          type: "category",
+          label: "Classes",
+          items: [
+            {
+              type: "doc",
+              id: "sidebar-js/module-2/classes/ClassA",
+              label: "ClassA",
+              className: "custom-deprecated-class"
+            },
+            {
+              type: "doc",
+              id: "sidebar-js/module-2/classes/ClassB",
+              label: "ClassB"
+            }
+          ]
+        },
+        {
+          type: "category",
+          label: "Interfaces",
+          items: [
+            {
+              type: "doc",
+              id: "sidebar-js/module-2/interfaces/InterfaceA",
+              label: "InterfaceA",
+              className: "custom-deprecated-class"
+            },
+            {
+              type: "doc",
+              id: "sidebar-js/module-2/interfaces/InterfaceB",
+              label: "InterfaceB"
+            }
+          ]
+        }
+      ],
+      link: {
+        type: "doc",
+        id: "sidebar-js/module-2/index"
+      }
+    }
+  ]
+};
+module.exports = typedocSidebar.items;

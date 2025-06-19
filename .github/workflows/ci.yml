@@ -11,6 +11,7 @@ on:
       - main
       - release
       - beta
+      - remove-jest
   pull_request:
     paths:
       - 'packages/typedoc-plugin-markdown/**'

@@ -1,11 +1,11 @@
-import { expectFileToEqual } from '@devtools/testing';
+import { expectFileToEqual } from '../helpers.js';
 
-describe(`Class Reflection`, () => {
-  test(`should compile basic class`, () => {
+describe(`typedoc-plugin-markdown (Integration /Class Reflection)`, () => {
+  it(`should compile basic class`, () => {
     expectFileToEqual('reflections', 'members', 'classes/BasicClass.md');
   });
 
-  test(`should compile class with simple props`, () => {
+  it(`should compile class with simple props`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -13,7 +13,7 @@ describe(`Class Reflection`, () => {
     );
   });
 
-  test(`should compile class with complex props`, () => {
+  it(`should compile class with complex props`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -21,15 +21,15 @@ describe(`Class Reflection`, () => {
     );
   });
 
-  test(`should compile abstract class`, () => {
+  it(`should compile abstract class`, () => {
     expectFileToEqual('reflections', 'members', 'classes/AbstractClass.md');
   });
 
-  test(`should compile derived class`, () => {
+  it(`should compile derived class`, () => {
     expectFileToEqual('reflections', 'members', 'classes/DerivedClassA.md');
   });
 
-  test(`should compile class with constructor overloads`, () => {
+  it(`should compile class with constructor overloads`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -37,7 +37,7 @@ describe(`Class Reflection`, () => {
     );
   });
 
-  test(`should compile class with type parameters`, () => {
+  it(`should compile class with type parameters`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -45,7 +45,7 @@ describe(`Class Reflection`, () => {
     );
   });
 
-  test(`should compile class with accessors`, () => {
+  it(`should compile class with accessors`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -53,7 +53,7 @@ describe(`Class Reflection`, () => {
     );
   });
 
-  test(`should compile class with modifiers`, () => {
+  it(`should compile class with modifiers`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -61,11 +61,11 @@ describe(`Class Reflection`, () => {
     );
   });
 
-  test(`should compile class with flags`, () => {
+  it(`should compile class with flags`, () => {
     expectFileToEqual('reflections', 'members', 'classes/ClassWithFlags.md');
   });
 
-  test(`should compile disposable class`, () => {
+  it(`should compile disposable class`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -74,7 +74,7 @@ describe(`Class Reflection`, () => {
     );
   });
 
-  test(`should compile class with symbols`, () => {
+  it(`should compile class with symbols`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -83,19 +83,19 @@ describe(`Class Reflection`, () => {
     );
   });
 
-  test(`should compile hierarchy for BaseClass`, () => {
+  it(`should compile hierarchy for BaseClass`, () => {
     expectFileToEqual('reflections', 'members', 'classes/BaseClass.md', 1);
   });
 
-  test(`should compile hierarchy for ChildClassA`, () => {
+  it(`should compile hierarchy for ChildClassA`, () => {
     expectFileToEqual('reflections', 'members', 'classes/ChildClassA.md', 1);
   });
 
-  test(`should compile hierarchy for GrandChildClassA`, () => {
+  it(`should compile hierarchy for GrandChildClassA`, () => {
     expectFileToEqual('reflections', 'members', 'classes/GrandChildClassA.md');
   });
 
-  test(`should compile class with prop categories`, () => {
+  it(`should compile class with prop categories`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -103,7 +103,7 @@ describe(`Class Reflection`, () => {
     );
   });
 
-  test(`should compile class without prop categories`, () => {
+  it(`should compile class without prop categories`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -111,7 +111,7 @@ describe(`Class Reflection`, () => {
     );
   });
 
-  test(`should compile class with accessor keywords`, () => {
+  it(`should compile class with accessor keywords`, () => {
     expectFileToEqual(
       'reflections',
       'members',

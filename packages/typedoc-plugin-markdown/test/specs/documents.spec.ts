@@ -1,12 +1,12 @@
-import { expectFileToEqual } from '@devtools/testing';
+import { expectFileToEqual } from '../helpers.js';
 
-describe(`Documents`, () => {
+describe(`typedoc-plugin-markdown (Integration /Documents)`, () => {
   describe(`Project`, () => {
-    test(`should compile index page for project`, () => {
+    it(`should compile index page for project`, () => {
       expectFileToEqual('documents', ['modules', 'members'], 'README.md');
     });
 
-    test(`should compile a project document`, () => {
+    it(`should compile a project document`, () => {
       expectFileToEqual(
         'documents',
         ['modules', 'members'],
@@ -17,7 +17,7 @@ describe(`Documents`, () => {
   });
 
   describe(`Module`, () => {
-    test(`should compile index page for module`, () => {
+    it(`should compile index page for module`, () => {
       expectFileToEqual(
         'documents',
         ['modules', 'members'],
@@ -26,7 +26,7 @@ describe(`Documents`, () => {
       );
     });
 
-    test(`should compile module documents`, () => {
+    it(`should compile module documents`, () => {
       expectFileToEqual(
         'documents',
         ['modules', 'members'],
@@ -37,7 +37,7 @@ describe(`Documents`, () => {
   });
 
   describe(`Enum`, () => {
-    test(`should compile index page for enum`, () => {
+    it(`should compile index page for enum`, () => {
       expectFileToEqual(
         'documents',
         ['members'],
@@ -46,7 +46,7 @@ describe(`Documents`, () => {
       );
     });
 
-    test(`should compile a module document`, () => {
+    it(`should compile a module document`, () => {
       expectFileToEqual(
         'documents',
         ['members'],
@@ -57,7 +57,7 @@ describe(`Documents`, () => {
   });
 
   describe(`Class`, () => {
-    test(`should compile index page for class`, () => {
+    it(`should compile index page for class`, () => {
       expectFileToEqual(
         'documents',
         ['members'],
@@ -66,7 +66,7 @@ describe(`Documents`, () => {
       );
     });
 
-    test(`should compile a module document`, () => {
+    it(`should compile a module document`, () => {
       expectFileToEqual(
         'documents',
         ['members'],
@@ -77,7 +77,7 @@ describe(`Documents`, () => {
   });
 
   describe(`Interface`, () => {
-    test(`should compile index page for interface`, () => {
+    it(`should compile index page for interface`, () => {
       expectFileToEqual(
         'documents',
         ['members'],
@@ -86,7 +86,7 @@ describe(`Documents`, () => {
       );
     });
 
-    test(`should compile a interface document`, () => {
+    it(`should compile a interface document`, () => {
       expectFileToEqual(
         'documents',
         ['members'],
@@ -97,7 +97,7 @@ describe(`Documents`, () => {
   });
 
   describe(`Interface`, () => {
-    test(`should compile index page for interface`, () => {
+    it(`should compile index page for interface`, () => {
       expectFileToEqual(
         'documents',
         ['members'],
@@ -106,7 +106,7 @@ describe(`Documents`, () => {
       );
     });
 
-    test(`should compile a interface document`, () => {
+    it(`should compile a interface document`, () => {
       expectFileToEqual(
         'documents',
         ['members'],

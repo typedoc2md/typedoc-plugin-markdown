@@ -1,0 +1,13 @@
+# Type Alias: TypeDeclarationType
+
+> **TypeDeclarationType** = `object`
+
+Defined in: [index.ts:1](http://source-url)
+
+## Properties
+
+| Property | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ |
+| <a id="api-declaration1"></a> `declaration1` | `boolean` | Comments for declaration1 | [index.ts:1](http://source-url) |
+| <a id="api-declaration2"></a> `declaration2` | `boolean` | Comments for declaration2 | [index.ts:1](http://source-url) |
+| <a id="api-declaration3"></a> `declaration3` | `100` | - | [index.ts:1](http://source-url) |

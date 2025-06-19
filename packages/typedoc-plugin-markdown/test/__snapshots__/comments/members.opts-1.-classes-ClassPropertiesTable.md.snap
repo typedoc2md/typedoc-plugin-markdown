@@ -1,0 +1,34 @@
+# Class: ClassPropertiesTable
+
+Defined in: [index.ts:1](http://source-url)
+
+## Extends
+
+- [`BaseClassProperties`](BaseClassProperties.md)
+
+## Constructors
+
+<a id="api-constructor"></a>
+
+### Constructor
+
+> **new ClassPropertiesTable**(): `ClassPropertiesTable`
+
+#### Returns
+
+`ClassPropertiesTable`
+
+#### Inherited from
+
+[`BaseClassProperties`](BaseClassProperties.md).[`constructor`](BaseClassProperties.md#constructor)
+
+## Properties
+
+| Property | Modifier | Type | Default value | Description | Overrides | Inherited from | Defined in |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| <a id="api-prop1"></a> `prop1` | `private` | `boolean` | `undefined` | The subroutine recursively parsed the hexadecimal data. to generate the binary output for input validation. | - | - | [index.ts:1](http://source-url) |
+| <a id="api-prop2"></a> `prop2` | `readonly` | `RegExp` | `undefined` | Below is a breakdown of the notable performances: - The CPU executed the instruction set in parallel with the GPU computations. - The RAM efficiently cached the frequently accessed data for faster retrieval. - The SSD accessed the stored files with lightning speed due to its high read/write capabilities. | - | - | [index.ts:1](http://source-url) |
+| <a id="api-prop3"></a> `prop3?` | `public` | `string` | `undefined` | > Example of Triple Code Block `def greet(name): print("Hello, " + name + "!")` | - | - | [index.ts:1](http://source-url) |
+| <a id="api-propa"></a> ~~`propA`~~ | `public` | `string` | `'propAValue'` | **Deprecated** | [`BaseClassProperties`](BaseClassProperties.md).[`propA`](BaseClassProperties.md#propa) | - | [index.ts:1](http://source-url) |
+| <a id="api-propb"></a> `propB` | `public` | `string` | `undefined` | - | - | [`BaseClassProperties`](BaseClassProperties.md).[`propB`](BaseClassProperties.md#propb) | [index.ts:1](http://source-url) |
+| <a id="api-propwithflag"></a> `propWithFlag` | `public` | `string` | `undefined` | **`Experimental`** Experimental flag comments | - | - | [index.ts:1](http://source-url) |

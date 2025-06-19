@@ -1,0 +1,26 @@
+# Variable: objectLiteralVariable
+
+```ts
+const objectLiteralVariable: object;
+```
+
+Defined in: [variables.ts:1](http://source-url)
+
+Comments for objectLiteralVariable
+
+## See
+
+xyz.com
+
+## Type declaration
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| <a id="valuea"></a> `valueA` | `number` | `100` | Comments for valueA |
+| <a id="valueb"></a> `valueB` | `boolean` | `true` | - |
+| <a id="valuex"></a> `valueX` | `object` | - | Comments for valueX |
+| `valueX.valueA` | `number`[] | - | Comment for valueX.valueA |
+| `valueX.valueY()` | (`z`: `string`) => `object` | - | Comments for valueX.valueY |
+| `valueX.valueZ` | `string` | `'foo'` | - |
+| <a id="valuey"></a> `valueY()` | (`unionParam`: `"a"` \| `"b"`, `_undercoreParam_`: `string`) => `string` | - | Comments for valueY comments for valueY function |
+| `valueZ()` | (`param`: `string`) => `string` | - | Comments for valueZ |

@@ -1,0 +1,94 @@
+[
+  {
+    "title": "<internal>",
+    "kind": 2,
+    "path": "-internal-.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "42-module-name",
+    "kind": 2,
+    "path": "42-module-name.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "basic",
+    "kind": 2,
+    "path": "basic.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "has-categories",
+    "kind": 2,
+    "path": "has-categories.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "has-custom-groups",
+    "kind": 2,
+    "path": "has-custom-groups.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "has-disabled-groups",
+    "kind": 2,
+    "path": "has-disabled-groups.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "has-namespaces",
+    "kind": 2,
+    "path": "has-namespaces/index.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "Namespaces",
+        "children": [
+          {
+            "title": "_Namespace_A_",
+            "kind": 4,
+            "path": "has-namespaces/namespaces/Namespace_A/index.md",
+            "isDeprecated": false,
+            "children": [
+              {
+                "title": "Namespaces",
+                "children": [
+                  {
+                    "title": "NestedNamespace",
+                    "kind": 4,
+                    "path": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace.md",
+                    "isDeprecated": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "NamespaceB",
+            "kind": 4,
+            "path": "has-namespaces/namespaces/NamespaceB.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "has-references",
+    "kind": 2,
+    "path": "has-references.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "has-same-exports",
+    "kind": 2,
+    "path": "has-same-exports.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "index",
+    "kind": 2,
+    "path": "index-1.md",
+    "isDeprecated": false
+  }
+]

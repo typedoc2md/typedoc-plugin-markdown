@@ -1,0 +1,10 @@
+---
+isTrue: yes
+veryLong: 'This is a long string that would normally wrap over multiple lines when the text exceeds a certain length.'
+---
+
+# typedoc-plugin-frontmatter
+
+## Interfaces
+
+- [SomeInterface](interfaces/SomeInterface.md)

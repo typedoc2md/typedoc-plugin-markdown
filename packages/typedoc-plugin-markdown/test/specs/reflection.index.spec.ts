@@ -1,10 +1,10 @@
-import { expectFileToEqual } from '@devtools/testing';
+import { expectFileToEqual } from '../helpers.js';
 
-describe(`Reflection Indexes`, () => {
-  test(`should compile reflection indexes`, () => {
+describe(`typedoc-plugin-markdown (Integration /Reflection Indexes)`, () => {
+  it(`should compile reflection indexes`, () => {
     expectFileToEqual('reflections', 'members', ['globals.md', 'README.md']);
   });
-  test(`should compile reflection indexes for modules`, () => {
+  it(`should compile reflection indexes for modules`, () => {
     expectFileToEqual(
       'reflections',
       'modules',

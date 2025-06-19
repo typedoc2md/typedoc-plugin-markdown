@@ -1,0 +1,165 @@
+[
+  {
+    "title": "@scope/package-1",
+    "kind": 2,
+    "path": "@scope/package-1.md"
+  },
+  {
+    "title": "@scope/package-3",
+    "kind": 2,
+    "children": [
+      {
+        "title": "Documents",
+        "children": [
+          {
+            "title": "Package Document 1",
+            "kind": 8388608,
+            "path": "@scope/package-3/documents/Package-Document-1.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Modules",
+        "children": [
+          {
+            "title": "index",
+            "kind": 2,
+            "path": "@scope/package-3/index-1.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "module-1",
+            "kind": 2,
+            "path": "@scope/package-3/module-1.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "module-2",
+            "kind": 2,
+            "path": "@scope/package-3/module-2.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ],
+    "path": "@scope/package-3/index.md"
+  },
+  {
+    "title": "package-1b",
+    "kind": 2,
+    "path": "package-1b.md"
+  },
+  {
+    "title": "package-2",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module-1",
+        "kind": 2,
+        "path": "package-2/module-1.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "module-2",
+        "kind": 2,
+        "path": "package-2/module-2.md",
+        "isDeprecated": false
+      }
+    ],
+    "path": "package-2/index.md"
+  },
+  {
+    "title": "package-4",
+    "kind": 2,
+    "path": "package-4.md"
+  },
+  {
+    "title": "package-5",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module2",
+        "kind": 2,
+        "path": "package-5/module2.md",
+        "isDeprecated": false
+      }
+    ],
+    "path": "package-5/package-5.md"
+  },
+  {
+    "title": "package-6",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module2",
+        "kind": 2,
+        "path": "package-6/module2.md",
+        "isDeprecated": false
+      }
+    ],
+    "path": "package-6.md"
+  },
+  {
+    "title": "package-7",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module-1",
+        "kind": 2,
+        "path": "package-7/module-1.md",
+        "isDeprecated": false,
+        "children": [
+          {
+            "title": "submodules",
+            "children": [
+              {
+                "title": "submodule-3-with-modules",
+                "children": [
+                  {
+                    "title": "nested-submodule-1",
+                    "kind": 2,
+                    "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-1.md",
+                    "isDeprecated": false
+                  },
+                  {
+                    "title": "nested-submodule-2",
+                    "kind": 2,
+                    "path": "package-7/module-1/submodules/submodule-3-with-modules/nested-submodule-2.md",
+                    "isDeprecated": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "module-2",
+        "kind": 2,
+        "path": "package-7/module-2.md",
+        "isDeprecated": false
+      }
+    ],
+    "path": "package-7/index.md"
+  },
+  {
+    "title": "package-8",
+    "kind": 2,
+    "children": [
+      {
+        "title": "module-1",
+        "kind": 2,
+        "path": "package-8/module-1.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "module-2",
+        "kind": 2,
+        "path": "package-8/module-2.md",
+        "isDeprecated": false
+      }
+    ],
+    "path": "package-8/index.md"
+  }
+]

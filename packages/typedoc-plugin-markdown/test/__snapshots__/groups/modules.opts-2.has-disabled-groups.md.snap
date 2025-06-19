@@ -1,0 +1,155 @@
+[**typedoc-stubs**](index.md)
+
+***
+
+[typedoc-stubs](index.md) / has-disabled-groups
+
+# has-disabled-groups
+
+A module with disabled groups
+
+<a id="enuma"></a>
+
+## EnumA \{#enuma\}
+
+EnumA function.
+
+***
+
+<a id="enumb"></a>
+
+## EnumB \{#enumb\}
+
+***
+
+<a id="classa"></a>
+
+## ClassA \{#classa\}
+
+ClassA function.
+
+### Constructors
+
+<a id="constructor"></a>
+
+#### Constructor
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+<a id="classb"></a>
+
+## ClassB \{#classb\}
+
+### Constructors
+
+<a id="constructor-1"></a>
+
+#### Constructor
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+<a id="interfacea"></a>
+
+## InterfaceA \{#interfacea\}
+
+Interface A
+
+### Properties
+
+<a id="propa"></a>
+
+#### propA \{#propa\}
+
+> **propA**: `string`
+
+<a id="propb"></a>
+
+#### propB \{#propb\}
+
+> **propB**: `string`
+
+***
+
+<a id="interfaceb"></a>
+
+## InterfaceB \{#interfaceb\}
+
+InterfaceB function.
+
+### Properties
+
+<a id="propa-1"></a>
+
+#### propA \{#propa-1\}
+
+> **propA**: `string`
+
+<a id="propb-1"></a>
+
+#### propB \{#propb-1\}
+
+> **propB**: `string`
+
+***
+
+<a id="typea"></a>
+
+## TypeA \{#typea\}
+
+> **TypeA** = `string`
+
+TypeA function.
+
+***
+
+<a id="typeb"></a>
+
+## TypeB \{#typeb\}
+
+> **TypeB** = `object`
+
+TypeB function.
+
+### Properties
+
+<a id="propa-2"></a>
+
+#### propA \{#propa-2\}
+
+> **propA**: `string`
+
+<a id="propb-2"></a>
+
+#### propB? \{#propb-2\}
+
+> `optional` **propB**: `number`
+
+***
+
+<a id="variablea"></a>
+
+## variableA \{#variablea\}
+
+> `const` **variableA**: `""` = `''`
+
+Comments for variableA
+
+***
+
+<a id="variableb"></a>
+
+## variableB \{#variableb\}
+
+> `const` **variableB**: `""` = `''`
+
+***
+
+<a id="functiona"></a>
+
+## functionA() \{#functiona\}
+
+_SIGNATURE_MEMBER_PARTIAL_

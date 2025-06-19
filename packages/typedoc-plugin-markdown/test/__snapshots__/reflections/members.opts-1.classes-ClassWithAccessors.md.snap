@@ -1,0 +1,93 @@
+# Class: ClassWithAccessors
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for ClassWithAccessors
+
+## Constructors
+
+### Constructor
+
+> **new ClassWithAccessors**(): `ClassWithAccessors`
+
+#### Returns
+
+`ClassWithAccessors`
+
+## Properties
+
+### privateProp
+
+> `private` **privateProp**: `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+## Accessors
+
+### accessor
+
+#### Get Signature
+
+> **get** **accessor**(): `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for getter
+
+##### Returns
+
+`string`
+
+#### Set Signature
+
+> **set** **accessor**(`value`): `void`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for setter
+
+##### Parameters
+
+###### value
+
+`string`
+
+Param comments
+
+##### Returns
+
+`void`
+
+***
+
+### noGetter
+
+#### Set Signature
+
+> **set** **noGetter**(`x`): `void`
+
+Defined in: [classes.ts:1](http://source-url)
+
+##### Parameters
+
+###### x
+
+`string`
+
+##### Returns
+
+`void`
+
+***
+
+### noSetter
+
+#### Get Signature
+
+> **get** **noSetter**(): `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+##### Returns
+
+`string`

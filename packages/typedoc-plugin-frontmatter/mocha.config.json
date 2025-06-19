@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json.schemastore.org/mocharc.json",
+  "extension": ["ts", "js"],
+  "spec": ["test/**/*.spec.ts"],
+  "timeout": 5000,
+  "node-option": ["import=tsx"]
+}

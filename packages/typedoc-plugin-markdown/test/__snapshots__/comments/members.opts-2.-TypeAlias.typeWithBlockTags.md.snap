@@ -1,0 +1,42 @@
+# Type Alias: typeWithBlockTags
+
+> **typeWithBlockTags** = \{ `x`: `string`; \}
+
+Defined in: [index.ts:1](http://source-url)
+
+Variable with block tags summary
+
+## Example
+
+```ts
+const x = 1;
+```
+
+## Remarks
+
+Other block tags
+
+## Properties
+
+<table>
+<thead>
+<tr>
+<th align="left">Property</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+<a id="api-x"></a> `x`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,23 @@
+[**typedoc-stubs**](../index.md)
+
+***
+
+[typedoc-stubs](../modules.md) / has-disabled-groups
+
+# has-disabled-groups
+
+A module with disabled groups
+
+| Name | Description |
+| :------ | :------ |
+| [EnumA](enumerations/EnumA.md) | EnumA function. |
+| [EnumB](enumerations/EnumB.md) | - |
+| [ClassA](classes/ClassA.md) | ClassA function. |
+| [ClassB](classes/ClassB.md) | - |
+| [InterfaceA](interfaces/InterfaceA.md) | Interface A |
+| [InterfaceB](interfaces/InterfaceB.md) | InterfaceB function. |
+| [TypeA](type-aliases/TypeA.md) | TypeA function. |
+| [TypeB](type-aliases/TypeB.md) | TypeB function. |
+| [variableA](variables/variableA.md) | Comments for variableA |
+| [variableB](variables/variableB.md) | - |
+| [functionA](functions/functionA.md) | Comments for functionA |

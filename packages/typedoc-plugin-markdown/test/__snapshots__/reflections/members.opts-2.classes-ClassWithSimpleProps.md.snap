@@ -1,0 +1,26 @@
+# Class: ClassWithSimpleProps
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for ClassWithSimpleProps
+
+## Constructors
+
+### Constructor
+
+```ts
+new ClassWithSimpleProps(): ClassWithSimpleProps;
+```
+
+#### Returns
+
+`ClassWithSimpleProps`
+
+## Properties
+
+| Property | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| <a id="propa"></a> `propA` | `string` | `'propAValue'` | Comments for propA |
+| <a id="propb"></a> `propB` | `string` | `'propBDefaultValue'` | Comments for propB |
+| <a id="propc"></a> `propC` | `string` | `'propCDefaultValue'` | Comments for propB on two lines |
+| <a id="propd"></a> `propD` | `string` | `undefined` | Comments for propE |

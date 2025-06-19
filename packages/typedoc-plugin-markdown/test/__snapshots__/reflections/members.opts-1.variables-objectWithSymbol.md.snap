@@ -1,0 +1,15 @@
+# Variable: objectWithSymbol
+
+> `const` **objectWithSymbol**: `object`
+
+Defined in: [variables.ts:1](http://source-url)
+
+Comments variable with symbol
+
+## Type declaration
+
+### \[sym\]
+
+> **\[sym\]**: `string` = `'value'`
+
+Comments for symbol

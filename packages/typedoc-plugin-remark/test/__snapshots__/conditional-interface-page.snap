@@ -1,0 +1,19 @@
+---
+title: "test"
+---
+
+# Interface: Interface
+
+## Properties
+
+### a
+
+> **a**: `string`
+
+***
+
+### b
+
+> **b**: `number`
+
+> thanks [**@tgreyuk**](https://github.com/tgreyuk)

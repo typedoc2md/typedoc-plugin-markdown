@@ -1,0 +1,27 @@
+# Function: functionReturningAFunction()
+
+> **functionReturningAFunction**(): \<`T`\>(`x`) => `boolean`
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function
+
+## Returns
+
+> \<`T`\>(`x`): `boolean`
+
+### Type Parameters
+
+#### T
+
+`T`
+
+### Parameters
+
+#### x
+
+`string`
+
+### Returns
+
+`boolean`

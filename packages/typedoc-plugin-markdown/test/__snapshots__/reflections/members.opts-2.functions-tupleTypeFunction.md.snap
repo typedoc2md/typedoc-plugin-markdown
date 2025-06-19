@@ -1,0 +1,20 @@
+# Function: tupleTypeFunction()
+
+```ts
+function tupleTypeFunction(opts: [{
+  a: string;
+  b: string;
+}]): void;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+## Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| `opts` | \[\{ `a`: `string`; `b`: `string`; \}\] | opts comments |
+
+## Returns
+
+`void`

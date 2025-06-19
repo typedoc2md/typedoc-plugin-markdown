@@ -1,0 +1,17 @@
+# Type Alias: TypeWithIndexSignature
+
+> **TypeWithIndexSignature** = `object`
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for TypeWithIndexSignature
+
+## Index Signature
+
+\[`key`: `string`\]: `string`
+
+Comments for key
+
+### Remarks
+
+Some remarks

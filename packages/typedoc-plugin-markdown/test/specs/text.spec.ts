@@ -1,15 +1,15 @@
-import { expectFileToEqual } from '@devtools/testing';
+import { expectFileToEqual } from '../helpers.js';
 
-describe(`Text`, () => {
-  test(`should get translations for index page`, () => {
+describe(`typedoc-plugin-markdown (Integration / Text)`, () => {
+  it(`should get translations for index page`, () => {
     expectFileToEqual('text', 'members', 'README.md');
   });
 
-  test(`should get translations for module page`, () => {
+  it(`should get translations for module page`, () => {
     expectFileToEqual('text', 'members', ['module-1/README.md']);
   });
 
-  test(`should get translations for member page`, () => {
+  it(`should get translations for member page`, () => {
     expectFileToEqual(
       'text',
       'members',
@@ -17,15 +17,15 @@ describe(`Text`, () => {
     );
   });
 
-  test(`should get translations for modules page`, () => {
+  it(`should get translations for modules page`, () => {
     expectFileToEqual('text', 'modules', ['module-2.md']);
   });
 
-  test(`should get translations for sidebar`, () => {
+  it(`should get translations for sidebar`, () => {
     expectFileToEqual('text', 'members', ['sidebar.json']);
   });
 
-  test(`should get prefixed group titles`, () => {
+  it(`should get prefixed group titles`, () => {
     expectFileToEqual('text', 'members', 'module-1/variables/someOtherVar.md');
     expectFileToEqual('text', 'members', 'module-1/type-aliases/SomeType.md');
   });

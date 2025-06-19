@@ -1,0 +1,25 @@
+# Enumeration: BasicEnum
+
+Defined in: [enums.ts:1](http://source-url)
+
+Comments for enum
+
+## Enumeration Members
+
+### MemberA
+
+> **MemberA**: `0`
+
+Defined in: [enums.ts:1](http://source-url)
+
+Comments for MemberA
+
+***
+
+### MemberB
+
+> **MemberB**: `1`
+
+Defined in: [enums.ts:1](http://source-url)
+
+Comments for MemberB

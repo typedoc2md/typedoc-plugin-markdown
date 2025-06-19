@@ -1,0 +1,7 @@
+# Type Alias: QueryType
+
+> **QueryType** = *typeof* [`someQuery`](../variables/someQuery.md)
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for query type

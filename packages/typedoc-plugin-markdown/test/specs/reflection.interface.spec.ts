@@ -1,11 +1,11 @@
-import { expectFileToEqual } from '@devtools/testing';
+import { expectFileToEqual } from '../helpers.js';
 
-describe(`Interface Reflection`, () => {
-  test(`should compile basic interface`, () => {
+describe(`typedoc-plugin-markdown (Integration /Interface Reflection)`, () => {
+  it(`should compile basic interface`, () => {
     expectFileToEqual('reflections', 'members', 'interfaces/BasicInterface.md');
   });
 
-  test(`should compile interface with type parameters`, () => {
+  it(`should compile interface with type parameters`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -13,7 +13,7 @@ describe(`Interface Reflection`, () => {
     );
   });
 
-  test(`should compile extended interface`, () => {
+  it(`should compile extended interface`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -21,7 +21,7 @@ describe(`Interface Reflection`, () => {
     );
   });
 
-  test(`should compile indexable interface`, () => {
+  it(`should compile indexable interface`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -29,7 +29,7 @@ describe(`Interface Reflection`, () => {
     );
   });
 
-  test(`should compile multiple indexable interface`, () => {
+  it(`should compile multiple indexable interface`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -37,7 +37,7 @@ describe(`Interface Reflection`, () => {
     );
   });
 
-  test(`should compile interface with event properties`, () => {
+  it(`should compile interface with event properties`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -45,7 +45,7 @@ describe(`Interface Reflection`, () => {
     );
   });
 
-  test(`should compile interface with flags`, () => {
+  it(`should compile interface with flags`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -53,7 +53,7 @@ describe(`Interface Reflection`, () => {
     );
   });
 
-  test(`should compile interface with comments`, () => {
+  it(`should compile interface with comments`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -61,7 +61,7 @@ describe(`Interface Reflection`, () => {
     );
   });
 
-  test(`should compile interface with function overloads`, () => {
+  it(`should compile interface with function overloads`, () => {
     expectFileToEqual(
       'reflections',
       'members',

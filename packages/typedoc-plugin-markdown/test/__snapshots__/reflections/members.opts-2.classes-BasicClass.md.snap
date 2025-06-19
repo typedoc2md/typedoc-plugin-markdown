@@ -1,0 +1,40 @@
+# Class: BasicClass
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for BasicClass
+
+## Constructors
+
+### Constructor
+
+```ts
+new BasicClass(): BasicClass;
+```
+
+#### Returns
+
+`BasicClass`
+
+## Properties
+
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| <a id="prop"></a> `prop` | `string` | Comments for prop |
+| <a id="prop-1"></a> `Prop` | `string` | Comments for Prop |
+
+## Methods
+
+### method()
+
+```ts
+method(): string;
+```
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for method
+
+#### Returns
+
+`string`

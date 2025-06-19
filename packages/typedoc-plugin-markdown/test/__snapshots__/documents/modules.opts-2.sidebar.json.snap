@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Documents",
+    "children": [
+      {
+        "title": "Project Document 1",
+        "kind": 8388608,
+        "path": "Document.Project-Document-1.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/project/PROJECT_DOC_2",
+        "kind": 8388608,
+        "path": "Document.docs.project.PROJECT_DOC_2.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "docs/project/PROJECT_DOC_3",
+        "kind": 8388608,
+        "path": "Document.docs.project.PROJECT_DOC_3.md",
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "title": "ModuleWithDocuments1",
+    "kind": 2,
+    "path": "ModuleWithDocuments1.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "MODULE_DOC",
+        "kind": 8388608,
+        "path": "ModuleWithDocuments1.Document.MODULE_DOC.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "Namespaces",
+        "children": [
+          {
+            "title": "NamespaceWithDocuments",
+            "kind": 4,
+            "path": "ModuleWithDocuments1.Namespace.NamespaceWithDocuments.md",
+            "isDeprecated": false,
+            "children": [
+              {
+                "title": "NAMESPACE_DOC",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments1.NamespaceWithDocuments.Document.NAMESPACE_DOC.md",
+                "isDeprecated": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "ModuleWithDocuments2",
+    "kind": 2,
+    "path": "ModuleWithDocuments2.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "MODULE_DOC",
+        "kind": 8388608,
+        "path": "ModuleWithDocuments2.Document.MODULE_DOC.md",
+        "isDeprecated": false
+      }
+    ]
+  }
+]

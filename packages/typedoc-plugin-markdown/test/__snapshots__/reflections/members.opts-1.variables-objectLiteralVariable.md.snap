@@ -1,0 +1,113 @@
+# Variable: objectLiteralVariable
+
+> `const` **objectLiteralVariable**: `object`
+
+Defined in: [variables.ts:1](http://source-url)
+
+Comments for objectLiteralVariable
+
+## See
+
+xyz.com
+
+## Type declaration
+
+### valueA
+
+> **valueA**: `number` = `100`
+
+Comments for valueA
+
+### valueB
+
+> **valueB**: `boolean` = `true`
+
+### valueX
+
+> **valueX**: `object`
+
+Comments for valueX
+
+#### valueX.valueA
+
+> **valueA**: `number`[]
+
+Comment for valueX.valueA
+
+#### valueX.valueY()
+
+> **valueY**: (`z`) => `object`
+
+Comments for valueX.valueY
+
+##### Parameters
+
+###### z
+
+`string`
+
+##### Returns
+
+`object`
+
+###### a
+
+> **a**: `string` = `'test'`
+
+###### b
+
+> **b**: `string` = `z`
+
+###### c
+
+> **c**: `object`
+
+###### c.a
+
+> **a**: `number` = `1`
+
+###### c.b
+
+> **b**: `number` = `2`
+
+#### valueX.valueZ
+
+> **valueZ**: `string` = `'foo'`
+
+### valueY()
+
+> **valueY**: (`unionParam`, `_undercoreParam_`) => `string`
+
+Comments for valueY
+
+comments for valueY function
+
+#### Parameters
+
+##### unionParam
+
+`"a"` | `"b"`
+
+##### \_undercoreParam\_
+
+`string`
+
+#### Returns
+
+`string`
+
+### valueZ()
+
+> **valueZ**(`param`): `string`
+
+Comments for valueZ
+
+#### Parameters
+
+##### param
+
+`string`
+
+#### Returns
+
+`string`

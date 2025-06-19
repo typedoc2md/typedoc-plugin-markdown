@@ -1,7 +1,8 @@
-import { toPascalCase } from './to-pascal-case';
+import { strict as assert } from 'assert';
+import { toPascalCase } from './to-pascal-case.js';
 
-describe('toPascalCase', () => {
+describe('typedoc-plugin-markdown (Utils / toPascalCase)', () => {
   it('should convert a string to start case', () => {
-    expect(toPascalCase('Type Alias')).toBe('TypeAlias');
+    assert.strictEqual(toPascalCase('Type Alias'), 'TypeAlias');
   });
 });

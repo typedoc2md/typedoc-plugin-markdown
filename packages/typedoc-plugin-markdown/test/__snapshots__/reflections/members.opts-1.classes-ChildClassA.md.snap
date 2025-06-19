@@ -1,0 +1,30 @@
+# Class: ChildClassA
+
+Defined in: [classes.ts:1](http://source-url)
+
+## Hierarchy
+
+[View Summary](../hierarchy.md)
+
+### Extends
+
+- [`BaseClass`](BaseClass.md)
+
+### Extended by
+
+- [`GrandChildClassA`](GrandChildClassA.md)
+- [`GrandChildClassB`](GrandChildClassB.md)
+
+## Constructors
+
+### Constructor
+
+> **new ChildClassA**(): `ChildClassA`
+
+#### Returns
+
+`ChildClassA`
+
+#### Inherited from
+
+[`BaseClass`](BaseClass.md).[`constructor`](BaseClass.md#constructor)

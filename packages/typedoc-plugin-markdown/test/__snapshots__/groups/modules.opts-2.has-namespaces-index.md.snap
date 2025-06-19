@@ -1,0 +1,146 @@
+[**typedoc-stubs**](../index.md)
+
+***
+
+[typedoc-stubs](../index.md) / has-namespaces
+
+# has-namespaces
+
+A module that contains namespaces
+
+## Functions
+
+<a id="_function_a_"></a>
+
+### \_function\_A\_() \{#_function_a_\}
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+<a id="functionb"></a>
+
+### functionB() \{#functionb\}
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+## Interfaces
+
+<a id="_interface_a_"></a>
+
+### \_Interface\_A\_ \{#_interface_a_\}
+
+***
+
+<a id="interfaceb"></a>
+
+### InterfaceB \{#interfaceb\}
+
+## Classes
+
+<a id="__class_a_"></a>
+
+### \_\_Class\_A\_ \{#__class_a_\}
+
+#### Constructors
+
+<a id="constructor"></a>
+
+##### Constructor
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+<a id="classb"></a>
+
+### ClassB \{#classb\}
+
+#### Constructors
+
+<a id="constructor-1"></a>
+
+##### Constructor
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+## Enumerations
+
+<a id="_enum_a_"></a>
+
+### \_Enum\_A\_ \{#_enum_a_\}
+
+***
+
+<a id="enumb"></a>
+
+### EnumB \{#enumb\}
+
+## Namespaces
+
+<table>
+<thead>
+<tr>
+<th align="left">Namespace</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[\_Namespace\_A\_](namespaces/Namespace_A/index.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[NamespaceB](namespaces/NamespaceB.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Type Aliases
+
+<a id="_type_a_"></a>
+
+### \_Type\_A\_ \{#_type_a_\}
+
+> **\_Type\_A\_** = `string`
+
+***
+
+<a id="typeb"></a>
+
+### TypeB \{#typeb\}
+
+> **TypeB** = `string`
+
+## Variables
+
+<a id="_variable_a_"></a>
+
+### \_variable\_A\_ \{#_variable_a_\}
+
+> `const` **\_variable\_A\_**: `true` = `true`
+
+***
+
+<a id="variableb"></a>
+
+### variableB \{#variableb\}
+
+> `const` **variableB**: `true` = `true`

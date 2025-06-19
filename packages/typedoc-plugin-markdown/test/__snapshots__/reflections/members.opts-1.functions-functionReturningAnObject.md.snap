@@ -1,0 +1,21 @@
+# Function: functionReturningAnObject()
+
+> **functionReturningAnObject**(): `object`
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function
+
+## Returns
+
+`object`
+
+Return comments
+
+### x
+
+> **x**: `number` = `1`
+
+### y
+
+> **y**: `number` = `2`

@@ -1,11 +1,11 @@
-import { expectFileToEqual } from '@devtools/testing';
+import { expectFileToEqual } from '../helpers.js';
 
-describe(`Function Reflection`, () => {
-  test(`should compile function with a parameter`, () => {
+describe(`typedoc-plugin-markdown (Integration /Function Reflection)`, () => {
+  it(`should compile function with a parameter`, () => {
     expectFileToEqual('reflections', 'members', 'functions/basicFunction.md');
   });
 
-  test(`should compile function with default parameters`, () => {
+  it(`should compile function with default parameters`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -13,7 +13,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function with optional parameters`, () => {
+  it(`should compile function with optional parameters`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -21,7 +21,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function with optional parameters`, () => {
+  it(`should compile function with optional parameters`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -29,7 +29,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function with nested parameters`, () => {
+  it(`should compile function with nested parameters`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -37,7 +37,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function with named params`, () => {
+  it(`should compile function with named params`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -45,7 +45,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function with type parameters`, () => {
+  it(`should compile function with type parameters`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -53,7 +53,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function with multiple signatures`, () => {
+  it(`should compile function with multiple signatures`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -61,11 +61,11 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile curried function`, () => {
+  it(`should compile curried function`, () => {
     expectFileToEqual('reflections', 'members', 'functions/curriedFunction.md');
   });
 
-  test(`should compile function returning a string`, () => {
+  it(`should compile function returning a string`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -73,7 +73,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function returning an object`, () => {
+  it(`should compile function returning an object`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -81,7 +81,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function returning a union`, () => {
+  it(`should compile function returning a union`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -89,7 +89,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function returning a useful union`, () => {
+  it(`should compile function returning a useful union`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -97,7 +97,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function returning a function`, () => {
+  it(`should compile function returning a function`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -105,7 +105,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function returning a promise`, () => {
+  it(`should compile function returning a promise`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -113,7 +113,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function with rest params`, () => {
+  it(`should compile function with rest params`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -121,7 +121,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function with complex params`, () => {
+  it(`should compile function with complex params`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -129,7 +129,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function with array of stuff`, () => {
+  it(`should compile function with array of stuff`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -137,7 +137,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function with array of optional stuff`, () => {
+  it(`should compile function with array of optional stuff`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -145,7 +145,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function with array of union stuff`, () => {
+  it(`should compile function with array of union stuff`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -153,7 +153,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function with union params`, () => {
+  it(`should compile function with union params`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -161,7 +161,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function with tuple type params`, () => {
+  it(`should compile function with tuple type params`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -169,7 +169,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function with tuple type optional params`, () => {
+  it(`should compile function with tuple type optional params`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -177,7 +177,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function with explicit inline tuple type optional params`, () => {
+  it(`should compile function with explicit inline tuple type optional params`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -185,7 +185,7 @@ describe(`Function Reflection`, () => {
     );
   });
 
-  test(`should compile function returning function overloads`, () => {
+  it(`should compile function returning function overloads`, () => {
     expectFileToEqual(
       'reflections',
       'members',

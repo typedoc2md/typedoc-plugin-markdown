@@ -1,0 +1,79 @@
+# Class: DerivedClassA
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for DerivedClassA
+
+## Hierarchy
+
+[View Summary](../hierarchy.md)
+
+### Extends
+
+- [`AbstractClass`](AbstractClass.md)
+
+## Constructors
+
+### Constructor
+
+> **new DerivedClassA**(): `DerivedClassA`
+
+#### Returns
+
+`DerivedClassA`
+
+#### Inherited from
+
+[`AbstractClass`](AbstractClass.md).[`constructor`](AbstractClass.md#constructor)
+
+## Properties
+
+### abstractProp
+
+> **abstractProp**: `string` = `'abstractProp'`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for abstractProp
+
+#### Overrides
+
+[`AbstractClass`](AbstractClass.md).[`abstractProp`](AbstractClass.md#abstractprop)
+
+***
+
+### derivedProp
+
+> **derivedProp**: `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+## Methods
+
+### abstractMethod()
+
+> **abstractMethod**(): `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for abstractMethod
+
+#### Returns
+
+`string`
+
+#### Overrides
+
+[`AbstractClass`](AbstractClass.md).[`abstractMethod`](AbstractClass.md#abstractmethod)
+
+***
+
+### derivedMethod()
+
+> **derivedMethod**(): `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+#### Returns
+
+`string`

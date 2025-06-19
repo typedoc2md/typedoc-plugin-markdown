@@ -1,0 +1,19 @@
+# Function: functionWithArrayOfStuff()
+
+```ts
+function functionWithArrayOfStuff(a: [Stuff]): void;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for array of stuff
+
+## Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `a` | \[[`Stuff`](../type-aliases/Stuff.md)\] |
+
+## Returns
+
+`void`

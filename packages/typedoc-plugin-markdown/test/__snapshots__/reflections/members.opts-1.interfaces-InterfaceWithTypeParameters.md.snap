@@ -1,0 +1,21 @@
+# Interface: InterfaceWithTypeParameters\<A\>
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for InterfaceWithTypeParameters
+
+## Type Parameters
+
+### A
+
+`A`
+
+## Properties
+
+### prop
+
+> **prop**: `A`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for prop

@@ -1,7 +1,7 @@
-import { expectFileToEqual } from '@devtools/testing';
+import { expectFileToEqual } from '../helpers.js';
 
-describe(`Utils`, () => {
-  test(`should get interface with brackets`, () => {
+describe(`typedoc-plugin-markdown (Integration / Utils)`, () => {
+  it(`should get interface with brackets`, () => {
     expectFileToEqual(
       'utils',
       'members',
@@ -9,11 +9,11 @@ describe(`Utils`, () => {
     );
   });
 
-  test(`should get class with brackets`, () => {
+  it(`should get class with brackets`, () => {
     expectFileToEqual('utils', 'members', 'brackets/classes/ClassWithChars.md');
   });
 
-  test(`should get variable with brackets`, () => {
+  it(`should get variable with brackets`, () => {
     expectFileToEqual(
       'utils',
       'members',
@@ -21,7 +21,7 @@ describe(`Utils`, () => {
     );
   });
 
-  test(`should get prettified function`, () => {
+  it(`should get prettified function`, () => {
     expectFileToEqual(
       'utils',
       'members',
@@ -29,7 +29,7 @@ describe(`Utils`, () => {
     );
   });
 
-  test(`should get prettified function`, () => {
+  it(`should get prettified function`, () => {
     expectFileToEqual(
       'utils',
       'members',
@@ -37,7 +37,7 @@ describe(`Utils`, () => {
     );
   });
 
-  test(`should format type with constructor overrides`, () => {
+  it(`should format type with constructor overrides`, () => {
     expectFileToEqual(
       'utils',
       ['members'],
@@ -45,7 +45,7 @@ describe(`Utils`, () => {
     );
   });
 
-  test(`should format index signature type`, () => {
+  it(`should format index signature type`, () => {
     expectFileToEqual(
       'utils',
       ['members'],

@@ -1,0 +1,9 @@
+# Type Alias: TupleType
+
+```ts
+type TupleType = [string, number];
+```
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for TupleType

@@ -1,7 +1,7 @@
-import { expectFileToEqual } from '@devtools/testing';
+import { expectFileToEqual } from '../helpers.js';
 
-describe(`Type Alias Reflection`, () => {
-  test(`should compile primitive type`, () => {
+describe(`typedoc-plugin-markdown (Integration /Type Alias Reflection)`, () => {
+  it(`should compile primitive type`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -9,11 +9,11 @@ describe(`Type Alias Reflection`, () => {
     );
   });
 
-  test(`should compile array type`, () => {
+  it(`should compile array type`, () => {
     expectFileToEqual('reflections', 'members', 'type-aliases/ArrayType.md');
   });
 
-  test(`should compile array of objects type`, () => {
+  it(`should compile array of objects type`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -21,11 +21,11 @@ describe(`Type Alias Reflection`, () => {
     );
   });
 
-  test(`should compile union type`, () => {
+  it(`should compile union type`, () => {
     expectFileToEqual('reflections', 'members', 'type-aliases/UnionType.md');
   });
 
-  test(`should compile useful union type`, () => {
+  it(`should compile useful union type`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -33,7 +33,7 @@ describe(`Type Alias Reflection`, () => {
     );
   });
 
-  test(`should compile string literal type`, () => {
+  it(`should compile string literal type`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -41,11 +41,11 @@ describe(`Type Alias Reflection`, () => {
     );
   });
 
-  test(`should compile string tuple type`, () => {
+  it(`should compile string tuple type`, () => {
     expectFileToEqual('reflections', 'members', 'type-aliases/TupleType.md');
   });
 
-  test(`should compile intersection type`, () => {
+  it(`should compile intersection type`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -53,7 +53,7 @@ describe(`Type Alias Reflection`, () => {
     );
   });
 
-  test(`should compile conditional type`, () => {
+  it(`should compile conditional type`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -61,7 +61,7 @@ describe(`Type Alias Reflection`, () => {
     );
   });
 
-  test(`should compile type parameter type`, () => {
+  it(`should compile type parameter type`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -69,7 +69,7 @@ describe(`Type Alias Reflection`, () => {
     );
   });
 
-  test(`should compile external reference type`, () => {
+  it(`should compile external reference type`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -77,7 +77,7 @@ describe(`Type Alias Reflection`, () => {
     );
   });
 
-  test(`should compile partial mapped type`, () => {
+  it(`should compile partial mapped type`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -85,7 +85,7 @@ describe(`Type Alias Reflection`, () => {
     );
   });
 
-  test(`should compile readonly mapped type`, () => {
+  it(`should compile readonly mapped type`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -93,11 +93,11 @@ describe(`Type Alias Reflection`, () => {
     );
   });
 
-  test(`should compile function type`, () => {
+  it(`should compile function type`, () => {
     expectFileToEqual('reflections', 'members', 'type-aliases/FunctionType.md');
   });
 
-  test(`should compile external link symbol type`, () => {
+  it(`should compile external link symbol type`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -105,11 +105,11 @@ describe(`Type Alias Reflection`, () => {
     );
   });
 
-  test(`should compile external literal type`, () => {
+  it(`should compile external literal type`, () => {
     expectFileToEqual('reflections', 'members', 'type-aliases/LiteralType.md');
   });
 
-  test(`should compile index access type`, () => {
+  it(`should compile index access type`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -117,11 +117,11 @@ describe(`Type Alias Reflection`, () => {
     );
   });
 
-  test(`should compile query type`, () => {
+  it(`should compile query type`, () => {
     expectFileToEqual('reflections', 'members', 'type-aliases/QueryType.md');
   });
 
-  test(`should compile union type with template strings`, () => {
+  it(`should compile union type with template strings`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -129,7 +129,7 @@ describe(`Type Alias Reflection`, () => {
     );
   });
 
-  test(`should compile type with returns`, () => {
+  it(`should compile type with returns`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -137,7 +137,7 @@ describe(`Type Alias Reflection`, () => {
     );
   });
 
-  test(`should compile type with index signature`, () => {
+  it(`should compile type with index signature`, () => {
     expectFileToEqual(
       'reflections',
       'members',

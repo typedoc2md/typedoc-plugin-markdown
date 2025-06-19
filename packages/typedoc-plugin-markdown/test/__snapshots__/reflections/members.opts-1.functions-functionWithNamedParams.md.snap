@@ -1,0 +1,29 @@
+# Function: functionWithNamedParams()
+
+> **functionWithNamedParams**(`__namedParameters`, `anotherParam`): `void`
+
+Defined in: [functions.ts:1](http://source-url)
+
+## Parameters
+
+### \_\_namedParameters
+
+various options
+
+#### bar?
+
+`number` = `43`
+
+#### foo?
+
+`number` = `42`
+
+### anotherParam
+
+`string`
+
+Another param comment
+
+## Returns
+
+`void`

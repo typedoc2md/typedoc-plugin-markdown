@@ -1,0 +1,33 @@
+# Function: functionReturningAnObject()
+
+```ts
+function functionReturningAnObject(): {
+  x: number;
+  y: number;
+};
+```
+
+Comments for function
+
+## Returns
+
+```ts
+{
+  x: number;
+  y: number;
+}
+```
+
+Return comments
+
+### x
+
+```ts
+x: number = 1;
+```
+
+### y
+
+```ts
+y: number = 2;
+```

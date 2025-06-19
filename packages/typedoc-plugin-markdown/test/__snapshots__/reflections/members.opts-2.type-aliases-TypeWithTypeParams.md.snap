@@ -1,0 +1,16 @@
+# Type Alias: TypeWithTypeParams\<T, R\>
+
+```ts
+type TypeWithTypeParams<T, R> = [T, R];
+```
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for TypeWithTypeParams
+
+## Type Parameters
+
+| Type Parameter |
+| :------ |
+| `T` |
+| `R` |

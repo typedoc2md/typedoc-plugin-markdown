@@ -1,11 +1,11 @@
-import { expectFileToEqual } from '@devtools/testing';
+import { expectFileToEqual } from '../helpers.js';
 
-describe(`Variable Reflection`, () => {
-  test(`should compile variable assigned to a string`, () => {
+describe(`typedoc-plugin-markdown (Integration /Variable Reflection)`, () => {
+  it(`should compile variable assigned to a string`, () => {
     expectFileToEqual('reflections', 'members', 'variables/stringVariable.md');
   });
 
-  test(`should compile variable assigned to an object literal`, () => {
+  it(`should compile variable assigned to an object literal`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -13,7 +13,7 @@ describe(`Variable Reflection`, () => {
     );
   });
 
-  test(`should compile type operator variable`, () => {
+  it(`should compile type operator variable`, () => {
     expectFileToEqual(
       'reflections',
       'members',
@@ -21,7 +21,7 @@ describe(`Variable Reflection`, () => {
     );
   });
 
-  test(`should compile object with symbol`, () => {
+  it(`should compile object with symbol`, () => {
     expectFileToEqual(
       'reflections',
       'members',

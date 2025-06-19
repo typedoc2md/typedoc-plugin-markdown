@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Module1",
+    "kind": 2,
+    "path": "Module1/README.md",
+    "isDeprecated": true,
+    "children": [
+      {
+        "title": "SomeInterface1",
+        "kind": 256,
+        "path": "Module1/interfaces/SomeInterface1.md",
+        "isDeprecated": true
+      },
+      {
+        "title": "SomeInterface2",
+        "kind": 256,
+        "path": "Module1/interfaces/SomeInterface2.md",
+        "isDeprecated": true
+      },
+      {
+        "title": "SomeInterface3",
+        "kind": 256,
+        "path": "Module1/interfaces/SomeInterface3.md",
+        "isDeprecated": true
+      }
+    ]
+  },
+  {
+    "title": "Module2",
+    "kind": 2,
+    "path": "Module2/README.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "SomeInterface",
+        "kind": 256,
+        "path": "Module2/interfaces/SomeInterface.md",
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "title": "Module3",
+    "kind": 2,
+    "path": "Module3/README.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "SomeInterfaceA",
+        "kind": 256,
+        "path": "Module3/interfaces/SomeInterfaceA.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "SomeInterfaceB",
+        "kind": 256,
+        "path": "Module3/interfaces/SomeInterfaceB.md",
+        "isDeprecated": true
+      }
+    ]
+  }
+]

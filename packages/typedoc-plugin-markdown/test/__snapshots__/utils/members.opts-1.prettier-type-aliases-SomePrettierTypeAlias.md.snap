@@ -1,0 +1,3 @@
+# Type Alias: SomePrettierTypeAlias
+
+> **SomePrettierTypeAlias** = `string` \| \{ `x`: `1`; \} \| `boolean` \| \{ `y`: `2`; \}

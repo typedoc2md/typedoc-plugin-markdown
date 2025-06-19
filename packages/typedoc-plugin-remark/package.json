@@ -15,9 +15,9 @@
     "prebuild": "rm -rf dist && prebuild-options",
     "build": "tsc",
     "build-and-run": "npm run build && npm run pretest",
-    "pretest": "tsx ./test/__scripts__/prepare.ts",
-    "test": "jest",
-    "test:update": "npm run build && npm run test -- -u"
+    "pretest": "tsx ./test/scripts/prepare.ts",
+    "test": "mocha --config ./mocha.config.json",
+    "test:update": "npm run build && rm -rf ./test/__snapshots__ && npm test"
   },
   "repository": {
     "type": "git",

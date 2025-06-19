@@ -1,0 +1,172 @@
+[**typedoc-stubs**](index.md)
+
+***
+
+[typedoc-stubs](index.md) / basic
+
+# basic
+
+A basic module
+
+## Functions
+
+<a id="functiona"></a>
+
+### functionA() \{#functiona\}
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+## Interfaces
+
+<a id="interfacea"></a>
+
+### InterfaceA \{#interfacea\}
+
+Interface A comments line 1
+and comments on a soft line.
+
+Comments on double new line.
+
+```typescript
+const a = new InterfaceA();
+```
+
+#### Remarks
+
+Block tag content.
+
+- [InterfaceB.propA](#propa-1)
+
+#### Properties
+
+<a id="propa"></a>
+
+##### propA \{#propa\}
+
+> **propA**: `string`
+
+<a id="propb"></a>
+
+##### propB \{#propb\}
+
+> **propB**: `string`
+
+***
+
+<a id="interfaceb"></a>
+
+### InterfaceB \{#interfaceb\}
+
+InterfaceB function.
+
+- [InterfaceA.propA](#propa)
+
+#### Properties
+
+<a id="propa-1"></a>
+
+##### propA \{#propa-1\}
+
+> **propA**: `string`
+
+<a id="propb-1"></a>
+
+##### propB \{#propb-1\}
+
+> **propB**: `string`
+
+## Classes
+
+<a id="classa"></a>
+
+### ClassA \{#classa\}
+
+ClassA function.
+
+#### Constructors
+
+<a id="constructor"></a>
+
+##### Constructor
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+<a id="classb"></a>
+
+### ClassB \{#classb\}
+
+#### Constructors
+
+<a id="constructor-1"></a>
+
+##### Constructor
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+## Enumerations
+
+<a id="enuma"></a>
+
+### EnumA \{#enuma\}
+
+EnumA function.
+
+***
+
+<a id="enumb"></a>
+
+### EnumB \{#enumb\}
+
+## Type Aliases
+
+<a id="typea"></a>
+
+### TypeA \{#typea\}
+
+> **TypeA** = `string`
+
+TypeA function.
+
+[TypeB#propB](#propb-2)
+
+***
+
+<a id="typeb"></a>
+
+### TypeB \{#typeb\}
+
+> **TypeB** = `object`
+
+TypeB function.
+
+#### Properties
+
+<a id="propa-2"></a>
+
+##### propA \{#propa-2\}
+
+> **propA**: `string`
+
+<a id="propb-2"></a>
+
+##### propB? \{#propb-2\}
+
+> `optional` **propB**: `number`
+
+## Variables
+
+<a id="variablea"></a>
+
+### variableA \{#variablea\}
+
+> `const` **variableA**: `""` = `''`
+
+***
+
+<a id="variableb"></a>
+
+### variableB \{#variableb\}
+
+> `const` **variableB**: `""` = `''`

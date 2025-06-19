@@ -1,0 +1,21 @@
+# Enumeration: EnumWithValues
+
+Defined in: [enums.ts:1](http://source-url)
+
+Comments for enum
+
+## Enumeration Members
+
+### MemberA
+
+> **MemberA**: `"UP"`
+
+Defined in: [enums.ts:1](http://source-url)
+
+***
+
+### MemberB
+
+> **MemberB**: `"DOWN"`
+
+Defined in: [enums.ts:1](http://source-url)

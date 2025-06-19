@@ -1,0 +1,183 @@
+# Type Alias: LiteralType
+
+```ts
+type LiteralType = {
+  someFunctionWithArrow: () => string;
+  x?: string;
+  y: {
+     x: string;
+     y?: boolean | string;
+     z: (x: string) => string;
+  };
+  z: (x: string) => string;
+  get accessorA(): Promise<string>;
+  get accessorB(): string;
+  someFunction: Promise<any>;
+};
+```
+
+Comments for LiteralType
+
+## Properties
+
+### someFunctionWithArrow()
+
+```ts
+someFunctionWithArrow: () => string;
+```
+
+Comments for someFunctionWithArrow
+
+#### Returns
+
+`string`
+
+***
+
+### x?
+
+```ts
+optional x: string;
+```
+
+comment for x
+
+***
+
+### y
+
+```ts
+y: {
+  x: string;
+  y?: boolean | string;
+  z: (x: string) => string;
+};
+```
+
+comment for y
+
+#### x
+
+```ts
+x: string;
+```
+
+comment for y.x
+
+#### y?
+
+```ts
+optional y: boolean | string;
+```
+
+comment for y.y
+
+#### z()
+
+```ts
+(x: string) => string
+```
+
+comment for y.z
+
+***
+
+### z()
+
+```ts
+z: (x: string) => string;
+```
+
+#### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `x` | `string` |
+
+#### Returns
+
+`string`
+
+## Accessors
+
+### accessorA
+
+#### Get Signature
+
+```ts
+get accessorA(): Promise<string>;
+```
+
+Comments for accessorA getter
+
+##### Returns
+
+[`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`string`\>
+
+#### Set Signature
+
+```ts
+set accessorA(x: Promise<string>): void;
+```
+
+Comments for accessorA setter
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `x` | [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`string`\> |
+
+##### Returns
+
+`void`
+
+***
+
+### accessorB
+
+#### Get Signature
+
+```ts
+get accessorB(): string;
+```
+
+##### Returns
+
+`string`
+
+#### Set Signature
+
+```ts
+set accessorB(x: string): void;
+```
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `x` | `string` |
+
+##### Returns
+
+`void`
+
+## Methods
+
+### someFunction()
+
+```ts
+someFunction(param: string): Promise<any>;
+```
+
+Comments for someFunction
+
+#### Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| `param` | `string` |  |
+
+#### Returns
+
+[`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`any`\>

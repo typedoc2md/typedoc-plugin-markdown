@@ -1,7 +1,7 @@
-import { expectFileToEqual } from '@devtools/testing';
+import { expectFileToEqual } from '../helpers.js';
 
-describe(`Objects And Params`, () => {
-  test(`should compile object with symbol`, () => {
+describe(`typedoc-plugin-markdown (Integration /Objects and Params)`, () => {
+  it(`should compile object with symbol`, () => {
     expectFileToEqual(
       'objectsAndParams',
       'members',
@@ -9,7 +9,7 @@ describe(`Objects And Params`, () => {
     );
   });
 
-  test(`should compile variable assigned to an object literal`, () => {
+  it(`should compile variable assigned to an object literal`, () => {
     expectFileToEqual(
       'objectsAndParams',
       'members',
@@ -17,7 +17,7 @@ describe(`Objects And Params`, () => {
     );
   });
 
-  test(`should compile literal type`, () => {
+  it(`should compile literal type`, () => {
     expectFileToEqual(
       'objectsAndParams',
       'members',
@@ -25,7 +25,7 @@ describe(`Objects And Params`, () => {
     );
   });
 
-  test(`should compile intersection type`, () => {
+  it(`should compile intersection type`, () => {
     expectFileToEqual(
       'objectsAndParams',
       'members',
@@ -33,7 +33,7 @@ describe(`Objects And Params`, () => {
     );
   });
 
-  test(`should compile union type`, () => {
+  it(`should compile union type`, () => {
     expectFileToEqual(
       'objectsAndParams',
       'members',
@@ -41,7 +41,7 @@ describe(`Objects And Params`, () => {
     );
   });
 
-  test(`should compile basic interface`, () => {
+  it(`should compile basic interface`, () => {
     expectFileToEqual(
       'objectsAndParams',
       'members',
@@ -49,7 +49,7 @@ describe(`Objects And Params`, () => {
     );
   });
 
-  test(`should compile function returning a promise`, () => {
+  it(`should compile function returning a promise`, () => {
     expectFileToEqual(
       'objectsAndParams',
       'members',
@@ -57,7 +57,7 @@ describe(`Objects And Params`, () => {
     );
   });
 
-  test(`should compile function returning an object`, () => {
+  it(`should compile function returning an object`, () => {
     expectFileToEqual(
       'objectsAndParams',
       'members',
@@ -65,7 +65,7 @@ describe(`Objects And Params`, () => {
     );
   });
 
-  test(`should compile function with nested parameters`, () => {
+  it(`should compile function with nested parameters`, () => {
     expectFileToEqual(
       'objectsAndParams',
       'members',
@@ -73,7 +73,7 @@ describe(`Objects And Params`, () => {
     );
   });
 
-  test(`should compile function returning a union`, () => {
+  it(`should compile function returning a union`, () => {
     expectFileToEqual(
       'objectsAndParams',
       'members',

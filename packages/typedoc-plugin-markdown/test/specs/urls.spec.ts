@@ -1,42 +1,43 @@
-import { expectUrlsToEqual } from '@devtools/testing';
-describe(`Urls`, () => {
-  test(`should gets Urls for multiple entry points`, () => {
-    expectUrlsToEqual('groups', ['members', 'modules']);
+import { expectUrlsToEqual } from '../helpers.js';
+
+describe(`typedoc-plugin-markdown (Integration / Urls)`, () => {
+  it(`should gets Urls for multiple entry points`, () => {
+    expectUrlsToEqual('urls', 'groups', ['members', 'modules']);
   });
 
-  test(`should gets Urls for single entry points`, () => {
-    expectUrlsToEqual('reflections', ['members', 'modules']);
+  it(`should gets Urls for single entry points`, () => {
+    expectUrlsToEqual('urls', 'reflections', ['members', 'modules']);
   });
 
-  test(`should gets Urls for packages entry points`, () => {
-    expectUrlsToEqual('packages', ['members', 'modules']);
+  it(`should gets Urls for packages entry points`, () => {
+    expectUrlsToEqual('urls', 'packages', ['members', 'modules']);
   });
 
-  test(`should gets Urls for single package entry points`, () => {
-    expectUrlsToEqual('package', ['members', 'modules']);
+  it(`should gets Urls for single package entry points`, () => {
+    expectUrlsToEqual('urls', 'package', ['members', 'modules']);
   });
 
-  test(`should gets Urls for entry module`, () => {
-    expectUrlsToEqual('entryfiles', ['members', 'modules']);
+  it(`should gets Urls for entry module`, () => {
+    expectUrlsToEqual('urls', 'entryfiles', ['members', 'modules']);
   });
 
-  test(`should gets Urls for readme options`, () => {
-    expectUrlsToEqual('readme', ['members', 'modules']);
+  it(`should gets Urls for readme options`, () => {
+    expectUrlsToEqual('urls', 'readme', ['members', 'modules']);
   });
 
-  test(`should gets Urls for modules parts`, () => {
-    expectUrlsToEqual('modules', ['members', 'modules']);
+  it(`should gets Urls for modules parts`, () => {
+    expectUrlsToEqual('urls', 'modules', ['members', 'modules']);
   });
 
-  test(`should gets Urls for documents multi modules`, () => {
-    expectUrlsToEqual('documents', ['members', 'modules']);
+  it(`should gets Urls for documents multi modules`, () => {
+    expectUrlsToEqual('urls', 'documents', ['members', 'modules']);
   });
 
-  test(`should gets Urls for documents single module`, () => {
-    expectUrlsToEqual('documentsSingleModule', ['members', 'modules']);
+  it(`should gets Urls for documents single module`, () => {
+    expectUrlsToEqual('urls', 'documentsSingleModule', ['members', 'modules']);
   });
 
-  test(`should gets Urls with media assets`, () => {
-    expectUrlsToEqual('comments', ['members']);
+  it(`should gets Urls with media assets`, () => {
+    expectUrlsToEqual('urls', 'comments', ['members']);
   });
 });

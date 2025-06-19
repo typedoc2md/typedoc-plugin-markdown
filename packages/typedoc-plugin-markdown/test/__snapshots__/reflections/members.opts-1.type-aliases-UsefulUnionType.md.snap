@@ -1,0 +1,23 @@
+# Type Alias: UsefulUnionType
+
+> **UsefulUnionType** = `string` \| `boolean` \| \{ `z`: `string`; \}
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for useful UnionType
+
+## Type declaration
+
+`string`
+
+Comments for string
+
+`boolean`
+
+\{ `z`: `string`; \}
+
+### z
+
+> **z**: `string`
+
+Comments for z

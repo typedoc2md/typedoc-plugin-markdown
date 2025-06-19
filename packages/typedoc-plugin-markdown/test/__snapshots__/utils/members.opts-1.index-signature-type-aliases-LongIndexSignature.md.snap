@@ -1,0 +1,7 @@
+# Type Alias: LongIndexSignature
+
+> **LongIndexSignature** = \{[`key`: `` `git·${string}·${string} ${string}` `` \| `` `remote·${string}·${string} ${string}` ``]: `` `dev git·${string}·${string}` `` \| `` `dev remote·${string}·${string}` `` \| `` `prod git·${string}·${string}` `` \| `` `prod remote·${string}·${string}` ``; \}
+
+## Index Signature
+
+\[`key`: `` `git·${string}·${string} ${string}` `` \| `` `remote·${string}·${string} ${string}` ``\]: `` `dev git·${string}·${string}` `` \| `` `dev remote·${string}·${string}` `` \| `` `prod git·${string}·${string}` `` \| `` `prod remote·${string}·${string}` ``

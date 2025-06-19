@@ -1,0 +1,62 @@
+# Class: ClassWithConstructorOverloads
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for ClassWithConstructorOverloads
+
+## Constructors
+
+### Constructor
+
+```ts
+new ClassWithConstructorOverloads(x: number, y: string): ClassWithConstructorOverloads;
+```
+
+Defined in: [classes.ts:1](http://source-url)
+
+#### Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| `x` | `number` | Comments for x number |
+| `y` | `string` |  |
+
+#### Returns
+
+`ClassWithConstructorOverloads`
+
+### Constructor
+
+```ts
+new ClassWithConstructorOverloads(x: string): ClassWithConstructorOverloads;
+```
+
+Defined in: [classes.ts:1](http://source-url)
+
+#### Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| `x` | `string` | Comments for x string |
+
+#### Returns
+
+`ClassWithConstructorOverloads`
+
+### Constructor
+
+```ts
+new ClassWithConstructorOverloads(s: string): ClassWithConstructorOverloads;
+```
+
+Defined in: [classes.ts:1](http://source-url)
+
+#### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `s` | `string` |
+
+#### Returns
+
+`ClassWithConstructorOverloads`

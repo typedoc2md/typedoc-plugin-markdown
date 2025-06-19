@@ -1,0 +1,37 @@
+[**typedoc-stubs**](../index.md)
+
+***
+
+[typedoc-stubs](../modules.md) / has-custom-groups
+
+# has-custom-groups
+
+A module that contains custom groupings
+
+| Name | Description |
+| :------ | :------ |
+| [InterfaceNoGroup1](interfaces/InterfaceNoGroup1.md) | - |
+| [InterfaceNoGroup2](interfaces/InterfaceNoGroup2.md) | - |
+| [variableNoGroup1](variables/variableNoGroup1.md) | - |
+| [variableNoGroup2](variables/variableNoGroup2.md) | - |
+
+## Variables
+
+| Variable | Description |
+| :------ | :------ |
+| [variableC](variables/variableC.md) | Default grouping |
+
+## CustomGroupA
+
+Group description for CustomGroupA
+
+| Variable | Description |
+| :------ | :------ |
+| [variabelA](variables/variabelA.md) | - |
+
+## CustomGroupB
+
+| Variable | Description |
+| :------ | :------ |
+| [variableB1](variables/variableB1.md) | - |
+| [variableB2](variables/variableB2.md) | - |

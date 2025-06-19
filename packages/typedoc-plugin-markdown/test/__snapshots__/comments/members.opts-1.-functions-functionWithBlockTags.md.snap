@@ -1,0 +1,32 @@
+# Function: functionWithBlockTags()
+
+> **functionWithBlockTags**(`x`, `y`): `void`
+
+Defined in: [index.ts:1](http://source-url)
+
+Function with block tags summary
+
+## Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `x` | `string` |
+| `y` | `string` |
+
+## Returns
+
+`void`
+
+## Example
+
+```ts
+const x = 1;
+```
+
+## See
+
+abc.com
+
+## Remarks
+
+Other block tags

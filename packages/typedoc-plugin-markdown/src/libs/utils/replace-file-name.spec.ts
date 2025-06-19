@@ -1,12 +1,13 @@
-import { replaceFilename } from './replace-file-name';
+import { strict as assert } from 'assert';
+import { replaceFilename } from './replace-file-name.js';
 
-describe('replaceFilename', () => {
+describe('typedoc-plugin-markdown (Utils / replaceFileName)', () => {
   it('should replace the filename in the path with the new filename', () => {
     const originalPath = '/path/to/oldfile.txt';
     const newFileName = 'newfile';
     const expectedOutput = '/path/to/newfile.txt';
     const result = replaceFilename(originalPath, newFileName);
-    expect(result).toEqual(expectedOutput);
+    assert.strictEqual(result, expectedOutput);
   });
 
   it('should handle paths with multiple extensions', () => {
@@ -14,7 +15,7 @@ describe('replaceFilename', () => {
     const newFileName = 'newarchive';
     const expectedOutput = '/path/to/newarchive.gz';
     const result = replaceFilename(originalPath, newFileName);
-    expect(result).toEqual(expectedOutput);
+    assert.strictEqual(result, expectedOutput);
   });
 
   it('should handle relative paths', () => {
@@ -22,7 +23,7 @@ describe('replaceFilename', () => {
     const newFileName = 'newfile';
     const expectedOutput = './newfile.txt';
     const result = replaceFilename(originalPath, newFileName);
-    expect(result).toEqual(expectedOutput);
+    assert.strictEqual(result, expectedOutput);
   });
 
   it('should handle paths with special characters', () => {
@@ -30,6 +31,6 @@ describe('replaceFilename', () => {
     const newFileName = 'new-file@456';
     const expectedOutput = '/path/to/new-file@456.txt';
     const result = replaceFilename(originalPath, newFileName);
-    expect(result).toEqual(expectedOutput);
+    assert.strictEqual(result, expectedOutput);
   });
 });

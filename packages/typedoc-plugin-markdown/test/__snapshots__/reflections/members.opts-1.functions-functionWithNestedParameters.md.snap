@@ -1,0 +1,59 @@
+# Function: functionWithNestedParameters()
+
+> **functionWithNestedParameters**(`params`, `context`, `somethingElse?`): `boolean`
+
+Defined in: [functions.ts:1](http://source-url)
+
+Some nested params.
+
+## Parameters
+
+### params
+
+The parameters passed to the method.
+
+#### name
+
+`string`
+
+The name of the new group.
+
+#### nestedObj
+
+\{ `name`: `string`; `obj`: \{ `name`: () => `void`; \}; `value`: `number`; \}
+
+A nested object.
+
+#### nestedObj.name
+
+`string`
+
+#### nestedObj.obj
+
+\{ `name`: () => `void`; \}
+
+#### nestedObj.obj.name
+
+() => `void`
+
+#### nestedObj.value
+
+`number`
+
+#### parent?
+
+`number`
+
+### context
+
+`any`
+
+The context of the method call.
+
+### somethingElse?
+
+`string`
+
+## Returns
+
+`boolean`

@@ -1,0 +1,99 @@
+# Class: ClassWithAccessors
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for ClassWithAccessors
+
+## Constructors
+
+### Constructor
+
+```ts
+new ClassWithAccessors(): ClassWithAccessors;
+```
+
+#### Returns
+
+`ClassWithAccessors`
+
+## Properties
+
+| Property | Modifier | Type |
+| :------ | :------ | :------ |
+| <a id="privateprop"></a> `privateProp` | `private` | `string` |
+
+## Accessors
+
+### accessor
+
+#### Get Signature
+
+```ts
+get accessor(): string;
+```
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for getter
+
+##### Returns
+
+`string`
+
+#### Set Signature
+
+```ts
+set accessor(value: string): void;
+```
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for setter
+
+##### Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| `value` | `string` | Param comments |
+
+##### Returns
+
+`void`
+
+***
+
+### noGetter
+
+#### Set Signature
+
+```ts
+set noGetter(x: string): void;
+```
+
+Defined in: [classes.ts:1](http://source-url)
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `x` | `string` |
+
+##### Returns
+
+`void`
+
+***
+
+### noSetter
+
+#### Get Signature
+
+```ts
+get noSetter(): string;
+```
+
+Defined in: [classes.ts:1](http://source-url)
+
+##### Returns
+
+`string`

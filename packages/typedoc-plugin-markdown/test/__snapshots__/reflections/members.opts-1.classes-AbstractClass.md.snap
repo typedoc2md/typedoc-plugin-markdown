@@ -1,0 +1,46 @@
+# Class: `abstract` AbstractClass
+
+Defined in: [classes.ts:1](http://source-url)
+
+## Hierarchy
+
+[View Summary](../hierarchy.md)
+
+### Extended by
+
+- [`DerivedClassA`](DerivedClassA.md)
+- [`DerivedClassB`](DerivedClassB.md)
+
+## Constructors
+
+### Constructor
+
+> **new AbstractClass**(): `AbstractClass`
+
+#### Returns
+
+`AbstractClass`
+
+## Properties
+
+### abstractProp
+
+> `abstract` **abstractProp**: `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for abstractProp
+
+## Methods
+
+### abstractMethod()
+
+> `abstract` **abstractMethod**(): `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for abstractMethod
+
+#### Returns
+
+`string`

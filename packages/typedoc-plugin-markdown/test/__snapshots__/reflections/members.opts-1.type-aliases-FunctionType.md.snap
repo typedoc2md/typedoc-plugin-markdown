@@ -1,0 +1,28 @@
+# Type Alias: FunctionType()
+
+> **FunctionType** = (`name`, `value`) => `void`
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for FunctionType
+
+- Test link resolution for:
+
+- [`LiteralType`](LiteralType.md) and uses [LiteralType#x](LiteralType.md#x)
+- [`BasicInterface`](../interfaces/BasicInterface.md) and uses [BasicInterface#prop](../interfaces/BasicInterface.md#prop)
+- [`BasicClass`](../classes/BasicClass.md) and uses [BasicClass#prop](../classes/BasicClass.md#prop)
+- [`BasicEnum`](../enumerations/BasicEnum.md) and uses [BasicEnum#MemberA](../enumerations/BasicEnum.md#membera)
+
+## Parameters
+
+### name
+
+`string`
+
+### value
+
+`unknown`
+
+## Returns
+
+`void`

@@ -1,0 +1,267 @@
+# Interface: ExtendedInterface
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for ExtendedInterface
+
+## Hierarchy
+
+[View Summary](../hierarchy.md)
+
+### Extends
+
+- [`BasicInterface`](BasicInterface.md)
+
+## Properties
+
+### ~~deprecatedProp~~
+
+> **deprecatedProp**: `string`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+#### Deprecated
+
+This prop is deprecated
+
+#### See
+
+Comments for some tag
+
+#### Inherited from
+
+[`BasicInterface`](BasicInterface.md).[`deprecatedProp`](BasicInterface.md#deprecatedprop)
+
+***
+
+### extendedProp
+
+> **extendedProp**: `string`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+***
+
+### functionProp()
+
+> **functionProp**: (`s`) => `boolean`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for functionProper
+
+#### Parameters
+
+##### s
+
+`string`
+
+Comment for param s
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[`BasicInterface`](BasicInterface.md).[`functionProp`](BasicInterface.md#functionprop)
+
+***
+
+### optionalProp?
+
+> `optional` **optionalProp**: `string`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for optional prop
+
+#### Inherited from
+
+[`BasicInterface`](BasicInterface.md).[`optionalProp`](BasicInterface.md#optionalprop)
+
+***
+
+### prop
+
+> **prop**: `string`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for prop
+
+#### Inherited from
+
+[`BasicInterface`](BasicInterface.md).[`prop`](BasicInterface.md#prop)
+
+***
+
+### propReturningObjectDeclaration
+
+> **propReturningObjectDeclaration**: `object`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for propReturningObjectDeclaration
+
+#### a
+
+> **a**: `boolean`
+
+#### b
+
+> **b**: `string`
+
+#### Inherited from
+
+[`BasicInterface`](BasicInterface.md).[`propReturningObjectDeclaration`](BasicInterface.md#propreturningobjectdeclaration)
+
+***
+
+### propReturningObjectDeclarations
+
+> **propReturningObjectDeclarations**: `object` & `object`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for propReturningObjectDeclarations
+
+#### Type declaration
+
+##### a
+
+> **a**: `boolean`
+
+##### b
+
+> **b**: `string`
+
+#### Type declaration
+
+##### c
+
+> **c**: `boolean`
+
+##### d
+
+> **d**: `string`
+
+#### Inherited from
+
+[`BasicInterface`](BasicInterface.md).[`propReturningObjectDeclarations`](BasicInterface.md#propreturningobjectdeclarations)
+
+***
+
+### propReturningSignatureDeclaration()?
+
+> `optional` **propReturningSignatureDeclaration**: () => `string` \| `number` \| `boolean`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for propReturningSignatureDeclaration
+
+#### Returns
+
+`string` \| `number` \| `boolean`
+
+#### Inherited from
+
+[`BasicInterface`](BasicInterface.md).[`propReturningSignatureDeclaration`](BasicInterface.md#propreturningsignaturedeclaration)
+
+***
+
+### propReturningSignatureDeclarations
+
+> **propReturningSignatureDeclarations**: () => `any` & (`paramsA`, `paramsB?`) => `any` & (`paramsC`) => `any`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for propReturningSignatureDeclarations
+
+#### Inherited from
+
+[`BasicInterface`](BasicInterface.md).[`propReturningSignatureDeclarations`](BasicInterface.md#propreturningsignaturedeclarations)
+
+***
+
+### propWithFunction()
+
+> **propWithFunction**: (`options`) => `boolean`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for propWithFunction
+
+#### Parameters
+
+##### options
+
+###### a
+
+`boolean`
+
+###### b
+
+`string`
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[`BasicInterface`](BasicInterface.md).[`propWithFunction`](BasicInterface.md#propwithfunction)
+
+***
+
+### propWithProps
+
+> **propWithProps**: `object`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for propWithProps
+
+#### callbacks?
+
+> `optional` **callbacks**: `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\>
+
+Comments for callbacks
+
+#### nestedPropA
+
+> **nestedPropA**: `string`
+
+Comments for nestedPropA
+
+#### nestedPropB
+
+> **nestedPropB**: `boolean`
+
+Comments for nestedPropB
+
+#### nestedPropC
+
+> **nestedPropC**: `object`
+
+Comments for nestedPropC
+
+##### nestedPropC.nestedPropCA
+
+> **nestedPropCA**: `string`
+
+Comments for nestedPropCA
+
+#### nestedPropD()
+
+> **nestedPropD**: () => `boolean`
+
+Comments for nestedPropD
+
+##### Returns
+
+`boolean`
+
+#### Inherited from
+
+[`BasicInterface`](BasicInterface.md).[`propWithProps`](BasicInterface.md#propwithprops)

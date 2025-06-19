@@ -1,0 +1,17 @@
+[**@scope/entryfile**](../../README.mdx)
+
+***
+
+[@scope/entryfile](../../README.mdx) / [entry-module](../../README.mdx) / ModuleClass
+
+# Class: ModuleClass
+
+## Constructors
+
+### Constructor
+
+> **new ModuleClass**(): `ModuleClass`
+
+#### Returns
+
+`ModuleClass`

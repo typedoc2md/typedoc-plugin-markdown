@@ -1,0 +1,23 @@
+# Function: constFunctionWithReturns()
+
+> **constFunctionWithReturns**(`text`): `boolean`
+
+Defined in: [index.ts:1](http://source-url)
+
+constFunctionWithReturns comments
+
+## Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `text` | `string` | Some param |
+
+## Returns
+
+`boolean`
+
+Return comments
+
+## Remarks
+
+Some remarks

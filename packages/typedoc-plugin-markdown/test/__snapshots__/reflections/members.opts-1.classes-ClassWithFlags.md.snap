@@ -1,0 +1,63 @@
+# Class: ClassWithFlags
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comment for ClassWithFlags
+
+## Constructors
+
+### Constructor
+
+> **new ClassWithFlags**(): `ClassWithFlags`
+
+#### Returns
+
+`ClassWithFlags`
+
+## Properties
+
+### expermintalProp
+
+> **expermintalProp**: `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+**`Experimental`**
+
+***
+
+### internalProp
+
+> `private` **internalProp**: `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+**`Internal`**
+
+## Methods
+
+### expermintalMethod()
+
+> **expermintalMethod**(): `void`
+
+Defined in: [classes.ts:1](http://source-url)
+
+**`Experimental`**
+
+#### Returns
+
+`void`
+
+***
+
+### internalMethod()
+
+> `protected` **internalMethod**(): `void`
+
+Defined in: [classes.ts:1](http://source-url)
+
+**`Internal`**
+
+#### Returns
+
+`void`

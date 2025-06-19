@@ -1,0 +1,17 @@
+# Interface: IndexableInterface
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for IndexableInterface
+
+## Indexable
+
+\[`s`: `string`\]: `string`
+
+## Properties
+
+### prop
+
+> **prop**: `string`
+
+Defined in: [interfaces.ts:1](http://source-url)

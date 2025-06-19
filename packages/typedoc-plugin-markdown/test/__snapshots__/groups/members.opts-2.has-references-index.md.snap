@@ -1,0 +1,58 @@
+[**typedoc-stubs**](../index.md)
+
+***
+
+[typedoc-stubs](../index.md) / has-references
+
+# has-references
+
+A module that contains references
+
+## Functions
+
+<table>
+<thead>
+<tr>
+<th align="left">Function</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[defaultFunction](functions/defaultFunction.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## References
+
+<a id="default"></a>
+
+### default \{#default\}
+
+Renames and re-exports [defaultFunction](functions/defaultFunction.md)
+
+***
+
+<a id="interfacea"></a>
+
+### InterfaceA \{#interfacea\}
+
+Re-exports [InterfaceA](../basic/interfaces/InterfaceA.md)
+
+***
+
+<a id="renamedinterfaceb"></a>
+
+### RenamedInterfaceB \{#renamedinterfaceb\}
+
+Renames and re-exports [InterfaceB](../basic/interfaces/InterfaceB.md)

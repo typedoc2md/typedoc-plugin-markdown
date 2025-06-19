@@ -1,0 +1,37 @@
+# Class: ClassWithSymbols
+
+Defined in: [classes.ts:1](http://source-url)
+
+## Constructors
+
+### Constructor
+
+> **new ClassWithSymbols**(): `ClassWithSymbols`
+
+#### Returns
+
+`ClassWithSymbols`
+
+## Properties
+
+### \[symbolConst\]()?
+
+> `static` `optional` **\[symbolConst\]**: () => `void`
+
+Defined in: [classes.ts:1](http://source-url)
+
+#### Returns
+
+`void`
+
+## Methods
+
+### \[dispose\]()
+
+> **\[dispose\]**(): `void`
+
+Defined in: [classes.ts:1](http://source-url)
+
+#### Returns
+
+`void`

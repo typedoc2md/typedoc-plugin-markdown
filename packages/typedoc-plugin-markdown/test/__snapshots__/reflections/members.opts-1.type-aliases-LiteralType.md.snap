@@ -1,0 +1,171 @@
+# Type Alias: LiteralType
+
+> **LiteralType** = `object`
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for LiteralType
+
+## Properties
+
+### someFunctionWithArrow()
+
+> **someFunctionWithArrow**: () => `string`
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for someFunctionWithArrow
+
+#### Returns
+
+`string`
+
+***
+
+### x?
+
+> `optional` **x**: `string`
+
+Defined in: [types.ts:1](http://source-url)
+
+comment for x
+
+***
+
+### y
+
+> **y**: `object`
+
+Defined in: [types.ts:1](http://source-url)
+
+comment for y
+
+#### x
+
+> **x**: `string`
+
+comment for y.x
+
+#### y?
+
+> `optional` **y**: `boolean` \| `string`
+
+comment for y.y
+
+#### z()
+
+> **z**: (`x`) => `string`
+
+comment for y.z
+
+##### Parameters
+
+###### x
+
+`string`
+
+##### Returns
+
+`string`
+
+***
+
+### z()
+
+> **z**: (`x`) => `string`
+
+Defined in: [types.ts:1](http://source-url)
+
+#### Parameters
+
+##### x
+
+`string`
+
+#### Returns
+
+`string`
+
+## Accessors
+
+### accessorA
+
+#### Get Signature
+
+> **get** **accessorA**(): [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`string`\>
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for accessorA getter
+
+##### Returns
+
+[`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`string`\>
+
+#### Set Signature
+
+> **set** **accessorA**(`x`): `void`
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for accessorA setter
+
+##### Parameters
+
+###### x
+
+[`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`string`\>
+
+##### Returns
+
+`void`
+
+***
+
+### accessorB
+
+#### Get Signature
+
+> **get** **accessorB**(): `string`
+
+Defined in: [types.ts:1](http://source-url)
+
+##### Returns
+
+`string`
+
+#### Set Signature
+
+> **set** **accessorB**(`x`): `void`
+
+Defined in: [types.ts:1](http://source-url)
+
+##### Parameters
+
+###### x
+
+`string`
+
+##### Returns
+
+`void`
+
+## Methods
+
+### someFunction()
+
+> **someFunction**(`param`): [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`any`\>
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for someFunction
+
+#### Parameters
+
+##### param
+
+`string`
+
+#### Returns
+
+[`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`any`\>

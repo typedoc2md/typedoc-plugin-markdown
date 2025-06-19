@@ -1,0 +1,42 @@
+# Class: `abstract` AbstractClass
+
+Defined in: [classes.ts:1](http://source-url)
+
+## Extended by
+
+- [`DerivedClassA`](DerivedClassA.md)
+- [`DerivedClassB`](DerivedClassB.md)
+
+## Constructors
+
+### Constructor
+
+```ts
+new AbstractClass(): AbstractClass;
+```
+
+#### Returns
+
+`AbstractClass`
+
+## Properties
+
+| Property | Modifier | Type | Description |
+| :------ | :------ | :------ | :------ |
+| <a id="abstractprop"></a> `abstractProp` | `abstract` | `string` | Comments for abstractProp |
+
+## Methods
+
+### abstractMethod()
+
+```ts
+abstract abstractMethod(): string;
+```
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for abstractMethod
+
+#### Returns
+
+`string`

@@ -1,0 +1,21 @@
+# Function: constFunction()
+
+> **constFunction**(`text`): `boolean`
+
+Defined in: [index.ts:1](http://source-url)
+
+constFunction comments
+
+## Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `text` | `string` | Some param |
+
+## Returns
+
+`boolean`
+
+## Remarks
+
+Some remarks

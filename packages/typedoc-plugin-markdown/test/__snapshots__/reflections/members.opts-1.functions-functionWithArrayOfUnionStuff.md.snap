@@ -1,0 +1,17 @@
+# Function: functionWithArrayOfUnionStuff()
+
+> **functionWithArrayOfUnionStuff**(`a`): `void`
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for array of union stuff
+
+## Parameters
+
+### a
+
+\[[`Stuff`](../type-aliases/Stuff.md)?\]
+
+## Returns
+
+`void`

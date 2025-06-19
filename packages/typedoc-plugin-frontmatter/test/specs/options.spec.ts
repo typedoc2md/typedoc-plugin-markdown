@@ -1,47 +1,34 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import { assertToMatchSnapshot, getFileContents } from '@devtools/testing';
 
-describe(`Options:`, () => {
-  beforeAll(async () => {});
-
+describe(`typedoc-plugin-frontmatter (Options)`, () => {
   describe(`YAML`, () => {
-    test(`should prepend frontmatter`, async () => {
-      const pageContent = fs
-        .readFileSync(
-          path.join(__dirname, '../out/options/interfaces/SomeInterface.md'),
-        )
-        .toString();
-      expect(pageContent).toMatchSnapshot();
+    it(`should prepend frontmatter`, async () => {
+      const pageContent = getFileContents(
+        'out/options/interfaces/SomeInterface.md',
+      );
+      assertToMatchSnapshot('yaml-append-frontmatter', pageContent);
     });
 
-    test(`should prepend frontmatter with preserved tags`, async () => {
-      const pageContent = fs
-        .readFileSync(
-          path.join(__dirname, '../out/options-2/interfaces/SomeInterface.md'),
-        )
-        .toString();
-      expect(pageContent).toMatchSnapshot();
+    it(`should prepend frontmatter with preserved tags`, async () => {
+      const pageContent = getFileContents(
+        'out/options-2/interfaces/SomeInterface.md',
+      );
+      assertToMatchSnapshot('yaml-prepend-preserve-tags', pageContent);
     });
 
-    test(`should prepend frontmatter for readme page`, async () => {
-      const pageContent = fs
-        .readFileSync(path.join(__dirname, '../out/options-2/README.md'))
-        .toString();
-      expect(pageContent).toMatchSnapshot();
+    it(`should prepend frontmatter for readme page`, async () => {
+      const pageContent = getFileContents('out/options-2/README.md');
+      assertToMatchSnapshot('yaml-readme-page', pageContent);
     });
 
-    test(`should prepend frontmatter to index page`, async () => {
-      const pageContent = fs
-        .readFileSync(path.join(__dirname, '../out/options-2/globals.md'))
-        .toString();
-      expect(pageContent).toMatchSnapshot();
+    it(`should prepend frontmatter to index page`, async () => {
+      const pageContent = getFileContents('out/options-2/globals.md');
+      assertToMatchSnapshot('yaml-index-page', pageContent);
     });
 
-    test(`should accept yaml stringify options`, async () => {
-      const pageContent = fs
-        .readFileSync(path.join(__dirname, '../out/options-3/README.md'))
-        .toString();
-      expect(pageContent).toMatchSnapshot();
+    it(`should accept yaml stringify options`, async () => {
+      const pageContent = getFileContents('out/options-3/README.md');
+      assertToMatchSnapshot('yaml-stringify-options', pageContent);
     });
   });
 });

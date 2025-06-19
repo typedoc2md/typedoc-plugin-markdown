@@ -1,0 +1,25 @@
+# Class: ClassWithComplexProps
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for ClassWithComplexProps
+
+## Constructors
+
+### Constructor
+
+```ts
+new ClassWithComplexProps(): ClassWithComplexProps;
+```
+
+#### Returns
+
+`ClassWithComplexProps`
+
+## Properties
+
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| <a id="objecliteralprop"></a> `objecLiteralProp` | `object` | - |
+| `objecLiteralProp.someFunction` | (`a`: `string`) => `string` | Comments for someFunction |
+| `objecLiteralProp.someProp` | `string` | Comments for someProp |

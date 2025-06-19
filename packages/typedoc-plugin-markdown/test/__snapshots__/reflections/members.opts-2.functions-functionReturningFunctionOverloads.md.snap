@@ -1,0 +1,21 @@
+# Function: functionReturningFunctionOverloads()
+
+```ts
+function functionReturningFunctionOverloads(): object;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+## Returns
+
+Return comments
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `member1()` | \{ (`options?`: `any`): [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`void`\>; (`signOutCallback?`: `any`, `options?`: `any`): [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`void`\>; `prop1`: `string`; `prop2`: `string`; \} | Member 1 comments Comments for function 1 Comments for function 2 |
+| `member1.prop1` | `string` | Comments for prop 1 |
+| `member1.prop2` | `string` | Comments for prop 2 |
+| `member2()` | \{ (`options?`: `any`): [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`void`\>; (`options2?`: `any`): [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`void`\>; \} | Comments for function 1 **Remarks** function1 block tag Comments for function 2 **Remarks** function2 block tag |
+| `member3()` | (`options?`: `any`) => [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`void`\> | Member 3 comments Comments for function |
+| `member4` | `object` | - |
+| `member4.prop` | `string` | Comments for prop |

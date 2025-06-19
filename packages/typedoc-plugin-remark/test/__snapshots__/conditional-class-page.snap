@@ -1,0 +1,29 @@
+---
+title: "test"
+---
+
+# Class: Class
+
+## Constructors
+
+### Constructor
+
+> **new Class**(): `Class`
+
+#### Returns
+
+`Class`
+
+## Properties
+
+### a
+
+> **a**: `string`
+
+***
+
+### b
+
+> **b**: `number`
+
+> thanks [**@tgreyuk**](https://github.com/tgreyuk)

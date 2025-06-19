@@ -1,13 +1,8 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import { assertToMatchSnapshot, getFileContents } from '@devtools/testing';
 
-describe(`No Frontmatter Data`, () => {
-  test(`should not write any YAML to page if no data found`, async () => {
-    const contents = fs
-      .readFileSync(
-        path.join(__dirname, '../out/no-data/interfaces/SomeInterface.md'),
-      )
-      .toString();
-    expect(contents).toMatchSnapshot();
+describe(`typedoc-plugin-frontmatter (No Frontmatter Data)`, () => {
+  it(`should not write any YAML to page if no data found`, async () => {
+    const contents = getFileContents('out/no-data/interfaces/SomeInterface.md');
+    assertToMatchSnapshot('no-frontmatter', contents);
   });
 });

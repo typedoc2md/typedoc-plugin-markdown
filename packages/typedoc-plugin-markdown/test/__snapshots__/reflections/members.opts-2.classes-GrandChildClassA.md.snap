@@ -1,0 +1,23 @@
+# Class: GrandChildClassA
+
+Defined in: [classes.ts:1](http://source-url)
+
+## Extends
+
+- [`ChildClassA`](ChildClassA.md)
+
+## Constructors
+
+### Constructor
+
+```ts
+new GrandChildClassA(): GrandChildClassA;
+```
+
+#### Returns
+
+`GrandChildClassA`
+
+#### Inherited from
+
+[`ChildClassA`](ChildClassA.md).[`constructor`](ChildClassA.md#constructor)

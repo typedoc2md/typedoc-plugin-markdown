@@ -1,0 +1,63 @@
+# Interface: InterfaceWithComments\<A, B, C, D\>
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for interface
+over two lines
+
+And some more comments
+
+## Type Parameters
+
+### A
+
+`A`
+
+This is a parameter.
+
+### B
+
+`B`
+
+Comments for a parameter.
+This sentence is on a soft new line.
+
+### C
+
+`C`
+
+This is a parameter.
+
+ Documentation with a double line
+
+### D
+
+`D`
+
+<p>These are comments with paras</p>
+<p>These are comments with paras</p>
+Other comments
+Comments with <p>paras</p>
+
+<p>These are comments with paras</p>
+
+## Properties
+
+### ~~propertyWithComments~~
+
+> **propertyWithComments**: `string`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Some text.
+
+- list item
+- list item
+
+#### Deprecated
+
+This is a deprecated property
+
+#### See
+
+https://example.com

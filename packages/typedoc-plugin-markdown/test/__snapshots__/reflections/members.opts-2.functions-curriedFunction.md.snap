@@ -1,0 +1,66 @@
+# Function: curriedFunction()
+
+Comments for main curriedFunction
+
+## Call Signature
+
+```ts
+function curriedFunction(searchElement: unknown): <Value>(iterable: Iterable<Value>) => boolean;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for current function 1
+
+### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `searchElement` | `unknown` |
+
+### Returns
+
+```ts
+<Value>(iterable: Iterable<Value>): boolean;
+```
+
+#### Type Parameters
+
+| Type Parameter |
+| :------ |
+| `Value` |
+
+#### Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| `iterable` | `Iterable`\<`Value`\> | Comments for iterable arg |
+
+#### Returns
+
+`boolean`
+
+## Call Signature
+
+```ts
+function curriedFunction<Value>(searchElement: unknown, iterable: Iterable<Value>): string;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+### Type Parameters
+
+| Type Parameter |
+| :------ |
+| `Value` |
+
+### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `searchElement` | `unknown` |
+| `iterable` | `Iterable`\<`Value`\> |
+
+### Returns
+
+`string`

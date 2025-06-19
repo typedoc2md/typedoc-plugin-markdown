@@ -1,0 +1,19 @@
+# Function: functionReturningAPromise()
+
+```ts
+function functionReturningAPromise(): Promise<{
+  prop: string;
+}>;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function
+
+## Returns
+
+[`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<\{
+  `prop`: `string`;
+\}\>
+
+Return comments

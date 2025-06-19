@@ -1,0 +1,91 @@
+[**typedoc-stubs**](index.md)
+
+***
+
+[typedoc-stubs](index.md) / has-categories
+
+# has-categories
+
+A module that contains categories
+
+<a id="explicitnocategoryenum"></a>
+
+## ExplicitNoCategoryEnum \{#explicitnocategoryenum\}
+
+***
+
+<a id="explicitnocategoryinterface"></a>
+
+## ExplicitNoCategoryInterface \{#explicitnocategoryinterface\}
+
+## Category A
+
+<a id="categoryaenum1"></a>
+
+### CategoryAEnum1 \{#categoryaenum1\}
+
+***
+
+<a id="categoryaenum2"></a>
+
+### CategoryAEnum2 \{#categoryaenum2\}
+
+***
+
+<a id="categoryainterface1"></a>
+
+### CategoryAInterface1 \{#categoryainterface1\}
+
+***
+
+<a id="categoryainterface2"></a>
+
+### CategoryAInterface2 \{#categoryainterface2\}
+
+## Category B
+
+<a id="categorybenum1"></a>
+
+### CategoryBEnum1 \{#categorybenum1\}
+
+***
+
+<a id="categorybenum2"></a>
+
+### CategoryBEnum2 \{#categorybenum2\}
+
+***
+
+<a id="categorybinterface1"></a>
+
+### CategoryBInterface1 \{#categorybinterface1\}
+
+***
+
+<a id="categorybinterface2"></a>
+
+### CategoryBInterface2 \{#categorybinterface2\}
+
+## Category C
+
+<a id="categorycinterface1"></a>
+
+### CategoryCInterface1 \{#categorycinterface1\}
+
+## Other
+
+<a id="uncategorizedenum"></a>
+
+### UnCategorizedEnum \{#uncategorizedenum\}
+
+***
+
+<a id="categorycinterface2"></a>
+
+### CategoryCInterface2 \{#categorycinterface2\}
+
+***
+
+<a id="uncategorizedinterace"></a>
+
+### UnCategorizedInterace \{#uncategorizedinterace\}

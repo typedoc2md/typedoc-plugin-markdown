@@ -1,0 +1,22 @@
+# Class: BaseClass
+
+Defined in: [classes.ts:1](http://source-url)
+
+## Hierarchy
+
+[View Summary](../hierarchy.md)
+
+### Extended by
+
+- [`ChildClassA`](ChildClassA.md)
+- [`ChildClassB`](ChildClassB.md)
+
+## Constructors
+
+### Constructor
+
+> **new BaseClass**(): `BaseClass`
+
+#### Returns
+
+`BaseClass`

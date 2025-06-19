@@ -1,0 +1,70 @@
+# Type Alias: TypeDeclarationType
+
+> **TypeDeclarationType** = \{ `declaration1`: `boolean`; `declaration2`: `boolean`; `declaration3`: `100`; \}
+
+Defined in: [index.ts:1](http://source-url)
+
+## Properties
+
+<table>
+<thead>
+<tr>
+<th align="left">Property</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+<a id="api-declaration1"></a> `declaration1`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Comments for declaration1
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="api-declaration2"></a> `declaration2`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Comments for declaration2
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="api-declaration3"></a> `declaration3`
+
+</td>
+<td>
+
+`100`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>

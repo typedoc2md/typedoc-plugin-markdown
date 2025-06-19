@@ -1,0 +1,33 @@
+[**typedoc-stubs**](index.md)
+
+***
+
+[typedoc-stubs](modules.md) / has-references
+
+# has-references
+
+A module that contains references
+
+## Functions
+
+### defaultFunction()
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+## References
+
+### default
+
+Renames and re-exports [defaultFunction](#defaultfunction)
+
+***
+
+### InterfaceA
+
+Re-exports [InterfaceA](basic.md#interfacea)
+
+***
+
+### RenamedInterfaceB
+
+Renames and re-exports [InterfaceB](basic.md#interfaceb)

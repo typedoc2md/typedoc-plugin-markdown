@@ -12,15 +12,16 @@
   "scripts": {
     "lint": "eslint ./src",
     "prepublishOnly": "npm run lint && npm run build",
-    "prebuild": "rm -rf dist && prebuild-options && tsx ./__scripts__/prebuild",
+    "prebuild": "rm -rf dist && prebuild-options && tsx ./scripts/prebuild",
     "build": "tsc && tsc-alias",
     "build-and-run": "npm run build && npm run fixtures -- -isDEV",
-    "fixtures": "rm -rf ./test/fixtures/out && node test/__scripts__/build-fixtures.mjs",
-    "validate": "node test/__scripts__/lint/lint.md.mjs && tsx test/__scripts__/lint/lint.mdx.mjs",
+    "fixtures": "rm -rf ./test/fixtures/out && node test/scripts/build-fixtures.mjs",
+    "validate": "node test/lint/lint.md.mjs && tsx test/lint/lint.mdx.mjs",
     "pretest": "rm -rf test/out && npm run fixtures -- -isCI",
-    "test": "npm run validate && jest",
-    "test:update": "npm run build && npm run fixtures && npm run validate && jest -u",
-    "schema": "tsx ./__scripts__/schema/generate-schema.ts"
+    "test": "npm run validate && npm run mocha",
+    "test:update": "npm run build && npm run fixtures && rm -rf test/__snapshots__ && npm run mocha",
+    "mocha": "mocha --config ./mocha.config.json",
+    "schema": "tsx ./scripts/schema/generate-schema.ts"
   },
   "author": "Thomas Grey",
   "license": "MIT",
@@ -46,5 +47,8 @@
     "typedoc",
     "typescript",
     "typedoc-plugin"
-  ]
+  ],
+  "devDependencies": {
+    "mocha": "^11.7.0"
+  }
 }

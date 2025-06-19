@@ -1,6 +1,7 @@
-import { formatTableCell } from './format-table-cell';
+import { strict as assert } from 'assert';
+import { formatTableCell } from './format-table-cell.js';
 
-describe('formatTableCell', () => {
+describe('typedoc-plugin-markdown (Utils / formatTableCell)', () => {
   it('should correctly format the cell content', () => {
     const input = `
       This is a test
@@ -11,6 +12,6 @@ describe('formatTableCell', () => {
     `;
     const expectedOutput =
       'This is a test `const x = 10;` with multiple spaces.';
-    expect(formatTableCell(input)).toBe(expectedOutput);
+    assert.strictEqual(formatTableCell(input), expectedOutput);
   });
 });

@@ -1,0 +1,107 @@
+# Class: `abstract` ClassWithModifiers
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for ClassWithModifiers
+
+## Constructors
+
+### Constructor
+
+> **new ClassWithModifiers**(): `ClassWithModifiers`
+
+#### Returns
+
+`ClassWithModifiers`
+
+## Properties
+
+### privateProp
+
+> `private` **privateProp**: `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for privateProp
+
+***
+
+### protectedProp
+
+> `protected` **protectedProp**: `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for protectedProp
+
+***
+
+### publicPropWithDefault
+
+> **publicPropWithDefault**: `string` = `'propWithDefault'`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for propWithDefault
+
+***
+
+### readonlyProp
+
+> `readonly` **readonlyProp**: `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for abstractProperty
+
+***
+
+### staticProp
+
+> `static` **staticProp**: `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for staticProp
+
+## Methods
+
+### privateMethod()
+
+> `private` **privateMethod**(): `void`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comment for privateMethod
+
+#### Returns
+
+`void`
+
+***
+
+### publicMethod()
+
+> **publicMethod**(): `void`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comment for publicMethod
+
+#### Returns
+
+`void`
+
+***
+
+### staticMethod()
+
+> `static` **staticMethod**(): `void`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comment for staticMethod
+
+#### Returns
+
+`void`

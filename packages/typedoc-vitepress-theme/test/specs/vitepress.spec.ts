@@ -1,14 +1,21 @@
+import { assertToMatchSnapshot } from '@devtools/testing';
 import * as fs from 'fs';
 import * as path from 'path';
-describe(`VitePress`, () => {
-  test(`should output docs with vitepress theme`, async () => {
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+describe(`typedoc-vitepress-theme`, () => {
+  it(`should output docs with vitepress theme`, async () => {
     const contents = fs
       .readFileSync(path.join(__dirname, '../out/default/index.md'))
       .toString();
-    expect(contents).toMatchSnapshot();
+    assertToMatchSnapshot('index-page', contents);
   });
 
-  test(`should output members that require anchor slugification`, async () => {
+  it(`should output members that require anchor slugification`, async () => {
     const contents = fs
       .readFileSync(
         path.join(
@@ -17,31 +24,31 @@ describe(`VitePress`, () => {
         ),
       )
       .toString();
-    expect(contents).toMatchSnapshot();
+    assertToMatchSnapshot('reflection-page', contents);
   });
 
-  test(`should generate typedoc sidebar`, async () => {
+  it(`should generate typedoc sidebar`, async () => {
     const contents = fs
       .readFileSync(path.join(__dirname, '../out/default/typedoc-sidebar.json'))
       .toString();
-    expect(contents).toMatchSnapshot();
+    assertToMatchSnapshot('default-sidebar', contents);
   });
 
-  test(`should generate typedoc sidebar with options`, async () => {
+  it(`should generate typedoc sidebar with options`, async () => {
     const contents = fs
       .readFileSync(
         path.join(__dirname, '../out/sidebar-options/typedoc-sidebar.json'),
       )
       .toString();
-    expect(contents).toMatchSnapshot();
+    assertToMatchSnapshot('sidebar-with-options', contents);
   });
 
-  test(`should generate typedoc sidebar with duplicate out and docsRoots`, async () => {
+  it(`should generate typedoc sidebar with duplicate out and docsRoots`, async () => {
     const contents = fs
       .readFileSync(
         path.join(__dirname, '../out/sidebar-options-2/typedoc-sidebar.json'),
       )
       .toString();
-    expect(contents).toMatchSnapshot();
+    assertToMatchSnapshot('docs-root', contents);
   });
 });

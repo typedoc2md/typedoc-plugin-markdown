@@ -1,0 +1,57 @@
+# Interface: InterfaceWithFunctionOverloads()
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for InterfaceWithFunctionOverloads
+
+## Remarks
+
+parent block tag
+
+## Call Signature
+
+```ts
+InterfaceWithFunctionOverloads(options?: any): Promise<void>;
+```
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for function 1
+
+### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `options?` | `any` |
+
+### Returns
+
+[`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`void`\>
+
+### Remarks
+
+function1 block tag
+
+## Call Signature
+
+```ts
+InterfaceWithFunctionOverloads(options2?: any): Promise<void>;
+```
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for function 2
+
+### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `options2?` | `any` |
+
+### Returns
+
+[`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`void`\>
+
+### Remarks
+
+function2 block tag

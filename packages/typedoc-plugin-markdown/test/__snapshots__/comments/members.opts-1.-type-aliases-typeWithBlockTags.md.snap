@@ -1,0 +1,23 @@
+# Type Alias: typeWithBlockTags
+
+> **typeWithBlockTags** = `object`
+
+Defined in: [index.ts:1](http://source-url)
+
+Variable with block tags summary
+
+## Example
+
+```ts
+const x = 1;
+```
+
+## Remarks
+
+Other block tags
+
+## Properties
+
+| Property | Type | Defined in |
+| ------ | ------ | ------ |
+| <a id="api-x"></a> `x` | `string` | [index.ts:1](http://source-url) |

@@ -1,0 +1,19 @@
+# Class: Cache
+
+## Extends
+
+- `LRUCache`&lt;`CacheFetchContext`, `CacheFetchContext`, `CacheFetchContext`&gt;
+
+## Constructors
+
+### Constructor
+
+> **new Cache**(): `Cache`
+
+#### Returns
+
+`Cache`
+
+#### Overrides
+
+`LRUCache< CacheFetchContext, CacheFetchContext, CacheFetchContext >.constructor`

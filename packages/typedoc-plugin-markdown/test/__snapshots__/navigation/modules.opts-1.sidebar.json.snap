@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Module1",
+    "kind": 2,
+    "path": "Module1.md",
+    "isDeprecated": true
+  },
+  {
+    "title": "Module2",
+    "kind": 2,
+    "path": "Module2.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "Module3",
+    "kind": 2,
+    "path": "Module3.md",
+    "isDeprecated": false
+  }
+]

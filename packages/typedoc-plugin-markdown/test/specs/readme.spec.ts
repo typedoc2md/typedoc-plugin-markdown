@@ -1,11 +1,11 @@
-import { expectFileToEqual } from '@devtools/testing';
+import { expectFileToEqual } from '../helpers.js';
 
-describe(`Readmes`, () => {
-  test(`should get merged readme for members`, () => {
+describe(`typedoc-plugin-markdown (Integration /Readmes)`, () => {
+  it(`should get merged readme for members`, () => {
     expectFileToEqual('readme', 'members', ['index.md']);
   });
 
-  test(`should get merged readme for modules`, () => {
+  it(`should get merged readme for modules`, () => {
     expectFileToEqual('readme', 'modules', ['index.md']);
   });
 });

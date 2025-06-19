@@ -25,9 +25,9 @@
     "prebuild": "rm -rf dist && prebuild-options",
     "build": "tsc",
     "build-and-test": "npm run build && npm run test",
-    "pretest": "tsx ./test/__scripts__/prepare.ts",
-    "test": "jest",
-    "test:update": "npm run build && npm test -- -u"
+    "pretest": "tsx ./test/scripts/prepare.ts",
+    "test": "mocha --config ./mocha.config.json",
+    "test:update": "npm run build && rm -rf ./test/__snapshots__ && npm test"
   },
   "peerDependencies": {
     "typedoc-plugin-markdown": ">=4.7.0"

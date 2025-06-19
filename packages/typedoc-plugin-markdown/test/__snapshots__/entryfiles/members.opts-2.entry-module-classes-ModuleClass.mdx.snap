@@ -1,0 +1,17 @@
+[**@scope/entryfile**](../../index.mdx)
+
+***
+
+[@scope/entryfile]() / [entry-module](../../index.mdx) / ModuleClass
+
+# Class: ModuleClass
+
+## Constructors
+
+### Constructor
+
+> **new ModuleClass**(): `ModuleClass`
+
+#### Returns
+
+`ModuleClass`

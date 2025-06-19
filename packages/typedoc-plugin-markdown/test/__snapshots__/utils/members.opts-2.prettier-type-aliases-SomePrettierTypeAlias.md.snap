@@ -1,0 +1,13 @@
+# Type Alias: SomePrettierTypeAlias
+
+```ts
+type SomePrettierTypeAlias =
+  | string
+  | {
+      x: 1;
+    }
+  | boolean
+  | {
+      y: 2;
+    };
+```

@@ -1,0 +1,219 @@
+# Interface: BasicInterface
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for BasicInterface
+
+## Hierarchy
+
+[View Summary](../hierarchy.md)
+
+### Extended by
+
+- [`ExtendedInterface`](ExtendedInterface.md)
+
+## Properties
+
+### ~~deprecatedProp~~
+
+> **deprecatedProp**: `string`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+#### Deprecated
+
+This prop is deprecated
+
+#### See
+
+Comments for some tag
+
+***
+
+### functionProp()
+
+> **functionProp**: (`s`) => `boolean`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for functionProper
+
+#### Parameters
+
+##### s
+
+`string`
+
+Comment for param s
+
+#### Returns
+
+`boolean`
+
+***
+
+### optionalProp?
+
+> `optional` **optionalProp**: `string`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for optional prop
+
+***
+
+### prop
+
+> **prop**: `string`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for prop
+
+***
+
+### propReturningObjectDeclaration
+
+> **propReturningObjectDeclaration**: `object`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for propReturningObjectDeclaration
+
+#### a
+
+> **a**: `boolean`
+
+#### b
+
+> **b**: `string`
+
+***
+
+### propReturningObjectDeclarations
+
+> **propReturningObjectDeclarations**: `object` & `object`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for propReturningObjectDeclarations
+
+#### Type declaration
+
+##### a
+
+> **a**: `boolean`
+
+##### b
+
+> **b**: `string`
+
+#### Type declaration
+
+##### c
+
+> **c**: `boolean`
+
+##### d
+
+> **d**: `string`
+
+***
+
+### propReturningSignatureDeclaration()?
+
+> `optional` **propReturningSignatureDeclaration**: () => `string` \| `number` \| `boolean`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for propReturningSignatureDeclaration
+
+#### Returns
+
+`string` \| `number` \| `boolean`
+
+***
+
+### propReturningSignatureDeclarations
+
+> **propReturningSignatureDeclarations**: () => `any` & (`paramsA`, `paramsB?`) => `any` & (`paramsC`) => `any`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for propReturningSignatureDeclarations
+
+***
+
+### propWithFunction()
+
+> **propWithFunction**: (`options`) => `boolean`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for propWithFunction
+
+#### Parameters
+
+##### options
+
+###### a
+
+`boolean`
+
+###### b
+
+`string`
+
+#### Returns
+
+`boolean`
+
+***
+
+### propWithProps
+
+> **propWithProps**: `object`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for propWithProps
+
+#### callbacks?
+
+> `optional` **callbacks**: `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\>
+
+Comments for callbacks
+
+#### nestedPropA
+
+> **nestedPropA**: `string`
+
+Comments for nestedPropA
+
+#### nestedPropB
+
+> **nestedPropB**: `boolean`
+
+Comments for nestedPropB
+
+#### nestedPropC
+
+> **nestedPropC**: `object`
+
+Comments for nestedPropC
+
+##### nestedPropC.nestedPropCA
+
+> **nestedPropCA**: `string`
+
+Comments for nestedPropCA
+
+#### nestedPropD()
+
+> **nestedPropD**: () => `boolean`
+
+Comments for nestedPropD
+
+##### Returns
+
+`boolean`

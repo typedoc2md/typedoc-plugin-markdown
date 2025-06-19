@@ -1,0 +1,21 @@
+# Function: functionWithRestParams()
+
+> **functionWithRestParams**(`param`, ...`restParams`): `boolean`
+
+Defined in: [functions.ts:1](http://source-url)
+
+Function with reset parmas
+
+## Parameters
+
+### param
+
+`string`
+
+### restParams
+
+...`string`[]
+
+## Returns
+
+`boolean`

@@ -1,0 +1,15 @@
+# Type Alias: StringLiteralType
+
+```ts
+type StringLiteralType = 
+  | " "
+  | "string"
+  | "string|with|pipes"
+  | "string`with`backticks"
+  | "<foo>"
+  | "*";
+```
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for StringLiteralType

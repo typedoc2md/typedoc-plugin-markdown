@@ -1,0 +1,35 @@
+# Function: functionReturningUsefulUnionType()
+
+```ts
+function functionReturningUsefulUnionType(): 
+  | string
+  | false
+  | true
+  | {
+  z: string;
+};
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function returning a useful union type
+
+## Returns
+
+`string`
+
+`false`
+
+`true`
+
+```ts
+{
+  z: string;
+}
+```
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `z` | `string` | Comments for z |
+
+Return comments

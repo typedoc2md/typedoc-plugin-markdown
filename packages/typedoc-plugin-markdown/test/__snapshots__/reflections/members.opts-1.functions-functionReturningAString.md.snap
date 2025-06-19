@@ -1,0 +1,13 @@
+# Function: functionReturningAString()
+
+> **functionReturningAString**(): `string`
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function
+
+## Returns
+
+`string`
+
+Return comments

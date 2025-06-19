@@ -1,11 +1,11 @@
-import { expectFileToEqual } from '@devtools/testing';
+import { expectFileToEqual } from '../helpers.js';
 
-describe(`EntryFiles`, () => {
-  test(`should get entry module`, () => {
+describe(`typedoc-plugin-markdown (Integration /Entry Files)`, () => {
+  it(`should get entry module`, () => {
     expectFileToEqual('entryfiles', 'members', ['README.mdx', 'index.mdx']);
   });
 
-  test(`should get module member for members`, () => {
+  it(`should get module member for members`, () => {
     expectFileToEqual(
       'entryfiles',
       'members',
@@ -13,7 +13,7 @@ describe(`EntryFiles`, () => {
     );
   });
 
-  test(`should get readme file`, () => {
+  it(`should get readme file`, () => {
     expectFileToEqual('entryfiles', 'members', 'README-1.mdx', 1);
   });
 });

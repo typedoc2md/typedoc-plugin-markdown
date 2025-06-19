@@ -1,0 +1,12 @@
+# Enumeration: EnumWithValues
+
+Defined in: [enums.ts:1](http://source-url)
+
+Comments for enum
+
+## Enumeration Members
+
+| Enumeration Member | Value |
+| :------ | :------ |
+| <a id="membera"></a> `MemberA` | `"UP"` |
+| <a id="memberb"></a> `MemberB` | `"DOWN"` |

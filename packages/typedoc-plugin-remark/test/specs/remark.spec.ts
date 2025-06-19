@@ -1,67 +1,49 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import { assertToMatchSnapshot, getFileContents } from '@devtools/testing';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-describe(`Remark`, () => {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+describe(`typedoc-plugin-remark`, () => {
   describe(`Simple`, () => {
-    test(`should parse modules page`, async () => {
-      const contents = fs
-        .readFileSync(path.join(__dirname, '../out/md/simple/modules.md'))
-        .toString();
-      expect(contents).toMatchSnapshot();
+    it(`should parse modules page`, async () => {
+      const contents = getFileContents('out/md/simple/modules.md');
+      assertToMatchSnapshot('simple-modules-page', contents);
     });
-    test(`should parse documents page`, async () => {
-      const contents = fs
-        .readFileSync(
-          path.join(__dirname, '../out/md/simple/documents/toc-doc.md'),
-        )
-        .toString();
-      expect(contents).toMatchSnapshot();
+
+    it(`should parse documents page`, async () => {
+      const contents = getFileContents('out/md/simple/documents/toc-doc.md');
+      assertToMatchSnapshot('simple-documents-page', contents);
     });
   });
 
   describe(`Conditional`, () => {
-    test(`should parse README page kind`, async () => {
-      const contents = fs
-        .readFileSync(path.join(__dirname, '../out/md/conditional/README.md'))
-        .toString();
-      expect(contents).toMatchSnapshot();
+    it(`should parse README page kind`, async () => {
+      const contents = getFileContents('out/md/conditional/README.md');
+      assertToMatchSnapshot('conditional-readme-page', contents);
     });
 
-    test(`should parse Index page kind`, async () => {
-      const contents = fs
-        .readFileSync(path.join(__dirname, '../out/md/conditional/modules.md'))
-        .toString();
-      expect(contents).toMatchSnapshot();
+    it(`should parse Index page kind`, async () => {
+      const contents = getFileContents('out/md/conditional/modules.md');
+      assertToMatchSnapshot('conditional-index-page', contents);
     });
 
-    test(`should parse documents page`, async () => {
-      const contents = fs
-        .readFileSync(
-          path.join(__dirname, '../out/md/simple/documents/toc-doc.md'),
-        )
-        .toString();
-      expect(contents).toMatchSnapshot();
+    it(`should parse documents page`, async () => {
+      const contents = getFileContents('out/md/simple/documents/toc-doc.md');
+      assertToMatchSnapshot('conditional-documents-page', contents);
     });
 
-    test(`should parse class page`, async () => {
-      const contents = fs
-        .readFileSync(
-          path.join(__dirname, '../out/md/simple/remark/classes/Class.md'),
-        )
-        .toString();
-      expect(contents).toMatchSnapshot();
+    it(`should parse class page`, async () => {
+      const contents = getFileContents('out/md/simple/remark/classes/Class.md');
+      assertToMatchSnapshot('conditional-class-page', contents);
     });
 
-    test(`should parse interface page`, async () => {
-      const contents = fs
-        .readFileSync(
-          path.join(
-            __dirname,
-            '../out/md/simple/remark/interfaces/Interface.md',
-          ),
-        )
-        .toString();
-      expect(contents).toMatchSnapshot();
+    it(`should parse interface page`, async () => {
+      const contents = getFileContents(
+        'out/md/simple/remark/interfaces/Interface.md',
+      );
+      assertToMatchSnapshot('conditional-interface-page', contents);
     });
   });
 });

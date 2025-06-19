@@ -1,0 +1,14 @@
+[
+  {
+    "title": "@scope/module-1",
+    "kind": 2,
+    "path": "@scope/module-1.mdx",
+    "isDeprecated": false
+  },
+  {
+    "title": "module-2",
+    "kind": 2,
+    "path": "module-2.mdx",
+    "isDeprecated": false
+  }
+]

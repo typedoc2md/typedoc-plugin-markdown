@@ -1,0 +1,134 @@
+[**typedoc-stubs**](index.md)
+
+***
+
+[typedoc-stubs](modules.md) / basic
+
+# basic
+
+A basic module
+
+## Enumerations
+
+### EnumA
+
+EnumA function.
+
+***
+
+### EnumB
+
+## Classes
+
+### ClassA
+
+ClassA function.
+
+#### Constructors
+
+##### Constructor
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+### ClassB
+
+#### Constructors
+
+##### Constructor
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+## Interfaces
+
+### InterfaceA
+
+Interface A comments line 1
+and comments on a soft line.
+
+Comments on double new line.
+
+```typescript
+const a = new InterfaceA();
+```
+
+#### Remarks
+
+Block tag content.
+
+- [InterfaceB.propA](#propa-1)
+
+#### Properties
+
+##### propA
+
+> **propA**: `string`
+
+##### propB
+
+> **propB**: `string`
+
+***
+
+### InterfaceB
+
+InterfaceB function.
+
+- [InterfaceA.propA](#propa)
+
+#### Properties
+
+##### propA
+
+> **propA**: `string`
+
+##### propB
+
+> **propB**: `string`
+
+## Type Aliases
+
+### TypeA
+
+> **TypeA** = `string`
+
+TypeA function.
+
+[TypeB#propB](#propb-2)
+
+***
+
+### TypeB
+
+> **TypeB** = `object`
+
+TypeB function.
+
+#### Properties
+
+##### propA
+
+> **propA**: `string`
+
+##### propB?
+
+> `optional` **propB**: `number`
+
+## Variables
+
+### variableA
+
+> `const` **variableA**: `""` = `''`
+
+***
+
+### variableB
+
+> `const` **variableB**: `""` = `''`
+
+## Functions
+
+### functionA()
+
+_SIGNATURE_MEMBER_PARTIAL_

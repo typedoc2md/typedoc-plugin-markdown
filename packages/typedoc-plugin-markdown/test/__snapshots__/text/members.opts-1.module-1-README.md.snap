@@ -1,0 +1,28 @@
+[**My API - v0.0**](../README.md)
+
+***
+
+[typedoc-stubs](../README.md) / module-1
+
+# module-1
+
+## インターフェイス
+
+- [SomeInterface](interfaces/SomeInterface.md)
+
+## 変数
+
+- [someOtherVar](variables/someOtherVar.md)
+- [someVar](variables/someVar.md)
+
+## SomeGroup
+
+- [SomeType](type-aliases/SomeType.md)
+
+## SomeOtherGroup
+
+- [SomeOtherType](type-aliases/SomeOtherType.md)
+
+***
+
+Copyright Test

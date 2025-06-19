@@ -1,0 +1,20 @@
+# Function: functionWithTypeParameters()
+
+```ts
+function functionWithTypeParameters<T, Item>(): boolean;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+Function with type parameters
+
+## Type Parameters
+
+| Type Parameter | Default type | Description |
+| :------ | :------ | :------ |
+| `T` | - | Comments for T |
+| `Item` | `string` \| `boolean` | - |
+
+## Returns
+
+`boolean`

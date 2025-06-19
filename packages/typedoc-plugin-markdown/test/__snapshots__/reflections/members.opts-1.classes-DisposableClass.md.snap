@@ -1,0 +1,33 @@
+# Class: DisposableClass
+
+Defined in: [classes.ts:1](http://source-url)
+
+## Implements
+
+- `Disposable`
+
+## Constructors
+
+### Constructor
+
+> **new DisposableClass**(): `DisposableClass`
+
+#### Returns
+
+`DisposableClass`
+
+## Methods
+
+### \[dispose\]()
+
+> **\[dispose\]**(): `void`
+
+Defined in: [classes.ts:1](http://source-url)
+
+#### Returns
+
+`void`
+
+#### Implementation of
+
+`Disposable.[dispose]`

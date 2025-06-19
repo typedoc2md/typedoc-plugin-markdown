@@ -1,0 +1,556 @@
+[
+  {
+    "title": "<internal>",
+    "kind": 2,
+    "path": "-internal-/index.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "42-module-name",
+    "kind": 2,
+    "path": "42-module-name/index.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "basic",
+    "kind": 2,
+    "path": "basic/index.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "Functions",
+        "children": [
+          {
+            "title": "functionA",
+            "kind": 64,
+            "path": "basic/functions/functionA.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "InterfaceA",
+            "kind": 256,
+            "path": "basic/interfaces/InterfaceA.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "InterfaceB",
+            "kind": 256,
+            "path": "basic/interfaces/InterfaceB.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "ClassA",
+            "kind": 128,
+            "path": "basic/classes/ClassA.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ClassB",
+            "kind": 128,
+            "path": "basic/classes/ClassB.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Enumerations",
+        "children": [
+          {
+            "title": "EnumA",
+            "kind": 8,
+            "path": "basic/enumerations/EnumA.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "EnumB",
+            "kind": 8,
+            "path": "basic/enumerations/EnumB.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "children": [
+          {
+            "title": "TypeA",
+            "kind": 2097152,
+            "path": "basic/type-aliases/TypeA.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "TypeB",
+            "kind": 2097152,
+            "path": "basic/type-aliases/TypeB.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Variables",
+        "children": [
+          {
+            "title": "variableA",
+            "kind": 32,
+            "path": "basic/variables/variableA.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "variableB",
+            "kind": 32,
+            "path": "basic/variables/variableB.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "has-categories",
+    "kind": 2,
+    "path": "has-categories/index.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "ExplicitNoCategoryEnum",
+        "kind": 8,
+        "path": "has-categories/enumerations/ExplicitNoCategoryEnum.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ExplicitNoCategoryInterface",
+        "kind": 256,
+        "path": "has-categories/interfaces/ExplicitNoCategoryInterface.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "Category A",
+        "children": [
+          {
+            "title": "CategoryAEnum1",
+            "kind": 8,
+            "path": "has-categories/enumerations/CategoryAEnum1.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "CategoryAEnum2",
+            "kind": 8,
+            "path": "has-categories/enumerations/CategoryAEnum2.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "CategoryAInterface1",
+            "kind": 256,
+            "path": "has-categories/interfaces/CategoryAInterface1.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "CategoryAInterface2",
+            "kind": 256,
+            "path": "has-categories/interfaces/CategoryAInterface2.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Category B",
+        "children": [
+          {
+            "title": "CategoryBEnum1",
+            "kind": 8,
+            "path": "has-categories/enumerations/CategoryBEnum1.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "CategoryBEnum2",
+            "kind": 8,
+            "path": "has-categories/enumerations/CategoryBEnum2.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "CategoryBInterface1",
+            "kind": 256,
+            "path": "has-categories/interfaces/CategoryBInterface1.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "CategoryBInterface2",
+            "kind": 256,
+            "path": "has-categories/interfaces/CategoryBInterface2.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Category C",
+        "children": [
+          {
+            "title": "CategoryCInterface1",
+            "kind": 256,
+            "path": "has-categories/interfaces/CategoryCInterface1.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Other",
+        "children": [
+          {
+            "title": "UnCategorizedEnum",
+            "kind": 8,
+            "path": "has-categories/enumerations/UnCategorizedEnum.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "CategoryCInterface2",
+            "kind": 256,
+            "path": "has-categories/interfaces/CategoryCInterface2.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "UnCategorizedInterace",
+            "kind": 256,
+            "path": "has-categories/interfaces/UnCategorizedInterace.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "has-custom-groups",
+    "kind": 2,
+    "path": "has-custom-groups/index.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "InterfaceNoGroup1",
+        "kind": 256,
+        "path": "has-custom-groups/interfaces/InterfaceNoGroup1.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "InterfaceNoGroup2",
+        "kind": 256,
+        "path": "has-custom-groups/interfaces/InterfaceNoGroup2.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "variableNoGroup1",
+        "kind": 32,
+        "path": "has-custom-groups/variables/variableNoGroup1.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "variableNoGroup2",
+        "kind": 32,
+        "path": "has-custom-groups/variables/variableNoGroup2.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "CustomGroupA",
+        "children": [
+          {
+            "title": "variabelA",
+            "kind": 32,
+            "path": "has-custom-groups/variables/variabelA.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "CustomGroupB",
+        "children": [
+          {
+            "title": "variableB1",
+            "kind": 32,
+            "path": "has-custom-groups/variables/variableB1.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "variableB2",
+            "kind": 32,
+            "path": "has-custom-groups/variables/variableB2.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Variables",
+        "children": [
+          {
+            "title": "variableC",
+            "kind": 32,
+            "path": "has-custom-groups/variables/variableC.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "has-disabled-groups",
+    "kind": 2,
+    "path": "has-disabled-groups/index.md",
+    "isDeprecated": false
+  },
+  {
+    "title": "has-namespaces",
+    "kind": 2,
+    "path": "has-namespaces/index.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "Functions",
+        "children": [
+          {
+            "title": "_function_A_",
+            "kind": 64,
+            "path": "has-namespaces/functions/function_A.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "functionB",
+            "kind": 64,
+            "path": "has-namespaces/functions/functionB.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Interfaces",
+        "children": [
+          {
+            "title": "_Interface_A_",
+            "kind": 256,
+            "path": "has-namespaces/interfaces/Interface_A.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "InterfaceB",
+            "kind": 256,
+            "path": "has-namespaces/interfaces/InterfaceB.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "__Class_A_",
+            "kind": 128,
+            "path": "has-namespaces/classes/Class_A.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "ClassB",
+            "kind": 128,
+            "path": "has-namespaces/classes/ClassB.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Enumerations",
+        "children": [
+          {
+            "title": "_Enum_A_",
+            "kind": 8,
+            "path": "has-namespaces/enumerations/Enum_A.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "EnumB",
+            "kind": 8,
+            "path": "has-namespaces/enumerations/EnumB.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Namespaces",
+        "children": [
+          {
+            "title": "_Namespace_A_",
+            "kind": 4,
+            "path": "has-namespaces/namespaces/Namespace_A/index.md",
+            "isDeprecated": false,
+            "children": [
+              {
+                "title": "Interfaces",
+                "children": [
+                  {
+                    "title": "NamespaceInterface",
+                    "kind": 256,
+                    "path": "has-namespaces/namespaces/Namespace_A/interfaces/NamespaceInterface.md",
+                    "isDeprecated": false
+                  }
+                ]
+              },
+              {
+                "title": "Namespaces",
+                "children": [
+                  {
+                    "title": "NestedNamespace",
+                    "kind": 4,
+                    "path": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace/index.md",
+                    "isDeprecated": false,
+                    "children": [
+                      {
+                        "title": "Interfaces",
+                        "children": [
+                          {
+                            "title": "NamespaceInterface",
+                            "kind": 256,
+                            "path": "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace/interfaces/NamespaceInterface.md",
+                            "isDeprecated": false
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "NamespaceB",
+            "kind": 4,
+            "path": "has-namespaces/namespaces/NamespaceB/index.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Type Aliases",
+        "children": [
+          {
+            "title": "_Type_A_",
+            "kind": 2097152,
+            "path": "has-namespaces/type-aliases/Type_A.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "TypeB",
+            "kind": 2097152,
+            "path": "has-namespaces/type-aliases/TypeB.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "Variables",
+        "children": [
+          {
+            "title": "_variable_A_",
+            "kind": 32,
+            "path": "has-namespaces/variables/variable_A.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "variableB",
+            "kind": 32,
+            "path": "has-namespaces/variables/variableB.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "has-references",
+    "kind": 2,
+    "path": "has-references/index.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "Functions",
+        "children": [
+          {
+            "title": "defaultFunction",
+            "kind": 64,
+            "path": "has-references/functions/defaultFunction.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "has-same-exports",
+    "kind": 2,
+    "path": "has-same-exports/index.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "someClass",
+            "kind": 128,
+            "path": "has-same-exports/classes/someClass.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "SomeClass",
+            "kind": 128,
+            "path": "has-same-exports/classes/SomeClass-1.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "group1",
+        "children": [
+          {
+            "title": "someFunction",
+            "kind": 64,
+            "path": "has-same-exports/functions/someFunction.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "group2",
+        "children": [
+          {
+            "title": "someFunction",
+            "kind": 64,
+            "path": "has-same-exports/functions/someFunction.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "index",
+    "kind": 2,
+    "path": "index/index.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "Classes",
+        "children": [
+          {
+            "title": "SomeClass",
+            "kind": 128,
+            "path": "index/classes/SomeClass.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,157 @@
+[**typedoc-stubs**](../index.md)
+
+***
+
+[typedoc-stubs](../index.md) / has-custom-groups
+
+# has-custom-groups
+
+A module that contains custom groupings
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[InterfaceNoGroup1](interfaces/InterfaceNoGroup1.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[InterfaceNoGroup2](interfaces/InterfaceNoGroup2.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[variableNoGroup1](variables/variableNoGroup1.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[variableNoGroup2](variables/variableNoGroup2.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## CustomGroupA
+
+Group description for CustomGroupA
+
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[variabelA](variables/variabelA.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## CustomGroupB
+
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[variableB1](variables/variableB1.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+[variableB2](variables/variableB2.md)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Variables
+
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[variableC](variables/variableC.md)
+
+</td>
+<td>
+
+Default grouping
+
+</td>
+</tr>
+</tbody>
+</table>

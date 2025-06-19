@@ -1,0 +1,12 @@
+# Enumeration: BasicEnum
+
+Defined in: [enums.ts:1](http://source-url)
+
+Comments for enum
+
+## Enumeration Members
+
+| Enumeration Member | Value | Description |
+| :------ | :------ | :------ |
+| <a id="membera"></a> `MemberA` | `0` | Comments for MemberA |
+| <a id="memberb"></a> `MemberB` | `1` | Comments for MemberB |

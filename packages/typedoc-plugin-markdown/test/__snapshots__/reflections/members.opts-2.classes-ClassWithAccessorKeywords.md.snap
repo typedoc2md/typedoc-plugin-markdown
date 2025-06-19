@@ -1,0 +1,49 @@
+# Class: ClassWithAccessorKeywords
+
+Defined in: [classes.ts:1](http://source-url)
+
+## Constructors
+
+### Constructor
+
+```ts
+new ClassWithAccessorKeywords(): ClassWithAccessorKeywords;
+```
+
+#### Returns
+
+`ClassWithAccessorKeywords`
+
+## Accessors
+
+### accessor1
+
+Defined in: [classes.ts:1](http://source-url)
+
+Accessor comments
+
+#### Example
+
+```ts
+const x = 1;
+```
+
+***
+
+### accessor2
+
+Defined in: [classes.ts:1](http://source-url)
+
+Accessor comments
+
+#### Remarks
+
+Remark comments
+
+***
+
+### accessor3
+
+Defined in: [classes.ts:1](http://source-url)
+
+Accessor comments

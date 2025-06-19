@@ -1,0 +1,18 @@
+---
+title: "test"
+---
+
+# typedoc-plugin-remark
+
+## Documents
+
++ [toc-doc](documents/toc-doc.md)
++ [toc-doc-2](documents/toc-doc-2.md)
+
+## Modules
+
++ [remark](remark/README.md)
+
+> thanks [**@tgreyuk**](https://github.com/tgreyuk)
+
+## New Index Heading

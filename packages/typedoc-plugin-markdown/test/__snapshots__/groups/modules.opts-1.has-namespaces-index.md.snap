@@ -1,0 +1,88 @@
+[**typedoc-stubs**](../index.md)
+
+***
+
+[typedoc-stubs](../modules.md) / has-namespaces
+
+# has-namespaces
+
+A module that contains namespaces
+
+## Namespaces
+
+| Namespace | Description |
+| :------ | :------ |
+| [\_Namespace\_A\_](namespaces/Namespace_A/index.md) | - |
+| [NamespaceB](namespaces/NamespaceB.md) | - |
+
+## Enumerations
+
+### \_Enum\_A\_
+
+***
+
+### EnumB
+
+## Classes
+
+### \_\_Class\_A\_
+
+#### Constructors
+
+##### Constructor
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+### ClassB
+
+#### Constructors
+
+##### Constructor
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+## Interfaces
+
+### \_Interface\_A\_
+
+***
+
+### InterfaceB
+
+## Type Aliases
+
+### \_Type\_A\_
+
+> **\_Type\_A\_** = `string`
+
+***
+
+### TypeB
+
+> **TypeB** = `string`
+
+## Variables
+
+### \_variable\_A\_
+
+> `const` **\_variable\_A\_**: `true` = `true`
+
+***
+
+### variableB
+
+> `const` **variableB**: `true` = `true`
+
+## Functions
+
+### \_function\_A\_()
+
+_SIGNATURE_MEMBER_PARTIAL_
+
+***
+
+### functionB()
+
+_SIGNATURE_MEMBER_PARTIAL_

@@ -1,0 +1,71 @@
+# Function: functionWithUnionParams()
+
+> **functionWithUnionParams**(`primitiveUnions`, `objectUnions`, `mixedUnions`, `noUnions`): `any`
+
+Defined in: [functions.ts:1](http://source-url)
+
+## Parameters
+
+### primitiveUnions
+
+Comments for primitiveUnions
+
+`string` | `number`
+
+### objectUnions
+
+Comments for objectUnionsUseful
+
+\{ `a`: `string`; `b`: `1`; \} | \{ `a`: `number`; `b`: `1`; `c`: \{ `x`: `string`; \}; \}
+
+### mixedUnions
+
+Comments for mixedUnions
+
+`string` | `number` |
+
+\{ `a`: `string`; `b`: `string`; \}
+
+Comments for mixedUnions
+
+#### a
+
+`string` = `''`
+
+a comments
+
+#### b
+
+`string` = `''`
+
+b comments
+
+|
+
+\{ `a`: \{ `y`: `string`; `z`: `string`; \}; \}
+
+Comments for mixedUnions
+
+#### a
+
+\{ `y`: `string`; `z`: `string`; \}
+
+Comments for a
+
+#### a.y
+
+`string`
+
+#### a.z
+
+`string`
+
+### noUnions
+
+`string`
+
+Comments for noUnions
+
+## Returns
+
+`any`

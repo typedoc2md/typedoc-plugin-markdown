@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Group 1",
+    "children": [
+      {
+        "title": "Module1",
+        "kind": 2,
+        "path": "Module1.md",
+        "isDeprecated": true
+      }
+    ]
+  },
+  {
+    "title": "Group 2",
+    "children": [
+      {
+        "title": "Module2",
+        "kind": 2,
+        "path": "Module2.md",
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "title": "Group 3",
+    "children": [
+      {
+        "title": "Module3",
+        "kind": 2,
+        "path": "Module3.md",
+        "isDeprecated": false
+      }
+    ]
+  }
+]

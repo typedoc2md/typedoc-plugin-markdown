@@ -1,0 +1,19 @@
+---
+title: SomeInterface
+layout: blog
+veryLong: This is a long string that would normally wrap over multiple lines when the text exceeds a certain length.
+navOrder: 1
+hide: true
+tagOne: 0
+tagTwo: "'Frontmatter' tag"
+---
+
+# Interface: SomeInterface
+
+## Tag One
+
+0
+
+## Tag Two
+
+'Frontmatter' tag

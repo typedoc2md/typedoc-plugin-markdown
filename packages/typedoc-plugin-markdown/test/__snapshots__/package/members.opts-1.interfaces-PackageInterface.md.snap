@@ -1,0 +1,13 @@
+[**@scope/package-1 v0.0**](../README.md)
+
+***
+
+[@scope/package-1](../packages.md) / PackageInterface
+
+# Interface: PackageInterface
+
+## Properties
+
+### prop
+
+> **prop**: `string`

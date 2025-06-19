@@ -1,0 +1,14 @@
+---
+title: typedoc-plugin-frontmatter
+layout: blog
+veryLong: This is a long string that would normally wrap over multiple lines when the text exceeds a certain length.
+navOrder: 1
+hide: true
+onIndex: true
+---
+
+# typedoc-plugin-frontmatter
+
+## Interfaces
+
+- [SomeInterface](interfaces/SomeInterface.md)

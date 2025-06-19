@@ -1,0 +1,68 @@
+# Class: ClassWithSimpleProps
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for ClassWithSimpleProps
+
+## Constructors
+
+### Constructor
+
+> **new ClassWithSimpleProps**(): `ClassWithSimpleProps`
+
+#### Returns
+
+`ClassWithSimpleProps`
+
+## Properties
+
+### propA
+
+> **propA**: `string` = `'propAValue'`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for propA
+
+***
+
+### propB
+
+> **propB**: `string` = `'propBValue'`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for propB
+
+#### Default Value
+
+```ts
+'propBDefaultValue'
+```
+
+***
+
+### propC
+
+> **propC**: `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for propB
+on two lines
+
+#### Default Value
+
+```ts
+'propCDefaultValue'
+```
+
+***
+
+### propD
+
+> **propD**: `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for propE

@@ -1,0 +1,17 @@
+# Type Alias: ArrayOfObjectsType
+
+> **ArrayOfObjectsType** = `object`[]
+
+Defined in: [types.ts:1](http://source-url)
+
+## Type declaration
+
+### age
+
+> **age**: `number`
+
+### name
+
+> **name**: `string`
+
+Comments for name

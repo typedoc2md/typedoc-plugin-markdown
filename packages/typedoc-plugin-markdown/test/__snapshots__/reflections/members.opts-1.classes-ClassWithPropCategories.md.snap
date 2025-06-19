@@ -1,0 +1,67 @@
+# Class: ClassWithPropCategories
+
+Defined in: [classes.ts:1](http://source-url)
+
+## Constructors
+
+### Constructor
+
+> **new ClassWithPropCategories**(`opts`): `ClassWithPropCategories`
+
+Defined in: [classes.ts:1](http://source-url)
+
+#### Parameters
+
+##### opts
+
+###### a
+
+`string`
+
+###### b
+
+`string`
+
+#### Returns
+
+`ClassWithPropCategories`
+
+## CatA
+
+### prop1
+
+> **prop1**: `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+## CatB
+
+### prop2
+
+> **prop2**: `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+## Other
+
+### method1()
+
+> **method1**(): `void`
+
+Defined in: [classes.ts:1](http://source-url)
+
+#### Returns
+
+`void`
+
+***
+
+### method2()
+
+> **method2**(): `void`
+
+Defined in: [classes.ts:1](http://source-url)
+
+#### Returns
+
+`void`

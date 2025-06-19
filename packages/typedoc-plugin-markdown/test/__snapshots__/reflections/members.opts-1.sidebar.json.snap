@@ -1,0 +1,630 @@
+[
+  {
+    "title": "Hierarchy",
+    "path": "hierarchy.md"
+  },
+  {
+    "title": "Enumerations",
+    "children": [
+      {
+        "title": "BasicEnum",
+        "kind": 8,
+        "path": "enumerations/BasicEnum.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "EnumWithValues",
+        "kind": 8,
+        "path": "enumerations/EnumWithValues.md",
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "title": "Classes",
+    "children": [
+      {
+        "title": "__DuplicateClass__",
+        "kind": 128,
+        "path": "classes/DuplicateClass.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "_DuplicateClass_",
+        "kind": 128,
+        "path": "classes/DuplicateClass-1.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "AbstractClass",
+        "kind": 128,
+        "path": "classes/AbstractClass.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "BaseClass",
+        "kind": 128,
+        "path": "classes/BaseClass.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "BasicClass",
+        "kind": 128,
+        "path": "classes/BasicClass.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "CallbacksOptions",
+        "kind": 128,
+        "path": "classes/CallbacksOptions.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ChildClassA",
+        "kind": 128,
+        "path": "classes/ChildClassA.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ChildClassB",
+        "kind": 128,
+        "path": "classes/ChildClassB.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ClassWithAccessorKeywords",
+        "kind": 128,
+        "path": "classes/ClassWithAccessorKeywords.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ClassWithAccessors",
+        "kind": 128,
+        "path": "classes/ClassWithAccessors.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ClassWithComplexProps",
+        "kind": 128,
+        "path": "classes/ClassWithComplexProps.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ClassWithConstructorOverloads",
+        "kind": 128,
+        "path": "classes/ClassWithConstructorOverloads.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ClassWithFlags",
+        "kind": 128,
+        "path": "classes/ClassWithFlags.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ClassWithModifiers",
+        "kind": 128,
+        "path": "classes/ClassWithModifiers.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ClassWithoutPropCategories",
+        "kind": 128,
+        "path": "classes/ClassWithoutPropCategories.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ClassWithPropCategories",
+        "kind": 128,
+        "path": "classes/ClassWithPropCategories.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ClassWithSimpleProps",
+        "kind": 128,
+        "path": "classes/ClassWithSimpleProps.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ClassWithSymbols",
+        "kind": 128,
+        "path": "classes/ClassWithSymbols.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ClassWithTypeParameters",
+        "kind": 128,
+        "path": "classes/ClassWithTypeParameters.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "DerivedClassA",
+        "kind": 128,
+        "path": "classes/DerivedClassA.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "DerivedClassB",
+        "kind": 128,
+        "path": "classes/DerivedClassB.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "DisposableClass",
+        "kind": 128,
+        "path": "classes/DisposableClass.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "DuplicateClass",
+        "kind": 128,
+        "path": "classes/DuplicateClass-2.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "GrandChildClassA",
+        "kind": 128,
+        "path": "classes/GrandChildClassA.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "GrandChildClassB",
+        "kind": 128,
+        "path": "classes/GrandChildClassB.md",
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "title": "Interfaces",
+    "children": [
+      {
+        "title": "BasicInterface",
+        "kind": 256,
+        "path": "interfaces/BasicInterface.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "CustomEventInterface",
+        "kind": 256,
+        "path": "interfaces/CustomEventInterface.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ExtendedInterface",
+        "kind": 256,
+        "path": "interfaces/ExtendedInterface.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "IndexableInterface",
+        "kind": 256,
+        "path": "interfaces/IndexableInterface.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "InterfaceWithComments",
+        "kind": 256,
+        "path": "interfaces/InterfaceWithComments.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "InterfaceWithEventProperties",
+        "kind": 256,
+        "path": "interfaces/InterfaceWithEventProperties.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "InterfaceWithFlags",
+        "kind": 256,
+        "path": "interfaces/InterfaceWithFlags.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "InterfaceWithFunctionOverloads",
+        "kind": 256,
+        "path": "interfaces/InterfaceWithFunctionOverloads.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "InterfaceWithMixedOverloads",
+        "kind": 256,
+        "path": "interfaces/InterfaceWithMixedOverloads.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "InterfaceWithProps",
+        "kind": 256,
+        "path": "interfaces/InterfaceWithProps.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "InterfaceWithSingleFunction",
+        "kind": 256,
+        "path": "interfaces/InterfaceWithSingleFunction.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "InterfaceWithTypeParameters",
+        "kind": 256,
+        "path": "interfaces/InterfaceWithTypeParameters.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "MultipleIndexableInterface",
+        "kind": 256,
+        "path": "interfaces/MultipleIndexableInterface.md",
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "title": "Type Aliases",
+    "children": [
+      {
+        "title": "__TypeDeclarationWithSpecialCharacters_",
+        "kind": 2097152,
+        "path": "type-aliases/TypeDeclarationWithSpecialCharacters.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ArrayOfObjectsType",
+        "kind": 2097152,
+        "path": "type-aliases/ArrayOfObjectsType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ArrayType",
+        "kind": 2097152,
+        "path": "type-aliases/ArrayType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ConditionalType",
+        "kind": 2097152,
+        "path": "type-aliases/ConditionalType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ExplicitTypeDefOptions",
+        "kind": 2097152,
+        "path": "type-aliases/ExplicitTypeDefOptions.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ExternalReferenceType",
+        "kind": 2097152,
+        "path": "type-aliases/ExternalReferenceType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "FunctionType",
+        "kind": 2097152,
+        "path": "type-aliases/FunctionType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "IndexAccessType",
+        "kind": 2097152,
+        "path": "type-aliases/IndexAccessType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "IntersectionType",
+        "kind": 2097152,
+        "path": "type-aliases/IntersectionType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "LiteralType",
+        "kind": 2097152,
+        "path": "type-aliases/LiteralType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "PartialMappedType",
+        "kind": 2097152,
+        "path": "type-aliases/PartialMappedType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "PrimitiveType",
+        "kind": 2097152,
+        "path": "type-aliases/PrimitiveType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "PromiseTypeWithObject",
+        "kind": 2097152,
+        "path": "type-aliases/PromiseTypeWithObject.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "PromiseTypeWithSymbol",
+        "kind": 2097152,
+        "path": "type-aliases/PromiseTypeWithSymbol.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "QueryType",
+        "kind": 2097152,
+        "path": "type-aliases/QueryType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "ReadonlyMappedType",
+        "kind": 2097152,
+        "path": "type-aliases/ReadonlyMappedType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "StringLiteralType",
+        "kind": 2097152,
+        "path": "type-aliases/StringLiteralType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "Stuff",
+        "kind": 2097152,
+        "path": "type-aliases/Stuff.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "TupleType",
+        "kind": 2097152,
+        "path": "type-aliases/TupleType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "TypeDefOptions",
+        "kind": 2097152,
+        "path": "type-aliases/TypeDefOptions.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "TypeWithExternalSymbolLinkMapping",
+        "kind": 2097152,
+        "path": "type-aliases/TypeWithExternalSymbolLinkMapping.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "TypeWithIndexSignature",
+        "kind": 2097152,
+        "path": "type-aliases/TypeWithIndexSignature.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "TypeWithReturns",
+        "kind": 2097152,
+        "path": "type-aliases/TypeWithReturns.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "TypeWithTypeParams",
+        "kind": 2097152,
+        "path": "type-aliases/TypeWithTypeParams.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "UnionType",
+        "kind": 2097152,
+        "path": "type-aliases/UnionType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "UnionTypeWithTemplateStrings",
+        "kind": 2097152,
+        "path": "type-aliases/UnionTypeWithTemplateStrings.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "UsefulUnionType",
+        "kind": 2097152,
+        "path": "type-aliases/UsefulUnionType.md",
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "title": "Variables",
+    "children": [
+      {
+        "title": "objectLiteralVariable",
+        "kind": 32,
+        "path": "variables/objectLiteralVariable.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "objectWithSymbol",
+        "kind": 32,
+        "path": "variables/objectWithSymbol.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "someQuery",
+        "kind": 32,
+        "path": "variables/someQuery.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "stringVariable",
+        "kind": 32,
+        "path": "variables/stringVariable.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "templateVariableString",
+        "kind": 32,
+        "path": "variables/templateVariableString.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "typedef",
+        "kind": 32,
+        "path": "variables/typedef.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "typeOperatorVariable",
+        "kind": 32,
+        "path": "variables/typeOperatorVariable.md",
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "title": "Functions",
+    "children": [
+      {
+        "title": "basicFunction",
+        "kind": 64,
+        "path": "functions/basicFunction.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "basicFunctionWithReturns",
+        "kind": 64,
+        "path": "functions/basicFunctionWithReturns.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "curriedFunction",
+        "kind": 64,
+        "path": "functions/curriedFunction.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionReturningAFunction",
+        "kind": 64,
+        "path": "functions/functionReturningAFunction.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionReturningAnObject",
+        "kind": 64,
+        "path": "functions/functionReturningAnObject.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionReturningAPromise",
+        "kind": 64,
+        "path": "functions/functionReturningAPromise.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionReturningAString",
+        "kind": 64,
+        "path": "functions/functionReturningAString.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionReturningAUnionType",
+        "kind": 64,
+        "path": "functions/functionReturningAUnionType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionReturningFunctionOverloads",
+        "kind": 64,
+        "path": "functions/functionReturningFunctionOverloads.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionReturningUsefulUnionType",
+        "kind": 64,
+        "path": "functions/functionReturningUsefulUnionType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionWithArrayOfOptionalStuff",
+        "kind": 64,
+        "path": "functions/functionWithArrayOfOptionalStuff.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionWithArrayOfStuff",
+        "kind": 64,
+        "path": "functions/functionWithArrayOfStuff.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionWithArrayOfUnionStuff",
+        "kind": 64,
+        "path": "functions/functionWithArrayOfUnionStuff.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionWithComplexParams",
+        "kind": 64,
+        "path": "functions/functionWithComplexParams.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionWithDefaultParameters",
+        "kind": 64,
+        "path": "functions/functionWithDefaultParameters.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionWithMultipleSignatures",
+        "kind": 64,
+        "path": "functions/functionWithMultipleSignatures.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionWithNamedParams",
+        "kind": 64,
+        "path": "functions/functionWithNamedParams.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionWithNestedParameters",
+        "kind": 64,
+        "path": "functions/functionWithNestedParameters.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionWithOptionalParameters",
+        "kind": 64,
+        "path": "functions/functionWithOptionalParameters.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionWithRestParams",
+        "kind": 64,
+        "path": "functions/functionWithRestParams.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionWithTypeParameters",
+        "kind": 64,
+        "path": "functions/functionWithTypeParameters.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionWithUnionParams",
+        "kind": 64,
+        "path": "functions/functionWithUnionParams.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "tupleTypeFunction",
+        "kind": 64,
+        "path": "functions/tupleTypeFunction.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "tupleTypeFunctionInlineExplicit",
+        "kind": 64,
+        "path": "functions/tupleTypeFunctionInlineExplicit.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "tupleTypeFunctionOptional",
+        "kind": 64,
+        "path": "functions/tupleTypeFunctionOptional.md",
+        "isDeprecated": false
+      }
+    ]
+  }
+]
