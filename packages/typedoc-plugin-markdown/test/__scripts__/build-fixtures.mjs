@@ -25,7 +25,7 @@ async function main() {
     path.join(__dirname, '..', 'fixtures', 'configs'),
   );
 
-  const devConfigs = ['groups-1.cjs', 'groups-2.cjs'];
+  const devConfigs = ['reflections-1.cjs', 'reflections-2.cjs'];
 
   const typedocConfigs = isDev ? devConfigs : allConfigs;
 
