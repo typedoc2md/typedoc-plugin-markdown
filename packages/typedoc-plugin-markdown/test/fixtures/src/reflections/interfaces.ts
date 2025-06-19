@@ -249,17 +249,23 @@ export interface InterfaceWithSingleFunction {
 }
 
 /**
- * Comments for InterfaceWithFunction
+ * Comments for InterfaceWithFunctionOverloads
+ *
+ * @remarks parent block tag
  *
  * @inline
  */
 export interface InterfaceWithFunctionOverloads {
   /**
    * Comments for function 1
+   *
+   * @remarks function1 block tag
    */
   (options?: any): Promise<void>;
   /**
    * Comments for function 2
+   *
+   * @remarks function2 block tag
    */
   (options2?: any): Promise<void>;
 }

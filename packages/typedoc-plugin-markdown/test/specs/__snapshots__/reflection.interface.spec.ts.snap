@@ -826,7 +826,11 @@ exports[`Interface Reflection should compile interface with function overloads: 
 
 Defined in: [interfaces.ts:1](http://source-url)
 
-Comments for InterfaceWithFunction
+Comments for InterfaceWithFunctionOverloads
+
+## Remarks
+
+parent block tag
 
 ## Call Signature
 
@@ -834,7 +838,7 @@ Comments for InterfaceWithFunction
 
 Defined in: [interfaces.ts:1](http://source-url)
 
-Comments for InterfaceWithFunction
+Comments for function 1
 
 ### Parameters
 
@@ -846,13 +850,17 @@ Comments for InterfaceWithFunction
 
 [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
 
+### Remarks
+
+function1 block tag
+
 ## Call Signature
 
 > **InterfaceWithFunctionOverloads**(\`options2?\`): [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
 
 Defined in: [interfaces.ts:1](http://source-url)
 
-Comments for InterfaceWithFunction
+Comments for function 2
 
 ### Parameters
 
@@ -863,6 +871,10 @@ Comments for InterfaceWithFunction
 ### Returns
 
 [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+
+### Remarks
+
+function2 block tag
 "
 `;
 
@@ -871,7 +883,11 @@ exports[`Interface Reflection should compile interface with function overloads: 
 
 Defined in: [interfaces.ts:1](http://source-url)
 
-Comments for InterfaceWithFunction
+Comments for InterfaceWithFunctionOverloads
+
+## Remarks
+
+parent block tag
 
 ## Call Signature
 
@@ -881,7 +897,7 @@ InterfaceWithFunctionOverloads(options?: any): Promise<void>;
 
 Defined in: [interfaces.ts:1](http://source-url)
 
-Comments for InterfaceWithFunction
+Comments for function 1
 
 ### Parameters
 
@@ -893,6 +909,10 @@ Comments for InterfaceWithFunction
 
 [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
 
+### Remarks
+
+function1 block tag
+
 ## Call Signature
 
 \`\`\`ts
@@ -901,7 +921,7 @@ InterfaceWithFunctionOverloads(options2?: any): Promise<void>;
 
 Defined in: [interfaces.ts:1](http://source-url)
 
-Comments for InterfaceWithFunction
+Comments for function 2
 
 ### Parameters
 
@@ -912,6 +932,10 @@ Comments for InterfaceWithFunction
 ### Returns
 
 [\`Promise\`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\\<\`void\`\\>
+
+### Remarks
+
+function2 block tag
 "
 `;
 

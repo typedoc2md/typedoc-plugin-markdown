@@ -215,7 +215,7 @@ Module comments
 | [InterfaceWithComments](interfaces/InterfaceWithComments.md) | Comments for interface over two lines |
 | [InterfaceWithEventProperties](interfaces/InterfaceWithEventProperties.md) | - |
 | [InterfaceWithFlags](interfaces/InterfaceWithFlags.md) | Comments for InterfaceWithFlags |
-| [InterfaceWithFunctionOverloads](interfaces/InterfaceWithFunctionOverloads.md) | Comments for InterfaceWithFunction |
+| [InterfaceWithFunctionOverloads](interfaces/InterfaceWithFunctionOverloads.md) | Comments for InterfaceWithFunctionOverloads |
 | [InterfaceWithMixedOverloads](interfaces/InterfaceWithMixedOverloads.md) | Comments for InterfaceWithFunctionOverloads |
 | [InterfaceWithProps](interfaces/InterfaceWithProps.md) | Comments for InterfaceWithFunction |
 | [InterfaceWithSingleFunction](interfaces/InterfaceWithSingleFunction.md) | Comments for InterfaceWithFunction |

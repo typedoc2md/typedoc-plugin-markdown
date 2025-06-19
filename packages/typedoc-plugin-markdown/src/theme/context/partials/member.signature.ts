@@ -31,26 +31,9 @@ export function signature(
     md.push(this.partials.sources(model));
   }
 
-  let modelComments = options.multipleSignatures
+  const modelComments = options.multipleSignatures
     ? model.comment
     : model.comment || model.parent?.comment;
-
-  if (
-    modelComments &&
-    model.parent?.comment?.summary &&
-    !options.multipleSignatures
-  ) {
-    modelComments = Object.assign(modelComments, {
-      summary: model.parent.comment.summary,
-    });
-  }
-
-  if (modelComments && model.parent?.comment?.blockTags) {
-    modelComments.blockTags = [
-      ...(model.parent?.comment?.blockTags || []),
-      ...(model.comment?.blockTags || []),
-    ];
-  }
 
   if (modelComments) {
     md.push(
