@@ -3,7 +3,7 @@ import * as fs from 'fs';
 // @ts-check
 
 /**
- * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
+ * @param {import( '../../../dist/index.js').MarkdownApplication} app
  */
 export function load(app) {
   app.renderer.postRenderAsyncJobs.push(async (output) => {

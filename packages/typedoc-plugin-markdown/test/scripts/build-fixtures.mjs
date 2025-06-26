@@ -1,4 +1,4 @@
-import { spawn, spawnSync } from 'child_process';
+import { spawn } from 'child_process';
 import { consola } from 'consola';
 import * as fs from 'fs';
 import pLimit from 'p-limit';
@@ -14,7 +14,7 @@ const args = process.argv.slice(2);
 const isCI = args.includes('-isCI');
 const isDev = args.includes('-isDEV');
 
-const limit = pLimit(10);
+const limit = pLimit(isCI ? 5 : 10);
 
 const timeStart = new Date().getTime();
 
@@ -25,7 +25,7 @@ async function main() {
     path.join(__dirname, '..', 'fixtures', 'configs'),
   );
 
-  const devConfigs = ['reflections-1.cjs', 'reflections-2.cjs'];
+  const devConfigs = ['groups-1.cjs'];
 
   const typedocConfigs = isDev ? devConfigs : allConfigs;
 
@@ -47,15 +47,9 @@ export async function processFixture(config) {
     path.join(__dirname, '..', 'fixtures', 'configs', config),
   ];
 
-  if (isCI) {
-    spawnSync('typedoc', cmdArgs, {
-      stdio: 'inherit',
-    });
-  } else {
-    spawn('typedoc', cmdArgs, {
-      stdio: 'inherit',
-    });
-  }
+  spawn('typedoc', cmdArgs, {
+    stdio: 'inherit',
+  });
 }
 
 process.on('exit', () => {

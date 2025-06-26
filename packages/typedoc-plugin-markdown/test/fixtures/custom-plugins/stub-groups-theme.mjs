@@ -1,8 +1,8 @@
 // @ts-check
-import { MarkdownTheme, MarkdownThemeContext } from 'typedoc-plugin-markdown';
+import { MarkdownTheme, MarkdownThemeContext } from '../../../dist/index.js';
 
 /**
- * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
+ * @param {import('../../../dist/index.js').MarkdownApplication} app
  */
 export function load(app) {
   app.renderer.defineTheme('stub-groups', StubTheme);
@@ -10,7 +10,7 @@ export function load(app) {
 
 class StubTheme extends MarkdownTheme {
   /**
-   * @param {import('typedoc-plugin-markdown').MarkdownPageEvent} page
+   * @param {import('../../../dist/index.js').MarkdownPageEvent} page
    */
   getRenderContext(page) {
     return new MyMarkdownThemeContext(this, page, this.application.options);

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": false,
+    "esModuleInterop": true,
+    "declaration": true,
+    "lib": ["es2022", "dom"],
+    "module": "node16",
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "target": "es2022"
+  },
+  "include": ["./src/*.ts"]
+}

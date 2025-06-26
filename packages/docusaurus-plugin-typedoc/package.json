@@ -23,8 +23,8 @@
     "prebuild": "rm -rf dist && copyfiles --up 1 ./src/**/*.cjs ./dist/",
     "prepublishOnly": "npm run lint && npm run build",
     "build": "tsc",
-    "pretest": "cd ../../devtools/examples/docusaurus-ts && npm i && npm run generate",
-    "test": "node ./test/test.mjs",
+    "pretest": "rm -rf ./test/out && docusaurus generate-typedoc",
+    "test": "mocha --config ./mocha.config.json",
     "build-and-test": "npm run build && npm test"
   },
   "author": "Thomas Grey",
@@ -34,6 +34,10 @@
   },
   "dependencies": {
     "typedoc-docusaurus-theme": "^1.4.0"
+  },
+  "devDependencies": {
+    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/types": "^3.8.1"
   },
   "keywords": [
     "docusaurus",

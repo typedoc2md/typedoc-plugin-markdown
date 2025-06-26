@@ -1,8 +1,8 @@
 // @ts-check
-import { MarkdownPageEvent } from 'typedoc-plugin-markdown';
+import { MarkdownPageEvent } from '../../../dist/index.js';
 
 /**
- * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
+ * @param {import('../../../dist/index.js').MarkdownApplication} app
  */
 export function load(app) {
   app.renderer.on(MarkdownPageEvent.END, (page) => {

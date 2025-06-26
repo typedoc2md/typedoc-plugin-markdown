@@ -4,10 +4,7 @@ const baseOptions = require('../typedoc.cjs');
 
 const commonOptions = {
   entryPoints: ['../src/packages/package-1'],
-  plugin: [
-    'typedoc-plugin-markdown',
-    '../custom-plugins/navigation-plugin.mjs',
-  ],
+  plugin: ['../../../dist/index.js', '../custom-plugins/navigation-plugin.mjs'],
   entryPointStrategy: 'packages',
   name: 'package-example',
   includeVersion: true,

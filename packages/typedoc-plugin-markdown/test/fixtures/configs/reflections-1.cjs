@@ -5,7 +5,7 @@ const baseOptions = require('../typedoc.cjs');
 const commonOptions = {
   entryPoints: ['../src/reflections/index.ts'],
   plugin: [
-    'typedoc-plugin-markdown',
+    '../../../dist/index.js',
     '../custom-plugins/normalize-sources.mjs',
     '../custom-plugins/navigation-plugin.mjs',
   ],

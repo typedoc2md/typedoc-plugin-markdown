@@ -5,10 +5,10 @@ import {
   MarkdownRendererEvent,
   MarkdownTheme,
   MarkdownThemeContext,
-} from 'typedoc-plugin-markdown';
+} from '../../../dist/index.js';
 
 /**
- * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
+ * @param {import('../../../dist/index.js').MarkdownApplication} app
  */
 export function load(app) {
   app.renderer.defineTheme('custom-theme', MyMarkdownTheme);

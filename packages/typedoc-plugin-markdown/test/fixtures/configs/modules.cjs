@@ -8,10 +8,7 @@ const commonOptions = {
     '../src/modules/module-1',
     '../src/modules/module-3',
   ],
-  plugin: [
-    'typedoc-plugin-markdown',
-    '../custom-plugins/navigation-plugin.mjs',
-  ],
+  plugin: ['../../../dist/index.js', '../custom-plugins/navigation-plugin.mjs'],
   hidePageHeader: true,
   hideBreadcrumbs: true,
   disableSources: true,

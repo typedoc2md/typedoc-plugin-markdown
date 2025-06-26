@@ -15,7 +15,7 @@
     "prebuild": "rm -rf dist && prebuild-options && tsx ./scripts/prebuild",
     "build": "tsc && tsc-alias",
     "build-and-run": "npm run build && npm run fixtures -- -isDEV",
-    "fixtures": "rm -rf ./test/fixtures/out && node test/scripts/build-fixtures.mjs",
+    "fixtures": "rm -rf ./test/fixtures/out && node ./test/scripts/build-fixtures.mjs",
     "validate": "node test/lint/lint.md.mjs && tsx test/lint/lint.mdx.mjs",
     "pretest": "rm -rf test/out && npm run fixtures -- -isCI",
     "test": "npm run validate && npm run mocha",
@@ -47,8 +47,5 @@
     "typedoc",
     "typescript",
     "typedoc-plugin"
-  ],
-  "devDependencies": {
-    "mocha": "^11.7.0"
-  }
+  ]
 }
