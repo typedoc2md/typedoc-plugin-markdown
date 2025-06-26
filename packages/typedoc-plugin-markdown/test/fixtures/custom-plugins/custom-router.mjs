@@ -1,7 +1,7 @@
 // @ts-check
 
 import { ReflectionKind } from 'typedoc';
-import { MemberRouter } from 'typedoc-plugin-markdown';
+import { MemberRouter } from '../../../dist/index.js';
 
 /**
  * @param {import('typedoc').Application} app

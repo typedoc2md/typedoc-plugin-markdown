@@ -4,10 +4,7 @@ const baseOptions = require('../typedoc.cjs');
 
 const commonOptions = {
   entryPoints: ['../src/entryfiles/*'],
-  plugin: [
-    'typedoc-plugin-markdown',
-    '../custom-plugins/navigation-plugin.mjs',
-  ],
+  plugin: ['../../../dist/index.js', '../custom-plugins/navigation-plugin.mjs'],
   entryFileName: 'index.md',
   entryModule: 'entry-module',
   disableSources: true,

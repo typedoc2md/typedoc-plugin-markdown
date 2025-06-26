@@ -1,0 +1,10 @@
+packages:
+  - 'packages/typedoc-plugin-markdown'
+  - 'packages/typedoc-plugin-remark'
+  - 'packages/typedoc-plugin-frontmatter'
+  - 'packages/typedoc-github-wiki-theme'
+  - 'packages/typedoc-gitlab-wiki-theme'
+  - 'packages/typedoc-vitepress-theme'
+  - 'packages/typedoc-docusaurus-theme'
+  - 'packages/docusaurus-plugin-typedoc'
+  - 'devtools/packages/*'

@@ -6,7 +6,7 @@ const baseOptions = require('../typedoc.cjs');
 module.exports = {
   ...baseOptions,
   entryPoints: ['../src/outputs/index.ts'],
-  plugin: ['typedoc-plugin-markdown'],
+  plugin: ['../../../dist/index.js'],
   outputs: [
     {
       name: 'html',

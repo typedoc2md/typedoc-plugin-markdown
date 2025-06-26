@@ -4,7 +4,7 @@ const baseOptions = require('../typedoc.cjs');
 
 const commonOptions = {
   entryPoints: ['../src/utils/*.ts'],
-  plugin: ['typedoc-plugin-markdown'],
+  plugin: ['../../../dist/index.js'],
   hidePageHeader: true,
   hideBreadcrumbs: true,
   disableSources: true,

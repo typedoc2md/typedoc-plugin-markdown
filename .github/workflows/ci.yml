@@ -11,7 +11,6 @@ on:
       - main
       - release
       - beta
-      - remove-jest
   pull_request:
     paths:
       - 'packages/typedoc-plugin-markdown/**'
@@ -30,16 +29,26 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-          cache: 'npm'
-      - name: Install
-        run: HUSKY=0 npm ci
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: HUSKY=0 pnpm install
+
       - name: Lint
-        run: npm run lint --workspace typedoc-plugin-markdown
+        run: pnpm --filter typedoc-plugin-markdown run lint
+
       - name: Build
-        run: npm run build-all
+        run: pnpm build-all
+
       - name: Test
-        run: npm run test-all
+        run: pnpm test-all

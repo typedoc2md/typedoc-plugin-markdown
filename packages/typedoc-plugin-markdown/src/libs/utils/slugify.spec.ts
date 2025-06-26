@@ -1,7 +1,7 @@
 import { strict as assert } from 'assert';
 import { slugify } from './slugify.js';
 
-describe('Utils: slugifyUrl', () => {
+describe('typedoc-plugin-markdown (Utils / slugifyUrl)', () => {
   it('should convert to slug correctly', () => {
     const input = ' Type  Alias ';
     const expectedOutput = 'type-alias';

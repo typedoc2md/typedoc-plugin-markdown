@@ -25,17 +25,27 @@ jobs:
     name: Node ${{ matrix.node }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10
+
       - name: Set up Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-          cache: 'npm'
-      - name: Install
-        run: HUSKY=0 npm ci
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: HUSKY=0 pnpm install
+
       - name: Lint
-        run: npm run lint --workspace typedoc-docusaurus-theme
+        run: pnpm --filter typedoc-docusaurus-theme run lint
+
       - name: Build
-        run: npm run build --workspace typedoc-plugin-markdown --workspace typedoc-docusaurus-theme
+        run: pnpm --filter typedoc-docusaurus-theme run build
+
       - name: Test
-        run: npm run test --workspace typedoc-docusaurus-theme
+        run: pnpm --filter typedoc-docusaurus-theme run test
