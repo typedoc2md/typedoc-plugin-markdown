@@ -16,7 +16,7 @@ export function declarationType(
       const key = indexSignature.parameters
         ? indexSignature.parameters.map(
             (param) =>
-              `[${backTicks(param.name)}: ${this.partials.someType(param.type)}]`,
+              `\\[${backTicks(param.name)}: ${this.partials.someType(param.type)}\\]`,
           )
         : '';
       const obj = this.partials.someType(indexSignature.type as SomeType);

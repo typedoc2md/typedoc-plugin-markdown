@@ -1,0 +1,15 @@
+# Type Alias: TypeWithIndexSignature
+
+> **TypeWithIndexSignature** = \{\[`key`: `string`\]: `string`; \}
+
+Comments for TypeWithIndexSignature
+
+## Index Signature
+
+\[`key`: `string`\]: `string`
+
+Comments for key
+
+### Remarks
+
+Some remarks

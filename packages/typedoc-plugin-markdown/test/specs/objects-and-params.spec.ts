@@ -80,4 +80,12 @@ describe(`typedoc-plugin-markdown (Integration /Objects and Params)`, () => {
       'functions/functionReturningAUnionType.md',
     );
   });
+
+  it(`should compile type with index signature`, () => {
+    expectFileToEqual(
+      'objectsAndParams',
+      'members',
+      'type-aliases/TypeWithIndexSignature.md',
+    );
+  });
 });

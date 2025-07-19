@@ -1,0 +1,21 @@
+# Type Alias: TypeWithIndexSignature
+
+```ts
+type TypeWithIndexSignature = {
+[key: string]: string;
+};
+```
+
+Comments for TypeWithIndexSignature
+
+## Index Signature
+
+```ts
+[key: string]: string
+```
+
+Comments for key
+
+### Remarks
+
+Some remarks
