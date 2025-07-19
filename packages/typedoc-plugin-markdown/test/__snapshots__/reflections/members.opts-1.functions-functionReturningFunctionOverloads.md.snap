@@ -133,3 +133,7 @@ Comments for function
 > **prop**: `string`
 
 Comments for prop
+
+#### member4.prop.with.dot
+
+> **prop.with.dot**: `string`

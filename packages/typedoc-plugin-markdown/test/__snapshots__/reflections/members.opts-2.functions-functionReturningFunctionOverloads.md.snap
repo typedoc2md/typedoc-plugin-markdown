@@ -19,3 +19,4 @@ Return comments
 | `member3()` | (`options?`: `any`) => [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`void`\> | Member 3 comments Comments for function |
 | `member4` | `object` | - |
 | `member4.prop` | `string` | Comments for prop |
+| `member4.prop.with.dot` | `string` | - |

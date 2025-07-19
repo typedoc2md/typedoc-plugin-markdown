@@ -47,12 +47,7 @@ export function declarationTitle(
     name.push(backTicks('set') + ' ');
   }
 
-  const nameParts = model.name.split('.');
-
-  const declarationName =
-    Boolean(model.escapedName) && nameParts.length > 1
-      ? nameParts[nameParts.length - 1]
-      : model.name;
+  const declarationName = (model as any)?.originalName || model.name;
 
   const displayDeclarationName = this.options.getValue('useHTMLEncodedBrackets')
     ? encodeAngleBrackets(declarationName)

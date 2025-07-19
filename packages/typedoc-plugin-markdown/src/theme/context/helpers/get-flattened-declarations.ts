@@ -11,8 +11,6 @@ export function getFlattenedDeclarations(
         const childObj = {
           ...child,
           name: `${current.name}.${child.name}`,
-          getFullName: () => `${current.getFullName()}`,
-          getFriendlyFullName: () => `${current.getFriendlyFullName()}`,
         } as DeclarationReflection;
         return parseDeclarations(childObj, acc);
       },

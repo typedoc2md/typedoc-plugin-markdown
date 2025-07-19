@@ -280,4 +280,5 @@ export interface InterfaceWithProps {
    * Comments for prop
    */
   prop: string;
+  ['prop.with.dot']: string;
 }
