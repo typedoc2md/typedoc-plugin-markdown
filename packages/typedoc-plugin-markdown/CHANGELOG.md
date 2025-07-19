@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.7.1
+## 4.7.1 (2025-07-19)
 
 ### Patch Changes
 
