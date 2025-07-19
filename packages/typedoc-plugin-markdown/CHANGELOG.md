@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.7.1
+
+### Patch Changes
+
+- Escape square brackets in index signature types ([#829](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/829)).
+- Fix missing segments in declaration titles that contain periods.
+
 ## 4.7.0 (2025-06-19)
 
 ### Minor Changes
