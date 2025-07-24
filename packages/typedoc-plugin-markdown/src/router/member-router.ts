@@ -10,6 +10,9 @@ import {
 } from 'typedoc';
 import { MarkdownRouter } from './markdown-router.js';
 
+/**
+ * @ignore
+ */
 export class MemberRouter extends MarkdownRouter {
   override buildChildPages(
     reflection: Reflection,

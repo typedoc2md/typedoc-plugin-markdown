@@ -4,7 +4,10 @@ import {
 } from '@plugin/events/index.js';
 import { MarkdownTheme } from '@plugin/theme/index.js';
 import { EventHooks, Options, Renderer } from 'typedoc';
-import { MarkdownRendererHooks } from './markdown-renderer-hooks.js';
+import {
+  MarkdownRendererHooks,
+  RendererHooks,
+} from './markdown-renderer-hooks.js';
 
 /**
  * The MarkdownRenderer extends TypeDoc's {@link typedoc!Renderer Renderer} instance with custom hooks and async jobs.
@@ -55,8 +58,13 @@ export interface MarkdownRenderer extends Renderer {
 
   /**
    * Dedicated markdown hooks to add to the renderer
+   *
+   * @ignore
+   *
+   * @deprecated Use `hooks` instead.
    */
   markdownHooks: EventHooks<MarkdownRendererHooks, string>;
+  hooks: EventHooks<RendererHooks, any>;
   preRenderAsyncJobs: Array<(output: MarkdownRendererEvent) => Promise<void>>;
   postRenderAsyncJobs: Array<(output: MarkdownRendererEvent) => Promise<void>>;
 

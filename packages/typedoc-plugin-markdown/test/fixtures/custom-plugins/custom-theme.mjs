@@ -35,7 +35,8 @@ export function load(app) {
     page.contents = page.contents + '\nPAGE_END\n';
   });
 
-  app.renderer.markdownHooks.on('page.begin', () => '> `page.begin` hook');
+  //app.renderer.markdownHooks.on('page.begin', () => '> `page.begin` hook');
+  app.renderer.hooks.on('page.begin', () => '> `page.begin` hook');
 
   app.renderer.markdownHooks.on(
     'page.end',

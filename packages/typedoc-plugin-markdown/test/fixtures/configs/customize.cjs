@@ -13,8 +13,6 @@ const commonOptions = {
   ],
   disableSources: true,
   readme: 'none',
-  theme: 'custom-theme',
-  router: 'custom-router',
 };
 
 /** @type {import('typedoc').TypeDocOptions} */
@@ -25,6 +23,11 @@ module.exports = {
     {
       name: 'markdown',
       path: '../out/md/customize/members/opts-1',
+      options: { theme: 'custom-theme', router: 'custom-router' },
+    },
+    {
+      name: 'html',
+      path: '../out/html/customize',
     },
   ],
 };

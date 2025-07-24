@@ -4,16 +4,9 @@
 
 Plugins are the building blocks for extending the TypeDoc output. Plugins export a load function with context of the resolved application.
 
-The following is an example a a basic plugin skeleton:
+The following example shows a very basic plugin skeleton:
 
 ```js filename="local-plugins/my-custom-plugin.mjs"
-// @ts-check
-
-import { MarkdownApplication } from 'typedoc-plugin-markdown';
-
-/**
- * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
- */
 export function load(app) {
   // do something with app instance
 }
@@ -29,7 +22,7 @@ The plugin can then be consumed by adding the path to the plugin in your `typedo
 
 Note plugins must be consumed as ESM.
 
-See [Writing a TypeDoc plugin](https://typedoc.org/documents/Development.Plugins.html) for more information.
+See [TypeDoc plugin documentation](https://typedoc.org/documents/Development.Plugins.html) for more information.
 
 ## Hooks
 
@@ -38,12 +31,8 @@ Hooks allow strings to be injected into the output in specific locations and are
 The following example demonstrates how to use hooks to inject content into the output:
 
 ```ts filename="custom-plugin.mjs"
-// @ts-check
-/**
- * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
- */
 export function load(app) {
-  app.renderer.markdownHooks.on(
+  app.renderer.hooks.on(
     'page.begin',
     () => `**Generated using \`page.begin\` hook**`,
   );
