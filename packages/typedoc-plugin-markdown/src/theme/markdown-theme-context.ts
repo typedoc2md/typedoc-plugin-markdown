@@ -136,16 +136,23 @@ export class MarkdownThemeContext {
    * Returns the relative url of a given reflection.
    */
   urlTo(reflection: Reflection) {
+    const parseUrl = (url: string): string => {
+      const [base, ...fragments] = url.split('#');
+      if (fragments.length === 0) return base;
+      const lastFragment = fragments[fragments.length - 1];
+      return `${base}#${lastFragment}`;
+    };
+
     const publicPath = this.options.getValue('publicPath');
 
     if (publicPath) {
       return encodeURI(
-        `${publicPath.replace(/\/$/, '')}/${this.router.getFullUrl(reflection)}`,
+        `${publicPath.replace(/\/$/, '')}/${parseUrl(this.router.getFullUrl(reflection))}`,
       ).replace(/\\/g, '/');
     }
 
     if (this.router.hasUrl(reflection)) {
-      return this.router.relativeUrl(this.page.model, reflection);
+      return parseUrl(this.router.relativeUrl(this.page.model, reflection));
     }
     return '';
   }

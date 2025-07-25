@@ -65,6 +65,9 @@ const config = {
   outputs: {
     configFile: 'typedoc.outputs.cjs',
   },
+  links: {
+    configFile: 'typedoc.links.cjs',
+  },
 };
 
 export default config;
