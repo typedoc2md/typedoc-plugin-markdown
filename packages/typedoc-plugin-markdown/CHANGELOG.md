@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.x.x
+
+### Structural Changes
+
+- Page titles are now prefixed with the translated symbol keyword, when applicable (e.g., _Abstract Class_, _Const Variable_). This makes titles more informative and better aligned with the way symbols are presented in the default HTML theme.
+- Additionally, more placeholders have been added to the "pageTitleTemplates" option, providing greater flexibility for customizing page title output if the the default format doesn’t fully meet your needs. Please refer to documentation website for updated documentation.
+
 ## 4.7.1 (2025-07-19)
 
 ### Patch Changes

@@ -1,4 +1,4 @@
-# Variable: objectLiteralVariable
+# Const Variable: objectLiteralVariable
 
 ```ts
 const objectLiteralVariable: {

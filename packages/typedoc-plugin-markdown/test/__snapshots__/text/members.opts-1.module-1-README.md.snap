@@ -6,6 +6,11 @@
 
 # module-1
 
+## クラス
+
+- [\_SomeAbstractClass\_](classes/SomeAbstractClass.md)
+- [~~\_SomeDeprecatedAbstractClass\_~~](classes/SomeDeprecatedAbstractClass.md)
+
 ## インターフェイス
 
 - [SomeInterface](interfaces/SomeInterface.md)

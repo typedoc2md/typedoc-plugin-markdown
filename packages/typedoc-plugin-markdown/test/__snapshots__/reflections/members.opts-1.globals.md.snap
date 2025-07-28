@@ -90,6 +90,7 @@ Module comments
 
 ## Variables
 
+- [~~deprecatedVariable~~](variables/deprecatedVariable.md)
 - [objectLiteralVariable](variables/objectLiteralVariable.md)
 - [objectWithSymbol](variables/objectWithSymbol.md)
 - [someQuery](variables/someQuery.md)

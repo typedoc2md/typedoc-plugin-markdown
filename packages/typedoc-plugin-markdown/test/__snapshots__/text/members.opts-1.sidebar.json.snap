@@ -6,6 +6,23 @@
     "isDeprecated": false,
     "children": [
       {
+        "title": "クラス",
+        "children": [
+          {
+            "title": "_SomeAbstractClass_",
+            "kind": 128,
+            "path": "module-1/classes/SomeAbstractClass.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "_SomeDeprecatedAbstractClass_",
+            "kind": 128,
+            "path": "module-1/classes/SomeDeprecatedAbstractClass.md",
+            "isDeprecated": true
+          }
+        ]
+      },
+      {
         "title": "インターフェイス",
         "children": [
           {

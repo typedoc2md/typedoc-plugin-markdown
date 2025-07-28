@@ -1,4 +1,4 @@
-# Variable: variableWithChars
+# Const Variable: variableWithChars
 
 ```ts
 const variableWithChars: {

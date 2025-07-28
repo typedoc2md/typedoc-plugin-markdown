@@ -1,4 +1,4 @@
-# Variable: stringVariable
+# Const Variable: stringVariable
 
 ```ts
 const stringVariable: "stringConstWithDefaultValue" = 'stringConstWithDefaultValue';

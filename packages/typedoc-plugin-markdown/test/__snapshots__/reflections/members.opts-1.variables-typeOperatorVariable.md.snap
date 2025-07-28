@@ -1,4 +1,4 @@
-# Variable: typeOperatorVariable
+# Const Variable: typeOperatorVariable
 
 > `const` **typeOperatorVariable**: unique `symbol`
 

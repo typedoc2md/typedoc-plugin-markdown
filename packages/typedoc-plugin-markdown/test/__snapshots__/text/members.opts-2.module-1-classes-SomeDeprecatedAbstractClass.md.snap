@@ -1,0 +1,36 @@
+[**typedoc-stubs v0.0**](../../README.md)
+
+***
+
+[Home](../../README.md) / [module-1](../README.md) / \_SomeDeprecatedAbstractClass\_
+
+# ~~Classes - Class - \_SomeDeprecatedAbstractClass\_\<T, V\> - `_SomeDeprecatedAbstractClass_<T, V>` - Abstract - abstract}~~
+
+## Deprecated
+
+## Type Parameters
+
+### T
+
+`T`
+
+### V
+
+`V`
+
+## Constructors
+
+### Constructor
+
+> **new \_SomeDeprecatedAbstractClass\_**\<`T`, `V`\>(): `_SomeDeprecatedAbstractClass_`\<`T`, `V`\>
+
+#### Returns
+
+`_SomeDeprecatedAbstractClass_`\<`T`, `V`\>
+
+## Properties
+
+| Property | Type |
+| :------ | :------ |
+| <a id="prop"></a> ~~`prop`~~ | `T` |
+| <a id="prop2"></a> ~~`prop2`~~ | `V` |

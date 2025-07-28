@@ -1,7 +1,7 @@
 import { backTicks, strikeThrough } from '@plugin/libs/markdown/index.js';
 import { encodeAngleBrackets, escapeChars } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { DeclarationReflection, ReflectionKind, ReflectionType } from 'typedoc';
+import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
 export function memberTitle(
   this: MarkdownThemeContext,
@@ -22,11 +22,7 @@ export function memberTitle(
     `${/\\/.test(model.name) ? backTicks(model.name) : escapeChars(modelName)}`,
   );
 
-  if (
-    !(model.type as ReflectionType)?.declaration?.children?.length &&
-    (model.signatures?.length ||
-      (model.type as ReflectionType)?.declaration?.signatures?.length)
-  ) {
+  if (this.helpers.hasSignatures(model)) {
     name.push('()');
   }
 

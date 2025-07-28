@@ -1,4 +1,4 @@
-# Variable: variableWithChars
+# Const Variable: variableWithChars
 
 > `const` **variableWithChars**: \{ `<x>`: `string`; `<y>`: `string`; `<z>`: `string`; \}
 

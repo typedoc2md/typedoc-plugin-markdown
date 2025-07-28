@@ -341,6 +341,8 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
       helpers.getReflectionFlags.apply(context, [reflectionFlags]) as string,
     getReturnType: (model?: SomeType | undefined) =>
       helpers.getReturnType.apply(context, [model]) as string,
+    hasSignatures: (model: DeclarationReflection) =>
+      helpers.hasSignatures.apply(context, [model]) as boolean,
     hasUsefulTypeDetails: (type: SomeType) =>
       helpers.hasUsefulTypeDetails.apply(context, [type]) as boolean,
     isGroupKind: (model: DeclarationReflection | SignatureReflection) =>

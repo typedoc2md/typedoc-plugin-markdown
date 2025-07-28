@@ -2,6 +2,7 @@
 
 const baseOptions = require('../typedoc.cjs');
 
+/** @type {import('typedoc').TypeDocOptions & import('../../../dist/index.js').PluginOptions} */
 const commonOptions = {
   entryPoints: ['../src/text/*.ts'],
   plugin: ['../../../dist/index.js', '../custom-plugins/navigation-plugin.mjs'],
@@ -12,9 +13,12 @@ const commonOptions = {
   readme: 'none',
   pageTitleTemplates: {
     index: ':tada: Custom Index Title',
-    member: '{name}',
+    member:
+      '{group} - {kind} - {name} - `{rawName}` - {keyword} - {codeKeyword} - ',
   },
   textContentMappings: {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
     'breadcrumb.index': 'Home',
     'header.title': 'My API -  {version}',
     'footer.text': 'Copyright Test',
@@ -42,6 +46,10 @@ module.exports = {
       options: {
         router: 'module',
       },
+    },
+    {
+      name: 'html',
+      path: '../out/html/text',
     },
   ],
 };

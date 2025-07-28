@@ -1,4 +1,4 @@
-# Variable: objectWithSymbol
+# Const Variable: objectWithSymbol
 
 ```ts
 const objectWithSymbol: object;

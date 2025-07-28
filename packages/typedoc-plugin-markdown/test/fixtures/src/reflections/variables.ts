@@ -79,3 +79,10 @@ export const objectWithSymbol = {
    */
   [sym]: 'value',
 };
+
+/**
+ * Comments for deprecated variable
+ *
+ * @deprecated
+ */
+export const deprecatedVariable = 'deprecatedVariable';

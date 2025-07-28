@@ -429,6 +429,12 @@
     "title": "Variables",
     "children": [
       {
+        "title": "deprecatedVariable",
+        "kind": 32,
+        "path": "variables/deprecatedVariable.md",
+        "isDeprecated": true
+      },
+      {
         "title": "objectLiteralVariable",
         "kind": 32,
         "path": "variables/objectLiteralVariable.md",

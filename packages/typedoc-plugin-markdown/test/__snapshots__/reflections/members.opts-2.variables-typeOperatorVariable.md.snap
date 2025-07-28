@@ -1,4 +1,4 @@
-# Variable: typeOperatorVariable
+# Const Variable: typeOperatorVariable
 
 ```ts
 const typeOperatorVariable: unique symbol;

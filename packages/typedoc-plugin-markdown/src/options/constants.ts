@@ -16,21 +16,21 @@ export const ALLOWED_OWN_FILE_MEMBERS = [
   'TypeAlias',
 ];
 
+export const DEFAULT_PAGE_TITLES = {
+  index: '{projectName} {version}',
+  member: '{keyword} {kind}: {name}',
+  module: '{name}',
+};
+
 /**
  * Default values for `textContentMappings` option.
  */
 export const TEXT_CONTENT_MAPPINGS = {
   'header.title': '{projectName} {version}',
   'breadcrumbs.home': '{projectName} {version}',
-  'title.indexPage': '{projectName} {version}',
-  'title.memberPage': '{kind}: {name}',
-  'title.modulePage': '{name}',
-};
-
-export const DEFAULT_PAGE_TITLES = {
-  index: '{projectName} {version}',
-  member: '{kind}: {name}',
-  module: '{name}',
+  'title.indexPage': DEFAULT_PAGE_TITLES.index,
+  'title.memberPage': DEFAULT_PAGE_TITLES.member,
+  'title.modulePage': DEFAULT_PAGE_TITLES.module,
 };
 
 export const AVAILABLE_ROUTERS = [

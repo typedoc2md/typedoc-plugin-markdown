@@ -168,9 +168,9 @@ ${name}?: ${getType(name, option, true)};`,
 function getValueType(key: string, value: any) {
   if (key === 'pageTitleTemplates') {
     return `{
-    index: string | ((args: { name: string }) => string);
-    member: string;
-    module: string;
+    index?: string | ((args: { name: string }) => string);
+    member?: string;
+    module?: string;
   }`;
   }
   if (value === true || value === false) {
@@ -192,9 +192,9 @@ function getType(
 ) {
   if (name === 'pageTitleTemplates') {
     return `{
-    index: string | ((name: { projectName: string; version: string }) => string);
-    member: string | ((name: { name: string; kind: string; group: string }) => string);
-    module: string | ((name: { name: string, kind: string }) => string);
+    index?: string | ((name: { projectName: string; version: string }) => string);
+    member?: string | ((name: { name: string; rawName: string; kind: string; isDeprecated:boolean, group?: string, codeKeyword?: string, keyword?: string,   }) => string);
+    module?: string | ((name: { name: string, rawName: string; kind: string, isDeprecated:boolean }) => string);
   }`;
   }
 
@@ -250,7 +250,7 @@ function getType(
           ? 'ToStringOptions'
           : 'Record<string, any>'
         : `{${Object.keys(option.defaultValue as any)
-            .map((key) => `'${key}': ${getObjectType(name)};`)
+            .map((key) => `'${key}'?: ${getObjectType(name)};`)
             .join('')}}`;
     return isInterface ? outType : `ManuallyValidatedOption<${outType}>`;
   }

@@ -1,0 +1,40 @@
+[**My API - v0.0**](../../README.md)
+
+***
+
+[typedoc-stubs](../../README.md) / [module-1](../README.md) / \_SomeDeprecatedAbstractClass\_
+
+# ~~クラス - クラス - \_SomeDeprecatedAbstractClass\_\<T, V\> - `_SomeDeprecatedAbstractClass_<T, V>` - 抽象 - abstract -~~
+
+## Deprecated
+
+## 型パラメーター
+
+### T
+
+`T`
+
+### V
+
+`V`
+
+## コンストラクター
+
+### コンストラクター
+
+> **new \_SomeDeprecatedAbstractClass\_**\<`T`, `V`\>(): `_SomeDeprecatedAbstractClass_`\<`T`, `V`\>
+
+#### 戻り値
+
+`_SomeDeprecatedAbstractClass_`\<`T`, `V`\>
+
+## プロパティ
+
+| プロパティ | Type (ja) |
+| :------ | :------ |
+| <a id="prop"></a> ~~`prop`~~ | `T` |
+| <a id="prop2"></a> ~~`prop2`~~ | `V` |
+
+***
+
+Copyright Test

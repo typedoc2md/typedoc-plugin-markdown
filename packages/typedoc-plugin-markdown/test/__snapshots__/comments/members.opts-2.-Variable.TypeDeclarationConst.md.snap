@@ -1,4 +1,4 @@
-# Variable: TypeDeclarationConst
+# Const Variable: TypeDeclarationConst
 
 > `const` **TypeDeclarationConst**: \{ `declaration1`: `string`; `declaration2`: `number`; \}
 

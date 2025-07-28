@@ -1,4 +1,4 @@
-# Variable: objectWithSymbol
+# Const Variable: objectWithSymbol
 
 > `const` **objectWithSymbol**: \{ `[sym]`: `string`; \}
 

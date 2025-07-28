@@ -28,4 +28,12 @@ describe(`typedoc-plugin-markdown (Integration /Variable Reflection)`, () => {
       'variables/objectWithSymbol.md',
     );
   });
+
+  it(`should compile deprecated variable`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'variables/deprecatedVariable.md',
+    );
+  });
 });
