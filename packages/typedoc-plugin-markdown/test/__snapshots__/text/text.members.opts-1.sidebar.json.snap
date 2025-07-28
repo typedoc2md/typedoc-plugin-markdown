@@ -1,0 +1,96 @@
+[
+  {
+    "title": "module-1",
+    "kind": 2,
+    "path": "module-1/README.md",
+    "isDeprecated": false,
+    "children": [
+      {
+        "title": "クラス",
+        "children": [
+          {
+            "title": "_SomeAbstractClass_",
+            "kind": 128,
+            "path": "module-1/classes/SomeAbstractClass.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "_SomeDeprecatedAbstractClass_",
+            "kind": 128,
+            "path": "module-1/classes/SomeDeprecatedAbstractClass.md",
+            "isDeprecated": true
+          }
+        ]
+      },
+      {
+        "title": "インターフェイス",
+        "children": [
+          {
+            "title": "SomeInterface",
+            "kind": 256,
+            "path": "module-1/interfaces/SomeInterface.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "変数",
+        "children": [
+          {
+            "title": "someOtherVar",
+            "kind": 32,
+            "path": "module-1/variables/someOtherVar.md",
+            "isDeprecated": false
+          },
+          {
+            "title": "someVar",
+            "kind": 32,
+            "path": "module-1/variables/someVar.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "SomeGroup",
+        "children": [
+          {
+            "title": "SomeType",
+            "kind": 2097152,
+            "path": "module-1/type-aliases/SomeType.md",
+            "isDeprecated": false
+          }
+        ]
+      },
+      {
+        "title": "SomeOtherGroup",
+        "children": [
+          {
+            "title": "SomeOtherType",
+            "kind": 2097152,
+            "path": "module-1/type-aliases/SomeOtherType.md",
+            "isDeprecated": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "module-2",
+    "kind": 2,
+    "path": "module-2/README.md",
+    "isDeprecated": true,
+    "children": [
+      {
+        "title": "変数",
+        "children": [
+          {
+            "title": "constA",
+            "kind": 32,
+            "path": "module-2/variables/constA.md",
+            "isDeprecated": true
+          }
+        ]
+      }
+    ]
+  }
+]

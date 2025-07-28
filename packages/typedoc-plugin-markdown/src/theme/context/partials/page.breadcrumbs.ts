@@ -12,7 +12,7 @@ export function breadcrumbs(this: MarkdownThemeContext): string {
 
   const name = [
     this.helpers.getProjectName(
-      textContentMappings['breadcrumbs.home'],
+      textContentMappings?.['breadcrumbs.home'] || '',
       this.page,
       false,
     ),

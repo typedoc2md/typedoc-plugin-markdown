@@ -1,0 +1,19 @@
+[**typedoc-stubs v0.0**](../../README.md)
+
+***
+
+[Home](../../README.md) / [module-1](../README.md) / SomeInterface
+
+# CoolInterfaces - Interface - SomeInterface - `SomeInterface` - undefined - undefined}
+
+## Properties
+
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| <a id="someprop"></a> `someProp?` | `boolean` | Description for prop someProp |
+
+## Events
+
+| Event | Type |
+| :------ | :------ |
+| <a id="someevent"></a> `someEvent` | `MouseEvent` |

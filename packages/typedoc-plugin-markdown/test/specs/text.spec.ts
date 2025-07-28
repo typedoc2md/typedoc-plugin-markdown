@@ -25,8 +25,16 @@ describe(`typedoc-plugin-markdown (Integration / Text)`, () => {
     expectFileToEqual('text', 'members', ['sidebar.json']);
   });
 
-  it(`should get prefixed group titles`, () => {
-    expectFileToEqual('text', 'members', 'module-1/variables/someOtherVar.md');
-    expectFileToEqual('text', 'members', 'module-1/type-aliases/SomeType.md');
+  it(`should get pageTitle templates`, () => {
+    expectFileToEqual(
+      'text',
+      'members',
+      'module-1/classes/SomeAbstractClass.md',
+    );
+    expectFileToEqual(
+      'text',
+      'members',
+      'module-1/classes/SomeDeprecatedAbstractClass.md',
+    );
   });
 });

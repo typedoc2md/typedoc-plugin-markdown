@@ -1,0 +1,75 @@
+# Abstract Class: ClassWithModifiers
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for ClassWithModifiers
+
+## Constructors
+
+### Constructor
+
+```ts
+new ClassWithModifiers(): ClassWithModifiers;
+```
+
+#### Returns
+
+`ClassWithModifiers`
+
+## Properties
+
+| Property | Modifier | Type | Default value | Description |
+| :------ | :------ | :------ | :------ | :------ |
+| <a id="privateprop"></a> `privateProp` | `private` | `string` | `undefined` | Comments for privateProp |
+| <a id="protectedprop"></a> `protectedProp` | `protected` | `string` | `undefined` | Comments for protectedProp |
+| <a id="publicpropwithdefault"></a> `publicPropWithDefault` | `public` | `string` | `'propWithDefault'` | Comments for propWithDefault |
+| <a id="readonlyprop"></a> `readonlyProp` | `readonly` | `string` | `undefined` | Comments for abstractProperty |
+| <a id="staticprop"></a> `staticProp` | `static` | `string` | `undefined` | Comments for staticProp |
+
+## Methods
+
+### privateMethod()
+
+```ts
+private privateMethod(): void;
+```
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comment for privateMethod
+
+#### Returns
+
+`void`
+
+***
+
+### publicMethod()
+
+```ts
+publicMethod(): void;
+```
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comment for publicMethod
+
+#### Returns
+
+`void`
+
+***
+
+### staticMethod()
+
+```ts
+static staticMethod(): void;
+```
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comment for staticMethod
+
+#### Returns
+
+`void`

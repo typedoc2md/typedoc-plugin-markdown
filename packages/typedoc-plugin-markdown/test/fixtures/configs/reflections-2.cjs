@@ -2,6 +2,7 @@
 
 const baseOptions = require('../typedoc.cjs');
 
+/** @type {import('typedoc').TypeDocOptions & import('../../../dist/index.js').PluginOptions} */
 const commonOptions = {
   entryPoints: ['../src/reflections/index.ts'],
   plugin: [
@@ -19,6 +20,7 @@ const commonOptions = {
   blockTagsPreserveOrder: ['@deprecated', '@see'],
   expandObjects: false,
   readme: 'none',
+  strikeDeprecatedPageTitles: false,
 };
 
 const opts2 = {

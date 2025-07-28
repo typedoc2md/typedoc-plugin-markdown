@@ -2,6 +2,7 @@
 
 const baseOptions = require('../typedoc.cjs');
 
+/** @type {import('typedoc').TypeDocOptions & import('../../../dist/index.js').PluginOptions} */
 const commonOptions = {
   entryPoints: ['../src/text/*.ts'],
   plugin: ['../../../dist/index.js', '../custom-plugins/navigation-plugin.mjs'],
@@ -11,7 +12,8 @@ const commonOptions = {
   },
   pageTitleTemplates: {
     index: (args) => `:tada ${args.projectName} and version ${args.version}`,
-    member: (args) => `${args.group}: ${args.kind} - ${args.name}`,
+    member: (args) =>
+      `${args.group} - ${args.kind} - ${args.name} - \`${args.rawName}\` - ${args.keyword} - ${args.codeKeyword}}`,
     module: (args) => `${args.kind} - ${args.name}`,
   },
   locales: {

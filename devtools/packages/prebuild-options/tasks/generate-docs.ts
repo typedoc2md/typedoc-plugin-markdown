@@ -190,9 +190,13 @@ ${presetsJson}
           option.type !== ParameterType.Mixed &&
           option.type !== ParameterType.Object
         ) {
-          meta.push(`Defaults to \`${getDefaultValue(option)}\`.`);
+          if (option.name !== 'pageTitleTemplates') {
+            meta.push(`Defaults to \`${getDefaultValue(option)}\`.`);
+          }
         }
-        out.push(`> ${meta.join(' ')}`);
+        if (meta.length) {
+          out.push(`> ${meta.join(' ')}`);
+        }
 
         if (option.comments?.length) {
           out.push(option.comments);
@@ -313,10 +317,12 @@ function getType(option: any) {
   }
 
   if (
-    [ParameterType.Mixed, ParameterType.Object].includes(option.type) &&
-    option.defaultValue
+    [ParameterType.Mixed, ParameterType.Object, ParameterType.Flags].includes(
+      option.type,
+    ) &&
+    (option.defaultValue || option.defaults)
   ) {
-    return Array.isArray(option.defaultValue)
+    return Array.isArray(option.defaultValue) || Array.isArray(option.defaults)
       ? 'Accepts an Array.'
       : 'Accepts a key/value object.';
   }
@@ -339,7 +345,7 @@ function getDefaultValue(option) {
     return option.defaultValue;
   }
 
-  if (option.type === ParameterType.Flags) {
+  if (option.defaults) {
     return JSON.stringify(option.defaults);
   }
 

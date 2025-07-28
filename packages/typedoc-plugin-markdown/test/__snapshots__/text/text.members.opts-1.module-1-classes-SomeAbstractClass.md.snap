@@ -1,0 +1,38 @@
+[**My API - v0.0**](../../README.md)
+
+***
+
+[typedoc-stubs](../../README.md) / [module-1](../README.md) / \_SomeAbstractClass\_
+
+# クラス - クラス - \_SomeAbstractClass\_\<T, V\> - `_SomeAbstractClass_<T, V>` - 抽象 - abstract -
+
+## 型パラメーター
+
+### T
+
+`T`
+
+### V
+
+`V`
+
+## コンストラクター
+
+### コンストラクター
+
+> **new \_SomeAbstractClass\_**\<`T`, `V`\>(): `_SomeAbstractClass_`\<`T`, `V`\>
+
+#### 戻り値
+
+`_SomeAbstractClass_`\<`T`, `V`\>
+
+## プロパティ
+
+| プロパティ | Type (ja) |
+| :------ | :------ |
+| <a id="prop"></a> `prop` | `T` |
+| <a id="prop2"></a> `prop2` | `V` |
+
+***
+
+Copyright Test

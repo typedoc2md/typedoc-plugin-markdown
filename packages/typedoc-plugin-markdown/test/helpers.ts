@@ -29,7 +29,7 @@ export function expectFileToEqual(
           }
 
           assertToMatchSnapshot(
-            `${key}/${outputFileStrategy}.${optionDir}.${fileName.toString().replace(/\//g, '-')}`,
+            `${key}/${key}.${outputFileStrategy}.${optionDir}.${fileName.toString().replace(/\//g, '-')}`,
             actual,
           );
         }
@@ -65,9 +65,9 @@ export function expectUrlsToEqual(key, outDir, outputFileStrategies) {
         }, []);
       };
       const urls = reduceDirectory(optionsBasePath, '', rootDirectory);
-      const actual = JSON.stringify(urls).toString();
+      const actual = JSON.stringify(urls, null, 2).toString();
       assertToMatchSnapshot(
-        `${key}/${outputFileStrategy}.${optionDir}.${outDir.toString().replace(/\//g, '-')}`,
+        `${key}/${key}.${outputFileStrategy}.${optionDir}.${outDir.toString().replace(/\//g, '-')}`,
         actual,
       );
     });

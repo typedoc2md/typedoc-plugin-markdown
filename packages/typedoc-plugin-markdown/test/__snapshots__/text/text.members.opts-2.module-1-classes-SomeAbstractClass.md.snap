@@ -1,0 +1,34 @@
+[**typedoc-stubs v0.0**](../../README.md)
+
+***
+
+[Home](../../README.md) / [module-1](../README.md) / \_SomeAbstractClass\_
+
+# Classes - Class - \_SomeAbstractClass\_\<T, V\> - `_SomeAbstractClass_<T, V>` - Abstract - abstract}
+
+## Type Parameters
+
+### T
+
+`T`
+
+### V
+
+`V`
+
+## Constructors
+
+### Constructor
+
+> **new \_SomeAbstractClass\_**\<`T`, `V`\>(): `_SomeAbstractClass_`\<`T`, `V`\>
+
+#### Returns
+
+`_SomeAbstractClass_`\<`T`, `V`\>
+
+## Properties
+
+| Property | Type |
+| :------ | :------ |
+| <a id="prop"></a> `prop` | `T` |
+| <a id="prop2"></a> `prop2` | `V` |

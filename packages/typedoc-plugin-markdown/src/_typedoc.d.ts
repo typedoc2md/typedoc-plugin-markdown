@@ -39,13 +39,28 @@ declare module 'typedoc' {
     };
     outputFileStrategy: 'members' | 'modules';
     pageTitleTemplates: {
-      index:
+      index?:
         | string
         | ((name: { projectName: string; version: string }) => string);
-      member:
+      member?:
         | string
-        | ((name: { name: string; kind: string; group: string }) => string);
-      module: string | ((name: { name: string; kind: string }) => string);
+        | ((name: {
+            name: string;
+            rawName: string;
+            kind: string;
+            isDeprecated: boolean;
+            group?: string;
+            codeKeyword?: string;
+            keyword?: string;
+          }) => string);
+      module?:
+        | string
+        | ((name: {
+            name: string;
+            rawName: string;
+            kind: string;
+            isDeprecated: boolean;
+          }) => string);
     };
     parametersFormat: 'list' | 'table' | 'htmlTable';
     preserveAnchorCasing: boolean;
@@ -54,6 +69,7 @@ declare module 'typedoc' {
     propertyMembersFormat: 'list' | 'table' | 'htmlTable';
     publicPath: string;
     sanitizeComments: boolean;
+    strikeDeprecatedPageTitles: boolean;
     tableColumnSettings: {
       hideDefaults?: boolean;
       hideInherited?: boolean;
@@ -64,11 +80,11 @@ declare module 'typedoc' {
       leftAlignHeaders?: boolean;
     };
     textContentMappings: ManuallyValidatedOption<{
-      'header.title': string;
-      'breadcrumbs.home': string;
-      'title.indexPage': string;
-      'title.memberPage': string;
-      'title.modulePage': string;
+      'header.title'?: string;
+      'breadcrumbs.home'?: string;
+      'title.indexPage'?: string;
+      'title.memberPage'?: string;
+      'title.modulePage'?: string;
     }>;
     typeAliasPropertiesFormat: 'list' | 'table' | 'htmlTable';
     typeDeclarationFormat: 'list' | 'table' | 'htmlTable';

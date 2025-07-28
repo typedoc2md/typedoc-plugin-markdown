@@ -11,7 +11,7 @@ export function header(this: MarkdownThemeContext): string {
   const md: string[] = [];
 
   const title = this.helpers.getProjectName(
-    textContentMappings['header.title'],
+    textContentMappings?.['header.title'] || '',
     this.page,
   );
 

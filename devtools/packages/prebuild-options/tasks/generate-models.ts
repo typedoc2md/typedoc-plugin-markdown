@@ -54,7 +54,9 @@ import { ManuallyValidatedOption } from 'typedoc';${docsConfig.optionsPath === '
   out.push(`declare module 'typedoc' {`);
   out.push(`export interface TypeDocOptionMap {
     ${(Object.entries(sortedOptionsConfig) as any)
-      .map(([name, option]) => `${name}: ${getType(name, option)};`)
+      .map(
+        ([name, option]) => `${name}: ${getType(name, option, false, true)};`,
+      )
       .join('\n')}
   }`);
 
@@ -168,9 +170,9 @@ ${name}?: ${getType(name, option, true)};`,
 function getValueType(key: string, value: any) {
   if (key === 'pageTitleTemplates') {
     return `{
-    index: string | ((args: { name: string }) => string);
-    member: string;
-    module: string;
+    index?: string | ((args: { name: string }) => string);
+    member?: string;
+    module?: string;
   }`;
   }
   if (value === true || value === false) {
@@ -189,12 +191,13 @@ function getType(
   name: string,
   option: Partial<DeclarationOption>,
   isInterface = false,
+  isDeclarationFile = false,
 ) {
   if (name === 'pageTitleTemplates') {
     return `{
-    index: string | ((name: { projectName: string; version: string }) => string);
-    member: string | ((name: { name: string; kind: string; group: string }) => string);
-    module: string | ((name: { name: string, kind: string }) => string);
+    index?: string | ((name: { projectName: string; version: string }) => string);
+    member?: string | ((name: { name: string; rawName: string; kind: string; isDeprecated:boolean, group?: string, codeKeyword?: string, keyword?: string,   }) => string);
+    module?: string | ((name: { name: string, rawName: string; kind: string, isDeprecated:boolean }) => string);
   }`;
   }
 
@@ -243,25 +246,25 @@ function getType(
   }
 
   if (option.type === ParameterType.Object) {
-    const outType =
-      typeof option.defaultValue === 'object' &&
-      Object.keys(option.defaultValue as object).length === 0
-        ? name === 'yamlStringifyOptions'
-          ? 'ToStringOptions'
-          : 'Record<string, any>'
-        : `{${Object.keys(option.defaultValue as any)
-            .map((key) => `'${key}': ${getObjectType(name)};`)
-            .join('')}}`;
-    return isInterface ? outType : `ManuallyValidatedOption<${outType}>`;
+    const defaults = (option as any).defaults || {};
+    const objectWithDefaults =
+      typeof defaults === 'object' &&
+      Object.keys(defaults as object).length === 0;
+    const outType = objectWithDefaults
+      ? name === 'yamlStringifyOptions'
+        ? 'ToStringOptions'
+        : 'Record<string, any>'
+      : `{${Object.keys(defaults as any)
+          .map((key) => `'${key}'?: boolean;`)
+          .join('')}}`;
+    return objectWithDefaults && isDeclarationFile
+      ? `ManuallyValidatedOption<${outType}>`
+      : outType;
   }
-  return 'any';
-}
-
-function getObjectType(name: string) {
-  if (name === 'reflectionFormats') {
-    return "'list'|'table'|'htmlTable'";
-  }
-  return 'string';
+  const outType = `{${Object.keys((option as any).defaultValue as any)
+    .map((key) => `'${key}'?: string;`)
+    .join('')}}`;
+  return isInterface ? outType : `ManuallyValidatedOption<${outType}>`;
 }
 
 function capitalize(str: string, includeArray = true) {

@@ -331,6 +331,17 @@ export const blockTagsPreserveOrder: Partial<DeclarationOption> = {
 };
 
 /**
+ * When set to `true`, the titles of pages representing deprecated symbols will be rendered with strikethroughs.
+ *
+ * @category Display
+ */
+export const strikeDeprecatedPageTitles: Partial<DeclarationOption> = {
+  help: 'Controls whether deprecated symbols have their page titles rendered with a strikethrough.',
+  type: ParameterType.Boolean,
+  defaultValue: true,
+};
+
+/**
  * This option renders index items either as a simple unordered list or in a table.
  *
  * When table style is selected the following will be the behaviour:
@@ -492,6 +503,100 @@ export const propertiesFormat: Partial<DeclarationOption> = {
 };
 
 /**
+ * Configures the main page title (# heading) output using placeholders or functions.
+ *
+ * Each value can be either:
+ *
+ * - A string supporting placeholders.
+ * - A function that receives input arguments.
+ *
+ * **Available keys**
+ *
+ * - `index`: For the main documentation index page.
+ * - `module`: For module and namespace pages.
+ * - `member`: For individual member pages.
+ *
+ * **Available placeholders / function arguments**
+ *
+ * For index pages:
+ *
+ * - `projectName`: The project's name, resolved by TypeDoc.
+ * - `version`: The project version, resolved by TypeDoc (when `includeVersion` is `true`).
+ *
+ *  For module and member pages:
+ *
+ * - `name`: The name of the module or member including type parameters (includes markdown escaping).
+ * - `rawName`: Same as `name` placeholder without escaping (useful if including inside backticks).
+ * - `keyword`: The translated keyword for the symbol, if applicable (e.g., "Abstract").
+ * - `codeKeyword`: The code keyword for the symbol, if applicable (e.g., `abstract`).
+ * - `kind`: The TypeDoc reflection kind of the symbol.
+ * - `group`: The group title, if applicable.
+ *
+ * **Default values**
+ *
+ * By default, the plugin uses the following templates and placeholders:
+ *
+ *  ```json
+ *  {
+ *  "pageTitleTemplates": {
+ *    "index": "{projectName} {version}", // e.g. "My Project 1.0.0"
+ *    "member": "{keyword} {kind}: {name}", // e.g. "Abstract Class: MyClass\<T, V\>"
+ *    "module": "{name}" // e.g. "MyModule"
+ *   }
+ * }
+ * ```
+ *
+ * **String placeholder examples (JSON/JS config)**
+ *
+ * Placeholders can can be used using the pattern `{placeholder}`.
+ *
+ *  ```json filename="typedoc.json"
+ *  {
+ *  "pageTitleTemplates": {
+ *    "index": "{projectName} - (v{version})", // e.g. "My Project - (v1.0.0)"
+ *    "member": "{group} - `{rawName}`", // e.g. "Classes - `MyClass<T, V>`"
+ *   }
+ * }
+ * ```
+ *
+ * **Function examples (JS config only)**
+ *
+ * Functions are more flexible as it allows you to use conditional logic and custom formatting.
+ *
+ * ```js filename="typedoc.cjs"
+ * pageTitleTemplates: {
+ *   index: (args) => `${args.projectName} - (v${args.version})`, // e.g. "My Project - (v1.0.0)"
+ *   member: (args) =>
+ *     `${args.name} ${args.codeKeyword && `(${args.codeKeyword)}`, // MyClass<T, V> (abstract)
+ * }
+ * ```
+ *
+ * @omitExample
+ *
+ * @category Display
+ */
+export const pageTitleTemplates: Partial<DeclarationOption> = {
+  help: 'Configure page title output with placeholders.',
+  type: ParameterType.Object,
+  defaultValue: DEFAULT_PAGE_TITLES,
+  configFileOnly: true,
+  validate(value) {
+    if (!value || typeof value !== 'object') {
+      throw new Error(
+        '[typedoc-plugin-markdown] pageTitleTemplates must be an object.',
+      );
+    }
+    for (const val of Object.values(value)) {
+      if (typeof val !== 'string' && typeof val !== 'function') {
+        throw new Error(
+          `[typedoc-plugin-markdown] All values of pageTitleTemplates must be strings or functions.`,
+        );
+      }
+    }
+  },
+};
+
+/**
  * By default, all available data for symbols are displayed in table columns which can result in several columns in certain use-cases.
  *
  * This option allows you to control the visibility of columns, prioritizing readability over displaying complete data.
@@ -510,61 +615,6 @@ export const tableColumnSettings: Partial<DeclarationOption> = {
     hideSources: false,
     hideValues: false,
     leftAlignHeaders: false,
-  },
-};
-
-/**
- * Customizes the page titles for index, module, and member pages in the documentation.
- *
- * This option is provided as an object, with keys corresponding to the page types.
- *
- * Each value can be either:
- * - A string supporting placeholders.
- * - A function that receives input arguments.
- *
- * Available placeholders / arguments:
- *
- * - `{projectName}` – The project's name, resolved by TypeDoc.
- * - `{version}` – The project version, resolved by TypeDoc (when `includeVersion` is `true`).
- * - `{kind}` – The reflection kind of the item.
- * - `{name}` – The name of the module or member.
- *
- * Available keys:
- *
- * - `index` – For the main documentation index page. Supports `projectName` and `version`.
- * - `module` – For module and namespace pages. Supports `kind` and `name`.
- * - `member` – For individual member pages. Supports `kind` and `name`.
- *
- * Examples showing usage of both string (JS config) and function (JS/JSON config) values:
- *
- * ```js filename="typedoc.cjs"
- * pageTitleTemplates: {
- *   index: (args) => `${args.projectName}: ${args.version}`,
- *   module: (args) => `${args.kind}: ${args.name}`,
- *   member: (args) => `${args.kind}: ${args.name}`,
- * }
- * ```
- *
- * @category Display
- */
-export const pageTitleTemplates: Partial<DeclarationOption> = {
-  help: 'Change specific text placeholders in the template.',
-  type: ParameterType.Object,
-  defaultValue: DEFAULT_PAGE_TITLES,
-  configFileOnly: true,
-  validate(value) {
-    if (!value || typeof value !== 'object') {
-      throw new Error(
-        '[typedoc-plugin-markdown] pageTitleTemplates must be an object.',
-      );
-    }
-    for (const val of Object.values(value)) {
-      if (typeof val !== 'string' && typeof val !== 'function') {
-        throw new Error(
-          `[typedoc-plugin-markdown] All values of pageTitleTemplates must be strings or functions.`,
-        );
-      }
-    }
   },
 };
 
@@ -633,11 +683,11 @@ export const useHTMLEncodedBrackets: Partial<DeclarationOption> = {
 
 /**
  * Controls whether HTML custom heading IDs ([`{#custom-id}`](https://www.markdownguide.org/extended-syntax/#heading-ids)) are added to headings.
- * 
+ *
  * This syntax is not included in standard Markdown specifications such as [GFM](https://github.github.com/gfm/) or [CommonMark](https://spec.commonmark.org/). You may need to configure your Markdown parser to enable this feature.
  *
  * Support for custom heading IDs in popular tools:
- * 
+ *
  * - Docusaurus - [native support](https://docusaurus.io/docs/3.7.0/markdown-features/toc#heading-ids)
  * - Vitepress - [native support](https://vitepress.dev/guide/markdown#custom-anchors)
  * - Remark - requires additional plugin like [remark-custom-heading-id](https://www.npmjs.com/package/remark-custom-heading-id)

@@ -1,0 +1,11 @@
+# Variable: deprecatedVariable
+
+```ts
+const deprecatedVariable: "deprecatedVariable" = 'deprecatedVariable';
+```
+
+Defined in: [variables.ts:1](http://source-url)
+
+Comments for deprecated variable
+
+## Deprecated

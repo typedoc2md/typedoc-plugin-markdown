@@ -143,16 +143,31 @@ export interface PluginOptions {
   outputFileStrategy?: 'members' | 'modules';
 
   /**
-   * Change specific text placeholders in the template.
+   * Configure page title output with placeholders.
    */
   pageTitleTemplates?: {
-    index:
+    index?:
       | string
       | ((name: { projectName: string; version: string }) => string);
-    member:
+    member?:
       | string
-      | ((name: { name: string; kind: string; group: string }) => string);
-    module: string | ((name: { name: string; kind: string }) => string);
+      | ((name: {
+          name: string;
+          rawName: string;
+          kind: string;
+          isDeprecated: boolean;
+          group?: string;
+          codeKeyword?: string;
+          keyword?: string;
+        }) => string);
+    module?:
+      | string
+      | ((name: {
+          name: string;
+          rawName: string;
+          kind: string;
+          isDeprecated: boolean;
+        }) => string);
   };
 
   /**
@@ -191,6 +206,11 @@ export interface PluginOptions {
   sanitizeComments?: boolean;
 
   /**
+   * Controls whether deprecated symbols have their page titles rendered with a strikethrough.
+   */
+  strikeDeprecatedPageTitles?: boolean;
+
+  /**
    * Control how table columns are configured and displayed.
    */
   tableColumnSettings?: {
@@ -207,11 +227,11 @@ export interface PluginOptions {
    * @deprecated This option has been deprecated in favour of `--pageTitleTemplates`.
    */
   textContentMappings?: {
-    'header.title': string;
-    'breadcrumbs.home': string;
-    'title.indexPage': string;
-    'title.memberPage': string;
-    'title.modulePage': string;
+    'header.title'?: string;
+    'breadcrumbs.home'?: string;
+    'title.indexPage'?: string;
+    'title.memberPage'?: string;
+    'title.modulePage'?: string;
   };
 
   /**
