@@ -1,0 +1,11 @@
+[
+  "README.md",
+  "Test.Module.Name.md",
+  "documentation.md",
+  "module-1.submodules.submodule-1.md",
+  "module-1.submodules.submodule-2.md",
+  "module-1.submodules.submodule-3-with-modules.nested-submodule-1.md",
+  "module-1.submodules.submodule-3-with-modules.nested-submodule-2.md",
+  "module-2.md",
+  "namespace.md"
+]

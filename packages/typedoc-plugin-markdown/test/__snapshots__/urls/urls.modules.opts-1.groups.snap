@@ -1,0 +1,17 @@
+[
+  "-internal-.md",
+  "42-module-name.md",
+  "basic.md",
+  "has-categories.md",
+  "has-custom-groups.md",
+  "has-disabled-groups.md",
+  "has-namespaces/index.md",
+  "has-namespaces/namespaces/NamespaceB.md",
+  "has-namespaces/namespaces/Namespace_A/index.md",
+  "has-namespaces/namespaces/Namespace_A/namespaces/NestedNamespace.md",
+  "has-references.md",
+  "has-same-exports.md",
+  "index-1.md",
+  "index.md",
+  "modules.md"
+]
