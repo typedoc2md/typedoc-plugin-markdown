@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.4.1
+## 1.4.1 (2025-07-30)
 
 ### Patch Changes
 
