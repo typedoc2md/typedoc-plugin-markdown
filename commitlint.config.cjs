@@ -22,6 +22,7 @@ module.exports = {
         'docs',
         'refactor',
         'quality',
+        'release',
       ],
     ],
   },
