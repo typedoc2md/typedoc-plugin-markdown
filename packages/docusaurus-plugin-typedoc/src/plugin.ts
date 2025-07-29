@@ -20,8 +20,12 @@ export default async function pluginDocusaurus(
         )
         .action(async () => {
           context.siteConfig?.plugins?.forEach((pluginConfig) => {
-            // Check PluginConfig is typed to [string, PluginOptions]
-            if (pluginConfig && typeof pluginConfig[1] === 'object') {
+            // Check PluginConfig is typed to ['docusaurus-plugin-typedoc', PluginOptions]
+            if (
+              pluginConfig &&
+              pluginConfig[0].includes('docusaurus-plugin-typedoc') &&
+              typeof pluginConfig[1] === 'object'
+            ) {
               generateTypedoc(context, pluginConfig[1]);
             }
           });
