@@ -19,6 +19,7 @@
     "lint-all": "pnpm -r --if-present run lint",
     "prerelease": "npm run build-all",
     "release": "npx changeset publish",
+    "ci:publish": "pnpm publish -r",
     "prepare": "husky"
   },
   "devDependencies": {
