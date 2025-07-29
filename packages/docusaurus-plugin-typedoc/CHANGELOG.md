@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.1
+
+### Patch Changes
+
+- Fixed `generate-typedoc` cli task passing in incorrect options ([#833](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/833)).
+
 ## 1.4.0 (2025-04-28)
 
 ### Minor Changes
