@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.2
+
+### Patch Changes
+
+- Fix error when `() => Plugin` type is defined in the `plugins` array of the Docusaurus config - thanks @TomerAberbach.
+
 ## 1.4.1 (2025-07-30)
 
 ### Patch Changes
