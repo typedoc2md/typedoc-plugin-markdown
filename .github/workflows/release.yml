@@ -28,14 +28,14 @@ jobs:
           cache: 'pnpm'
 
       - name: Install Dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Create Release Pull Request or Publish to npm
         uses: changesets/action@v1
         with:
           commit: 'chore(release): update versions'
           title: 'chore(release): update versions'
-          publish: pnpm ci:publish
+          publish: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
