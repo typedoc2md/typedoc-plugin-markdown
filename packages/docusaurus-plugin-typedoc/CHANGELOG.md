@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.4.2
+## 1.4.2 (2025-08-04)
 
 ### Patch Changes
 
