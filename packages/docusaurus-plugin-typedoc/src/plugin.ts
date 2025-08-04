@@ -23,6 +23,7 @@ export default async function pluginDocusaurus(
             // Check PluginConfig is typed to ['docusaurus-plugin-typedoc', PluginOptions]
             if (
               pluginConfig &&
+              typeof pluginConfig[0] === 'string' &&
               pluginConfig[0].includes('docusaurus-plugin-typedoc') &&
               typeof pluginConfig[1] === 'object'
             ) {
