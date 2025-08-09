@@ -160,9 +160,26 @@ export class MarkdownThemeContext {
   /**
    * Hook into the TypeDoc rendering system.
    */
-  hook: MarkdownRenderer['markdownHooks']['emit'] = (...params) => {
-    return (this.theme.owner as unknown as MarkdownRenderer).markdownHooks.emit(
-      ...params,
-    );
-  };
+  hook(...params: LegacyHooksEmitParams | HooksEmitParams): string[] {
+    const renderer = this.theme.owner as unknown as MarkdownRenderer;
+
+    const emitted: any[] = [];
+
+    if (renderer.hooks?.emit) {
+      emitted.push(renderer.hooks.emit(...(params as HooksEmitParams)));
+    }
+
+    if (renderer.markdownHooks?.emit) {
+      emitted.push(
+        renderer.markdownHooks.emit(...(params as LegacyHooksEmitParams)),
+      );
+    }
+
+    return emitted;
+  }
 }
+
+type LegacyHooksEmitParams = Parameters<
+  MarkdownRenderer['markdownHooks']['emit']
+>;
+type HooksEmitParams = Parameters<MarkdownRenderer['hooks']['emit']>;
