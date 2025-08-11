@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.8.1
+
+### Patch Changes
+
+- Correctly handle empty markdown links ([#836](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/836)).
+
 ## 4.8.0 (2025-07-29)
 
 ### Minor Changes
