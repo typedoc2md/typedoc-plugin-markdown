@@ -1,7 +1,4 @@
-import {
-  MarkdownPageEvent,
-  MarkdownRendererEvent,
-} from '@plugin/events/index.js';
+import { MarkdownRendererEvent } from '@plugin/events/index.js';
 import { MarkdownTheme } from '@plugin/theme/index.js';
 import { EventHooks, Options, Renderer } from 'typedoc';
 import { MarkdownRendererHooks } from './markdown-renderer-hooks.js';
@@ -10,38 +7,6 @@ import { MarkdownRendererHooks } from './markdown-renderer-hooks.js';
  * A plugin-specific interface for `typedoc-plugin-markdown` providing typings for the TypeDoc {@link Renderer} type.
  */
 export interface MarkdownRenderer extends Renderer {
-  /**
-   * @param event - Triggered before or after a document will be rendered.
-   * @param callback - Receives the {@link MarkdownPageEvent} object as an argument.
-   *
-   * @example
-   *
-   * ```ts
-   * app.renderer.on(MarkdownPageEvent.BEGIN, (renderer) => {});
-   * ```
-   */
-  on(
-    event: typeof MarkdownPageEvent.BEGIN | typeof MarkdownPageEvent.END,
-    callback: (page: MarkdownPageEvent) => void,
-  ): void;
-
-  /**
-   * @param event - Triggered before or after rendering the project.
-   * @param callback - Receives the {@link MarkdownRendererEvent} object as an argument.
-   *
-   * @example
-   *
-   * ```ts
-   * app.renderer.on(MarkdownRendererEvent.BEGIN, (renderer) => {});
-   * ```
-   */
-  on(
-    event:
-      | typeof MarkdownRendererEvent.BEGIN
-      | typeof MarkdownRendererEvent.END,
-    callback: (page: MarkdownRendererEvent) => void,
-  ): void;
-
   /**
    * Define a new markdown theme that can be used to render output.
    *
@@ -81,7 +46,7 @@ export interface MarkdownRenderer extends Renderer {
   markdownHooks: EventHooks<MarkdownRendererHooks, string>;
 
   /**
-   * Drop-in replacement for the core {@link Renderer.hooks} property.
+   * Drop-in replacement for the core {@link Renderer.hooks} property to provide injection points relevant to the Markdown output
    *
    * Provides dedicated `typedoc-plugin-markdown` hooks that can be used in
    * the same way as the standard renderer hooks.
@@ -90,9 +55,15 @@ export interface MarkdownRenderer extends Renderer {
    *
    * - `"page.begin"` — Triggered before a document is rendered to Markdown.
    * - `"page.end"` — Triggered after a document is rendered to Markdown, before writing to disk.
-   * - `"content.begin"` — Triggered before the main Markdown content is rendered.
    * - `"index.page.begin"` — Triggered before the index page is rendered to Markdown.
    * - `"index.page.end"` — Triggered after the index page is rendered to Markdown.
+   * - `"content.begin"` — Triggered before the main Markdown content is rendered.
+   * - `"content.end"` — Triggered after the main Markdown content is rendered.
+   *
+   * Note:
+   *
+   * - Hooks added during output will be discarded at the end of rendering.
+   * - Hooks added during a page render will be discarded at the end of that page's render.
    */
   hooks: EventHooks<MarkdownRendererHooks, any>;
 

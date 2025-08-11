@@ -58,6 +58,8 @@ export function reflection(
     );
   }
 
+  md.push(this.hook('content.end', this).join('\n'));
+
   md.push(this.partials.footer());
 
   md.push(this.hook(getEndHookName(page.model), this).join('\n'));

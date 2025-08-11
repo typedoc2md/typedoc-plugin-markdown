@@ -12,9 +12,10 @@ export default {
     title: 'Guides',
   },
   'output-file-structure': '',
-  'customizing-output': '',
+  customization: '',
   'utilizing-navigation': '',
   'option-typings': '',
+
   '-- Support': {
     type: 'separator',
     title: 'Support',

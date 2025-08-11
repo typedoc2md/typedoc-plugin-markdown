@@ -19,8 +19,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "next": "^15.3.3",
-    "nextra": "^4.2.17",
-    "nextra-theme-docs": "^4.2.17",
+    "nextra": "^4.3.0",
+    "nextra-theme-docs": "^4.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

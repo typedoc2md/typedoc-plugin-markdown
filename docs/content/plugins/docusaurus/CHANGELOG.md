@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.2 (2025-08-04)
+
+- Bump docusaurus-plugin-typedoc to 1.4.2
+
+## 1.4.1 (2025-07-30)
+
+- Bump docusaurus-plugin-typedoc to 1.4.1
+
 ## 1.4.0 (2025-04-28)
 
 ### Minor Changes

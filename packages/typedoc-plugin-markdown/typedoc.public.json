@@ -1,0 +1,77 @@
+{
+  "$schema": "https://typedoc-plugin-markdown.org/schema.json",
+  "entryPoints": ["./src/public-api.ts"],
+  "exclude": ["./src/types/markdown-application.ts"],
+  "plugin": [
+    "./dist/index.js",
+    "./typedoc-plugins/typedoc-ignore-typeparam.mjs",
+    "./typedoc-plugins/typedoc-nextra.mjs"
+  ],
+  "sortEntryPoints": false,
+  "name": "API",
+  "sort": ["required-first", "source-order"],
+  "includeVersion": false,
+  "disableSources": true,
+  "excludeInternal": true,
+  "excludeExternals": true,
+  "excludePrivate": true,
+
+  "indexFormat": "table",
+  "readme": "none",
+  "entryFileName": "index.md",
+  "hideBreadcrumbs": false,
+  "hidePageHeader": true,
+  "hideGroupHeadings": true,
+  "expandObjects": true,
+  "parametersFormat": "table",
+  "expandParameters": false,
+  "groupOrder": ["Documents", "Events", "Interfaces", "Classes"],
+  "categoryOrder": ["Application", "Hooks", "Events"],
+  "tableColumnSettings": {
+    "hideOverrides": true,
+    "hideModifiers": true,
+    "hideDefaults": true,
+    "hideSources": true,
+    "leftAlignHeaders": true
+  },
+  "useCodeBlocks": true,
+  "pageTitleTemplates": {
+    "member": "{name}"
+  },
+  "flattenOutputFiles": true,
+  "navigation": {
+    "includeCategories": true,
+    "includeGroups": false
+  },
+  "enumMembersFormat": "table",
+  "classPropertiesFormat": "table",
+  "outputs": [
+    {
+      "name": "markdown",
+      "path": "docs/md",
+      "options": {
+        "router": "member"
+      }
+    },
+    {
+      "name": "markdown",
+      "path": "../../docs/content/api",
+      "options": {
+        "fileExtension": ".mdx",
+        "publicPath": "/api",
+        "hideBreadcrumbs": true,
+        "router": "member",
+        "interfacePropertiesFormat": "list",
+        "typeDeclarationFormat": "table"
+      }
+    },
+    {
+      "name": "json",
+      "path": "../../docs/json/public-api.json"
+    },
+    {
+      "name": "html",
+      "path": "docs/html"
+    }
+  ]
+}

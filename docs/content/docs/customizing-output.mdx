@@ -8,9 +8,6 @@ The following is an example a a basic plugin skeleton:
 
 ```js filename="local-plugins/my-custom-plugin.mjs"
 // @ts-check
-
-import { MarkdownApplication } from 'typedoc-plugin-markdown';
-
 /**
  * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
  */
@@ -27,8 +24,6 @@ The plugin can then be consumed by adding the path to the plugin in your `typedo
 }
 ```
 
-Note plugins must be consumed as ESM.
-
 See [Writing a TypeDoc plugin](https://typedoc.org/documents/Development.Plugins.html) for more information.
 
 ## Hooks
@@ -43,20 +38,12 @@ The following example demonstrates how to use hooks to inject content into the o
  * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
  */
 export function load(app) {
-  app.renderer.markdownHooks.on(
+  app.renderer.hooks.on(
     'page.begin',
     () => `**Generated using \`page.begin\` hook**`,
   );
 }
 ```
-
-Hooks can be identified and injected using the following predefined keys:
-
-- `"page.begin"`: Applied at the start of the markdown output.
-- `"page.end"`: Applied at the end of the markdown output.
-- `"content.begin"`: Applied before the main markdown content is rendered.
-- `"index.page.begin"`: Applied at the start of the markdown output on the index page.
-- `"index.page.end"`: Applied at the end of the markdown output on the index page.
 
 ## Page Events
 

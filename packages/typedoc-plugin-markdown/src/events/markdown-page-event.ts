@@ -7,7 +7,34 @@ import {
 } from 'typedoc';
 
 /**
- * An event emitted before and after the markdown of a page is rendered.
+ * Markdown page lifecycle event names used by the Markdown plugin.
+ *
+ * These constants are passed to {@link RendererHooks.on | renderer.hooks.on}
+ * and {@link RendererHooks.emit | renderer.hooks.emit} to listen for or trigger
+ * Markdown page rendering events.
+ *
+ * When an event fires, a {@link MarkdownPageEvent} object is passed
+ * to the callback, providing access to the page contents and render state.
+ */
+export const MarkdownPageEventBack = {
+  /**
+   * Triggered before a document will be rendered.
+   *
+   * @event
+   */
+  BEGIN: 'beginPage',
+  /**
+   * Triggered after a document has been rendered, just before it is written to disc.
+   *
+   * @event
+   */
+  END: 'endPage',
+} as const;
+
+/**
+ * An event emitted before and after the a page is rendered.
+ *
+ * @hideconstructor
  *
  * @event
  */
@@ -49,11 +76,18 @@ export class MarkdownPageEvent<out Model extends RouterTarget = RouterTarget> {
    */
   frontmatter?: Record<string, any>;
 
-  // required for typing purposes but not used
-  /** @hidden */
+  /**
+   * Required for typing purposes but not used
+   *
+   * @internal
+   */
   pageHeadings: PageHeading[] = [];
 
-  /** @hidden */
+  /**
+   * Required for typing purposes but not used
+   *
+   * @internal
+   */
   pageSections = [
     {
       title: '',
@@ -61,7 +95,11 @@ export class MarkdownPageEvent<out Model extends RouterTarget = RouterTarget> {
     },
   ];
 
-  /** @hidden */
+  /**
+   * Required for typing purposes but not used
+   *
+   * @internal
+   */
   startNewSection() {
     this.pageHeadings = [];
     this.pageSections = [];
@@ -83,8 +121,14 @@ export class MarkdownPageEvent<out Model extends RouterTarget = RouterTarget> {
     this.model = model;
   }
 
+  /**
+   * Can be used to register asynchronous jobs that should be run before the page is written to disk.
+   */
   preWriteAsyncJobs: Array<(page: MarkdownPageEvent) => Promise<void>> = [];
 
+  /**
+   * @internal
+   */
   isReflectionEvent(): this is MarkdownPageEvent<Reflection> {
     return this.model instanceof Reflection;
   }

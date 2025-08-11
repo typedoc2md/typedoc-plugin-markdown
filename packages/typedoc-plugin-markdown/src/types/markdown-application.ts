@@ -11,6 +11,7 @@ import { MarkdownRenderer } from './markdown-renderer.js';
  * To create an unmodified application instance, use the TypeDoc {@link Application} class directly.
  *
  * @see https://typedoc.org/documents/Overview.html#node-module
+ *
  */
 export interface MarkdownApplication extends Application {
   /**
