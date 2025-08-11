@@ -34,7 +34,7 @@
     "yaml": "^2.7.0"
   },
   "peerDependencies": {
-    "typedoc-plugin-markdown": ">=4.8.0"
+    "typedoc-plugin-markdown": ">=4.8.1"
   },
   "keywords": [
     "frontmatter",
