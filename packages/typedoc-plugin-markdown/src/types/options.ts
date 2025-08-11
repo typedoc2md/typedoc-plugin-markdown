@@ -226,13 +226,7 @@ export interface PluginOptions {
   /**
    * @deprecated This option has been deprecated in favour of `--pageTitleTemplates`.
    */
-  textContentMappings?: {
-    'header.title'?: string;
-    'breadcrumbs.home'?: string;
-    'title.indexPage'?: string;
-    'title.memberPage'?: string;
-    'title.modulePage'?: string;
-  };
+  textContentMappings?: Record<string, any>;
 
   /**
    * Sets the format of style for type alias properties.

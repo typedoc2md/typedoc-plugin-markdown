@@ -23,7 +23,7 @@
     "prebuild": "rm -rf dist && copyfiles --up 1 ./src/**/*.cjs ./dist/",
     "prepublishOnly": "npm run lint && npm run build",
     "build": "tsc",
-    "pretest": "rm -rf ./test/out && docusaurus generate-typedoc",
+    "pretest": "rm -rf ./test/out && npx --yes --package=@docusaurus/core docusaurus generate-typedoc",
     "test": "mocha --config ./mocha.config.json",
     "build-and-test": "npm run build && npm test"
   },
@@ -34,10 +34,6 @@
   },
   "dependencies": {
     "typedoc-docusaurus-theme": "^1.4.0"
-  },
-  "devDependencies": {
-    "@docusaurus/core": "^3.8.1",
-    "@docusaurus/types": "^3.8.1"
   },
   "keywords": [
     "docusaurus",

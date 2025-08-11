@@ -12,14 +12,14 @@
     "devtools/packages/*"
   ],
   "scripts": {
-    "docs": "tsx ./devtools/scripts/generate-readmes && node ./devtools/scripts/tocs.mjs",
-    "build-all": "pnpm -r --if-present run build",
-    "test-all": "pnpm -r --if-present run test",
-    "test-and-update-all": "pnpm -r --if-present run test:update",
-    "lint-all": "pnpm -r --if-present run lint",
+    "docs": "ts-node ./devtools/scripts/generate-readmes && node ./devtools/scripts/tocs.mjs",
+    "devdocs": "npm run build --workspace typedoc-plugin-markdown && typedoc",
+    "build-all": "npm run build --workspaces --if-present",
+    "test-all": "npm run test --workspaces --if-present",
+    "test-and-update-all": "npm run test:update --workspaces --if-present",
+    "lint-all": "npm run lint --workspaces --if-present",
     "prerelease": "npm run build-all",
     "release": "npx changeset publish",
-    "ci:publish": "pnpm publish -r",
     "prepare": "husky"
   },
   "devDependencies": {

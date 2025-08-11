@@ -29,26 +29,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 10
-
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: HUSKY=0 pnpm install
-
+          cache: 'npm'
+      - name: Install
+        run: HUSKY=0 npm ci
       - name: Lint
-        run: pnpm --filter typedoc-plugin-markdown run lint
-
+        run: npm run lint --workspace typedoc-plugin-markdown
       - name: Build
-        run: pnpm build-all
-
+        run: npm run build-all
       - name: Test
-        run: pnpm test-all
+        run: npm run test-all

@@ -79,13 +79,7 @@ declare module 'typedoc' {
       hideValues?: boolean;
       leftAlignHeaders?: boolean;
     };
-    textContentMappings: ManuallyValidatedOption<{
-      'header.title'?: string;
-      'breadcrumbs.home'?: string;
-      'title.indexPage'?: string;
-      'title.memberPage'?: string;
-      'title.modulePage'?: string;
-    }>;
+    textContentMappings: ManuallyValidatedOption<Record<string, any>>;
     typeAliasPropertiesFormat: 'list' | 'table' | 'htmlTable';
     typeDeclarationFormat: 'list' | 'table' | 'htmlTable';
     typeDeclarationVisibility: 'compact' | 'verbose';
