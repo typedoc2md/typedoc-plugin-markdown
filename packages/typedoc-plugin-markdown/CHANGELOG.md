@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.8.1
+## 4.8.1 (2025-08-12)
 
 ### Patch Changes
 
