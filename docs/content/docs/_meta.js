@@ -1,26 +1,16 @@
 export default {
-  index: 'Introduction',
   '-- Getting Started': {
     type: 'separator',
     title: 'Getting Started',
   },
+  index: 'Introduction',
   'quick-start': '',
-  'typedoc-options': '',
-  options: '',
-  '-- Guides': {
+
+  '-- guides': {
     type: 'separator',
     title: 'Guides',
   },
-  'output-file-structure': '',
-  'customizing-output': '',
-  'utilizing-navigation': '',
-  'option-typings': '',
-  '-- Support': {
-    type: 'separator',
-    title: 'Support',
-  },
-  troubleshooting: '',
-  versioning: '',
-  CHANGELOG: 'Changelog',
-  'migration-guide': 'Migration Guide (v4)',
+  options: '',
+  extending: '',
+  support: '',
 };

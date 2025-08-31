@@ -1,4 +1,4 @@
-import { NavigationItem } from '@plugin/types/index.js';
+import { NavigationJSON } from '@plugin/types/index.js';
 import { PageDefinition, ProjectReflection } from 'typedoc';
 
 /**
@@ -25,7 +25,7 @@ export class MarkdownRendererEvent {
   /**
    * The navigation structure of the project that can be utilised by plugins.
    */
-  navigation?: NavigationItem[];
+  navigation?: NavigationJSON;
 
   /**
    * Triggered before the renderer starts rendering a project.

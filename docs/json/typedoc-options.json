@@ -1,0 +1,39 @@
+{
+  "outputOptions": {
+    "options": {
+      "outputs": "Specifies the outputs which should be rendered by TypeDoc.",
+      "out": "Specifies the location the markdown should be written to.",
+      "router": "Selects the router used to determine the file and folder structure.",
+      "lang": "Sets the language of the translations used when generating documentation.",
+      "cleanOutputDir": "Used to prevent TypeDoc from cleaning the output directory.",
+      "navigation": "Determines how the navigation JSON structure will be built.",
+      "includeHierarchySummary": "Specifies whether or not to generate a dedicated hierarchy page."
+    }
+  },
+  "conversionOptions": [
+    {
+      "name": "Configuration",
+      "description": "Options that control where TypeDoc reads its configuration from."
+    },
+    {
+      "name": "Input",
+      "description": "Options that control what files TypeDoc processes."
+    },
+    {
+      "name": "Comments",
+      "description": "Options that control how TypeDoc parses comments."
+    },
+    {
+      "name": "Organization",
+      "description": "Options that control how content is structured on generated pages."
+    },
+    {
+      "name": "Validation",
+      "description": "Options that control how TypeDoc validates your documentation."
+    },
+    {
+      "name": "Other",
+      "description": "Options which don’t fit elsewhere."
+    }
+  ]
+}

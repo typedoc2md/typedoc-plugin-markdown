@@ -40,6 +40,8 @@ export function hierarchy(
     hierarchyRoots.map((root) => fullHierarchy(this, root, seen)).join('\n'),
   );
 
+  md.push(this.hook('content.end', this).join('\n'));
+
   md.push(this.partials.footer());
 
   md.push(this.hook('page.end', this).join('\n'));

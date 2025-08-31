@@ -1,0 +1,189 @@
+import { Callout, FileTree } from 'nextra/components';
+import typedocOptions from '../../../json/typedoc-options.json';
+
+# Output
+
+Output options control TypeDoc's generated output. These options mainly apply
+to TypeDoc's default HTML renderer, but this plugin supports or extends a
+subset.
+
+_The options listed here are the output options that this plugin supports or extends._
+
+## outputs
+
+<Callout>{typedocOptions.outputOptions.options.outputs}</Callout>
+
+This plugin exposes an additional output named `markdown` and sets it as the default output.
+
+This is useful if you want to generate markdown files alongside the other TypeDOc outputs `html` and `json` on the same task.
+
+If you are only generating a single documentation instance, you can set the `out` option to the desired path and omit the `outputs` option entirely.
+
+```json filename="typedoc.json"
+{
+  "outputs": [
+    {
+      "name": "markdown",
+      "path": "./docs_markdown"
+    },
+    {
+      "name": "html",
+      "path": "./docs_html"
+    },
+    {
+      "name": "json",
+      "path": "./docs.json"
+    }
+  ]
+}
+```
+
+## out
+
+<Callout>{typedocOptions.outputOptions.options.out}</Callout>
+
+> Defaults to `"/.docs"`
+
+If specified, the outputs option will be overwritten by this option
+
+```json filename="typedoc.json"
+{
+  "out": "<path/to/documentation/>"
+}
+```
+
+## router
+
+<Callout>{typedocOptions.outputOptions.options.router}</Callout>
+
+> Defaults to `"member"`
+
+This option determines the folder structure of the generated markdown files.
+
+TypeDoc ships with several built-in routers and additionally this plugin provides additional custom routers.
+
+**Custom Routers**
+
+- **"member"** (default) - Generates an individual file for each exported module member kind. Pages are grouped by kind within their respective module hierarchy.
+  This mirrors a combination of TypeDoc's `kind` and `structure` routers.
+- **"module"** - Generates a single file for every module and namespace where all module members are hoisted to a single file.
+  This creates a flat navigation structure and reduces the amount of files generated.
+
+_"member" structure_:
+
+<FileTree>
+  <FileTree.File name="README.md" />
+  <FileTree.Folder name="module-a" defaultOpen>
+    <FileTree.Folder name="classes" defaultOpen>
+      <FileTree.File name="ClassA.md" />
+      <FileTree.File name="ClassB.md" />
+    </FileTree.Folder>
+    <FileTree.Folder name="functions" defaultOpen>
+      <FileTree.File name="FunctionA.md" />
+      <FileTree.File name="FunctionB.md" />
+    </FileTree.Folder>
+  </FileTree.Folder>
+  <FileTree.Folder name="module-b" defaultOpen>
+    <FileTree.Folder name="classes" defaultOpen>
+      <FileTree.File name="ClassA.md" />
+      <FileTree.File name="ClassB.md" />
+    </FileTree.Folder>
+  </FileTree.Folder>
+</FileTree>
+
+_module structure_:
+
+<FileTree>
+  <FileTree.File name="README.md" />
+  <FileTree.File name="module-a.md" />
+  <FileTree.File name="module-b.md" />
+</FileTree>
+
+**TypeDoc Core Routers**
+
+TypeDoc ships with several built-in routers used by the HTML theme.
+These routers are decorated to fix the `.html` extension and additionally support the file options of this plugin.
+
+This provides the ability to generate output files in the same structure as the default HTML theme but rendered using the plugin's Markdown theme.
+
+Please see TypeDoc's [router](https://typedoc.org/documents/Options.Output.html#router) documentation for details of available core routers.
+
+```json filename="typedoc.json"
+{
+  "router": "kind"
+}
+```
+
+## lang
+
+<Callout>{typedocOptions.outputOptions.options.lang}</Callout>
+
+Defaults to `"en"`.
+
+Available languages are `"de"`, `"en"`, `"ja"`, `"ko"`, `"zh"`.
+
+```json filename="typedoc.json"
+{
+  "lang": "fr"
+}
+```
+
+## cleanOutputDir
+
+<Callout>{typedocOptions.outputOptions.options.cleanOutputDir}</Callout>
+
+Defaults to `"false"`
+
+```json filename="typedoc.json"
+{
+  "cleanOutputDir": true
+}
+```
+
+## navigation
+
+<Callout>{typedocOptions.outputOptions.options.navigation}</Callout>
+
+Unlike the default HTML theme, Markdown output does not emit navigation automatically.
+If you want to expose the project structure (for example, to generate a sitemap or build a custom sidebar)
+you can access the navigation data in two ways:
+
+- Output to a file by using the <OptionLink type="utility" name="navigationJson" /> option to write the navigation JSON for later use.
+- Access in place by reading the JSON from `rendererEvent.navigation` when working with [Async Jobs](/docs/extending#async-jobs).
+
+This option also allows you to customize the JSON structure based on categories, groups, and folders.
+By default, the navigation format aligns closely with the HTML theme.
+
+Typings for the navigation JSON are available via the `NavigationJSON` export:
+
+```ts
+import type { NavigationJSON } from 'typedoc-plugin-markdown';
+```
+
+```json filename="typedoc.json"
+{
+  "navigation": {
+    {
+        "includeCategories": true,
+        "includeGroups": true,
+        "includeFolders": true,
+    },
+  }
+}
+```
+
+## includeHierarchySummary
+
+<Callout>
+  {typedocOptions.outputOptions.options.includeHierarchySummary}
+</Callout>
+
+Defaults to `false`.
+
+This page lists the full class hierarchy for generated members.
+
+```json filename="typedoc.json"
+{
+  "includeHierarchySummary": true
+}
+```

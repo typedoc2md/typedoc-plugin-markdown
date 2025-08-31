@@ -47,6 +47,8 @@ export function load(app) {
     () => '> `content.begin` hook',
   );
 
+  app.renderer.markdownHooks.on('content.end', () => '> `content.end` hook');
+
   app.renderer.markdownHooks.on(
     'index.page.begin',
     () => '> `index.page.begin` hook',
@@ -65,11 +67,27 @@ export function load(app) {
     );
   });
 
+  app.renderer.preMarkdownRenderAsyncJobs.push(async (renderer) => {
+    await new Promise((r) => setTimeout(r, 5));
+    fs.writeFileSync(
+      `${renderer.outputDirectory}/pre-markdown-render-async-job.txt`,
+      'pre-markdown-render-async-job success',
+    );
+  });
+
   app.renderer.postRenderAsyncJobs.push(async (renderer) => {
     await new Promise((r) => setTimeout(r, 5));
     fs.writeFileSync(
       `${renderer.outputDirectory}/post-render-async-job.txt`,
       'post-render-async-job success',
+    );
+  });
+
+  app.renderer.postMarkdownRenderAsyncJobs.push(async (renderer) => {
+    await new Promise((r) => setTimeout(r, 5));
+    fs.writeFileSync(
+      `${renderer.outputDirectory}/post-markdown-render-async-job.txt`,
+      'post-markdown-render-async-job success',
     );
   });
 }

@@ -1,12 +1,12 @@
 import { Callout, FileTree } from 'nextra/components';
 
-# Utility Options
+# Utility
 
-Options that are used for general configuration and utility purposes.
+Utility options are used for general configuration and utility purposes.
 
 ## formatWithPrettier
 
-<Callout emoji="💡">Apply additional output formatting with Prettier.</Callout>
+<Callout>Apply additional output formatting with Prettier.</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
 
@@ -17,10 +17,10 @@ This plugin generates well-formatted Markdown, however, integrating the popular 
 - Removes unnecessary escape characters.
 - Wraps long lines of text to fit within a configurable line width.
 
-Please note that Prettier is not a dependency of this plugin and must be installed in your project for this option to work.
+Please note that Prettier is not a dependency of this plugin and must be installed if you want to use this option.
 
 ```bash
-npm install prettier -D
+npm install prettier --save-dev
 ```
 
 ```json filename="typedoc.json"
@@ -31,11 +31,9 @@ npm install prettier -D
 
 ## prettierConfigFile
 
-<Callout emoji="💡">
-  Specify a custom Prettier configuration file location.
-</Callout>
+<Callout>Specify a custom Prettier configuration file location.</Callout>
 
-> Defaults to `"undefined"`.
+> Accepts a string value. Defaults to `"undefined"`.
 
 By default Prettier uses the options resolved from a discovered Prettier [configuration file](https://prettier.io/docs/en/configuration.html).
 
@@ -51,7 +49,7 @@ Please note this option is only applicable when `formatWithPrettier` is set to `
 
 ## publicPath
 
-<Callout emoji="💡">Specify the base path for all urls.</Callout>
+<Callout>Specify the base path for all urls.</Callout>
 
 > Accepts a string value. Defaults to `"undefined"`.
 
@@ -65,7 +63,7 @@ If undefined all urls will be relative.
 
 ## useHTMLEncodedBrackets
 
-<Callout emoji="💡">Use HTML encoded entities for angle brackets.</Callout>
+<Callout>Use HTML encoded entities for angle brackets.</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
 
@@ -80,7 +78,7 @@ However, using HTML entities (`&lt;` and `&gt;`) might be preferable to avoid an
 
 ## useCustomAnchors
 
-<Callout emoji="💡">Add custom anchors like `{#custom-id}` to headings.</Callout>
+<Callout>Add custom anchors like `{#custom-id}` to headings.</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
 
@@ -103,7 +101,7 @@ Support for custom heading IDs in popular tools:
 
 ## customAnchorsFormat
 
-<Callout emoji="💡">The format of custom anchors.</Callout>
+<Callout>The format of custom anchors.</Callout>
 
 > Accepts one of `"curlyBrace"` | `"escapedCurlyBrace"` | `"squareBracket"`. Defaults to `"curlyBrace"`.
 
@@ -127,7 +125,7 @@ The following formats are supported:
 
 ## useHTMLAnchors
 
-<Callout emoji="💡">Add HTML anchors to page headings.</Callout>
+<Callout>Add HTML anchors to page headings.</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
 
@@ -153,7 +151,7 @@ as there is no alternative way to link to these items._
 
 ## anchorPrefix
 
-<Callout emoji="💡">Custom anchor prefix to add to anchor links.</Callout>
+<Callout>Custom anchor prefix to add to anchor links.</Callout>
 
 > Accepts a string value. Defaults to `"undefined"`.
 
@@ -172,7 +170,7 @@ Use this option when:
 
 ## sanitizeComments
 
-<Callout emoji="💡">Sanitize HTML and JSX inside JsDoc comments.</Callout>
+<Callout>Sanitize HTML and JSX inside JsDoc comments.</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
 
@@ -191,5 +189,25 @@ This option would typically be used when source code comes from an external sour
 ```json filename="typedoc.json"
 {
   "sanitizeComments": false
+}
+```
+
+## navigationJson
+
+<Callout>
+  Specifies the file path where the navigation JSON will be written.
+</Callout>
+
+> Accepts a string value.
+
+Writes the project's navigation structure to a JSON file on disk.
+This can be parsed later to generate a sitemap or sidebar.
+Use the `pretty` option flag to pretty-format the JSON output.
+
+You can further configure the structure itself using the <OptionLink type="output" name="navigation" /> output option.
+
+```json filename="typedoc.json"
+{
+  "navigationJson": "./path/to/navigation.json"
 }
 ```

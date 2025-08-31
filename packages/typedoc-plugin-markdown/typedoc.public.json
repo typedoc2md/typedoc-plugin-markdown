@@ -1,0 +1,44 @@
+{
+  "$schema": "https://typedoc-plugin-markdown.org/schema.json",
+  "entryPoints": ["./src/public-api.ts"],
+  "plugin": ["./dist/index.js"],
+  "sortEntryPoints": false,
+  "name": "API",
+  "sort": ["required-first", "source-order"],
+  "includeVersion": false,
+  "disableSources": true,
+  "excludeInternal": true,
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "indexFormat": "table",
+  "readme": "none",
+  "entryFileName": "index.md",
+  "hideBreadcrumbs": false,
+  "hidePageHeader": true,
+  "hideGroupHeadings": true,
+  "expandObjects": true,
+  "expandParameters": false,
+  "groupOrder": ["Documents", "Events", "Interfaces", "Classes"],
+  "categoryOrder": ["Application", "Hooks", "Events"],
+  "useCodeBlocks": false,
+  "pageTitleTemplates": {
+    "member": "{name}"
+  },
+  "outputs": [
+    {
+      "name": "markdown",
+      "path": "docs/md",
+      "options": {
+        "router": "member"
+      }
+    },
+    {
+      "name": "json",
+      "path": "../../docs/json/public-api.json"
+    },
+    {
+      "name": "html",
+      "path": "docs/html"
+    }
+  ]
+}

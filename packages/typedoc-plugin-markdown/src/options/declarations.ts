@@ -7,15 +7,15 @@
  *
  * @categoryDescription File
  *
- * Options that are used by the plugin's [routers](/docs/output-file-structure) to configure how files are output.
+ * File options are used by the plugin’s <OptionLink type="output" name="router" /> to configure file output details.
  *
  * @categoryDescription Display
  *
- * Options that are used to configure how the output is structured and displayed.
+ * Display options are used to configure how the output is structured and displayed.
  *
  * @categoryDescription Utility
  *
- * Options that are used for general configuration and utility purposes.
+ * Utility options are used for general configuration and utility purposes.
  *
  * @module
  */
@@ -48,8 +48,6 @@ export const outputFileStrategy: Partial<DeclarationOption> = {
 
 /**
  * This option is useful when only specific types of members should be exported to a single file.
- *
- * This option only takes effect when [`outputFileStrategy`](#outputfilestrategy) is equal to `"members"`
  *
  * @example ["Class", "Enum", "Interface"]
  *
@@ -139,7 +137,7 @@ export const modulesFileName: Partial<DeclarationOption> = {
  *
  * *Note:*
  * - *This option has no affect when `"readme"` is set to `"none"`.*
- * - *For packages readmes (when `"outputFileStrategy"` is set to `"packages"`) this is the default behaviour.*
+ * - *For packages readmes (when `"entryPointStrategy"` is set to `"packages"`) this is the default behaviour.*
  *
  * @category File
  */
@@ -214,7 +212,7 @@ export const entryModule: Partial<DeclarationOption> = {
  * @category Display
  */
 export const hidePageHeader: Partial<DeclarationOption> = {
-  help: 'Do not print page header.',
+  help: 'Hide the page header.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };
@@ -223,7 +221,7 @@ export const hidePageHeader: Partial<DeclarationOption> = {
  * @category Display
  */
 export const hideBreadcrumbs: Partial<DeclarationOption> = {
-  help: 'Do not print breadcrumbs.',
+  help: 'Hide the page breadcrumbs.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };
@@ -232,7 +230,7 @@ export const hideBreadcrumbs: Partial<DeclarationOption> = {
  * @category Display
  */
 export const hidePageTitle: Partial<DeclarationOption> = {
-  help: 'Do not print page title.',
+  help: 'Hide the page title.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };
@@ -336,7 +334,7 @@ export const blockTagsPreserveOrder: Partial<DeclarationOption> = {
  * @category Display
  */
 export const strikeDeprecatedPageTitles: Partial<DeclarationOption> = {
-  help: 'Controls whether deprecated symbols have their page titles rendered with a strikethrough.',
+  help: 'Controls whether to strikethrough page titles of deprecated items.',
   type: ParameterType.Boolean,
   defaultValue: true,
 };
@@ -626,10 +624,10 @@ export const tableColumnSettings: Partial<DeclarationOption> = {
  * - Removes unnecessary escape characters.
  * - Wraps long lines of text to fit within a configurable line width.
  *
- * Please note that Prettier is not a dependency of this plugin and must be installed in your project for this option to work.
+ * Please note that Prettier is not a dependency of this plugin and must be installed if you want to use this option.
  *
  * ```bash
- * npm install prettier -D
+ * npm install prettier --save-dev
  * ```
  *
  * @category Utility
@@ -833,4 +831,21 @@ export const navigationModel: Partial<DeclarationOption> = {
     excludeCategories: false,
     excludeFolders: false,
   },
+};
+
+/**
+ * Writes the project's navigation structure to a JSON file on disk.
+ * This can be parsed later to generate a sitemap or sidebar.
+ * Use the `pretty` option flag to pretty-format the JSON output.
+ *
+ * You can further configure the structure itself using the <OptionLink type="output" name="navigation" /> output option.
+ *
+ * @example "./path/to/navigation.json"
+ *
+ * @category Utility
+ */
+export const navigationJson: Partial<DeclarationOption> = {
+  help: 'Specifies the file path where the navigation JSON will be written.',
+  type: ParameterType.Path,
+  defaultValue: undefined,
 };

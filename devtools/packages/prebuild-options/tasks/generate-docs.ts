@@ -8,9 +8,15 @@ import * as prettier from 'prettier';
 import { Project, VariableStatement } from 'ts-morph';
 import { ParameterType } from 'typedoc';
 import { fileURLToPath } from 'url';
+import { injectStringToFile } from './utils/inject-string-to-file.js';
+import { table } from './utils/table.js';
 
 export const __filename = fileURLToPath(import.meta.url);
 export const __dirname = dirname(__filename);
+
+const typedocJson = JSON.parse(
+  fs.readFileSync(path.join(getJsonPath(), 'typedoc-options.json'), 'utf-8'),
+);
 
 export async function generateOptionsDocs(docsConfig: DocsConfig) {
   const project = new Project({
@@ -19,18 +25,15 @@ export async function generateOptionsDocs(docsConfig: DocsConfig) {
 
   const outputPage: string[] = [];
 
-  if (docsConfig.optionsFile === 'options/index.mdx')
-    outputPage.push(`---
-asIndexPage: true
----`);
+  if (docsConfig.optionsFile !== 'options/index.mdx') {
+    outputPage.push(`import { Callout } from 'nextra/components';`);
+    outputPage.push('# Plugin Options');
+  }
 
-  outputPage.push(`import { Callout } from 'nextra/components';`);
-
-  outputPage.push('# Plugin Options');
   if (docsConfig.docsPath === '/docs') {
-    outputPage.push(
-      `This page documents additional options that are exposed by this plugin.`,
-    );
+    //outputPage.push(
+    //  `This page documents additional options that are exposed by this plugin.`,
+    //);
   } else {
     if (docsConfig.presets) {
       outputPage.push(
@@ -152,22 +155,23 @@ ${presetsJson}
           out.push(categoryDescriptions[categoryName]);
         }
         out.push();
-        outputPage.push(`## ${getDocsTitle(categoryName)}`);
+        outputPage.push(`### ${getDocsTitle(categoryName)}`);
 
         if (Object.keys(categoryDescriptions)?.length) {
-          outputPage.push(categoryDescriptions[categoryName]);
+          outputPage.push(
+            `<Callout type="important">${categoryDescriptions[categoryName]}</Callout>`,
+          );
         }
       }
-      const optionsTable: string[] = [];
-      optionsTable.push('| Option | Description |');
-      optionsTable.push('|--------|------------|');
+
+      const optionTableRows: string[][] = [];
 
       options.forEach((option) => {
-        optionsTable.push(
-          `| [${option.deprecated ? `~${option.name}~` : option.name}](./options/${categoryName.toLowerCase()}-options.mdx#${option.name.toLowerCase()}) | ${
-            option.help
-          } |`,
-        );
+        optionTableRows.push([
+          `[${option.name}](./options/${categoryName.toLowerCase()}#${option.name.toLowerCase()})`,
+          option.help,
+        ]);
+
         out.push(
           `${optionLevel} ${
             option.deprecated ? `~${option.name}~` : `${option.name}`
@@ -176,7 +180,7 @@ ${presetsJson}
         if (option.deprecated) {
           out.push(`<Callout type="warning">${option.deprecated}</Callout>`);
         } else {
-          out.push(`<Callout emoji="${getEmoji()}">${option.help}</Callout>`);
+          out.push(`<Callout>${option.help}</Callout>`);
         }
 
         const meta: string[] = [];
@@ -190,8 +194,9 @@ ${presetsJson}
           option.type !== ParameterType.Mixed &&
           option.type !== ParameterType.Object
         ) {
-          if (option.name !== 'pageTitleTemplates') {
-            meta.push(`Defaults to \`${getDefaultValue(option)}\`.`);
+          const def = getDefaultValue(option);
+          if (!['navigationJson', 'pageTitleTemplates'].includes(option.name)) {
+            meta.push(`Defaults to \`${def}\`.`);
           }
         }
         if (meta.length) {
@@ -233,11 +238,11 @@ ${JSON.stringify(exampleJson, null, 2)}
         }
       });
       if (categories.length > 1) {
-        outputPage.push(optionsTable.join('\n'));
+        outputPage.push(table(['Option Name', 'Description'], optionTableRows));
         const catDocPath = path.join(
           getPagesPath(docsConfig.optionsPath as string),
           'options',
-          `${categoryName.toLowerCase()}-options.mdx`,
+          `${categoryName.toLowerCase()}.mdx`,
         );
         const formattedOut = await prettier.format(out.join('\n\n'), {
           parser: 'mdx',
@@ -248,47 +253,102 @@ ${JSON.stringify(exampleJson, null, 2)}
         outputPage.push(out.join('\n\n'));
       }
     });
-    if (categories.length > 1) {
-      const metaJs = await prettier.format(
-        `export default ${JSON.stringify(
-          categories.reduce((prev, curr) => {
-            return {
-              ...prev,
-              [`${curr[0].toLowerCase()}-options`]: '',
-            };
-          }, {}),
-        )}`,
-        {
-          parser: 'typescript',
-          singleQuote: true,
-        },
-      );
-
-      const metaJsPath = path.join(
-        getPagesPath(docsConfig.optionsPath as string),
-        'options',
-        '_meta.js',
-      );
-
-      fs.writeFileSync(metaJsPath, metaJs);
-    }
 
     const optionDocPath = path.join(
       getPagesPath(docsConfig.optionsPath as string),
       docsConfig.optionsFile || 'options.mdx',
     );
 
-    const formattedOut = await prettier.format(outputPage.join('\n\n'), {
-      parser: 'mdx',
-      singleQuote: true,
-    });
+    if (docsConfig.optionsFile === 'options/index.mdx') {
+      const optionsIndexPagePath = path.join(
+        getPagesPath(docsConfig.optionsPath as string),
+        'options',
+        `index.mdx`,
+      );
 
-    fs.writeFileSync(optionDocPath, formattedOut);
+      await injectStringToFile(
+        optionsIndexPagePath,
+        table(
+          ['Option Name', 'Description'],
+          Object.entries(typedocJson.outputOptions.options).map(
+            ([key, value]) => {
+              return [
+                `[${key}](./options/output#${key.toLowerCase()})`,
+                value,
+              ] as string[];
+            },
+          ),
+        ),
+        'TYPEDOC_OUTPUT_OPTIONS_START',
+        'TYPEDOC_OUTPUT_OPTIONS_END',
+      );
+
+      await injectStringToFile(
+        optionsIndexPagePath,
+        table(
+          ['Option Group', 'Description'],
+          typedocJson.conversionOptions.map((option) => [
+            `[${option.name}](https://typedoc.org/documents/Options.${option.name}.html)`,
+            option.description,
+          ]),
+        ),
+        'TYPEDOC_CONVERSION_OPTIONS_START',
+        'TYPEDOC_CONVERSION_OPTIONS_END',
+      );
+
+      await injectStringToFile(
+        optionsIndexPagePath,
+        outputPage.join('\n\n'),
+        'PLUGIN_OPTIONS',
+      );
+    } else {
+      const formattedOut = await prettier.format(outputPage.join('\n\n'), {
+        parser: 'mdx',
+        singleQuote: true,
+      });
+
+      fs.writeFileSync(optionDocPath, formattedOut);
+    }
   }
 }
 
-function getEmoji() {
-  return '💡';
+function getTypedocOptions() {
+  const typedocJson = JSON.parse(
+    fs.readFileSync(path.join(getJsonPath(), 'typedoc-options.json'), 'utf-8'),
+  );
+
+  const outputOptions = `### Output
+
+<Callout type="important">${typedocJson.outputOptions.description}</Callout>
+
+${typedocJson.outputOptions.intro}
+
+${table(
+  ['Option Name', 'Description'],
+  Object.entries(typedocJson.outputOptions.options).map(([key, value]) => {
+    return [`[${key}](./options/output#${key})`, value] as string[];
+  }),
+)}`;
+
+  /*const conversionOptions = typedocJson.conversionOptions
+    .map((option) => {
+      return `### ${option.name}
+
+<Callout type="important">${option.description}</Callout>
+
+See the [${option.name}](https://typedoc.org/documents/Options.${option.name}.html) options on the TypeDoc website.
+`;
+    })
+    .join('\n');*/
+  const conversionOptions = `### Conversion
+${table(
+  ['Option Group', 'Description'],
+  typedocJson.conversionOptions.map((option) => [
+    `[${option.name}](https://typedoc.org/documents/Options.${option.name}.html)`,
+    option.description,
+  ]),
+)}`;
+  return [outputOptions, conversionOptions].join('\n\n');
 }
 
 function getType(option: any) {
@@ -304,7 +364,10 @@ function getType(option: any) {
     return 'Accepts an array of string values.';
   }
 
-  if (option.type === ParameterType.String) {
+  if (
+    option.type === ParameterType.String ||
+    option.type === ParameterType.Path
+  ) {
     return 'Accepts a string value.';
   }
 
@@ -384,10 +447,13 @@ function getPagesPath(docsPath: string) {
   return path.join(pagesPath, docsPath);
 }
 
+function getJsonPath() {
+  const jsonPath = path.join(__dirname, '..', '..', '..', '..', 'docs', 'json');
+  return jsonPath;
+}
+
 function getDocsTitle(categoryName: string) {
-  return categoryName === 'other'
-    ? `Plugin Options`
-    : `${categoryName} Options`;
+  return categoryName === 'other' ? `Plugin Options` : `${categoryName} `;
 }
 
 function groupBy(array: any[], key: string) {

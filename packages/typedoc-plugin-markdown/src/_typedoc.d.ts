@@ -32,6 +32,7 @@ declare module 'typedoc' {
     )[];
     mergeReadme: boolean;
     modulesFileName: string;
+    navigationJson: string;
     navigationModel: {
       excludeGroups?: boolean;
       excludeCategories?: boolean;

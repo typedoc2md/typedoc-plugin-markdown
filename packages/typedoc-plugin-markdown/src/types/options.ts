@@ -77,7 +77,7 @@ export interface PluginOptions {
   formatWithPrettier?: boolean;
 
   /**
-   * Do not print breadcrumbs.
+   * Hide the page breadcrumbs.
    */
   hideBreadcrumbs?: boolean;
 
@@ -87,12 +87,12 @@ export interface PluginOptions {
   hideGroupHeadings?: boolean;
 
   /**
-   * Do not print page header.
+   * Hide the page header.
    */
   hidePageHeader?: boolean;
 
   /**
-   * Do not print page title.
+   * Hide the page title.
    */
   hidePageTitle?: boolean;
 
@@ -127,6 +127,11 @@ export interface PluginOptions {
    * The file name of the separate modules / index page.
    */
   modulesFileName?: string;
+
+  /**
+   * Specifies the file path where the navigation JSON will be written.
+   */
+  navigationJson?: string;
 
   /**
    * @deprecated This option has been deprecated in favour of TypeDoc `navigation` option.
@@ -206,7 +211,7 @@ export interface PluginOptions {
   sanitizeComments?: boolean;
 
   /**
-   * Controls whether deprecated symbols have their page titles rendered with a strikethrough.
+   * Controls whether to strikethrough page titles of deprecated items.
    */
   strikeDeprecatedPageTitles?: boolean;
 

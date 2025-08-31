@@ -1,0 +1,95 @@
+---
+asIndexPage: true
+---
+
+import { Callout } from 'nextra/components';
+
+# Extending
+
+You can extend the plugin beyond standard options, where possible integrating directly with the core TypeDoc API to ensure a consistent and predictable developer experience.
+
+## Local Plugins
+
+Plugins are the building blocks for extending the TypeDoc output.
+Each plugin exports a load function that receives the resolved application instance as context.
+See [Writing a TypeDoc Plugin](https://typedoc.org/documents/Development.Plugins.html) for more information.
+
+```js filename="my-local-plugin.mjs"
+// @ts-check
+/**
+ * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
+ */
+export function load(app) {
+  // do something with app instance
+}
+```
+
+The plugin can then be consumed by adding the path to the plugin in your `typedoc.json` file:
+
+```json filename="typedoc.json"
+{
+  "plugin": ["typedoc-plugin-markdown", "./my-local-plugin.mjs"]
+}
+```
+
+Note plugins must be consumed as ESM.
+
+<Callout type="important">
+  `MarkdownApplication` is a type-only interface exported by this plugin. It
+  allows local plugins to align TypeDoc's core `Application` typings with the
+  runtime modifications introduced by this plugin.
+</Callout>
+
+## Hooks
+
+Hooks allow strings to be injected into the output in specific locations and are the most basic form of customization.
+
+They are based on the core [TypeDoc hooks](https://typedoc.org/documents/Development.Custom_Themes.html#hooks) implementation and exposed on a dedicated property to keep the API clearly plugin-owned.
+
+```js filename="my-hooks-plugin.mjs"
+// @ts-check
+/**
+ * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
+ */
+export function load(app) {
+  app.renderer.markdownHooks.on(
+    'page.begin',
+    () => `**Generated using "page.begin" hook**`,
+  );
+}
+```
+
+Hooks can be identified and injected using the following predefined keys:
+
+<PropsTable name={'MarkdownRendererHooks'} />
+
+## Async Jobs
+
+Async jobs are used to perform asynchronous tasks before or after rendering with a provided context.
+
+They mirror the core [TypeDoc Async Jobs](https://typedoc.org/documents/Development.Custom_Themes.html#async-jobs) and are exposed via dedicated properties to keep the API clearly plugin-owned. Jobs are cleared after each render.
+
+Each job function receives a single argument — the RendererEvent instance. Your IDE’s code intelligence (JSDoc and typings) will provide additional context and available properties.
+
+```js filename="custom-plugin.mjs"
+// @ts-check
+/**
+ * @param {import('typedoc-plugin-markdown').MarkdownApplication} app
+ */
+export function load(app) {
+  app.renderer.preMarkdownRenderAsyncJobs.push(async (rendererEvent) => {
+    await doSomethingAsync(rendererEvent);
+  });
+
+  app.renderer.postMarkdownRenderAsyncJobs.push(async (rendererEvent) => {
+    await doSomethingAsync(rendererEvent);
+  });
+}
+```
+
+The available jobs are:
+
+<PropsTable
+  name={'MarkdownRenderer'}
+  props={['preMarkdownRenderAsyncJobs', 'postMarkdownRenderAsyncJobs']}
+/>

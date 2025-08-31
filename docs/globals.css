@@ -20,3 +20,7 @@
 blockquote {
   font-style: normal !important;
 }
+table {
+  width: 100%;
+  display: table;
+}

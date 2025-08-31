@@ -1,14 +1,12 @@
 import { Callout, FileTree } from 'nextra/components';
 
-# File Options
+# File
 
-Options that are used by the plugin's [routers](/docs/output-file-structure) to configure how files are output.
+File options are used by the plugin’s <OptionLink type="output" name="router" /> to configure file output details.
 
 ## fileExtension
 
-<Callout emoji="💡">
-  Specify the file extension for generated output files.
-</Callout>
+<Callout>Specify the file extension for generated output files.</Callout>
 
 > Accepts a string value. Defaults to `".md"`.
 
@@ -22,7 +20,7 @@ Typically Markdown files are recognised by the `.md` or `.markdown` file extensi
 
 ## entryFileName
 
-<Callout emoji="💡">The file name of the entry page.</Callout>
+<Callout>The file name of the entry page.</Callout>
 
 > Accepts a string value. Defaults to `"README"`.
 
@@ -44,9 +42,7 @@ The content of root documentation file will be resolved in the following order:
 
 ## modulesFileName
 
-<Callout emoji="💡">
-  The file name of the separate modules / index page.
-</Callout>
+<Callout>The file name of the separate modules / index page.</Callout>
 
 > Accepts a string value. Defaults to `"undefined"`.
 
@@ -62,9 +58,7 @@ _Note: this option is NOT applicable when `"readme"` is set to `"none"` or `"mer
 
 ## mergeReadme
 
-<Callout emoji="💡">
-  Appends the documentation index page to the readme page.
-</Callout>
+<Callout>Appends the documentation index page to the readme page.</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
 
@@ -74,7 +68,7 @@ This option appends the documentation main/index page to the readme page so only
 _Note:_
 
 - _This option has no affect when `"readme"` is set to `"none"`._
-- _For packages readmes (when `"outputFileStrategy"` is set to `"packages"`) this is the default behaviour._
+- _For packages readmes (when `"entryPointStrategy"` is set to `"packages"`) this is the default behaviour._
 
 ```json filename="typedoc.json"
 {
@@ -84,7 +78,7 @@ _Note:_
 
 ## flattenOutputFiles
 
-<Callout emoji="💡">Flatten output files to a single directory.</Callout>
+<Callout>Flatten output files to a single directory.</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
 
@@ -112,7 +106,7 @@ _Note: This option only affects custom routers._
 
 ## excludeScopesInPaths
 
-<Callout emoji="💡">Exclude writing @ scope directories in paths.</Callout>
+<Callout>Exclude writing @ scope directories in paths.</Callout>
 
 > Accepts a boolean value. Defaults to `false`.
 

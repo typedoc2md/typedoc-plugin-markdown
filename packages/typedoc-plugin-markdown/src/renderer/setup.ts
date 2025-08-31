@@ -18,6 +18,14 @@ export function setupRenderer(app: Application) {
     value: new EventHooks<MarkdownRendererHooks, string>(),
   });
 
+  Object.defineProperty(app.renderer, 'preMarkdownRenderAsyncJobs', {
+    value: [] as Array<(renderer: MarkdownRenderer) => Promise<void>>,
+  });
+
+  Object.defineProperty(app.renderer, 'postMarkdownRenderAsyncJobs', {
+    value: [] as Array<(renderer: MarkdownRenderer) => Promise<void>>,
+  });
+
   app.converter.on(Converter.EVENT_RESOLVE_END, (context) => {
     if (app.options.packageDir) {
       resolvePackages(app, context, app.options.packageDir);

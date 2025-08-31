@@ -7,7 +7,7 @@ import { EventHooks, Options, Renderer } from 'typedoc';
 import { MarkdownRendererHooks } from './markdown-renderer-hooks.js';
 
 /**
- * The MarkdownRenderer extends TypeDoc's {@link typedoc!Renderer Renderer} instance with custom hooks and async jobs.
+ * The MarkdownRenderer extends TypeDoc's {@link Renderer} instance with custom hooks and async jobs.
  */
 export interface MarkdownRenderer extends Renderer {
   /**
@@ -41,7 +41,6 @@ export interface MarkdownRenderer extends Renderer {
       | typeof MarkdownRendererEvent.END,
     callback: (page: MarkdownRendererEvent) => void,
   ): void;
-
   /**
    * Define a new theme that can be used to render output.
    *
@@ -52,16 +51,35 @@ export interface MarkdownRenderer extends Renderer {
     name: string,
     theme: new (renderer: Renderer) => MarkdownTheme,
   ) => void;
-
   /**
-   * Dedicated markdown hooks to add to the renderer
+   * Dedicated markdown hooks to add to the renderer. For available hooks.
+   *
+   * See {@link MarkdownRendererHooks} for a description of each available hook, and when it will be called.
    */
   markdownHooks: EventHooks<MarkdownRendererHooks, string>;
+
+  /**
+   * A list of async jobs which must be completed before rendering output.
+   */
+  preMarkdownRenderAsyncJobs: Array<
+    (output: MarkdownRendererEvent) => Promise<void>
+  >;
+
+  /**
+   * A list of async jobs which must be completed after rendering output files but before generation is considered successful.
+   */
+  postMarkdownRenderAsyncJobs: Array<
+    (output: MarkdownRendererEvent) => Promise<void>
+  >;
+
+  // for backward compatibility
   preRenderAsyncJobs: Array<(output: MarkdownRendererEvent) => Promise<void>>;
   postRenderAsyncJobs: Array<(output: MarkdownRendererEvent) => Promise<void>>;
 
   /**
-   * Store meta data about packages
+   * Stores meta data about packages
+   *
+   * @internal
    */
   packagesMeta: Record<string, { description: string; options: Options }>;
 }

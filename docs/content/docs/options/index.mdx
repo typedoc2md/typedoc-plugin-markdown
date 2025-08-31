@@ -4,60 +4,130 @@ asIndexPage: true
 
 import { Callout } from 'nextra/components';
 
-# Plugin Options
+# Options
 
-This page documents additional options that are exposed by this plugin.
+This page provides an overview of all available options for the plugin.
+It includes both the
+core options provided by TypeDoc (where supported) and the additional options
+added by this plugin.
 
-## File Options
+## TypeDoc Options
 
-Options that are used by the plugin's [routers](/docs/output-file-structure) to configure how files are output.
+TypeDoc exposes many options, most of which this plugin supports while others are HTML-only and ignored.
 
-| Option                                                                  | Description                                              |
-| ----------------------------------------------------------------------- | -------------------------------------------------------- |
-| [fileExtension](./options/file-options.mdx#fileextension)               | Specify the file extension for generated output files.   |
-| [entryFileName](./options/file-options.mdx#entryfilename)               | The file name of the entry page.                         |
-| [modulesFileName](./options/file-options.mdx#modulesfilename)           | The file name of the separate modules / index page.      |
-| [mergeReadme](./options/file-options.mdx#mergereadme)                   | Appends the documentation index page to the readme page. |
-| [flattenOutputFiles](./options/file-options.mdx#flattenoutputfiles)     | Flatten output files to a single directory.              |
-| [excludeScopesInPaths](./options/file-options.mdx#excludescopesinpaths) | Exclude writing @ scope directories in paths.            |
+### Output
 
-## Display Options
+<Callout type="important">
+  Output options control TypeDoc's generated output. These options mainly apply
+  to TypeDoc's default HTML renderer, but this plugin supports or extends a
+  subset.
+</Callout>
 
-Options that are used to configure how the output is structured and displayed.
+_The options listed here are the output options that this plugin supports or extends._
 
-| Option                                                                                 | Description                                                                               |
-| -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [hidePageHeader](./options/display-options.mdx#hidepageheader)                         | Do not print page header.                                                                 |
-| [hideBreadcrumbs](./options/display-options.mdx#hidebreadcrumbs)                       | Do not print breadcrumbs.                                                                 |
-| [hidePageTitle](./options/display-options.mdx#hidepagetitle)                           | Do not print page title.                                                                  |
-| [useCodeBlocks](./options/display-options.mdx#usecodeblocks)                           | Wraps signatures and declarations in code blocks.                                         |
-| [expandObjects](./options/display-options.mdx#expandobjects)                           | Expand objects inside declarations.                                                       |
-| [expandParameters](./options/display-options.mdx#expandparameters)                     | Expand parameters in signature parentheses to display type information.                   |
-| [blockTagsPreserveOrder](./options/display-options.mdx#blocktagspreserveorder)         | Specifies comment block tags that should preserve their position.                         |
-| [strikeDeprecatedPageTitles](./options/display-options.mdx#strikedeprecatedpagetitles) | Controls whether deprecated symbols have their page titles rendered with a strikethrough. |
-| [indexFormat](./options/display-options.mdx#indexformat)                               | Sets the format of index items.                                                           |
-| [parametersFormat](./options/display-options.mdx#parametersformat)                     | Sets the format of parameter and type parameter groups.                                   |
-| [interfacePropertiesFormat](./options/display-options.mdx#interfacepropertiesformat)   | Sets the format of property groups for interfaces.                                        |
-| [classPropertiesFormat](./options/display-options.mdx#classpropertiesformat)           | Sets the format of property groups for classes.                                           |
-| [typeAliasPropertiesFormat](./options/display-options.mdx#typealiaspropertiesformat)   | Sets the format of style for type alias properties.                                       |
-| [enumMembersFormat](./options/display-options.mdx#enummembersformat)                   | Sets the format of enumeration members.                                                   |
-| [propertyMembersFormat](./options/display-options.mdx#propertymembersformat)           | Sets the format of style for property members for interfaces and classes.                 |
-| [typeDeclarationFormat](./options/display-options.mdx#typedeclarationformat)           | Sets the format of style for type declaration members.                                    |
-| [pageTitleTemplates](./options/display-options.mdx#pagetitletemplates)                 | Configure page title output with placeholders.                                            |
-| [tableColumnSettings](./options/display-options.mdx#tablecolumnsettings)               | Control how table columns are configured and displayed.                                   |
+{/* TYPEDOC_OUTPUT_OPTIONS_START - This block is dynamically generated */}
 
-## Utility Options
+| Option Name                                                         | Description                                                               |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [outputs](./options/output#outputs)                                 | Specifies the outputs which should be rendered by TypeDoc.                |
+| [out](./options/output#out)                                         | Specifies the location the markdown should be written to.                 |
+| [router](./options/output#router)                                   | Selects the router used to determine the file and folder structure.       |
+| [lang](./options/output#lang)                                       | Sets the language of the translations used when generating documentation. |
+| [cleanOutputDir](./options/output#cleanoutputdir)                   | Used to prevent TypeDoc from cleaning the output directory.               |
+| [navigation](./options/output#navigation)                           | Determines how the navigation JSON structure will be built.               |
+| [includeHierarchySummary](./options/output#includehierarchysummary) | Specifies whether or not to generate a dedicated hierarchy page.          |
 
-Options that are used for general configuration and utility purposes.
+{/* TYPEDOC_OUTPUT_OPTIONS_END */}
 
-| Option                                                                         | Description                                            |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------ |
-| [formatWithPrettier](./options/utility-options.mdx#formatwithprettier)         | Apply additional output formatting with Prettier.      |
-| [prettierConfigFile](./options/utility-options.mdx#prettierconfigfile)         | Specify a custom Prettier configuration file location. |
-| [publicPath](./options/utility-options.mdx#publicpath)                         | Specify the base path for all urls.                    |
-| [useHTMLEncodedBrackets](./options/utility-options.mdx#usehtmlencodedbrackets) | Use HTML encoded entities for angle brackets.          |
-| [useCustomAnchors](./options/utility-options.mdx#usecustomanchors)             | Add custom anchors like `{#custom-id}` to headings.    |
-| [customAnchorsFormat](./options/utility-options.mdx#customanchorsformat)       | The format of custom anchors.                          |
-| [useHTMLAnchors](./options/utility-options.mdx#usehtmlanchors)                 | Add HTML anchors to page headings.                     |
-| [anchorPrefix](./options/utility-options.mdx#anchorprefix)                     | Custom anchor prefix to add to anchor links.           |
-| [sanitizeComments](./options/utility-options.mdx#sanitizecomments)             | Sanitize HTML and JSX inside JsDoc comments.           |
+### Conversion
+
+<Callout type="important">
+  Conversion options control how TypeDoc analyzes the source code and builds the
+  reflection models. They are theme-agnostic and are not affected by this
+  plugin.
+</Callout>
+
+_The option groups listed here link directly to the TypeDoc documentation website._
+
+{/* TYPEDOC_CONVERSION_OPTIONS_START - This block is dynamically generated */}
+
+| Option Group                                                              | Description                                                        |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| [Configuration](https://typedoc.org/documents/Options.Configuration.html) | Options that control where TypeDoc reads its configuration from.   |
+| [Input](https://typedoc.org/documents/Options.Input.html)                 | Options that control what files TypeDoc processes.                 |
+| [Comments](https://typedoc.org/documents/Options.Comments.html)           | Options that control how TypeDoc parses comments.                  |
+| [Organization](https://typedoc.org/documents/Options.Organization.html)   | Options that control how content is structured on generated pages. |
+| [Validation](https://typedoc.org/documents/Options.Validation.html)       | Options that control how TypeDoc validates your documentation.     |
+| [Other](https://typedoc.org/documents/Options.Other.html)                 | Options which don’t fit elsewhere.                                 |
+
+{/* TYPEDOC_CONVERSION_OPTIONS_END */}
+
+## Plugin Options
+
+In addition to the TypeDoc core options, this plugin provides its own options.
+They can be viewed as a subset of output-related options specific to this plugin's functionality.
+
+{/* PLUGIN_OPTIONS - This block is dynamically generated */}
+
+### File
+
+<Callout type="important">
+  File options are used by the plugin’s{' '}
+  <OptionLink type="output" name="router" /> to configure file output details.
+</Callout>
+
+| Option Name                                                 | Description                                              |
+| ----------------------------------------------------------- | -------------------------------------------------------- |
+| [fileExtension](./options/file#fileextension)               | Specify the file extension for generated output files.   |
+| [entryFileName](./options/file#entryfilename)               | The file name of the entry page.                         |
+| [modulesFileName](./options/file#modulesfilename)           | The file name of the separate modules / index page.      |
+| [mergeReadme](./options/file#mergereadme)                   | Appends the documentation index page to the readme page. |
+| [flattenOutputFiles](./options/file#flattenoutputfiles)     | Flatten output files to a single directory.              |
+| [excludeScopesInPaths](./options/file#excludescopesinpaths) | Exclude writing @ scope directories in paths.            |
+
+### Display
+
+<Callout type="important">
+  Display options are used to configure how the output is structured and
+  displayed.
+</Callout>
+
+| Option Name                                                                | Description                                                               |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [hidePageHeader](./options/display#hidepageheader)                         | Hide the page header.                                                     |
+| [hideBreadcrumbs](./options/display#hidebreadcrumbs)                       | Hide the page breadcrumbs.                                                |
+| [hidePageTitle](./options/display#hidepagetitle)                           | Hide the page title.                                                      |
+| [useCodeBlocks](./options/display#usecodeblocks)                           | Wraps signatures and declarations in code blocks.                         |
+| [expandObjects](./options/display#expandobjects)                           | Expand objects inside declarations.                                       |
+| [expandParameters](./options/display#expandparameters)                     | Expand parameters in signature parentheses to display type information.   |
+| [blockTagsPreserveOrder](./options/display#blocktagspreserveorder)         | Specifies comment block tags that should preserve their position.         |
+| [strikeDeprecatedPageTitles](./options/display#strikedeprecatedpagetitles) | Controls whether to strikethrough page titles of deprecated items.        |
+| [indexFormat](./options/display#indexformat)                               | Sets the format of index items.                                           |
+| [parametersFormat](./options/display#parametersformat)                     | Sets the format of parameter and type parameter groups.                   |
+| [interfacePropertiesFormat](./options/display#interfacepropertiesformat)   | Sets the format of property groups for interfaces.                        |
+| [classPropertiesFormat](./options/display#classpropertiesformat)           | Sets the format of property groups for classes.                           |
+| [typeAliasPropertiesFormat](./options/display#typealiaspropertiesformat)   | Sets the format of style for type alias properties.                       |
+| [enumMembersFormat](./options/display#enummembersformat)                   | Sets the format of enumeration members.                                   |
+| [propertyMembersFormat](./options/display#propertymembersformat)           | Sets the format of style for property members for interfaces and classes. |
+| [typeDeclarationFormat](./options/display#typedeclarationformat)           | Sets the format of style for type declaration members.                    |
+| [pageTitleTemplates](./options/display#pagetitletemplates)                 | Configure page title output with placeholders.                            |
+| [tableColumnSettings](./options/display#tablecolumnsettings)               | Control how table columns are configured and displayed.                   |
+
+### Utility
+
+<Callout type="important">
+  Utility options are used for general configuration and utility purposes.
+</Callout>
+
+| Option Name                                                        | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| [formatWithPrettier](./options/utility#formatwithprettier)         | Apply additional output formatting with Prettier.                  |
+| [prettierConfigFile](./options/utility#prettierconfigfile)         | Specify a custom Prettier configuration file location.             |
+| [publicPath](./options/utility#publicpath)                         | Specify the base path for all urls.                                |
+| [useHTMLEncodedBrackets](./options/utility#usehtmlencodedbrackets) | Use HTML encoded entities for angle brackets.                      |
+| [useCustomAnchors](./options/utility#usecustomanchors)             | Add custom anchors like `{#custom-id}` to headings.                |
+| [customAnchorsFormat](./options/utility#customanchorsformat)       | The format of custom anchors.                                      |
+| [useHTMLAnchors](./options/utility#usehtmlanchors)                 | Add HTML anchors to page headings.                                 |
+| [anchorPrefix](./options/utility#anchorprefix)                     | Custom anchor prefix to add to anchor links.                       |
+| [sanitizeComments](./options/utility#sanitizecomments)             | Sanitize HTML and JSX inside JsDoc comments.                       |
+| [navigationJson](./options/utility#navigationjson)                 | Specifies the file path where the navigation JSON will be written. |

@@ -1,20 +1,23 @@
+import { Callout, Steps } from 'nextra/components';
+
 # Quick Start
 
-## Installation
+Below is a minimal setup for this plugin. For full configuration details, see the [TypeDoc documentation](https://typedoc.org).
+
+<Steps>
+
+## Install
 
 ```sh npm2yarn
 npm install typedoc typedoc-plugin-markdown --save-dev
 ```
 
-## Usage
+## Configure
 
-Plugins are loaded by using the TypeDoc `plugin` configuration option:
+Plugins are enabled using TypeDoc's [`--plugin`](https://typedoc.org/documents/Options.Configuration.html#plugin) configuration option.
+You can provide options directly in the CLI command or using a TypeDoc [configuration file](https://typedoc.org/documents/Options.Configuration.html#options) as below.
 
-```shell filename="CLI"
-typedoc --plugin typedoc-plugin-markdown --out ./docs
-```
-
-Or:
+For available options please visit the [TypeDoc Options](./typedoc-options) and [Plugin Options](./plugin-options) sections.
 
 ```json filename="typedoc.json"
 {
@@ -23,12 +26,22 @@ Or:
 }
 ```
 
+Add a docs script to your `package.json` file:
+
 ```json filename="package.json"
 {
-  "docs": "typedoc"
+  "scripts": {
+    "docs": "typedoc"
+  }
 }
 ```
+
+## Build
+
+You are now ready to build your documentation.
 
 ```bash filename="CLI"
 npm run docs
 ```
+
+</Steps>

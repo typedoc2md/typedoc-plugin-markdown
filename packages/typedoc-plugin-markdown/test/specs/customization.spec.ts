@@ -17,6 +17,18 @@ describe(`typedoc-plugin-markdown (Integration /Customization)`, () => {
     expectFileToEqual('customize', 'members', ['post-render-async-job.txt']);
   });
 
+  it(`should action pre-markdown-render-async jobs`, () => {
+    expectFileToEqual('customize', 'members', [
+      'post-markdown-render-async-job.txt',
+    ]);
+  });
+
+  it(`should action post-markdown-render-async jobs`, () => {
+    expectFileToEqual('customize', 'members', [
+      'post-markdown-render-async-job.txt',
+    ]);
+  });
+
   it(`should action renderer-event-begin jobs`, () => {
     expectFileToEqual('customize', 'members', ['renderer-event-begin.txt']);
   });

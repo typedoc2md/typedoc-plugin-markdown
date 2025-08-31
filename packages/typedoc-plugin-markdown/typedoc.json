@@ -1,14 +1,5 @@
 {
-  "entryPoints": [
-    "./src/index.ts",
-    "./src/renderer",
-    "./src/events",
-    "./src/options",
-    "./src/internationalization",
-    "./src/theme",
-    "./src/libs",
-    "./src/types"
-  ],
+  "entryPoints": ["./src/public-api.ts"],
   "exclude": ["./src/public-api.ts"],
   "categoryOrder": ["File", "Display", "Utility", "Functions", "Locales"],
   "projectDocuments": ["./internal-docs/test-and-validation.md"],

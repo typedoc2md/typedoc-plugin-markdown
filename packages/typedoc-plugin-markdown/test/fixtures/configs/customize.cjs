@@ -15,6 +15,7 @@ const commonOptions = {
   readme: 'none',
   theme: 'custom-theme',
   router: 'custom-router',
+  navigationJson: '../out/md/customize/navigation.json',
 };
 
 /** @type {import('typedoc').TypeDocOptions} */

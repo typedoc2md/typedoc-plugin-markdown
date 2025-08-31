@@ -1,5 +1,5 @@
 {/* prettier-ignore */}
-import { faBook, faFileLines } from '@fortawesome/free-solid-svg-icons';
+import { faFileLines } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import { Cards } from 'nextra/components';
@@ -15,7 +15,7 @@ Utility plugins that can be used to provide metadata or adjust the output of the
 <Cards num={2}>
   <Cards.Card
     title="typedoc-plugin-frontmatter"
-    icon={<FontAwesomeIcon icon={faBook} />}
+    icon={<FontAwesomeIcon icon={faFileLines} />}
     arrow={true}
     href="plugins/frontmatter"
 
@@ -49,7 +49,7 @@ Plugins that can be used to integrate and target output for specific platforms.
     arrow={true}
     href="plugins/gitlab-wiki"
   />
-    <Cards.Card
+<Cards.Card
     title="typedoc-vitepress-theme"
     icon={
       <Image src="/logos/vuepress-logo.png" alt="VuePress" width={26} height={26} />

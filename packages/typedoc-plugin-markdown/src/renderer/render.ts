@@ -14,7 +14,7 @@ import {
   StructureRouter,
 } from '@plugin/router/index.js';
 import { MarkdownTheme } from '@plugin/theme/index.js';
-import { MarkdownRenderer } from '@plugin/types/index.js';
+import { MarkdownRenderer, NavigationItem } from '@plugin/types/index.js';
 import * as fs from 'fs';
 import * as path from 'path';
 import {
@@ -62,7 +62,8 @@ export async function render(
 
   renderer.trigger(MarkdownRendererEvent.BEGIN, output);
 
-  await executeAsyncRendererJobs(renderer.preRenderAsyncJobs, output);
+  await executeAsyncRendererJobs(renderer.preRenderAsyncJobs, output); // for backwards compatibility
+  await executeAsyncRendererJobs(renderer.preMarkdownRenderAsyncJobs, output);
 
   renderer.application.logger.verbose(
     `There are ${pages.length} pages to write.`,
@@ -72,7 +73,10 @@ export async function render(
     await renderDocument(renderer, outputDirectory, page, project);
   }
 
-  await executeAsyncRendererJobs(renderer.postRenderAsyncJobs, output);
+  writeNavigationJson(renderer, output.navigation);
+
+  await executeAsyncRendererJobs(renderer.postRenderAsyncJobs, output); // for backwards compatibility
+  await executeAsyncRendererJobs(renderer.postMarkdownRenderAsyncJobs, output);
 
   renderer.trigger(MarkdownRendererEvent.END, output);
 
@@ -80,6 +84,22 @@ export async function render(
 
   renderer.router = void 0;
   renderer.theme = void 0;
+}
+
+function writeNavigationJson(
+  renderer: MarkdownRenderer,
+  navigation: NavigationItem[],
+) {
+  const navigationJson =
+    renderer.application.options.getValue('navigationJson');
+
+  if (!navigationJson) return;
+
+  try {
+    writeFileSync(navigationJson, JSON.stringify(navigation, null, 2));
+  } catch {
+    renderer.application.logger.warn(i18n.could_not_write_0(navigationJson));
+  }
 }
 
 /**

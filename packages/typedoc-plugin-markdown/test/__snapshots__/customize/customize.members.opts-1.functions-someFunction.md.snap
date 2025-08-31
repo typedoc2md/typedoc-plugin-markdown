@@ -17,6 +17,8 @@
 
 `void`
 
+> `content.end` hook
+
 **Generated using `page.end` hook**
 
 PAGE_END

@@ -1,5 +1,40 @@
 # Changelog
 
+## 4.8.1 (2025-08-12)
+
+### Patch Changes
+
+- Correctly handle empty markdown links ([#836](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/836)).
+
+## 4.8.0 (2025-07-29)
+
+### Minor Changes
+
+- Exposed additional placeholders in `pageTitleTemplates` and adjusted default templates ([#831]).
+- Tweaked the format of abstract class page titles to include the translated abstract keyword (e.g., "Abstract Class: MyClass") for improved readability.
+- Added `strikeDeprecatedPageTitles` option.
+
+### Patch Changes
+
+- Fix incorrect link fragments ([#832](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/832)).
+
+## 4.7.1 (2025-07-19)
+
+### Patch Changes
+
+- Escape square brackets in index signature types ([#829](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/829)).
+- Fix missing segments in declaration titles that contain periods.
+
+## 4.7.0 (2025-06-19)
+
+### Minor Changes
+
+- Added `useCustomAnchors` and `customAnchorsFormat` options - thanks @ocavue.
+
+### Patch Changes
+
+- Fix incorrect overload function comments ([#827](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/827)).
+
 ## 4.6.4 (2025-06-01)
 
 ### Patch Changes

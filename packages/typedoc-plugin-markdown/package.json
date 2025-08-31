@@ -21,7 +21,8 @@
     "test": "npm run validate && npm run mocha",
     "test:update": "npm run build && npm run fixtures && rm -rf test/__snapshots__ && npm run mocha",
     "mocha": "mocha --config ./mocha.config.json",
-    "schema": "tsx ./scripts/schema/generate-schema.ts"
+    "schema": "tsx ./scripts/schema/generate-schema.ts",
+    "docs": "npm run build && typedoc --options ./typedoc.public.json"
   },
   "author": "Thomas Grey",
   "license": "MIT",

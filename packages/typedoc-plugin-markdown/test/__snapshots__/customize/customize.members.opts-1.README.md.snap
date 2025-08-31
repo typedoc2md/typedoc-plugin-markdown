@@ -27,6 +27,8 @@ Some other comments
 
 - [someFunction](wiki/functions/someFunction.md)
 
+> `content.end` hook
+
 > **Generated using `index.page.end` hook**
 
 PAGE_END

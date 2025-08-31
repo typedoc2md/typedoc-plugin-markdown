@@ -6,36 +6,31 @@ import { MarkdownThemeContext } from '@plugin/theme/index.js';
 export interface MarkdownRendererHooks {
   /**
    * Applied at the start of the markdown output.
-   *
-   * @group Hooks
    */
   ['page.begin']: [MarkdownThemeContext];
 
   /**
    * Applied at the end of the markdown output.
-   *
-   * @group Hooks
    */
   ['page.end']: [MarkdownThemeContext];
 
   /**
-   * Applied before the main markdown content is rendered.
-   *
-   * @group Hooks
-   */
-  ['content.begin']: [MarkdownThemeContext];
-
-  /**
    * Applied at the start of the markdown output on the index page.
-   *
-   * @group Hooks
    */
   ['index.page.begin']: [MarkdownThemeContext];
 
   /**
    * Applied at the end of the markdown output on the index page.
-   *
-   * @group Hooks
    */
   ['index.page.end']: [MarkdownThemeContext];
+
+  /**
+   * Applied before the main markdown content is rendered.
+   */
+  ['content.begin']: [MarkdownThemeContext];
+
+  /**
+   * Applied after the main markdown content is rendered.
+   */
+  ['content.end']: [MarkdownThemeContext];
 }

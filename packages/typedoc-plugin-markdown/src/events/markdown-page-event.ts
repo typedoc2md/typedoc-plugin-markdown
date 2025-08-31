@@ -49,7 +49,6 @@ export class MarkdownPageEvent<out Model extends RouterTarget = RouterTarget> {
    */
   frontmatter?: Record<string, any>;
 
-  // required for typing purposes but not used
   /** @hidden */
   pageHeadings: PageHeading[] = [];
 

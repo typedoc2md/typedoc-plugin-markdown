@@ -12,7 +12,9 @@ export { MemberRouter, ModuleRouter } from '@plugin/router/index.js';
 export { MarkdownTheme, MarkdownThemeContext } from '@plugin/theme/index.js';
 export {
   MarkdownApplication,
+  MarkdownRenderer,
   MarkdownRendererHooks,
   NavigationItem,
+  NavigationJSON,
   PluginOptions,
 } from '@plugin/types/index.js';
