@@ -26,15 +26,6 @@ export function memberTitle(
     name.push('()');
   }
 
-  if (model.typeParameters?.length) {
-    const typeParameters = model.typeParameters
-      .map((typeParameter) => typeParameter.name)
-      .join(', ');
-    name.push(
-      `${`${this.helpers.getAngleBracket('<')}${typeParameters}${this.helpers.getAngleBracket('>')}`}`,
-    );
-  }
-
   if (model.flags?.isOptional) {
     name.push('?');
   }

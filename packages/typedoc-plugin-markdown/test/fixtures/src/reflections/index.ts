@@ -7,6 +7,8 @@
  * - {@link BasicInterface#functionProp}
  * - {@link LiteralType#y}
  * - {@link objectLiteralVariable#valueX}
+ * - {@link ClassWithTypeParameters}
+ * - {@link TypeWithTypeParams}
  *
  * @module
  */

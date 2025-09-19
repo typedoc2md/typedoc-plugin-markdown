@@ -8,6 +8,8 @@ Module comments
 - [BasicInterface#functionProp](interfaces/BasicInterface.md#functionprop)
 - [LiteralType#y](type-aliases/LiteralType.md#y)
 - [objectLiteralVariable#valueX](variables/objectLiteralVariable.md#valuex)
+- [ClassWithTypeParameters](classes/ClassWithTypeParameters.md)
+- [TypeWithTypeParams](type-aliases/TypeWithTypeParams.md)
 
 ## Enumerations
 
