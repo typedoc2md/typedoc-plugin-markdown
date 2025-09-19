@@ -8,7 +8,7 @@ const commonOptions = {
     '../src/navigation/module-2/index.ts',
     '../src/navigation/module-3/index.ts',
   ],
-  plugin: ['../../../dist/index.js', '../custom-plugins/navigation-plugin.mjs'],
+  plugin: ['../../../dist/index.js'],
   hidePageHeader: true,
   readme: 'none',
 };
@@ -40,6 +40,8 @@ module.exports = {
       name: 'markdown',
       path: '../out/md/navigation/members/opts-1',
       options: {
+        navigationJson:
+          './test/fixtures/out/md/navigation/members/opts-1/sidebar.json',
         ...opts1,
       },
     },
@@ -47,6 +49,8 @@ module.exports = {
       name: 'markdown',
       path: '../out/md/navigation/members/opts-2',
       options: {
+        navigationJson:
+          './test/fixtures/out/md/navigation/members/opts-2/sidebar.json',
         ...opts2,
       },
     },
@@ -55,6 +59,9 @@ module.exports = {
       path: '../out/md/navigation/modules/opts-1',
       options: {
         router: 'module',
+        navigationJson:
+          './test/fixtures/out/md/navigation/modules/opts-1/sidebar.json',
+
         ...opts1,
       },
     },
@@ -63,6 +70,8 @@ module.exports = {
       path: '../out/md/navigation/modules/opts-2',
       options: {
         router: 'module',
+        navigationJson:
+          './test/fixtures/out/md/navigation/modules/opts-2/sidebar.json',
         ...opts2,
       },
     },

@@ -840,6 +840,8 @@ export const navigationModel: Partial<DeclarationOption> = {
  *
  * You can further configure the structure itself using the <OptionLink type="output" name="navigation" /> output option.
  *
+ * Note the path is resolved according to the config directory.
+ *
  * @example "./path/to/navigation.json"
  *
  * @category Utility
