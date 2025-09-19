@@ -2,7 +2,7 @@
 
 > `const` **variableWithChars**: \{ `<x>`: `string`; `<y>`: `string`; `<z>`: `string`; \}
 
-## Type declaration
+## Type Declaration
 
 ### &lt;x&gt;
 

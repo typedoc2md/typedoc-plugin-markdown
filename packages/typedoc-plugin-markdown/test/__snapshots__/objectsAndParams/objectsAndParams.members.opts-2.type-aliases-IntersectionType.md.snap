@@ -8,7 +8,7 @@ type IntersectionType = TupleType & ArrayType & {
 
 Comments for IntersectionType
 
-## Type declaration
+## Type Declaration
 
 ### bar
 

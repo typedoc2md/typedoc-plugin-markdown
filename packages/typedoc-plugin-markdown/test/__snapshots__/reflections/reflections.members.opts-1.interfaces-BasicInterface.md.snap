@@ -98,7 +98,7 @@ Defined in: [interfaces.ts:1](http://source-url)
 
 Comments for propReturningObjectDeclarations
 
-#### Type declaration
+#### Type Declaration
 
 ##### a
 
@@ -108,7 +108,7 @@ Comments for propReturningObjectDeclarations
 
 > **b**: `string`
 
-#### Type declaration
+#### Type Declaration
 
 ##### c
 

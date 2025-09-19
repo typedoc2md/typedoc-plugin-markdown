@@ -1,8 +1,14 @@
 import nextra from 'nextra';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-const withNextra = nextra({
-  // ... Other Nextra config options
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const withNextra = nextra({});
+
+export default withNextra({
+  turbopack: {
+    root: __dirname,
+  },
 });
-
-// You can include other Next.js configuration options here, in addition to Nextra settings:
-export default withNextra({});

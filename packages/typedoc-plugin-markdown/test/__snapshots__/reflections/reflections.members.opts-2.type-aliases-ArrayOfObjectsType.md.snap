@@ -6,7 +6,7 @@ type ArrayOfObjectsType = object[];
 
 Defined in: [types.ts:1](http://source-url)
 
-## Type declaration
+## Type Declaration
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
