@@ -5,12 +5,18 @@ export default {
   },
   index: 'Introduction',
   'quick-start': '',
-
   '-- guides': {
     type: 'separator',
     title: 'Guides',
   },
   options: '',
-  extending: '',
-  support: '',
+  customization: '',
+  other: '',
+  '-- support': {
+    type: 'separator',
+    title: 'Support',
+  },
+  troubleshooting: '',
+  releases: '',
+  CHANGELOG: 'Changelog',
 };

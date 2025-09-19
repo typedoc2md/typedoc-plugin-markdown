@@ -4,6 +4,7 @@
   "plugin": ["./dist/index.js"],
   "sortEntryPoints": false,
   "name": "API",
+  "logLevel": "Info",
   "sort": ["required-first", "source-order"],
   "includeVersion": false,
   "disableSources": true,
@@ -24,21 +25,17 @@
   "pageTitleTemplates": {
     "member": "{name}"
   },
+  "externalSymbolLinkMappings": {
+    "typedoc": {
+      "Application": "https://typedoc.org/api/classes/Application.html",
+      "Renderer": "https://typedoc.org/api/classes/Renderer.html"
+    }
+  },
+  "intentionallyNotExported": ["PackageMetaData"],
   "outputs": [
-    {
-      "name": "markdown",
-      "path": "docs/md",
-      "options": {
-        "router": "member"
-      }
-    },
     {
       "name": "json",
       "path": "../../docs/json/public-api.json"
-    },
-    {
-      "name": "html",
-      "path": "docs/html"
     }
   ]
 }

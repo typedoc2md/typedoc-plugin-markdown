@@ -3,7 +3,7 @@ var copyfiles = require('copyfiles');
 const changelogs = [
   {
     from: '../packages/typedoc-plugin-markdown/CHANGELOG.md',
-    to: 'content/docs/support',
+    to: 'content/docs',
   },
   {
     from: '../packages/typedoc-vitepress-theme/CHANGELOG.md',

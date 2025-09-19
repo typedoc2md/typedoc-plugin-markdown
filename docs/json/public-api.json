@@ -789,7 +789,8 @@
 											"qualifiedName": "Application"
 										},
 										"name": "Application",
-										"package": "typedoc"
+										"package": "typedoc",
+										"externalUrl": "https://typedoc.org/api/classes/Application.html"
 									}
 								}
 							],
@@ -802,14 +803,16 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"target": -1,
-								"name": "MarkdownRouter.constructor"
+								"name": "MarkdownRouter.constructor",
+								"package": "typedoc-plugin-markdown"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
 						"target": -1,
-						"name": "MarkdownRouter.constructor"
+						"name": "MarkdownRouter.constructor",
+						"package": "typedoc-plugin-markdown"
 					}
 				},
 				{
@@ -1185,14 +1188,16 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"target": -1,
-								"name": "MarkdownRouter.buildPages"
+								"name": "MarkdownRouter.buildPages",
+								"package": "typedoc-plugin-markdown"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
 						"target": -1,
-						"name": "MarkdownRouter.buildPages"
+						"name": "MarkdownRouter.buildPages",
+						"package": "typedoc-plugin-markdown"
 					}
 				},
 				{
@@ -1247,14 +1252,16 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"target": -1,
-								"name": "MarkdownRouter.getAnchor"
+								"name": "MarkdownRouter.getAnchor",
+								"package": "typedoc-plugin-markdown"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
 						"target": -1,
-						"name": "MarkdownRouter.getAnchor"
+						"name": "MarkdownRouter.getAnchor",
+						"package": "typedoc-plugin-markdown"
 					}
 				},
 				{
@@ -1646,7 +1653,8 @@
 											"qualifiedName": "Application"
 										},
 										"name": "Application",
-										"package": "typedoc"
+										"package": "typedoc",
+										"externalUrl": "https://typedoc.org/api/classes/Application.html"
 									}
 								}
 							],
@@ -1659,14 +1667,16 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"target": -1,
-								"name": "MarkdownRouter.constructor"
+								"name": "MarkdownRouter.constructor",
+								"package": "typedoc-plugin-markdown"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
 						"target": -1,
-						"name": "MarkdownRouter.constructor"
+						"name": "MarkdownRouter.constructor",
+						"package": "typedoc-plugin-markdown"
 					}
 				},
 				{
@@ -2042,14 +2052,16 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"target": -1,
-								"name": "MarkdownRouter.buildPages"
+								"name": "MarkdownRouter.buildPages",
+								"package": "typedoc-plugin-markdown"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
 						"target": -1,
-						"name": "MarkdownRouter.buildPages"
+						"name": "MarkdownRouter.buildPages",
+						"package": "typedoc-plugin-markdown"
 					}
 				},
 				{
@@ -2104,14 +2116,16 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"target": -1,
-								"name": "MarkdownRouter.getAnchor"
+								"name": "MarkdownRouter.getAnchor",
+								"package": "typedoc-plugin-markdown"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
 						"target": -1,
-						"name": "MarkdownRouter.getAnchor"
+						"name": "MarkdownRouter.getAnchor",
+						"package": "typedoc-plugin-markdown"
 					}
 				},
 				{
@@ -9655,7 +9669,8 @@
 											"qualifiedName": "Renderer"
 										},
 										"name": "Renderer",
-										"package": "typedoc"
+										"package": "typedoc",
+										"externalUrl": "https://typedoc.org/api/classes/Renderer.html"
 									}
 								}
 							],
@@ -9668,14 +9683,16 @@
 							"overwrites": {
 								"type": "reference",
 								"target": -1,
-								"name": "Theme.constructor"
+								"name": "Theme.constructor",
+								"package": "typedoc"
 							}
 						}
 					],
 					"overwrites": {
 						"type": "reference",
 						"target": -1,
-						"name": "Theme.constructor"
+						"name": "Theme.constructor",
+						"package": "typedoc"
 					}
 				},
 				{
@@ -10068,11 +10085,7 @@
 						"kind": "inline-tag",
 						"tag": "@link",
 						"text": "Application",
-						"target": {
-							"packageName": "typedoc",
-							"packagePath": "dist/lib/application.d.ts",
-							"qualifiedName": "Application"
-						}
+						"target": "https://typedoc.org/api/classes/Application.html"
 					},
 					{
 						"kind": "text",
@@ -10100,11 +10113,7 @@
 						"kind": "inline-tag",
 						"tag": "@link",
 						"text": "Application",
-						"target": {
-							"packageName": "typedoc",
-							"packagePath": "dist/lib/application.d.ts",
-							"qualifiedName": "Application"
-						}
+						"target": "https://typedoc.org/api/classes/Application.html"
 					},
 					{
 						"kind": "text",
@@ -10168,7 +10177,8 @@
 						"qualifiedName": "Application"
 					},
 					"name": "Application",
-					"package": "typedoc"
+					"package": "typedoc",
+					"externalUrl": "https://typedoc.org/api/classes/Application.html"
 				}
 			]
 		},
@@ -10374,11 +10384,7 @@
 						"kind": "inline-tag",
 						"tag": "@link",
 						"text": "Renderer",
-						"target": {
-							"packageName": "typedoc",
-							"packagePath": "dist/lib/output/renderer.d.ts",
-							"qualifiedName": "Renderer"
-						}
+						"target": "https://typedoc.org/api/classes/Renderer.html"
 					},
 					{
 						"kind": "text",
@@ -10514,7 +10520,8 @@
 							"overwrites": {
 								"type": "reference",
 								"target": -1,
-								"name": "Renderer.on"
+								"name": "Renderer.on",
+								"package": "typedoc"
 							}
 						},
 						{
@@ -10637,14 +10644,16 @@
 							"overwrites": {
 								"type": "reference",
 								"target": -1,
-								"name": "Renderer.on"
+								"name": "Renderer.on",
+								"package": "typedoc"
 							}
 						}
 					],
 					"overwrites": {
 						"type": "reference",
 						"target": -1,
-						"name": "Renderer.on"
+						"name": "Renderer.on",
+						"package": "typedoc"
 					}
 				},
 				{
@@ -10740,7 +10749,8 @@
 																			"qualifiedName": "Renderer"
 																		},
 																		"name": "Renderer",
-																		"package": "typedoc"
+																		"package": "typedoc",
+																		"externalUrl": "https://typedoc.org/api/classes/Renderer.html"
 																	}
 																}
 															],
@@ -10767,7 +10777,8 @@
 					"overwrites": {
 						"type": "reference",
 						"target": -1,
-						"name": "Renderer.defineTheme"
+						"name": "Renderer.defineTheme",
+						"package": "typedoc"
 					}
 				},
 				{
@@ -10780,7 +10791,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "Dedicated markdown hooks to add to the renderer. For available hooks.\n\nSee "
+								"text": "Dedicated markdown hooks to add to the renderer.\n\nSee "
 							},
 							{
 								"kind": "inline-tag",
@@ -10827,7 +10838,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "A list of async jobs which must be completed before rendering output."
+								"text": "A list of async jobs which must be completed before rendering markdown output."
 							}
 						]
 					},
@@ -10895,7 +10906,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "A list of async jobs which must be completed after rendering output files but before generation is considered successful."
+								"text": "A list of async jobs which must be completed after rendering markdown output, but before generation is considered successful."
 							}
 						]
 					},
@@ -10963,35 +10974,17 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "A list of async jobs which must be completed *before* rendering output.\nThey will be called after "
+								"text": "preRenderAsyncJobs - note these jobs are used by default html - use "
 							},
 							{
 								"kind": "inline-tag",
 								"tag": "@link",
-								"text": "RendererEvent.BEGIN",
-								"target": {
-									"packageName": "typedoc",
-									"packagePath": "dist/lib/output/events.d.ts",
-									"qualifiedName": "RendererEvent.BEGIN"
-								}
+								"text": "preMarkdownRenderAsyncJobs",
+								"target": 722
 							},
 							{
 								"kind": "text",
-								"text": " has fired, but before any files have been written.\n\nThis may be used by plugins to register work that must be done to prepare output files. For example: asynchronously\ntransform markdown to HTML.\n\nNote: This array is cleared after calling the contained functions on each "
-							},
-							{
-								"kind": "inline-tag",
-								"tag": "@link",
-								"text": "Renderer.render",
-								"target": {
-									"packageName": "typedoc",
-									"packagePath": "dist/lib/output/renderer.d.ts",
-									"qualifiedName": "Renderer.render"
-								}
-							},
-							{
-								"kind": "text",
-								"text": " call."
+								"text": "."
 							}
 						]
 					},
@@ -11051,7 +11044,8 @@
 					"overwrites": {
 						"type": "reference",
 						"target": -1,
-						"name": "Renderer.preRenderAsyncJobs"
+						"name": "Renderer.preRenderAsyncJobs",
+						"package": "typedoc"
 					}
 				},
 				{
@@ -11064,21 +11058,17 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "A list of async jobs which must be completed after rendering output files but before generation is considered successful.\nThese functions will be called after all documents have been written to the filesystem.\n\nThis may be used by plugins to register work that must be done to finalize output files. For example: asynchronously\ngenerating an image referenced in a render hook.\n\nNote: This array is cleared after calling the contained functions on each "
+								"text": "postRenderAsyncJobs - note these jobs are used by default html - use "
 							},
 							{
 								"kind": "inline-tag",
 								"tag": "@link",
-								"text": "Renderer.render",
-								"target": {
-									"packageName": "typedoc",
-									"packagePath": "dist/lib/output/renderer.d.ts",
-									"qualifiedName": "Renderer.render"
-								}
+								"text": "postMarkdownRenderAsyncJobs",
+								"target": 726
 							},
 							{
 								"kind": "text",
-								"text": " call."
+								"text": "."
 							}
 						]
 					},
@@ -11138,7 +11128,8 @@
 					"overwrites": {
 						"type": "reference",
 						"target": -1,
-						"name": "Renderer.postRenderAsyncJobs"
+						"name": "Renderer.postRenderAsyncJobs",
+						"package": "typedoc"
 					}
 				}
 			],
@@ -11170,7 +11161,8 @@
 						"qualifiedName": "Renderer"
 					},
 					"name": "Renderer",
-					"package": "typedoc"
+					"package": "typedoc",
+					"externalUrl": "https://typedoc.org/api/classes/Renderer.html"
 				}
 			]
 		},

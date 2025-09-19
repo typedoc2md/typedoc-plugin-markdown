@@ -52,28 +52,34 @@ export interface MarkdownRenderer extends Renderer {
     theme: new (renderer: Renderer) => MarkdownTheme,
   ) => void;
   /**
-   * Dedicated markdown hooks to add to the renderer. For available hooks.
+   * Dedicated markdown hooks to add to the renderer.
    *
    * See {@link MarkdownRendererHooks} for a description of each available hook, and when it will be called.
    */
   markdownHooks: EventHooks<MarkdownRendererHooks, string>;
 
   /**
-   * A list of async jobs which must be completed before rendering output.
+   * A list of async jobs which must be completed before rendering markdown output.
    */
   preMarkdownRenderAsyncJobs: Array<
     (output: MarkdownRendererEvent) => Promise<void>
   >;
 
   /**
-   * A list of async jobs which must be completed after rendering output files but before generation is considered successful.
+   * A list of async jobs which must be completed after rendering markdown output, but before generation is considered successful.
    */
   postMarkdownRenderAsyncJobs: Array<
     (output: MarkdownRendererEvent) => Promise<void>
   >;
 
-  // for backward compatibility
+  /**
+   * preRenderAsyncJobs - note these jobs are used by default html - use {@link preMarkdownRenderAsyncJobs}.
+   */
   preRenderAsyncJobs: Array<(output: MarkdownRendererEvent) => Promise<void>>;
+
+  /**
+   * postRenderAsyncJobs - note these jobs are used by default html - use {@link postMarkdownRenderAsyncJobs}.
+   */
   postRenderAsyncJobs: Array<(output: MarkdownRendererEvent) => Promise<void>>;
 
   /**
