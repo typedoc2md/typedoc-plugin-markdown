@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.9.0
+## 4.9.0 (2025-09-19)
 
 ### Minor Changes
 
