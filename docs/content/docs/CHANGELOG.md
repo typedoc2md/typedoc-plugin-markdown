@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.9.0 (2025-09-19)
+
+### Minor Changes
+
+- Exposed new option `navigationJson` that can be used to write navigation structure as JSON to disk.
+
+### Patch Changes
+
+- Remove type params from inline reflection titles when router=module to resolve anchoring issues ([#843](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/843)).
+
 ## 4.8.1 (2025-08-12)
 
 ### Patch Changes
