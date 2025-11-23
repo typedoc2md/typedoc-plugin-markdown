@@ -31,7 +31,7 @@
   },
   "homepage": "https://typedoc-plugin-markdown.org/plugins/frontmatter",
   "dependencies": {
-    "yaml": "^2.7.0"
+    "yaml": "^2.8.1"
   },
   "peerDependencies": {
     "typedoc-plugin-markdown": ">=4.9.0"

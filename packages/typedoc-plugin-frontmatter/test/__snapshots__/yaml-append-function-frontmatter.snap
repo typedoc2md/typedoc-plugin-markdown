@@ -1,0 +1,15 @@
+---
+title: someFunction
+layout: blog
+navOrder: 1
+hide: true
+tagOne: Tag value
+---
+
+# Function: someFunction()
+
+> **someFunction**(): `void`
+
+## Returns
+
+`void`

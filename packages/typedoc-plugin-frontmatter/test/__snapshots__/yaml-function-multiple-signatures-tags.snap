@@ -1,0 +1,52 @@
+---
+title: someFunctionWithMultipleSignatures
+layout: blog
+veryLong: This is a long string that would normally wrap over multiple lines when the text exceeds a certain length.
+navOrder: 1
+hide: true
+tagOne: Tag value
+---
+
+# Function: someFunctionWithMultipleSignatures()
+
+Comments for greet function
+
+## Tag One
+
+Tag value
+
+## Call Signature
+
+> **someFunctionWithMultipleSignatures**(`name`): `string`
+
+Comments for overload function A
+
+### Parameters
+
+#### name
+
+`string`
+
+### Returns
+
+`string`
+
+## Call Signature
+
+> **someFunctionWithMultipleSignatures**(`firstName`, `lastName`): `string`
+
+Comments for overload function B
+
+### Parameters
+
+#### firstName
+
+`string`
+
+#### lastName
+
+`string`
+
+### Returns
+
+`string`

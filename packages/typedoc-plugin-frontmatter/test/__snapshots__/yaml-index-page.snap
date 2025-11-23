@@ -12,3 +12,8 @@ onIndex: true
 ## Interfaces
 
 - [SomeInterface](interfaces/SomeInterface.md)
+
+## Functions
+
+- [someFunction](functions/someFunction.md)
+- [someFunctionWithMultipleSignatures](functions/someFunctionWithMultipleSignatures.md)

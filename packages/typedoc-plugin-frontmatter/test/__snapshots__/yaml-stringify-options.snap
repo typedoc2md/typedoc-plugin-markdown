@@ -8,3 +8,8 @@ veryLong: 'This is a long string that would normally wrap over multiple lines wh
 ## Interfaces
 
 - [SomeInterface](interfaces/SomeInterface.md)
+
+## Functions
+
+- [someFunction](functions/someFunction.md)
+- [someFunctionWithMultipleSignatures](functions/someFunctionWithMultipleSignatures.md)

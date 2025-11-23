@@ -1,0 +1,20 @@
+---
+title: someFunction
+layout: blog
+veryLong: This is a long string that would normally wrap over multiple lines when the text exceeds a certain length.
+navOrder: 1
+hide: true
+tagOne: Tag value
+---
+
+# Function: someFunction()
+
+> **someFunction**(): `void`
+
+## Returns
+
+`void`
+
+## Tag One
+
+Tag value

@@ -14,6 +14,7 @@ import {
   MarkdownPageEvent,
 } from 'typedoc-plugin-markdown';
 import * as yaml from 'yaml';
+import { getComment } from './comments.js';
 import { declarations } from './options/index.js';
 import { getResolvedTags } from './tags.js';
 
@@ -28,14 +29,12 @@ export function load(app: MarkdownApplication) {
   app.renderer.on(
     MarkdownPageEvent.BEGIN,
     (page: MarkdownPageEvent<DeclarationReflection>) => {
-      const entryFileName = app.options.getValue('entryFileName') as any;
+      const entryFileName = app.options.getValue('entryFileName') as string;
       const frontmatterGlobals = app.options.getValue('frontmatterGlobals');
       const readmeFrontmatter = app.options.getValue('readmeFrontmatter');
       const indexFrontmatter = app.options.getValue('indexFrontmatter');
-      const resolvedFrontmatterTags = getResolvedTags(
-        app,
-        (page.model as DeclarationReflection)?.comment,
-      );
+      const comment = getComment(page.model);
+      const resolvedFrontmatterTags = getResolvedTags(app, comment);
 
       page.frontmatter = {
         ...(page.frontmatter || {}),

@@ -9,11 +9,45 @@ describe(`typedoc-plugin-frontmatter (Options)`, () => {
       assertToMatchSnapshot('yaml-append-frontmatter', pageContent);
     });
 
+    it(`should prepend frontmatter to signatures`, async () => {
+      const pageContent = getFileContents(
+        'out/options/functions/someFunction.md',
+      );
+      assertToMatchSnapshot('yaml-append-function-frontmatter', pageContent);
+    });
+
+    it(`should prepend frontmatter to multiple signatures`, async () => {
+      const pageContent = getFileContents(
+        'out/options/functions/someFunctionWithMultipleSignatures.md',
+      );
+      assertToMatchSnapshot(
+        'yaml-append-function-multiple-signatures-frontmatter',
+        pageContent,
+      );
+    });
+
     it(`should prepend frontmatter with preserved tags`, async () => {
       const pageContent = getFileContents(
         'out/options-2/interfaces/SomeInterface.md',
       );
       assertToMatchSnapshot('yaml-prepend-preserve-tags', pageContent);
+    });
+
+    it(`should add custom tags to functions`, async () => {
+      const pageContent = getFileContents(
+        'out/options-2/functions/someFunction.md',
+      );
+      assertToMatchSnapshot('yaml-function-tags', pageContent);
+    });
+
+    it(`should add custom tags to functions with multiple signatures`, async () => {
+      const pageContent = getFileContents(
+        'out/options-2/functions/someFunctionWithMultipleSignatures.md',
+      );
+      assertToMatchSnapshot(
+        'yaml-function-multiple-signatures-tags',
+        pageContent,
+      );
     });
 
     it(`should prepend frontmatter for readme page`, async () => {
