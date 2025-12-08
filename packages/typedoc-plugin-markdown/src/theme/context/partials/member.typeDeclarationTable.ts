@@ -119,7 +119,7 @@ export function typeDeclarationTable(
           }),
         );
       }
-      if ((declaration.type as any).declaration?.signatures?.length) {
+      if (declaration.type && (declaration.type as any).declaration?.signatures?.length) {
         (declaration.type as any).declaration?.signatures.forEach((sig) => {
           if (sig.comment) {
             commentsOut.push(
