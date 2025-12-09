@@ -8,15 +8,12 @@ export function memberContainer(
   options: { headingLevel: number; nested?: boolean; groupTitle?: string },
 ): string {
   const md: string[] = [];
-  const anchor = this.router.hasUrl(model)
-    ? this.router.getAnchor(model)
-    : undefined;
+  const anchor =
+    !this.router.hasOwnDocument(model) && this.router.hasUrl(model)
+      ? this.router.getAnchor(model)
+      : undefined;
 
-  if (
-    !this.router.hasOwnDocument(model) &&
-    anchor &&
-    this.options.getValue('useHTMLAnchors')
-  ) {
+  if (anchor && this.options.getValue('useHTMLAnchors')) {
     md.push(`<a id="${anchor}"></a>`);
   }
 
