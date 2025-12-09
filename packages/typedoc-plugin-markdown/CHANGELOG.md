@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.9.1
+
+### Patch Changes
+
+- Resolve "does not have an anchor but one was requested" warnings in verbose log mode ([#850](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/850)).
+- Guard against undefined types causing errors in complex types in tables (thanks @ilyabo).
+
 ## 4.9.0 (2025-09-19)
 
 ### Minor Changes
