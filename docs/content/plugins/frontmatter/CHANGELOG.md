@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.1 (2025-11-23)
+
+### Patch Changes
+
+- Correctly resolve `frontmatterCommentTags` for signatures ([#848](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/848)).
+
 ## 1.3.0 (2025-03-16)
 
 ### Minor Changes
