@@ -10,8 +10,8 @@ export default {
     title: 'Guides',
   },
   options: '',
+  schema: '',
   customization: '',
-  other: '',
   '-- support': {
     type: 'separator',
     title: 'Support',

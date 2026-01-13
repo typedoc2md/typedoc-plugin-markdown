@@ -7,9 +7,10 @@ import { declarations } from '../../src/options/index.js';
 export const __filename = fileURLToPath(import.meta.url);
 export const __dirname = dirname(__filename);
 
-main();
+main(false);
+main(true);
 
-async function main() {
+async function main(published: boolean) {
   const { getSchema } = await import('./get-scheme.cjs');
   const schema = await getSchema();
 
@@ -36,17 +37,20 @@ async function main() {
   const schemaWrapper = {
     $schema,
     allOf: [
-      { $ref: 'https://typedoc.org/schema.json' },
+      {
+        $ref: published
+          ? 'https://typedoc.org/schema.json'
+          : '../typedoc/typedoc-config.schema.json',
+      },
       {
         ...schema,
       },
     ],
   };
 
-  const schemaFile = path.join(
-    __dirname,
-    '../../../../docs/public/schema.json',
-  );
+  const schemaFile = published
+    ? path.join(__dirname, '../../../../docs/public/schema.json')
+    : path.join(__dirname, '../../typedoc-plugin-markdown.schema.json');
 
   const schemaString = JSON.stringify(schemaWrapper, null, 2);
   fs.writeFileSync(schemaFile, schemaString);

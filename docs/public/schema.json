@@ -29,6 +29,16 @@
           "description": "[typedoc-plugin-markdown] Sets the format of property groups for classes.",
           "default": "list"
         },
+        "customAnchorsFormat": {
+          "type": "string",
+          "enum": [
+            "curlyBrace",
+            "escapedCurlyBrace",
+            "squareBracket"
+          ],
+          "description": "[typedoc-plugin-markdown] The format of custom anchors.",
+          "default": "curlyBrace"
+        },
         "entryFileName": {
           "type": "string",
           "description": "[typedoc-plugin-markdown] The file name of the entry page.",
@@ -36,7 +46,8 @@
         },
         "entryModule": {
           "type": "string",
-          "description": "[typedoc-plugin-markdown] The name of a module that should act as the root page for the documentation."
+          "deprecated": "This functionality has been deprecated in favour of the `@mergeModuleWith` tag.",
+          "description": "[typedoc-plugin-markdown] This functionality has been deprecated in favour of the `@mergeModuleWith` tag."
         },
         "enumMembersFormat": {
           "type": "string",
@@ -80,7 +91,7 @@
         },
         "hideBreadcrumbs": {
           "type": "boolean",
-          "description": "[typedoc-plugin-markdown] Do not print breadcrumbs."
+          "description": "[typedoc-plugin-markdown] Hide the page breadcrumbs."
         },
         "hideGroupHeadings": {
           "type": "boolean",
@@ -88,11 +99,11 @@
         },
         "hidePageHeader": {
           "type": "boolean",
-          "description": "[typedoc-plugin-markdown] Do not print page header."
+          "description": "[typedoc-plugin-markdown] Hide the page header."
         },
         "hidePageTitle": {
           "type": "boolean",
-          "description": "[typedoc-plugin-markdown] Do not print page title."
+          "description": "[typedoc-plugin-markdown] Hide the page title."
         },
         "indexFormat": {
           "type": "string",
@@ -144,6 +155,10 @@
         "modulesFileName": {
           "type": "string",
           "description": "[typedoc-plugin-markdown] The file name of the separate modules / index page."
+        },
+        "navigationJson": {
+          "type": "string",
+          "description": "[typedoc-plugin-markdown] Specifies the file path where the navigation JSON will be written."
         },
         "navigationModel": {
           "type": "object",
@@ -222,7 +237,7 @@
                   "type": "string"
                 },
                 {
-                  "$comment": "(name: { name: string; kind: string; group: string }) => string",
+                  "$comment": "(name: {\n          name: string;\n          rawName: string;\n          kind: string;\n          isDeprecated: boolean;\n          group?: string;\n          codeKeyword?: string;\n          keyword?: string;\n        }) => string",
                   "type": "object",
                   "properties": {
                     "namedArgs": {
@@ -234,17 +249,30 @@
                             "name": {
                               "type": "string"
                             },
+                            "rawName": {
+                              "type": "string"
+                            },
                             "kind": {
                               "type": "string"
                             },
+                            "isDeprecated": {
+                              "type": "boolean"
+                            },
                             "group": {
+                              "type": "string"
+                            },
+                            "codeKeyword": {
+                              "type": "string"
+                            },
+                            "keyword": {
                               "type": "string"
                             }
                           },
                           "required": [
                             "name",
+                            "rawName",
                             "kind",
-                            "group"
+                            "isDeprecated"
                           ]
                         }
                       },
@@ -263,7 +291,7 @@
                   "type": "string"
                 },
                 {
-                  "$comment": "(name: { name: string; kind: string }) => string",
+                  "$comment": "(name: {\n          name: string;\n          rawName: string;\n          kind: string;\n          isDeprecated: boolean;\n        }) => string",
                   "type": "object",
                   "properties": {
                     "namedArgs": {
@@ -275,13 +303,21 @@
                             "name": {
                               "type": "string"
                             },
+                            "rawName": {
+                              "type": "string"
+                            },
                             "kind": {
                               "type": "string"
+                            },
+                            "isDeprecated": {
+                              "type": "boolean"
                             }
                           },
                           "required": [
                             "name",
-                            "kind"
+                            "rawName",
+                            "kind",
+                            "isDeprecated"
                           ]
                         }
                       },
@@ -295,10 +331,10 @@
               ]
             }
           },
-          "description": "[typedoc-plugin-markdown] Change specific text placeholders in the template.",
+          "description": "[typedoc-plugin-markdown] Configure page title output with placeholders.",
           "default": {
             "index": "{projectName} {version}",
-            "member": "{kind}: {name}",
+            "member": "{keyword} {kind}: {name}",
             "module": "{name}"
           }
         },
@@ -349,6 +385,11 @@
           "type": "boolean",
           "description": "[typedoc-plugin-markdown] Sanitize HTML and JSX inside JsDoc comments."
         },
+        "strikeDeprecatedPageTitles": {
+          "type": "boolean",
+          "description": "[typedoc-plugin-markdown] Controls whether to strikethrough page titles of deprecated items.",
+          "default": true
+        },
         "tableColumnSettings": {
           "type": "object",
           "properties": {
@@ -387,30 +428,13 @@
         },
         "textContentMappings": {
           "type": "object",
-          "properties": {
-            "header.title": {
-              "type": "string"
-            },
-            "breadcrumbs.home": {
-              "type": "string"
-            },
-            "title.indexPage": {
-              "type": "string"
-            },
-            "title.memberPage": {
-              "type": "string"
-            },
-            "title.modulePage": {
-              "type": "string"
-            }
-          },
           "deprecated": "This option has been deprecated in favour of `--pageTitleTemplates`.",
           "description": "[typedoc-plugin-markdown] This option has been deprecated in favour of `--pageTitleTemplates`.",
           "default": {
             "header.title": "{projectName} {version}",
             "breadcrumbs.home": "{projectName} {version}",
             "title.indexPage": "{projectName} {version}",
-            "title.memberPage": "{kind}: {name}",
+            "title.memberPage": "{keyword} {kind}: {name}",
             "title.modulePage": "{name}"
           }
         },
@@ -450,16 +474,6 @@
         "useCustomAnchors": {
           "type": "boolean",
           "description": "[typedoc-plugin-markdown] Add custom anchors like `{#custom-id}` to headings."
-        },
-        "customAnchorsFormat": {
-          "type": "string",
-          "enum": [
-            "curlyBrace",
-            "escapedCurlyBrace",
-            "squareBracket"
-          ],
-          "description": "[typedoc-plugin-markdown] Sets the format of custom anchors.",
-          "default": "curlyBrace"
         },
         "useHTMLAnchors": {
           "type": "boolean",

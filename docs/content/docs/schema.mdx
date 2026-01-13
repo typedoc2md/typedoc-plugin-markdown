@@ -1,0 +1,40 @@
+import { Callout, FileTree } from 'nextra/components';
+
+# Schema
+
+The plugin provides both a JSON Schema and TypeScript types so your IDE can
+validate and autocomplete your configuration.
+
+## JSON
+
+You can attach a JSON Schema to your `typedoc.json` file so your editor can validate and autocomplete both TypeDoc's options and this plugin's options.
+
+The schema is published with the package and is available locally in `node_modules`. It provides a combined schema that includes all options from TypeDoc and the plugin.
+
+A hosted copy of the schema is also available at `typedoc-plugin-markdown.org/schema.json` for tools that can't resolve local package paths.
+Using the local path is recommended to ensure the schema matches the installed plugin versions.
+
+```json filename="typedoc.json"
+{
+  "$schema": "node_modules/typedoc-plugin-markdown/typedoc-plugin-markdown.schema.json",
+  "plugin": ["typedoc-plugin-markdown"],
+};
+```
+
+Note that VSCode should automatically pick up the latest TypeDoc schema without declaring, but without the plugin options.
+
+## TypeScript
+
+If you use a JavaScript-based config file, you can still get full type checking
+and autocompletion by importing the plugin's `PluginOptions` type.
+
+Because TypeDoc and the plugin both define their own options, you can combine them using an intersection type:
+
+```js filename="typedoc.config.cjs"
+// @ts-check
+
+/** @type {import('typedoc').TypeDocOptions & import('typedoc-plugin-markdown').PluginOptions} */
+module.exports = {
+  plugin: ['typedoc-plugin-markdown'],
+};
+```

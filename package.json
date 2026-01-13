@@ -40,7 +40,7 @@
     "glob": "^13.0.0",
     "husky": "^9.1.7",
     "jest-diff": "^30.2.0",
-    "markdownlint": "^0.40.0",
+    "markdownlint": "0.39.0",
     "mocha": "^11.7.5",
     "p-limit": "^7.2.0",
     "prettier": "^3.7.4",

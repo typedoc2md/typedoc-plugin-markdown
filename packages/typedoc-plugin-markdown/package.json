@@ -7,11 +7,12 @@
   },
   "type": "module",
   "files": [
-    "dist/"
+    "/dist",
+    "/typedoc-plugin-markdown.schema.json"
   ],
   "scripts": {
     "lint": "eslint ./src",
-    "prepublishOnly": "npm run lint && npm run build",
+    "prepublishOnly": "npm run lint && npm run build && npm run schema",
     "prebuild": "rm -rf dist && prebuild-options && tsx ./scripts/prebuild",
     "build": "tsc && tsc-alias",
     "build-and-run": "npm run build && npm run fixtures -- -isDEV",

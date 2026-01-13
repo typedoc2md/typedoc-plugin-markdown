@@ -3,7 +3,7 @@ module.exports = {
     /** @type {import('ts-json-schema-generator/dist/src/Config').Config} */
     const config = {
       path: './src/types/options.ts',
-      tsconfig: './__scripts__/schema/tsconfig.schema.json',
+      tsconfig: './scripts/schema/tsconfig.schema.json',
       type: 'PluginOptions',
       topRef: false,
       additionalProperties: true,
