@@ -14,18 +14,12 @@ export function parametersList(
   model: ParameterReflection[],
   options: { headingLevel: number },
 ): string {
-  const firstOptionalParamIndex = model.findIndex(
-    (parameter) => parameter.flags.isOptional,
-  );
-
   const md: string[] = [];
 
-  model.forEach((parameter, i) => {
+  model.forEach((parameter) => {
     const row: string[] = [];
 
-    const isOptional =
-      parameter.flags.isOptional ||
-      (firstOptionalParamIndex !== -1 && i > firstOptionalParamIndex);
+    const isOptional = parameter.flags.isOptional || parameter.defaultValue;
 
     const optional = isOptional ? '?' : '';
 

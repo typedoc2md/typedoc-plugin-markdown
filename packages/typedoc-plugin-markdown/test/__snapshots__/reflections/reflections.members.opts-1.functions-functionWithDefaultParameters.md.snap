@@ -1,6 +1,6 @@
 # Function: functionWithDefaultParameters()
 
-> **functionWithDefaultParameters**(`valueA`, `valueB`, `valueC`, `valueD`, `valueE`, `valueF`): `string`
+> **functionWithDefaultParameters**(`valueA?`, `valueB?`, `valueC?`, `valueD?`, `valueE?`, `valueF?`): `string`
 
 Defined in: [functions.ts:1](http://source-url)
 
@@ -8,37 +8,37 @@ This is a function with a parameter that has a default value.
 
 ## Parameters
 
-### valueA
+### valueA?
 
 `string` = `'defaultValue'`
 
 A parameter with a default string value.
 
-### valueB
+### valueB?
 
 `number` = `100`
 
 A parameter with a default numeric value.
 
-### valueC
+### valueC?
 
 `number` = `Number.NaN`
 
 A parameter with a default NaN value.
 
-### valueD
+### valueD?
 
 `boolean` = `true`
 
 A parameter with a default boolean value.
 
-### valueE
+### valueE?
 
 `boolean` = `true`
 
 A parameter with a default null value.
 
-### valueF
+### valueF?
 
 `string` = `'<foo>'`
 

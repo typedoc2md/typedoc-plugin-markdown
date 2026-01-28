@@ -1,12 +1,12 @@
 # Function: functionWithNamedParams()
 
-> **functionWithNamedParams**(`__namedParameters`, `anotherParam`): `void`
+> **functionWithNamedParams**(`__namedParameters?`, `anotherParam`): `void`
 
 Defined in: [functions.ts:1](http://source-url)
 
 ## Parameters
 
-### \_\_namedParameters
+### \_\_namedParameters?
 
 various options
 

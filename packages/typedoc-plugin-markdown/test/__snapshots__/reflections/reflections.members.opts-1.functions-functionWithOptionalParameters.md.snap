@@ -1,6 +1,6 @@
 # Function: functionWithOptionalParameters()
 
-> **functionWithOptionalParameters**(`firstParamWithDefault`, `requiredParam`, `optionalParam?`, `paramWithDefault?`): `void`
+> **functionWithOptionalParameters**(`firstParamWithDefault?`, `requiredParam`, `optionalParam?`, `paramWithDefault?`): `void`
 
 Defined in: [functions.ts:1](http://source-url)
 
@@ -8,7 +8,7 @@ This is a function with a parameters.
 
 ## Parameters
 
-### firstParamWithDefault
+### firstParamWithDefault?
 
 `boolean` = `true`
 

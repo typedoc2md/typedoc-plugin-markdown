@@ -2,7 +2,7 @@
 
 ```ts
 function functionWithOptionalParameters(
-   firstParamWithDefault: boolean, 
+   firstParamWithDefault?: boolean, 
    requiredParam: string, 
    optionalParam?: string, 
    paramWithDefault?: number): void;

@@ -2,12 +2,12 @@
 
 ```ts
 function functionWithDefaultParameters(
-   valueA: string, 
-   valueB: number, 
-   valueC: number, 
-   valueD: boolean, 
-   valueE: boolean, 
-   valueF: string): string;
+   valueA?: string, 
+   valueB?: number, 
+   valueC?: number, 
+   valueD?: boolean, 
+   valueE?: boolean, 
+   valueF?: string): string;
 ```
 
 Defined in: [functions.ts:1](http://source-url)

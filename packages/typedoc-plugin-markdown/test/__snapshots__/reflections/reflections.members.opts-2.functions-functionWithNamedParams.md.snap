@@ -1,7 +1,7 @@
 # Function: functionWithNamedParams()
 
 ```ts
-function functionWithNamedParams(__namedParameters: object, anotherParam: string): void;
+function functionWithNamedParams(__namedParameters?: object, anotherParam: string): void;
 ```
 
 Defined in: [functions.ts:1](http://source-url)

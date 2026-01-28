@@ -1,6 +1,6 @@
 # Function: parametersTable()
 
-> **parametersTable**\<`T`\>(`param1`, `param2`, `param3`): `number`
+> **parametersTable**\<`T`\>(`param1`, `param2`, `param3?`): `number`
 
 Defined in: [index.ts:1](http://source-url)
 
