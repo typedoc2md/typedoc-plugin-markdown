@@ -16,11 +16,11 @@ xyz.com
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| <a id="valuea"></a> `valueA` | `number` | `100` | Comments for valueA |
-| <a id="valueb"></a> `valueB` | `boolean` | `true` | - |
-| <a id="valuex"></a> `valueX` | `object` | - | Comments for valueX |
+| <a id="property-valuea"></a> `valueA` | `number` | `100` | Comments for valueA |
+| <a id="property-valueb"></a> `valueB` | `boolean` | `true` | - |
+| <a id="property-valuex"></a> `valueX` | `object` | - | Comments for valueX |
 | `valueX.valueA` | `number`[] | - | Comment for valueX.valueA |
 | `valueX.valueY()` | (`z`: `string`) => `object` | - | Comments for valueX.valueY |
 | `valueX.valueZ` | `string` | `'foo'` | - |
-| <a id="valuey"></a> `valueY()` | (`unionParam`: `"a"` \| `"b"`, `_undercoreParam_`: `string`) => `string` | - | Comments for valueY comments for valueY function |
+| <a id="property-valuey"></a> `valueY()` | (`unionParam`: `"a"` \| `"b"`, `_undercoreParam_`: `string`) => `string` | - | Comments for valueY comments for valueY function |
 | `valueZ()` | (`param`: `string`) => `string` | - | Comments for valueZ |

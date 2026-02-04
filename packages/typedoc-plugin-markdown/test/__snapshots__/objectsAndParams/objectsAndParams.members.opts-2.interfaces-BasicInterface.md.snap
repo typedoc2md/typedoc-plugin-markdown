@@ -10,18 +10,18 @@ Comments for BasicInterface
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| <a id="deprecatedprop"></a> ~~`deprecatedProp`~~ | `string` | **Deprecated** This prop is deprecated **See** Comments for some tag |
-| <a id="functionprop"></a> `functionProp` | (`s`: `string`) => `boolean` | Comments for functionProper |
-| <a id="optionalprop"></a> `optionalProp?` | `string` | Comments for optional prop |
-| <a id="prop"></a> `prop` | `string` | Comments for prop |
-| <a id="propreturningobjectdeclaration"></a> `propReturningObjectDeclaration` | \{ `a`: `boolean`; `b`: `string`; \} | Comments for propReturningObjectDeclaration |
+| <a id="property-deprecatedprop"></a> ~~`deprecatedProp`~~ | `string` | **Deprecated** This prop is deprecated **See** Comments for some tag |
+| <a id="property-functionprop"></a> `functionProp` | (`s`: `string`) => `boolean` | Comments for functionProper |
+| <a id="property-optionalprop"></a> `optionalProp?` | `string` | Comments for optional prop |
+| <a id="property-prop"></a> `prop` | `string` | Comments for prop |
+| <a id="property-propreturningobjectdeclaration"></a> `propReturningObjectDeclaration` | \{ `a`: `boolean`; `b`: `string`; \} | Comments for propReturningObjectDeclaration |
 | `propReturningObjectDeclaration.a` | `boolean` | - |
 | `propReturningObjectDeclaration.b` | `string` | - |
-| <a id="propreturningobjectdeclarations"></a> `propReturningObjectDeclarations` | \{ `a`: `boolean`; `b`: `string`; \} & \{ `c`: `boolean`; `d`: `string`; \} | Comments for propReturningObjectDeclarations |
-| <a id="propreturningsignaturedeclaration"></a> `propReturningSignatureDeclaration?` | () => `string` \| `number` \| `boolean` | Comments for propReturningSignatureDeclaration |
-| <a id="propreturningsignaturedeclarations"></a> `propReturningSignatureDeclarations` | () => `any` & (`paramsA`: `true` \| `any`[], `paramsB?`: `any`) => `any` & (`paramsC`: `any`) => `any` | Comments for propReturningSignatureDeclarations |
-| <a id="propwithfunction"></a> `propWithFunction` | (`options`: \{ `a`: `boolean`; `b`: `string`; \}) => `boolean` | Comments for propWithFunction |
-| <a id="propwithprops"></a> `propWithProps` | \{ `callbacks?`: `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\>; `nestedPropA`: `string`; `nestedPropB`: `boolean`; `nestedPropC`: \{ `nestedPropCA`: `string`; \}; `nestedPropD`: () => `boolean`; \} | Comments for propWithProps |
+| <a id="property-propreturningobjectdeclarations"></a> `propReturningObjectDeclarations` | \{ `a`: `boolean`; `b`: `string`; \} & \{ `c`: `boolean`; `d`: `string`; \} | Comments for propReturningObjectDeclarations |
+| <a id="property-propreturningsignaturedeclaration"></a> `propReturningSignatureDeclaration?` | () => `string` \| `number` \| `boolean` | Comments for propReturningSignatureDeclaration |
+| <a id="property-propreturningsignaturedeclarations"></a> `propReturningSignatureDeclarations` | () => `any` & (`paramsA`: `true` \| `any`[], `paramsB?`: `any`) => `any` & (`paramsC`: `any`) => `any` | Comments for propReturningSignatureDeclarations |
+| <a id="property-propwithfunction"></a> `propWithFunction` | (`options`: \{ `a`: `boolean`; `b`: `string`; \}) => `boolean` | Comments for propWithFunction |
+| <a id="property-propwithprops"></a> `propWithProps` | \{ `callbacks?`: `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\>; `nestedPropA`: `string`; `nestedPropB`: `boolean`; `nestedPropC`: \{ `nestedPropCA`: `string`; \}; `nestedPropD`: () => `boolean`; \} | Comments for propWithProps |
 | `propWithProps.callbacks?` | `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\> | Comments for callbacks |
 | `propWithProps.nestedPropA` | `string` | Comments for nestedPropA |
 | `propWithProps.nestedPropB` | `boolean` | Comments for nestedPropB |

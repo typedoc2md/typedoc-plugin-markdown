@@ -1,9 +1,9 @@
 
 Module comments
 
-- [BasicClass#prop](#prop-2)
-- [BasicClass#Prop](#prop-3)
-- [BasicEnum#MemberB](#memberb)
-- [BasicInterface#functionProp](#functionprop)
-- [LiteralType#y](#y)
-- [objectLiteralVariable#valueX](#valuex)
+- [BasicClass#prop](#property-prop-2)
+- [BasicClass#Prop](#property-prop-3)
+- [BasicEnum#MemberB](#enumeration-member-memberb)
+- [BasicInterface#functionProp](#property-functionprop)
+- [LiteralType#y](#property-y)
+- [objectLiteralVariable#valueX](#property-valuex)

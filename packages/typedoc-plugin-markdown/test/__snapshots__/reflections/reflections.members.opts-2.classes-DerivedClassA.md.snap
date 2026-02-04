@@ -28,8 +28,8 @@ new DerivedClassA(): DerivedClassA;
 
 | Property | Type | Default value | Description | Overrides |
 | :------ | :------ | :------ | :------ | :------ |
-| <a id="abstractprop"></a> `abstractProp` | `string` | `'abstractProp'` | Comments for abstractProp | [`AbstractClass`](AbstractClass.md).[`abstractProp`](AbstractClass.md#abstractprop) |
-| <a id="derivedprop"></a> `derivedProp` | `string` | `undefined` | - | - |
+| <a id="property-abstractprop"></a> `abstractProp` | `string` | `'abstractProp'` | Comments for abstractProp | [`AbstractClass`](AbstractClass.md).[`abstractProp`](AbstractClass.md#property-abstractprop) |
+| <a id="property-derivedprop"></a> `derivedProp` | `string` | `undefined` | - | - |
 
 ## Methods
 

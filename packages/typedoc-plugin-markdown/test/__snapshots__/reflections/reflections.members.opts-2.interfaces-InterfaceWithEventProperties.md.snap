@@ -6,11 +6,11 @@ Defined in: [interfaces.ts:1](http://source-url)
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| <a id="someprop"></a> `someProp?` | `boolean` | Description for prop someProp |
+| <a id="property-someprop"></a> `someProp?` | `boolean` | Description for prop someProp |
 
 ## Events
 
 | Event | Type | Description |
 | :------ | :------ | :------ |
-| <a id="anotherevent"></a> `anotherEvent` | `MouseEvent` | - |
-| <a id="someevent"></a> ~~`someEvent?`~~ | (`eventParam`: [`CustomEventInterface`](CustomEventInterface.md)\<`MouseEvent`\>) => `void` | Description for event someEvent **Deprecated** Deprectaed comments |
+| <a id="property-anotherevent"></a> `anotherEvent` | `MouseEvent` | - |
+| <a id="property-someevent"></a> ~~`someEvent?`~~ | (`eventParam`: [`CustomEventInterface`](CustomEventInterface.md)\<`MouseEvent`\>) => `void` | Description for event someEvent **Deprecated** Deprectaed comments |

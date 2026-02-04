@@ -18,7 +18,7 @@ Defined in: [index.ts:1](http://source-url)
 <tr>
 <td>
 
-<a id="api-declaration1"></a> `declaration1`
+<a id="api-property-declaration1"></a> `declaration1`
 
 </td>
 <td>
@@ -35,7 +35,7 @@ Comments for declaration1
 <tr>
 <td>
 
-<a id="api-declaration2"></a> `declaration2`
+<a id="api-property-declaration2"></a> `declaration2`
 
 </td>
 <td>
@@ -52,7 +52,7 @@ Comments for declaration2
 <tr>
 <td>
 
-<a id="api-declaration3"></a> `declaration3`
+<a id="api-property-declaration3"></a> `declaration3`
 
 </td>
 <td>

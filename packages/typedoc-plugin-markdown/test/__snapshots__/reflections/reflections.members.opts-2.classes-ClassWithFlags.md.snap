@@ -20,8 +20,8 @@ new ClassWithFlags(): ClassWithFlags;
 
 | Property | Modifier | Type | Description |
 | :------ | :------ | :------ | :------ |
-| <a id="expermintalprop"></a> `expermintalProp` | `public` | `string` | **`Experimental`** |
-| <a id="internalprop"></a> `internalProp` | `private` | `string` | **`Internal`** |
+| <a id="property-expermintalprop"></a> `expermintalProp` | `public` | `string` | **`Experimental`** |
+| <a id="property-internalprop"></a> `internalProp` | `private` | `string` | **`Internal`** |
 
 ## Methods
 

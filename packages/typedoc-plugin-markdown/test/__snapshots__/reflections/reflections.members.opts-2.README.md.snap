@@ -2,12 +2,12 @@
 
 Module comments
 
-- [BasicClass#prop](classes/BasicClass.md#prop)
-- [BasicClass#Prop](classes/BasicClass.md#prop-1)
-- [BasicEnum#MemberB](enumerations/BasicEnum.md#memberb)
-- [BasicInterface#functionProp](interfaces/BasicInterface.md#functionprop)
-- [LiteralType#y](type-aliases/LiteralType.md#y)
-- [objectLiteralVariable#valueX](variables/objectLiteralVariable.md#valuex)
+- [BasicClass#prop](classes/BasicClass.md#property-prop)
+- [BasicClass#Prop](classes/BasicClass.md#property-prop-1)
+- [BasicEnum#MemberB](enumerations/BasicEnum.md#enumeration-member-memberb)
+- [BasicInterface#functionProp](interfaces/BasicInterface.md#property-functionprop)
+- [LiteralType#y](type-aliases/LiteralType.md#property-y)
+- [objectLiteralVariable#valueX](variables/objectLiteralVariable.md#property-valuex)
 - [ClassWithTypeParameters](classes/ClassWithTypeParameters.md)
 - [TypeWithTypeParams](type-aliases/TypeWithTypeParams.md)
 

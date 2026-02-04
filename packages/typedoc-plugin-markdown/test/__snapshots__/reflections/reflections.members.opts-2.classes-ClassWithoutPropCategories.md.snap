@@ -28,8 +28,8 @@ Defined in: [classes.ts:1](http://source-url)
 
 | Property | Type |
 | :------ | :------ |
-| <a id="prop1"></a> `prop1` | `string` |
-| <a id="prop2"></a> `prop2` | `string` |
+| <a id="property-prop1"></a> `prop1` | `string` |
+| <a id="property-prop2"></a> `prop2` | `string` |
 
 ## Methods
 

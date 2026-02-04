@@ -20,7 +20,7 @@ new ClassWithAccessors(): ClassWithAccessors;
 
 | Property | Modifier | Type |
 | :------ | :------ | :------ |
-| <a id="privateprop"></a> `privateProp` | `private` | `string` |
+| <a id="property-privateprop"></a> `privateProp` | `private` | `string` |
 
 ## Accessors
 

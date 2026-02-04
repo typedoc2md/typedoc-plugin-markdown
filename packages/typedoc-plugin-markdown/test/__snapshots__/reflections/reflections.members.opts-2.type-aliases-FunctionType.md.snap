@@ -10,10 +10,10 @@ Comments for FunctionType
 
 - Test link resolution for:
 
-- [`LiteralType`](LiteralType.md) and uses [LiteralType#x](LiteralType.md#x)
-- [`BasicInterface`](../interfaces/BasicInterface.md) and uses [BasicInterface#prop](../interfaces/BasicInterface.md#prop)
-- [`BasicClass`](../classes/BasicClass.md) and uses [BasicClass#prop](../classes/BasicClass.md#prop)
-- [`BasicEnum`](../enumerations/BasicEnum.md) and uses [BasicEnum#MemberA](../enumerations/BasicEnum.md#membera)
+- [`LiteralType`](LiteralType.md) and uses [LiteralType#x](LiteralType.md#property-x)
+- [`BasicInterface`](../interfaces/BasicInterface.md) and uses [BasicInterface#prop](../interfaces/BasicInterface.md#property-prop)
+- [`BasicClass`](../classes/BasicClass.md) and uses [BasicClass#prop](../classes/BasicClass.md#property-prop)
+- [`BasicEnum`](../enumerations/BasicEnum.md) and uses [BasicEnum#MemberA](../enumerations/BasicEnum.md#enumeration-member-membera)
 
 ## Parameters
 

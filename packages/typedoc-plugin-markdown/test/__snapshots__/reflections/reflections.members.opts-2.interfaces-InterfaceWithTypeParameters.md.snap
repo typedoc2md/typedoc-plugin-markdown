@@ -14,4 +14,4 @@ Comments for InterfaceWithTypeParameters
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| <a id="prop"></a> `prop` | `A` | Comments for prop |
+| <a id="property-prop"></a> `prop` | `A` | Comments for prop |

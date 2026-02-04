@@ -12,4 +12,4 @@ Comments variable with symbol
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| <a id="sym"></a> `[sym]` | `string` | `'value'` | Comments for symbol |
+| <a id="property-sym"></a> `[sym]` | `string` | `'value'` | Comments for symbol |

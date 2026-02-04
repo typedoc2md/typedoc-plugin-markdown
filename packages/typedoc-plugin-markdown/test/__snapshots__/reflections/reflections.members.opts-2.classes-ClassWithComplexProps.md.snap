@@ -20,6 +20,6 @@ new ClassWithComplexProps(): ClassWithComplexProps;
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| <a id="objecliteralprop"></a> `objecLiteralProp` | `object` | - |
+| <a id="property-objecliteralprop"></a> `objecLiteralProp` | `object` | - |
 | `objecLiteralProp.someFunction` | (`a`: `string`) => `string` | Comments for someFunction |
 | `objecLiteralProp.someProp` | `string` | Comments for someProp |

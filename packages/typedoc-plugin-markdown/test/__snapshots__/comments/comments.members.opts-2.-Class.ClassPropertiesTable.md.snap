@@ -36,7 +36,7 @@ Defined in: [index.ts:1](http://source-url)
 <tr>
 <td>
 
-<a id="api-prop1"></a> `prop1`
+<a id="api-property-prop1"></a> `prop1`
 
 </td>
 <td>
@@ -54,7 +54,7 @@ to generate the binary output for input validation.
 <tr>
 <td>
 
-<a id="api-prop2"></a> `prop2`
+<a id="api-property-prop2"></a> `prop2`
 
 </td>
 <td>
@@ -75,7 +75,7 @@ Below is a breakdown of the notable performances:
 <tr>
 <td>
 
-<a id="api-prop3"></a> `prop3?`
+<a id="api-property-prop3"></a> `prop3?`
 
 </td>
 <td>
@@ -97,7 +97,7 @@ print("Hello, " + name + "!")
 <tr>
 <td>
 
-<a id="api-propa"></a> ~~`propA`~~
+<a id="api-property-propa"></a> ~~`propA`~~
 
 </td>
 <td>
@@ -114,7 +114,7 @@ print("Hello, " + name + "!")
 <tr>
 <td>
 
-<a id="api-propb"></a> `propB`
+<a id="api-property-propb"></a> `propB`
 
 </td>
 <td>
@@ -131,7 +131,7 @@ print("Hello, " + name + "!")
 <tr>
 <td>
 
-<a id="api-propwithflag"></a> `propWithFlag`
+<a id="api-property-propwithflag"></a> `propWithFlag`
 
 </td>
 <td>

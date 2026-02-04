@@ -20,4 +20,4 @@ Second index signature
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| <a id="prop"></a> `prop` | `string` | Prop |
+| <a id="property-prop"></a> `prop` | `string` | Prop |

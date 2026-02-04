@@ -20,7 +20,7 @@ new ClassWithSimpleProps(): ClassWithSimpleProps;
 
 | Property | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| <a id="propa"></a> `propA` | `string` | `'propAValue'` | Comments for propA |
-| <a id="propb"></a> `propB` | `string` | `'propBDefaultValue'` | Comments for propB |
-| <a id="propc"></a> `propC` | `string` | `'propCDefaultValue'` | Comments for propB on two lines |
-| <a id="propd"></a> `propD` | `string` | `undefined` | Comments for propE |
+| <a id="property-propa"></a> `propA` | `string` | `'propAValue'` | Comments for propA |
+| <a id="property-propb"></a> `propB` | `string` | `'propBDefaultValue'` | Comments for propB |
+| <a id="property-propc"></a> `propC` | `string` | `'propCDefaultValue'` | Comments for propB on two lines |
+| <a id="property-propd"></a> `propD` | `string` | `undefined` | Comments for propE |

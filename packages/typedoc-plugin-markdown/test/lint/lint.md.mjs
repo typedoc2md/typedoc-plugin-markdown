@@ -14,6 +14,7 @@ export async function lintMarkdown() {
     consola.error('No markdown files found');
     throw new Error();
   }
+
   const options = {
     files: mdFiles,
     config: {
@@ -42,17 +43,23 @@ export async function lintMarkdown() {
       MD052: false,
     },
   };
-  lint(options, (err, result) => {
-    const resultString = err || (result || '').toString();
-    if (resultString) {
-      consola.error('Error linting Markdown' + '\n' + resultString + '\n');
-      throw new Error();
-    }
-    consola.success(
-      `Finished linting Markdown ${(
-        (new Date().getTime() - timeStart) /
-        1000
-      ).toFixed(2)} seconds`,
+
+  const lintResults = lint(options);
+
+  if (Object.values(lintResults).some((results) => results.length > 0)) {
+    const lintErrors = Object.entries(lintResults).filter(
+      ([, results]) => results.length > 0,
     );
-  });
+    consola.error(
+      'Error linting Markdown:\n' + JSON.stringify(lintErrors, null, 2),
+    );
+    throw new Error();
+  }
+
+  consola.success(
+    `Finished linting Markdown ${(
+      (new Date().getTime() - timeStart) /
+      1000
+    ).toFixed(2)} seconds`,
+  );
 }

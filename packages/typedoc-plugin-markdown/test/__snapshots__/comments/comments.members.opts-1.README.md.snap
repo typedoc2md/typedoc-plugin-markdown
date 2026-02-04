@@ -10,12 +10,12 @@ Links using `{@link}` inline tags.
 - [Links to CommentInterface.prop](interfaces/CommentInterface.md#prop)
 - [`Links to CommentInterface.propb`](interfaces/CommentInterface.md#propb)
 - [Links to CommentInterface.\_prop\_with\_underscore\_](interfaces/CommentInterface.md#_prop_with_underscore_)
-- [CommentEnum.MemberB](enumerations/CommentEnum.md#memberb)
+- [CommentEnum.MemberB](enumerations/CommentEnum.md#enumeration-member-memberb)
 - [SameName.prop](interfaces/SameName.md#prop)
 - [TypeWithGenerics](type-aliases/TypeWithGenerics.md)
 - [TypeDeclarationType](type-aliases/TypeDeclarationType.md)
-- [TypeDeclarationType#declaration1](type-aliases/TypeDeclarationType.md#declaration1)
-- [TypeDeclarationType2#declaration1](type-aliases/TypeDeclarationType2.md#declaration1)
+- [TypeDeclarationType#declaration1](type-aliases/TypeDeclarationType.md#property-declaration1)
+- [TypeDeclarationType2#declaration1](type-aliases/TypeDeclarationType2.md#property-declaration1)
 
 External links:
 

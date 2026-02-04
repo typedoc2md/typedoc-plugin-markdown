@@ -23,7 +23,7 @@ new AbstractClass(): AbstractClass;
 
 | Property | Modifier | Type | Description |
 | :------ | :------ | :------ | :------ |
-| <a id="abstractprop"></a> `abstractProp` | `abstract` | `string` | Comments for abstractProp |
+| <a id="property-abstractprop"></a> `abstractProp` | `abstract` | `string` | Comments for abstractProp |
 
 ## Methods
 

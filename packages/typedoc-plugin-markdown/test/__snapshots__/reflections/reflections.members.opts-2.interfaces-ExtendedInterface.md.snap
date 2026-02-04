@@ -12,19 +12,19 @@ Comments for ExtendedInterface
 
 | Property | Type | Description | Inherited from |
 | :------ | :------ | :------ | :------ |
-| <a id="deprecatedprop"></a> ~~`deprecatedProp`~~ | `string` | **Deprecated** This prop is deprecated **See** Comments for some tag | [`BasicInterface`](BasicInterface.md).[`deprecatedProp`](BasicInterface.md#deprecatedprop) |
-| <a id="extendedprop"></a> `extendedProp` | `string` | - | - |
-| <a id="functionprop"></a> `functionProp` | (`s`: `string`) => `boolean` | Comments for functionProper | [`BasicInterface`](BasicInterface.md).[`functionProp`](BasicInterface.md#functionprop) |
-| <a id="optionalprop"></a> `optionalProp?` | `string` | Comments for optional prop | [`BasicInterface`](BasicInterface.md).[`optionalProp`](BasicInterface.md#optionalprop) |
-| <a id="prop"></a> `prop` | `string` | Comments for prop | [`BasicInterface`](BasicInterface.md).[`prop`](BasicInterface.md#prop) |
-| <a id="propreturningobjectdeclaration"></a> `propReturningObjectDeclaration` | `object` | Comments for propReturningObjectDeclaration | [`BasicInterface`](BasicInterface.md).[`propReturningObjectDeclaration`](BasicInterface.md#propreturningobjectdeclaration) |
+| <a id="property-deprecatedprop"></a> ~~`deprecatedProp`~~ | `string` | **Deprecated** This prop is deprecated **See** Comments for some tag | [`BasicInterface`](BasicInterface.md).[`deprecatedProp`](BasicInterface.md#property-deprecatedprop) |
+| <a id="property-extendedprop"></a> `extendedProp` | `string` | - | - |
+| <a id="property-functionprop"></a> `functionProp` | (`s`: `string`) => `boolean` | Comments for functionProper | [`BasicInterface`](BasicInterface.md).[`functionProp`](BasicInterface.md#property-functionprop) |
+| <a id="property-optionalprop"></a> `optionalProp?` | `string` | Comments for optional prop | [`BasicInterface`](BasicInterface.md).[`optionalProp`](BasicInterface.md#property-optionalprop) |
+| <a id="property-prop"></a> `prop` | `string` | Comments for prop | [`BasicInterface`](BasicInterface.md).[`prop`](BasicInterface.md#property-prop) |
+| <a id="property-propreturningobjectdeclaration"></a> `propReturningObjectDeclaration` | `object` | Comments for propReturningObjectDeclaration | [`BasicInterface`](BasicInterface.md).[`propReturningObjectDeclaration`](BasicInterface.md#property-propreturningobjectdeclaration) |
 | `propReturningObjectDeclaration.a` | `boolean` | - | - |
 | `propReturningObjectDeclaration.b` | `string` | - | - |
-| <a id="propreturningobjectdeclarations"></a> `propReturningObjectDeclarations` | `object` & `object` | Comments for propReturningObjectDeclarations | [`BasicInterface`](BasicInterface.md).[`propReturningObjectDeclarations`](BasicInterface.md#propreturningobjectdeclarations) |
-| <a id="propreturningsignaturedeclaration"></a> `propReturningSignatureDeclaration?` | () => `string` \| `number` \| `boolean` | Comments for propReturningSignatureDeclaration | [`BasicInterface`](BasicInterface.md).[`propReturningSignatureDeclaration`](BasicInterface.md#propreturningsignaturedeclaration) |
-| <a id="propreturningsignaturedeclarations"></a> `propReturningSignatureDeclarations` | () => `any` & (`paramsA`: `true` \| `any`[], `paramsB?`: `any`) => `any` & (`paramsC`: `any`) => `any` | Comments for propReturningSignatureDeclarations | [`BasicInterface`](BasicInterface.md).[`propReturningSignatureDeclarations`](BasicInterface.md#propreturningsignaturedeclarations) |
-| <a id="propwithfunction"></a> `propWithFunction` | (`options`: `object`) => `boolean` | Comments for propWithFunction | [`BasicInterface`](BasicInterface.md).[`propWithFunction`](BasicInterface.md#propwithfunction) |
-| <a id="propwithprops"></a> `propWithProps` | `object` | Comments for propWithProps | [`BasicInterface`](BasicInterface.md).[`propWithProps`](BasicInterface.md#propwithprops) |
+| <a id="property-propreturningobjectdeclarations"></a> `propReturningObjectDeclarations` | `object` & `object` | Comments for propReturningObjectDeclarations | [`BasicInterface`](BasicInterface.md).[`propReturningObjectDeclarations`](BasicInterface.md#property-propreturningobjectdeclarations) |
+| <a id="property-propreturningsignaturedeclaration"></a> `propReturningSignatureDeclaration?` | () => `string` \| `number` \| `boolean` | Comments for propReturningSignatureDeclaration | [`BasicInterface`](BasicInterface.md).[`propReturningSignatureDeclaration`](BasicInterface.md#property-propreturningsignaturedeclaration) |
+| <a id="property-propreturningsignaturedeclarations"></a> `propReturningSignatureDeclarations` | () => `any` & (`paramsA`: `true` \| `any`[], `paramsB?`: `any`) => `any` & (`paramsC`: `any`) => `any` | Comments for propReturningSignatureDeclarations | [`BasicInterface`](BasicInterface.md).[`propReturningSignatureDeclarations`](BasicInterface.md#property-propreturningsignaturedeclarations) |
+| <a id="property-propwithfunction"></a> `propWithFunction` | (`options`: `object`) => `boolean` | Comments for propWithFunction | [`BasicInterface`](BasicInterface.md).[`propWithFunction`](BasicInterface.md#property-propwithfunction) |
+| <a id="property-propwithprops"></a> `propWithProps` | `object` | Comments for propWithProps | [`BasicInterface`](BasicInterface.md).[`propWithProps`](BasicInterface.md#property-propwithprops) |
 | `propWithProps.callbacks?` | `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\> | Comments for callbacks | - |
 | `propWithProps.nestedPropA` | `string` | Comments for nestedPropA | - |
 | `propWithProps.nestedPropB` | `boolean` | Comments for nestedPropB | - |

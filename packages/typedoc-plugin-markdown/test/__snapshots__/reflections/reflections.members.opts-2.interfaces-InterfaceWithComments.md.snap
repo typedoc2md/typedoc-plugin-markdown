@@ -20,4 +20,4 @@ And some more comments
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| <a id="propertywithcomments"></a> ~~`propertyWithComments`~~ | `string` | Some text. - list item - list item **Deprecated** This is a deprecated property **See** https://example.com |
+| <a id="property-propertywithcomments"></a> ~~`propertyWithComments`~~ | `string` | Some text. - list item - list item **Deprecated** This is a deprecated property **See** https://example.com |

@@ -20,11 +20,11 @@ new ClassWithModifiers(): ClassWithModifiers;
 
 | Property | Modifier | Type | Default value | Description |
 | :------ | :------ | :------ | :------ | :------ |
-| <a id="privateprop"></a> `privateProp` | `private` | `string` | `undefined` | Comments for privateProp |
-| <a id="protectedprop"></a> `protectedProp` | `protected` | `string` | `undefined` | Comments for protectedProp |
-| <a id="publicpropwithdefault"></a> `publicPropWithDefault` | `public` | `string` | `'propWithDefault'` | Comments for propWithDefault |
-| <a id="readonlyprop"></a> `readonlyProp` | `readonly` | `string` | `undefined` | Comments for abstractProperty |
-| <a id="staticprop"></a> `staticProp` | `static` | `string` | `undefined` | Comments for staticProp |
+| <a id="property-privateprop"></a> `privateProp` | `private` | `string` | `undefined` | Comments for privateProp |
+| <a id="property-protectedprop"></a> `protectedProp` | `protected` | `string` | `undefined` | Comments for protectedProp |
+| <a id="property-publicpropwithdefault"></a> `publicPropWithDefault` | `public` | `string` | `'propWithDefault'` | Comments for propWithDefault |
+| <a id="property-readonlyprop"></a> `readonlyProp` | `readonly` | `string` | `undefined` | Comments for abstractProperty |
+| <a id="property-staticprop"></a> `staticProp` | `static` | `string` | `undefined` | Comments for staticProp |
 
 ## Methods
 

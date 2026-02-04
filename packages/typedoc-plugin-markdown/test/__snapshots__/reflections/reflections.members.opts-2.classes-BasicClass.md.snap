@@ -20,8 +20,8 @@ new BasicClass(): BasicClass;
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| <a id="prop"></a> `prop` | `string` | Comments for prop |
-| <a id="prop-1"></a> `Prop` | `string` | Comments for Prop |
+| <a id="property-prop"></a> `prop` | `string` | Comments for prop |
+| <a id="property-prop-1"></a> `Prop` | `string` | Comments for Prop |
 
 ## Methods
 

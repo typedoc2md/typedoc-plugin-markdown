@@ -8,5 +8,5 @@ Comments for InterfaceWithFlags
 
 | Property | Type | Description |
 | :------ | :------ | :------ |
-| <a id="expermintalprop"></a> `expermintalProp?` | `string` | **`Experimental`** |
-| <a id="internalprop"></a> `internalProp` | `string` | **`Internal`** Comments for internalProp |
+| <a id="property-expermintalprop"></a> `expermintalProp?` | `string` | **`Experimental`** |
+| <a id="property-internalprop"></a> `internalProp` | `string` | **`Internal`** Comments for internalProp |

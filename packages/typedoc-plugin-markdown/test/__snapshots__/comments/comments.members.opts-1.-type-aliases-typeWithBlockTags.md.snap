@@ -20,4 +20,4 @@ Other block tags
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="api-x"></a> `x` | `string` | [index.ts:1](http://source-url) |
+| <a id="api-property-x"></a> `x` | `string` | [index.ts:1](http://source-url) |

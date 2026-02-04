@@ -3,7 +3,11 @@
 const baseOptions = require('../typedoc.cjs');
 
 const commonOptions = {
-  entryPoints: ['../src/links/inherited.ts', '../src/links/extended.ts'],
+  entryPoints: [
+    '../src/links/inherited.ts',
+    '../src/links/extended.ts',
+    '../src/links/unique-anchors.ts',
+  ],
   plugin: ['../../../dist/index.js'],
   hidePageHeader: true,
   hideBreadcrumbs: true,
@@ -23,6 +27,22 @@ module.exports = {
       options: {
         router: 'module',
       },
+    },
+    {
+      name: 'markdown',
+      path: '../out/md/links/modules/opts-2',
+      options: {
+        router: 'module',
+        typeAliasPropertiesFormat: 'table',
+        interfacePropertiesFormat: 'table',
+        classPropertiesFormat: 'table',
+        enumMembersFormat: 'table',
+        typeDeclarationFormat: 'table',
+      },
+    },
+    {
+      name: 'html',
+      path: '../out/html/links',
     },
   ],
 };

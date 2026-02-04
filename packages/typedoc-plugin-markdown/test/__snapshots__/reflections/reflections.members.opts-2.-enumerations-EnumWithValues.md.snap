@@ -8,5 +8,5 @@ Comments for enum
 
 | Enumeration Member | Value |
 | :------ | :------ |
-| <a id="membera"></a> `MemberA` | `"UP"` |
-| <a id="memberb"></a> `MemberB` | `"DOWN"` |
+| <a id="enumeration-member-membera"></a> `MemberA` | `"UP"` |
+| <a id="enumeration-member-memberb"></a> `MemberB` | `"DOWN"` |

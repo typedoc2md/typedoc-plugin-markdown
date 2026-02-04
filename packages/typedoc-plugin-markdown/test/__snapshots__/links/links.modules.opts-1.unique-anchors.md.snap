@@ -1,0 +1,107 @@
+# unique-anchors
+
+- [SomInterface.valueContainer](#valuecontainer-3)
+- [SomeTypeAlias.valueContainer](#valuecontainer-4)
+- [SomeClass.valueContainer](#valuecontainer-1)
+- [SomeClass.ValueContainer](#valuecontainer-2)
+- [SomeEnum.ValueContainer](#valuecontainer)
+- [someVariable.valueContainer](#valuecontainer-6)
+- [ValueContainer](#valuecontainer-5)
+
+## Enumerations
+
+### SomeEnum
+
+#### Enumeration Members
+
+##### ValueContainer
+
+> **ValueContainer**: `"valueContainer"`
+
+## Classes
+
+### SomeClass
+
+#### Constructors
+
+##### Constructor
+
+> **new SomeClass**(): [`SomeClass`](#someclass)
+
+###### Returns
+
+[`SomeClass`](#someclass)
+
+#### Properties
+
+##### valueContainer
+
+> **valueContainer**: `string`
+
+#### Methods
+
+##### ValueContainer()
+
+> **ValueContainer**(): `any`
+
+###### Returns
+
+`any`
+
+## Interfaces
+
+### SomInterface
+
+#### Properties
+
+##### valueContainer
+
+> **valueContainer**: `string`
+
+## Type Aliases
+
+### SomeTypeAlias
+
+> **SomeTypeAlias**\<`V`\> = `object`
+
+#### Type Parameters
+
+##### V
+
+`V`
+
+#### Properties
+
+##### valueContainer
+
+> **valueContainer**: [`ValueContainer`](#valuecontainer-5)\<`V`\>
+
+***
+
+### ValueContainer
+
+> **ValueContainer**\<`V`\> = `object`
+
+#### Type Parameters
+
+##### V
+
+`V`
+
+#### Properties
+
+##### value
+
+> **value**: `V`
+
+## Variables
+
+### someVariable
+
+> `const` **someVariable**: `object`
+
+#### Type Declaration
+
+##### valueContainer
+
+> **valueContainer**: `string` = `'valueContainer'`
