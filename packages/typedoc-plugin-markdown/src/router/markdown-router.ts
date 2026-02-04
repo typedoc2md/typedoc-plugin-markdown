@@ -232,6 +232,10 @@ export abstract class MarkdownRouter extends BaseRouter {
         toSlug = `${ReflectionKind.singularString(target.kind)}-${toSlug}`;
       }
 
+      if (target.kindOf(ReflectionKind.Class) && target.flags?.isAbstract) {
+        toSlug = `abstract-${toSlug}`;
+      }
+
       const anchor = this.getSlugger(pageTarget).slug(toSlug);
 
       // ------------------------------------------

@@ -95,9 +95,10 @@ export function parametersTable(
 
     if (hasComments) {
       if (parameter.comment) {
-        row.push(
-          this.partials.comment(parameter.comment, { isTableColumn: true }),
-        );
+        const comments = this.partials.comment(parameter.comment, {
+          isTableColumn: true,
+        });
+        row.push(comments.length ? comments : '-');
       } else {
         row.push('-');
       }

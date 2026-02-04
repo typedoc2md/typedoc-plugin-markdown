@@ -79,7 +79,7 @@ function fullHierarchy(
   }
 
   const res: string[] = [
-    `${'  '.repeat(level)}- ${link(root.name, context.urlTo(root))}`,
+    `${'  '.repeat(level)}- ${link(root.name, context.router.getFullUrl(root))}`,
   ];
 
   if (children.length) {

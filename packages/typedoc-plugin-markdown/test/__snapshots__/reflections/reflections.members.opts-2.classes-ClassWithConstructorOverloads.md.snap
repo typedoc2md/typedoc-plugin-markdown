@@ -19,7 +19,7 @@ Defined in: [classes.ts:1](http://source-url)
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
 | `x` | `number` | Comments for x number |
-| `y` | `string` |  |
+| `y` | `string` | - |
 
 #### Returns
 

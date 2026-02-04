@@ -92,6 +92,7 @@ export class ModuleRouter extends MarkdownRouter {
       .join([dir, fileName].filter((part) => !!part).join('/'))
       .replace(/\\/g, '/')
       .replace(/ /g, '-');
+
     if (this.ignoreScopes) {
       fullName = removeFirstScopedDirectory(fullName);
     }

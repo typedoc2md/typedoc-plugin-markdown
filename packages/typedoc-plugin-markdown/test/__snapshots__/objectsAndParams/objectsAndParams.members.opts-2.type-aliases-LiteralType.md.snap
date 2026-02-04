@@ -176,7 +176,7 @@ Comments for someFunction
 
 | Parameter | Type | Description |
 | :------ | :------ | :------ |
-| `param` | `string` |  |
+| `param` | `string` | - |
 
 #### Returns
 

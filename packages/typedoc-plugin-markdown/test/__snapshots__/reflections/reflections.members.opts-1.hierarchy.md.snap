@@ -1,0 +1,28 @@
+# typedoc-stubs
+
+## Hierarchy Summary
+
+### AbstractClass
+
+- [AbstractClass](classes/AbstractClass.md)
+  - [DerivedClassA](classes/DerivedClassA.md)
+  - [DerivedClassB](classes/DerivedClassB.md)
+
+***
+
+### BaseClass
+
+- [BaseClass](classes/BaseClass.md)
+  - [ChildClassA](classes/ChildClassA.md)
+    - [GrandChildClassA](classes/GrandChildClassA.md)
+    - [GrandChildClassB](classes/GrandChildClassB.md)
+  - [ChildClassB](classes/ChildClassB.md)
+
+***
+
+### BasicInterface
+
+- [BasicInterface](interfaces/BasicInterface.md)
+  - [ExtendedInterface](interfaces/ExtendedInterface.md)
+
+***
