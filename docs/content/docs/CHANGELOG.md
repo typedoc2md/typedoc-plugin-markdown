@@ -1,5 +1,19 @@
 # Changelog
 
+## 4.10.0 (2026-02-06)
+
+### Minor Changes
+
+- A JSON schema to be consumed by typedoc.json is now published to the package root.
+- Mark parameters with default values as optional, matching the default TypeDoc theme.
+
+### Patch Changes
+
+- Fixed markdownlint errors related to empty table cells and invalid link fragments.
+- Anchors inside table cells (when property formats equal "table") are now namespaced by reflection kind (for example property-foo) to prevent collisions with Markdown heading slugs and ensure stable in-page links ([#856](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/856)).
+- Resolve "does not have an anchor but one was requested" warnings in verbose log mode ([#850](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/850)).
+- Guard against undefined types causing errors in complex types in tables (thanks @ilyabo).
+
 ## 4.9.0 (2025-09-19)
 
 ### Minor Changes
