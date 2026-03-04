@@ -3,10 +3,10 @@
  *
  * @module core
  */
-import { MarkdownRenderer } from '@plugin//types/index.js';
 import { setupInternationalization } from '@plugin/internationalization/index.js';
 import { declarations } from '@plugin/options/index.js';
 import { render, setupRenderer } from '@plugin/renderer/index.js';
+import { MarkdownRenderer } from '@plugin/types/index.js';
 import {
   Application,
   DeclarationOption,
@@ -61,9 +61,9 @@ export function load(app: Application) {
   app.outputs.setDefaultOutputName('markdown');
 
   /**
-   * =====================================
-   * 3. Setup up renderer and translations
-   * =====================================
+   * ===================================
+   * 3. Set up renderer and translations
+   * ===================================
    */
   setupRenderer(app);
   setupInternationalization(app);

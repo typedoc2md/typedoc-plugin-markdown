@@ -14,10 +14,27 @@ import { table } from './utils/table.js';
 export const __filename = fileURLToPath(import.meta.url);
 export const __dirname = dirname(__filename);
 
+/**
+ * Cached TypeDoc options JSON used for tables and option metadata.
+ */
 const typedocJson = JSON.parse(
   fs.readFileSync(path.join(getJsonPath(), 'typedoc-options.json'), 'utf-8'),
 );
+/**
+ * Tags that should not be included in the option tag output.
+ */
+const categoryIgnoreTags = new Set([
+  'deprecated',
+  'category',
+  'omitExample',
+  'defaultValue',
+  'example',
+  'hidden',
+]);
 
+/**
+ * Generates option documentation pages for the plugin.
+ */
 export async function generateOptionsDocs(docsConfig: DocsConfig) {
   const project = new Project({
     tsConfigFilePath: 'tsconfig.json',
@@ -52,7 +69,7 @@ export async function generateOptionsDocs(docsConfig: DocsConfig) {
     delete config.plugin;
     const presetsJson = JSON.stringify(config, null, 2);
 
-    outputPage.push(`\`\`\`json"
+    outputPage.push(`\`\`\`json
 ${presetsJson}
 \`\`\``);
     outputPage.push('## Plugin Options');
@@ -68,7 +85,7 @@ ${presetsJson}
     );
 
     const optionsVariableStatements =
-      configFileTs?.getVariableStatements() as VariableStatement[];
+      (configFileTs?.getVariableStatements() as VariableStatement[]) ?? [];
 
     const parsedConfig = optionsVariableStatements
       .map((variableStatement) => {
@@ -77,50 +94,7 @@ ${presetsJson}
             .name as any
         ).escapedText;
         const option = declarationsConfig[name];
-        const docs = variableStatement.getJsDocs().map((doc) => {
-          return {
-            comments: (doc.getComment() as string)
-              ?.replace(/\\\//g, '/')
-              .replace(/\\@/g, '@'),
-            tags: doc
-              .getTags()
-              .filter(
-                (tag) =>
-                  tag.getTagName() !== 'deprecated' &&
-                  tag.getTagName() !== 'category' &&
-                  tag.getTagName() !== 'omitExample' &&
-                  tag.getTagName() !== 'defaultValue' &&
-                  tag.getTagName() !== 'example',
-              )
-              .map((tag) => ({
-                name: tag.getTagName(),
-                comments: tag.getComment(),
-              })),
-            hidden: Boolean(
-              doc.getTags().find((tag) => tag.getTagName() === 'hidden'),
-            ),
-            omitExample: Boolean(
-              doc.getTags().find((tag) => tag.getTagName() === 'omitExample'),
-            ),
-            example: doc
-              .getTags()
-              .find((tag) => tag.getTagName() === 'example')
-              ?.getComment(),
-            deprecated: doc
-              .getTags()
-              .find((tag) => tag.getTagName() === 'deprecated')
-              ?.getComment(),
-            default: doc
-              .getTags()
-              .find((tag) => tag.getTagName() === 'defaultValue')
-              ?.getComment(),
-            category:
-              doc
-                .getTags()
-                .find((tag) => tag.getTagName() === 'category')
-                ?.getComment() || 'other',
-          };
-        })[0];
+        const docs = getDocTags(variableStatement);
         return {
           name,
           ...option,
@@ -134,13 +108,13 @@ ${presetsJson}
       'category',
     );
 
-    const compiledText = configFileTs?.compilerNode.text;
+    const compiledText = configFileTs?.compilerNode.text || '';
 
     const categoryDescriptions = extractCategories(compiledText);
 
     const categories = Object.entries(groupedConfig);
 
-    categories.forEach(async ([categoryName, options]) => {
+    for (const [categoryName, options] of categories) {
       const out: string[] = [
         categories.length > 1
           ? `import { Callout, FileTree } from 'nextra/components';`
@@ -154,7 +128,7 @@ ${presetsJson}
         if (Object.keys(categoryDescriptions)?.length) {
           out.push(categoryDescriptions[categoryName]);
         }
-        out.push();
+        out.push('');
         outputPage.push(`### ${getDocsTitle(categoryName)}`);
 
         if (Object.keys(categoryDescriptions)?.length) {
@@ -171,6 +145,12 @@ ${presetsJson}
           `[${option.name}](./options/${categoryName.toLowerCase()}#${option.name.toLowerCase()})`,
           option.help,
         ]);
+
+        if (!option.help) {
+          throw new Error(
+            `Option "${option.name}" is missing a help description.`,
+          );
+        }
 
         out.push(
           `${optionLevel} ${
@@ -252,7 +232,7 @@ ${JSON.stringify(exampleJson, null, 2)}
       } else {
         outputPage.push(out.join('\n\n'));
       }
-    });
+    }
 
     const optionDocPath = path.join(
       getPagesPath(docsConfig.optionsPath as string),
@@ -312,45 +292,9 @@ ${JSON.stringify(exampleJson, null, 2)}
   }
 }
 
-function getTypedocOptions() {
-  const typedocJson = JSON.parse(
-    fs.readFileSync(path.join(getJsonPath(), 'typedoc-options.json'), 'utf-8'),
-  );
-
-  const outputOptions = `### Output
-
-<Callout type="important">${typedocJson.outputOptions.description}</Callout>
-
-${typedocJson.outputOptions.intro}
-
-${table(
-  ['Option Name', 'Description'],
-  Object.entries(typedocJson.outputOptions.options).map(([key, value]) => {
-    return [`[${key}](./options/output#${key})`, value] as string[];
-  }),
-)}`;
-
-  /*const conversionOptions = typedocJson.conversionOptions
-    .map((option) => {
-      return `### ${option.name}
-
-<Callout type="important">${option.description}</Callout>
-
-See the [${option.name}](https://typedoc.org/documents/Options.${option.name}.html) options on the TypeDoc website.
-`;
-    })
-    .join('\n');*/
-  const conversionOptions = `### Conversion
-${table(
-  ['Option Group', 'Description'],
-  typedocJson.conversionOptions.map((option) => [
-    `[${option.name}](https://typedoc.org/documents/Options.${option.name}.html)`,
-    option.description,
-  ]),
-)}`;
-  return [outputOptions, conversionOptions].join('\n\n');
-}
-
+/**
+ * Returns a human-readable string describing the parameter type.
+ */
 function getType(option: any) {
   if (option.type === ParameterType.Array && option.defaultValue?.length) {
     return `Accepts an array of the following values ${option.defaultValue
@@ -375,10 +319,6 @@ function getType(option: any) {
     return 'Accepts a boolean value.';
   }
 
-  if (option.type === ParameterType.Array) {
-    return 'Accepts an Array.';
-  }
-
   if (
     [ParameterType.Mixed, ParameterType.Object, ParameterType.Flags].includes(
       option.type,
@@ -399,6 +339,9 @@ function getType(option: any) {
   return null;
 }
 
+/**
+ * Resolves the default value string for an option.
+ */
 function getDefaultValue(option) {
   if (option.default) {
     return option.default;
@@ -427,6 +370,9 @@ function getDefaultValue(option) {
   return `"${option.defaultValue}"`;
 }
 
+/**
+ * Resolves the example value string for an option.
+ */
 function getExampleValue(option) {
   if (option.example) {
     return option.example;
@@ -434,28 +380,31 @@ function getExampleValue(option) {
   return getDefaultValue(option);
 }
 
+/**
+ * Resolves the docs content directory for a given docs path.
+ */
 function getPagesPath(docsPath: string) {
-  const pagesPath = path.join(
-    __dirname,
-    '..',
-    '..',
-    '..',
-    '..',
-    'docs',
-    'content',
-  );
-  return path.join(pagesPath, docsPath);
+  return path.join(__dirname, '..', '..', '..', '..', 'docs', 'content', docsPath);
 }
 
+/**
+ * Resolves the docs JSON directory path.
+ */
 function getJsonPath() {
   const jsonPath = path.join(__dirname, '..', '..', '..', '..', 'docs', 'json');
   return jsonPath;
 }
 
+/**
+ * Formats a category name for use as a docs title.
+ */
 function getDocsTitle(categoryName: string) {
-  return categoryName === 'other' ? `Plugin Options` : `${categoryName} `;
+  return categoryName === 'other' ? 'Plugin Options' : categoryName;
 }
 
+/**
+ * Groups a list of objects by a key.
+ */
 function groupBy(array: any[], key: string) {
   return array.reduce(
     (r, v, i, a, k = v[key]) => ((r[k] || (r[k] = [])).push(v), r),
@@ -463,6 +412,9 @@ function groupBy(array: any[], key: string) {
   );
 }
 
+/**
+ * Extracts category descriptions from JSDoc `@categoryDescription` tags.
+ */
 function extractCategories(input) {
   const regex =
     /@categoryDescription\s+(\w+)\s*\n\s*\*\s*([\w\s\S]*?)(?=\n\s*\*)/g;
@@ -476,4 +428,38 @@ function extractCategories(input) {
   }
 
   return categories;
+}
+
+/**
+ * Parses the first JSDoc block for a variable statement into a docs model.
+ */
+function getDocTags(variableStatement: VariableStatement) {
+  const docs = variableStatement.getJsDocs();
+  if (!docs.length) return null;
+
+  const doc = docs[0];
+  const tags = doc.getTags();
+  return {
+    comments: (doc.getComment() as string)
+      ?.replace(/\\\//g, '/')
+      .replace(/\\@/g, '@'),
+    tags: tags
+      .filter((tag) => !categoryIgnoreTags.has(tag.getTagName()))
+      .map((tag) => ({
+        name: tag.getTagName(),
+        comments: tag.getComment(),
+      })),
+    hidden: tags.some((tag) => tag.getTagName() === 'hidden'),
+    omitExample: tags.some((tag) => tag.getTagName() === 'omitExample'),
+    example: tags.find((tag) => tag.getTagName() === 'example')?.getComment(),
+    deprecated: tags
+      .find((tag) => tag.getTagName() === 'deprecated')
+      ?.getComment(),
+    default: tags
+      .find((tag) => tag.getTagName() === 'defaultValue')
+      ?.getComment(),
+    category:
+      tags.find((tag) => tag.getTagName() === 'category')?.getComment() ||
+      'other',
+  };
 }
