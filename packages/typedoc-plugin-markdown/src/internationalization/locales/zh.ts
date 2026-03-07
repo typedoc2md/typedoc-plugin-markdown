@@ -21,6 +21,7 @@ export const translatable: Partial<TranslatableStrings> = {
   theme_package: '包',
   theme_packages: '包',
   theme_type: '类型',
+  theme_union_members: '联合成员',
   theme_value: '值',
   theme_version: '版本',
 };

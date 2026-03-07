@@ -5,7 +5,7 @@
 export function someFunction() {}
 
 export class SomeClass {
-  someProperty: string;
+  someProperty!: string;
   someMethod() {}
 }
 

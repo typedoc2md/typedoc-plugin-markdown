@@ -81,6 +81,7 @@ import { ManuallyValidatedOption } from 'typedoc';${docsConfig.optionsPath === '
         theme_package: [];
         theme_packages: [];
         theme_type: [];
+        theme_union_members: [];
         theme_value: [];
         theme_version: [];
     }

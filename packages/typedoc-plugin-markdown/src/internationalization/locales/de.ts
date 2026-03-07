@@ -22,6 +22,7 @@ export const translatable: Partial<TranslatableStrings> = {
   theme_package: 'Paket',
   theme_packages: 'Pakete',
   theme_type: 'Typ',
+  theme_union_members: 'Union-Mitglieder',
   theme_value: 'Wert',
   theme_version: 'Version',
 };

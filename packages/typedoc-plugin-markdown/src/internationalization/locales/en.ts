@@ -21,6 +21,7 @@ export const translatable: TranslatableStrings = {
   theme_package: 'Package',
   theme_packages: 'Packages',
   theme_type: 'Type',
+  theme_union_members: 'Union Members',
   theme_value: 'Value',
   theme_version: 'Version',
 };

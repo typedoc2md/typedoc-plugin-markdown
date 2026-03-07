@@ -23,7 +23,7 @@ export type SomeTypeAlias<V> = {
 };
 
 export class SomeClass {
-  valueContainer: string;
+  valueContainer!: string;
 
   ValueContainer() {
     return void 0;

@@ -21,6 +21,7 @@ export const translatable: Partial<TranslatableStrings> = {
   theme_package: '패키지',
   theme_packages: '패키지',
   theme_type: '유형',
+  theme_union_members: '유니온 멤버',
   theme_value: '값',
   theme_version: '버전',
 };

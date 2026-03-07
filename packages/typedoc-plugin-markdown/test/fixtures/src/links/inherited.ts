@@ -11,7 +11,7 @@ export class Class2 extends Class1 {
   /**
    * Comments for class 1 prop 2
    */
-  prop2: string;
+  prop2!: string;
 }
 
 export interface Interface2 extends Interface1 {

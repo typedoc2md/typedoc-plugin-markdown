@@ -369,3 +369,30 @@ export function functionReturningFunctionOverloads(): {
     }),
   };
 }
+
+const nonoptional = () => {
+  const innerFn = (
+    /**
+     * Comments for input
+     */
+    input: string,
+  ) => {};
+  return innerFn;
+};
+
+const optional = () => {
+  const test = false;
+  const innerFn = (input: string) => {};
+  return test ? innerFn : undefined;
+};
+
+const optionalWithComments = () => {
+  const test = false;
+  const innerFn = (
+    /**
+     * Comments for input
+     */
+    input: string,
+  ) => {};
+  return test ? innerFn : undefined;
+};

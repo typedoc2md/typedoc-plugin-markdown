@@ -1,23 +1,61 @@
 # Type Alias: UsefulUnionType
 
-> **UsefulUnionType** = `string` \| `boolean` \| \{ `z`: `string`; \}
+> **UsefulUnionType** = `string` \| `boolean` \| \{ `y`: `string`; `z`: `string`; \} \| \{ `a`: `string`; `b`: `string`; \} \| ((`param`) => `string`) \| ((`param`) => `boolean`)
 
 Defined in: [types.ts:1](http://source-url)
 
 Comments for useful UnionType
 
-## Type Declaration
+## Union Members
 
 `string`
 
 Comments for string
 
+***
+
 `boolean`
 
-\{ `z`: `string`; \}
+Comments for boolean
 
-### z
+***
+
+### Type Literal
+
+\{ `y`: `string`; `z`: `string`; \}
+
+Comments for object
+
+#### y
+
+> **y**: `string`
+
+Comments for y
+
+#### z
 
 > **z**: `string`
 
 Comments for z
+
+***
+
+### Type Literal
+
+\{ `a`: `string`; `b`: `string`; \}
+
+Comments for object
+
+***
+
+### Function
+
+(`param`) => `string`
+
+Comments for function
+
+***
+
+### Function
+
+(`param`) => `boolean`

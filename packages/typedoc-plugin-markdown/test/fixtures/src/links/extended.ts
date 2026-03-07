@@ -8,7 +8,7 @@ export class Class1 {
   /**
    * Comments for class 1 prop 1
    */
-  prop1: string;
+  prop1!: string;
 }
 
 export interface Interface1 {

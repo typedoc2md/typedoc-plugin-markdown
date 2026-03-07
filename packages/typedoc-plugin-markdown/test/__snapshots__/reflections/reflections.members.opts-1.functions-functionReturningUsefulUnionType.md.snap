@@ -1,6 +1,6 @@
 # Function: functionReturningUsefulUnionType()
 
-> **functionReturningUsefulUnionType**(): `string` \| `false` \| `true` \| \{ `z`: `string`; \}
+> **functionReturningUsefulUnionType**(): `string` \| `false` \| `true` \| \{ `y`: `string`; `z`: `string`; \} \| \{ `a`: `string`; `b`: `string`; \} \| ((`param`) => `string`) \| ((`param`) => `boolean`)
 
 Defined in: [functions.ts:1](http://source-url)
 
@@ -8,18 +8,62 @@ Comments for function returning a useful union type
 
 ## Returns
 
+Return comments
+
 `string`
+
+***
 
 `false`
 
+***
+
 `true`
 
-\{ `z`: `string`; \}
+***
 
-### z
+### Type Literal
+
+\{ `y`: `string`; `z`: `string`; \}
+
+#### y
+
+> **y**: `string`
+
+Comments for y
+
+#### z
 
 > **z**: `string`
 
 Comments for z
 
-Return comments
+***
+
+### Type Literal
+
+\{ `a`: `string`; `b`: `string`; \}
+
+***
+
+### Function
+
+(`param`) => `string`
+
+#### Parameters
+
+##### param
+
+`boolean`
+
+Comments for param
+
+#### Returns
+
+`string`
+
+***
+
+### Function
+
+(`param`) => `boolean`

@@ -24,6 +24,7 @@ export interface TranslatableStrings {
   theme_package: string;
   theme_packages: string;
   theme_type: string;
+  theme_union_members: string;
   theme_value: string;
   theme_version: string;
 }

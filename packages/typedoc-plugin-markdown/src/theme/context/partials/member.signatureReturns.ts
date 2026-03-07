@@ -14,30 +14,41 @@ export function signatureReturns(
 ): string {
   const md: string[] = [];
 
+  const returnsTag = model.comment?.getTag('@returns');
+  const returnsComment = returnsTag
+    ? this.helpers.getCommentParts(returnsTag.content)
+    : undefined;
+
   const typeDeclaration = (model.type as any)
     ?.declaration as DeclarationReflection;
+  const hasDeclarationSignatures = Boolean(typeDeclaration?.signatures?.length);
+  const hasUsefulTypeDetails = model.type
+    ? this.helpers.hasUsefulTypeDetails(model.type)
+    : false;
 
   md.push(heading(options.headingLevel, i18n.theme_returns()));
 
-  if (!typeDeclaration?.signatures) {
-    if (model.type && this.helpers.hasUsefulTypeDetails(model.type)) {
-      if (model.type instanceof UnionType) {
-        md.push(
-          this.partials.typeDeclarationUnionContainer(
-            model as unknown as DeclarationReflection,
-            options,
-          ),
-        );
+  if (!hasDeclarationSignatures) {
+    if (hasUsefulTypeDetails && model.type instanceof UnionType) {
+      if (returnsComment) {
+        md.push(returnsComment);
       }
-    } else {
+      md.push(
+        this.partials.typeDeclarationUnionContainer(
+          model as unknown as DeclarationReflection,
+          options,
+        ),
+      );
+    } else if (!hasUsefulTypeDetails) {
       md.push(this.helpers.getReturnType(model.type));
+      if (returnsComment) {
+        md.push(returnsComment);
+      }
+    } else if (returnsComment) {
+      md.push(returnsComment);
     }
-  }
-
-  const returnsTag = model.comment?.getTag('@returns');
-
-  if (returnsTag) {
-    md.push(this.helpers.getCommentParts(returnsTag.content));
+  } else if (returnsComment) {
+    md.push(returnsComment);
   }
 
   if (typeDeclaration?.signatures) {

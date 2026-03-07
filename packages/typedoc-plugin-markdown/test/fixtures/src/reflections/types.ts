@@ -26,13 +26,40 @@ export type UsefulUnionType =
    * Comments for string
    */
   | string
+  /**
+   * Comments for boolean
+   */
   | boolean
+  /**
+   * Comments for object
+   */
   | {
+      /**
+       * Comments for y
+       */
+      y: string;
       /**
        * Comments for z
        */
       z: string;
-    };
+    }
+  /**
+   * Comments for object
+   */
+  | {
+      a: string;
+      b: string;
+    }
+  /**
+   * Comments for function
+   */
+  | ((
+      /**
+       * Comments for param
+       */
+      param: boolean,
+    ) => string)
+  | ((param: boolean) => boolean);
 
 /**
  * Comments for StringLiteralType

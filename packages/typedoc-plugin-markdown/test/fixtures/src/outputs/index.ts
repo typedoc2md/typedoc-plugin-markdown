@@ -1,5 +1,5 @@
 export class BaseClass {
-  prop: string;
+  prop!: string;
 }
 
 export class ExtendedClass extends BaseClass {}

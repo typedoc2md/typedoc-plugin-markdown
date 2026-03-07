@@ -6,8 +6,15 @@ function functionReturningUsefulUnionType():
   | false
   | true
   | {
+  y: string;
   z: string;
-};
+}
+  | {
+  a: string;
+  b: string;
+}
+  | ((param: boolean) => string)
+  | ((param: boolean) => boolean);
 ```
 
 Defined in: [functions.ts:1](http://source-url)
@@ -16,20 +23,67 @@ Comments for function returning a useful union type
 
 ## Returns
 
+Return comments
+
 `string`
+
+***
 
 `false`
 
+***
+
 `true`
+
+***
+
+### Type Literal
 
 ```ts
 {
+  y: string;
   z: string;
 }
 ```
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
+| `y` | `string` | Comments for y |
 | `z` | `string` | Comments for z |
 
-Return comments
+***
+
+### Type Literal
+
+```ts
+{
+  a: string;
+  b: string;
+}
+```
+
+***
+
+### Function
+
+```ts
+(param: boolean) => string
+```
+
+#### Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| `param` | `boolean` | Comments for param |
+
+#### Returns
+
+`string`
+
+***
+
+### Function
+
+```ts
+(param: boolean) => boolean
+```

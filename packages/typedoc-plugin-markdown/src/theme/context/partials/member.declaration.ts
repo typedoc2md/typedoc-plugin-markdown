@@ -110,7 +110,7 @@ export function declaration(
   if (hasTypeDeclaration) {
     if (model.type instanceof UnionType) {
       if (this.helpers.hasUsefulTypeDetails(model.type)) {
-        md.push(heading(opts.headingLevel, i18n.theme_type_declaration()));
+        md.push(heading(opts.headingLevel, i18n.theme_union_members()));
         md.push(this.partials.typeDeclarationUnionContainer(model, options));
       }
     } else {
