@@ -1,7 +1,7 @@
 # Function: functionWithArrayOfUnionStuff()
 
 ```ts
-function functionWithArrayOfUnionStuff(a: [Stuff?]): void;
+function functionWithArrayOfUnionStuff(a: [(Stuff | null)?]): void;
 ```
 
 Defined in: [functions.ts:1](http://source-url)
@@ -12,7 +12,7 @@ Comments for array of union stuff
 
 | Parameter | Type |
 | :------ | :------ |
-| `a` | \[[`Stuff`](../type-aliases/Stuff.md)?\] |
+| `a` | \[([`Stuff`](../type-aliases/Stuff.md) \| `null`)?\] |
 
 ## Returns
 

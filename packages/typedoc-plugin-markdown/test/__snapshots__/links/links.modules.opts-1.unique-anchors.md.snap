@@ -42,11 +42,11 @@
 
 ##### ValueContainer()
 
-> **ValueContainer**(): `any`
+> **ValueContainer**(): `undefined`
 
 ###### Returns
 
-`any`
+`undefined`
 
 ## Interfaces
 

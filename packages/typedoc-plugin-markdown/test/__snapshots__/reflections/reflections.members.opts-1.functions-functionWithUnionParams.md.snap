@@ -1,6 +1,6 @@
 # Function: functionWithUnionParams()
 
-> **functionWithUnionParams**(`primitiveUnions`, `objectUnions`, `mixedUnions`, `noUnions`): `any`
+> **functionWithUnionParams**(`primitiveUnions`, `objectUnions`, `mixedUnions`, `noUnions`): `undefined`
 
 Defined in: [functions.ts:1](http://source-url)
 
@@ -80,4 +80,4 @@ Comments for noUnions
 
 ## Returns
 
-`any`
+`undefined`

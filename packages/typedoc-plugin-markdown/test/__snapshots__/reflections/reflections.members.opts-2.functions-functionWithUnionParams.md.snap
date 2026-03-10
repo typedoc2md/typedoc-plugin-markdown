@@ -28,7 +28,7 @@ function functionWithUnionParams(
      z: string;
   };
 }, 
-   noUnions: string): any;
+   noUnions: string): undefined;
 ```
 
 Defined in: [functions.ts:1](http://source-url)
@@ -44,4 +44,4 @@ Defined in: [functions.ts:1](http://source-url)
 
 ## Returns
 
-`any`
+`undefined`

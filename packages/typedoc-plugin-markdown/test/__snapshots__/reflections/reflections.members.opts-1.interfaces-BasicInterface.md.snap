@@ -180,7 +180,7 @@ Comments for propWithProps
 
 #### callbacks?
 
-> `optional` **callbacks?**: `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\>
+> `optional` **callbacks?**: `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\<[`DisposableClass`](../classes/DisposableClass.md), [`ClassWithModifiers`](../classes/ClassWithModifiers.md)\>\>
 
 Comments for callbacks
 

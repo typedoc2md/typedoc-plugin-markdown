@@ -8,7 +8,7 @@ Defined in: [functions.ts:1](http://source-url)
 
 ### opts
 
-\[\{ `a`: `string`; `b`: `string`; \}?\]
+\[(\{ `a`: `string`; `b`: `string`; \} \| `null`)?\]
 
 ## Returns
 

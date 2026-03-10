@@ -148,13 +148,13 @@ Comments for propWithFunction
 
 ### propWithProps
 
-> **propWithProps**: \{ `callbacks?`: `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\>; `nestedPropA`: `string`; `nestedPropB`: `boolean`; `nestedPropC`: \{ `nestedPropCA`: `string`; \}; `nestedPropD`: () => `boolean`; \}
+> **propWithProps**: \{ `callbacks?`: `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\<[`DisposableClass`](../classes/DisposableClass.md), [`ClassWithModifiers`](../classes/ClassWithModifiers.md)\>\>; `nestedPropA`: `string`; `nestedPropB`: `boolean`; `nestedPropC`: \{ `nestedPropCA`: `string`; \}; `nestedPropD`: () => `boolean`; \}
 
 Comments for propWithProps
 
 #### callbacks?
 
-> `optional` **callbacks?**: `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\>
+> `optional` **callbacks?**: `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\<[`DisposableClass`](../classes/DisposableClass.md), [`ClassWithModifiers`](../classes/ClassWithModifiers.md)\>\>
 
 Comments for callbacks
 

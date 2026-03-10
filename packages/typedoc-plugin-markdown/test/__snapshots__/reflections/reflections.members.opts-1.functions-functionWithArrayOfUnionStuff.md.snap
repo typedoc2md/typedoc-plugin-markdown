@@ -10,7 +10,7 @@ Comments for array of union stuff
 
 ### a
 
-\[[`Stuff`](../type-aliases/Stuff.md)?\]
+\[([`Stuff`](../type-aliases/Stuff.md) \| `null`)?\]
 
 ## Returns
 

@@ -1,10 +1,12 @@
 # Function: tupleTypeFunctionOptional()
 
 ```ts
-function tupleTypeFunctionOptional(opts: [{
+function tupleTypeFunctionOptional(opts: [(
+  | {
   a: string;
   b: string;
-}?]): void;
+}
+  | null)?]): void;
 ```
 
 Defined in: [functions.ts:1](http://source-url)
@@ -13,7 +15,7 @@ Defined in: [functions.ts:1](http://source-url)
 
 | Parameter | Type |
 | :------ | :------ |
-| `opts` | \[\{ `a`: `string`; `b`: `string`; \}?\] |
+| `opts` | \[( \| \{ `a`: `string`; `b`: `string`; \} \| `null`)?\] |
 
 ## Returns
 
