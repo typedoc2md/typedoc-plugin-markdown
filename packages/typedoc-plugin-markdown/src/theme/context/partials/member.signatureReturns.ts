@@ -52,14 +52,18 @@ export function signatureReturns(
   }
 
   if (typeDeclaration?.signatures) {
-    typeDeclaration.signatures.forEach((signature) => {
-      md.push(
-        this.partials.signature(signature, {
-          headingLevel: options.headingLevel + 1,
-          nested: true,
-        }),
-      );
-    });
+    if (hasUsefulTypeDetails) {
+      typeDeclaration.signatures.forEach((signature) => {
+        md.push(
+          this.partials.signature(signature, {
+            headingLevel: options.headingLevel + 1,
+            nested: true,
+          }),
+        );
+      });
+    } else {
+      md.push(this.partials.someType(model.type));
+    }
   }
 
   if (typeDeclaration?.children) {

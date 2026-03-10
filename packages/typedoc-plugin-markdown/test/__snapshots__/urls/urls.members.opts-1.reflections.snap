@@ -34,6 +34,7 @@
   "functions/functionReturningAPromise.md",
   "functions/functionReturningAString.md",
   "functions/functionReturningAUnionType.md",
+  "functions/functionReturningAUsefulFunction.md",
   "functions/functionReturningAnObject.md",
   "functions/functionReturningFunctionOverloads.md",
   "functions/functionReturningUsefulUnionType.md",

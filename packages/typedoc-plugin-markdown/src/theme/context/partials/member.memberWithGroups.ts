@@ -118,9 +118,12 @@ export function memberWithGroups(
     md.push(heading(options.headingLevel, i18n.theme_indexable()));
     model.indexSignatures.forEach((indexSignature) => {
       md.push(
-        this.partials.indexSignature(indexSignature, {
-          headingLevel: options.headingLevel + 1,
-        }),
+        `${!this.options.getValue('useCodeBlocks') ? '> ' : ''}${this.partials.indexSignature(
+          indexSignature,
+          {
+            headingLevel: options.headingLevel + 1,
+          },
+        )}`,
       );
     });
   }

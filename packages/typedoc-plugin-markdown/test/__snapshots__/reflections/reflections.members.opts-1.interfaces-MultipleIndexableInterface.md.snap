@@ -4,11 +4,11 @@ Defined in: [interfaces.ts:1](http://source-url)
 
 ## Indexable
 
-\[`key`: `string`\]: `string`
+> \[`key`: `string`\]: `string`
 
 First index signature
 
-\[`index`: `number`\]: `string`
+> \[`index`: `number`\]: `string`
 
 Second index signature
 

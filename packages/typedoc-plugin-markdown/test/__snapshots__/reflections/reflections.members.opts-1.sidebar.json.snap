@@ -530,6 +530,12 @@
         "isDeprecated": false
       },
       {
+        "title": "functionReturningAUsefulFunction",
+        "kind": 64,
+        "path": "functions/functionReturningAUsefulFunction.md",
+        "isDeprecated": false
+      },
+      {
         "title": "functionReturningFunctionOverloads",
         "kind": 64,
         "path": "functions/functionReturningFunctionOverloads.md",

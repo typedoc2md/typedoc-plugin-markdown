@@ -195,6 +195,18 @@ export function functionReturningAFunction() {
 
 /**
  * Comments for function
+ */
+export function functionReturningAUsefulFunction() {
+  return <T>(
+    /**
+     * Comments for x
+     */
+    x: string,
+  ) => true;
+}
+
+/**
+ * Comments for function
  * @returns Return comments
  */
 export function functionReturningAPromise(): Promise<{
@@ -226,7 +238,7 @@ export function functionWithUnionParams(
    */
   primitiveUnions: string | number,
   /**
-   * Comments for objectUnionsUseful
+   * Comments for objectUnions
    */
   objectUnions:
     | {
@@ -239,12 +251,17 @@ export function functionWithUnionParams(
         c: { x: string };
       },
   /**
-   * Comments for mixedUnions
+   * Comments for useful mixedUnions
    */
-  mixedUnions:
+  mixedUnions: /**
+     * Comments for string
+     */
     | string
     | SomeType
     | number
+    /**
+     * Comments for object
+     */
     | {
         /**
          * Comments for a
@@ -371,6 +388,11 @@ export function functionReturningFunctionOverloads(): {
 }
 
 const nonoptional = () => {
+  const innerFn = (input: string) => {};
+  return innerFn;
+};
+
+const nonoptionalWithComments = () => {
   const innerFn = (
     /**
      * Comments for input
@@ -379,7 +401,6 @@ const nonoptional = () => {
   ) => {};
   return innerFn;
 };
-
 const optional = () => {
   const test = false;
   const innerFn = (input: string) => {};

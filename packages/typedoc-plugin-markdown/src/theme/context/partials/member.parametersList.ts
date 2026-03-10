@@ -1,7 +1,12 @@
-import { backTicks, heading } from '@plugin/libs/markdown/index.js';
+import {
+  backTicks,
+  heading,
+  horizontalRule,
+} from '@plugin/libs/markdown/index.js';
 import { escapeChars } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import {
+  i18n,
   ParameterReflection,
   ReflectionKind,
   ReflectionType,
@@ -18,51 +23,45 @@ export function parametersList(
 
   model.forEach((parameter) => {
     const row: string[] = [];
-
-    const isOptional = parameter.flags.isOptional || parameter.defaultValue;
-
-    const optional = isOptional ? '?' : '';
-
-    const name = `${escapeChars(parameter.name)}${optional}`;
+    const name = `${escapeChars(parameter.name)}${
+      parameter.flags.isOptional || parameter.defaultValue ? '?' : ''
+    }`;
 
     row.push(heading(options.headingLevel + 1, name));
 
     if (parameter.type instanceof UnionType && parameter.type?.types) {
-      const unions: string[] = [];
+      const hasUsefulTypeDetails = this.helpers.hasUsefulTypeDetails(
+        parameter.type,
+      );
+
+      const unionOut = this.partials.someType(parameter.type, {
+        forceCollapse: true,
+      });
+
+      row.push(unionOut);
 
       if (parameter.comment) {
         row.push(this.partials.comment(parameter.comment));
       }
 
-      parameter.type?.types.forEach((type) => {
-        const hasUsefulTypeDetails = this.helpers.hasUsefulTypeDetails(type);
-        if (type instanceof ReflectionType) {
-          const typeOut = this.partials.someType(type, {
-            forceCollapse: true,
-          });
-          if (hasUsefulTypeDetails) {
-            const usefulDetails: string[] = [];
-            usefulDetails.push('\n\n');
-            usefulDetails.push(typeOut);
-            usefulDetails.push(
-              getReflectionType(this, options, parameter, type),
-            );
-            usefulDetails.push('\n\n');
-            unions.push(usefulDetails.join('\n\n'));
-          } else {
-            unions.push(typeOut);
-          }
-        } else {
-          unions.push(this.partials.someType(type, { forceCollapse: true }));
+      if (hasUsefulTypeDetails) {
+        const unions = parameter.type.types
+          .map((type) =>
+            getUnionParameterTypeDetails(
+              this,
+              parameter,
+              {
+                headingLevel: options.headingLevel + 1,
+              },
+              type,
+            ),
+          )
+          .filter(Boolean);
+
+        if (unions.length) {
+          row.push(unions.join(horizontalRule()));
         }
-      });
-      row.push(
-        unions
-          .join(' | ')
-          .split('\n')
-          .map((ln) => ln.trim())
-          .join('\n'),
-      );
+      }
     } else {
       if (parameter.type instanceof ReflectionType) {
         if (parameter.type.declaration?.signatures) {
@@ -111,7 +110,7 @@ function getOtherType(
 
 function getReflectionType(
   context: MarkdownThemeContext,
-  options: any,
+  options: { headingLevel: number; withComments?: boolean },
   parameter: ParameterReflection,
   type: SomeType,
 ) {
@@ -124,9 +123,11 @@ function getReflectionType(
   );
   const block: string[] = [];
   const typeMd: string[] = [];
+
   if (parameter.comment) {
     block.push(context.partials.comment(parameter.comment));
   }
+
   flatten?.forEach((flat: ParameterReflection) => {
     const name = [flat.name];
     if (flat.flags.isOptional) {
@@ -138,6 +139,40 @@ function getReflectionType(
   block.push(typeMd.join('\n\n'));
 
   return block.join('\n\n');
+}
+
+function getUnionParameterTypeDetails(
+  context: MarkdownThemeContext,
+  parameter: ParameterReflection,
+  options: { headingLevel: number },
+  type: SomeType,
+) {
+  if (!(type instanceof ReflectionType)) {
+    return context.partials.someType(type, { forceCollapse: true });
+  }
+
+  if (!context.helpers.hasUsefulTypeDetails(type)) {
+    return '';
+  }
+
+  const isFunction = type.declaration?.signatures?.length;
+  const typeOut = context.partials.someType(type, {
+    forceCollapse: true,
+  });
+
+  return [
+    heading(
+      options.headingLevel + 1,
+      isFunction ? i18n.kind_function() : i18n.kind_type_literal(),
+    ),
+    typeOut,
+    getReflectionType(
+      context,
+      { headingLevel: options.headingLevel, withComments: false },
+      parameter,
+      type,
+    ),
+  ].join('\n\n');
 }
 
 function flattenParams(current: any, skip = false) {

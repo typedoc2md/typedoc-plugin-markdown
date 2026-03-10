@@ -49,6 +49,10 @@ export function declarationTitle(
 
   const declarationName = (model as any)?.originalName || model.name;
 
+  //if (model.flags.isOptional) {
+  //  declarationName += '?';
+  //}
+
   const displayDeclarationName = this.options.getValue('useHTMLEncodedBrackets')
     ? encodeAngleBrackets(declarationName)
     : declarationName;

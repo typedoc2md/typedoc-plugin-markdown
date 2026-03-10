@@ -105,6 +105,14 @@ describe(`typedoc-plugin-markdown (Integration /Function Reflection)`, () => {
     );
   });
 
+  it(`should compile function returning a useful function`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionReturningAUsefulFunction.md',
+    );
+  });
+
   it(`should compile function returning a promise`, () => {
     expectFileToEqual(
       'reflections',

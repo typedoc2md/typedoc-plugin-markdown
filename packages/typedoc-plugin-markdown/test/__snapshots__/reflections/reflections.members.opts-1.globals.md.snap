@@ -111,6 +111,7 @@ Module comments
 - [functionReturningAPromise](functions/functionReturningAPromise.md)
 - [functionReturningAString](functions/functionReturningAString.md)
 - [functionReturningAUnionType](functions/functionReturningAUnionType.md)
+- [functionReturningAUsefulFunction](functions/functionReturningAUsefulFunction.md)
 - [functionReturningFunctionOverloads](functions/functionReturningFunctionOverloads.md)
 - [functionReturningUsefulUnionType](functions/functionReturningUsefulUnionType.md)
 - [functionWithArrayOfOptionalStuff](functions/functionWithArrayOfOptionalStuff.md)

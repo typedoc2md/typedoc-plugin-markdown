@@ -8,55 +8,67 @@ Defined in: [functions.ts:1](http://source-url)
 
 ### primitiveUnions
 
-Comments for primitiveUnions
+`string` \| `number`
 
-`string` | `number`
+Comments for primitiveUnions
 
 ### objectUnions
 
-Comments for objectUnionsUseful
+\{ `a`: `string`; `b`: `1`; \} \| \{ `a`: `number`; `b`: `1`; `c`: \{ `x`: `string`; \}; \}
 
-\{ `a`: `string`; `b`: `1`; \} | \{ `a`: `number`; `b`: `1`; `c`: \{ `x`: `string`; \}; \}
+Comments for objectUnions
 
 ### mixedUnions
 
-Comments for mixedUnions
+`string` \| `number` \| \{ `a`: `string`; `b`: `string`; \} \| \{ `a`: \{ `y`: `string`; `z`: `string`; \}; \}
 
-`string` | `number` |
+Comments for useful mixedUnions
+
+`string`
+
+***
+
+`number`
+
+***
+
+#### Type Literal
 
 \{ `a`: `string`; `b`: `string`; \}
 
-Comments for mixedUnions
+Comments for useful mixedUnions
 
-#### a
+##### a
 
 `string` = `''`
 
 a comments
 
-#### b
+##### b
 
 `string` = `''`
 
 b comments
 
-|
+***
+
+#### Type Literal
 
 \{ `a`: \{ `y`: `string`; `z`: `string`; \}; \}
 
-Comments for mixedUnions
+Comments for useful mixedUnions
 
-#### a
+##### a
 
 \{ `y`: `string`; `z`: `string`; \}
 
 Comments for a
 
-#### a.y
+##### a.y
 
 `string`
 
-#### a.z
+##### a.z
 
 `string`
 

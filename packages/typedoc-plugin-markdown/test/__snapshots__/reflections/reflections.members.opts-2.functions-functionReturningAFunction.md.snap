@@ -10,22 +10,4 @@ Comments for function
 
 ## Returns
 
-```ts
-<T>(x: string): boolean;
-```
-
-### Type Parameters
-
-| Type Parameter |
-| :------ |
-| `T` |
-
-### Parameters
-
-| Parameter | Type |
-| :------ | :------ |
-| `x` | `string` |
-
-### Returns
-
-`boolean`
+\<`T`\>(`x`: `string`) => `boolean`

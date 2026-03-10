@@ -42,7 +42,6 @@ export function typeDeclarationUnionContainer(
           md.push(this.helpers.getCommentParts(elementSummaries[i]));
         }
 
-        // if (!isFunction) {
         if (this.helpers.hasUsefulTypeDetails(type)) {
           md.push(
             this.partials.typeDeclarationContainer(model, type.declaration, {
@@ -52,7 +51,6 @@ export function typeDeclarationUnionContainer(
             }),
           );
         }
-        // }
       } else {
         md.push(`${this.partials.someType(type)}`);
 

@@ -123,6 +123,7 @@ Module comments
 | [functionReturningAPromise](functions/functionReturningAPromise.md) | Comments for function |
 | [functionReturningAString](functions/functionReturningAString.md) | Comments for function |
 | [functionReturningAUnionType](functions/functionReturningAUnionType.md) | Comments for function |
+| [functionReturningAUsefulFunction](functions/functionReturningAUsefulFunction.md) | Comments for function |
 | [functionReturningFunctionOverloads](functions/functionReturningFunctionOverloads.md) | - |
 | [functionReturningUsefulUnionType](functions/functionReturningUsefulUnionType.md) | Comments for function returning a useful union type |
 | [functionWithArrayOfOptionalStuff](functions/functionWithArrayOfOptionalStuff.md) | Comments for array of stuff? |
