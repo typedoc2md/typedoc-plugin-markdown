@@ -126,7 +126,7 @@ TypeB function.
 
 #### propB? \{#propb-2\}
 
-> `optional` **propB**: `number`
+> `optional` **propB?**: `number`
 
 ***
 

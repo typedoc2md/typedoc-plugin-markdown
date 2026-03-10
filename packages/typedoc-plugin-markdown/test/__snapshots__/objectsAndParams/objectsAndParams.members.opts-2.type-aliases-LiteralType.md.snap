@@ -20,7 +20,7 @@ Comments for LiteralType
 
 ## Properties
 
-### someFunctionWithArrow()
+### someFunctionWithArrow
 
 ```ts
 someFunctionWithArrow: () => string;
@@ -37,7 +37,7 @@ Comments for someFunctionWithArrow
 ### x?
 
 ```ts
-optional x: string;
+optional x?: string;
 ```
 
 comment for x
@@ -67,12 +67,12 @@ comment for y.x
 #### y?
 
 ```ts
-optional y: boolean | string;
+optional y?: boolean | string;
 ```
 
 comment for y.y
 
-#### z()
+#### z
 
 ```ts
 (x: string) => string
@@ -82,7 +82,7 @@ comment for y.z
 
 ***
 
-### z()
+### z
 
 ```ts
 z: (x: string) => string;

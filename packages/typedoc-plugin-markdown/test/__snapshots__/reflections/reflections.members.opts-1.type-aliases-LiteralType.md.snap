@@ -8,7 +8,7 @@ Comments for LiteralType
 
 ## Properties
 
-### someFunctionWithArrow()
+### someFunctionWithArrow
 
 > **someFunctionWithArrow**: () => `string`
 
@@ -24,7 +24,7 @@ Comments for someFunctionWithArrow
 
 ### x?
 
-> `optional` **x**: `string`
+> `optional` **x?**: `string`
 
 Defined in: [types.ts:1](http://source-url)
 
@@ -48,11 +48,11 @@ comment for y.x
 
 #### y?
 
-> `optional` **y**: `boolean` \| `string`
+> `optional` **y?**: `boolean` \| `string`
 
 comment for y.y
 
-#### z()
+#### z
 
 > **z**: (`x`) => `string`
 
@@ -70,7 +70,7 @@ comment for y.z
 
 ***
 
-### z()
+### z
 
 > **z**: (`x`) => `string`
 

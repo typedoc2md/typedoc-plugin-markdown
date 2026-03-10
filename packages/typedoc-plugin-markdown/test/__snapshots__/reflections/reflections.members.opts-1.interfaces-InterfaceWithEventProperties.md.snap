@@ -6,7 +6,7 @@ Defined in: [interfaces.ts:1](http://source-url)
 
 ### someProp?
 
-> `optional` **someProp**: `boolean`
+> `optional` **someProp?**: `boolean`
 
 Defined in: [interfaces.ts:1](http://source-url)
 
@@ -22,9 +22,9 @@ Defined in: [interfaces.ts:1](http://source-url)
 
 ***
 
-### ~~someEvent()?~~
+### ~~someEvent?~~
 
-> `optional` **someEvent**: (`eventParam`) => `void`
+> `optional` **someEvent?**: (`eventParam`) => `void`
 
 Defined in: [interfaces.ts:1](http://source-url)
 

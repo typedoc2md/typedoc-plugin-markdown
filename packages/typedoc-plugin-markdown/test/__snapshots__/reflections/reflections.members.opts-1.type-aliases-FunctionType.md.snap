@@ -1,4 +1,4 @@
-# Type Alias: FunctionType()
+# Type Alias: FunctionType
 
 > **FunctionType** = (`name`, `value`) => `void`
 

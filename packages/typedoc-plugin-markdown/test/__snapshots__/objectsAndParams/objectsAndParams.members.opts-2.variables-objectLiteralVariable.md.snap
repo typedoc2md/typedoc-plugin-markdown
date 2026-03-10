@@ -62,7 +62,7 @@ valueB: boolean = true;
 
 Comments for valueX
 
-### valueY()
+### valueY
 
 ```ts
 (unionParam: "a" | "b", _undercoreParam_: string) => string

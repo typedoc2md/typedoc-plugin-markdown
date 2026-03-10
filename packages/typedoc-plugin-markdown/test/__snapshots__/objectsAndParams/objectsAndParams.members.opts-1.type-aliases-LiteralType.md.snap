@@ -6,7 +6,7 @@ Comments for LiteralType
 
 ## Properties
 
-### someFunctionWithArrow()
+### someFunctionWithArrow
 
 > **someFunctionWithArrow**: () => `string`
 
@@ -20,7 +20,7 @@ Comments for someFunctionWithArrow
 
 ### x?
 
-> `optional` **x**: `string`
+> `optional` **x?**: `string`
 
 comment for x
 
@@ -40,11 +40,11 @@ comment for y.x
 
 #### y?
 
-> `optional` **y**: `boolean` \| `string`
+> `optional` **y?**: `boolean` \| `string`
 
 comment for y.y
 
-#### z()
+#### z
 
 > **z**: (`x`: `string`) => `string`
 
@@ -62,7 +62,7 @@ comment for y.z
 
 ***
 
-### z()
+### z
 
 > **z**: (`x`: `string`) => `string`
 

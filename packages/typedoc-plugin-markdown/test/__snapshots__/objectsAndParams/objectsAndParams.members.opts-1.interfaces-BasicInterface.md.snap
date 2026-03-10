@@ -22,7 +22,7 @@ Comments for some tag
 
 ***
 
-### functionProp()
+### functionProp
 
 > **functionProp**: (`s`: `string`) => `boolean`
 
@@ -44,7 +44,7 @@ Comment for param s
 
 ### optionalProp?
 
-> `optional` **optionalProp**: `string`
+> `optional` **optionalProp?**: `string`
 
 Comments for optional prop
 
@@ -102,9 +102,9 @@ Comments for propReturningObjectDeclarations
 
 ***
 
-### propReturningSignatureDeclaration()?
+### propReturningSignatureDeclaration?
 
-> `optional` **propReturningSignatureDeclaration**: () => `string` \| `number` \| `boolean`
+> `optional` **propReturningSignatureDeclaration?**: () => `string` \| `number` \| `boolean`
 
 Comments for propReturningSignatureDeclaration
 
@@ -122,7 +122,7 @@ Comments for propReturningSignatureDeclarations
 
 ***
 
-### propWithFunction()
+### propWithFunction
 
 > **propWithFunction**: (`options`: \{ `a`: `boolean`; `b`: `string`; \}) => `boolean`
 
@@ -154,7 +154,7 @@ Comments for propWithProps
 
 #### callbacks?
 
-> `optional` **callbacks**: `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\>
+> `optional` **callbacks?**: `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\>
 
 Comments for callbacks
 
@@ -182,7 +182,7 @@ Comments for nestedPropC
 
 Comments for nestedPropCA
 
-#### nestedPropD()
+#### nestedPropD
 
 > **nestedPropD**: () => `boolean`
 

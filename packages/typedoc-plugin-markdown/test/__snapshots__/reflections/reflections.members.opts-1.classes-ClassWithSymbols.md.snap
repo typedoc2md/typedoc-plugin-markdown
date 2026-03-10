@@ -14,9 +14,9 @@ Defined in: [classes.ts:1](http://source-url)
 
 ## Properties
 
-### \[symbolConst\]()?
+### \[symbolConst\]?
 
-> `static` `optional` **\[symbolConst\]**: () => `void`
+> `static` `optional` **\[symbolConst\]?**: () => `void`
 
 Defined in: [classes.ts:1](http://source-url)
 

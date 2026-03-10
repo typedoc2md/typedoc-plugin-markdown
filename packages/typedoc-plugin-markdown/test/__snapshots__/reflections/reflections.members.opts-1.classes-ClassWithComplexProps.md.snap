@@ -22,7 +22,7 @@ Comments for ClassWithComplexProps
 
 Defined in: [classes.ts:1](http://source-url)
 
-#### someFunction()
+#### someFunction
 
 > **someFunction**: (`a`) => `string`
 

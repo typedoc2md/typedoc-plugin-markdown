@@ -3,91 +3,31 @@ import { encodeAngleBrackets, escapeChars } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
+type DeclarationWithOriginalName = DeclarationReflection & {
+  originalName?: string;
+};
+
 export function declarationTitle(
   this: MarkdownThemeContext,
   model: DeclarationReflection,
 ): string {
   const md: string[] = [];
-
   const useCodeBlocks = this.options.getValue('useCodeBlocks');
-
   const declarationType = this.helpers.getDeclarationType(model);
-
-  const prefix: string[] = [];
-
-  const flagsString = this.helpers.getReflectionFlags(model.flags);
-
-  if (flagsString.length) {
-    prefix.push(flagsString);
+  const prefix = getPrefix(this, model, useCodeBlocks);
+  if (prefix.length) {
+    md.push(`${prefix} `);
   }
 
-  if (model.flags?.isRest) {
-    prefix.push('...');
-  }
-
-  const keyword = this.helpers.getKeyword(model.kind);
-
-  if (useCodeBlocks && keyword) {
-    prefix.push(keyword);
-  }
-
-  const prefixes = prefix.filter((prefix) => prefix.length > 0);
-
-  if (prefixes.length) {
-    md.push(prefixes.join(' ') + ' ');
-  }
-
-  const name: string[] = [];
-
-  if (model.getSignature) {
-    name.push(backTicks('get') + ' ');
-  }
-
-  if (model.setSignature) {
-    name.push(backTicks('set') + ' ');
-  }
-
-  const declarationName = (model as any)?.originalName || model.name;
-
-  //if (model.flags.isOptional) {
-  //  declarationName += '?';
-  //}
-
-  const displayDeclarationName = this.options.getValue('useHTMLEncodedBrackets')
-    ? encodeAngleBrackets(declarationName)
-    : declarationName;
-
-  name.push(
-    /[\\`]/.test(declarationName)
-      ? escapeChars(displayDeclarationName)
-      : bold(escapeChars(displayDeclarationName)),
-  );
-
-  if (model.typeParameters) {
-    name.push(
-      `${this.helpers.getAngleBracket('<')}${model.typeParameters
-        ?.map((typeParameter) => backTicks(typeParameter.name))
-        .join(', ')}${this.helpers.getAngleBracket('>')}`,
-    );
-  }
-
-  const delimiter = model.kind === ReflectionKind.TypeAlias ? ' = ' : ': ';
-
-  name.push(delimiter);
-
-  md.push(name.join(''));
+  md.push(buildDeclarationName(this, model));
 
   if (declarationType) {
     md.push(this.partials.someType(declarationType));
-  } else {
-    if (model.kind === ReflectionKind.TypeAlias) {
-      const expandObjects = this.options.getValue('expandObjects');
-      md.push(
-        expandObjects
-          ? this.partials.declarationType(model)
-          : backTicks('object'),
-      );
-    }
+  } else if (model.kind === ReflectionKind.TypeAlias) {
+    const expandObjects = this.options.getValue('expandObjects');
+    md.push(
+      expandObjects ? this.partials.declarationType(model) : backTicks('object'),
+    );
   }
 
   if (
@@ -95,7 +35,7 @@ export function declarationTitle(
     model.defaultValue !== '...' &&
     model.defaultValue !== model.name
   ) {
-    md.push(` = \`${model.defaultValue}\``);
+    md.push(` = ${backTicks(model.defaultValue)}`);
   }
 
   if (useCodeBlocks) {
@@ -104,4 +44,59 @@ export function declarationTitle(
 
   const result = md.join('');
   return useCodeBlocks ? codeBlock(result) : `> ${result}`;
+}
+
+function getPrefix(
+  context: MarkdownThemeContext,
+  model: DeclarationReflection,
+  useCodeBlocks: boolean,
+) {
+  const keyword = context.helpers.getKeyword(model.kind);
+  return [
+    context.helpers.getReflectionFlags(model.flags),
+    model.flags?.isRest ? '...' : '',
+    useCodeBlocks && keyword ? keyword : '',
+  ]
+    .filter((value) => value.length > 0)
+    .join(' ');
+}
+
+function buildDeclarationName(
+  context: MarkdownThemeContext,
+  model: DeclarationReflection,
+) {
+  const nameParts: string[] = [];
+  if (model.getSignature) {
+    nameParts.push(`${backTicks('get')} `);
+  }
+  if (model.setSignature) {
+    nameParts.push(`${backTicks('set')} `);
+  }
+
+  const originalName = (model as DeclarationWithOriginalName).originalName;
+  let declarationName = originalName ?? model.name;
+  if (model.flags.isOptional) {
+    declarationName += '?';
+  }
+
+  const displayName = context.options.getValue('useHTMLEncodedBrackets')
+    ? encodeAngleBrackets(declarationName)
+    : declarationName;
+
+  nameParts.push(
+    /[\\`]/.test(declarationName)
+      ? escapeChars(displayName)
+      : bold(escapeChars(displayName)),
+  );
+
+  if (model.typeParameters?.length) {
+    nameParts.push(
+      `${context.helpers.getAngleBracket('<')}${model.typeParameters
+        .map((typeParameter) => backTicks(typeParameter.name))
+        .join(', ')}${context.helpers.getAngleBracket('>')}`,
+    );
+  }
+
+  nameParts.push(model.kind === ReflectionKind.TypeAlias ? ' = ' : ': ');
+  return nameParts.join('');
 }

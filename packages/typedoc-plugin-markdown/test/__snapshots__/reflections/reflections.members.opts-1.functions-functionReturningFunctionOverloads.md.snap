@@ -62,7 +62,7 @@ Comments for prop 1
 
 Comments for prop 2
 
-### member2()
+### member2
 
 > **member2**: \{(`options?`): [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`void`\>; (`options2?`): [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`void`\>; \}
 
@@ -106,7 +106,7 @@ Comments for function 2
 
 function2 block tag
 
-### member3()
+### member3
 
 > **member3**: (`options?`) => [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`void`\>
 

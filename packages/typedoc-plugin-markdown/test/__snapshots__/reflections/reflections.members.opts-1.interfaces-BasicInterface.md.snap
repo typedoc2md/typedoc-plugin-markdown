@@ -30,7 +30,7 @@ Comments for some tag
 
 ***
 
-### functionProp()
+### functionProp
 
 > **functionProp**: (`s`) => `boolean`
 
@@ -54,7 +54,7 @@ Comment for param s
 
 ### optionalProp?
 
-> `optional` **optionalProp**: `string`
+> `optional` **optionalProp?**: `string`
 
 Defined in: [interfaces.ts:1](http://source-url)
 
@@ -120,9 +120,9 @@ Comments for propReturningObjectDeclarations
 
 ***
 
-### propReturningSignatureDeclaration()?
+### propReturningSignatureDeclaration?
 
-> `optional` **propReturningSignatureDeclaration**: () => `string` \| `number` \| `boolean`
+> `optional` **propReturningSignatureDeclaration?**: () => `string` \| `number` \| `boolean`
 
 Defined in: [interfaces.ts:1](http://source-url)
 
@@ -144,7 +144,7 @@ Comments for propReturningSignatureDeclarations
 
 ***
 
-### propWithFunction()
+### propWithFunction
 
 > **propWithFunction**: (`options`) => `boolean`
 
@@ -180,7 +180,7 @@ Comments for propWithProps
 
 #### callbacks?
 
-> `optional` **callbacks**: `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\>
+> `optional` **callbacks?**: `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\>
 
 Comments for callbacks
 
@@ -208,7 +208,7 @@ Comments for nestedPropC
 
 Comments for nestedPropCA
 
-#### nestedPropD()
+#### nestedPropD
 
 > **nestedPropD**: () => `boolean`
 
