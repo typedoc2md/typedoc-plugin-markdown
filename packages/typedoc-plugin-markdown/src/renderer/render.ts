@@ -273,7 +273,6 @@ export async function executeAsyncRendererJobs(
   output: MarkdownRendererEvent,
 ) {
   await Promise.all(jobs.map((job) => job(output)));
-  jobs = []; // Clear job queue
 }
 
 // Helper to execute async page jobs (page jobs should be run in series)
@@ -284,5 +283,4 @@ export async function executeAsyncPageJobs(
   for (const job of jobs) {
     await job(page);
   }
-  jobs = []; // Clear job queue
 }

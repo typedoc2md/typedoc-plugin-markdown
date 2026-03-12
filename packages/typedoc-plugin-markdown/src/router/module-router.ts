@@ -62,8 +62,8 @@ export class ModuleRouter extends MarkdownRouter {
       return this.getIdealBaseNameFlattened(reflection);
     }
 
-    let dir: string | null = null;
-    let fileName = '';
+    let dir: string | null;
+    let fileName: string;
 
     switch (reflection.kind) {
       case ReflectionKind.Module: {
