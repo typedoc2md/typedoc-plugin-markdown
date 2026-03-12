@@ -18,5 +18,6 @@ export default {
   },
   troubleshooting: '',
   releases: '',
+  'migration-guides': '',
   CHANGELOG: 'Changelog',
 };

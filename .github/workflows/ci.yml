@@ -38,10 +38,13 @@ jobs:
         run: HUSKY=0 npm ci
       - name: Lint
         if: matrix.node == '20.19.0'
-        run: npm run lint --workspace typedoc-plugin-markdown
+        run: npm run lint-all
+      - name: Build All Workspaces
+        if: matrix.node == '20.19.0'
+        run: npm run build-all
+      - name: Test All Workspaces
+        if: matrix.node == '20.19.0'
+        run: npm run test-all
       - name: Build
         if: matrix.node == '18'
         run: npm run build-all
-      - name: Test
-        if: matrix.node == '18'
-        run: npm run test-all

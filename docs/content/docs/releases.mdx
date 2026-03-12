@@ -8,67 +8,28 @@ This section should help you understand the versioning rules of the plugin and i
 
 ### Package Version
 
-Please note that TypeDoc is still released within the 0.x.x range and may include breaking changes within each minor version release.
+Please note that TypeDoc is still released within the `0.x.x` range, and minor version releases may include breaking changes.
 
-A new minor version of the plugin and be released with each minor TypeDoc version, and we will attempt to release in a non-breaking manner.
+A new plugin release may be published for each TypeDoc minor release. If the TypeDoc update introduces breaking changes for this plugin, we will publish a major plugin version rather than a minor version.
 
-Besides the TypeDoc release versions, we aim to follow semantic versioning for the plugin:
+Apart from aligning with TypeDoc releases, the plugin aims to follow semantic versioning:
 
-- Bug fixes including minor UI tweaks will be released as patch versions.
-- New features/options will be released as minor versions.
-- UI changes implemented in a non-breaking manner will be released as minor versions.
-- Breaking changes including option changes and fundamental UI changes will be released as major versions.
+- Bug fixes, including minor UI tweaks, will be released as patch versions.
+- New features or options will be released as minor versions.
+- Non-breaking UI changes will be released as minor versions.
+- Breaking changes, including option changes and fundamental UI changes, will be released as major versions.
 
 ### Compatibility Table
 
-We will follow the Node.js and TypeScript versions as specified in the TypeDoc `package.json` file.
+The following table shows compatibility between the plugin and TypeDoc.
 
-Version compatibility for the plugin and TypeDoc is as follows:
+Node.js and TypeScript requirements follow those supported by the corresponding TypeDoc version.
 
-| Plugin        | TypeDoc | Node  | TypeScript    |
-| ------------- | ------- | ----- | ------------- |
-| 4.5.x - 4.6.x | 0.28.x  | >= 18 | 5.0.x - 5.8.x |
-| 4.3.x - 4.4.x | 0.27.x  | >= 18 | 5.0.x - 5.7.x |
-| 4.1.x - 4.2.x | 0.26.x  | >= 18 | 4.6.x - 5.5.x |
-| 4.0.x         | 0.25.x  | >= 16 | 4.6.x - 5.4.x |
+| Plugin         | TypeDoc |
+| -------------- | ------- |
+| 4.5.x - 4.11.x | 0.28.x  |
+| 4.3.x - 4.4.x  | 0.27.x  |
+| 4.1.x - 4.2.x  | 0.26.x  |
+| 4.0.x          | 0.25.x  |
 
-For more information please visit [TypeDoc requirements](https://typedoc.org/documents/Overview.html).
-
-## Migration Guides
-
-### v4
-
-v4.0 is a major release that includes a number of bug fixes, new features and
-UX improvements.
-
-#### Architectural Changes
-
-- Handlebars as a dependency has been removed.
-- Updated customization model with the ability to set hooks, events and custom theming.
-- Improved test and linting coverage.
-
-#### New Features
-
-- Updated output file structure.
-- Improved and cleaner UX configurable with options.
-- Exported option types and JSON schema.
-- Exposed navigation structure.
-- Ability to customize static text.
-- Comprehensive documentation and examples repository.
-
-#### Non-Breaking Changes
-
-- Each module member is now output to its own file by default. See <OptionLink type="display" name="outputFileStrategy" />. To achieve the same output as v3 (whereby only Classes, Enums and Interfaces have their own file), set the [`membersWithOwnFile`](/docs/options#memberswithownfile) option.
-- Parameters are output as a list by default. To achieve the same output as v3 (where parameters are output as a table), use the `table` key of <OptionLink type="display" name="parametersFormat" />.
-- Comment `@` tags are now displayed as headings.
-
-#### Breaking Changes
-
-- The output file structure has changed so you may need to update any cross references into your docs from external sources.
-- Setting `theme` to `"markdown"` is not required and should be removed.
-- The option `indexTitle` has been removed. Please use the `"title.indexPage"` key with <OptionLink type="display" name="textContentMappings" />.
-- The option `allReflectionsHaveOwnDocument` has been removed (this behaviour is now the default). Please see See <OptionLink type="display" name="outputFileStrategy" />.
-- The option `entryDocument` has been renamed to <OptionLink type="file" name="entryFileName" /> to better reflect its purpose.
-- The option `namedAnchors` has been renamed to <OptionLink type="utility" name="useHTMLAnchors" /> to better reflect its purpose.
-- The option `hideInPageTOC` has been removed. In-page TOC are no longer included by default. You can include in-page TOCs by using [typedoc-plugin-remark](/plugins/remark) and the [remark-toc](plugins/remark/suggested-plugins#remark-toc) plugin.
-- The option `objectLiteralTypeDeclarationStyle` has been removed. Please use the `list` key of <OptionLink type="display" name="typeDeclarationFormat" />.
+For Node.js and TypeScript requirements, see the [TypeDoc requirements](https://typedoc.org/documents/Overview.html).
