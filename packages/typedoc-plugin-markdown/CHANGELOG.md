@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.11.0
+## 4.11.0 (2026-03-18)
 
 ### Minor Changes
 
