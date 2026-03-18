@@ -1,0 +1,23 @@
+[**My API - v0.0**](../../README.md)
+
+***
+
+[typedoc-stubs](../../README.md) / [module-1](../README.md) / someVar
+
+# 変数 - 変数 - someVar - `someVar` - - -
+
+> `const` **someVar**: `true` = `true`
+
+## 例
+
+```ts
+const someVar: someVar = true;
+```
+
+```ts
+const someVar: someVar = false;
+```
+
+***
+
+Copyright Test

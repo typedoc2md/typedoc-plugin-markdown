@@ -17,6 +17,10 @@ describe(`typedoc-plugin-markdown (Integration / Text)`, () => {
     );
   });
 
+  it(`should get translations for grouped example tags`, () => {
+    expectFileToEqual('text', 'members', 'module-1/variables/someVar.md', 1);
+  });
+
   it(`should get translations for modules page`, () => {
     expectFileToEqual('text', 'modules', ['module-2.md']);
   });

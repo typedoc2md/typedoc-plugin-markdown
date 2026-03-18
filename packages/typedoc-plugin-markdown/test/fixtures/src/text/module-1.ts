@@ -1,7 +1,27 @@
 /**
  * @group SomeGroup
+ *
+ * @example
+ *
+ * ```ts
+ * const someVar: SomeType = true;
+ * ```
  */
 export type SomeType = boolean;
+
+/**
+ * @example
+ *
+ * ```ts
+ * const someVar: someVar = true;
+ * ```
+ *
+ * @example
+ *
+ * ```ts
+ * const someVar: someVar = false;
+ * ```
+ */
 export const someVar = true;
 
 /**
