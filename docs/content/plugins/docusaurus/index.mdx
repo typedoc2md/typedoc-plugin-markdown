@@ -14,12 +14,38 @@ import { Cards } from 'nextra/components';
 
 ## Overview
 
-Integrates TypeDoc into the Docusaurus lifecycle.
+The Docusaurus integration is available in two forms: `typedoc-docusaurus-theme` for standalone TypeDoc runs that target a Docusaurus docs tree, and `docusaurus-plugin-typedoc` for running TypeDoc inside the Docusaurus lifecycle.
+
+Both options build on `typedoc-plugin-markdown`, but they solve different integration points depending on whether you want TypeDoc managed by Docusaurus or by a separate docs build step.
 
 ## Features
 
 - TypeDoc plugin that presets relevant options of typedoc-plugin-markdown and generates a configurable Docusaurus sidebar.
 - Docusaurus plugin to bootstrap TypeDoc from the Docusaurus CLI.
+
+## README Overview: typedoc-docusaurus-theme
+
+`typedoc-docusaurus-theme` is the standalone integration for Docusaurus. It applies Docusaurus-friendly Markdown defaults and generates sidebar data so you can run TypeDoc separately and then publish the output inside a Docusaurus docs site.
+
+Use it when TypeDoc needs to run outside the Docusaurus CLI, or when API docs are generated as part of a separate build step.
+
+## README Features: typedoc-docusaurus-theme
+
+- Presets `typedoc-plugin-markdown` for Docusaurus-compatible output.
+- Generates a configurable Docusaurus sidebar file.
+- Fits workflows where TypeDoc and Docusaurus run as separate steps.
+
+## README Overview: docusaurus-plugin-typedoc
+
+`docusaurus-plugin-typedoc` runs TypeDoc as part of the Docusaurus toolchain, so API docs can be generated during the normal Docusaurus dev and build flow.
+
+Use it when you want Docusaurus to own the TypeDoc execution step instead of maintaining a separate docs generation command.
+
+## README Features: docusaurus-plugin-typedoc
+
+- Bootstraps TypeDoc from the Docusaurus CLI.
+- Uses the Docusaurus integration defaults from `typedoc-plugin-markdown`.
+- Supports generating API docs as part of the standard Docusaurus workflow.
 
 ## Example
 

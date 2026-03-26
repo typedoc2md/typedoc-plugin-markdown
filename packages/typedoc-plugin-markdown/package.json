@@ -43,7 +43,6 @@
     "node": ">= 18"
   },
   "keywords": [
-    "api",
     "documentation",
     "markdown",
     "typedoc",
