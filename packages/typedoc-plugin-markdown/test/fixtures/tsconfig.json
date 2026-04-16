@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
+    "skipLibCheck": true,
     "experimentalDecorators": false,
     "esModuleInterop": true,
     "declaration": true,
-    "lib": ["es2022", "dom"],
+    "lib": ["es2022", "dom", "esnext.disposable"],
     "module": "node16",
     "strict": true,
     "noUnusedLocals": false,

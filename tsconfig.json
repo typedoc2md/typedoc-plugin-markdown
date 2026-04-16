@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
     "module": "Node16",
+    "moduleResolution": "Node16",
     "lib": ["es2023", "dom"],
     "target": "es2022",
+    "types": ["node"],
     "typeRoots": ["node_modules/@types"],
     "declaration": true,
     "experimentalDecorators": true,
@@ -11,6 +13,8 @@
     "noUnusedLocals": true,
     "removeComments": false,
     "sourceMap": false,
+    "skipLibCheck": true,
     "strictNullChecks": true
-  }
+  },
+  "exclude": ["node_modules"]
 }

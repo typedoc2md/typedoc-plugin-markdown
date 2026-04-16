@@ -15,7 +15,10 @@ import {
   ReflectionKind,
 } from 'typedoc';
 
-export function groupIndex(group: ReflectionGroup | ReflectionCategory) {
+export function groupIndex(
+  this: MarkdownThemeContext,
+  group: ReflectionGroup | ReflectionCategory,
+) {
   if (this.options.getValue('indexFormat').toLowerCase().includes('table')) {
     return getGroupIndexTable(
       this,

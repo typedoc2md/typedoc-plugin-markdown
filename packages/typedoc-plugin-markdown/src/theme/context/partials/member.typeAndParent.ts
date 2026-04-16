@@ -6,7 +6,7 @@ import { ArrayType, ReferenceType, SignatureReflection } from 'typedoc';
 export function typeAndParent(
   this: MarkdownThemeContext,
   model: ArrayType | ReferenceType,
-) {
+): string {
   if (!model) {
     return backTicks('void');
   }

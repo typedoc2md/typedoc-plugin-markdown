@@ -35,14 +35,17 @@ export class MarkdownTheme extends Theme {
    * Renders a template and page model to a string.
    */
   render(page: MarkdownPageEvent): string {
-    const templateMapping: Record<
-      string,
-      (_: MarkdownPageEvent<Reflection>) => string
-    > = {
-      [PageKind.Index]: this.indexTemplate,
-      [PageKind.Document]: this.documentTemplate,
-      [PageKind.Hierarchy]: this.hierarchyTemplate,
-      [PageKind.Reflection]: this.reflectionTemplate,
+    const templateMapping: Record<string, (_: MarkdownPageEvent) => string> = {
+      [PageKind.Index]: (event) =>
+        this.indexTemplate(event as MarkdownPageEvent<ProjectReflection>),
+      [PageKind.Document]: (event) =>
+        this.documentTemplate(event as MarkdownPageEvent<DocumentReflection>),
+      [PageKind.Hierarchy]: (event) =>
+        this.hierarchyTemplate(event as MarkdownPageEvent<ProjectReflection>),
+      [PageKind.Reflection]: (event) =>
+        this.reflectionTemplate(
+          event as MarkdownPageEvent<DeclarationReflection>,
+        ),
     };
 
     const template = templateMapping[page.pageKind];

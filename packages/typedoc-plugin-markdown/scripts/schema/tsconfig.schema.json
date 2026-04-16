@@ -3,7 +3,8 @@
     "esModuleInterop": true,
     "lib": ["es2021", "dom"],
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "skipLibCheck": true,
     "target": "es2021"
   }
 }

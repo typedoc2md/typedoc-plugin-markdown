@@ -282,7 +282,7 @@ export class NavigationBuilder {
       if (!includeGroups) {
         return reflection.childrenIncludingDocuments
           ?.filter((child) => this.router.hasOwnDocument(child))
-          .reduce((acc, child) => {
+          .reduce<NavigationItem[]>((acc, child) => {
             const children = this.getReflectionGroups(
               child,
               outputFileStrategy,

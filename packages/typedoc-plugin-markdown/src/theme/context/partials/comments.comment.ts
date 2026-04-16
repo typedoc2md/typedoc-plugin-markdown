@@ -70,17 +70,12 @@ export function comment(
             ['@example', '@examples'].includes(tag.tag),
           );
           if (prevExampleTag) {
-            return previous.map((prevTag) => {
-              if (prevTag === prevExampleTag) {
-                current.content.unshift({ kind: 'text', text: '\n\n' });
-                return {
-                  ...prevTag,
-                  tag: '@examples',
-                  content: [...prevTag.content, ...current.content],
-                };
-              }
-              return prevTag;
-            });
+            prevExampleTag.tag = '@examples';
+            prevExampleTag.content.push(
+              { kind: 'text', text: '\n\n' },
+              ...current.content,
+            );
+            return previous;
           }
         }
         return [...previous, current];

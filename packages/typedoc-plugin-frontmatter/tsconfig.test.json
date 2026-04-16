@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.test.json",
   "compilerOptions": {
+    "skipLibCheck": true,
     "esModuleInterop": true
   }
 }
