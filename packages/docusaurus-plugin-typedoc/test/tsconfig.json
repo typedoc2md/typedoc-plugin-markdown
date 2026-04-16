@@ -1,0 +1,7 @@
+{
+  "extends": "../tsconfig.test.json",
+  "compilerOptions": {
+    "types": ["node", "mocha"]
+  },
+  "include": ["**/*.ts"]
+}

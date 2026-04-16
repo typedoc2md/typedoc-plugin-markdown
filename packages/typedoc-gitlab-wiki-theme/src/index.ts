@@ -4,7 +4,7 @@
  * @module core
  */
 import * as fs from 'fs';
-import { DeclarationOption, Options, OptionsReader, Reflection } from 'typedoc';
+import { DeclarationOption, Options, OptionsReader } from 'typedoc';
 import {
   MarkdownApplication,
   MarkdownPageEvent,
@@ -38,7 +38,7 @@ export function load(app: MarkdownApplication) {
 
   app.renderer.on(
     MarkdownPageEvent.END,
-    (page: MarkdownPageEvent<Reflection>) => {
+    (page: MarkdownPageEvent) => {
       page.contents = page.contents?.replace(
         /\[([^\]]+)\]\((?!https?:)([^)]+)\)/g,
         (match: string, text: string, url: string) => {

@@ -23,6 +23,8 @@ export async function lintMarkdown() {
       MD013: false,
       //no-duplicate-header
       MD024: false,
+      //no-trailing-punctuation
+      MD026: false,
       //ul-indent
       MD007: false,
       //blank-line-inside-blockquote

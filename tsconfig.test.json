@@ -4,6 +4,7 @@
     "skipLibCheck": true,
     "noUnusedLocals": false,
     "strictNullChecks": false,
+    "types": ["node", "mocha"],
     "resolveJsonModule": true
   }
 }

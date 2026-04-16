@@ -3,8 +3,10 @@
   "compilerOptions": {
     "skipLibCheck": true,
     "outDir": "./dist",
+    "rootDir": "./src",
     "esModuleInterop": true,
     "target": "es2022"
   },
+  "include": ["./src/**/*"],
   "exclude": ["./dist", "./test", "**/*.spec.ts"]
 }
