@@ -1,6 +1,6 @@
 # typedoc-vitepress-theme
 
-[![npm](https://img.shields.io/npm/v/typedoc-vitepress-theme.svg?logo=npm)](https://www.npmjs.com/package/typedoc-vitepress-theme) [![Build Status](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/ci.typedoc-vitepress-theme.yml/badge.svg?branch=main&style=flat-square)](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/ci.typedoc-vitepress-theme.yml)
+[![npm](https://img.shields.io/npm/v/typedoc-vitepress-theme.svg?logo=npm)](https://www.npmjs.com/package/typedoc-vitepress-theme) [![Downloads](https://img.shields.io/npm/dw/typedoc-vitepress-theme?label=downloads)](https://www.npmjs.com/package/typedoc-vitepress-theme) [![Build Status](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/ci.typedoc-vitepress-theme.yml/badge.svg?branch=main&style=flat-square)](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/ci.typedoc-vitepress-theme.yml)
 
 ## Overview
 
@@ -21,7 +21,7 @@ npm install typedoc typedoc-plugin-markdown typedoc-vitepress-theme --save-dev
 
 ## Documentation
 
-Please visit [https://typedoc-plugin-markdown.org/plugins/vitepress](https://typedoc-plugin-markdown.org/plugins/vitepress) for comprehensive documentation, including options and usage guides.
+See the [documentation](https://typedoc-plugin-markdown.org/plugins/vitepress) for installation, configuration options, and usage guides.
 
 ## License
 

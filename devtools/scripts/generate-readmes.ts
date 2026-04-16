@@ -1,6 +1,7 @@
 import { DOCS_CONFIG } from '@devtools/helpers';
 import { consola } from 'consola';
 import * as fs from 'fs';
+import prettier from 'prettier';
 
 type PackageReadmeContent = {
   overview: string[];
@@ -113,22 +114,27 @@ async function main() {
     };
   });
 
-  writeRepositoryReadme(packages);
+  await writeRepositoryReadme(packages);
 
-  packages.forEach((packageItem) => writePackageReadme(packageItem));
+  await Promise.all(
+    packages.map((packageItem) => writePackageReadme(packageItem)),
+  );
 
   consola.success(`Generate readmes complete`);
 }
 
-function writeRepositoryReadme(packages: any) {
+async function writeRepositoryReadme(packages: any) {
   const readme: string[] = ['# typedoc-plugin-markdown'];
+
+  readme.push(
+    '> Generate TypeScript API documentation as Markdown with [TypeDoc](https://typedoc.org).',
+  );
 
   readme.push('## Overview');
   readme.push(
     [
-      'This repository provides a set of packages for generating TypeDoc output as Markdown and adapting that output for different publishing targets.',
-      'It includes the core Markdown plugin, utility plugins for frontmatter and remark transforms, themes for wiki and static-site workflows, and a Docusaurus integration that can run TypeDoc as part of the site toolchain.',
-      'If you want the simplest starting point, begin with [typedoc-plugin-markdown](./packages/typedoc-plugin-markdown#readme).',
+      'This repository contains the core Markdown plugin, utility plugins for frontmatter and remark transforms, target-specific themes for wiki and static-site workflows, and a Docusaurus plugin that can run TypeDoc inside the Docusaurus lifecycle.',
+      'Start with [typedoc-plugin-markdown](./packages/typedoc-plugin-markdown#readme) for the core Markdown output, then add the package that matches where you publish your docs.',
     ].join('\n\n'),
   );
 
@@ -140,7 +146,7 @@ function writeRepositoryReadme(packages: any) {
   const table: string[] = [];
   const rows = packages.map((packageItem) => {
     const badges = [
-      `![Downloads](https://img.shields.io/npm/dw/${packageItem.name}?label=↓)`,
+      `![Downloads](https://img.shields.io/npm/dw/${packageItem.name}?label=npm)`,
     ];
     return (
       [
@@ -155,10 +161,14 @@ function writeRepositoryReadme(packages: any) {
 
   readme.push(table.join('\n'));
 
+  readme.push(
+    'For Docusaurus, use `docusaurus-plugin-typedoc` if you want Docusaurus to run TypeDoc for you, or `typedoc-docusaurus-theme` if you run TypeDoc directly.',
+  );
+
   readme.push('## Documentation');
 
   readme.push(
-    'Please see [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org).',
+    'See [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org) for installation, options, guides, and package documentation.',
   );
 
   readme.push('## Contributing');
@@ -167,23 +177,16 @@ function writeRepositoryReadme(packages: any) {
     'If you would like to contribute towards this project please read the [contributing guide](./CONTRIBUTING.md).',
   );
 
-  readme.push('## Examples');
-
-  readme.push(
-    'Please see the [examples repository](https://github.com/typedoc2md/typedoc-plugin-markdown-examples).',
-  );
-
   readme.push('## License');
 
   readme.push('Released under the [MIT License](./LICENSE).');
 
-  fs.writeFileSync('README.md', readme.join('\n\n'));
+  await writeMarkdownFile('README.md', readme);
 }
 
-function getPackageReadmeContent(packageName: string): Pick<
-  PackageReadmeContent,
-  'overview' | 'highlights'
-> {
+function getPackageReadmeContent(
+  packageName: string,
+): Pick<PackageReadmeContent, 'overview' | 'highlights'> {
   const docsIndexPath = getDocsIndexPath(packageName);
   const content = fs.readFileSync(docsIndexPath, 'utf8');
 
@@ -279,7 +282,7 @@ function normalizeDocsLinks(value: string) {
   );
 }
 
-function writePackageReadme(packageItem: any) {
+async function writePackageReadme(packageItem: any) {
   const ciName =
     packageItem.name === 'typedoc-plugin-markdown'
       ? 'ci.yml'
@@ -288,6 +291,7 @@ function writePackageReadme(packageItem: any) {
   const readme = [`# ${packageItem.name}`];
   const badges = [
     `[![npm](https://img.shields.io/npm/v/${packageItem.name}.svg?logo=npm)](https://www.npmjs.com/package/${packageItem.name})`,
+    `[![Downloads](https://img.shields.io/npm/dw/${packageItem.name}?label=downloads)](https://www.npmjs.com/package/${packageItem.name})`,
     `[![Build Status](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/${ciName}/badge.svg?branch=main&style=flat-square)](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/${ciName})`,
   ];
 
@@ -317,15 +321,26 @@ function writePackageReadme(packageItem: any) {
   readme.push('## Documentation');
   readme.push(docText(docLink));
 
+  if (packageItem.name === 'typedoc-plugin-markdown') {
+    readme.push('## Examples');
+    readme.push(
+      'See the [examples repository](https://github.com/typedoc2md/typedoc-plugin-markdown-examples) for generated output and publishing examples.',
+    );
+  }
+
   readme.push('## License');
   readme.push('MIT');
 
-  fs.writeFileSync(
-    `./packages/${packageItem.name}/README.md`,
-    readme.join('\n\n'),
-  );
+  await writeMarkdownFile(`./packages/${packageItem.name}/README.md`, readme);
 }
 
 function docText(docLink?: string) {
-  return `Please visit [${docLink}](${docLink}) for comprehensive documentation, including options and usage guides.`;
+  return `See the [documentation](${docLink}) for installation, configuration options, and usage guides.`;
+}
+
+async function writeMarkdownFile(path: string, content: string[]) {
+  fs.writeFileSync(
+    path,
+    await prettier.format(content.join('\n\n'), { parser: 'markdown' }),
+  );
 }

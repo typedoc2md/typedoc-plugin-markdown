@@ -1,6 +1,6 @@
 # typedoc-docusaurus-theme
 
-[![npm](https://img.shields.io/npm/v/typedoc-docusaurus-theme.svg?logo=npm)](https://www.npmjs.com/package/typedoc-docusaurus-theme) [![Build Status](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/ci.typedoc-docusaurus-theme.yml/badge.svg?branch=main&style=flat-square)](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/ci.typedoc-docusaurus-theme.yml)
+[![npm](https://img.shields.io/npm/v/typedoc-docusaurus-theme.svg?logo=npm)](https://www.npmjs.com/package/typedoc-docusaurus-theme) [![Downloads](https://img.shields.io/npm/dw/typedoc-docusaurus-theme?label=downloads)](https://www.npmjs.com/package/typedoc-docusaurus-theme) [![Build Status](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/ci.typedoc-docusaurus-theme.yml/badge.svg?branch=main&style=flat-square)](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/ci.typedoc-docusaurus-theme.yml)
 
 ## Overview
 
@@ -22,7 +22,7 @@ npm install typedoc typedoc-plugin-markdown typedoc-docusaurus-theme --save-dev
 
 ## Documentation
 
-Please visit [https://typedoc-plugin-markdown.org/plugins/docusaurus](https://typedoc-plugin-markdown.org/plugins/docusaurus) for comprehensive documentation, including options and usage guides.
+See the [documentation](https://typedoc-plugin-markdown.org/plugins/docusaurus) for installation, configuration options, and usage guides.
 
 ## License
 

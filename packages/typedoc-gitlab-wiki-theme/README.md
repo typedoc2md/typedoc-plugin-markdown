@@ -1,6 +1,6 @@
 # typedoc-gitlab-wiki-theme
 
-[![npm](https://img.shields.io/npm/v/typedoc-gitlab-wiki-theme.svg?logo=npm)](https://www.npmjs.com/package/typedoc-gitlab-wiki-theme) [![Build Status](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/ci.typedoc-gitlab-wiki-theme.yml/badge.svg?branch=main&style=flat-square)](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/ci.typedoc-gitlab-wiki-theme.yml)
+[![npm](https://img.shields.io/npm/v/typedoc-gitlab-wiki-theme.svg?logo=npm)](https://www.npmjs.com/package/typedoc-gitlab-wiki-theme) [![Downloads](https://img.shields.io/npm/dw/typedoc-gitlab-wiki-theme?label=downloads)](https://www.npmjs.com/package/typedoc-gitlab-wiki-theme) [![Build Status](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/ci.typedoc-gitlab-wiki-theme.yml/badge.svg?branch=main&style=flat-square)](https://github.com/typedoc2md/typedoc-plugin-markdown/actions/workflows/ci.typedoc-gitlab-wiki-theme.yml)
 
 ## Overview
 
@@ -22,7 +22,7 @@ npm install typedoc typedoc-plugin-markdown typedoc-gitlab-wiki-theme --save-dev
 
 ## Documentation
 
-Please visit [https://typedoc-plugin-markdown.org/plugins/gitlab-wiki](https://typedoc-plugin-markdown.org/plugins/gitlab-wiki) for comprehensive documentation, including options and usage guides.
+See the [documentation](https://typedoc-plugin-markdown.org/plugins/gitlab-wiki) for installation, configuration options, and usage guides.
 
 ## License
 
