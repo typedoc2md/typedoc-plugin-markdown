@@ -1,0 +1,15 @@
+[**typedoc-stubs**](../README.md)
+
+***
+
+[typedoc-stubs](../README.md) / SomeType
+
+# Typenalias: SomeType
+
+> **SomeType** = `boolean`
+
+## Example
+
+```ts
+const someVar: SomeType = true;
+```

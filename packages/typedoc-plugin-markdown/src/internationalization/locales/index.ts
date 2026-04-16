@@ -10,8 +10,9 @@
 
 import de from './de.js';
 import en from './en.js';
+import fr from './fr.js';
 import ja from './ja.js';
 import ko from './ko.js';
 import zh from './zh.js';
 
-export { de, en, ja, ko, zh };
+export { de, en, fr, ja, ko, zh };

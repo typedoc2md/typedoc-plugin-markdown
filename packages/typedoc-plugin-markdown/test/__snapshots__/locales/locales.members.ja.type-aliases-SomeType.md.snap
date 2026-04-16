@@ -1,0 +1,15 @@
+[**typedoc-stubs**](../README.md)
+
+***
+
+[typedoc-stubs](../README.md) / SomeType
+
+# 型エイリアス: SomeType
+
+> **SomeType** = `boolean`
+
+## 例
+
+```ts
+const someVar: SomeType = true;
+```
