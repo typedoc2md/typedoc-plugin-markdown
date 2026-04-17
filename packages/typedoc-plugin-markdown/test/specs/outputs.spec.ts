@@ -2,7 +2,7 @@ import { strict as assert } from 'assert';
 import * as fs from 'fs';
 import { expectDirToEqual, getOutDir } from '../helpers.js';
 
-describe(`typedoc-plugin-markdown (Integration /Outputs)`, () => {
+describe(`typedoc-plugin-markdown (Integration / Outputs)`, () => {
   it(`should output html`, () => {
     expectDirToEqual('outputs', `html/outputs`);
   });

@@ -323,7 +323,9 @@ export const blockTagsPreserveOrder: Partial<DeclarationOption> = {
         (tag) => typeof tag === 'string' && /^@[a-zA-Z][a-zA-Z0-9]*$/.test(tag),
       )
     ) {
-      throw new Error('[typedoc-plugin-markdown] Hello');
+      throw new Error(
+        '[typedoc-plugin-markdown] blockTagsPreserveOrder must contain valid block tag names, for example "@example".',
+      );
     }
   },
 };

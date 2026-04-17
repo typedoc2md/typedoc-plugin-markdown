@@ -1,6 +1,6 @@
 import { expectFileToEqual } from '../helpers.js';
 
-describe(`typedoc-plugin-markdown (Integration /Objects and Params)`, () => {
+describe(`typedoc-plugin-markdown (Integration / Objects and Params)`, () => {
   it(`should compile object with symbol`, () => {
     expectFileToEqual(
       'objectsAndParams',

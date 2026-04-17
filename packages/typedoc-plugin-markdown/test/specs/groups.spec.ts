@@ -1,6 +1,6 @@
 import { expectFileToEqual } from '../helpers.js';
 
-describe(`typedoc-plugin-markdown (Integration /Groups)`, () => {
+describe(`typedoc-plugin-markdown (Integration / Groups)`, () => {
   it(`should compile index page for project`, () => {
     expectFileToEqual(
       'groups',

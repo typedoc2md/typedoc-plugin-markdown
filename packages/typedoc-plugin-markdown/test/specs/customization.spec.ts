@@ -1,6 +1,6 @@
 import { expectFileToEqual } from '../helpers.js';
 
-describe(`typedoc-plugin-markdown (Integration /Customization)`, () => {
+describe(`typedoc-plugin-markdown (Integration / Customization)`, () => {
   it(`should insert content from hooks and apply custom theme index page`, () => {
     expectFileToEqual('customize', 'members', ['README.md']);
   });

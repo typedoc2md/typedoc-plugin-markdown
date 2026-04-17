@@ -52,7 +52,9 @@ export async function render(
     return;
   }
 
-  prepareTheme(renderer);
+  if (!prepareTheme(renderer)) {
+    return;
+  }
 
   const pages = renderer.router!.buildPages(project);
 
@@ -205,15 +207,25 @@ function prepareTheme(renderer: Renderer) {
   const themes = (renderer as any).themes;
   const themeName = getThemeName(renderer);
   const theme = themes.get(themeName);
+  if (!theme) {
+    renderer.application.logger.error(
+      i18n.theme_0_is_not_defined_available_are_1(
+        themeName,
+        [...themes.keys()].join(', '),
+      ),
+    );
+    return false;
+  }
   const ctor = new theme(renderer);
   if (ctor instanceof MarkdownTheme) {
     renderer.theme = ctor;
-    return;
+    return true;
   }
   renderer.application.logger.warn(
     `[typedoc-plugin-markdown]: Skipping theme "${themeName}" as it is not an instance of the Markdown theme.`,
   );
   renderer.theme = new (themes.get('markdown'))(renderer);
+  return true;
 }
 
 function getThemeName(renderer: Renderer) {
@@ -261,9 +273,7 @@ async function renderDocument(
     writeFileSync(pageEvent.filename, pageEvent.contents);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
-    renderer.application.logger.error(
-      'renderer.application.i18n.could_not_write_0(event.filename)',
-    );
+    renderer.application.logger.error(i18n.could_not_write_0(pageEvent.filename));
   }
 }
 

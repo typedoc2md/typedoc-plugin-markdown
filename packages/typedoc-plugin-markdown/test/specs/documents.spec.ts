@@ -1,6 +1,6 @@
 import { expectFileToEqual } from '../helpers.js';
 
-describe(`typedoc-plugin-markdown (Integration /Documents)`, () => {
+describe(`typedoc-plugin-markdown (Integration / Documents)`, () => {
   describe(`Project`, () => {
     it(`should compile index page for project`, () => {
       expectFileToEqual('documents', ['modules', 'members'], 'README.md');

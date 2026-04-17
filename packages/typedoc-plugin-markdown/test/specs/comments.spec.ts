@@ -1,6 +1,6 @@
 import { expectFileToEqual } from '../helpers.js';
 
-describe(`typedoc-plugin-markdown (Integration /Comments)`, () => {
+describe(`typedoc-plugin-markdown (Integration / Comments)`, () => {
   it(`should compile comments for module`, () => {
     expectFileToEqual('comments', ['members'], ['README.md']);
   });

@@ -1,6 +1,6 @@
 import { expectFileToEqual } from '../helpers.js';
 
-describe(`typedoc-plugin-markdown (Integration /Navigation)`, () => {
+describe(`typedoc-plugin-markdown (Integration / Navigation)`, () => {
   it(`should get with and without groups and categories`, () => {
     expectFileToEqual('navigation', ['members', 'modules'], 'sidebar.json');
   });

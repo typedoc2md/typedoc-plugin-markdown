@@ -1,6 +1,6 @@
 import { expectFileToEqual } from '../helpers.js';
 
-describe(`typedoc-plugin-markdown (Integration /Entry Files)`, () => {
+describe(`typedoc-plugin-markdown (Integration / Entry Files)`, () => {
   it(`should get entry module`, () => {
     expectFileToEqual('entryfiles', 'members', ['README.mdx', 'index.mdx']);
   });
