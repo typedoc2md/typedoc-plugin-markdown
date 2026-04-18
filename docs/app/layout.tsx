@@ -1,5 +1,3 @@
-import { faMarkdown } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Footer, Layout, Navbar } from 'nextra-theme-docs';
 import 'nextra-theme-docs/style.css';
 import { Head } from 'nextra/components';
@@ -7,20 +5,35 @@ import { getPageMap } from 'nextra/page-map';
 import '../globals.css';
 
 export const metadata = {
-  // Define your metadata here
-  // For more information on metadata API, see: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
+  metadataBase: new URL('https://typedoc-plugin-markdown.org'),
+  title: {
+    default: 'typedoc-plugin-markdown',
+    template: '%s',
+  },
+  description:
+    'Generate TypeScript API documentation as Markdown with TypeDoc.',
+  openGraph: {
+    title: 'typedoc-plugin-markdown',
+    description:
+      'Generate TypeScript API documentation as Markdown with TypeDoc.',
+    url: 'https://typedoc-plugin-markdown.org',
+    siteName: 'typedoc-plugin-markdown',
+    type: 'website',
+  },
+  icons: {
+    icon: '/logos/plugin-logo.png',
+  },
 };
 
 const navbar = (
   <Navbar
     logo={
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <div style={{ width: '26px', height: '18px' }}>
-          <FontAwesomeIcon
-            icon={faMarkdown}
-            width={'26px'}
-            size="sm"
-            style={{ width: '100%', height: '100%' }}
+        <div style={{ width: '26px', height: '26px' }}>
+          <img
+            src="/logos/plugin-logo.png"
+            alt="Plugin Logo"
+            style={{ width: '26px', height: '26px' }}
           />
         </div>
         <div
@@ -43,7 +56,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
       <Head>
-        <link rel="icon" href="/logos/markdown-logo.svg" type="image/png" />
+        <link rel="icon" href="/logos/plugin-logo.png" type="image/png" />
       </Head>
       <body>
         <Layout

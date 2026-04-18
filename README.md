@@ -21,8 +21,6 @@ Start with [typedoc-plugin-markdown](./packages/typedoc-plugin-markdown#readme) 
 | [typedoc-docusaurus-theme](./packages/typedoc-docusaurus-theme#readme)     | Generates TypeDoc Markdown output for Docusaurus.              | ![Downloads](https://img.shields.io/npm/dw/typedoc-docusaurus-theme?label=npm)   | [Changelog](./packages/typedoc-docusaurus-theme/CHANGELOG.md)   |
 | [docusaurus-plugin-typedoc](./packages/docusaurus-plugin-typedoc#readme)   | Runs TypeDoc inside the Docusaurus lifecycle.                  | ![Downloads](https://img.shields.io/npm/dw/docusaurus-plugin-typedoc?label=npm)  | [Changelog](./packages/docusaurus-plugin-typedoc/CHANGELOG.md)  |
 
-For Docusaurus, use `docusaurus-plugin-typedoc` if you want Docusaurus to run TypeDoc for you, or `typedoc-docusaurus-theme` if you run TypeDoc directly.
-
 ## Documentation
 
 See [typedoc-plugin-markdown.org](https://typedoc-plugin-markdown.org) for installation, options, guides, and package documentation.
