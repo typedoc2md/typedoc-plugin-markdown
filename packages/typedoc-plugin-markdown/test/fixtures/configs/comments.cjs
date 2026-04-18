@@ -87,5 +87,9 @@ module.exports = {
         ...opts2,
       },
     },
+    {
+      name: 'html',
+      path: '../out/html/comments',
+    },
   ],
 };

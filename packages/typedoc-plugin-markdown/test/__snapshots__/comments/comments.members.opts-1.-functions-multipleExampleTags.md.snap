@@ -20,6 +20,8 @@ Function with multiple example tags
 factorial(1)
 ```
 
+**Example caption**
+
 If there is a code block, then both TypeDoc and VSCode will treat
 text outside of the code block as regular text.
 

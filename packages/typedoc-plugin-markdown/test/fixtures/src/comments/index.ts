@@ -120,7 +120,7 @@ export const _prop_with_underscore = true;
  *
  * factorial(1)
  *
- * @example
+ * @example <caption>Example caption</caption>
  * If there is a code block, then both TypeDoc and VSCode will treat
  * text outside of the code block as regular text.
  *
@@ -308,7 +308,7 @@ export enum EnumMembersTable {
 /**
  * Function with block tags summary
  *
- * @example
+ * @example <caption>Example caption</caption>
  * const x = 1;
  *
  * @see abc.com

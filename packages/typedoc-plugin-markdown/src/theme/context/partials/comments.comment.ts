@@ -1,10 +1,18 @@
 import { backTicks, bold, heading } from '@plugin/libs/markdown/index.js';
 import {
   camelToTitleCase,
+  escapeChars,
   sanitizeComments,
 } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { Comment, CommentTag, translateTagName } from 'typedoc';
+import {
+  Comment,
+  CommentDisplayPart,
+  CommentTag,
+  translateTagName,
+} from 'typedoc';
+
+const exampleTagNames = ['@example', '@examples'];
 
 export function comment(
   this: MarkdownThemeContext,
@@ -57,6 +65,7 @@ export function comment(
   const blockTagsPreserveOrder = this.options.getValue(
     'blockTagsPreserveOrder',
   ) as string[];
+  const shouldSanitizeComments = this.options.getValue('sanitizeComments');
 
   const showTags =
     opts.showTags || (opts.showSummary && blockTagsPreserveOrder.length > 0);
@@ -65,20 +74,23 @@ export function comment(
   if (showTags && model.blockTags?.length > 0) {
     const blockTags = model.blockTags.reduce(
       (previous: CommentTag[], current: CommentTag) => {
-        if (current.tag === '@example') {
-          const prevExampleTag = previous.find((tag) =>
-            ['@example', '@examples'].includes(tag.tag),
+        const tag = current.clone();
+        tag.content = getNamedTagContent(tag, shouldSanitizeComments);
+
+        if (tag.tag === '@example') {
+          const previousExampleTag = previous.find((previousTag) =>
+            exampleTagNames.includes(previousTag.tag),
           );
-          if (prevExampleTag) {
-            prevExampleTag.tag = '@examples';
-            prevExampleTag.content.push(
+          if (previousExampleTag) {
+            previousExampleTag.tag = '@examples';
+            previousExampleTag.content.push(
               { kind: 'text', text: '\n\n' },
-              ...current.content,
+              ...tag.content,
             );
             return previous;
           }
         }
-        return [...previous, current];
+        return [...previous, tag];
       },
       [],
     );
@@ -122,9 +134,46 @@ export function comment(
 
   const output = md.join('\n\n');
 
-  const parsedOutput = this.options.getValue('sanitizeComments')
+  const parsedOutput = shouldSanitizeComments
     ? sanitizeComments(output)
     : output;
 
   return parsedOutput;
+}
+
+function getNamedTagContent(
+  tag: CommentTag,
+  shouldSanitizeComments: boolean,
+): CommentDisplayPart[] {
+  if (!tag.name) {
+    return tag.content;
+  }
+
+  const tagName = stripCaptionTag(tag.name);
+  const escapedTagName = shouldSanitizeComments
+    ? escapeNameChars(tagName)
+    : escapeChars(tagName);
+
+  return [
+    {
+      kind: 'text',
+      text: `${bold(escapedTagName)}\n\n`,
+    },
+    ...tag.content,
+  ];
+}
+
+function escapeNameChars(str: string) {
+  return str
+    .replace(/_/g, '\\_')
+    .replace(/`/g, '\\`')
+    .replace(/\|/g, '\\|')
+    .replace(/\[/g, '\\[')
+    .replace(/\]/g, '\\]')
+    .replace(/\*/g, '\\*');
+}
+
+function stripCaptionTag(str: string) {
+  const caption = str.match(/^<caption>(.*?)<\/caption>$/);
+  return caption?.[1] ?? str;
 }

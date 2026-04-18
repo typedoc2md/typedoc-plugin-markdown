@@ -19,6 +19,8 @@ Function with block tags summary
 
 ## Example
 
+**Example caption**
+
 ```ts
 const x = 1;
 ```
