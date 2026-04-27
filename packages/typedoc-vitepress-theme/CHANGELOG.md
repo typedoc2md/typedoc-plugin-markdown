@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.3
+
+### Patch Changes
+
+- Skip fenced code blocks in link-encoding regex ([#862](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/862)) - thanks @Kyujenius.
+
 ## 1.1.2 (2025-01-07)
 
 ### Patch Changes
