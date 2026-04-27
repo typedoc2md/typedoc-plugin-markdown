@@ -38,7 +38,21 @@ export function load(app: MarkdownApplication) {
   );
 
   app.renderer.on(MarkdownPageEvent.END, (page) => {
-    page.contents = page.contents?.replace(
+    if (!page.contents) return;
+
+    const codeBlocks: string[] = [];
+    const placeholder = '___TYPEDOC_CODEBLOCK___';
+
+    // Protect fenced code blocks from the link regex
+    let contents = page.contents.replace(
+      /```[\s\S]*?```/g,
+      (match: string) => {
+        codeBlocks.push(match);
+        return placeholder;
+      },
+    );
+
+    contents = contents.replace(
       /\[([^\]]+)\]\((?!https?:|\/|\.)([^)]*#?[^)]*)\)/g,
       (match: string, text: string, url: string) => {
         const urlWithAnchor = url.split('#');
@@ -48,6 +62,12 @@ export function load(app: MarkdownApplication) {
         }
         return `[${text}](${encodeURI(url)})`;
       },
+    );
+
+    // Restore fenced code blocks
+    page.contents = contents.replace(
+      new RegExp(placeholder, 'g'),
+      () => codeBlocks.shift() || '',
     );
   });
 
