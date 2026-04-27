@@ -9,7 +9,7 @@
   "linked": [],
   "access": "public",
   "baseBranch": "main",
-  "updateInternalDependencies": "minor",
+  "updateInternalDependencies": "patch",
   "ignore": [
     "@devtools/*",
     "typedoc-github-wiki-theme",
