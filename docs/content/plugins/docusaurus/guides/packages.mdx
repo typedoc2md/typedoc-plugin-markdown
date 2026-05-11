@@ -1,0 +1,29 @@
+# Choosing a Package
+
+Docusaurus support is split across two packages depending on where TypeDoc runs.
+
+## docusaurus-plugin-typedoc
+
+**`docusaurus-plugin-typedoc`** runs TypeDoc as part of the Docusaurus toolchain, so API docs can be generated during the normal Docusaurus dev and build flow.
+
+Use it when you want Docusaurus to own the TypeDoc execution step instead of maintaining a separate docs generation command.
+
+Internally, it uses **`typedoc-docusaurus-theme`** to generate Docusaurus-compatible Markdown and sidebar data.
+
+Features:
+
+- Bootstraps TypeDoc from the Docusaurus CLI.
+- Uses `typedoc-docusaurus-theme` internally for Docusaurus-compatible output.
+- Supports generating API docs as part of the standard Docusaurus workflow.
+
+## typedoc-docusaurus-theme
+
+**`typedoc-docusaurus-theme`** is the standalone integration for Docusaurus. It applies Docusaurus-friendly Markdown defaults and generates sidebar data so you can run TypeDoc separately and then publish the output inside a Docusaurus docs site.
+
+Use it when TypeDoc needs to run outside the Docusaurus CLI, or when API docs are generated as part of a separate build step.
+
+Features:
+
+- Presets `typedoc-plugin-markdown` for Docusaurus-compatible output.
+- Generates a configurable Docusaurus sidebar file.
+- Fits workflows where TypeDoc and Docusaurus run as separate steps.

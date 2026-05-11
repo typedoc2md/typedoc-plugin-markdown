@@ -1,7 +1,8 @@
 export default {
   'quick-start': '',
   options: '',
-  'remark-plugins-usage': '',
-  'writing-a-plugin': '',
+  'useful-plugins': '',
+  'writing-a-plugin': 'Writing a Plugin',
+  'example-configuration': '',
   CHANGELOG: '',
 };

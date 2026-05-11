@@ -2,5 +2,6 @@ export default {
   'quick-start': '',
   options: '',
   guides: '',
-  'migration-guide': '',
+  'migration-guides': '',
+  changelog: '',
 };

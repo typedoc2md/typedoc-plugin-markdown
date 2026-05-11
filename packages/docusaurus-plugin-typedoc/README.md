@@ -4,9 +4,11 @@
 
 ## Overview
 
-`docusaurus-plugin-typedoc` runs TypeDoc as part of the Docusaurus toolchain, so API docs can be generated during the normal Docusaurus dev and build flow.
+**`docusaurus-plugin-typedoc`** runs TypeDoc as part of the Docusaurus toolchain, so API docs can be generated during the normal Docusaurus dev and build flow.
 
 Use it when you want Docusaurus to own the TypeDoc execution step instead of maintaining a separate docs generation command.
+
+Internally, it uses **`typedoc-docusaurus-theme`** to generate Docusaurus-compatible Markdown and sidebar data.
 
 ## Installation
 
@@ -17,7 +19,7 @@ npm install typedoc typedoc-plugin-markdown docusaurus-plugin-typedoc --save-dev
 ## Features
 
 - Bootstraps TypeDoc from the Docusaurus CLI.
-- Uses the Docusaurus integration defaults from `typedoc-plugin-markdown`.
+- Uses `typedoc-docusaurus-theme` internally for Docusaurus-compatible output.
 - Supports generating API docs as part of the standard Docusaurus workflow.
 
 ## Documentation

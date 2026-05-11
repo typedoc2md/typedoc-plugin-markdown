@@ -1,0 +1,38 @@
+# Example Configuration
+
+The following example shows how you might conditionally use the above plugins in your `typedoc.json`.
+
+_This is for illustration purposes only, and you can use any combination of plugins you like._
+
+```json filename="typedoc.json"
+{
+  "plugin": ["typedoc-plugin-markdown", "typedoc-plugin-remark"],
+  "remarkPlugins": [
+    // Apply remark-mdx and remark-github to all files.
+    {
+      "applyTo": "*",
+      "plugins": [
+        "remark-mdx",
+        ["remark-github", { "repository": "myorg/myrepo" }]
+      ]
+    },
+    // Apply remark-toc to Readme page and members kinds of Document, Class and Interface only.
+    {
+      "applyTo": ["Readme", "Document", "Class", "Interface"],
+      "plugins": [
+        // remark-insert-headings is additionally required
+        // (only display toc heading if there are more than two headings)
+        [
+          "remark-insert-headings",
+          {
+            "text": "Contents",
+            "position": "start",
+            "minHeadingCount": 2
+          }
+        ],
+        ["remark-toc", { "maxDepth": 2 }]
+      ]
+    }
+  ]
+}
+```

@@ -2,11 +2,15 @@
 
 ## 1.4.2 (2025-08-04)
 
-- Bump docusaurus-plugin-typedoc to 1.4.2
+### Patch Changes
+
+- Fix error when `() => Plugin` type is defined in the `plugins` array of the Docusaurus config - thanks @TomerAberbach.
 
 ## 1.4.1 (2025-07-30)
 
-- Bump docusaurus-plugin-typedoc to 1.4.1
+### Patch Changes
+
+- Fixed `generate-typedoc` cli task passing in incorrect options ([#833](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/833)).
 
 ## 1.4.0 (2025-04-28)
 
@@ -14,6 +18,11 @@
 
 - Decoupled TypeDoc logic into a separate plugin, "typedoc-docusaurus-theme". "docusaurus-plugin-typedoc" and "typedoc-docusaurus-theme" will now be published and versioned together as linked packages.
 - Unquoted object keys in generated sidebar.
+
+### Patch Changes
+
+- Updated dependencies
+  - typedoc-docusaurus-theme@1.4.0
 
 ## 1.3.1 (2025-04-23)
 
@@ -116,7 +125,3 @@
 - Provide exit code on process error ([#583](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/583))
 - Use correct path separator in sidebar urls ([#489](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/489))
 - Fail docusaurus build when TypeDoc errors - can be overridden with `skipErrorChecking` ([#429](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/429)).
-
----
-
-Earlier changelog entries can be found in `CHANGELOG_ARCHIVE.md`.

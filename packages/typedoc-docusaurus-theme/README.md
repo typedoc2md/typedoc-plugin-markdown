@@ -4,7 +4,7 @@
 
 ## Overview
 
-`typedoc-docusaurus-theme` is the standalone integration for Docusaurus. It applies Docusaurus-friendly Markdown defaults and generates sidebar data so you can run TypeDoc separately and then publish the output inside a Docusaurus docs site.
+**`typedoc-docusaurus-theme`** is the standalone integration for Docusaurus. It applies Docusaurus-friendly Markdown defaults and generates sidebar data so you can run TypeDoc separately and then publish the output inside a Docusaurus docs site.
 
 Use it when TypeDoc needs to run outside the Docusaurus CLI, or when API docs are generated as part of a separate build step.
 

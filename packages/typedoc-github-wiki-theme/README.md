@@ -4,7 +4,7 @@
 
 ## Overview
 
-`typedoc-github-wiki-theme` applies GitHub Wiki-specific naming and link behavior on top of `typedoc-plugin-markdown`.
+**`typedoc-github-wiki-theme`** applies GitHub Wiki-specific naming and link behavior on top of `typedoc-plugin-markdown`.
 
 Use it when you want the generated API docs to drop straight into a repository wiki without manually reworking page names, links, or sidebar navigation.
 

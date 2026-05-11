@@ -4,7 +4,7 @@
 
 ## Overview
 
-`typedoc-vitepress-theme` applies VitePress-friendly Markdown defaults and emits the sidebar data needed to wire the generated docs into a VitePress site.
+**`typedoc-vitepress-theme`** applies VitePress-friendly Markdown defaults and emits the sidebar data needed to wire the generated docs into a VitePress site.
 
 Use it when TypeDoc runs outside VitePress itself but the output still needs to slot cleanly into the VitePress navigation and link model.
 

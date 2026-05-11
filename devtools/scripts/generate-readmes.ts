@@ -161,10 +161,6 @@ async function writeRepositoryReadme(packages: any) {
 
   readme.push(table.join('\n'));
 
-  readme.push(
-    'For Docusaurus, use `docusaurus-plugin-typedoc` if you want Docusaurus to run TypeDoc for you, or `typedoc-docusaurus-theme` if you run TypeDoc directly.',
-  );
-
   readme.push('## Documentation');
 
   readme.push(
@@ -187,18 +183,30 @@ async function writeRepositoryReadme(packages: any) {
 function getPackageReadmeContent(
   packageName: string,
 ): Pick<PackageReadmeContent, 'overview' | 'highlights'> {
-  const docsIndexPath = getDocsIndexPath(packageName);
+  const docsIndexPath =
+    packageName === 'typedoc-docusaurus-theme' ||
+    packageName === 'docusaurus-plugin-typedoc'
+      ? './docs/content/plugins/docusaurus/guides/packages.mdx'
+      : getDocsIndexPath(packageName);
   const content = fs.readFileSync(docsIndexPath, 'utf8');
 
+  if (
+    packageName === 'typedoc-docusaurus-theme' ||
+    packageName === 'docusaurus-plugin-typedoc'
+  ) {
+    const section = extractSection(content, `## ${packageName}`);
+
+    return {
+      overview: extractParagraphsFromContent(
+        extractContentBeforeHeading(section, 'Features:'),
+      ),
+      highlights: extractListItemsAfterLabel(section, 'Features:'),
+    };
+  }
+
   return {
-    overview: extractParagraphs(
-      content,
-      getPackageSectionHeading(packageName, 'Overview') ?? '## Overview',
-    ),
-    highlights: extractListItems(
-      content,
-      getPackageSectionHeading(packageName, 'Features') ?? '## Features',
-    ),
+    overview: extractParagraphs(content, '## Overview'),
+    highlights: extractListItems(content, '## Features'),
   };
 }
 
@@ -216,31 +224,20 @@ function getDocsIndexPath(packageName: string) {
   return `./docs/content${docsPath}/index.mdx`;
 }
 
-function getPackageSectionHeading(
-  packageName: string,
-  section: 'Overview' | 'Features',
-) {
-  const heading = `## README ${section}: ${packageName}`;
-
-  if (
-    packageName === 'typedoc-docusaurus-theme' ||
-    packageName === 'docusaurus-plugin-typedoc'
-  ) {
-    return heading;
-  }
-
-  return null;
-}
-
 function extractParagraphs(content: string, heading: string) {
   const section = extractSection(content, heading);
 
-  return section
+  return extractParagraphsFromContent(section);
+}
+
+function extractParagraphsFromContent(content: string) {
+  return content
     .split('\n\n')
     .map((paragraph) => paragraph.trim())
     .filter(
       (paragraph) =>
         paragraph.length > 0 &&
+        !paragraph.startsWith('- ') &&
         !paragraph.startsWith('<') &&
         !paragraph.startsWith('import ') &&
         !paragraph.startsWith('{/*'),
@@ -251,11 +248,26 @@ function extractParagraphs(content: string, heading: string) {
 function extractListItems(content: string, heading: string) {
   const section = extractSection(content, heading);
 
-  return section
+  return extractListItemsFromContent(section);
+}
+
+function extractListItemsFromContent(content: string) {
+  return content
     .split('\n')
     .map((line) => line.trim())
     .filter((line) => line.startsWith('- '))
     .map((line) => normalizeDocsLinks(line.slice(2)));
+}
+
+function extractListItemsAfterLabel(content: string, label: string) {
+  const escapedLabel = escapeRegExp(label);
+  const match = content.match(new RegExp(`${escapedLabel}\\n\\n([\\s\\S]*)`));
+
+  if (!match?.[1]) {
+    throw new Error(`Unable to extract list items after "${label}".`);
+  }
+
+  return extractListItemsFromContent(match[1]);
 }
 
 function extractSection(content: string, heading: string) {
@@ -269,6 +281,13 @@ function extractSection(content: string, heading: string) {
   }
 
   return match[1].trim();
+}
+
+function extractContentBeforeHeading(content: string, heading: string) {
+  const escapedHeading = escapeRegExp(heading);
+  const match = content.match(new RegExp(`([\\s\\S]*?)\\n${escapedHeading}`));
+
+  return (match?.[1] ?? content).trim();
 }
 
 function escapeRegExp(value: string) {

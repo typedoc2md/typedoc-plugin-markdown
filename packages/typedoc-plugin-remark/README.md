@@ -4,7 +4,7 @@
 
 ## Overview
 
-`typedoc-plugin-remark` runs the Markdown emitted by `typedoc-plugin-markdown` through a configurable remark pipeline before files are written.
+**`typedoc-plugin-remark`** runs the Markdown emitted by `typedoc-plugin-markdown` through a configurable remark pipeline before files are written.
 
 Use it to apply GFM or MDX transforms, enforce Markdown conventions, or add your own AST-based post-processing without forking the Markdown theme.
 

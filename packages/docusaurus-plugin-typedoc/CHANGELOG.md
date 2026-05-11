@@ -125,7 +125,3 @@
 - Provide exit code on process error ([#583](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/583))
 - Use correct path separator in sidebar urls ([#489](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/489))
 - Fail docusaurus build when TypeDoc errors - can be overridden with `skipErrorChecking` ([#429](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/429)).
-
----
-
-Earlier changelog entries can be found in `CHANGELOG_ARCHIVE.md`.

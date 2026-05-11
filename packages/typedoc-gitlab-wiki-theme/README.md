@@ -4,7 +4,7 @@
 
 ## Overview
 
-`typedoc-gitlab-wiki-theme` applies GitLab Wiki-specific naming and link behavior on top of `typedoc-plugin-markdown`.
+**`typedoc-gitlab-wiki-theme`** applies GitLab Wiki-specific naming and link behavior on top of `typedoc-plugin-markdown`.
 
 Use it when you want the generated API docs to fit the GitLab Wiki file layout and navigation model without additional post-processing.
 
