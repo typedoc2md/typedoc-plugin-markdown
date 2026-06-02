@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.3
+## 1.1.3 (2026-06-02)
 
 ### Patch Changes
 
