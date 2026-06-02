@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.12.0
+
+### Minor Changes
+
+- Support JSDoc-style `<caption>` labels for `@example` tags ([#861](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/861)).
+- Add Markdown theme translations for the `fr` locale.
+
+### Patch Changes
+
+- Fixed duplicate sidebar groups when `navigation.includeCategories=true` and `navigation.includeGroups=false` ([#866](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/866)).
+
 ## 4.11.0 (2026-03-18)
 
 ### Minor Changes
