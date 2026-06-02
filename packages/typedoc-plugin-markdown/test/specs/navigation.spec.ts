@@ -36,4 +36,12 @@ describe(`typedoc-plugin-markdown (Integration / Navigation)`, () => {
       'sidebar.json',
     );
   });
+
+  it(`should get with categories and without groups for single modules`, () => {
+    expectFileToEqual(
+      'navigationSingleModule',
+      ['members', 'modules'],
+      'sidebar.json',
+    );
+  });
 });

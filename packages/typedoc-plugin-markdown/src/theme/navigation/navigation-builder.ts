@@ -160,16 +160,19 @@ export class NavigationBuilder {
 
     if (includeCategories && project.categories?.length) {
       this.navigation.push(
-        ...project.categories.map((category) => {
+        ...project.categories.flatMap((category) => {
+          const children = this.getCategoryGroupChildren(category);
+          if (!children?.length) return [];
           return {
             title: category.title,
             ...(this.router.hasUrl(category as any) && {
               path: this.router.getFullUrl(category as any),
             }),
-            children: this.getCategoryGroupChildren(category),
+            children,
           };
         }),
       );
+      return;
     }
 
     if (!project.groups?.length) return;

@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Category 1",
+    "children": [
+      {
+        "title": "SomeInterface1",
+        "kind": 256,
+        "path": "interfaces/SomeInterface1.md",
+        "isDeprecated": true
+      },
+      {
+        "title": "SomeInterface2",
+        "kind": 256,
+        "path": "interfaces/SomeInterface2.md",
+        "isDeprecated": true
+      }
+    ]
+  },
+  {
+    "title": "Category 2",
+    "children": [
+      {
+        "title": "SomeInterface3",
+        "kind": 256,
+        "path": "interfaces/SomeInterface3.md",
+        "isDeprecated": true
+      }
+    ]
+  }
+]

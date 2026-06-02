@@ -31,6 +31,14 @@ const opts2 = {
   categorizeByGroup: false,
 };
 
+const opts3 = {
+  navigation: {
+    includeCategories: true,
+    includeGroups: false,
+  },
+  categorizeByGroup: false,
+};
+
 /** @type {import('typedoc').TypeDocOptions} */
 module.exports = {
   ...baseOptions,
@@ -56,6 +64,15 @@ module.exports = {
     },
     {
       name: 'markdown',
+      path: '../out/md/navigation/members/opts-3',
+      options: {
+        navigationJson:
+          './test/fixtures/out/md/navigation/members/opts-3/sidebar.json',
+        ...opts3,
+      },
+    },
+    {
+      name: 'markdown',
       path: '../out/md/navigation/modules/opts-1',
       options: {
         router: 'module',
@@ -73,6 +90,16 @@ module.exports = {
         navigationJson:
           './test/fixtures/out/md/navigation/modules/opts-2/sidebar.json',
         ...opts2,
+      },
+    },
+    {
+      name: 'markdown',
+      path: '../out/md/navigation/modules/opts-3',
+      options: {
+        router: 'module',
+        navigationJson:
+          './test/fixtures/out/md/navigation/modules/opts-3/sidebar.json',
+        ...opts3,
       },
     },
   ],
