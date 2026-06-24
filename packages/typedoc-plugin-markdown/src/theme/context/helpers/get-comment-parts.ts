@@ -33,11 +33,12 @@ export function getCommentParts(
                   url = getReflectionUrl(this, part.target);
                 }
                 if (typeof url === 'undefined') {
-                  let target = part.target.parent!;
-                  while (!this.router.hasUrl(target)) {
-                    target = target.parent!;
+                  url = undefined;
+                  if (this.options.getValue('validation').rewrittenLink) {
+                    this.theme.application.logger.warn(
+                      `"${this.page.model.getFriendlyFullName()}" links to "${part.target.getFriendlyFullName()}", but the link cannot be resolved. TypeDoc requires valid TSDoc declaration references for clickable links.`,
+                    );
                   }
-                  url = getReflectionUrl(this, target);
                 }
               }
               const text =

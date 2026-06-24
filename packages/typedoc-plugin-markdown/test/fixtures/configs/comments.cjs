@@ -15,6 +15,7 @@ const commonOptions = {
   excludePrivate: false,
   useHTMLAnchors: true,
   anchorPrefix: 'api-',
+  logLevel: 'None',
 };
 
 const opts1 = {

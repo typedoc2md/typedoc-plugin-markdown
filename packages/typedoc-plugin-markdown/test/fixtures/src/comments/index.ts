@@ -152,6 +152,9 @@ export function singleExampleTag() {
 /**
  * constFunction comments
  *
+ * - Link to {@link text}
+ * - Link to {@link xyz}
+ *
  * @param text Some param
  *
  * @remarks Some remarks
