@@ -282,7 +282,7 @@ export const TypeDeclarationConst = {
  *
  * @param param1 The first param
  * to be added.
- * @param param2 The second param to be added.
+ * @param param2 The second param to be added. See {@link param1}.
  *
  * Some additional text for num2.
  *

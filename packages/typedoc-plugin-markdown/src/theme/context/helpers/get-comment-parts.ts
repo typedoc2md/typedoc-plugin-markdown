@@ -32,7 +32,7 @@ export function getCommentParts(
                 if (this.router.hasUrl(part.target)) {
                   url = getReflectionUrl(this, part.target);
                 }
-                if (typeof url === 'undefined') {
+                if (typeof url === 'undefined' && !part.target.isParameter()) {
                   let target = part.target.parent!;
                   while (!this.router.hasUrl(target)) {
                     target = target.parent!;

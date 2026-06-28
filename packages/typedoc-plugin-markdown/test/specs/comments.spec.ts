@@ -45,7 +45,10 @@ describe(`typedoc-plugin-markdown (Integration / Comments)`, () => {
   });
 
   it(`should get tables for parameters`, () => {
-    expectFileToEqual('comments', 'members', ['/functions/parametersTable.md']);
+    expectFileToEqual('comments', 'members', [
+      '/functions/parametersTable.md',
+      '/Function.parametersTable.md',
+    ]);
   });
 
   it(`should get tables for type declarations`, () => {
