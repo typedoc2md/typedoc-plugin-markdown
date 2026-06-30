@@ -6,7 +6,10 @@ export function getPropertyDefaultValue(model: DeclarationReflection) {
     (tag) => tag.tag === '@defaultValue',
   );
   if (defaultValueTag) {
-    return defaultValueTag?.content.map((content) => content.text).join('');
+    return defaultValueTag?.content
+      .map((content) => content.text)
+      .join('')
+      .replace(/\|/g, '\\|');
   }
   return model.defaultValue && model.defaultValue !== '...'
     ? backTicks(model.defaultValue)
