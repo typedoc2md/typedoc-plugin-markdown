@@ -1,5 +1,5 @@
 ---
-'typedoc-plugin-markdown': fix
+'typedoc-plugin-markdown': patch
 ---
 
 - fix signature parameters (#874) - thanks @Jym77.
