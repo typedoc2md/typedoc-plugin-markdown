@@ -7,7 +7,8 @@ function functionWithDefaultParameters(
    valueC?: number, 
    valueD?: boolean, 
    valueE?: boolean, 
-   valueF?: string): string;
+   valueF?: string
+): string;
 ```
 
 Defined in: [functions.ts:1](http://source-url)

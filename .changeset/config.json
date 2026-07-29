@@ -20,6 +20,7 @@
     "typedoc-plugin-remark",
     "typedoc-docusaurus-theme",
     "docusaurus-plugin-typedoc",
-    "typedoc-plugin-frontmatter"
+    "typedoc-plugin-frontmatter",
+    "typedoc-vitepress-theme"
   ]
 }

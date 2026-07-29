@@ -1,7 +1,7 @@
 # Function: functionWithTypeParameters()
 
 ```ts
-function functionWithTypeParameters<T, Item>(): boolean;
+function functionWithTypeParameters<T, Item = string | boolean>(): boolean;
 ```
 
 Defined in: [functions.ts:1](http://source-url)

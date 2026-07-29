@@ -28,7 +28,8 @@ function functionWithUnionParams(
      z: string;
   };
 }, 
-   noUnions: string): undefined;
+   noUnions: string
+): undefined;
 ```
 
 Defined in: [functions.ts:1](http://source-url)
