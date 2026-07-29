@@ -129,13 +129,13 @@ Module comments
 | [functionWithArrayOfOptionalStuff](functions/functionWithArrayOfOptionalStuff.md) | Comments for array of stuff? |
 | [functionWithArrayOfStuff](functions/functionWithArrayOfStuff.md) | Comments for array of stuff |
 | [functionWithArrayOfUnionStuff](functions/functionWithArrayOfUnionStuff.md) | Comments for array of union stuff |
-| [functionWithComplexParams](functions/functionWithComplexParams.md) | Function with function parmas |
+| [functionWithComplexParams](functions/functionWithComplexParams.md) | Function with function params |
 | [functionWithDefaultParameters](functions/functionWithDefaultParameters.md) | This is a function with a parameter that has a default value. |
 | [functionWithMultipleSignatures](functions/functionWithMultipleSignatures.md) | Main function comment. |
 | [functionWithNamedParams](functions/functionWithNamedParams.md) | - |
 | [functionWithNestedParameters](functions/functionWithNestedParameters.md) | Some nested params. |
 | [functionWithOptionalParameters](functions/functionWithOptionalParameters.md) | This is a function with a parameters. |
-| [functionWithRestParams](functions/functionWithRestParams.md) | Function with reset parmas |
+| [functionWithRestParams](functions/functionWithRestParams.md) | Function with rest params |
 | [functionWithTypeParameters](functions/functionWithTypeParameters.md) | Function with type parameters |
 | [functionWithUnionParams](functions/functionWithUnionParams.md) | - |
 | [tupleTypeFunction](functions/tupleTypeFunction.md) | - |

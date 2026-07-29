@@ -101,14 +101,18 @@ export function functionWithNamedParams(
 ) {}
 
 /**
- * Function with reset parmas
+ * Function with rest params
  */
-export function functionWithRestParams(param: string, ...restParams: string[]) {
+export function functionWithRestParams(
+  param1: string,
+  param2: string,
+  ...restParams: string[]
+) {
   return true;
 }
 
 /**
- * Function with function parmas
+ * Function with function params
  */
 export function functionWithComplexParams(
   paramA: (a: string) => true,

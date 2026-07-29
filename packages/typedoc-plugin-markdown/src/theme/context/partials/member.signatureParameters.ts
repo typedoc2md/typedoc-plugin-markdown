@@ -14,9 +14,6 @@ export function signatureParameters(
     model
       .map((param) => {
         const paramsmd: string[] = [];
-        if (param.flags?.isRest) {
-          paramsmd.push('...');
-        }
         const paramType = this.partials.someType(param.type as SomeType);
         const showParamType =
           (options?.forceExpandParameters ?? false) ||
@@ -24,7 +21,8 @@ export function signatureParameters(
         const optional =
           param.flags.isOptional || param.defaultValue ? '?' : '';
 
-        const paramItem = [`${backTicks(`${param.name}${optional}`)}`];
+        const rest = param.flags?.isRest ? '...' : '';
+        const paramItem = [`${rest}${backTicks(`${param.name}${optional}`)}`];
         if (showParamType) {
           paramItem.push(paramType);
         }
@@ -34,6 +32,6 @@ export function signatureParameters(
         return paramsmd.join('');
       })
       .join(`, `) +
-    ')'
+    (format && model.length > 2 ? `\n)` : ')')
   );
 }

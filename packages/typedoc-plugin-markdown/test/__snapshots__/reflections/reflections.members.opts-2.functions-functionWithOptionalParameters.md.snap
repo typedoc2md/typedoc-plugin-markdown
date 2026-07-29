@@ -5,7 +5,8 @@ function functionWithOptionalParameters(
    firstParamWithDefault?: boolean, 
    requiredParam: string, 
    optionalParam?: string, 
-   paramWithDefault?: number): void;
+   paramWithDefault?: number
+): void;
 ```
 
 Defined in: [functions.ts:1](http://source-url)

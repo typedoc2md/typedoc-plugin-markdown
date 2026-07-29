@@ -14,7 +14,8 @@ function functionWithNestedParameters(
   parent?: number;
 }, 
    context: any, 
-   somethingElse?: string): boolean;
+   somethingElse?: string
+): boolean;
 ```
 
 Some nested params.
