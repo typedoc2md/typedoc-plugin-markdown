@@ -1,4 +1,4 @@
-# Class: ClassWithTypeParameters\<A, B, C\>
+# Class: ClassWithTypeParameters\<A, B *extends* `string`, C = `boolean`\>
 
 Defined in: [classes.ts:1](http://source-url)
 
@@ -17,7 +17,7 @@ Comments for ClassWithTypeParameters
 ### Constructor
 
 ```ts
-new ClassWithTypeParameters<A, B, C>(): ClassWithTypeParameters<A, B, C>;
+new ClassWithTypeParameters<A, B extends string, C = boolean>(): ClassWithTypeParameters<A, B, C>;
 ```
 
 #### Returns

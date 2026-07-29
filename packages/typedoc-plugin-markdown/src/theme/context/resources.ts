@@ -341,6 +341,13 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
       helpers.getReflectionFlags.apply(context, [reflectionFlags]) as string,
     getReturnType: (model?: SomeType | undefined) =>
       helpers.getReturnType.apply(context, [model]) as string,
+    getTypeParameters: (
+      typeParameters?: TypeParameterReflection[] | undefined,
+      options?: { includeBackticks?: boolean | undefined } | undefined,
+    ) =>
+      helpers.getTypeParameters.apply(context, [typeParameters, options]) as
+        | string
+        | undefined,
     hasSignatures: (model: DeclarationReflection) =>
       helpers.hasSignatures.apply(context, [model]) as boolean,
     hasUsefulTypeDetails: (type: SomeType) =>

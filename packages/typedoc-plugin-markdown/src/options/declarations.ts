@@ -290,14 +290,14 @@ export const expandObjects: Partial<DeclarationOption> = {
 };
 
 /**
- * By default parameters in signature definitions only display the parameter name so the output is more concise.
+ * By default parameters and type parameters in signature definitions only display their name so the output is more concise.
  *
- * This option should be set when a full type representation is preferred.
+ * This option should be set when a full type representation is preferred, showing parameter types as well as type parameter `extends` clauses and defaults.
  *
  * @category Display
  */
 export const expandParameters: Partial<DeclarationOption> = {
-  help: 'Expand parameters in signature parentheses to display type information.',
+  help: 'Expand parameters and type parameters inside signatures.',
   type: ParameterType.Boolean,
   defaultValue: false,
 };

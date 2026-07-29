@@ -1,5 +1,5 @@
 import { strikeThrough } from '@plugin/libs/markdown/index.js';
-import { escapeChars } from '@plugin/libs/utils/escape-chars.js';
+import { escapeChars, unEscapeChars } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { PageTitleTemplatePlaceholders } from '@plugin/types/theme.js';
 import {
@@ -39,9 +39,14 @@ export function pageTitle(this: MarkdownThemeContext): string {
     });
   }
 
-  const typeParameters = getTypeParameters(page.model as DeclarationReflection);
+  const typeParameters = this.helpers.getTypeParameters(
+    (page.model as DeclarationReflection).typeParameters,
+    { includeBackticks: false },
+  );
+  const rawTypeParameters = unEscapeChars(typeParameters ?? '');
+
   const modelName = `${page.model.name}${this.helpers.hasSignatures(page.model as DeclarationReflection) ? '()' : ''}`;
-  const rawName = `${modelName}${typeParameters?.length ? `<${typeParameters}>` : ''}`;
+  const rawName = `${modelName}${rawTypeParameters?.length ? `<${rawTypeParameters}>` : ''}`;
   const name = `${escapeChars(modelName)}${typeParameters?.length ? `${this.helpers.getAngleBracket('<')}${typeParameters}${this.helpers.getAngleBracket('>')}` : ''}`;
   const kind = ReflectionKind.singularString(page.model.kind);
   const keyword = getKeyword(page.model as DeclarationReflection);
@@ -126,12 +131,6 @@ function getCodeKeyword(model: DeclarationReflection) {
     return 'abstract';
   }
   return undefined;
-}
-
-function getTypeParameters(model: DeclarationReflection) {
-  return model?.typeParameters
-    ?.map((typeParameter) => typeParameter.name)
-    .join(', ');
 }
 
 function getFromString(

@@ -57,7 +57,7 @@ export interface PluginOptions {
   expandObjects?: boolean;
 
   /**
-   * Expand parameters in signature parentheses to display type information.
+   * Expand parameters and type parameters inside signatures.
    */
   expandParameters?: boolean;
 

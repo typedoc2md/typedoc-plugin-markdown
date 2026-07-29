@@ -1,4 +1,4 @@
-import { backTicks, bold, codeBlock } from '@plugin/libs/markdown/index.js';
+import { bold, codeBlock } from '@plugin/libs/markdown/index.js';
 import { escapeChars } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { ReflectionKind, SignatureReflection } from 'typedoc';
@@ -42,9 +42,7 @@ export function signatureTitle(
 
   if (model.typeParameters) {
     md.push(
-      `${this.helpers.getAngleBracket('<')}${model.typeParameters
-        .map((typeParameter) => backTicks(typeParameter.name))
-        .join(', ')}${this.helpers.getAngleBracket('>')}`,
+      `${this.helpers.getAngleBracket('<')}${this.helpers.getTypeParameters(model.typeParameters)}${this.helpers.getAngleBracket('>')}`,
     );
   }
 

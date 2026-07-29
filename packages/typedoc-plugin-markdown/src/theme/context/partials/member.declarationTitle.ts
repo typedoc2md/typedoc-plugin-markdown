@@ -91,9 +91,7 @@ function buildDeclarationName(
 
   if (model.typeParameters?.length) {
     nameParts.push(
-      `${context.helpers.getAngleBracket('<')}${model.typeParameters
-        .map((typeParameter) => backTicks(typeParameter.name))
-        .join(', ')}${context.helpers.getAngleBracket('>')}`,
+      `${context.helpers.getAngleBracket('<')}${context.helpers.getTypeParameters(model.typeParameters)}${context.helpers.getAngleBracket('>')}`,
     );
   }
 
