@@ -27,6 +27,10 @@ const opts2 = {
   useCodeBlocks: true,
 };
 
+const opts3 = {
+  parametersFormat: 'none',
+};
+
 /** @type {import('typedoc').TypeDocOptions} */
 module.exports = {
   ...baseOptions,
@@ -44,6 +48,13 @@ module.exports = {
       path: '../out/md/objectsAndParams/members/opts-2',
       options: {
         ...opts2,
+      },
+    },
+    {
+      name: 'markdown',
+      path: '../out/md/objectsAndParams/members/opts-3',
+      options: {
+        ...opts3,
       },
     },
   ],

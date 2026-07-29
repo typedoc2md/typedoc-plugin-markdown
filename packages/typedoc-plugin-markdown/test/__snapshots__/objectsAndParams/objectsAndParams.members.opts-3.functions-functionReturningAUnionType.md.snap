@@ -1,0 +1,11 @@
+# Function: functionReturningAUnionType()
+
+> **functionReturningAUnionType**(): `string` \| `boolean`
+
+Comments for function
+
+## Returns
+
+`string` \| `boolean`
+
+Return comments

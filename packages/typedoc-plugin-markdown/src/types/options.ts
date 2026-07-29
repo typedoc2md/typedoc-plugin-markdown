@@ -178,7 +178,7 @@ export interface PluginOptions {
   /**
    * Sets the format of parameter and type parameter groups.
    */
-  parametersFormat?: 'list' | 'table' | 'htmlTable';
+  parametersFormat?: 'list' | 'table' | 'htmlTable' | 'none';
 
   /**
    * Preserve anchor casing when generating link to symbols.

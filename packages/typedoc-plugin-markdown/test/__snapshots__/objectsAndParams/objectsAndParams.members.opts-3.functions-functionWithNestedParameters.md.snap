@@ -1,0 +1,9 @@
+# Function: functionWithNestedParameters()
+
+> **functionWithNestedParameters**(`params`: \{ `name`: `string`; `nestedObj`: \{ `name`: `string`; `obj`: \{ `name`: () => `void`; \}; `value`: `number`; \}; `parent?`: `number`; \}, `context`: `any`, `somethingElse?`: `string`): `boolean`
+
+Some nested params.
+
+## Returns
+
+`boolean`

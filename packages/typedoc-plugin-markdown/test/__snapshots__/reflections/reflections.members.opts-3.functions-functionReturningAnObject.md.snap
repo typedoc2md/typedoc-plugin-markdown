@@ -1,0 +1,20 @@
+# Function: functionReturningAnObject()
+
+```ts
+function functionReturningAnObject(): object;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function
+
+## Returns
+
+`object`
+
+Return comments
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `x` | `number` | `1` |
+| `y` | `number` | `2` |

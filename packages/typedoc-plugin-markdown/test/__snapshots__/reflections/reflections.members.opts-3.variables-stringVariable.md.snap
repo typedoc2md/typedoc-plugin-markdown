@@ -1,0 +1,9 @@
+# Variable: stringVariable
+
+```ts
+const stringVariable: "stringConstWithDefaultValue" = 'stringConstWithDefaultValue';
+```
+
+Defined in: [variables.ts:1](http://source-url)
+
+A simple string variable

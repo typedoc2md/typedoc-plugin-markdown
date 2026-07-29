@@ -1,0 +1,9 @@
+# Type Alias: QueryType
+
+```ts
+type QueryType = typeof someQuery;
+```
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for query type

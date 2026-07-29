@@ -1,0 +1,9 @@
+# Type Alias: ExternalReferenceType
+
+```ts
+type ExternalReferenceType = ClassWithTypeParameters<"x", "y">;
+```
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for ExternalReferenceType

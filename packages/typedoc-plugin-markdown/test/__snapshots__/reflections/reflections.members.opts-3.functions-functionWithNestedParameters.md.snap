@@ -1,0 +1,16 @@
+# Function: functionWithNestedParameters()
+
+```ts
+function functionWithNestedParameters(
+   params: object, 
+   context: any, 
+   somethingElse?: string): boolean;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+Some nested params.
+
+## Returns
+
+`boolean`

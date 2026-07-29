@@ -22,6 +22,16 @@ export enum DisplayFormat {
 }
 
 /**
+ * The allowed values for the `parametersFormat` option.
+ */
+export enum ParametersFormat {
+  List = 'list',
+  Table = 'table',
+  HtmlTable = 'htmlTable',
+  None = 'none',
+}
+
+/**
  * The allowed values for the custom anchors format.
  */
 export enum CustomAnchorsFormat {

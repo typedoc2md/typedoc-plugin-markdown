@@ -343,7 +343,8 @@
           "enum": [
             "list",
             "table",
-            "htmlTable"
+            "htmlTable",
+            "none"
           ],
           "description": "[typedoc-plugin-markdown] Sets the format of parameter and type parameter groups.",
           "default": "list"

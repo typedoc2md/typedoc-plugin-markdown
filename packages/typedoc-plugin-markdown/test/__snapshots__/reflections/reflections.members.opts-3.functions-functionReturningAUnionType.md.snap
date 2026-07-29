@@ -1,0 +1,15 @@
+# Function: functionReturningAUnionType()
+
+```ts
+function functionReturningAUnionType(): string | boolean;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function
+
+## Returns
+
+`string` \| `boolean`
+
+Return comments

@@ -1,0 +1,16 @@
+# Function: tupleTypeFunctionOptional()
+
+```ts
+function tupleTypeFunctionOptional(opts: [(
+  | {
+  a: string;
+  b: string;
+}
+  | null)?]): void;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+## Returns
+
+`void`

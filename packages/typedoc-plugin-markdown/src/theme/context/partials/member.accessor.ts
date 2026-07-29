@@ -62,7 +62,10 @@ export function accessor(
       );
     }
 
-    if (model.setSignature?.parameters?.length) {
+    if (
+      model.setSignature?.parameters?.length &&
+      this.options.getValue('parametersFormat') !== 'none'
+    ) {
       md.push(
         heading(
           options.headingLevel + 1,

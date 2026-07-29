@@ -53,9 +53,12 @@ export function signature(
     );
   }
 
+  const showParameters = this.options.getValue('parametersFormat') !== 'none';
+
   if (
     model.typeParameters?.length &&
-    model.kind !== ReflectionKind.ConstructorSignature
+    model.kind !== ReflectionKind.ConstructorSignature &&
+    showParameters
   ) {
     md.push(
       heading(
@@ -74,7 +77,7 @@ export function signature(
     }
   }
 
-  if (model.parameters?.length) {
+  if (model.parameters?.length && showParameters) {
     md.push(
       heading(
         options.headingLevel,

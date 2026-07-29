@@ -54,7 +54,10 @@ export function memberWithGroups(
     );
   }
 
-  if (model.typeParameters?.length) {
+  if (
+    model.typeParameters?.length &&
+    this.options.getValue('parametersFormat') !== 'none'
+  ) {
     md.push(
       heading(
         options.headingLevel,

@@ -63,7 +63,7 @@ declare module 'typedoc' {
             isDeprecated: boolean;
           }) => string);
     };
-    parametersFormat: 'list' | 'table' | 'htmlTable';
+    parametersFormat: 'list' | 'table' | 'htmlTable' | 'none';
     preserveAnchorCasing: boolean;
     prettierConfigFile: string;
     propertiesFormat: 'list' | 'table' | 'htmlTable';

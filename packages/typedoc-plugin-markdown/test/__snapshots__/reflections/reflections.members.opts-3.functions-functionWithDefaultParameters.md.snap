@@ -1,0 +1,19 @@
+# Function: functionWithDefaultParameters()
+
+```ts
+function functionWithDefaultParameters(
+   valueA?: string, 
+   valueB?: number, 
+   valueC?: number, 
+   valueD?: boolean, 
+   valueE?: boolean, 
+   valueF?: string): string;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+This is a function with a parameter that has a default value.
+
+## Returns
+
+`string`

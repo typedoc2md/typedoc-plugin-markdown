@@ -29,6 +29,7 @@ import {
   CustomAnchorsFormat,
   DisplayFormat,
   OutputFileStrategy,
+  ParametersFormat,
   TypeDeclarationVisibility,
 } from './maps.js';
 
@@ -365,14 +366,15 @@ export const indexFormat: Partial<DeclarationOption> = {
  * - **"list"**: parameters are output in linear blocks with headings, suitable for more detailed comments.
  * - **"table"**: parameters are output within a Markdown table, condensed into a single paragraph.
  * - **"htmlTable"**: parameters are output in an HTML table, enabling block elements to render in table cells.
+ * - **"none"**: parameters are omitted entirely.
  *
  * @category Display
  */
 export const parametersFormat: Partial<DeclarationOption> = {
   help: 'Sets the format of parameter and type parameter groups.',
   type: ParameterType.Map,
-  map: DisplayFormat,
-  defaultValue: DisplayFormat.List,
+  map: ParametersFormat,
+  defaultValue: ParametersFormat.List,
 };
 
 /**

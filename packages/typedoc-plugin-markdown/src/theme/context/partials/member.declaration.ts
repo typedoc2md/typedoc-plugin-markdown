@@ -89,7 +89,10 @@ export function declaration(
     });
   }
 
-  if (model.typeParameters) {
+  if (
+    model.typeParameters &&
+    this.options.getValue('parametersFormat') !== 'none'
+  ) {
     md.push(
       heading(
         opts.headingLevel,

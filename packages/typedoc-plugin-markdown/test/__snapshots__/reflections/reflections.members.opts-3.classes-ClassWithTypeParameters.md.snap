@@ -1,0 +1,17 @@
+# Class: ClassWithTypeParameters\<A, B, C\>
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for ClassWithTypeParameters
+
+## Constructors
+
+### Constructor
+
+```ts
+new ClassWithTypeParameters<A, B, C>(): ClassWithTypeParameters<A, B, C>;
+```
+
+#### Returns
+
+`ClassWithTypeParameters`\<`A`, `B`, `C`\>

@@ -150,13 +150,14 @@ When table style is selected the following will be the behaviour:
 
 <Callout>Sets the format of parameter and type parameter groups.</Callout>
 
-> Accepts one of `"list"` | `"table"` | `"htmlTable"`. Defaults to `"list"`.
+> Accepts one of `"list"` | `"table"` | `"htmlTable"` | `"none"`. Defaults to `"list"`.
 
 This option specifies the output format for parameters and type parameters of functions and class methods:
 
 - **"list"**: parameters are output in linear blocks with headings, suitable for more detailed comments.
 - **"table"**: parameters are output within a Markdown table, condensed into a single paragraph.
 - **"htmlTable"**: parameters are output in an HTML table, enabling block elements to render in table cells.
+- **"none"**: parameters are omitted entirely.
 
 ```json filename="typedoc.json"
 {
