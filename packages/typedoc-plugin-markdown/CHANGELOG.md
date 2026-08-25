@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.13.1
+
+### Patch Changes
+
+- Added `typedoc-theme`, `api-documentation`, `documentation-generator`, `docs-generator` and `markdown-generator` to the package keywords so the plugin appears in those npm keyword listings.
+
 ## 4.13.0 (2026-08-25)
 
 ### Minor Changes
