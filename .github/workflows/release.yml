@@ -30,16 +30,17 @@ jobs:
           publish: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Date the published changelog entries
+      - name: Date and sync the published changelogs
         if: steps.changesets.outputs.published == 'true'
         run: |
           node ./devtools/scripts/changelog-dates.mjs
+          node ./devtools/scripts/changelog-sync.mjs
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add packages/*/CHANGELOG.md
+          git add packages/*/CHANGELOG.md docs/content
           if git diff --staged --quiet; then
-            echo "No undated changelog headings to commit"
+            echo "No changelog updates to commit"
             exit 0
           fi
-          git commit -m "chore(release): add release dates to changelogs [skip ci]"
+          git commit -m "chore(release): date and sync changelogs [skip ci]"
           git push origin HEAD:${{ github.ref_name }}
