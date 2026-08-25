@@ -136,6 +136,19 @@ Note `.changeset/config.json` lists most non-core packages under `ignore` and
 fixes `docusaurus-plugin-typedoc` + `typedoc-docusaurus-theme` together — check
 it before adding a changeset for a non-core package.
 
+**A changeset forces a version bump and a release, so add one only when the
+published package actually changes for consumers.** That means runtime
+behaviour, bug fixes, new or changed options, and public type signatures —
+plus `peerDependencies`/`engines` ranges, which affect installs even though
+nothing changes at runtime.
+
+Do **not** add one for changes that leave the installed package equivalent:
+README and docs edits, `package.json` metadata (keywords, description,
+repository), internal refactors, tests, CI, and repo tooling. Manifest fields
+are read from `package.json` at publish time, so they ship with the next
+release regardless — a changeset for them only cuts a version whose changelog
+entry tells users nothing they can act on.
+
 ## Docs site
 
 - Prose lives in `docs/content` (MDX); edit freely.
