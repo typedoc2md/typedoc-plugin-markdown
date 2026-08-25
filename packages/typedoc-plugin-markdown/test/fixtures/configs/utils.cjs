@@ -22,6 +22,12 @@ const opts2 = {
   prettierConfigFile: './test/fixtures/prettier-config/.prettierrc.json',
 };
 
+// Identical to `opts2`, but written to a path covered by a `.editorconfig`
+// section. Pinning the same config file keeps `printWidth` the only variable.
+const opts3 = {
+  ...opts2,
+};
+
 /** @type {import('typedoc').TypeDocOptions} */
 module.exports = {
   ...baseOptions,
@@ -43,6 +49,13 @@ module.exports = {
     },
     {
       name: 'markdown',
+      path: '../out/md/utils/members/opts-3',
+      options: {
+        ...opts3,
+      },
+    },
+    {
+      name: 'markdown',
       path: '../out/md/utils/modules/opts-1',
       options: {
         router: 'module',
@@ -55,6 +68,14 @@ module.exports = {
       options: {
         router: 'module',
         ...opts2,
+      },
+    },
+    {
+      name: 'markdown',
+      path: '../out/md/utils/modules/opts-3',
+      options: {
+        router: 'module',
+        ...opts3,
       },
     },
   ],

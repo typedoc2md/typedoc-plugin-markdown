@@ -261,6 +261,7 @@ async function renderDocument(
       pageEvent.contents = await formatWithPrettierIfAvailable(
         renderer,
         pageEvent.contents,
+        pageEvent.filename,
       );
     });
   }

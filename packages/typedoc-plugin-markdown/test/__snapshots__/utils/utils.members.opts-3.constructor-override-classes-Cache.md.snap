@@ -1,0 +1,27 @@
+# Class: Cache
+
+## Extends
+
+- `LRUCache`&lt;`CacheFetchContext`, `CacheFetchContext`, `CacheFetchContext`&gt;
+
+## Constructors
+
+### Constructor
+
+```ts
+new Cache(): Cache;
+```
+
+#### Returns
+
+`Cache`
+
+#### Overrides
+
+```ts
+LRUCache<
+  CacheFetchContext,
+  CacheFetchContext,
+  CacheFetchContext
+>.constructor
+```

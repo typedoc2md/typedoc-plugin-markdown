@@ -6,6 +6,7 @@ import { Renderer } from 'typedoc';
 export async function formatWithPrettierIfAvailable(
   renderer: Renderer,
   contents: string,
+  fileName: string,
 ) {
   const prettier = await getPrettier();
   if (!prettier) {
@@ -27,12 +28,18 @@ export async function formatWithPrettierIfAvailable(
     return contents;
   }
 
-  const prettierConfigPath =
-    renderer.application.options.getValue('prettierConfigFile') ||
-    process.cwd();
+  const prettierConfigFile = renderer.application.options.getValue(
+    'prettierConfigFile',
+  ) as string;
 
-  // Resolve Prettier configuration
-  const config = await prettier.resolveConfig(prettierConfigPath);
+  /**
+   * Resolve Prettier configuration against the file being written, so that
+   * path-specific config (and `.editorconfig` sections such as `[*.md]`) apply.
+   */
+  const config = await prettier.resolveConfig(fileName, {
+    editorconfig: true,
+    ...(prettierConfigFile ? { config: prettierConfigFile } : {}),
+  });
 
   // Format code using Prettier
   const formattedCode = prettier.format(contents, {

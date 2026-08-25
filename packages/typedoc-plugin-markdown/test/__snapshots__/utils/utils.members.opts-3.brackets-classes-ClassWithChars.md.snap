@@ -1,0 +1,27 @@
+# Class: ClassWithChars&lt;T&gt;
+
+## Type Parameters
+
+| Type Parameter |
+| -------------- |
+| `T`            |
+
+## Constructors
+
+### Constructor
+
+```ts
+new ClassWithChars<T>(): ClassWithChars<T>;
+```
+
+#### Returns
+
+`ClassWithChars`&lt;`T`&gt;
+
+## Properties
+
+### prop
+
+```ts
+prop: T;
+```
