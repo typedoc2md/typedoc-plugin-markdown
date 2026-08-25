@@ -1,0 +1,8 @@
+# Isolates fixture output from the repository `.editorconfig`, so generated
+# Markdown does not shift when that file changes.
+root = true
+
+# Exercises `formatWithPrettier` resolving `.editorconfig` for the file being
+# written. Scoped to a single output so other fixtures keep Prettier defaults.
+[out/md/utils/**/opts-3/**/*.md]
+max_line_length = 40
