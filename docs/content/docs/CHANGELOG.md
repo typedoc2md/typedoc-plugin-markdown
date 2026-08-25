@@ -1,5 +1,29 @@
 # Changelog
 
+## 4.13.0 (2026-08-25)
+
+### Minor Changes
+
+- add a parametersFormat: "none" option to completely drop the parameter list/table and its heading ([#876](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/876)) - thanks @Jym77.
+- expand type parameters in signatures when expandParameters is set ([#875](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/875)) - thanks @Jym77.
+
+### Patch Changes
+
+- fix signature parameters ([#874](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/874)) - thanks @Jym77.
+- Symbol links without a declaration reference now print a warning and render as plain text instead of attempting to resolve to the nearest link ([#870](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/870)).
+- `formatWithPrettier` now resolves Prettier config against the file being written and reads `.editorconfig`, so path-specific settings are honoured ([#881](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/881)).
+
+## 4.12.0 (2026-06-02)
+
+### Minor Changes
+
+- Support JSDoc-style `<caption>` labels for `@example` tags ([#861](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/861)).
+- Add Markdown theme translations for the `fr` locale.
+
+### Patch Changes
+
+- Fixed duplicate sidebar groups when `navigation.includeCategories=true` and `navigation.includeGroups=false` ([#866](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/866)).
+
 ## 4.11.0 (2026-03-18)
 
 ### Minor Changes
