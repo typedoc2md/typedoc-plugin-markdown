@@ -47,6 +47,11 @@
     "markdown",
     "typedoc",
     "typescript",
-    "typedoc-plugin"
+    "typedoc-plugin",
+    "typedoc-theme",
+    "api-documentation",
+    "documentation-generator",
+    "docs-generator",
+    "markdown-generator"
   ]
 }
