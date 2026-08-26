@@ -22,7 +22,7 @@ import {
  *
  * You would typically only be interested in overriding the the theme's render context instance.
  *
- * The API follows the implementation of [TypeDoc's custom theming](https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md) with some minor adjustments.
+ * The API follows the implementation of [TypeDoc's custom theming](https://typedoc.org/documents/Development.Custom_Themes.html) with some minor adjustments.
  */
 export class MarkdownTheme extends Theme {
   router: Router;
