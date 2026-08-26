@@ -22,14 +22,33 @@ In the core package, `@plugin/*` is a tsconfig path alias for
 
 ## Generated files — do not edit directly
 
-These files are overwritten by the `prebuild` step of every build. Editing them
-typechecks fine and then your change is silently erased:
+Editing any of these typechecks fine and then your change is silently erased.
+There are two generators, with very different triggers.
+
+**Overwritten by the `prebuild` step of every build:**
 
 | Generated file (core package) | Source of truth |
 | --- | --- |
 | `src/types/options.ts` | `src/options/declarations.ts` (JSDoc + declaration shape) |
 | `src/theme/context/resources.ts` | files in `src/theme/context/{templates,partials,helpers}/` |
 | `docs/content/docs/options/*.mdx` (and per-package option docs) | each package's `src/options/declarations.ts` |
+
+**Overwritten by `npm run docs` at the repo root:**
+
+| Generated file | Source of truth |
+| --- | --- |
+| `README.md` (repo root) | the `Packages` table is built from each package's `description`; surrounding prose is inline in `devtools/scripts/generate-readmes.ts` |
+| `packages/*/README.md` | `## Overview` and `## Features` of that package's `docs/content/**/index.mdx`, plus the install snippet in `PACKAGE_README_CONTENT` |
+| the table of contents in `CONTRIBUTING.md` | its own headings, via `remark-toc` |
+
+`npm run docs` is **not** wired into any build, test or CI job — nothing runs
+it for you and nothing fails when its output is stale. Run it by hand after
+changing a package `description` or the `## Overview` / `## Features` sections
+of a docs index page, and commit the result alongside the change.
+
+Note `packages/*/README.md` is the package's npm listing page. It is read by
+users, but it still does not warrant a changeset — see the Changesets section
+below.
 
 **To add or change an option:** edit `src/options/declarations.ts` (the JSDoc
 comment becomes the public documentation), then run `npm run build` in that
@@ -198,7 +217,8 @@ entry tells users nothing they can act on.
 ## Pre-PR checklist
 
 - [ ] Built and tested the affected package(s); `npm run lint --workspaces --if-present` clean
-- [ ] No edits to generated files (regenerate via build instead)
+- [ ] No edits to generated files (regenerate via `npm run build`, or `npm run docs` for READMEs)
+- [ ] Ran `npm run docs` if a package `description` or a docs index `## Overview` / `## Features` changed
 - [ ] Snapshot changes, if any, reviewed in the git diff and intentional
 - [ ] Changeset added for user-facing changes
 - [ ] Commit messages pass commitlint (type + scope from the enums above)
