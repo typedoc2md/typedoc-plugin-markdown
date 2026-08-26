@@ -123,6 +123,27 @@ of work stays greppable against the issue.
 For work with no issue behind it (repo tooling, docs prose, dependency bumps,
 release chores) drop the number and use `chore/<slug>`.
 
+## Linking issues
+
+Reference issues without a closing keyword — `Refs #873`, or a bare `(#873)`
+at the end of a commit subject:
+
+```
+fix(core): resolve anchors for inherited members (#900)
+```
+
+**Never write `Closes #873`, `Fixes #873` or `Resolves #873`** in a commit
+message or a PR description. Issues here are closed when the fix is published
+to npm, not when the PR merges, and GitHub has no repository setting to turn
+that behaviour off — the keyword is the only trigger, so avoiding it is the
+only control.
+
+GitHub acts on `close`/`closes`/`closed`, `fix`/`fixes`/`fixed` and
+`resolve`/`resolves`/`resolved` when immediately followed by an issue
+reference, in a PR description or in any commit merged to `main`. The commit
+convention above is safe because the keyword is never adjacent to the number —
+`fix(core): … (#900)` does not trigger it, but `fix #900` would.
+
 ## Commit messages
 
 Commitlint runs on a husky `commit-msg` hook and **rejects non-conforming
@@ -182,3 +203,4 @@ entry tells users nothing they can act on.
 - [ ] Changeset added for user-facing changes
 - [ ] Commit messages pass commitlint (type + scope from the enums above)
 - [ ] Branch name follows `fix/<issue>-<slug>` / `feature/<issue>-<slug>`
+- [ ] No closing keywords (`Closes`/`Fixes`/`Resolves`) in commits or the PR description
