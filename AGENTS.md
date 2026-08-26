@@ -5,7 +5,8 @@ Guidance for AI coding agents working on this repository. For human onboarding
 
 ## Repository layout
 
-npm workspaces monorepo. Node >= 18, ESM (`"type": "module"`).
+npm workspaces monorepo, ESM (`"type": "module"`). For the supported Node
+range see [CI](#ci) below — it is stated once, there.
 
 - `packages/typedoc-plugin-markdown` — the core plugin. Most work happens here.
 - `packages/*` — utility plugins (`typedoc-plugin-frontmatter`, `typedoc-plugin-remark`)
@@ -121,8 +122,36 @@ Each package has its own path-filtered workflow in `.github/workflows/`
 Changes touching only a package's `README.md`, `CHANGELOG.md`, or
 `package.json` do not trigger its CI.
 
-CI runs on **Node 18 and 20** (engines: `>= 18`). Local dev is often on a newer
-Node — do not use APIs newer than Node 18 in package source.
+CI runs on **Node 18 and 20** (engines: `>= 18`) — the one place in this file
+that states the value, and one of the three sites listed below. Local dev is
+often on a newer Node, so do not use APIs newer than the declared floor in
+package source.
+
+That range is declared in three places, and nothing keeps them in sync — there
+is no `.nvmrc`, no `volta` pin, and no root `engines`:
+
+- `engines.node` in every `packages/*/package.json`
+- the `node:` matrix in every `.github/workflows/ci*.yml`
+- the paragraph above
+
+Changing the supported range means changing all three together, in one commit.
+`release.yml` is deliberately not part of that set: its `node-version` pin is
+the Node the publish job runs on, not the range consumers must satisfy, and it
+moves independently.
+
+**The range is inherited from TypeDoc, not chosen here.** The core plugin
+declares a `typedoc` peer range; the Node floor is whatever TypeDoc declares
+for that range. Whenever the peer range is bumped, read the new TypeDoc
+release's own value and move the three sites to match it:
+
+```bash
+npm view typedoc@<peer-range> engines
+```
+
+Never raise or lower the floor independently of TypeDoc: a floor below
+TypeDoc's promises support this plugin cannot deliver, and one above it rejects
+installs TypeDoc itself allows. TypeDoc also declares a `pnpm` engine — that is
+its own build constraint, do not mirror it here.
 
 ## Branch names
 
@@ -213,6 +242,21 @@ entry tells users nothing they can act on.
 - Option reference pages are generated from `declarations.ts` files (see above) —
   never edit those in place.
 - The docs site installs separately: `cd docs && npm install`.
+
+**After every release of the core plugin**, update the compatibility table in
+`docs/content/docs/releases.mdx`, which maps plugin version ranges to the
+TypeDoc version they support. Nothing generates it and nothing checks it, so it
+drifts silently — it was two minors stale (still ending at `4.11.x` on a
+`4.13.0` release) when this note was added.
+
+- A normal release extends the current row's upper bound to the version just
+  published.
+- A release that changes the `typedoc` peer range opens a new row instead, and
+  closes the previous one at the last version on the old range.
+
+The peer range in `packages/typedoc-plugin-markdown/package.json` is the source
+of truth for which row a version belongs in — read it rather than assuming the
+latest release stayed on the same TypeDoc line.
 
 ## Pre-PR checklist
 
