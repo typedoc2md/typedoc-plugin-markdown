@@ -27,7 +27,7 @@ The theme can then be consumed by the `theme` option:
 
 ```json filename="typedoc.json"
 {
-  "plugin": ["typedoc-plugin-mardown", "./local-plugins/my-custom-plugin.js"],
+  "plugin": ["typedoc-plugin-markdown", "./local-plugins/my-custom-plugin.js"],
   "theme": "customTheme"
 }
 ```
@@ -43,30 +43,36 @@ class MyMarkdownTheme extends MarkdownTheme {
 
 class MyMarkdownThemeContext extends MarkdownThemeContext {
   // customise templates
-  templates = {
-    ...this.templates,
-    reflection: (model) => {
-      return `New template for ${model.name}!`;
+  templates: MarkdownThemeContext['templates'] = {
+    ...(this as MarkdownThemeContext).templates,
+    reflection: (page) => {
+      return `New template for ${page.model.name}!`;
     },
   };
 
   // customise partials
-  partials = {
-    ...this.partials,
-    header: (model) => {
+  partials: MarkdownThemeContext['partials'] = {
+    ...(this as MarkdownThemeContext).partials,
+    header: () => {
       return `
-# Welcome to custom header for ${this.page.project.name} project and ${model.name} model!
+# Welcome to custom header for ${this.page.project.name} project!
 Use my new helper - ${this.helpers.newHelper()}
-   `;
+`;
     },
   };
 
   // customise helpers
   helpers = {
-    ...this.helpers,
+    ...(this as MarkdownThemeContext).helpers,
     newHelper: () => {
       return 'New helper!';
     },
   };
 }
 ```
+
+Note the shape of the overrides:
+
+- Spread via `(this as MarkdownThemeContext)` rather than plain `this`. The base class has already initialized these fields by the time the subclass initializers run, but TypeScript sees the subclass declaration as self-referential and reports `TS2729` without the cast.
+- Annotating `templates` and `partials` gives each override's params their types from the base, so they do not need annotating individually. Leave `helpers` unannotated where the intention is to add new helpers to it.
+- Each resource takes the params of the one it replaces. `templates.reflection` receives the page event (`page.model` is the reflection), while `partials.header` takes none and reads `this.page`.
