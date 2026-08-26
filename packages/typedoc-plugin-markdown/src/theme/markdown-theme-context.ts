@@ -1,4 +1,5 @@
 import { MarkdownPageEvent } from '@plugin/events/index.js';
+import { markdown as markdownLib, utils as utilsLib } from '@plugin/libs/public.js';
 import {
   resourceHelpers,
   resourcePartials,
@@ -26,6 +27,10 @@ import { Options, Reflection, Router } from 'typedoc';
  * @groupDescription Resources
  *
  * Theme resources are the main building blocks for the theme context. They are split into three namespaces: `templates`, `partials` and `helpers`.
+ *
+ * @groupDescription Utilities
+ *
+ * Pure functions used to compose markdown, split into two namespaces: `markdown` for functions that emit markdown syntax, and `utils` for text transformations that prepare content to be embedded in it. Available so that customized resources do not need to re-implement them.
  *
  * @privateRemarks
  *
@@ -106,6 +111,39 @@ export class MarkdownThemeContext {
    * @group Resources
    */
   helpers = resourceHelpers(this);
+
+  /**
+   * The `markdown` namespace holds the pure functions that emit markdown syntax, such as `link`, `heading` and `codeBlock`.
+   *
+   * These are the same functions the built-in templates, partials and helpers are written with. They are exposed here so that a
+   * customized resource can reuse them rather than duplicating them in the custom theme.
+   *
+   * Unlike the resource namespaces above these are not bound to the context and take no `model` param. The identical set is also
+   * exported from the package root as `markdown`, for use outside a context (for example in a `MarkdownPageEvent` listener).
+   *
+   * ```ts
+   * partials = {
+   *   ...this.partials,
+   *   sources: (model) => this.markdown.link(this.utils.escapeChars(model.sources[0].fileName), model.sources[0].url),
+   * };
+   * ```
+   *
+   * @group Utilities
+   */
+  markdown = markdownLib;
+
+  /**
+   * The `utils` namespace holds pure text transformations that do not themselves emit markdown, but prepare content to be
+   * embedded in it safely - `escapeChars`, `unEscapeChars`, `encodeAngleBrackets`, `removeLineBreaks` and `camelToTitleCase`.
+   *
+   * Reusing `escapeChars` in particular matters: it encodes which characters the plugin escapes, so a copy of it in a custom
+   * theme will silently diverge from the plugin's own output when that set changes.
+   *
+   * Also exported from the package root as `utils`.
+   *
+   * @group Utilities
+   */
+  utils = utilsLib;
 
   /**
    * Returns the package meta data for a given package name when entrypointStrategy is set to `packages`.
