@@ -77,6 +77,11 @@ provided internal docs.
 
 ## Submitting a PR
 
+Name your branch after the issue it addresses - `fix/<issue>-<slug>` for bug
+fixes, `feature/<issue>-<slug>` for enhancements (for example
+`fix/881-prettier-editorconfig`). If there is no associated issue, use
+`chore/<slug>`.
+
 Once you're ready to submit your changes:
 
 * **Push your branch**: Push your branch to your forked repository on GitHub.

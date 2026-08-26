@@ -105,6 +105,24 @@ Changes touching only a package's `README.md`, `CHANGELOG.md`, or
 CI runs on **Node 18 and 20** (engines: `>= 18`). Local dev is often on a newer
 Node — do not use APIs newer than Node 18 in package source.
 
+## Branch names
+
+Branch off `main`, named after the issue being addressed:
+
+- `fix/<issue>-<slug>` — bug fixes
+- `feature/<issue>-<slug>` — enhancements, new options, new theme resources
+
+`<issue>` is the GitHub issue number; `<slug>` is two to four kebab-case
+words. Examples: `fix/881-prettier-editorconfig`,
+`feature/873-expose-lib-functions`.
+
+Use the issue number whenever one exists — including for preparatory or
+follow-up commits that only lead up to the main change, so the whole thread
+of work stays greppable against the issue.
+
+For work with no issue behind it (repo tooling, docs prose, dependency bumps,
+release chores) drop the number and use `chore/<slug>`.
+
 ## Commit messages
 
 Commitlint runs on a husky `commit-msg` hook and **rejects non-conforming
@@ -163,3 +181,4 @@ entry tells users nothing they can act on.
 - [ ] Snapshot changes, if any, reviewed in the git diff and intentional
 - [ ] Changeset added for user-facing changes
 - [ ] Commit messages pass commitlint (type + scope from the enums above)
+- [ ] Branch name follows `fix/<issue>-<slug>` / `feature/<issue>-<slug>`
