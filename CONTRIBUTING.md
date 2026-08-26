@@ -87,7 +87,7 @@ Once you're ready to submit your changes:
 * **Push your branch**: Push your branch to your forked repository on GitHub.
 * **Create a PR**: Navigate to the original repository and create a PR from your branch to the main branch.
 * **Provide a clear description**: Include a detailed description of your changes, why they're necessary, and any issues they resolve.
-* **Link to relevant issues**: If your PR addresses any open issues, mention them in the description.
+* **Link to relevant issues**: If your PR addresses any open issues, mention them in the description - as `Refs #123` rather than `Closes #123`. Issues are closed once the change is published to npm, so please avoid the `Closes`/`Fixes`/`Resolves` keywords that make GitHub close them on merge.
 
 Please note we follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit messages.
 
