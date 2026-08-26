@@ -5,7 +5,6 @@
  */
 
 export * from './back-ticks.js';
-export * from './block-quote-block.js';
 export * from './bold.js';
 export * from './code-block.js';
 export * from './heading.js';
