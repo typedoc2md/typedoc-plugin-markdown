@@ -35,6 +35,9 @@
   "dependencies": {
     "typedoc-docusaurus-theme": "^1.4.0"
   },
+  "engines": {
+    "node": ">= 18"
+  },
   "keywords": [
     "docusaurus",
     "typedoc",

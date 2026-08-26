@@ -35,6 +35,9 @@
   "peerDependencies": {
     "typedoc-plugin-markdown": ">=4.11.0"
   },
+  "engines": {
+    "node": ">= 18"
+  },
   "keywords": [
     "typedoc",
     "remark"
