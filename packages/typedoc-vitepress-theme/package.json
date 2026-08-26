@@ -33,6 +33,9 @@
     "typedoc-plugin-markdown": ">=4.11.0"
   },
   "license": "MIT",
+  "engines": {
+    "node": ">= 18"
+  },
   "keywords": [
     "vitepress",
     "vuepress",

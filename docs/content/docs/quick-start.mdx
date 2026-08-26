@@ -19,10 +19,13 @@ You can provide options directly in the CLI command or using a TypeDoc [configur
 
 ```json filename="typedoc.json"
 {
+  "$schema": "node_modules/typedoc-plugin-markdown/typedoc-plugin-markdown.schema.json",
   "plugin": ["typedoc-plugin-markdown"],
   "out": "./docs"
 }
 ```
+
+The `$schema` entry is optional, but lets your editor validate and autocomplete both TypeDoc's and this plugin's options. See [Schema](/docs/schema) for the hosted alternative and for typing a JavaScript config.
 
 Add a docs script to your `package.json` file:
 
