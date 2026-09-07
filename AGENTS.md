@@ -274,6 +274,15 @@ broke the 1.4.3 release, leaving six of seven packages published. The
 `prerelease` build has already done the work — re-doing it per package adds
 nothing but the race.
 
+**The changelog dates arrive as a pull request — merge it or they never land.**
+Changesets writes version headings without dates; after publishing, the Release
+workflow adds them and syncs `docs/content`, commits to
+`chore/release-changelog-dates` and opens a PR. It cannot push to `main`
+directly — branch protection rejects that with `GH006`, which silently cost the
+2026-09-07 release its dates. The branch is force-pushed from the current `main`
+each time and both scripts only touch undated headings, so an unmerged PR
+accumulates the next release's dates rather than conflicting.
+
 ## Docs site
 
 - Prose lives in `docs/content` (MDX); edit freely.

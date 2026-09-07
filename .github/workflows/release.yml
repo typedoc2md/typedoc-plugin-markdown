@@ -30,8 +30,12 @@ jobs:
           publish: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Date and sync the published changelogs
+      - name: Open a pull request dating the published changelogs
         if: steps.changesets.outputs.published == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: chore/release-changelog-dates
+          BASE: ${{ github.ref_name }}
         run: |
           node ./devtools/scripts/changelog-dates.mjs
           node ./devtools/scripts/changelog-sync.mjs
@@ -42,5 +46,13 @@ jobs:
             echo "No changelog updates to commit"
             exit 0
           fi
-          git commit -m "chore(release): date and sync changelogs [skip ci]"
-          git push origin HEAD:${{ github.ref_name }}
+          git checkout -b "$BRANCH"
+          git commit -m "chore(release): date and sync changelogs"
+          git push --force origin "$BRANCH"
+          if [ "$(gh pr view "$BRANCH" --json state --jq .state 2>/dev/null)" = "OPEN" ]; then
+            echo "Updated the open changelog pull request"
+          else
+            gh pr create --base "$BASE" --head "$BRANCH" \
+              --title "chore(release): date and sync changelogs" \
+              --body "Adds release dates to the version headings Changesets wrote, and syncs them into \`docs/content\`. Opened by the Release workflow once packages were published. Merge to land the dates."
+          fi
