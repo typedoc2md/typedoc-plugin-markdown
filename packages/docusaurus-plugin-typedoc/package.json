@@ -21,7 +21,7 @@
   "scripts": {
     "lint": "eslint ./src",
     "prebuild": "rm -rf dist && copyfiles --up 1 ./src/**/*.cjs ./dist/",
-    "prepublishOnly": "npm run lint && npm run build",
+    "prepublishOnly": "npm run lint",
     "build": "tsc",
     "pretest": "rm -rf ./test/out && NO_UPDATE_NOTIFIER=1 docusaurus generate-typedoc",
     "test": "mocha --config ./mocha.config.json",
