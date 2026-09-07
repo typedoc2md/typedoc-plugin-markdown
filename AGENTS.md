@@ -205,6 +205,29 @@ Use `core` for `typedoc-plugin-markdown`. Example:
 `fix(core): resolve anchors for inherited members (#900)`.
 `feat: add option` fails (empty scope).
 
+### AI attribution
+
+Work done with an AI coding agent is marked with a single trailer:
+
+```
+Assisted-by: Claude Code
+```
+
+No email address — the trailer names a tool, not a person.
+
+**Never use `Co-Authored-By` for an AI tool.** That trailer asserts
+co-authorship: git and GitHub treat it as a second author and surface it as a
+contributor. Authorship carries accountability — answering a bug report,
+standing behind the change, being bound by the licence — and a model does none
+of those. The human who reviews the change and pushes it is its sole author.
+`Assisted-by:` is the convention converging across open source for tool-assisted
+work; `Generated-by:` is its counterpart where a substantial portion is machine
+written.
+
+Do not add "Generated with …" footers to PR descriptions. This file is the
+project's disclosure that AI agents work here, and it says so more usefully than
+a per-commit marker.
+
 ## Changesets
 
 User-facing changes to a published package need a changeset in `.changeset/`
@@ -268,3 +291,4 @@ latest release stayed on the same TypeDoc line.
 - [ ] Commit messages pass commitlint (type + scope from the enums above)
 - [ ] Branch name follows `fix/<issue>-<slug>` / `feature/<issue>-<slug>`
 - [ ] No closing keywords (`Closes`/`Fixes`/`Resolves`) in commits or the PR description
+- [ ] AI-assisted commits use `Assisted-by: Claude Code`, never `Co-Authored-By`
