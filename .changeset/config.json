@@ -13,14 +13,5 @@
   "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
     "onlyUpdatePeerDependentsWhenOutOfRange": true
   },
-  "ignore": [
-    "@devtools/*",
-    "typedoc-github-wiki-theme",
-    "typedoc-gitlab-wiki-theme",
-    "typedoc-plugin-remark",
-    "typedoc-docusaurus-theme",
-    "typedoc-vitepress-theme",
-    "docusaurus-plugin-typedoc",
-    "typedoc-plugin-frontmatter"
-  ]
+  "ignore": ["@devtools/*"]
 }
