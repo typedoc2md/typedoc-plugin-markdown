@@ -33,6 +33,7 @@
     "vfile": "^6.0.3"
   },
   "peerDependencies": {
+    "typedoc": "0.28.x",
     "typedoc-plugin-markdown": ">=4.11.0"
   },
   "engines": {

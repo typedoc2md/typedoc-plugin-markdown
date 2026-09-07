@@ -34,6 +34,7 @@
     "yaml": "^2.8.1"
   },
   "peerDependencies": {
+    "typedoc": "0.28.x",
     "typedoc-plugin-markdown": ">=4.11.0"
   },
   "engines": {

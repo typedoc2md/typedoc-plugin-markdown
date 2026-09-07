@@ -30,6 +30,7 @@
     "test:update": "npm run build && rm -rf ./test/__snapshots__ && npm test"
   },
   "peerDependencies": {
+    "typedoc": "0.28.x",
     "typedoc-plugin-markdown": ">=4.11.0"
   },
   "license": "MIT",
