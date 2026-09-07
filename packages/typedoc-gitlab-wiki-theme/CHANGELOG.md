@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.1.1
+## 2.1.1 (2026-09-07)
 
 ### Patch Changes
 
