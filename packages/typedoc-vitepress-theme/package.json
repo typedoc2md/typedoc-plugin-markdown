@@ -21,7 +21,7 @@
   "author": "Thomas Grey",
   "scripts": {
     "lint": "eslint ./src",
-    "prepublishOnly": "npm run lint && npm run build",
+    "prepublishOnly": "npm run lint",
     "prebuild": "rm -rf dist && prebuild-options",
     "build": "tsc",
     "build-and-test": "npm run build && npm run test",

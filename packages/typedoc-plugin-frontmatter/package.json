@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "lint": "eslint ./src",
-    "prepublishOnly": "npm run lint && npm run build && npm run test",
+    "prepublishOnly": "npm run lint && npm run test",
     "prebuild": "rm -rf dist && prebuild-options",
     "build": "tsc",
     "build-and-test": "npm run build && npm run test",

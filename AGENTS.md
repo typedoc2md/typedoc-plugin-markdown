@@ -259,6 +259,21 @@ are read from `package.json` at publish time, so they ship with the next
 release regardless — a changeset for them only cuts a version whose changelog
 entry tells users nothing they can act on.
 
+## Releasing
+
+`npm run release` is the only supported publish path. Its `prerelease` hook runs
+`build-all` across the workspaces in dependency order, so every `dist` is
+freshly built before `changeset publish` starts.
+
+**`prepublishOnly` must not run `npm run build`.** Changesets publishes every
+package *concurrently*, and each `prebuild` begins with `rm -rf dist`. Because
+`docusaurus-plugin-typedoc` depends on `typedoc-docusaurus-theme` and imports
+from it, a concurrent rebuild deletes the `dist` it is compiling against, and
+`tsc` fails with `TS2307: Cannot find module` and exit code 2. That is what
+broke the 1.4.3 release, leaving six of seven packages published. The
+`prerelease` build has already done the work — re-doing it per package adds
+nothing but the race.
+
 ## Docs site
 
 - Prose lives in `docs/content` (MDX); edit freely.
