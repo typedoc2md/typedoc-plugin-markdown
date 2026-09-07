@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.4.3
+## 1.4.3 (2026-09-07)
 
 ### Patch Changes
 
