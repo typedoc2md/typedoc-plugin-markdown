@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.3
+
+### Patch Changes
+
+- Declare `typedoc` as a peer dependency so it resolves from the package's own `node_modules` rather than the consumer's hoisting layout ([#891](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/891)).
+- Updated peer dependencies
+  - typedoc-docusaurus-theme@1.4.3
+
 ## 1.4.2 (2025-08-04)
 
 ### Patch Changes

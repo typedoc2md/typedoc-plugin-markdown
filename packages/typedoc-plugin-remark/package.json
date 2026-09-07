@@ -1,6 +1,6 @@
 {
   "name": "typedoc-plugin-remark",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Runs remark plugins on TypeDoc Markdown output.",
   "exports": {
     ".": "./dist/index.js"

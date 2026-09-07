@@ -1,6 +1,6 @@
 {
   "name": "typedoc-docusaurus-theme",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Generates TypeDoc Markdown output for Docusaurus.",
   "exports": {
     ".": "./dist/index.js"

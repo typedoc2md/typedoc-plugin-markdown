@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.1
+
+### Patch Changes
+
+- Declare `typedoc` as a peer dependency so it resolves from the package's own `node_modules` rather than the consumer's hoisting layout ([#891](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/891)).
+
 ## 2.1.0 (2024-11-27)
 
 ### Minor Changes

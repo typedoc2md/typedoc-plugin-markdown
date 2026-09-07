@@ -1,6 +1,6 @@
 {
   "name": "docusaurus-plugin-typedoc",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Runs TypeDoc inside the Docusaurus lifecycle.",
   "exports": {
     ".": "./dist/index.js"
@@ -34,7 +34,7 @@
     "typedoc-plugin-markdown": ">=4.11.0"
   },
   "dependencies": {
-    "typedoc-docusaurus-theme": "^1.4.0"
+    "typedoc-docusaurus-theme": "^1.4.3"
   },
   "engines": {
     "node": ">= 18"
