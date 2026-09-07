@@ -74,7 +74,7 @@
         },
         "expandParameters": {
           "type": "boolean",
-          "description": "[typedoc-plugin-markdown] Expand parameters in signature parentheses to display type information."
+          "description": "[typedoc-plugin-markdown] Expand parameters and type parameters inside signatures."
         },
         "fileExtension": {
           "type": "string",
