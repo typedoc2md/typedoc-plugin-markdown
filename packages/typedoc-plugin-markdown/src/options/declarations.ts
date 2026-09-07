@@ -205,7 +205,7 @@ export const excludeScopesInPaths: Partial<DeclarationOption> = {
  * @category File
  */
 export const entryModule: Partial<DeclarationOption> = {
-  help: '@deprecated This functionality has been deprecated in favour of the @mergeModuleWith tag.',
+  help: '@deprecated This functionality has been deprecated in favour of the `@mergeModuleWith` tag.',
   type: ParameterType.String,
 };
 

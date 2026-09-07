@@ -32,7 +32,7 @@ export interface PluginOptions {
   entryFileName?: string;
 
   /**
-   * @deprecated This functionality has been deprecated in favour of the @mergeModuleWith tag.
+   * @deprecated This functionality has been deprecated in favour of the `@mergeModuleWith` tag.
    */
   entryModule?: string;
 
