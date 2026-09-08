@@ -1,0 +1,23 @@
+[**typedoc-stubs**](../../README.md)
+
+***
+
+[typedoc-stubs](../../README.md) / [index](../README.md) / SomeGeneric
+
+# Type Alias: SomeGeneric\<T\>
+
+> **SomeGeneric**\<`T`\> = `object`
+
+A type alias with a defaulted type parameter.
+
+## Type Parameters
+
+| Type Parameter | Default type |
+| ------ | ------ |
+| `T` | `string` |
+
+## Properties
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="property-genericprop"></a> `genericProp` | `T` | Description for a generic property. |

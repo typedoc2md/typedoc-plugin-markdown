@@ -1,0 +1,43 @@
+[**typedoc-stubs**](../../README.md)
+
+***
+
+[typedoc-stubs](../../README.md) / [index](../README.md) / SomeUnion
+
+# Type Alias: SomeUnion
+
+> **SomeUnion** = `string` \| \{ `unionProp`: `string`; \}
+
+A union type alias. The per-member comments are what give the union element
+summaries, without which the theme renders a plain signature instead.
+
+The plugin merges consecutive `@example` blocks into a synthetic `@examples`
+tag, which is what its own `tag_examples` string translates.
+
+## Union Members
+
+`string`
+
+Description for the first union member.
+
+***
+
+### Type Literal
+
+\{ `unionProp`: `string`; \}
+
+Description for the second union member.
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `unionProp` | `string` | Description for a union member property. |
+
+## Examples
+
+```ts
+const value: SomeUnion = 'a';
+```
+
+```ts
+const other: SomeUnion = { unionProp: 'b' };
+```

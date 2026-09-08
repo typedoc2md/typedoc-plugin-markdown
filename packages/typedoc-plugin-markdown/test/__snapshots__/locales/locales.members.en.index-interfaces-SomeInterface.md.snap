@@ -1,0 +1,21 @@
+[**typedoc-stubs**](../../README.md)
+
+***
+
+[typedoc-stubs](../../README.md) / [index](../README.md) / SomeInterface
+
+# Interface: SomeInterface
+
+An interface carrying an event property.
+
+## Properties
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="property-optionalprop"></a> `optionalProp?` | `string` | Description for an optional property. |
+
+## Events
+
+| Event | Type |
+| ------ | ------ |
+| <a id="property-someevent"></a> `someEvent` | `MouseEvent` |

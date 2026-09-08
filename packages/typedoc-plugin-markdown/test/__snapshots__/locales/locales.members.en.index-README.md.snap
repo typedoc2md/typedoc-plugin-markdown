@@ -1,0 +1,56 @@
+[**typedoc-stubs**](../README.md)
+
+***
+
+[typedoc-stubs](../README.md) / index
+
+# index
+
+Exercises every plugin-specific `theme_*` string so the locale fixtures
+assert the plugin's own translations and not just TypeDoc's.
+
+## Enumerations
+
+| Enumeration | Description |
+| ------ | ------ |
+| [SomeEnum](enumerations/SomeEnum.md) | An enum whose members carry values and descriptions. |
+
+## Classes
+
+| Class | Description |
+| ------ | ------ |
+| [BaseClass](classes/BaseClass.md) | A class that is extended by another. |
+| [ChildClass](classes/ChildClass.md) | A class that extends another. |
+
+## Interfaces
+
+| Interface | Description |
+| ------ | ------ |
+| [SomeInterface](interfaces/SomeInterface.md) | An interface carrying an event property. |
+
+## Type Aliases
+
+| Type Alias | Description |
+| ------ | ------ |
+| [SomeGeneric](type-aliases/SomeGeneric.md) | A type alias with a defaulted type parameter. |
+| [SomeObject](type-aliases/SomeObject.md) | A type alias declaring an object type. |
+| [SomeUnion](type-aliases/SomeUnion.md) | A union type alias. The per-member comments are what give the union element summaries, without which the theme renders a plain signature instead. |
+
+## References
+
+### AliasedInterface
+
+Renames and re-exports [RenamedInterface](../re-exported/interfaces/RenamedInterface.md)
+
+***
+
+### ReExportedInterface
+
+Re-exports [ReExportedInterface](../re-exported/interfaces/ReExportedInterface.md)
+
+## Mixed
+
+| Name | Description |
+| ------ | ------ |
+| [GroupedClass](classes/GroupedClass.md) | A class sharing a group with a function, so the index table headers a mixed group with "Name" rather than with the single kind it holds. |
+| [groupedFunction](functions/groupedFunction.md) | A function sharing a group with a class. Its single `@example` block is left unmerged, so the heading comes from TypeDoc's `tag_example` rather than the plugin's `tag_examples`. |

@@ -1,0 +1,50 @@
+[**typedoc-stubs**](../../README.md)
+
+***
+
+[typedoc-stubs](../../README.md) / [index](../README.md) / ChildClass
+
+# Class: ChildClass
+
+A class that extends another.
+
+## Extends
+
+- [`BaseClass`](BaseClass.md)
+
+## Constructors
+
+### Constructor
+
+> **new ChildClass**(): `ChildClass`
+
+#### Returns
+
+`ChildClass`
+
+#### Inherited from
+
+[`BaseClass`](BaseClass.md).[`constructor`](BaseClass.md#constructor)
+
+## Properties
+
+| Property | Modifier | Type | Default value | Description |
+| ------ | ------ | ------ | ------ | ------ |
+| <a id="property-readonlyprop"></a> `readonlyProp` | `readonly` | `string` | `'a readonly value'` | Description for a readonly property. |
+
+## Methods
+
+### someMethod()
+
+> **someMethod**(`paramA`, `paramB?`): `void`
+
+#### Parameters
+
+| Parameter | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| `paramA` | `string` | `undefined` | Description for a parameter. |
+| `paramB` | `number` | `1` | Description for a parameter with a default value. |
+
+#### Returns
+
+`void`

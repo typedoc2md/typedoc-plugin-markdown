@@ -1,0 +1,20 @@
+**packages-example**
+
+***
+
+# MY README
+
+> Some block quote
+
+Some text.
+
+## Readme heading
+
+Some text.
+
+## Pakete
+
+| Paket | Version | Beschreibung |
+| ------ | ------ | ------ |
+| [@scope/package-1](@scope/package-1/README.md) | 1.0.0 | Description for package-1 |
+| [package-2](package-2/README.md) | 1.0.0 | - |

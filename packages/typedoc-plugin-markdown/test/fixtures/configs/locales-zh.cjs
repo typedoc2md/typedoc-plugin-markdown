@@ -1,23 +1,6 @@
 // @ts-check
 
-const baseOptions = require('../typedoc.cjs');
+const localeConfig = require('../locales.cjs');
 
 /** @type {import('typedoc').TypeDocOptions & import('../../../dist/index.js').PluginOptions} */
-module.exports = {
-  ...baseOptions,
-  entryPoints: ['../src/text/module-1.ts'],
-  plugin: ['../../../dist/index.js'],
-  disableSources: true,
-  lang: 'zh',
-  readme: 'none',
-  outputs: [
-    {
-      name: 'markdown',
-      path: '../out/md/locales/members/zh',
-    },
-    {
-      name: 'html',
-      path: '../out/html/locales/zh',
-    },
-  ],
-};
+module.exports = localeConfig('zh');

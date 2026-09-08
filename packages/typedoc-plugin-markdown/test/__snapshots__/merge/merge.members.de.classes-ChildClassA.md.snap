@@ -1,0 +1,30 @@
+[**typedoc-stubs**](../README.md)
+
+***
+
+[typedoc-stubs](../README.md) / ChildClassA
+
+# Klasse: ChildClassA
+
+## Erweitert
+
+- [`BaseClass`](BaseClass.md)
+
+## Erweitert durch
+
+- [`GrandChildClassA`](GrandChildClassA.md)
+- [`GrandChildClassB`](GrandChildClassB.md)
+
+## Constructors
+
+### Konstruktor
+
+> **new ChildClassA**(): `ChildClassA`
+
+#### Rückgabewert
+
+`ChildClassA`
+
+#### Geerbt von
+
+[`BaseClass`](BaseClass.md).[`constructor`](BaseClass.md#constructor)
