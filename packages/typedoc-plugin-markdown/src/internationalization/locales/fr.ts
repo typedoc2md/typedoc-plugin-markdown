@@ -7,6 +7,7 @@ import { TranslatableStrings } from '@plugin/types/index.js';
  */
 export const translatable: Partial<TranslatableStrings> = {
   tag_examples: 'Exemples',
+  tag_example: 'Exemple',
   theme_default_value: 'Valeur par défaut',
   theme_default_type: 'Type par défaut',
   theme_description: 'Description',

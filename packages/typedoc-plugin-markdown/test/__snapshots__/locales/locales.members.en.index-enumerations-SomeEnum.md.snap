@@ -1,0 +1,16 @@
+[**typedoc-stubs**](../../README.md)
+
+***
+
+[typedoc-stubs](../../README.md) / [index](../README.md) / SomeEnum
+
+# Enumeration: SomeEnum
+
+An enum whose members carry values and descriptions.
+
+## Enumeration Members
+
+| Enumeration Member | Value | Description |
+| ------ | ------ | ------ |
+| <a id="enumeration-member-membera"></a> `MemberA` | `"a"` | Description for an enum member. |
+| <a id="enumeration-member-memberb"></a> `MemberB` | `"b"` | Description for another enum member. |

@@ -9,11 +9,18 @@ import { Application, Converter } from 'typedoc';
  * @category Functions
  */
 export function setupInternationalization(app: Application): void {
-  app.converter.on(Converter.EVENT_BEGIN, () => {
+  const addTranslations = () => {
     app.internationalization.addTranslations(app.options.getValue('lang'), {
       ...getTranslatable(app),
     });
-  });
+  };
+
+  // The `merge` entry point strategy revives a project from JSON without ever
+  // running the converter, so `EVENT_BEGIN` does not fire for it. Registering
+  // on both events covers every strategy; adding the translations twice (as
+  // `packages` does, converting each package before reviving) is harmless.
+  app.converter.on(Converter.EVENT_BEGIN, addTranslations);
+  app.on(Application.EVENT_PROJECT_REVIVE, addTranslations);
 }
 
 /**
