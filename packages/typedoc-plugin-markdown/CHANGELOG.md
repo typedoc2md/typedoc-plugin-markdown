@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.13.1
+
+### Patch Changes
+
+- Load plugin translations for the `merge` entry point strategy ([#900](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/900)).
+- Translate the `@example` heading in `de`, `fr` and `ko` ([#900](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/900)).
+- Fix truncated option descriptions in the published JSON schema and type declarations.
+
 ## 4.13.0 (2026-08-25)
 
 ### Minor Changes
