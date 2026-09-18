@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.13.1
+## 4.13.1 (2026-09-18)
 
 ### Patch Changes
 
