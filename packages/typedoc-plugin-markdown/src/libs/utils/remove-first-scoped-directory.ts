@@ -1,16 +1,13 @@
-import * as path from 'path';
-
 export function removeFirstScopedDirectory(
   urlString: string,
-  sep?: string,
+  sep = '/',
 ): string {
-  const separator = sep || path.sep;
-  const pathParts = urlString.replace(/\//g, path.sep).split(separator);
+  const pathParts = urlString.split(sep);
   const scopedDirectoryIndex = pathParts.findIndex((part) =>
     part.startsWith('@'),
   );
   if (scopedDirectoryIndex !== -1) {
     pathParts.splice(scopedDirectoryIndex, 1);
   }
-  return pathParts.join(separator);
+  return pathParts.join(sep);
 }
