@@ -242,10 +242,12 @@ this — remember it. Format:
 - Description of the change (#issue).
 ```
 
-Note `.changeset/config.json` ignores only `@devtools/*`, so every published
-package — core, utility plugins and themes alike — takes a changeset when it
-changes for consumers. It also fixes `docusaurus-plugin-typedoc` +
-`typedoc-docusaurus-theme` together, so a changeset for either versions both.
+Note `.changeset/config.json` ignores `@devtools/*` and potentially packages
+still in development — a changeset for an ignored package is silently dropped,
+so check its `ignore` list. Every other published package takes a changeset
+when it changes for consumers. The config also fixes
+`docusaurus-plugin-typedoc` + `typedoc-docusaurus-theme` together, so a
+changeset for either versions both.
 
 **A changeset forces a version bump and a release, so add one only when the
 published package actually changes for consumers.** That means runtime
