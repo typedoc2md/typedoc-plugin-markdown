@@ -2,4 +2,4 @@
 'typedoc-plugin-markdown': patch
 ---
 
-- Use `/` as the path separator when removing scopes from page URLs with `excludeScopesInPaths`, fixing broken links on Windows (#903).
+- Fixed broken links on Windows when using `excludeScopesInPaths` (#903).
