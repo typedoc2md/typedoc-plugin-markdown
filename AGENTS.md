@@ -207,7 +207,8 @@ Use `core` for `typedoc-plugin-markdown`. Example:
 
 ### AI attribution
 
-Work done with an AI coding agent is marked with a single trailer:
+Work done with an AI coding agent is marked with a single trailer in the
+commit message:
 
 ```
 Assisted-by: Claude Code
@@ -224,9 +225,10 @@ of those. The human who reviews the change and pushes it is its sole author.
 work; `Generated-by:` is its counterpart where a substantial portion is machine
 written.
 
-Do not add "Generated with …" footers to PR descriptions. This file is the
-project's disclosure that AI agents work here, and it says so more usefully than
-a per-commit marker.
+**PR descriptions carry no AI attribution of any kind** — no "Generated with …"
+footer, and no `Assisted-by:` trailer either. The trailer belongs in commit
+messages only. This file is the project's disclosure that AI agents work here,
+and it says so more usefully than a per-PR or per-commit marker.
 
 ## Changesets
 
