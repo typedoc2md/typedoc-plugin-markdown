@@ -43,15 +43,11 @@
     "node": ">= 18"
   },
   "keywords": [
-    "documentation",
-    "markdown",
     "typedoc",
-    "typescript",
     "typedoc-plugin",
-    "typedoc-theme",
+    "markdown",
+    "typescript",
     "api-documentation",
-    "documentation-generator",
-    "docs-generator",
-    "markdown-generator"
+    "documentation"
   ]
 }
