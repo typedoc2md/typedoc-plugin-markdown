@@ -7,15 +7,15 @@ Comments form module comments
 Links using `{@link}` inline tags.
 
 - [CommentInterface](interfaces/CommentInterface.md) - Links to CommentInterface
-- [Links to CommentInterface.prop](interfaces/CommentInterface.md#prop)
-- [`Links to CommentInterface.propb`](interfaces/CommentInterface.md#propb)
-- [Links to CommentInterface.\_prop\_with\_underscore\_](interfaces/CommentInterface.md#_prop_with_underscore_)
-- [CommentEnum.MemberB](enumerations/CommentEnum.md#enumeration-member-memberb)
-- [SameName.prop](interfaces/SameName.md#prop)
+- [Links to CommentInterface.prop](interfaces/CommentInterface.md#api-prop)
+- [`Links to CommentInterface.propb`](interfaces/CommentInterface.md#api-propb)
+- [Links to CommentInterface.\_prop\_with\_underscore\_](interfaces/CommentInterface.md#api-_prop_with_underscore_)
+- [CommentEnum.MemberB](enumerations/CommentEnum.md#api-enumeration-member-memberb)
+- [SameName.prop](interfaces/SameName.md#api-prop)
 - [TypeWithGenerics](type-aliases/TypeWithGenerics.md)
 - [TypeDeclarationType](type-aliases/TypeDeclarationType.md)
-- [TypeDeclarationType#declaration1](type-aliases/TypeDeclarationType.md#property-declaration1)
-- [TypeDeclarationType2#declaration1](type-aliases/TypeDeclarationType2.md#property-declaration1)
+- [TypeDeclarationType#declaration1](type-aliases/TypeDeclarationType.md#api-property-declaration1)
+- [TypeDeclarationType2#declaration1](type-aliases/TypeDeclarationType2.md#api-property-declaration1)
 
 External links:
 

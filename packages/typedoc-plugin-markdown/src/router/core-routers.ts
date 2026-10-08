@@ -7,8 +7,9 @@ import {
   Options,
   PageDefinition,
   Reflection,
-  RouterTarget,
+  ReflectionKind,
 } from 'typedoc';
+import { getAnchorName } from './anchor-name.js';
 
 /**
  * The core routers of TypeDoc are decorated to handle file options of the plugin.
@@ -17,14 +18,14 @@ import {
 @CoreRouter
 export class KindRouter extends CoreKindRouter {}
 
-@CoreRouter
+// KindRouter is already decorated with CoreRouter; decorating again would apply
+// its amendments (such as anchorPrefix) twice.
 @CoreDirRouter
 export class KindDirRouter extends KindRouter {}
 
 @CoreRouter
 export class StructureRouter extends CoreStructureRouter {}
 
-@CoreRouter
 @CoreDirRouter
 export class StructureDirRouter extends StructureRouter {}
 
@@ -40,7 +41,7 @@ export class CategoryRouter extends CoreCategoryRouter {}
 function CoreRouter<T extends new (...args: any[]) => any>(constructor: T) {
   return class extends constructor {
     private options = this.application.options as Options;
-    private anchorPrefix = this.options.getValue('anchorPrefix');
+    private anchorPrefix = this.options.getValue('anchorPrefix') ?? '';
     private mergeReadme = this.options.getValue('mergeReadme');
     private entryFileName = getPathWithoutExt(
       this.options.getValue('entryFileName'),
@@ -80,11 +81,26 @@ function CoreRouter<T extends new (...args: any[]) => any>(constructor: T) {
       }
       return super.getFileName(baseName);
     }
-    getAnchor(target: RouterTarget) {
-      if (this.anchorPrefix) {
-        return `${this.anchorPrefix}${super.getAnchor(target)}`;
+    /**
+     * A copy of the BaseRouter implementation, amended to slug constructors
+     * from their heading and to prefix the anchor with "anchorPrefix". The
+     * BaseRouter stores the result as both the anchor and the full URL
+     * fragment, so same-page and cross-page links agree.
+     */
+    protected createAnchor(target: Reflection, pageTarget: Reflection): string {
+      const parts = [getAnchorName(target)];
+      let refl = target;
+      while (refl.parent && refl.parent !== pageTarget) {
+        refl = refl.parent;
+        if (
+          !refl.kindOf(
+            ReflectionKind.TypeLiteral | ReflectionKind.FunctionOrMethod,
+          )
+        ) {
+          parts.unshift(refl.name);
+        }
       }
-      return super.getAnchor(target);
+      return `${this.anchorPrefix}${this.getSlugger(pageTarget).slug(parts.join('.'))}`;
     }
   };
 }
