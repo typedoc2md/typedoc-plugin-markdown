@@ -2,6 +2,7 @@
 /**
  * @module
  */
+import { ExpandedInterface } from './interfaces.js';
 
 import {
   InterfaceWithFunctionOverloads,
@@ -319,6 +320,49 @@ export const functionWithArrayOfUnionStuff = (
  * Comments for array of stuff?
  */
 export const functionWithArrayOfOptionalStuff = (a: [Stuff?]) => {};
+
+/**
+ * Comments for function returning an array of useful objects
+ */
+export function functionReturningAnArrayOfUsefulObjects(): {
+  /**
+   * Comments for method
+   */
+  method(): void;
+}[] {
+  return [];
+}
+
+/**
+ * Comments for function returning a useful intersection
+ */
+export function functionReturningAUsefulIntersection(): {
+  /**
+   * Comments for method
+   */
+  method(x: string): void;
+} & { prop: number } {
+  return null as any;
+}
+
+/**
+ * Comments for function returning an `@expand` interface
+ */
+export function functionReturningAnExpandedInterface(
+  x: ExpandedInterface | string,
+): ExpandedInterface {
+  return null as any;
+}
+
+/**
+ * Comments for function with arrays of compound types
+ */
+export function functionWithArraysOfCompoundTypes(
+  fns: (() => void)[],
+  keys: (keyof ExpandedInterface)[],
+  intersections: (string & {})[],
+  optionalFn: [(() => void)?],
+) {}
 
 export const typedef = {
   /**

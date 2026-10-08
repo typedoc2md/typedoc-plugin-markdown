@@ -282,3 +282,15 @@ export interface InterfaceWithProps {
   prop: string;
   ['prop.with.dot']: string;
 }
+
+/**
+ * An interface that TypeDoc's own theme expands inline.
+ *
+ * @expand
+ */
+export interface ExpandedInterface {
+  /**
+   * Comments for prop
+   */
+  prop: string;
+}

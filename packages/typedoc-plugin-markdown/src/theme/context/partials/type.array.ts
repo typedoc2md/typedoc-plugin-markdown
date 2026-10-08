@@ -1,4 +1,5 @@
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
+import { needsParentheses } from '@plugin/theme/lib/index.js';
 import { ArrayType } from 'typedoc';
 
 export function arrayType(
@@ -6,5 +7,7 @@ export function arrayType(
   model: ArrayType,
 ): string {
   const theType = this.partials.someType(model.elementType);
-  return model.elementType.type === 'union' ? `(${theType})[]` : `${theType}[]`;
+  return needsParentheses(model.elementType)
+    ? `(${theType})[]`
+    : `${theType}[]`;
 }

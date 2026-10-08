@@ -1,4 +1,5 @@
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
+import { needsParentheses } from '@plugin/theme/lib/index.js';
 import { OptionalType } from 'typedoc';
 
 export function optionalType(
@@ -9,5 +10,5 @@ export function optionalType(
   const result = this.partials.someType(model.elementType, {
     forceCollapse: options?.forceCollapse,
   });
-  return model.elementType.type === 'union' ? `(${result})?` : `${result}?`;
+  return needsParentheses(model.elementType) ? `(${result})?` : `${result}?`;
 }

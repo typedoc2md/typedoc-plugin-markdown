@@ -1,0 +1,19 @@
+# Function: functionReturningAnExpandedInterface()
+
+```ts
+function functionReturningAnExpandedInterface(x: string | ExpandedInterface): ExpandedInterface;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function returning an `@expand` interface
+
+## Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `x` | `string` \| [`ExpandedInterface`](../interfaces/ExpandedInterface.md) |
+
+## Returns
+
+[`ExpandedInterface`](../interfaces/ExpandedInterface.md)

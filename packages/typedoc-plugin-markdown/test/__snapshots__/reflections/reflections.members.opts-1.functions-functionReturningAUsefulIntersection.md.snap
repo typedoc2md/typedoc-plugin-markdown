@@ -1,0 +1,11 @@
+# Function: functionReturningAUsefulIntersection()
+
+> **functionReturningAUsefulIntersection**(): `object` & `object`
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function returning a useful intersection
+
+## Returns
+
+`object` & `object`
