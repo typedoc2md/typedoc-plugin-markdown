@@ -14,7 +14,7 @@ A type alias with a defaulted type parameter.
 
 | Type Parameter | Default type |
 | ------ | ------ |
-| `T` | `string` |
+| <a id="type-parameter-t"></a> `T` | `string` |
 
 ## Properties
 

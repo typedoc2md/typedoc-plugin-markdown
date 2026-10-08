@@ -7,6 +7,7 @@ const commonOptions = {
     '../src/links/inherited.ts',
     '../src/links/extended.ts',
     '../src/links/unique-anchors.ts',
+    '../src/links/type-parameters.ts',
   ],
   plugin: ['../../../dist/index.js'],
   hidePageHeader: true,
@@ -38,6 +39,15 @@ module.exports = {
         classPropertiesFormat: 'table',
         enumMembersFormat: 'table',
         typeDeclarationFormat: 'table',
+        parametersFormat: 'table',
+      },
+    },
+    {
+      name: 'markdown',
+      path: '../out/md/links/modules/opts-3',
+      options: {
+        router: 'module',
+        useHTMLAnchors: true,
       },
     },
     {

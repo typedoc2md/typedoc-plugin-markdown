@@ -11,7 +11,31 @@ export function typeParametersList(
   model?.forEach((typeParameter) => {
     const typeParamOut: string[] = [];
 
-    typeParamOut.push(heading(options.headingLevel + 1, typeParameter.name));
+    const anchor = this.router.hasUrl(typeParameter)
+      ? this.router.getAnchor(typeParameter)
+      : undefined;
+
+    if (anchor && this.options.getValue('useHTMLAnchors')) {
+      typeParamOut.push(`<a id="${anchor}"></a>`);
+    }
+
+    let title = typeParameter.name;
+
+    if (anchor && this.options.getValue('useCustomAnchors')) {
+      const customAnchorsFormat = this.options.getValue('customAnchorsFormat');
+
+      if (customAnchorsFormat === 'curlyBrace') {
+        title = `${title} {#${anchor}}`;
+      } else if (customAnchorsFormat === 'escapedCurlyBrace') {
+        title = `${title} \\{#${anchor}\\}`;
+      } else if (customAnchorsFormat === 'squareBracket') {
+        title = `${title} [#${anchor}]`;
+      } else {
+        throw new Error(`Invalid custom anchors format`);
+      }
+    }
+
+    typeParamOut.push(heading(options.headingLevel + 1, title));
 
     const nameDescription: string[] = [backTicks(typeParameter.name)];
 

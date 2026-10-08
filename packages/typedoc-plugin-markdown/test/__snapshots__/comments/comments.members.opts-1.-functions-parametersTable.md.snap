@@ -10,7 +10,7 @@ Adds two numbers together.
 
 | Type Parameter | Default type | Description |
 | ------ | ------ | ------ |
-| `T` | `string` | The type of the numbers to be added. |
+| <a id="api-type-parameter-parameterstablet"></a> `T` | `string` | The type of the numbers to be added. |
 
 ## Parameters
 

@@ -1,0 +1,77 @@
+# type-parameters
+
+## Interfaces
+
+### Box
+
+A box.
+
+#### Extended by
+
+- [`StringBox`](#stringbox)
+
+#### Type Parameters
+
+| Type Parameter |
+| ------ |
+| <a id="type-parameter-value"></a> `Value` |
+
+#### Properties
+
+| Property | Modifier | Type | Description |
+| ------ | ------ | ------ | ------ |
+| <a id="property-value"></a> `value` | `readonly` | `Value` | The boxed value, a Value. |
+
+***
+
+### NumberType
+
+A Type of numbers.
+
+#### Extends
+
+- [`Type`](#type)\<`number`\>
+
+#### Properties
+
+| Property | Type | Description | Inherited from |
+| ------ | ------ | ------ | ------ |
+| <a id="property-input"></a> `Input` | `number` | The input. | [`Type`](#type).[`Input`](#type-parameter-input) |
+
+***
+
+### StringBox
+
+A Box of strings.
+
+#### Extends
+
+- [`Box`](#box)\<`string`\>
+
+#### Properties
+
+| Property | Modifier | Type | Description | Inherited from |
+| ------ | ------ | ------ | ------ | ------ |
+| <a id="property-value-1"></a> `value` | `readonly` | `string` | The boxed value, a Value. | [`Box`](#box).[`value`](#property-value) |
+
+***
+
+### Type
+
+A Type with a type-level Input property.
+
+#### Extended by
+
+- [`NumberType`](#numbertype)
+
+#### Type Parameters
+
+| Type Parameter |
+| ------ |
+| <a id="type-parameter-input"></a> `Input` |
+
+#### Properties
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="property-input-1"></a> `Input` | `Input` | The input. |

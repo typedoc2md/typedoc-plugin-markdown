@@ -1,0 +1,56 @@
+# extended
+
+- [Class1.prop1](inherited.md#prop1)
+- [Interface1.prop1](inherited.md#prop1-1)
+
+## Classes
+
+<a id="class1"></a>
+
+### Class1
+
+#### Extended by
+
+- [`Class2`](inherited.md#class2)
+
+#### Constructors
+
+<a id="constructor"></a>
+
+##### Constructor
+
+> **new Class1**(): [`Class1`](#class1)
+
+###### Returns
+
+[`Class1`](#class1)
+
+#### Properties
+
+<a id="prop1"></a>
+
+##### prop1
+
+> **prop1**: `string`
+
+Comments for class 1 prop 1
+
+## Interfaces
+
+<a id="interface1"></a>
+
+### Interface1
+
+#### Extended by
+
+- [`Interface2`](inherited.md#interface2)
+
+#### Properties
+
+<a id="prop1-1"></a>
+
+##### prop1
+
+> **prop1**: `string`
+
+Comments for interface 1 prop 1

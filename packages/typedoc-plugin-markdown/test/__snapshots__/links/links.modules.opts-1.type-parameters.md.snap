@@ -1,0 +1,93 @@
+# type-parameters
+
+## Interfaces
+
+### Box
+
+A box.
+
+#### Extended by
+
+- [`StringBox`](#stringbox)
+
+#### Type Parameters
+
+##### Value
+
+`Value`
+
+#### Properties
+
+##### value
+
+> `readonly` **value**: `Value`
+
+The boxed value, a Value.
+
+***
+
+### NumberType
+
+A Type of numbers.
+
+#### Extends
+
+- [`Type`](#type)\<`number`\>
+
+#### Properties
+
+##### Input
+
+> **Input**: `number`
+
+The input.
+
+###### Inherited from
+
+[`Type`](#type).[`Input`](#input-1)
+
+***
+
+### StringBox
+
+A Box of strings.
+
+#### Extends
+
+- [`Box`](#box)\<`string`\>
+
+#### Properties
+
+##### value
+
+> `readonly` **value**: `string`
+
+The boxed value, a Value.
+
+###### Inherited from
+
+[`Box`](#box).[`value`](#value-1)
+
+***
+
+### Type
+
+A Type with a type-level Input property.
+
+#### Extended by
+
+- [`NumberType`](#numbertype)
+
+#### Type Parameters
+
+##### Input
+
+`Input`
+
+#### Properties
+
+##### Input
+
+> **Input**: `Input`
+
+The input.
