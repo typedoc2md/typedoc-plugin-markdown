@@ -271,6 +271,7 @@ There is no association list partial for properties as these are handled as a st
         | {
             forceParameterType?: boolean | undefined;
             typeSeparator?: string | undefined;
+            forceCollapse?: boolean | undefined;
           }
         | undefined,
     ) => partials.functionType.apply(context, [model, options]) as string,
