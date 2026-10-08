@@ -27,7 +27,10 @@ export function declarationType(
 
   if (model.signatures) {
     md.push(
-      `${this.partials.functionType(model.signatures, { typeSeparator: ': ' })};`,
+      `${this.partials.functionType(model.signatures, {
+        typeSeparator: ': ',
+        forceCollapse: options?.forceCollapse,
+      })};`,
     );
   }
 
@@ -43,7 +46,7 @@ export function declarationType(
           return obj.signatures.map((signature) => {
             const signatureString = `${backTicks(displayObjectName)}${this.partials.functionType(
               [signature],
-              { typeSeparator: ': ' },
+              { typeSeparator: ': ', forceCollapse: options?.forceCollapse },
             )}`;
             if (shouldFormat) {
               return `  ${indentBlock(signatureString)};`;

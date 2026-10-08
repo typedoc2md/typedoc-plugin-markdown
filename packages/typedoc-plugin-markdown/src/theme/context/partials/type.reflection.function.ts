@@ -5,10 +5,15 @@ import { SignatureReflection, SomeType } from 'typedoc';
 export function functionType(
   this: MarkdownThemeContext,
   model: SignatureReflection[],
-  options?: { forceParameterType?: boolean; typeSeparator?: string },
+  options?: {
+    forceParameterType?: boolean;
+    typeSeparator?: string;
+    forceCollapse?: boolean;
+  },
 ): string {
   const shouldFormat = this.options.getValue('useCodeBlocks');
   const typeSeparator = options?.typeSeparator || ' => ';
+  const typeOptions = { forceCollapse: options?.forceCollapse };
   const functions = model.map((fn) => {
     const typeParams = fn.typeParameters
       ? `${this.helpers.getAngleBracket('<')}${fn.typeParameters
@@ -20,7 +25,10 @@ export function functionType(
 
     const params = fn.parameters
       ? fn.parameters.map((param) => {
-          const paramType = this.partials.someType(param.type as SomeType);
+          const paramType = this.partials.someType(
+            param.type as SomeType,
+            typeOptions,
+          );
           const paramItem = [
             `${param.flags?.isRest ? '...' : ''}${backTicks(`${param.name}${param.flags?.isOptional ? '?' : ''}`)}`,
           ];
@@ -30,7 +38,7 @@ export function functionType(
           return paramItem.join(': ');
         })
       : [];
-    const returns = this.partials.someType(fn.type as SomeType);
+    const returns = this.partials.someType(fn.type as SomeType, typeOptions);
     return (
       typeParams +
       `${shouldFormat && model.length > 1 ? '  ' : ''}(${params.join(', ')})${typeSeparator}${returns}`
