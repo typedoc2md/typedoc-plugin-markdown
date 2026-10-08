@@ -244,6 +244,13 @@ this — remember it. Format:
 - Description of the change (#issue).
 ```
 
+Name the file after the branch, without its type prefix:
+`fix/909-type-parameter-anchors` gets `.changeset/909-type-parameter-anchors.md`.
+Do not keep the random name `npx changeset` generates — rename it. Changesets
+reads any filename, so this is purely for people: `ls .changeset` then shows
+what the next release contains, and the issue number keeps two pending
+changesets from colliding.
+
 Note `.changeset/config.json` ignores `@devtools/*` and potentially packages
 still in development — a changeset for an ignored package is silently dropped,
 so check its `ignore` list. Every other published package takes a changeset
