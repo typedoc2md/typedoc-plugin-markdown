@@ -14,6 +14,6 @@ describe(`typedoc-plugin-markdown (Integration / Links)`, () => {
   });
 
   it(`should get links for type parameters`, () => {
-    expectFileToEqual('links', 'modules', 'type-parameters.md');
+    expectFileToEqual('type-parameters', 'modules', 'README.md');
   });
 });

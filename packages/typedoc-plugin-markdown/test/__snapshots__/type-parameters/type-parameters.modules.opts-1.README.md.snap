@@ -1,8 +1,6 @@
-# type-parameters
+# typedoc-stubs
 
 ## Interfaces
-
-<a id="box"></a>
 
 ### Box
 
@@ -14,25 +12,43 @@ A box.
 
 #### Type Parameters
 
-<a id="value"></a>
-
 ##### Value
 
 `Value`
 
 #### Properties
 
-<a id="value-1"></a>
-
 ##### value
 
 > `readonly` **value**: `Value`
 
-The boxed value, a Value.
+The boxed value, a [Value](#value).
 
 ***
 
-<a id="numbertype"></a>
+### Mapper
+
+A mapper.
+
+#### Methods
+
+##### map()
+
+> **map**\<`Result`\>(): `Result`
+
+Maps to a [Result](#result).
+
+###### Type Parameters
+
+###### Result
+
+`Result`
+
+###### Returns
+
+`Result`
+
+***
 
 ### NumberType
 
@@ -43,8 +59,6 @@ A Type of numbers.
 - [`Type`](#type)\<`number`\>
 
 #### Properties
-
-<a id="input"></a>
 
 ##### Input
 
@@ -58,8 +72,6 @@ The input.
 
 ***
 
-<a id="stringbox"></a>
-
 ### StringBox
 
 A Box of strings.
@@ -70,21 +82,17 @@ A Box of strings.
 
 #### Properties
 
-<a id="value-2"></a>
-
 ##### value
 
 > `readonly` **value**: `string`
 
-The boxed value, a Value.
+The boxed value, a [Value](#value).
 
 ###### Inherited from
 
 [`Box`](#box).[`value`](#value-1)
 
 ***
-
-<a id="type"></a>
 
 ### Type
 
@@ -96,18 +104,57 @@ A Type with a type-level Input property.
 
 #### Type Parameters
 
-<a id="input-1"></a>
-
 ##### Input
 
 `Input`
 
 #### Properties
 
-<a id="input-2"></a>
-
 ##### Input
 
 > **Input**: `Input`
 
 The input.
+
+## Functions
+
+### create()
+
+> **create**\<`Shape`\>(): `Shape`
+
+A default whose object type has a method returning an object, so the method
+return and the sibling property must expand alike.
+
+#### Type Parameters
+
+##### Shape
+
+`Shape` = \{ `prop`: \{ `b`: `string`; \}; `make`(): \{ `a`: `string`; \}; \}
+
+#### Returns
+
+`Shape`
+
+***
+
+### identity()
+
+> **identity**\<`Item`\>(`item`): `Item`
+
+Returns the [Item](#item) it was given.
+
+#### Type Parameters
+
+##### Item
+
+`Item`
+
+#### Parameters
+
+##### item
+
+`Item`
+
+#### Returns
+
+`Item`
