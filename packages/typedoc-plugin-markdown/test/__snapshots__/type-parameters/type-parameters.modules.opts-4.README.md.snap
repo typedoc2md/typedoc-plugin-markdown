@@ -1,4 +1,4 @@
-# type-parameters
+# typedoc-stubs
 
 ## Interfaces
 
@@ -10,12 +10,6 @@ A box.
 
 - [`StringBox`](#stringbox)
 
-#### Type Parameters
-
-##### Value
-
-`Value`
-
 #### Properties
 
 ##### value
@@ -23,6 +17,24 @@ A box.
 > `readonly` **value**: `Value`
 
 The boxed value, a Value.
+
+***
+
+### Mapper
+
+A mapper.
+
+#### Methods
+
+##### map()
+
+> **map**\<`Result`\>(): `Result`
+
+Maps to a Result.
+
+###### Returns
+
+`Result`
 
 ***
 
@@ -44,7 +56,7 @@ The input.
 
 ###### Inherited from
 
-[`Type`](#type).[`Input`](#input-1)
+[`Type`](#type).`Input`
 
 ***
 
@@ -66,7 +78,7 @@ The boxed value, a Value.
 
 ###### Inherited from
 
-[`Box`](#box).[`value`](#value-1)
+[`Box`](#box).[`value`](#value)
 
 ***
 
@@ -78,12 +90,6 @@ A Type with a type-level Input property.
 
 - [`NumberType`](#numbertype)
 
-#### Type Parameters
-
-##### Input
-
-`Input`
-
 #### Properties
 
 ##### Input
@@ -91,3 +97,28 @@ A Type with a type-level Input property.
 > **Input**: `Input`
 
 The input.
+
+## Functions
+
+### create()
+
+> **create**\<`Shape`\>(): `Shape`
+
+A default whose object type has a method returning an object, so the method
+return and the sibling property must expand alike.
+
+#### Returns
+
+`Shape`
+
+***
+
+### identity()
+
+> **identity**\<`Item`\>(`item`): `Item`
+
+Returns the Item it was given.
+
+#### Returns
+
+`Item`

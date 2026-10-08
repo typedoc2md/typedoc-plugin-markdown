@@ -1,0 +1,144 @@
+# typedoc-stubs
+
+## Interfaces
+
+### Box
+
+A box.
+
+#### Extended by
+
+- [`StringBox`](#stringbox)
+
+#### Type Parameters
+
+| Type Parameter |
+| ------ |
+| <a id="type-parameter-value"></a> `Value` |
+
+#### Properties
+
+| Property | Modifier | Type | Description |
+| ------ | ------ | ------ | ------ |
+| <a id="property-value"></a> `value` | `readonly` | `Value` | The boxed value, a [Value](#type-parameter-value). |
+
+***
+
+### Mapper
+
+A mapper.
+
+#### Methods
+
+##### map()
+
+> **map**\<`Result`\>(): `Result`
+
+Maps to a [Result](#type-parameter-result).
+
+###### Type Parameters
+
+| Type Parameter |
+| ------ |
+| <a id="type-parameter-result"></a> `Result` |
+
+###### Returns
+
+`Result`
+
+***
+
+### NumberType
+
+A Type of numbers.
+
+#### Extends
+
+- [`Type`](#type)\<`number`\>
+
+#### Properties
+
+| Property | Type | Description | Inherited from |
+| ------ | ------ | ------ | ------ |
+| <a id="property-input"></a> `Input` | `number` | The input. | [`Type`](#type).[`Input`](#type-parameter-input) |
+
+***
+
+### StringBox
+
+A Box of strings.
+
+#### Extends
+
+- [`Box`](#box)\<`string`\>
+
+#### Properties
+
+| Property | Modifier | Type | Description | Inherited from |
+| ------ | ------ | ------ | ------ | ------ |
+| <a id="property-value-1"></a> `value` | `readonly` | `string` | The boxed value, a [Value](#type-parameter-value). | [`Box`](#box).[`value`](#property-value) |
+
+***
+
+### Type
+
+A Type with a type-level Input property.
+
+#### Extended by
+
+- [`NumberType`](#numbertype)
+
+#### Type Parameters
+
+| Type Parameter |
+| ------ |
+| <a id="type-parameter-input"></a> `Input` |
+
+#### Properties
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| <a id="property-input-1"></a> `Input` | `Input` | The input. |
+
+## Functions
+
+### create()
+
+> **create**\<`Shape`\>(): `Shape`
+
+A default whose object type has a method returning an object, so the method
+return and the sibling property must expand alike.
+
+#### Type Parameters
+
+| Type Parameter | Default type |
+| ------ | ------ |
+| <a id="type-parameter-shape"></a> `Shape` | `object` |
+
+#### Returns
+
+`Shape`
+
+***
+
+### identity()
+
+> **identity**\<`Item`\>(`item`): `Item`
+
+Returns the [Item](#type-parameter-item) it was given.
+
+#### Type Parameters
+
+| Type Parameter |
+| ------ |
+| <a id="type-parameter-item"></a> `Item` |
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `item` | `Item` |
+
+#### Returns
+
+`Item`

@@ -35,6 +35,7 @@ export abstract class MarkdownRouter extends BaseRouter {
   membersWithOwnFile = this.application.options.getValue('membersWithOwnFile');
   mergeReadme = this.application.options.getValue('mergeReadme');
   anchorPrefix = this.application.options.getValue('anchorPrefix');
+  parametersFormat = this.application.options.getValue('parametersFormat');
 
   directories = new Map<ReflectionKind, string>([
     [ReflectionKind.Class, 'classes'],
@@ -201,7 +202,26 @@ export abstract class MarkdownRouter extends BaseRouter {
       return;
     }
 
-    if (!target.kindOf(ReflectionKind.TypeLiteral)) {
+    // --------------------------------------------
+    // typedoc-plugin-markdown customization (start)
+    // --------------------------------------------
+
+    // The method carries the anchor, so its call signatures get none, but the
+    // signature's type parameters are still traversed below.
+    const isMethodSignature =
+      target.kindOf(ReflectionKind.CallSignature) &&
+      !!target.parent?.kindOf(ReflectionKind.Method);
+
+    if (target.isTypeParameter() && this.parametersFormat === 'none') {
+      // Type parameters are not rendered at all, so must not take an anchor.
+      return;
+    }
+
+    // ------------------------------------------
+    // typedoc-plugin-markdown customization (end)
+    // -------------------------------------------
+
+    if (!target.kindOf(ReflectionKind.TypeLiteral) && !isMethodSignature) {
       let refl: Reflection | undefined = target;
       const parts = [refl.name];
       while (refl.parent && refl.parent !== pageTarget) {
@@ -220,14 +240,11 @@ export abstract class MarkdownRouter extends BaseRouter {
       // typedoc-plugin-markdown customization (start)
       // --------------------------------------------
 
-      if (
-        target.kindOf(ReflectionKind.CallSignature) &&
-        target.parent?.kindOf(ReflectionKind.Method)
-      ) {
-        return;
-      }
-
       let toSlug = parts.join('.');
+
+      if (this.isSluggedByName(target, pageTarget)) {
+        toSlug = target.name;
+      }
 
       if (
         this.tableAnchorRules.some((r) =>
@@ -255,6 +272,33 @@ export abstract class MarkdownRouter extends BaseRouter {
       this.buildAnchors(child, pageTarget);
       return true;
     });
+  }
+
+  /**
+   * Whether a type parameter is slugged from its bare name rather than its
+   * qualified path. In list format its anchor is its heading, which renderers
+   * slug from the bare name, so the router must match it; table anchors follow
+   * the same rule so both formats name a type parameter alike.
+   *
+   * The module and member routers anchor a member twice: first relative to the
+   * page, then relative to its parent, and only the second anchor is kept. The
+   * bare name is therefore used only when the owner of the type parameter (past
+   * its signature and method) is `pageTarget`; a bare slug in the first pass
+   * would push the kept anchor to `-1`.
+   */
+  private isSluggedByName(target: Reflection, pageTarget: Reflection): boolean {
+    if (!target.isTypeParameter()) {
+      return false;
+    }
+    let owner: Reflection | undefined = target.parent;
+    while (
+      owner &&
+      owner !== pageTarget &&
+      owner.kindOf(ReflectionKind.SomeSignature | ReflectionKind.Method)
+    ) {
+      owner = owner.parent;
+    }
+    return owner === pageTarget;
   }
 
   private isTableAnchor(

@@ -1,0 +1,194 @@
+# typedoc-stubs
+
+## Interfaces
+
+<a id="box"></a>
+
+### Box
+
+A box.
+
+#### Extended by
+
+- [`StringBox`](#stringbox)
+
+#### Type Parameters
+
+<a id="value"></a>
+
+##### Value
+
+`Value`
+
+#### Properties
+
+<a id="value-1"></a>
+
+##### value
+
+> `readonly` **value**: `Value`
+
+The boxed value, a [Value](#value).
+
+***
+
+<a id="mapper"></a>
+
+### Mapper
+
+A mapper.
+
+#### Methods
+
+<a id="map"></a>
+
+##### map()
+
+> **map**\<`Result`\>(): `Result`
+
+Maps to a [Result](#result).
+
+###### Type Parameters
+
+<a id="result"></a>
+
+###### Result
+
+`Result`
+
+###### Returns
+
+`Result`
+
+***
+
+<a id="numbertype"></a>
+
+### NumberType
+
+A Type of numbers.
+
+#### Extends
+
+- [`Type`](#type)\<`number`\>
+
+#### Properties
+
+<a id="input"></a>
+
+##### Input
+
+> **Input**: `number`
+
+The input.
+
+###### Inherited from
+
+[`Type`](#type).[`Input`](#input-1)
+
+***
+
+<a id="stringbox"></a>
+
+### StringBox
+
+A Box of strings.
+
+#### Extends
+
+- [`Box`](#box)\<`string`\>
+
+#### Properties
+
+<a id="value-2"></a>
+
+##### value
+
+> `readonly` **value**: `string`
+
+The boxed value, a [Value](#value).
+
+###### Inherited from
+
+[`Box`](#box).[`value`](#value-1)
+
+***
+
+<a id="type"></a>
+
+### Type
+
+A Type with a type-level Input property.
+
+#### Extended by
+
+- [`NumberType`](#numbertype)
+
+#### Type Parameters
+
+<a id="input-1"></a>
+
+##### Input
+
+`Input`
+
+#### Properties
+
+<a id="input-2"></a>
+
+##### Input
+
+> **Input**: `Input`
+
+The input.
+
+## Functions
+
+<a id="create"></a>
+
+### create()
+
+> **create**\<`Shape`\>(): `Shape`
+
+A default whose object type has a method returning an object, so the method
+return and the sibling property must expand alike.
+
+#### Type Parameters
+
+<a id="shape"></a>
+
+##### Shape
+
+`Shape` = \{ `prop`: \{ `b`: `string`; \}; `make`(): \{ `a`: `string`; \}; \}
+
+#### Returns
+
+`Shape`
+
+***
+
+<a id="identity"></a>
+
+### identity()
+
+> **identity**\<`Item`\>(`item`): `Item`
+
+Returns the [Item](#item) it was given.
+
+#### Type Parameters
+
+<a id="item"></a>
+
+##### Item
+
+`Item`
+
+#### Parameters
+
+##### item
+
+`Item`
+
+#### Returns
+
+`Item`
