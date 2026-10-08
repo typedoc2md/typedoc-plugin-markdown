@@ -191,6 +191,12 @@
         "isDeprecated": false
       },
       {
+        "title": "ExpandedInterface",
+        "kind": 256,
+        "path": "interfaces/ExpandedInterface.md",
+        "isDeprecated": false
+      },
+      {
         "title": "ExtendedInterface",
         "kind": 256,
         "path": "interfaces/ExtendedInterface.md",
@@ -506,6 +512,18 @@
         "isDeprecated": false
       },
       {
+        "title": "functionReturningAnArrayOfUsefulObjects",
+        "kind": 64,
+        "path": "functions/functionReturningAnArrayOfUsefulObjects.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionReturningAnExpandedInterface",
+        "kind": 64,
+        "path": "functions/functionReturningAnExpandedInterface.md",
+        "isDeprecated": false
+      },
+      {
         "title": "functionReturningAnObject",
         "kind": 64,
         "path": "functions/functionReturningAnObject.md",
@@ -536,6 +554,12 @@
         "isDeprecated": false
       },
       {
+        "title": "functionReturningAUsefulIntersection",
+        "kind": 64,
+        "path": "functions/functionReturningAUsefulIntersection.md",
+        "isDeprecated": false
+      },
+      {
         "title": "functionReturningFunctionOverloads",
         "kind": 64,
         "path": "functions/functionReturningFunctionOverloads.md",
@@ -563,6 +587,12 @@
         "title": "functionWithArrayOfUnionStuff",
         "kind": 64,
         "path": "functions/functionWithArrayOfUnionStuff.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionWithArraysOfCompoundTypes",
+        "kind": 64,
+        "path": "functions/functionWithArraysOfCompoundTypes.md",
         "isDeprecated": false
       },
       {

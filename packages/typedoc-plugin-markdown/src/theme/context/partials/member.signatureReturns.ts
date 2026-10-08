@@ -39,7 +39,9 @@ export function signatureReturns(
           options,
         ),
       );
-    } else if (!hasUsefulTypeDetails) {
+    } else if (!hasUsefulTypeDetails || !typeDeclaration?.children) {
+      // Without a union container or a type declaration to list the details,
+      // the type itself is the only place they appear.
       md.push(this.helpers.getReturnType(model.type));
       if (returnsComment) {
         md.push(returnsComment);

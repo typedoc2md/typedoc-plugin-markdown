@@ -153,6 +153,38 @@ describe(`typedoc-plugin-markdown (Integration /Function Reflection)`, () => {
     );
   });
 
+  it(`should compile function returning an array of useful objects`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionReturningAnArrayOfUsefulObjects.md',
+    );
+  });
+
+  it(`should compile function returning a useful intersection`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionReturningAUsefulIntersection.md',
+    );
+  });
+
+  it(`should compile function returning an expanded interface`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionReturningAnExpandedInterface.md',
+    );
+  });
+
+  it(`should compile function with arrays of compound types`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionWithArraysOfCompoundTypes.md',
+    );
+  });
+
   it(`should compile function with array of union stuff`, () => {
     expectFileToEqual(
       'reflections',

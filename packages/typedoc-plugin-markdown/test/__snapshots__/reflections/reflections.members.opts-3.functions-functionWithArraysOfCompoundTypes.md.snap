@@ -1,0 +1,18 @@
+# Function: functionWithArraysOfCompoundTypes()
+
+```ts
+function functionWithArraysOfCompoundTypes(
+   fns: (() => void)[], 
+   keys: "prop"[], 
+   intersections: (string & object)[], 
+   optionalFn: [(() => void)?]
+): void;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function with arrays of compound types
+
+## Returns
+
+`void`

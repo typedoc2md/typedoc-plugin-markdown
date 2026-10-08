@@ -1,16 +1,13 @@
-import {
-  DeclarationReflection,
-  ReferenceType,
-  Reflection,
-  ReflectionKind,
-  SomeType,
-  TypeVisitor,
-} from 'typedoc';
+import { DeclarationReflection, SomeType, TypeVisitor } from 'typedoc';
 
 export function hasUsefulTypeDetails(type: SomeType) {
   return type.visit(isUsefulVisitor) ?? false;
 }
 
+// Adapted from TypeDoc's default theme. TypeDoc also treats `@expand` and
+// highlighted-property references as useful because its theme renders their
+// members inline; this theme does not, so counting them would leave the type
+// with no output at all.
 const isUsefulVisitor: Partial<TypeVisitor<boolean>> = {
   array(type) {
     return hasUsefulTypeDetails(type.elementType);
@@ -23,9 +20,6 @@ const isUsefulVisitor: Partial<TypeVisitor<boolean>> = {
   },
   reflection(type) {
     return renderingChildIsUseful(type.declaration);
-  },
-  reference(type) {
-    return shouldExpandReference(type);
   },
 };
 
@@ -47,17 +41,4 @@ function renderingThisChildIsUseful(refl: DeclarationReflection) {
   return declaration.getAllSignatures().some((sig) => {
     return sig.hasComment() || sig.parameters?.some((p) => p.hasComment());
   });
-}
-const expanded = new Set<Reflection>();
-function shouldExpandReference(reference: ReferenceType) {
-  const target = reference.reflection;
-  if (reference.highlightedProperties) {
-    return !target || expanded.has(target) === false;
-  }
-
-  if (!target?.kindOf(ReflectionKind.TypeAlias | ReflectionKind.Interface))
-    return false;
-  if (!target.comment?.hasModifier('@expand')) return false;
-
-  return expanded.has(target) === false;
 }
