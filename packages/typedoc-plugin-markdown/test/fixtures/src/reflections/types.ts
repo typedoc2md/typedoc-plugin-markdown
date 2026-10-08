@@ -182,6 +182,15 @@ export type LiteralType = {
    */
   someFunction(param: string): Promise<any>;
   /**
+   * Comments for someOverloadedFunction
+   */
+  someOverloadedFunction(param: string): string;
+  someOverloadedFunction(param: number): number;
+  /**
+   * Comments for someOptionalGenericFunction
+   */
+  someOptionalGenericFunction?<T>(param: T): T;
+  /**
    * Comments for someFunctionWithArrow
    */
   someFunctionWithArrow: () => string;

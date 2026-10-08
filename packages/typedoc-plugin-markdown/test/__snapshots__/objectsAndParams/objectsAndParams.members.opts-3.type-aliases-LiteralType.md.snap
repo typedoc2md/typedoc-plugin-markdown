@@ -1,6 +1,6 @@
 # Type Alias: LiteralType
 
-> **LiteralType** = \{ `someFunctionWithArrow`: () => `string`; `x?`: `string`; `y`: \{ `x`: `string`; `y?`: `boolean` \| `string`; `z`: (`x`: `string`) => `string`; \}; `z`: (`x`: `string`) => `string`; get `accessorA`(): [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`string`\>; get `accessorB`(): `string`; `someFunction`: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`any`\>; \}
+> **LiteralType** = \{ `someFunctionWithArrow`: () => `string`; `x?`: `string`; `y`: \{ `x`: `string`; `y?`: `boolean` \| `string`; `z`: (`x`: `string`) => `string`; \}; `z`: (`x`: `string`) => `string`; get `accessorA`(): [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`string`\>; get `accessorB`(): `string`; `someFunction`(`param`: `string`): [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`any`\>; `someOptionalGenericFunction?`\<`T`\>(`param`: `T`): `T`; `someOverloadedFunction`(`param`: `string`): `string`; `someOverloadedFunction`(`param`: `number`): `number`; \}
 
 Comments for LiteralType
 
@@ -119,3 +119,37 @@ Comments for someFunction
 #### Returns
 
 [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`any`\>
+
+***
+
+### someOptionalGenericFunction()?
+
+> `optional` **someOptionalGenericFunction**\<`T`\>(`param`: `T`): `T`
+
+Comments for someOptionalGenericFunction
+
+#### Returns
+
+`T`
+
+***
+
+### someOverloadedFunction()
+
+#### Call Signature
+
+> **someOverloadedFunction**(`param`: `string`): `string`
+
+Comments for someOverloadedFunction
+
+##### Returns
+
+`string`
+
+#### Call Signature
+
+> **someOverloadedFunction**(`param`: `number`): `number`
+
+##### Returns
+
+`number`

@@ -169,3 +169,67 @@ Comments for someFunction
 #### Returns
 
 [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`any`\>
+
+***
+
+### someOptionalGenericFunction()?
+
+> `optional` **someOptionalGenericFunction**\<`T`\>(`param`): `T`
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for someOptionalGenericFunction
+
+#### Type Parameters
+
+##### T
+
+`T`
+
+#### Parameters
+
+##### param
+
+`T`
+
+#### Returns
+
+`T`
+
+***
+
+### someOverloadedFunction()
+
+#### Call Signature
+
+> **someOverloadedFunction**(`param`): `string`
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for someOverloadedFunction
+
+##### Parameters
+
+###### param
+
+`string`
+
+##### Returns
+
+`string`
+
+#### Call Signature
+
+> **someOverloadedFunction**(`param`): `number`
+
+Defined in: [types.ts:1](http://source-url)
+
+##### Parameters
+
+###### param
+
+`number`
+
+##### Returns
+
+`number`
