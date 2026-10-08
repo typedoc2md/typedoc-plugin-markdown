@@ -12,8 +12,8 @@ Function with type parameters
 
 | Type Parameter | Default type | Description |
 | :------ | :------ | :------ |
-| `T` | - | Comments for T |
-| `Item` | `string` \| `boolean` | - |
+| <a id="type-parameter-functionwithtypeparameterst"></a> `T` | - | Comments for T |
+| <a id="type-parameter-functionwithtypeparametersitem"></a> `Item` | `string` \| `boolean` | - |
 
 ## Returns
 

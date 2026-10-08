@@ -36,6 +36,13 @@ export function typeParametersTable(
 
     const nameCol: string[] = [];
 
+    const anchor = this.router.hasUrl(typeParameter)
+      ? this.router.getAnchor(typeParameter)
+      : undefined;
+    if (anchor) {
+      nameCol.push(`<a id="${anchor}"></a>`);
+    }
+
     nameCol.push(backTicks(typeParameter.name));
 
     if (typeParameter.type) {

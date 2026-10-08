@@ -11,10 +11,10 @@ And some more comments
 
 | Type Parameter | Description |
 | :------ | :------ |
-| `A` | This is a parameter. |
-| `B` | Comments for a parameter. This sentence is on a soft new line. |
-| `C` | This is a parameter. Documentation with a double line |
-| `D` | <p>These are comments with paras</p> <p>These are comments with paras</p> Other comments Comments with <p>paras</p> <p>These are comments with paras</p> |
+| <a id="type-parameter-a"></a> `A` | This is a parameter. |
+| <a id="type-parameter-b"></a> `B` | Comments for a parameter. This sentence is on a soft new line. |
+| <a id="type-parameter-c"></a> `C` | This is a parameter. Documentation with a double line |
+| <a id="type-parameter-d"></a> `D` | <p>These are comments with paras</p> <p>These are comments with paras</p> Other comments Comments with <p>paras</p> <p>These are comments with paras</p> |
 
 ## Properties
 

@@ -1,0 +1,139 @@
+# unique-anchors
+
+- [SomInterface.valueContainer](#valuecontainer-3)
+- [SomeTypeAlias.valueContainer](#valuecontainer-4)
+- [SomeClass.valueContainer](#valuecontainer-1)
+- [SomeClass.ValueContainer](#valuecontainer-2)
+- [SomeEnum.ValueContainer](#valuecontainer)
+- [someVariable.valueContainer](#valuecontainer-6)
+- [ValueContainer](#valuecontainer-5)
+
+## Enumerations
+
+<a id="someenum"></a>
+
+### SomeEnum
+
+#### Enumeration Members
+
+<a id="valuecontainer"></a>
+
+##### ValueContainer
+
+> **ValueContainer**: `"valueContainer"`
+
+## Classes
+
+<a id="someclass"></a>
+
+### SomeClass
+
+#### Constructors
+
+<a id="constructor"></a>
+
+##### Constructor
+
+> **new SomeClass**(): [`SomeClass`](#someclass)
+
+###### Returns
+
+[`SomeClass`](#someclass)
+
+#### Properties
+
+<a id="valuecontainer-1"></a>
+
+##### valueContainer
+
+> **valueContainer**: `string`
+
+#### Methods
+
+<a id="valuecontainer-2"></a>
+
+##### ValueContainer()
+
+> **ValueContainer**(): `undefined`
+
+###### Returns
+
+`undefined`
+
+## Interfaces
+
+<a id="sominterface"></a>
+
+### SomInterface
+
+#### Properties
+
+<a id="valuecontainer-3"></a>
+
+##### valueContainer
+
+> **valueContainer**: `string`
+
+## Type Aliases
+
+<a id="sometypealias"></a>
+
+### SomeTypeAlias
+
+> **SomeTypeAlias**\<`V`\> = `object`
+
+#### Type Parameters
+
+<a id="v"></a>
+
+##### V
+
+`V`
+
+#### Properties
+
+<a id="valuecontainer-4"></a>
+
+##### valueContainer
+
+> **valueContainer**: [`ValueContainer`](#valuecontainer-5)\<`V`\>
+
+***
+
+<a id="valuecontainer-5"></a>
+
+### ValueContainer
+
+> **ValueContainer**\<`V`\> = `object`
+
+#### Type Parameters
+
+<a id="v-1"></a>
+
+##### V
+
+`V`
+
+#### Properties
+
+<a id="value"></a>
+
+##### value
+
+> **value**: `V`
+
+## Variables
+
+<a id="somevariable"></a>
+
+### someVariable
+
+> `const` **someVariable**: `object`
+
+#### Type Declaration
+
+<a id="valuecontainer-6"></a>
+
+##### valueContainer
+
+> **valueContainer**: `string` = `'valueContainer'`

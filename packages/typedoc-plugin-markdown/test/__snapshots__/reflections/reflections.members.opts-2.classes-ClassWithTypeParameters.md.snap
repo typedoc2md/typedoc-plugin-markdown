@@ -8,9 +8,9 @@ Comments for ClassWithTypeParameters
 
 | Type Parameter | Default type | Description |
 | :------ | :------ | :------ |
-| `A` | - | - |
-| `B` *extends* `string` | - | Comments for param B |
-| `C` | `boolean` | Comments for param C |
+| <a id="type-parameter-a"></a> `A` | - | - |
+| <a id="type-parameter-b"></a> `B` *extends* `string` | - | Comments for param B |
+| <a id="type-parameter-c"></a> `C` | `boolean` | Comments for param C |
 
 ## Constructors
 

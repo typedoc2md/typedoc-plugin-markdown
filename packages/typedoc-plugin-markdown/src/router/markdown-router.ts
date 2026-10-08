@@ -85,6 +85,11 @@ export abstract class MarkdownRouter extends BaseRouter {
       parentKind: ReflectionKind.Enum,
       option: 'enumMembersFormat',
     },
+    {
+      targetKind: ReflectionKind.TypeParameter,
+      parentKind: ReflectionKind.All,
+      option: 'parametersFormat',
+    },
   ];
 
   override buildPages(project: ProjectReflection) {
