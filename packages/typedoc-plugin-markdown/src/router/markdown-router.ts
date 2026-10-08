@@ -17,6 +17,7 @@ import {
   RouterTarget,
   Slugger,
 } from 'typedoc';
+import { getAnchorName } from './anchor-name.js';
 
 export abstract class MarkdownRouter extends BaseRouter {
   override extension = this.application.options.getValue('fileExtension');
@@ -34,7 +35,7 @@ export abstract class MarkdownRouter extends BaseRouter {
     EntryPointStrategy.Packages;
   membersWithOwnFile = this.application.options.getValue('membersWithOwnFile');
   mergeReadme = this.application.options.getValue('mergeReadme');
-  anchorPrefix = this.application.options.getValue('anchorPrefix');
+  anchorPrefix = this.application.options.getValue('anchorPrefix') ?? '';
   parametersFormat = this.application.options.getValue('parametersFormat');
 
   directories = new Map<ReflectionKind, string>([
@@ -161,13 +162,6 @@ export abstract class MarkdownRouter extends BaseRouter {
     return pages;
   }
 
-  override getAnchor(target: RouterTarget) {
-    if (this.anchorPrefix) {
-      return `${this.anchorPrefix}${super.getAnchor(target)}`;
-    }
-    return super.getAnchor(target);
-  }
-
   /**
    * This is essentially a copy of the BaseRouter implementation, but adjusted to
    * generate anchors in a way that is compatible with markdown links.
@@ -223,7 +217,7 @@ export abstract class MarkdownRouter extends BaseRouter {
 
     if (!target.kindOf(ReflectionKind.TypeLiteral) && !isMethodSignature) {
       let refl: Reflection | undefined = target;
-      const parts = [refl.name];
+      const parts = [getAnchorName(target)];
       while (refl.parent && refl.parent !== pageTarget) {
         refl = refl.parent;
         // Avoid duplicate names for signatures and useless __type in anchors
@@ -258,7 +252,9 @@ export abstract class MarkdownRouter extends BaseRouter {
         toSlug = `abstract-${toSlug}`;
       }
 
-      const anchor = this.getSlugger(pageTarget).slug(toSlug);
+      // The prefix is stored with the anchor so that same-page anchors and
+      // cross-page URLs (built from fullUrls) both carry it.
+      const anchor = `${this.anchorPrefix}${this.getSlugger(pageTarget).slug(toSlug)}`;
 
       // ------------------------------------------
       // typedoc-plugin-markdown customization (end)

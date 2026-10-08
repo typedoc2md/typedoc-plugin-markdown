@@ -1,0 +1,37 @@
+# Class: ExtendedClass
+
+## Hierarchy
+
+[View Summary](../../hierarchy.md)
+
+### Extends
+
+- [`BaseClass`](../BaseClass/index.md)
+
+## Constructors
+
+<a id="apiconstructor"></a>
+
+### Constructor
+
+> **new ExtendedClass**(): `ExtendedClass`
+
+#### Returns
+
+`ExtendedClass`
+
+#### Inherited from
+
+[`BaseClass`](../BaseClass/index.md).[`constructor`](../BaseClass/index.md#apiconstructor)
+
+## Properties
+
+<a id="apiprop"></a>
+
+### prop
+
+> **prop**: `string`
+
+#### Inherited from
+
+[`BaseClass`](../BaseClass/index.md).[`prop`](../BaseClass/index.md#apiprop)

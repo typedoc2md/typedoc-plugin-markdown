@@ -1,4 +1,4 @@
-import { strict as assert } from 'assert';
+import { assertToMatchSnapshot } from '@devtools/testing';
 import * as fs from 'fs';
 import { expectDirToEqual, getOutDir } from '../helpers.js';
 
@@ -16,9 +16,14 @@ describe(`typedoc-plugin-markdown (Integration / Outputs)`, () => {
   });
 
   it(`should output md with anchors (kind-dir)`, () => {
-    const readmeDoc = fs.existsSync(
-      `${getOutDir()}/md/outputs/kind-dir/classes/ExtendedClass/index.md`,
+    const contents = fs
+      .readFileSync(
+        `${getOutDir()}/md/outputs/kind-dir/classes/ExtendedClass/index.md`,
+      )
+      .toString();
+    assertToMatchSnapshot(
+      'outputs/md-outputs-kind-dir-ExtendedClass',
+      contents,
     );
-    assert.ok(readmeDoc);
   });
 });
