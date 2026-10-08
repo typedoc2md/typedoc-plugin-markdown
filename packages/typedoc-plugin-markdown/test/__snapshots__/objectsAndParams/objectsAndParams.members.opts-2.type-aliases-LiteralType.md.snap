@@ -12,7 +12,10 @@ type LiteralType = {
   z: (x: string) => string;
   get accessorA(): Promise<string>;
   get accessorB(): string;
-  someFunction: Promise<any>;
+  someFunction(param: string): Promise<any>;
+  someOptionalGenericFunction?<T>(param: T): T;
+  someOverloadedFunction(param: string): string;
+  someOverloadedFunction(param: number): number;
 };
 ```
 
@@ -181,3 +184,67 @@ Comments for someFunction
 #### Returns
 
 [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`any`\>
+
+***
+
+### someOptionalGenericFunction()?
+
+```ts
+optional someOptionalGenericFunction<T>(param: T): T;
+```
+
+Comments for someOptionalGenericFunction
+
+#### Type Parameters
+
+| Type Parameter |
+| :------ |
+| `T` |
+
+#### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `param` | `T` |
+
+#### Returns
+
+`T`
+
+***
+
+### someOverloadedFunction()
+
+#### Call Signature
+
+```ts
+someOverloadedFunction(param: string): string;
+```
+
+Comments for someOverloadedFunction
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `param` | `string` |
+
+##### Returns
+
+`string`
+
+#### Call Signature
+
+```ts
+someOverloadedFunction(param: number): number;
+```
+
+##### Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `param` | `number` |
+
+##### Returns
+
+`number`

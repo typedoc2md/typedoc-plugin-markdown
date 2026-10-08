@@ -1,6 +1,6 @@
 # Variable: objectLiteralVariable
 
-> `const` **objectLiteralVariable**: \{ `valueA`: `number`; `valueB`: `boolean`; `valueX`: \{ `valueA`: `number`[]; `valueY`: (`z`: `string`) => \{ `a`: `string`; `b`: `string`; `c`: \{ `a`: `number`; `b`: `number`; \}; \}; `valueZ`: `string`; \}; `valueY`: (`unionParam`: `"a"` \| `"b"`, `_undercoreParam_`: `string`) => `string`; `valueZ`: `string`; \}
+> `const` **objectLiteralVariable**: \{ `valueA`: `number`; `valueB`: `boolean`; `valueX`: \{ `valueA`: `number`[]; `valueY`: (`z`: `string`) => \{ `a`: `string`; `b`: `string`; `c`: \{ `a`: `number`; `b`: `number`; \}; \}; `valueZ`: `string`; \}; `valueY`: (`unionParam`: `"a"` \| `"b"`, `_undercoreParam_`: `string`) => `string`; `valueZ`(`param`: `string`): `string`; \}
 
 Comments for objectLiteralVariable
 

@@ -36,7 +36,22 @@ export function declarationType(
 
     const declarationTypes =
       children &&
-      children.map((obj) => {
+      children.flatMap((obj) => {
+        if (obj.signatures?.length) {
+          const displayObjectName =
+            obj.name + (obj.flags?.isOptional ? '?' : '');
+          return obj.signatures.map((signature) => {
+            const signatureString = `${backTicks(displayObjectName)}${this.partials.functionType(
+              [signature],
+              { typeSeparator: ': ' },
+            )}`;
+            if (shouldFormat) {
+              return `  ${indentBlock(signatureString)};`;
+            }
+            return `${indentBlock(signatureString)};`;
+          });
+        }
+
         const name: string[] = [];
 
         if (obj.getSignature) {
