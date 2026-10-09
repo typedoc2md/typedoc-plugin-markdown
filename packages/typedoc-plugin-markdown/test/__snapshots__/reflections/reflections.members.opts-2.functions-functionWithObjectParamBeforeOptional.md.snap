@@ -1,0 +1,23 @@
+# Function: functionWithObjectParamBeforeOptional()
+
+```ts
+function functionWithObjectParamBeforeOptional(options: object, b?: string): void;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function with an object parameter before an optional one
+
+## Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| `options` | \{ `x`: `string`; `y`: `string`; `z`: `string`; \} | Comments for options |
+| `options.x` | `string` | - |
+| `options.y` | `string` | - |
+| `options.z` | `string` | - |
+| `b?` | `string` | - |
+
+## Returns
+
+`void`

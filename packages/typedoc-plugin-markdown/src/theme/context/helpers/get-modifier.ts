@@ -1,23 +1,22 @@
 import { DeclarationReflection } from 'typedoc';
 
 export function getModifier(model: DeclarationReflection): string | null {
-  if (model.flags.isAbstract) {
-    return 'abstract';
-  }
+  const modifiers: string[] = [];
   if (model.flags.isPrivate) {
-    return 'private';
-  }
-  if (model.flags.isReadonly) {
-    return 'readonly';
+    modifiers.push('private');
+  } else if (model.flags.isProtected) {
+    modifiers.push('protected');
+  } else if (model.flags.isPublic) {
+    modifiers.push('public');
   }
   if (model.flags.isStatic) {
-    return 'static';
+    modifiers.push('static');
   }
-  if (model.flags.isProtected) {
-    return 'protected';
+  if (model.flags.isAbstract) {
+    modifiers.push('abstract');
   }
-  if (model.flags.isPublic) {
-    return 'public';
+  if (model.flags.isReadonly) {
+    modifiers.push('readonly');
   }
-  return null;
+  return modifiers.length ? modifiers.join(' ') : null;
 }

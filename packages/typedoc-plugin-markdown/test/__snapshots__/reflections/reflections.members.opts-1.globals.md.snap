@@ -28,6 +28,7 @@ Module comments
 - [ChildClassB](classes/ChildClassB.md)
 - [ClassWithAccessorKeywords](classes/ClassWithAccessorKeywords.md)
 - [ClassWithAccessors](classes/ClassWithAccessors.md)
+- [ClassWithCombinedModifiers](classes/ClassWithCombinedModifiers.md)
 - [ClassWithComplexProps](classes/ClassWithComplexProps.md)
 - [ClassWithConstructorOverloads](classes/ClassWithConstructorOverloads.md)
 - [ClassWithFlags](classes/ClassWithFlags.md)
@@ -101,6 +102,7 @@ Module comments
 - [templateVariableString](variables/templateVariableString.md)
 - [typedef](variables/typedef.md)
 - [typeOperatorVariable](variables/typeOperatorVariable.md)
+- [variableWithOverloadedMethods](variables/variableWithOverloadedMethods.md)
 
 ## Functions
 
@@ -124,9 +126,11 @@ Module comments
 - [functionWithArraysOfCompoundTypes](functions/functionWithArraysOfCompoundTypes.md)
 - [functionWithComplexParams](functions/functionWithComplexParams.md)
 - [functionWithDefaultParameters](functions/functionWithDefaultParameters.md)
+- [functionWithMethodInObjectParam](functions/functionWithMethodInObjectParam.md)
 - [functionWithMultipleSignatures](functions/functionWithMultipleSignatures.md)
 - [functionWithNamedParams](functions/functionWithNamedParams.md)
 - [functionWithNestedParameters](functions/functionWithNestedParameters.md)
+- [functionWithObjectParamBeforeOptional](functions/functionWithObjectParamBeforeOptional.md)
 - [functionWithOptionalParameters](functions/functionWithOptionalParameters.md)
 - [functionWithRestParams](functions/functionWithRestParams.md)
 - [functionWithTypeParameters](functions/functionWithTypeParameters.md)

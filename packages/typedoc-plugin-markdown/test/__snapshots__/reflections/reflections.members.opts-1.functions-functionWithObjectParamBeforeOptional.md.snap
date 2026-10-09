@@ -1,0 +1,33 @@
+# Function: functionWithObjectParamBeforeOptional()
+
+> **functionWithObjectParamBeforeOptional**(`options`, `b?`): `void`
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function with an object parameter before an optional one
+
+## Parameters
+
+### options
+
+Comments for options
+
+#### x
+
+`string`
+
+#### y
+
+`string`
+
+#### z
+
+`string`
+
+### b?
+
+`string`
+
+## Returns
+
+`void`

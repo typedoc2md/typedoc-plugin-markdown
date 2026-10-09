@@ -1,0 +1,53 @@
+# Variable: variableWithOverloadedMethods
+
+> `const` **variableWithOverloadedMethods**: `object`
+
+Defined in: [variables.ts:1](http://source-url)
+
+Comments for variable with overloaded methods
+
+## Type Declaration
+
+### inner
+
+> **inner**: `object`
+
+#### inner.fn()
+
+> **fn**(): `void`
+
+##### Returns
+
+`void`
+
+### method()
+
+#### Call Signature
+
+> **method**(`a`): `string`
+
+Comments for method
+
+##### Parameters
+
+###### a
+
+`string`
+
+##### Returns
+
+`string`
+
+#### Call Signature
+
+> **method**(`a`): `number`
+
+##### Parameters
+
+###### a
+
+`number`
+
+##### Returns
+
+`number`

@@ -1,0 +1,18 @@
+# Variable: variableWithOverloadedMethods
+
+```ts
+const variableWithOverloadedMethods: object;
+```
+
+Defined in: [variables.ts:1](http://source-url)
+
+Comments for variable with overloaded methods
+
+## Type Declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| <a id="property-inner"></a> `inner` | `object` | - |
+| `inner.fn()` | () => `void` | - |
+| `method()` | (`a`: `string`) => `string` | Comments for method |
+| `method()` | (`a`: `number`) => `number` | - |

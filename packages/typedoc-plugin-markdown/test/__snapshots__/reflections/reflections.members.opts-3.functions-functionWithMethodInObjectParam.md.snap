@@ -1,0 +1,13 @@
+# Function: functionWithMethodInObjectParam()
+
+```ts
+function functionWithMethodInObjectParam(options: object): void;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function with a method in an object parameter
+
+## Returns
+
+`void`

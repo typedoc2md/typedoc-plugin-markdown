@@ -84,6 +84,12 @@
         "isDeprecated": false
       },
       {
+        "title": "ClassWithCombinedModifiers",
+        "kind": 128,
+        "path": "classes/ClassWithCombinedModifiers.md",
+        "isDeprecated": false
+      },
+      {
         "title": "ClassWithComplexProps",
         "kind": 128,
         "path": "classes/ClassWithComplexProps.md",
@@ -481,6 +487,12 @@
         "kind": 32,
         "path": "variables/typeOperatorVariable.md",
         "isDeprecated": false
+      },
+      {
+        "title": "variableWithOverloadedMethods",
+        "kind": 32,
+        "path": "variables/variableWithOverloadedMethods.md",
+        "isDeprecated": false
       }
     ]
   },
@@ -608,6 +620,12 @@
         "isDeprecated": false
       },
       {
+        "title": "functionWithMethodInObjectParam",
+        "kind": 64,
+        "path": "functions/functionWithMethodInObjectParam.md",
+        "isDeprecated": false
+      },
+      {
         "title": "functionWithMultipleSignatures",
         "kind": 64,
         "path": "functions/functionWithMultipleSignatures.md",
@@ -623,6 +641,12 @@
         "title": "functionWithNestedParameters",
         "kind": 64,
         "path": "functions/functionWithNestedParameters.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionWithObjectParamBeforeOptional",
+        "kind": 64,
+        "path": "functions/functionWithObjectParamBeforeOptional.md",
         "isDeprecated": false
       },
       {

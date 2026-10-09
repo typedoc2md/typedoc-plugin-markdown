@@ -1,0 +1,45 @@
+# Class: ClassWithCombinedModifiers
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for class with combined modifiers
+
+## Constructors
+
+### Constructor
+
+> **new ClassWithCombinedModifiers**(): `ClassWithCombinedModifiers`
+
+#### Returns
+
+`ClassWithCombinedModifiers`
+
+## Properties
+
+### id
+
+> `protected` `readonly` **id**: `1` = `1`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for id
+
+***
+
+### prop
+
+> **prop**: `string` = `'x'`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Union of a | b values, as in `a || b`.
+
+***
+
+### LIMIT
+
+> `protected` `readonly` `static` **LIMIT**: `10` = `10`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for LIMIT

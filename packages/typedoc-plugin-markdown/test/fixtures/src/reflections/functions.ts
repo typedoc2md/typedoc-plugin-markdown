@@ -465,3 +465,25 @@ const optionalWithComments = () => {
   ) => {};
   return test ? innerFn : undefined;
 };
+
+/**
+ * Comments for function with an object parameter before an optional one
+ */
+export function functionWithObjectParamBeforeOptional(
+  /**
+   * Comments for options
+   */
+  options: { x: string; y: string; z: string },
+  b?: string,
+) {}
+
+/**
+ * Comments for function with a method in an object parameter
+ */
+export function functionWithMethodInObjectParam(options: {
+  /**
+   * Comments for run
+   */
+  run(a: string): number;
+  name: string;
+}) {}

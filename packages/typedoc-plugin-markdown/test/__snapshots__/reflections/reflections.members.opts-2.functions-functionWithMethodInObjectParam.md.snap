@@ -1,0 +1,21 @@
+# Function: functionWithMethodInObjectParam()
+
+```ts
+function functionWithMethodInObjectParam(options: object): void;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function with a method in an object parameter
+
+## Parameters
+
+| Parameter | Type | Description |
+| :------ | :------ | :------ |
+| `options` | \{ `name`: `string`; `run`(`a`: `string`): `number`; \} | - |
+| `options.name` | `string` | - |
+| `options.run` | (`a`: `string`) => `number` | Comments for run |
+
+## Returns
+
+`void`

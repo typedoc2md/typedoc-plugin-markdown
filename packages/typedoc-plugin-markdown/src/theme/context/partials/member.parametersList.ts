@@ -91,9 +91,17 @@ function getOtherType(
   const rest = parameter.flags?.isRest ? '...' : '';
   const identifier: string[] = [];
   const md: string[] = [];
+  // A method member of an object parameter has no type of its own, and keeps
+  // its comment on the signature.
+  const signatures = (parameter as any).signatures;
+  const comment =
+    parameter.comment ??
+    signatures?.find((signature) => signature.comment)?.comment;
   if (!skipHeading) {
     identifier.push(
-      context.partials.someType(parameter.type, { forceCollapse: true }),
+      !parameter.type && signatures?.length
+        ? context.partials.functionType(signatures)
+        : context.partials.someType(parameter.type, { forceCollapse: true }),
     );
   }
   if (parameter.defaultValue) {
@@ -102,8 +110,8 @@ function getOtherType(
     );
   }
   md.push(`${rest}${identifier.join('')}`);
-  if (parameter.comment) {
-    md.push(context.partials.comment(parameter.comment));
+  if (comment) {
+    md.push(context.partials.comment(comment));
   }
   return md.join('\n\n');
 }

@@ -232,4 +232,20 @@ describe(`typedoc-plugin-markdown (Integration /Function Reflection)`, () => {
       'functions/functionReturningFunctionOverloads.md',
     );
   });
+
+  it(`should compile function with an object parameter before an optional one`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionWithObjectParamBeforeOptional.md',
+    );
+  });
+
+  it(`should compile function with a method in an object parameter`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionWithMethodInObjectParam.md',
+    );
+  });
 });

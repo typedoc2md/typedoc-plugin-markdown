@@ -32,6 +32,7 @@ Module comments
 | [ChildClassB](classes/ChildClassB.md) | - |
 | [ClassWithAccessorKeywords](classes/ClassWithAccessorKeywords.md) | - |
 | [ClassWithAccessors](classes/ClassWithAccessors.md) | Comments for ClassWithAccessors |
+| [ClassWithCombinedModifiers](classes/ClassWithCombinedModifiers.md) | Comments for class with combined modifiers |
 | [ClassWithComplexProps](classes/ClassWithComplexProps.md) | Comments for ClassWithComplexProps |
 | [ClassWithConstructorOverloads](classes/ClassWithConstructorOverloads.md) | Comments for ClassWithConstructorOverloads |
 | [ClassWithFlags](classes/ClassWithFlags.md) | Comment for ClassWithFlags |
@@ -111,6 +112,7 @@ Module comments
 | [templateVariableString](variables/templateVariableString.md) | A template variable string |
 | [typedef](variables/typedef.md) | - |
 | [typeOperatorVariable](variables/typeOperatorVariable.md) | Comments for typeOperatorVariable |
+| [variableWithOverloadedMethods](variables/variableWithOverloadedMethods.md) | Comments for variable with overloaded methods |
 
 ## Functions
 
@@ -136,9 +138,11 @@ Module comments
 | [functionWithArraysOfCompoundTypes](functions/functionWithArraysOfCompoundTypes.md) | Comments for function with arrays of compound types |
 | [functionWithComplexParams](functions/functionWithComplexParams.md) | Function with function params |
 | [functionWithDefaultParameters](functions/functionWithDefaultParameters.md) | This is a function with a parameter that has a default value. |
+| [functionWithMethodInObjectParam](functions/functionWithMethodInObjectParam.md) | Comments for function with a method in an object parameter |
 | [functionWithMultipleSignatures](functions/functionWithMultipleSignatures.md) | Main function comment. |
 | [functionWithNamedParams](functions/functionWithNamedParams.md) | - |
 | [functionWithNestedParameters](functions/functionWithNestedParameters.md) | Some nested params. |
+| [functionWithObjectParamBeforeOptional](functions/functionWithObjectParamBeforeOptional.md) | Comments for function with an object parameter before an optional one |
 | [functionWithOptionalParameters](functions/functionWithOptionalParameters.md) | This is a function with a parameters. |
 | [functionWithRestParams](functions/functionWithRestParams.md) | Function with rest params |
 | [functionWithTypeParameters](functions/functionWithTypeParameters.md) | Function with type parameters |
