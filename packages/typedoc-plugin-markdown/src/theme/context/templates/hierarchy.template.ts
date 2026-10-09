@@ -9,7 +9,6 @@ export function hierarchy(
   page: MarkdownPageEvent<ProjectReflection>,
 ) {
   const md: string[] = [];
-  const seen = new Set<DeclarationReflection>();
   md.push(this.hook('page.begin', this).join('\n'));
 
   if (!this.options.getValue('hidePageHeader')) {
@@ -30,15 +29,13 @@ export function hierarchy(
 
   md.push(heading(2, i18n.theme_hierarchy_summary()));
 
+  // Each root lists its whole tree, so a class that extends or implements
+  // more than one root appears under each of them.
   hierarchyRoots.forEach((root) => {
     md.push(heading(3, root.name));
-    md.push(fullHierarchy(this, root, seen));
+    md.push(fullHierarchy(this, root, new Set()));
     md.push(horizontalRule());
   });
-
-  md.push(
-    hierarchyRoots.map((root) => fullHierarchy(this, root, seen)).join('\n'),
-  );
 
   md.push(this.hook('content.end', this).join('\n'));
 
@@ -55,8 +52,12 @@ function fullHierarchy(
   seen: Set<DeclarationReflection>,
   level = 0,
 ) {
+  const line = `${'  '.repeat(level)}- ${link(root.name, context.router.getFullUrl(root))}`;
+
+  // Already listed in this tree (a diamond): link it again, but do not repeat
+  // its subtree.
   if (seen.has(root)) {
-    return '';
+    return line;
   }
 
   seen.add(root);
@@ -78,9 +79,7 @@ function fullHierarchy(
     }
   }
 
-  const res: string[] = [
-    `${'  '.repeat(level)}- ${link(root.name, context.router.getFullUrl(root))}`,
-  ];
+  const res: string[] = [line];
 
   if (children.length) {
     res.push(children.join('\n'));

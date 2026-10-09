@@ -88,4 +88,12 @@ describe(`typedoc-plugin-markdown (Integration / Objects and Params)`, () => {
       'type-aliases/TypeWithIndexSignature.md',
     );
   });
+
+  it(`should keep literal types verbatim in code blocks`, () => {
+    expectFileToEqual(
+      'objectsAndParams',
+      'members',
+      'type-aliases/MarkdownLikeLiterals.md',
+    );
+  });
 });

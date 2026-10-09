@@ -26,3 +26,17 @@
   - [ExtendedInterface](interfaces/ExtendedInterface.md)
 
 ***
+
+### HierarchyRootA
+
+- [HierarchyRootA](interfaces/HierarchyRootA.md)
+  - [ClassImplementingTwoRoots](classes/ClassImplementingTwoRoots.md)
+
+***
+
+### HierarchyRootB
+
+- [HierarchyRootB](interfaces/HierarchyRootB.md)
+  - [ClassImplementingTwoRoots](classes/ClassImplementingTwoRoots.md)
+
+***

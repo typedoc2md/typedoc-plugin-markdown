@@ -1,0 +1,7 @@
+# Type Alias: MarkdownLikeLiterals
+
+```ts
+type MarkdownLikeLiterals = "[a](b)" | "&lt;b&gt;" | "C:\\temp" | "a*b";
+```
+
+Comments for literal types that look like markdown

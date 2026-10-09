@@ -26,3 +26,17 @@
   - [ExtendedInterface](globals.md#extendedinterface)
 
 ***
+
+### HierarchyRootA
+
+- [HierarchyRootA](globals.md#hierarchyroota)
+  - [ClassImplementingTwoRoots](globals.md#classimplementingtworoots)
+
+***
+
+### HierarchyRootB
+
+- [HierarchyRootB](globals.md#hierarchyrootb)
+  - [ClassImplementingTwoRoots](globals.md#classimplementingtworoots)
+
+***

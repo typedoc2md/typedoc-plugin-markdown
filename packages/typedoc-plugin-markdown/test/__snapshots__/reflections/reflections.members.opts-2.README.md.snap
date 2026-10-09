@@ -30,6 +30,7 @@ Module comments
 | [CallbacksOptions](classes/CallbacksOptions.md) | - |
 | [ChildClassA](classes/ChildClassA.md) | - |
 | [ChildClassB](classes/ChildClassB.md) | - |
+| [ClassImplementingTwoRoots](classes/ClassImplementingTwoRoots.md) | Comments for class implementing two hierarchy roots |
 | [ClassWithAccessorKeywords](classes/ClassWithAccessorKeywords.md) | - |
 | [ClassWithAccessors](classes/ClassWithAccessors.md) | Comments for ClassWithAccessors |
 | [ClassWithCombinedModifiers](classes/ClassWithCombinedModifiers.md) | Comments for class with combined modifiers |
@@ -57,6 +58,8 @@ Module comments
 | [CustomEventInterface](interfaces/CustomEventInterface.md) | - |
 | [ExpandedInterface](interfaces/ExpandedInterface.md) | An interface that TypeDoc's own theme expands inline. |
 | [ExtendedInterface](interfaces/ExtendedInterface.md) | Comments for ExtendedInterface |
+| [HierarchyRootA](interfaces/HierarchyRootA.md) | Comments for first hierarchy root |
+| [HierarchyRootB](interfaces/HierarchyRootB.md) | Comments for second hierarchy root |
 | [IndexableInterface](interfaces/IndexableInterface.md) | Comments for IndexableInterface |
 | [InterfaceWithComments](interfaces/InterfaceWithComments.md) | Comments for interface over two lines |
 | [InterfaceWithEventProperties](interfaces/InterfaceWithEventProperties.md) | - |
@@ -82,6 +85,7 @@ Module comments
 | [IndexAccessType](type-aliases/IndexAccessType.md) | Comments for IndexAccessType |
 | [IntersectionType](type-aliases/IntersectionType.md) | Comments for IntersectionType |
 | [LiteralType](type-aliases/LiteralType.md) | Comments for LiteralType |
+| [MarkdownLikeLiterals](type-aliases/MarkdownLikeLiterals.md) | Comments for literal types that look like markdown |
 | [PartialMappedType](type-aliases/PartialMappedType.md) | Comments for PartialMappedType |
 | [PrimitiveType](type-aliases/PrimitiveType.md) | Comments for PrimitiveType |
 | [PromiseTypeWithObject](type-aliases/PromiseTypeWithObject.md) | Comments for promise type returning object |

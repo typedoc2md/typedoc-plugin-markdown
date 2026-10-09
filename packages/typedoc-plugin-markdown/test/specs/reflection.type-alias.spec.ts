@@ -144,4 +144,12 @@ describe(`typedoc-plugin-markdown (Integration /Type Alias Reflection)`, () => {
       'type-aliases/TypeWithIndexSignature.md',
     );
   });
+
+  it(`should compile literal types that look like markdown`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'type-aliases/MarkdownLikeLiterals.md',
+    );
+  });
 });

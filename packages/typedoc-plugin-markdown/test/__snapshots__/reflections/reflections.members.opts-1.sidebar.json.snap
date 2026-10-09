@@ -72,6 +72,12 @@
         "isDeprecated": false
       },
       {
+        "title": "ClassImplementingTwoRoots",
+        "kind": 128,
+        "path": "classes/ClassImplementingTwoRoots.md",
+        "isDeprecated": false
+      },
+      {
         "title": "ClassWithAccessorKeywords",
         "kind": 128,
         "path": "classes/ClassWithAccessorKeywords.md",
@@ -209,6 +215,18 @@
         "isDeprecated": false
       },
       {
+        "title": "HierarchyRootA",
+        "kind": 256,
+        "path": "interfaces/HierarchyRootA.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "HierarchyRootB",
+        "kind": 256,
+        "path": "interfaces/HierarchyRootB.md",
+        "isDeprecated": false
+      },
+      {
         "title": "IndexableInterface",
         "kind": 256,
         "path": "interfaces/IndexableInterface.md",
@@ -331,6 +349,12 @@
         "title": "LiteralType",
         "kind": 2097152,
         "path": "type-aliases/LiteralType.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "MarkdownLikeLiterals",
+        "kind": 2097152,
+        "path": "type-aliases/MarkdownLikeLiterals.md",
         "isDeprecated": false
       },
       {
