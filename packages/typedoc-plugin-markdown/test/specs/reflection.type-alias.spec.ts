@@ -152,4 +152,20 @@ describe(`typedoc-plugin-markdown (Integration /Type Alias Reflection)`, () => {
       'type-aliases/MarkdownLikeLiterals.md',
     );
   });
+
+  it(`should compile named tuple type`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'type-aliases/NamedTupleType.md',
+    );
+  });
+
+  it(`should compile intersection with type parameters`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'type-aliases/IntersectionWithTypeParams.md',
+    );
+  });
 });

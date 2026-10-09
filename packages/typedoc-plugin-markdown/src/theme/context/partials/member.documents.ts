@@ -19,9 +19,7 @@ export function documents(
   if (docGroups?.length) {
     docGroups.forEach((reflectionGroup) => {
       md.push(heading(options.headingLevel, reflectionGroup.title));
-      docGroups.forEach((reflectionGroup) => {
-        md.push(this.partials.groupIndex(reflectionGroup));
-      });
+      md.push(this.partials.groupIndex(reflectionGroup));
     });
   }
   return md.join('\n\n');

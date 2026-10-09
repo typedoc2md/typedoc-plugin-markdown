@@ -11,6 +11,8 @@
   "ModuleWithDocuments1.NamespaceWithDocuments.NamespaceClassWithDocuments.Document.CLASS_DOC.md",
   "ModuleWithDocuments1.TypeWithDocuments.Document.TYPE_DOC.md",
   "ModuleWithDocuments1.functionWithDocuments.Document.FUNCTION_DOC_1.md",
+  "ModuleWithDocuments1.functionWithGroupedDocuments.Document.Grouped-Doc.md",
+  "ModuleWithDocuments1.functionWithGroupedDocuments.Document.Ungrouped-Doc.md",
   "ModuleWithDocuments1.md",
   "ModuleWithDocuments1.multipleFunctionWithDocuments.Document.FUNCTION_DOC_1.md",
   "ModuleWithDocuments1.multipleFunctionWithDocuments.Document.FUNCTION_DOC_2.md",

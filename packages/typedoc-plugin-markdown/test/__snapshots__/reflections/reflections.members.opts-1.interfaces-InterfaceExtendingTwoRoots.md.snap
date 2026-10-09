@@ -1,0 +1,38 @@
+# Interface: InterfaceExtendingTwoRoots
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for interface extending two hierarchy roots
+
+## Hierarchy
+
+[View Summary](../hierarchy.md)
+
+### Extends
+
+- [`HierarchyRootA`](HierarchyRootA.md)
+- [`HierarchyRootB`](HierarchyRootB.md)
+
+## Properties
+
+### a
+
+> **a**: `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+#### Inherited from
+
+[`HierarchyRootA`](HierarchyRootA.md).[`a`](HierarchyRootA.md#a)
+
+***
+
+### b
+
+> **b**: `string`
+
+Defined in: [classes.ts:1](http://source-url)
+
+#### Inherited from
+
+[`HierarchyRootB`](HierarchyRootB.md).[`b`](HierarchyRootB.md#b)

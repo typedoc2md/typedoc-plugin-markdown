@@ -62,6 +62,7 @@ Module comments
 | [HierarchyRootA](interfaces/HierarchyRootA.md) | Comments for first hierarchy root |
 | [HierarchyRootB](interfaces/HierarchyRootB.md) | Comments for second hierarchy root |
 | [IndexableInterface](interfaces/IndexableInterface.md) | Comments for IndexableInterface |
+| [InterfaceExtendingTwoRoots](interfaces/InterfaceExtendingTwoRoots.md) | Comments for interface extending two hierarchy roots |
 | [InterfaceWithComments](interfaces/InterfaceWithComments.md) | Comments for interface over two lines |
 | [InterfaceWithEventProperties](interfaces/InterfaceWithEventProperties.md) | - |
 | [InterfaceWithFlags](interfaces/InterfaceWithFlags.md) | Comments for InterfaceWithFlags |
@@ -85,8 +86,10 @@ Module comments
 | [FunctionType](type-aliases/FunctionType.md) | Comments for FunctionType |
 | [IndexAccessType](type-aliases/IndexAccessType.md) | Comments for IndexAccessType |
 | [IntersectionType](type-aliases/IntersectionType.md) | Comments for IntersectionType |
+| [IntersectionWithTypeParams](type-aliases/IntersectionWithTypeParams.md) | Comments for intersection with type parameters |
 | [LiteralType](type-aliases/LiteralType.md) | Comments for LiteralType |
 | [MarkdownLikeLiterals](type-aliases/MarkdownLikeLiterals.md) | Comments for literal types that look like markdown |
+| [NamedTupleType](type-aliases/NamedTupleType.md) | Comments for named tuple type |
 | [PartialMappedType](type-aliases/PartialMappedType.md) | Comments for PartialMappedType |
 | [PrimitiveType](type-aliases/PrimitiveType.md) | Comments for PrimitiveType |
 | [PromiseTypeWithObject](type-aliases/PromiseTypeWithObject.md) | Comments for promise type returning object |

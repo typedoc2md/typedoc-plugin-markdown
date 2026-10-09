@@ -1,0 +1,17 @@
+[typedoc-stubs](../../README.md) / [ModuleWithDocuments1](../README.md) / functionWithGroupedDocuments
+
+# Function: functionWithGroupedDocuments()
+
+_SIGNATURE_TITLE_PARTIAL_
+
+Comments for function with grouped documents
+
+## Documents
+
+- [Ungrouped Doc](documents/Ungrouped-Doc.md)
+
+## Guides
+
+- [Grouped Doc](documents/Grouped-Doc.md)
+
+_SIGNATURE_RETURNS_PARTIAL_

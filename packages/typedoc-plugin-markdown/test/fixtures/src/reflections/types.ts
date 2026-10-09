@@ -301,3 +301,23 @@ export type TypeWithIndexSignature = {
  * Comments for literal types that look like markdown
  */
 export type MarkdownLikeLiterals = '[a](b)' | '&lt;b&gt;' | 'C:\\temp' | 'a*b';
+
+/**
+ * Comments for named tuple type
+ */
+export type NamedTupleType = [first: string, second?: number];
+
+/**
+ * Comments for intersection with type parameters
+ */
+export type IntersectionWithTypeParams<T> = {
+  /**
+   * Comments for a
+   */
+  a: string;
+} & {
+  /**
+   * Comments for b
+   */
+  b: T;
+};

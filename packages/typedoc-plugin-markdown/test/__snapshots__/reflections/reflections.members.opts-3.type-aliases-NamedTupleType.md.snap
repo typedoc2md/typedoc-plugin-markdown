@@ -1,0 +1,9 @@
+# Type Alias: NamedTupleType
+
+```ts
+type NamedTupleType = [first: string, second?: number];
+```
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for named tuple type

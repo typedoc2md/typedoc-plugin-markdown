@@ -173,6 +173,26 @@
             ]
           },
           {
+            "title": "functionWithGroupedDocuments",
+            "kind": 64,
+            "path": "ModuleWithDocuments1/functions/functionWithGroupedDocuments.md",
+            "isDeprecated": false,
+            "children": [
+              {
+                "title": "Ungrouped Doc",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments1/functions/documents/Ungrouped-Doc.md",
+                "isDeprecated": false
+              },
+              {
+                "title": "Grouped Doc",
+                "kind": 8388608,
+                "path": "ModuleWithDocuments1/functions/documents/Grouped-Doc.md",
+                "isDeprecated": false
+              }
+            ]
+          },
+          {
             "title": "multipleFunctionWithDocuments",
             "kind": 64,
             "path": "ModuleWithDocuments1/functions/multipleFunctionWithDocuments.md",

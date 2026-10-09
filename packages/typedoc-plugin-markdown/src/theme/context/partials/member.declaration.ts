@@ -71,24 +71,6 @@ export function declaration(
     );
   }
 
-  if (model.type instanceof IntersectionType) {
-    model.type?.types?.forEach((intersectionType) => {
-      if (
-        intersectionType instanceof ReflectionType &&
-        !intersectionType.declaration.signatures
-      ) {
-        if (intersectionType.declaration.children) {
-          md.push(heading(opts.headingLevel, i18n.theme_type_declaration()));
-          md.push(
-            this.partials.typeDeclaration(intersectionType.declaration, {
-              headingLevel: opts.headingLevel,
-            }),
-          );
-        }
-      }
-    });
-  }
-
   if (
     model.typeParameters &&
     this.options.getValue('parametersFormat') !== 'none'
@@ -107,6 +89,29 @@ export function declaration(
           headingLevel: opts.headingLevel,
         }),
       );
+    }
+  }
+
+  // The object members of an intersection share one "Type Declaration"
+  // section, after the type parameters as for any other declaration.
+  if (model.type instanceof IntersectionType) {
+    const declarations = model.type.types
+      .filter(
+        (intersectionType): intersectionType is ReflectionType =>
+          intersectionType instanceof ReflectionType &&
+          !intersectionType.declaration.signatures &&
+          Boolean(intersectionType.declaration.children),
+      )
+      .map((intersectionType) => intersectionType.declaration);
+    if (declarations.length) {
+      md.push(heading(opts.headingLevel, i18n.theme_type_declaration()));
+      declarations.forEach((declaration) => {
+        md.push(
+          this.partials.typeDeclaration(declaration, {
+            headingLevel: opts.headingLevel,
+          }),
+        );
+      });
     }
   }
 

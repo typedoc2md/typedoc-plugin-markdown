@@ -68,4 +68,12 @@ describe(`typedoc-plugin-markdown (Integration /Interface Reflection)`, () => {
       'interfaces/InterfaceWithFunctionOverloads.md',
     );
   });
+
+  it(`should compile interface extending two interfaces`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'interfaces/InterfaceExtendingTwoRoots.md',
+    );
+  });
 });
