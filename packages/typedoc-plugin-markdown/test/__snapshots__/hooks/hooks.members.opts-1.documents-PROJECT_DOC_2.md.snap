@@ -1,0 +1,11 @@
+[hook: page.begin]
+
+[hook: content.begin]
+
+## Project Document 2
+
+Document content
+
+[hook: content.end]
+
+[hook: page.end]

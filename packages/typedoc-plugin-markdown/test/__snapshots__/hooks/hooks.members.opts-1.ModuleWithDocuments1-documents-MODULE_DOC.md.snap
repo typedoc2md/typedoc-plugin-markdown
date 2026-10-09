@@ -1,0 +1,11 @@
+[hook: page.begin]
+
+[hook: content.begin]
+
+> Module Documentation
+
+Document content
+
+[hook: content.end]
+
+[hook: page.end]
