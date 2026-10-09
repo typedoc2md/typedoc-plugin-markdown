@@ -1,5 +1,6 @@
 import { backTicks, heading, italic } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
+import { getAnchoredTitle } from '@plugin/theme/lib/index.js';
 import { TypeParameterReflection } from 'typedoc';
 
 export function typeParametersList(
@@ -15,24 +16,14 @@ export function typeParametersList(
       ? this.router.getAnchor(typeParameter)
       : undefined;
 
-    if (anchor && this.options.getValue('useHTMLAnchors')) {
-      typeParamOut.push(`<a id="${anchor}"></a>`);
-    }
+    const { htmlAnchor, title } = getAnchoredTitle(
+      this,
+      typeParameter.name,
+      anchor,
+    );
 
-    let title = typeParameter.name;
-
-    if (anchor && this.options.getValue('useCustomAnchors')) {
-      const customAnchorsFormat = this.options.getValue('customAnchorsFormat');
-
-      if (customAnchorsFormat === 'curlyBrace') {
-        title = `${title} {#${anchor}}`;
-      } else if (customAnchorsFormat === 'escapedCurlyBrace') {
-        title = `${title} \\{#${anchor}\\}`;
-      } else if (customAnchorsFormat === 'squareBracket') {
-        title = `${title} [#${anchor}]`;
-      } else {
-        throw new Error(`Invalid custom anchors format`);
-      }
+    if (htmlAnchor) {
+      typeParamOut.push(htmlAnchor);
     }
 
     typeParamOut.push(heading(options.headingLevel + 1, title));
