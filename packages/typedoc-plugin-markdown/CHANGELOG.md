@@ -1,5 +1,45 @@
 # Changelog
 
+## 4.13.2
+
+### Patch Changes
+
+- Render method members of object types with their call signatures when `expandObjects` is set, instead of only their return type ([#908](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/908)).
+- Render anchors for type parameters, including those of methods, so links to them resolve. Type parameter anchors are slugged from their name to match their heading, prefixed with `type-parameter-` when `parametersFormat` is a table so they no longer shift member anchors, and omitted when `parametersFormat` is `none` ([#909](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/909)).
+- Apply `anchorPrefix` to links that point to another page, not only to links within the same page.
+- Apply `anchorPrefix` once, not twice, with the `kind-dir` and `structure-dir` routers.
+- Link constructors to their localised heading (e.g. `#konstruktor`) when `lang` is not English.
+- Keep literal values verbatim in code blocks (`useCodeBlocks`). Literals that looked like markdown were rewritten: `'[a](b)'` became `"a"`, `'&lt;b&gt;'` became `"<b>"` and `'C:\\temp'` lost a backslash.
+- Escape backslashes in text rendered outside code, so `'C:\\temp'` displays as written instead of as `C:\temp`.
+- List a class under every hierarchy root it extends or implements on the hierarchy summary page, instead of only the first.
+- Leave `~~~` fenced code blocks unescaped with `sanitizeComments`, as backtick fences already were.
+- Encode relative media links, so a linked file with spaces in its name still resolves.
+- Keep modifier tags such as `@beta` on an index signature outside the blockquote of the signature.
+- Render the return type of a signature when it is an array or intersection of documented object types, or an `@expand` type, instead of an empty "Returns" section.
+- Render parameters and return types that reference an `@expand` type as the type, instead of listing union members separately.
+- Wrap function, intersection, conditional and type operator types in parentheses when they are array elements or optional tuple elements, e.g. `(() => void)[]` instead of `() => void[]`.
+- Strike through deprecated nested members in properties and type declaration tables, as list format already does.
+- Render method members nested in a property's object type with every overload and their comment in properties tables, instead of only the first overload's return type.
+- Show a method's comment in compact type declaration tables.
+- Fire the `page.begin`, `page.end`, `content.begin` and `content.end` hooks on the readme page and on document pages, which previously fired no hooks. Content injected through these hooks, such as front matter added in `page.begin`, now also appears on those pages. The `index.page.begin` and `index.page.end` hooks still fire on the project page as before.
+- Mark parameters with a default value as optional (`a?`) in parameter tables, as the signature title and list format already do.
+- Show the type of an object parameter with no members to list, such as an index signature alone, in list format.
+- Show the default value of a union-typed parameter in list format.
+- Show an elided property default as `...` in properties tables, instead of `undefined`.
+- Escape `|` in table cells (including inside code spans, as GFM tables require) so it no longer splits a row into extra columns. The rendered text still shows a plain `|`.
+- Mark members of an object parameter as optional only by their own flag, instead of every row after the first optional parameter.
+- Render method members of an object parameter with their call signature and comment, in both table and list format.
+- Render each overload of a method in type declaration tables with its own parameters and return type, and keep the path prefix of nested methods (`inner.fn()`).
+- Show every modifier of a property (e.g. `protected static readonly`), not only the first one found.
+- Render named tuple members with their names and optional markers (`[first: string, second?: number]`), instead of the element types alone.
+- List each parent under "Extends" as its own item, instead of joining them with `.`.
+- Render the object members of an intersection under a single "Type Declaration" heading, after the type parameters.
+- List each document group's documents only under that group's heading, instead of every group's documents under each heading.
+- Remove `#`, `?` and `\` from generated file names, so links to pages such as a document titled `FAQ: What's new? #1` resolve.
+- Keep names made only of underscores, so `export function _()` is written to `functions/_.md` instead of an empty file name.
+- Match `entryModule` against modules only, so a function or class sharing the module's name keeps its page, and find the entry module when project documents are present.
+- Write the readme page once with the core routers and `mergeReadme`, instead of a second page at the same URL.
+
 ## 4.13.1 (2026-09-18)
 
 ### Patch Changes
