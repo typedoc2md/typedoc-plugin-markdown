@@ -296,3 +296,8 @@ export type TypeWithIndexSignature = {
    */
   [key: string]: string;
 };
+
+/**
+ * Comments for literal types that look like markdown
+ */
+export type MarkdownLikeLiterals = '[a](b)' | '&lt;b&gt;' | 'C:\\temp' | 'a*b';

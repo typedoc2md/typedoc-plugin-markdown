@@ -339,3 +339,27 @@ export class ClassWithCombinedModifiers {
    */
   prop = 'x';
 }
+
+/**
+ * Comments for first hierarchy root
+ */
+export interface HierarchyRootA {
+  a: string;
+}
+
+/**
+ * Comments for second hierarchy root
+ */
+export interface HierarchyRootB {
+  b: string;
+}
+
+/**
+ * Comments for class implementing two hierarchy roots
+ */
+export class ClassImplementingTwoRoots
+  implements HierarchyRootA, HierarchyRootB
+{
+  a = 'a';
+  b = 'b';
+}

@@ -9,4 +9,8 @@ describe('typedoc-plugin-markdown (Utils / escapeChars)', () => {
     const result = escapeChars(input);
     assert.strictEqual(result, expectedOutput);
   });
+
+  it('should escape backslashes so they display as written', () => {
+    assert.strictEqual(escapeChars('"C:\\temp"'), '"C:\\\\temp"');
+  });
 });

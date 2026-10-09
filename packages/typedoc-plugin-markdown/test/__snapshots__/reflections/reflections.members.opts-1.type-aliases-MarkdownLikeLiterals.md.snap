@@ -1,0 +1,7 @@
+# Type Alias: MarkdownLikeLiterals
+
+> **MarkdownLikeLiterals** = `"[a](b)"` \| `"&lt;b&gt;"` \| "C:\\\\temp" \| `"a*b"`
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for literal types that look like markdown

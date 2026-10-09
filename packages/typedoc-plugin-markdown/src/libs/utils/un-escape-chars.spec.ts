@@ -15,4 +15,30 @@ describe('typedoc-plugin-markdown (Utils / unEscapeChars)', () => {
     const result = unEscapeChars(input);
     assert.strictEqual(result, expectedOutput);
   });
+
+  it('should keep code span content verbatim', () => {
+    assert.strictEqual(
+      unEscapeChars('**LinkLike** = `"[a](b)"` \\| `"&lt;b&gt;"` \\| `"a*b"`'),
+      'LinkLike = "[a](b)" | "&lt;b&gt;" | "a*b"',
+    );
+  });
+
+  it('should reduce links to their text', () => {
+    assert.strictEqual(
+      unEscapeChars('[`Foo`](Foo.md)\\<`string`\\>'),
+      'Foo<string>',
+    );
+  });
+
+  it('should undo escaped backslashes once', () => {
+    assert.strictEqual(unEscapeChars('"C:\\\\temp"'), '"C:\\temp"');
+  });
+
+  it('should strip padding from double-backtick spans', () => {
+    assert.strictEqual(unEscapeChars('`` a`b ``'), 'a`b');
+  });
+
+  it('should decode HTML-encoded brackets outside code spans', () => {
+    assert.strictEqual(unEscapeChars('Foo&lt;`T`&gt;'), 'Foo<T>');
+  });
 });
