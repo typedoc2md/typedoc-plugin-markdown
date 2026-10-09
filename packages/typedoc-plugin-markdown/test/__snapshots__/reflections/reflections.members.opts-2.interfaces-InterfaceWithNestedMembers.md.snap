@@ -1,0 +1,13 @@
+# Interface: InterfaceWithNestedMembers
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for interface with nested members
+
+## Properties
+
+| Property | Type | Description |
+| :------ | :------ | :------ |
+| <a id="property-outer"></a> `outer` | `object` | Comments for outer |
+| ~~`outer.inner`~~ | `string` | Comments for inner **Deprecated** |
+| `outer.run` | (`a`: `string`) => `number`; (`a`: `number`) => `string` | Comments for run |

@@ -1,0 +1,55 @@
+# Interface: InterfaceWithNestedMembers
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for interface with nested members
+
+## Properties
+
+### outer
+
+> **outer**: `object`
+
+Defined in: [interfaces.ts:1](http://source-url)
+
+Comments for outer
+
+#### ~~inner~~
+
+> **inner**: `string`
+
+Comments for inner
+
+##### Deprecated
+
+#### run()
+
+##### Call Signature
+
+> **run**(`a`): `number`
+
+Comments for run
+
+###### Parameters
+
+###### a
+
+`string`
+
+###### Returns
+
+`number`
+
+##### Call Signature
+
+> **run**(`a`): `string`
+
+###### Parameters
+
+###### a
+
+`number`
+
+###### Returns
+
+`string`

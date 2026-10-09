@@ -37,8 +37,19 @@ export function typeDeclarationTable(
       Boolean(declaration.defaultValue) && declaration.defaultValue !== '...',
   );
 
-  const hasComments = declarations.some((declaration) =>
-    Boolean(declaration.comment),
+  // A method keeps its comment on its signatures, which compact mode does not
+  // flatten into rows of their own.
+  const getSignatureComments = (declaration: DeclarationReflection) =>
+    declaration.comment
+      ? []
+      : (declaration.signatures ?? [])
+          .map((signature) => signature.comment)
+          .filter((comment) => Boolean(comment));
+
+  const hasComments = declarations.some(
+    (declaration) =>
+      Boolean(declaration.comment) ||
+      getSignatureComments(declaration).length > 0,
   );
 
   headers.push(i18n.theme_name());
@@ -122,6 +133,13 @@ export function typeDeclarationTable(
           }),
         );
       }
+      getSignatureComments(declaration).forEach((comment) => {
+        commentsOut.push(
+          this.partials.comment(comment!, {
+            isTableColumn: true,
+          }),
+        );
+      });
       if (
         declaration.type &&
         (declaration.type as any).declaration?.signatures?.length

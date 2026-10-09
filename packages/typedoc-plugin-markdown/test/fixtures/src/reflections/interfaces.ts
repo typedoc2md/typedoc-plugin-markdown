@@ -296,3 +296,25 @@ export interface ExpandedInterface {
    */
   prop: string;
 }
+
+/**
+ * Comments for interface with nested members
+ */
+export interface InterfaceWithNestedMembers {
+  /**
+   * Comments for outer
+   */
+  outer: {
+    /**
+     * Comments for inner
+     *
+     * @deprecated
+     */
+    inner: string;
+    /**
+     * Comments for run
+     */
+    run(a: string): number;
+    run(a: number): string;
+  };
+}

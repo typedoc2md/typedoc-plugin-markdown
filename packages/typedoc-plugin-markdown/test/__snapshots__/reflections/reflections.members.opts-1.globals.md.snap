@@ -62,6 +62,7 @@ Module comments
 - [InterfaceWithFlags](interfaces/InterfaceWithFlags.md)
 - [InterfaceWithFunctionOverloads](interfaces/InterfaceWithFunctionOverloads.md)
 - [InterfaceWithMixedOverloads](interfaces/InterfaceWithMixedOverloads.md)
+- [InterfaceWithNestedMembers](interfaces/InterfaceWithNestedMembers.md)
 - [InterfaceWithProps](interfaces/InterfaceWithProps.md)
 - [InterfaceWithSingleFunction](interfaces/InterfaceWithSingleFunction.md)
 - [InterfaceWithTypeParameters](interfaces/InterfaceWithTypeParameters.md)
