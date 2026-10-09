@@ -96,7 +96,9 @@ export function propertiesTable(
 
     const nameColumn: string[] = [];
 
-    const anchor = this.router.hasUrl(property) ? this.router.getAnchor(property) : undefined
+    const anchor = this.router.hasUrl(property)
+      ? this.router.getAnchor(property)
+      : undefined;
     if (anchor) {
       nameColumn.push(`<a id="${anchor}"></a>`);
     }
@@ -125,7 +127,9 @@ export function propertiesTable(
     if (hasDefaults) {
       row.push(
         this.helpers.getPropertyDefaultValue(property) ||
-          backTicks('undefined'),
+          // TypeDoc elides complex initializers to "..."; the property still
+          // has a default, so it must not read as undefined.
+          backTicks(property.defaultValue === '...' ? '...' : 'undefined'),
       );
     }
 

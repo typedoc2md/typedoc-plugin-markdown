@@ -43,7 +43,7 @@ A class that extends another.
 | Parameter | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | `paramA` | `string` | `undefined` | Description for a parameter. |
-| `paramB` | `number` | `1` | Description for a parameter with a default value. |
+| `paramB?` | `number` | `1` | Description for a parameter with a default value. |
 
 #### Returns
 

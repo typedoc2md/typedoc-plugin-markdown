@@ -248,4 +248,20 @@ describe(`typedoc-plugin-markdown (Integration /Function Reflection)`, () => {
       'functions/functionWithMethodInObjectParam.md',
     );
   });
+
+  it(`should compile function with an index signature parameter`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionWithIndexSignatureParam.md',
+    );
+  });
+
+  it(`should compile function with a union parameter with a default`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionWithUnionDefault.md',
+    );
+  });
 });

@@ -1,0 +1,29 @@
+# Class: ClassWithElidedDefault
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for class with an elided default
+
+## Constructors
+
+### Constructor
+
+```ts
+new ClassWithElidedDefault(): ClassWithElidedDefault;
+```
+
+#### Returns
+
+`ClassWithElidedDefault`
+
+## Properties
+
+| Property | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| <a id="property-config"></a> `config` | `object` | `...` | Comments for config |
+| `config.nested` | `object` | `...` | - |
+| `config.nested.deep` | `object` | `...` | - |
+| `config.nested.deep.a` | `number` | `1` | - |
+| `config.nested.deep.b` | `number` | `2` | - |
+| `config.nested.deep.c` | `number` | `3` | - |
+| <a id="property-simple"></a> `simple` | `number` | `1` | Comments for simple |

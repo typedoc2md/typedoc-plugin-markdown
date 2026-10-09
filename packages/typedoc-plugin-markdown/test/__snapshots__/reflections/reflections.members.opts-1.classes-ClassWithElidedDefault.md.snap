@@ -1,0 +1,55 @@
+# Class: ClassWithElidedDefault
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for class with an elided default
+
+## Constructors
+
+### Constructor
+
+> **new ClassWithElidedDefault**(): `ClassWithElidedDefault`
+
+#### Returns
+
+`ClassWithElidedDefault`
+
+## Properties
+
+### config
+
+> **config**: `object`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for config
+
+#### nested
+
+> **nested**: `object`
+
+##### nested.deep
+
+> **deep**: `object`
+
+##### nested.deep.a
+
+> **a**: `number` = `1`
+
+##### nested.deep.b
+
+> **b**: `number` = `2`
+
+##### nested.deep.c
+
+> **c**: `number` = `3`
+
+***
+
+### simple
+
+> **simple**: `number` = `1`
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for simple

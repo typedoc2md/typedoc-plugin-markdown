@@ -71,12 +71,14 @@ export function parametersTable(
   parsedParams.forEach((parameter) => {
     const row: string[] = [];
 
-    // A top-level parameter after the first optional one is itself optional.
-    // Flattened members of an object parameter are copies, not in `model`, and
-    // are optional only by their own flag.
+    // A top-level parameter after the first optional one is itself optional,
+    // and so is one with a default value (as in the signature title and list
+    // format). Flattened members of an object parameter are copies, not in
+    // `model`, and are optional only by their own flag.
     const index = model.indexOf(parameter);
     const isOptional =
       parameter.flags.isOptional ||
+      Boolean(parameter.defaultValue) ||
       (firstOptionalParamIndex !== -1 && index > firstOptionalParamIndex);
 
     const rest = parameter.flags?.isRest ? '...' : '';
