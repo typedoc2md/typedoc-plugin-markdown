@@ -146,9 +146,13 @@ export class MarkdownThemeContext {
     const publicPath = this.options.getValue('publicPath');
 
     if (publicPath) {
+      // Normalise backslashes before encoding, which would turn them into %5C.
       return encodeURI(
-        `${publicPath.replace(/\/$/, '')}/${parseUrl(this.router.getFullUrl(reflection))}`,
-      ).replace(/\\/g, '/');
+        `${publicPath.replace(/\/$/, '')}/${parseUrl(this.router.getFullUrl(reflection))}`.replace(
+          /\\/g,
+          '/',
+        ),
+      );
     }
 
     if (this.router.hasUrl(reflection)) {

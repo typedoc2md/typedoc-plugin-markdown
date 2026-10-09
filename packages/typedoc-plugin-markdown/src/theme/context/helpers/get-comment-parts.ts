@@ -73,7 +73,11 @@ export function getCommentParts(
               const fileName = this.page.project.files.getName(part.target);
               if (fileName) {
                 const anchor = part.targetAnchor ? `#${part.targetAnchor}` : '';
-                url = this.relativeURL(`_media/${fileName}${anchor}`);
+                // Encoded so that a file name with spaces is still a valid
+                // link destination.
+                url = this.relativeURL(
+                  `_media/${encodeURI(fileName)}${anchor}`,
+                );
               }
             }
             if (url) {

@@ -2,8 +2,10 @@ export function sanitizeComments(str: string) {
   const codeBlocks: string[] = [];
   const placeholder = '___CODEBLOCKPLACEHOLDER___';
 
-  // Replace code blocks with placeholders
-  str = str.replace(/(```[\s\S]*?```|`[^`]*?`)/g, (match) => {
+  // Replace code blocks (backtick and tilde fences) and inline code with
+  // placeholders. Indented lines are not protected: MDX has no indented code
+  // blocks, so braces there must still be escaped.
+  str = str.replace(/(```[\s\S]*?```|~~~[\s\S]*?~~~|`[^`]*?`)/g, (match) => {
     codeBlocks.push(match);
     return placeholder;
   });

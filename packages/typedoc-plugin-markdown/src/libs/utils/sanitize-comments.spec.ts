@@ -39,4 +39,23 @@ describe('typedoc-plugin-markdown (Utils / sanitizeComments)', () => {
     const result = sanitizeComments(input);
     assert.strictEqual(result, expectedOutput);
   });
+
+  it('should not escape tilde code block', () => {
+    const input = `<tag>
+~~~ts
+const a = { b: 1 };
+~~~`;
+    const expectedOutput = `\\<tag\\>
+~~~ts
+const a = { b: 1 };
+~~~`;
+    assert.strictEqual(sanitizeComments(input), expectedOutput);
+  });
+
+  it('should escape indented lines, which MDX does not treat as code', () => {
+    assert.strictEqual(
+      sanitizeComments('    indented { x }'),
+      '    indented \\{ x \\}',
+    );
+  });
 });
