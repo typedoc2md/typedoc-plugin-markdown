@@ -1,5 +1,6 @@
 import { heading } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
+import { getAnchoredTitle } from '@plugin/theme/lib/index.js';
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
 export function memberContainer(
@@ -13,30 +14,21 @@ export function memberContainer(
       ? this.router.getAnchor(model)
       : undefined;
 
-  if (anchor && this.options.getValue('useHTMLAnchors')) {
-    md.push(`<a id="${anchor}"></a>`);
+  const isTitled =
+    !this.router.hasOwnDocument(model) &&
+    ![ReflectionKind.Constructor].includes(model.kind);
+
+  const { htmlAnchor, title } = getAnchoredTitle(
+    this,
+    isTitled ? this.partials.memberTitle(model) : '',
+    anchor,
+  );
+
+  if (htmlAnchor) {
+    md.push(htmlAnchor);
   }
 
-  if (
-    !this.router.hasOwnDocument(model) &&
-    ![ReflectionKind.Constructor].includes(model.kind)
-  ) {
-    let title = this.partials.memberTitle(model);
-
-    if (anchor && this.options.getValue('useCustomAnchors')) {
-      const customAnchorsFormat = this.options.getValue('customAnchorsFormat');
-
-      if (customAnchorsFormat === 'curlyBrace') {
-        title = `${title} {#${anchor}}`;
-      } else if (customAnchorsFormat === 'escapedCurlyBrace') {
-        title = `${title} \\{#${anchor}\\}`;
-      } else if (customAnchorsFormat === 'squareBracket') {
-        title = `${title} [#${anchor}]`;
-      } else {
-        throw new Error(`Invalid custom anchors format`);
-      }
-    }
-
+  if (isTitled) {
     md.push(heading(options.headingLevel, title));
   }
 
