@@ -40,5 +40,7 @@ export function indexSignature(
     );
   }
 
-  return md.join('\n');
+  // A blank line ends the blockquote the caller puts the signature in, so the
+  // comment (and any modifier flags) is not pulled into it.
+  return md.join('\n\n');
 }

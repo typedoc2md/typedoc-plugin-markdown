@@ -130,6 +130,8 @@ export interface MultipleIndexableInterface {
   [key: string]: string;
   /**
    * Second index signature
+   *
+   * @beta
    */
   [index: number]: string;
   /**
