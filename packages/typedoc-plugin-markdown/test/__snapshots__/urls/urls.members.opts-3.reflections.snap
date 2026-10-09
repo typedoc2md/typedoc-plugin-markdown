@@ -78,6 +78,7 @@
   "interfaces/InterfaceWithFlags.md",
   "interfaces/InterfaceWithFunctionOverloads.md",
   "interfaces/InterfaceWithMixedOverloads.md",
+  "interfaces/InterfaceWithNestedMembers.md",
   "interfaces/InterfaceWithProps.md",
   "interfaces/InterfaceWithSingleFunction.md",
   "interfaces/InterfaceWithTypeParameters.md",

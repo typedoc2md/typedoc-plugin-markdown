@@ -76,4 +76,12 @@ describe(`typedoc-plugin-markdown (Integration /Interface Reflection)`, () => {
       'interfaces/InterfaceExtendingTwoRoots.md',
     );
   });
+
+  it(`should compile interface with nested members`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'interfaces/InterfaceWithNestedMembers.md',
+    );
+  });
 });

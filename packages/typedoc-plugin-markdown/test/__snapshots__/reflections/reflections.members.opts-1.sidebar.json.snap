@@ -275,6 +275,12 @@
         "isDeprecated": false
       },
       {
+        "title": "InterfaceWithNestedMembers",
+        "kind": 256,
+        "path": "interfaces/InterfaceWithNestedMembers.md",
+        "isDeprecated": false
+      },
+      {
         "title": "InterfaceWithProps",
         "kind": 256,
         "path": "interfaces/InterfaceWithProps.md",

@@ -8,10 +8,9 @@ export function getFlattenedDeclarations(
     return (current.type as any)?.declaration?.children?.reduce(
       (acc: DeclarationReflection[], child: DeclarationReflection) => {
         (child as any).originalName = child.name;
-        const childObj = {
-          ...child,
+        const childObj = copyDeclaration(child, {
           name: `${current.name}.${child.name}`,
-        } as DeclarationReflection;
+        });
         return parseDeclarations(childObj, acc);
       },
       [],
@@ -30,32 +29,33 @@ export function getFlattenedDeclarations(
       if (isAccessor) {
         const accessors: any[] = [];
         if (current.getSignature) {
-          accessors.push({
-            ...current,
-            getFullName: () => `${current.getFullName()}`,
-            getFriendlyFullName: () => `${current.getFriendlyFullName()}`,
-            name: `get ${current.name}`,
-            type: current.getSignature.type,
-            comment: current.getSignature?.comment,
-          });
+          accessors.push(
+            copyDeclaration(current, {
+              getFullName: () => `${current.getFullName()}`,
+              getFriendlyFullName: () => `${current.getFriendlyFullName()}`,
+              name: `get ${current.name}`,
+              type: current.getSignature.type,
+              comment: current.getSignature?.comment,
+            }),
+          );
         }
         if (current.setSignature) {
-          accessors.push({
-            ...current,
-            getFullName: () => `${current.getFullName()}`,
-            getFriendlyFullName: () => `${current.getFriendlyFullName()}`,
-            name: `set ${current.name}`,
-            type: current.setSignature.type,
-            comment: current.setSignature?.comment,
-          });
+          accessors.push(
+            copyDeclaration(current, {
+              getFullName: () => `${current.getFullName()}`,
+              getFriendlyFullName: () => `${current.getFriendlyFullName()}`,
+              name: `set ${current.name}`,
+              type: current.setSignature.type,
+              comment: current.setSignature?.comment,
+            }),
+          );
         }
         return [...acc, ...accessors];
       }
 
       if (current.signatures?.length) {
         const signatures = current.signatures.map((signature) => {
-          return {
-            ...current,
+          return copyDeclaration(current, {
             getFullName: () => `${current.getFullName()}`,
             getFriendlyFullName: () => `${current.getFriendlyFullName()}`,
             // Keep the (possibly prefixed) member name, and only this
@@ -64,7 +64,7 @@ export function getFlattenedDeclarations(
             signatures: [signature],
             type: signature.type,
             comment: signature.comment,
-          };
+          });
         });
         return [...acc, ...signatures];
       }
@@ -79,5 +79,21 @@ export function getFlattenedDeclarations(
     (acc: DeclarationReflection[], current: DeclarationReflection) =>
       parseDeclarations(current, acc),
     [],
+  );
+}
+
+/**
+ * Copies a declaration with some fields replaced, keeping its prototype so
+ * the copy still has the reflection's methods (e.g. `isDeprecated()`). A plain
+ * object spread drops them.
+ */
+function copyDeclaration(
+  source: DeclarationReflection,
+  overrides: Record<string, unknown>,
+): DeclarationReflection {
+  return Object.assign(
+    Object.create(Object.getPrototypeOf(source)),
+    source,
+    overrides,
   );
 }

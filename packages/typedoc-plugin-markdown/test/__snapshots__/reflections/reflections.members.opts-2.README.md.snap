@@ -68,6 +68,7 @@ Module comments
 | [InterfaceWithFlags](interfaces/InterfaceWithFlags.md) | Comments for InterfaceWithFlags |
 | [InterfaceWithFunctionOverloads](interfaces/InterfaceWithFunctionOverloads.md) | Comments for InterfaceWithFunctionOverloads |
 | [InterfaceWithMixedOverloads](interfaces/InterfaceWithMixedOverloads.md) | Comments for InterfaceWithFunctionOverloads |
+| [InterfaceWithNestedMembers](interfaces/InterfaceWithNestedMembers.md) | Comments for interface with nested members |
 | [InterfaceWithProps](interfaces/InterfaceWithProps.md) | Comments for InterfaceWithFunction |
 | [InterfaceWithSingleFunction](interfaces/InterfaceWithSingleFunction.md) | Comments for InterfaceWithFunction |
 | [InterfaceWithTypeParameters](interfaces/InterfaceWithTypeParameters.md) | Comments for InterfaceWithTypeParameters |

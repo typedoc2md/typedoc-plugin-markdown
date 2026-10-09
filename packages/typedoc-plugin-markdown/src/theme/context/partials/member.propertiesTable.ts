@@ -26,11 +26,15 @@ export function propertiesTable(
     this.helpers.getModifier(prop)?.toString(),
   );
 
-  const comments = declarations.map((prop) =>
-    prop.comment
-      ? this.partials.comment(prop.comment, { isTableColumn: true })
-      : '',
-  );
+  // A method member keeps its comment on its signatures.
+  const comments = declarations.map((prop) => {
+    const comment =
+      prop.comment ??
+      prop.signatures?.find((signature) => signature.comment)?.comment;
+    return comment
+      ? this.partials.comment(comment, { isTableColumn: true })
+      : '';
+  });
 
   const hasModifiers =
     !tableColumnsOptions.hideModifiers &&
@@ -119,7 +123,12 @@ export function propertiesTable(
       row.push(backTicks(modifiers[index] || 'public'));
     }
 
-    if (propertyType) {
+    if (property.signatures?.length) {
+      // A method member: render every overload, not only the first return type.
+      row.push(
+        removeLineBreaks(this.partials.functionType(property.signatures)),
+      );
+    } else if (propertyType) {
       const type = this.partials.someType(propertyType);
       row.push(removeLineBreaks(type));
     }
