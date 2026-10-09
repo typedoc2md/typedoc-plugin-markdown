@@ -168,8 +168,14 @@ Use the issue number whenever one exists — including for preparatory or
 follow-up commits that only lead up to the main change, so the whole thread
 of work stays greppable against the issue.
 
-For work with no issue behind it (repo tooling, docs prose, dependency bumps,
-release chores) drop the number and use `chore/<slug>`.
+With no issue behind the work, drop the number but keep the type:
+
+- `fix/<slug>` / `feature/<slug>` — a bug fix or enhancement that changes
+  the published package for users, e.g. one found in review. It is still a
+  fix, not a chore; its commits drop the trailing `(#<issue>)`.
+- `chore/<slug>` — work that leaves the published package unchanged for
+  users: repo tooling, docs prose, dependency bumps, release chores,
+  internal refactors.
 
 ## Linking issues
 
@@ -325,6 +331,6 @@ latest release stayed on the same TypeDoc line.
 - [ ] Snapshot changes, if any, reviewed in the git diff and intentional
 - [ ] Changeset added for user-facing changes
 - [ ] Commit messages pass commitlint (type + scope from the enums above)
-- [ ] Branch name follows `fix/<issue>-<slug>` / `feature/<issue>-<slug>`
+- [ ] Branch name follows `fix/<issue>-<slug>` / `feature/<issue>-<slug>` (or `fix/<slug>` / `feature/<slug>` / `chore/<slug>` without an issue)
 - [ ] No closing keywords (`Closes`/`Fixes`/`Resolves`) in commits or the PR description
 - [ ] AI-assisted commits use `Assisted-by: Claude Code`, never `Co-Authored-By`
