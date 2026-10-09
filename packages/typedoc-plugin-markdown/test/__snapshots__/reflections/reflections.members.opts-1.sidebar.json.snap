@@ -239,6 +239,12 @@
         "isDeprecated": false
       },
       {
+        "title": "InterfaceExtendingTwoRoots",
+        "kind": 256,
+        "path": "interfaces/InterfaceExtendingTwoRoots.md",
+        "isDeprecated": false
+      },
+      {
         "title": "InterfaceWithComments",
         "kind": 256,
         "path": "interfaces/InterfaceWithComments.md",
@@ -352,6 +358,12 @@
         "isDeprecated": false
       },
       {
+        "title": "IntersectionWithTypeParams",
+        "kind": 2097152,
+        "path": "type-aliases/IntersectionWithTypeParams.md",
+        "isDeprecated": false
+      },
+      {
         "title": "LiteralType",
         "kind": 2097152,
         "path": "type-aliases/LiteralType.md",
@@ -361,6 +373,12 @@
         "title": "MarkdownLikeLiterals",
         "kind": 2097152,
         "path": "type-aliases/MarkdownLikeLiterals.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "NamedTupleType",
+        "kind": 2097152,
+        "path": "type-aliases/NamedTupleType.md",
         "isDeprecated": false
       },
       {

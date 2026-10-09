@@ -10,19 +10,18 @@ export function hierarchy(
   const md: string[] = [];
 
   const getHierarchy = (hModel: DeclarationHierarchy) => {
-    const parent = !hModel.isTarget
-      ? hModel.types
-          .map((hierarchyType) => {
-            return this.helpers.getHierarchyType(hierarchyType as SomeType, {
-              isTarget: hModel.isTarget || false,
-            });
-          })
-          .join('.')
+    // Each parent is its own list item (`interface C extends A, B`).
+    const parents = !hModel.isTarget
+      ? hModel.types.map((hierarchyType) => {
+          return this.helpers.getHierarchyType(hierarchyType as SomeType, {
+            isTarget: hModel.isTarget || false,
+          });
+        })
       : null;
     if (hModel.next) {
-      if (parent) {
+      if (parents) {
         md.push(heading(options.headingLevel, i18n.theme_extends()));
-        md.push(`- ${parent}`);
+        md.push(unorderedList(parents));
       } else {
         md.push(heading(options.headingLevel, i18n.theme_extended_by()));
         const lines: string[] = [];

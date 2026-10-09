@@ -33,4 +33,5 @@
 ## Functions
 
 - [functionWithDocuments](functions/functionWithDocuments.md)
+- [functionWithGroupedDocuments](functions/functionWithGroupedDocuments.md)
 - [multipleFunctionWithDocuments](functions/multipleFunctionWithDocuments.md)

@@ -31,6 +31,7 @@
 
 - [HierarchyRootA](globals.md#hierarchyroota)
   - [ClassImplementingTwoRoots](globals.md#classimplementingtworoots)
+  - [InterfaceExtendingTwoRoots](globals.md#interfaceextendingtworoots)
 
 ***
 
@@ -38,5 +39,6 @@
 
 - [HierarchyRootB](globals.md#hierarchyrootb)
   - [ClassImplementingTwoRoots](globals.md#classimplementingtworoots)
+  - [InterfaceExtendingTwoRoots](globals.md#interfaceextendingtworoots)
 
 ***

@@ -1,0 +1,19 @@
+# Type Alias: IntersectionWithTypeParams\<T\>
+
+```ts
+type IntersectionWithTypeParams<T> = object & object;
+```
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for intersection with type parameters
+
+## Type Declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `a` | `string` | Comments for a |
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `b` | `T` | Comments for b |

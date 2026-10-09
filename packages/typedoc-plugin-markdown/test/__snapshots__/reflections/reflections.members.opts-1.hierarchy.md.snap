@@ -31,6 +31,7 @@
 
 - [HierarchyRootA](interfaces/HierarchyRootA.md)
   - [ClassImplementingTwoRoots](classes/ClassImplementingTwoRoots.md)
+  - [InterfaceExtendingTwoRoots](interfaces/InterfaceExtendingTwoRoots.md)
 
 ***
 
@@ -38,5 +39,6 @@
 
 - [HierarchyRootB](interfaces/HierarchyRootB.md)
   - [ClassImplementingTwoRoots](classes/ClassImplementingTwoRoots.md)
+  - [InterfaceExtendingTwoRoots](interfaces/InterfaceExtendingTwoRoots.md)
 
 ***

@@ -377,3 +377,9 @@ export class ClassWithElidedDefault {
    */
   simple = 1;
 }
+
+/**
+ * Comments for interface extending two hierarchy roots
+ */
+export interface InterfaceExtendingTwoRoots
+  extends HierarchyRootA, HierarchyRootB {}

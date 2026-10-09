@@ -115,4 +115,11 @@ describe(`typedoc-plugin-markdown (Integration / Documents)`, () => {
       );
     });
   });
+
+  it(`should list each document group under its own heading`, () => {
+    expectFileToEqual('documents', 'members', [
+      'ModuleWithDocuments1/functions/functionWithGroupedDocuments.md',
+      'ModuleWithDocuments1.Function.functionWithGroupedDocuments.md',
+    ]);
+  });
 });

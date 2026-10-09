@@ -86,6 +86,24 @@ _SIGNATURE_RETURNS_PARTIAL_
 
 ***
 
+### functionWithGroupedDocuments()
+
+_SIGNATURE_TITLE_PARTIAL_
+
+Comments for function with grouped documents
+
+#### Documents
+
+- [Ungrouped Doc](documents/Function.Ungrouped-Doc.md)
+
+#### Guides
+
+- [Grouped Doc](documents/Function.Grouped-Doc.md)
+
+_SIGNATURE_RETURNS_PARTIAL_
+
+***
+
 ### multipleFunctionWithDocuments()
 
 Comments for multipleFunctionWithDocuments

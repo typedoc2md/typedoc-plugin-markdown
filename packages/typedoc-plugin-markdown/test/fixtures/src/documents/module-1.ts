@@ -75,3 +75,11 @@ export namespace NamespaceWithDocuments {
    */
   export class NamespaceClassWithDocuments {}
 }
+
+/**
+ * Comments for function with grouped documents
+ *
+ * @document ../../docs/reflection/UNGROUPED_DOC.md
+ * @document ../../docs/reflection/GROUPED_DOC.md
+ */
+export function functionWithGroupedDocuments() {}
