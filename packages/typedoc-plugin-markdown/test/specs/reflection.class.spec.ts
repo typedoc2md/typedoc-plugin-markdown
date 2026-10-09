@@ -118,4 +118,12 @@ describe(`typedoc-plugin-markdown (Integration /Class Reflection)`, () => {
       'classes/ClassWithAccessorKeywords.md',
     );
   });
+
+  it(`should compile class with combined modifiers`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'classes/ClassWithCombinedModifiers.md',
+    );
+  });
 });

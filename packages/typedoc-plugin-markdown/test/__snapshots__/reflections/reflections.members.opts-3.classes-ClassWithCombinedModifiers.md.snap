@@ -1,0 +1,25 @@
+# Class: ClassWithCombinedModifiers
+
+Defined in: [classes.ts:1](http://source-url)
+
+Comments for class with combined modifiers
+
+## Constructors
+
+### Constructor
+
+```ts
+new ClassWithCombinedModifiers(): ClassWithCombinedModifiers;
+```
+
+#### Returns
+
+`ClassWithCombinedModifiers`
+
+## Properties
+
+| Property | Modifier | Type | Default value | Description |
+| :------ | :------ | :------ | :------ | :------ |
+| <a id="property-id"></a> `id` | `protected readonly` | `1` | `1` | Comments for id |
+| <a id="property-prop"></a> `prop` | `public` | `string` | `'x'` | Union of a \| b values, as in `a \|\| b`. |
+| <a id="property-limit"></a> `LIMIT` | `protected static readonly` | `10` | `10` | Comments for LIMIT |

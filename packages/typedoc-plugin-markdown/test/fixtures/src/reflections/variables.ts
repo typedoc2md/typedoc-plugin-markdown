@@ -86,3 +86,15 @@ export const objectWithSymbol = {
  * @deprecated
  */
 export const deprecatedVariable = 'deprecatedVariable';
+
+/**
+ * Comments for variable with overloaded methods
+ */
+export const variableWithOverloadedMethods: {
+  /**
+   * Comments for method
+   */
+  method(a: string): string;
+  method(a: number): number;
+  inner: { fn(): void };
+} = null as any;

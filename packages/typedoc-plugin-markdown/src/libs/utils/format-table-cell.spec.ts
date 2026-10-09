@@ -14,4 +14,17 @@ describe('typedoc-plugin-markdown (Utils / formatTableCell)', () => {
       'This is a test `const x = 10;` with multiple spaces.';
     assert.strictEqual(formatTableCell(input), expectedOutput);
   });
+
+  it('should escape pipes for the table, including inside code spans', () => {
+    const input = `Union of a | b.
+      \`\`\`ts
+      const c = a || b;
+      \`\`\``;
+    const expectedOutput = 'Union of a \\| b. `const c = a \\|\\| b;`';
+    assert.strictEqual(formatTableCell(input), expectedOutput);
+  });
+
+  it('should not escape pipes that are already escaped', () => {
+    assert.strictEqual(formatTableCell('`a` \\| `b`'), '`a` \\| `b`');
+  });
 });

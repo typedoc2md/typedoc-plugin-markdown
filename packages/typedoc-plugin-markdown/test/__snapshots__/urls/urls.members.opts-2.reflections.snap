@@ -8,6 +8,7 @@
   "classes/ChildClassB.md",
   "classes/ClassWithAccessorKeywords.md",
   "classes/ClassWithAccessors.md",
+  "classes/ClassWithCombinedModifiers.md",
   "classes/ClassWithComplexProps.md",
   "classes/ClassWithConstructorOverloads.md",
   "classes/ClassWithFlags.md",
@@ -47,9 +48,11 @@
   "functions/functionWithArraysOfCompoundTypes.md",
   "functions/functionWithComplexParams.md",
   "functions/functionWithDefaultParameters.md",
+  "functions/functionWithMethodInObjectParam.md",
   "functions/functionWithMultipleSignatures.md",
   "functions/functionWithNamedParams.md",
   "functions/functionWithNestedParameters.md",
+  "functions/functionWithObjectParamBeforeOptional.md",
   "functions/functionWithOptionalParameters.md",
   "functions/functionWithRestParams.md",
   "functions/functionWithTypeParameters.md",
@@ -105,5 +108,6 @@
   "variables/stringVariable.md",
   "variables/templateVariableString.md",
   "variables/typeOperatorVariable.md",
-  "variables/typedef.md"
+  "variables/typedef.md",
+  "variables/variableWithOverloadedMethods.md"
 ]

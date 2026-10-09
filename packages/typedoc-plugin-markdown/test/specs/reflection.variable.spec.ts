@@ -36,4 +36,12 @@ describe(`typedoc-plugin-markdown (Integration /Variable Reflection)`, () => {
       'variables/deprecatedVariable.md',
     );
   });
+
+  it(`should compile variable with overloaded methods`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'variables/variableWithOverloadedMethods.md',
+    );
+  });
 });

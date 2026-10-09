@@ -68,13 +68,16 @@ export function typeDeclarationTable(
 
     const nameColumn: string[] = [];
 
-    const anchor = this.router.hasUrl(declaration) ? this.router.getAnchor(declaration) : undefined
+    const anchor = this.router.hasUrl(declaration)
+      ? this.router.getAnchor(declaration)
+      : undefined;
     if (anchor) {
       nameColumn.push(`<a id="${anchor}"></a>`);
     }
 
-    const name =
-      backTicks(`${declaration.name}${isSignature ? '()' : ''}${optional}`);
+    const name = backTicks(
+      `${declaration.name}${isSignature ? '()' : ''}${optional}`,
+    );
 
     nameColumn.push(name);
 
@@ -87,19 +90,19 @@ export function typeDeclarationTable(
         }),
       );
     } else {
-      const type: string[] = [];
       const signatures = declaration.signatures;
       if (signatures?.length) {
-        signatures.forEach((sig) => {
-          type.push(
-            `${this.partials.signatureParameters(sig.parameters || [])} => `,
-          );
-        });
-        type.push(this.partials.someType(declaration.type));
+        row.push(
+          signatures
+            .map(
+              (sig) =>
+                `${this.partials.signatureParameters(sig.parameters || [])} => ${this.partials.someType(sig.type)}`,
+            )
+            .join('; '),
+        );
       } else {
-        type.push(this.partials.someType(declaration.type));
+        row.push(this.partials.someType(declaration.type));
       }
-      row.push(type.join(''));
     }
 
     if (hasDefaultValues) {
@@ -119,7 +122,10 @@ export function typeDeclarationTable(
           }),
         );
       }
-      if (declaration.type && (declaration.type as any).declaration?.signatures?.length) {
+      if (
+        declaration.type &&
+        (declaration.type as any).declaration?.signatures?.length
+      ) {
         (declaration.type as any).declaration?.signatures.forEach((sig) => {
           if (sig.comment) {
             commentsOut.push(

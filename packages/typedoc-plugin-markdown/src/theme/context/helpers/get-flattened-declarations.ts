@@ -58,7 +58,10 @@ export function getFlattenedDeclarations(
             ...current,
             getFullName: () => `${current.getFullName()}`,
             getFriendlyFullName: () => `${current.getFriendlyFullName()}`,
-            name: signature.name,
+            // Keep the (possibly prefixed) member name, and only this
+            // signature, so each overload renders as its own row.
+            name: current.name,
+            signatures: [signature],
             type: signature.type,
             comment: signature.comment,
           };

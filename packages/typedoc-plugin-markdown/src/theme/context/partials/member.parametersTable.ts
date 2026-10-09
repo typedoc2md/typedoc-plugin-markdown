@@ -45,7 +45,9 @@ export function parametersTable(
     [],
   );
 
-  const hasComments = parsedParams.some((param) => Boolean(param.comment));
+  const hasComments = parsedParams.some((param) =>
+    Boolean(getParameterComment(param)),
+  );
 
   const headers = [
     ReflectionKind.singularString(ReflectionKind.Parameter),
@@ -66,12 +68,16 @@ export function parametersTable(
 
   const rows: string[][] = [];
 
-  parsedParams.forEach((parameter, i) => {
+  parsedParams.forEach((parameter) => {
     const row: string[] = [];
 
+    // A top-level parameter after the first optional one is itself optional.
+    // Flattened members of an object parameter are copies, not in `model`, and
+    // are optional only by their own flag.
+    const index = model.indexOf(parameter);
     const isOptional =
       parameter.flags.isOptional ||
-      (firstOptionalParamIndex !== -1 && i > firstOptionalParamIndex);
+      (firstOptionalParamIndex !== -1 && index > firstOptionalParamIndex);
 
     const rest = parameter.flags?.isRest ? '...' : '';
 
@@ -87,6 +93,11 @@ export function parametersTable(
             })
           : this.partials.someType(parameter.type);
       row.push(removeLineBreaks(displayType));
+    } else if (parameter.signatures?.length) {
+      // A method member of an object parameter has no type of its own.
+      row.push(
+        removeLineBreaks(this.partials.functionType(parameter.signatures)),
+      );
     }
 
     if (showDefaults) {
@@ -94,8 +105,9 @@ export function parametersTable(
     }
 
     if (hasComments) {
-      if (parameter.comment) {
-        const comments = this.partials.comment(parameter.comment, {
+      const comment = getParameterComment(parameter);
+      if (comment) {
+        const comments = this.partials.comment(comment, {
           isTableColumn: true,
         });
         row.push(comments.length ? comments : '-');
@@ -109,6 +121,14 @@ export function parametersTable(
   return this.options.getValue('parametersFormat') == 'table'
     ? table(headers, rows, leftAlignHeadings)
     : htmlTable(headers, rows, leftAlignHeadings);
+}
+
+// A method member of an object parameter keeps its comment on the signature.
+function getParameterComment(parameter: any) {
+  return (
+    parameter.comment ??
+    parameter.signatures?.find((signature) => signature.comment)?.comment
+  );
 }
 
 function hasDefaultValues(parameters: ParameterReflection[]) {

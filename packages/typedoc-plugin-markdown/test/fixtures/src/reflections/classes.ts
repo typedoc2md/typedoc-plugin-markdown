@@ -321,3 +321,21 @@ export class ClassWithAccessorKeywords {
    */
   public accessor accessor3!: string;
 }
+
+/**
+ * Comments for class with combined modifiers
+ */
+export class ClassWithCombinedModifiers {
+  /**
+   * Comments for id
+   */
+  protected readonly id = 1;
+  /**
+   * Comments for LIMIT
+   */
+  protected static readonly LIMIT = 10;
+  /**
+   * Union of a | b values, as in `a || b`.
+   */
+  prop = 'x';
+}
