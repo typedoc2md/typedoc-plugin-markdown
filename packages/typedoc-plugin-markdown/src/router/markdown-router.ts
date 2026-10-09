@@ -104,8 +104,10 @@ export abstract class MarkdownRouter extends BaseRouter {
 
     // Note: The concept of "entryModule" is being deprecated in favour of custom router implementations.
     // The concept is hard to understand and makes the code unnecessarily complex.
-    const entryModule = project?.groups?.[0]?.children.find(
-      (child) => child.name === this.entryModule,
+    // Search the project's children, not only its first group: with project
+    // documents the first group is "Documents" and the module was never found.
+    const entryModule = project?.children?.find((child) =>
+      this.isEntryModule(child),
     );
 
     if (entryModule) {
@@ -339,7 +341,7 @@ export abstract class MarkdownRouter extends BaseRouter {
         );
       }
     }
-    const finalName = `${fullNameParts.join('.')}`
+    const finalName = removeUnsafeFileNameChars(`${fullNameParts.join('.')}`)
       .replace(/"/g, '')
       .replace(/ /g, '-')
       .replace(/^\./g, '');
@@ -356,10 +358,26 @@ export abstract class MarkdownRouter extends BaseRouter {
       name = name.replace(/\//g, '_');
     }
 
-    return name
+    const alias = removeUnsafeFileNameChars(name)
       .replace(/"/g, '')
       .replace(/^_+|_+$/g, '')
       .replace(/[<>]/g, '-');
+
+    // A name made only of underscores (e.g. `_`) would otherwise be empty.
+    return alias || removeUnsafeFileNameChars(name).replace(/"/g, '');
+  }
+
+  /**
+   * Whether the reflection is the module named by the (deprecated)
+   * "entryModule" option. Only modules match, so a function or class sharing
+   * the name keeps its own page.
+   */
+  isEntryModule(reflection: Reflection): boolean {
+    return (
+      Boolean(this.entryModule) &&
+      reflection.kindOf(ReflectionKind.Module) &&
+      reflection.name === this.entryModule
+    );
   }
 
   getModulesFileName(reflection: Reflection): string {
@@ -374,4 +392,13 @@ export abstract class MarkdownRouter extends BaseRouter {
     );
     return isModules ? 'modules' : 'globals';
   }
+}
+
+/**
+ * Removes characters that break a relative link to the file on every
+ * platform: `#` starts a fragment, `?` starts a query and `\` is a path
+ * separator on Windows and an escape in markdown.
+ */
+function removeUnsafeFileNameChars(name: string) {
+  return name.replace(/[#?\\]/g, '');
 }

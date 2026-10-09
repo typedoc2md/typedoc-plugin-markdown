@@ -1,4 +1,4 @@
-import { expectUrlsToEqual } from '../helpers.js';
+import { expectFileToEqual, expectUrlsToEqual } from '../helpers.js';
 
 describe(`typedoc-plugin-markdown (Integration / Urls)`, () => {
   it(`should gets Urls for multiple entry points`, () => {
@@ -39,5 +39,9 @@ describe(`typedoc-plugin-markdown (Integration / Urls)`, () => {
 
   it(`should gets Urls with media assets`, () => {
     expectUrlsToEqual('urls', 'comments', ['members']);
+  });
+
+  it(`should write safe file names and no duplicate pages`, () => {
+    expectFileToEqual('file-names', 'members', 'urls.json');
   });
 });

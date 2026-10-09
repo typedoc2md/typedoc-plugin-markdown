@@ -6,6 +6,8 @@ import {
   StructureRouter as CoreStructureRouter,
   Options,
   PageDefinition,
+  PageKind,
+  ProjectReflection,
   Reflection,
   ReflectionKind,
 } from 'typedoc';
@@ -56,6 +58,18 @@ function CoreRouter<T extends new (...args: any[]) => any>(constructor: T) {
     protected includeHierarchySummary =
       this.options.isSet('includeHierarchySummary') &&
       this.options.getValue('includeHierarchySummary');
+
+    /**
+     * With "mergeReadme" the project page is written to "entryFileName" and
+     * includes the readme, so the separate readme (index) page would be a
+     * second page at the same URL that the project page then overwrites.
+     */
+    buildPages(project: ProjectReflection): PageDefinition[] {
+      const pages = super.buildPages(project);
+      return this.mergeReadme
+        ? pages.filter((page) => page.kind !== PageKind.Index)
+        : pages;
+    }
 
     /**
      * Expose the "fileExtension" option to the extension property.

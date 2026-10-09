@@ -117,7 +117,7 @@ export class ModuleRouter extends MarkdownRouter {
         return !hasEntryModule;
       }
     }
-    if (reflection.name === this.entryModule) {
+    if (this.isEntryModule(reflection)) {
       return false;
     }
 
@@ -174,7 +174,7 @@ export class ModuleRouter extends MarkdownRouter {
       return `${this.getReflectionAlias(reflection.parent)}/${fileName}`;
     }
 
-    if (reflection.name === this.entryModule) {
+    if (this.isEntryModule(reflection)) {
       return this.entryFileName;
     }
 

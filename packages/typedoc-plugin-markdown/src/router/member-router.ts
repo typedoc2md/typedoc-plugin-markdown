@@ -109,7 +109,7 @@ export class MemberRouter extends MarkdownRouter {
         return !hasEntryModule;
       }
     }
-    if (reflection.name === this.entryModule) {
+    if (this.isEntryModule(reflection)) {
       return false;
     }
 
@@ -117,7 +117,7 @@ export class MemberRouter extends MarkdownRouter {
   }
 
   private getModuleDirectory(reflection: Reflection): string | null {
-    if (this.entryModule && reflection.name === this.entryModule) {
+    if (this.isEntryModule(reflection)) {
       return null;
     }
     if (reflection.parent?.kind === ReflectionKind.Module) {
@@ -179,7 +179,7 @@ export class MemberRouter extends MarkdownRouter {
         return `${this.getIdealBaseName(reflection.parent).replace(/\/[^/]+$/, '')}/${this.directories.get(reflection.kind)!}`;
       }
       if (reflection.parent?.kind === ReflectionKind.Module) {
-        if (this.entryModule && reflection.parent.name === this.entryModule) {
+        if (this.isEntryModule(reflection.parent)) {
           return `${this.getReflectionAlias(reflection.parent)}/${this.directories.get(reflection.kind)!}`;
         }
         if (this.isPackages) {
