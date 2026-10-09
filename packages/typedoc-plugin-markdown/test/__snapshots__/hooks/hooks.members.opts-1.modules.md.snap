@@ -1,0 +1,17 @@
+[hook: index.page.begin]
+
+# typedoc-stubs
+
+[hook: content.begin]
+
+## Documents
+
+- [PROJECT\_DOC\_2](documents/PROJECT_DOC_2.md)
+
+## Modules
+
+- [ModuleWithDocuments1](ModuleWithDocuments1/README.md)
+
+[hook: content.end]
+
+[hook: index.page.end]
