@@ -487,3 +487,15 @@ export function functionWithMethodInObjectParam(options: {
   run(a: string): number;
   name: string;
 }) {}
+
+/**
+ * Comments for function with an index signature parameter
+ */
+export function functionWithIndexSignatureParam(map: {
+  [key: string]: number;
+}) {}
+
+/**
+ * Comments for function with a union parameter with a default
+ */
+export function functionWithUnionDefault(value: string | number = 1) {}

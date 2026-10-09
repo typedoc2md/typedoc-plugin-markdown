@@ -36,6 +36,7 @@ Module comments
 | [ClassWithCombinedModifiers](classes/ClassWithCombinedModifiers.md) | Comments for class with combined modifiers |
 | [ClassWithComplexProps](classes/ClassWithComplexProps.md) | Comments for ClassWithComplexProps |
 | [ClassWithConstructorOverloads](classes/ClassWithConstructorOverloads.md) | Comments for ClassWithConstructorOverloads |
+| [ClassWithElidedDefault](classes/ClassWithElidedDefault.md) | Comments for class with an elided default |
 | [ClassWithFlags](classes/ClassWithFlags.md) | Comment for ClassWithFlags |
 | [ClassWithModifiers](classes/ClassWithModifiers.md) | Comments for ClassWithModifiers |
 | [ClassWithoutPropCategories](classes/ClassWithoutPropCategories.md) | - |
@@ -142,6 +143,7 @@ Module comments
 | [functionWithArraysOfCompoundTypes](functions/functionWithArraysOfCompoundTypes.md) | Comments for function with arrays of compound types |
 | [functionWithComplexParams](functions/functionWithComplexParams.md) | Function with function params |
 | [functionWithDefaultParameters](functions/functionWithDefaultParameters.md) | This is a function with a parameter that has a default value. |
+| [functionWithIndexSignatureParam](functions/functionWithIndexSignatureParam.md) | Comments for function with an index signature parameter |
 | [functionWithMethodInObjectParam](functions/functionWithMethodInObjectParam.md) | Comments for function with a method in an object parameter |
 | [functionWithMultipleSignatures](functions/functionWithMultipleSignatures.md) | Main function comment. |
 | [functionWithNamedParams](functions/functionWithNamedParams.md) | - |
@@ -150,6 +152,7 @@ Module comments
 | [functionWithOptionalParameters](functions/functionWithOptionalParameters.md) | This is a function with a parameters. |
 | [functionWithRestParams](functions/functionWithRestParams.md) | Function with rest params |
 | [functionWithTypeParameters](functions/functionWithTypeParameters.md) | Function with type parameters |
+| [functionWithUnionDefault](functions/functionWithUnionDefault.md) | Comments for function with a union parameter with a default |
 | [functionWithUnionParams](functions/functionWithUnionParams.md) | - |
 | [tupleTypeFunction](functions/tupleTypeFunction.md) | - |
 | [tupleTypeFunctionInlineExplicit](functions/tupleTypeFunctionInlineExplicit.md) | - |

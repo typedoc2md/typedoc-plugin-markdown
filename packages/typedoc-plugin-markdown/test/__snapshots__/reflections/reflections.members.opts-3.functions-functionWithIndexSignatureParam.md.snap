@@ -1,0 +1,13 @@
+# Function: functionWithIndexSignatureParam()
+
+```ts
+function functionWithIndexSignatureParam(map: object): void;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function with an index signature parameter
+
+## Returns
+
+`void`

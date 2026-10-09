@@ -108,6 +108,12 @@
         "isDeprecated": false
       },
       {
+        "title": "ClassWithElidedDefault",
+        "kind": 128,
+        "path": "classes/ClassWithElidedDefault.md",
+        "isDeprecated": false
+      },
+      {
         "title": "ClassWithFlags",
         "kind": 128,
         "path": "classes/ClassWithFlags.md",
@@ -644,6 +650,12 @@
         "isDeprecated": false
       },
       {
+        "title": "functionWithIndexSignatureParam",
+        "kind": 64,
+        "path": "functions/functionWithIndexSignatureParam.md",
+        "isDeprecated": false
+      },
+      {
         "title": "functionWithMethodInObjectParam",
         "kind": 64,
         "path": "functions/functionWithMethodInObjectParam.md",
@@ -689,6 +701,12 @@
         "title": "functionWithTypeParameters",
         "kind": 64,
         "path": "functions/functionWithTypeParameters.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionWithUnionDefault",
+        "kind": 64,
+        "path": "functions/functionWithUnionDefault.md",
         "isDeprecated": false
       },
       {

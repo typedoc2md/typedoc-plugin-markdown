@@ -1,0 +1,17 @@
+# Function: functionWithIndexSignatureParam()
+
+> **functionWithIndexSignatureParam**(`map`): `void`
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function with an index signature parameter
+
+## Parameters
+
+### map
+
+\{\[`key`: `string`\]: `number`; \}
+
+## Returns
+
+`void`

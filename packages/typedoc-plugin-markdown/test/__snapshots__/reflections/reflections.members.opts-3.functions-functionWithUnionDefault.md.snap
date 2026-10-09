@@ -1,0 +1,13 @@
+# Function: functionWithUnionDefault()
+
+```ts
+function functionWithUnionDefault(value?: string | number): void;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function with a union parameter with a default
+
+## Returns
+
+`void`

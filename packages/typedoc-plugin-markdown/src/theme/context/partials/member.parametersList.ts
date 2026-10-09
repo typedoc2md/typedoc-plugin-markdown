@@ -38,7 +38,11 @@ export function parametersList(
         forceCollapse: true,
       });
 
-      row.push(unionOut);
+      row.push(
+        parameter.defaultValue
+          ? `${unionOut} = ${backTicks(this.helpers.getParameterDefaultValue(parameter))}`
+          : unionOut,
+      );
 
       if (parameter.comment) {
         row.push(this.partials.comment(parameter.comment));
@@ -64,7 +68,12 @@ export function parametersList(
       }
     } else {
       if (parameter.type instanceof ReflectionType) {
-        if (parameter.type.declaration?.signatures) {
+        // Function types, and object types with no members to list (such as
+        // an index signature alone), are shown as the type itself.
+        if (
+          parameter.type.declaration?.signatures ||
+          !parameter.type.declaration?.children?.length
+        ) {
           row.push(
             this.partials.someType(parameter.type, { forceCollapse: true }),
           );

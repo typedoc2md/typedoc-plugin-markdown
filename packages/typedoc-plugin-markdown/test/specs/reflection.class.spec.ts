@@ -126,4 +126,12 @@ describe(`typedoc-plugin-markdown (Integration /Class Reflection)`, () => {
       'classes/ClassWithCombinedModifiers.md',
     );
   });
+
+  it(`should compile class with an elided default`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'classes/ClassWithElidedDefault.md',
+    );
+  });
 });

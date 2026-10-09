@@ -363,3 +363,17 @@ export class ClassImplementingTwoRoots
   a = 'a';
   b = 'b';
 }
+
+/**
+ * Comments for class with an elided default
+ */
+export class ClassWithElidedDefault {
+  /**
+   * Comments for config
+   */
+  config = { nested: { deep: { a: 1, b: 2, c: 3 } } };
+  /**
+   * Comments for simple
+   */
+  simple = 1;
+}
