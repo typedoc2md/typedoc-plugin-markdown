@@ -16,6 +16,8 @@ on:
       - '!packages/docusaurus-plugin-typedoc/README.md'
       - '!packages/docusaurus-plugin-typedoc/CHANGELOG.md'
       - '!packages/docusaurus-plugin-typedoc/package.json'
+permissions:
+  contents: read
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest

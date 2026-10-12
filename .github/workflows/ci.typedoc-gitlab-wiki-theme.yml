@@ -16,6 +16,8 @@ on:
       - '!packages/typedoc-gitlab-wiki-theme/README.md'
       - '!packages/typedoc-gitlab-wiki-theme/CHANGELOG.md'
       - '!packages/typedoc-gitlab-wiki-theme/package.json'
+permissions:
+  contents: read
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest

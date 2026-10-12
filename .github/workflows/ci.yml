@@ -17,6 +17,8 @@ on:
       - '!packages/typedoc-plugin-markdown/README.md'
       - '!packages/typedoc-plugin-markdown/CHANGELOG.md'
       - '!packages/typedoc-plugin-markdown/package.json'
+permissions:
+  contents: read
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest

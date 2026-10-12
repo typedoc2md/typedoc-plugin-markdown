@@ -122,6 +122,12 @@ Each package has its own path-filtered workflow in `.github/workflows/`
 Changes touching only a package's `README.md`, `CHANGELOG.md`, or
 `package.json` do not trigger its CI.
 
+`gate.yml` is the exception: it runs `lint-all`/`build-all`/`test-all` on
+every pull request and push to `main` with no path filter, and its `Gate`
+check is the one required by branch protection. The per-package workflows
+are path-filtered, so requiring any of their checks would leave a docs-only
+pull request waiting for a check that never reports.
+
 CI runs on **Node 18 and 20** (engines: `>= 18`) — the one place in this file
 that states the value, and one of the three sites listed below. Local dev is
 often on a newer Node, so do not use APIs newer than the declared floor in
