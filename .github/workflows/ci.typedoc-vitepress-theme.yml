@@ -16,6 +16,8 @@ on:
       - '!packages/typedoc-vitepress-theme/README.md'
       - '!packages/typedoc-vitepress-theme/CHANGELOG.md'
       - '!packages/typedoc-vitepress-theme/package.json'
+permissions:
+  contents: read
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest

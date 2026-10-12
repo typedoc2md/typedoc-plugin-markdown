@@ -16,6 +16,8 @@ on:
       - '!packages/typedoc-plugin-frontmatter/README.md'
       - '!packages/typedoc-plugin-frontmatter/CHANGELOG.md'
       - '!packages/typedoc-plugin-frontmatter/package.json'
+permissions:
+  contents: read
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest
