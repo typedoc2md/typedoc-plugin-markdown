@@ -129,18 +129,20 @@ are path-filtered, so requiring any of their checks would leave a docs-only
 pull request waiting for a check that never reports.
 
 CI runs on **Node 18 and 20** (engines: `>= 18`) — the one place in this file
-that states the value, and one of the three sites listed below. Local dev is
-often on a newer Node, so do not use APIs newer than the declared floor in
-package source.
+that states the value, and one of the four sites listed below. The
+per-package workflows build and test on the floor, Node 18; the gate runs the
+full cycle on Node 20. Local dev is often on a newer Node, so do not use APIs
+newer than the declared floor in package source.
 
-That range is declared in three places, and nothing keeps them in sync — there
+That range is declared in four places, and nothing keeps them in sync — there
 is no `.nvmrc`, no `volta` pin, and no root `engines`:
 
 - `engines.node` in every `packages/*/package.json`
-- the `node:` matrix in every `.github/workflows/ci*.yml`
+- the `node:` matrix in every `.github/workflows/ci*.yml` (the floor)
+- `node-version` in `.github/workflows/gate.yml` (the upper bound)
 - the paragraph above
 
-Changing the supported range means changing all three together, in one commit.
+Changing the supported range means changing all four together, in one commit.
 `release.yml` is deliberately not part of that set: its `node-version` pin is
 the Node the publish job runs on, not the range consumers must satisfy, and it
 moves independently.
