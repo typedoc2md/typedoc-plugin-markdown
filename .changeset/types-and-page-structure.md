@@ -1,8 +1,5 @@
 ---
-'typedoc-plugin-markdown': patch
+'typedoc-plugin-markdown': minor
 ---
 
-- Render named tuple members with their names and optional markers (`[first: string, second?: number]`), instead of the element types alone.
-- List each parent under "Extends" as its own item, instead of joining them with `.`.
-- Render the object members of an intersection under a single "Type Declaration" heading, after the type parameters.
-- List each document group's documents only under that group's heading, instead of every group's documents under each heading.
+- Change the structure of several page sections: named tuple members are rendered with their names and optional markers (`[first: string, second?: number]`); each parent under "Extends" is its own item instead of being joined with `.`; the object members of an intersection sit under a single "Type Declaration" heading after the type parameters; and each document group lists only its own documents.
