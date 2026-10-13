@@ -34,5 +34,9 @@
     "pagefind": "^1.4.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18"
+  },
+  "overrides": {
+    "katex": "^0.19.0",
+    "@xmldom/xmldom": "^0.9.12"
   }
 }
