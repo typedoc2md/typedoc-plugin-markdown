@@ -8,12 +8,10 @@ import { faMarkdown } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 
-<section className="px-4 mx-auto w-full max-w-7xl h-64">
-  <div className="flex flex-col gap-14 items-center mt-10">
+<section className="px-4 mx-auto w-full max-w-7xl min-h-[75vh] flex flex-col justify-center">
+  <div className="flex flex-col gap-14 items-center">
     <div className="flex flex-col gap-8 justify-center items-center w-full">
-      <h1 className="text-4xl font-black md:text-5xl text-center">
-        typedoc-plugin-markdown
-      </h1>
+      <h1 className="text-5xl font-black md:text-6xl text-center">typedoc-plugin-markdown</h1>
       <div className="flex md:flex-row items-center text-3xl mt-4">
         <Image
           src="/logos/ts-logo.png"
@@ -30,9 +28,7 @@ import Image from 'next/image';
         </div>
       </div>
       <div className="text-1xl flex flex-col md:text-2xl text-center">
-        <p className="my-4">
-          Generate TypeScript API documentation as Markdown.
-        </p>
+        <p className="my-4">Generate TypeScript API documentation as Markdown.</p>
         <div className="pt-8 text-l md:text-xl flex self-center">
           <span>Powered by</span>
           <Image
@@ -47,9 +43,7 @@ import Image from 'next/image';
             href="https://typedoc.org"
             className="hover:underline"
             target="_blank"
-          >
-            TypeDoc
-          </a>
+          >TypeDoc</a>
         </div>
       </div>
     </div>
@@ -58,8 +52,6 @@ import Image from 'next/image';
     <a
       href="/docs"
       className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-l md:text-xl px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
-    >
-      <p>Get Started</p>
-    </a>
+    >Get Started</a>
   </div>
 </section>
