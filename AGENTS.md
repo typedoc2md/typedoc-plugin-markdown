@@ -316,20 +316,23 @@ accumulates the next release's dates rather than conflicting.
   never edit those in place.
 - The docs site installs separately: `cd docs && npm install`.
 
-**After every release of the core plugin**, update the compatibility table in
-`docs/content/docs/releases.mdx`, which maps plugin version ranges to the
-TypeDoc version they support. Nothing generates it and nothing checks it, so it
-drifts silently — it was two minors stale (still ending at `4.11.x` on a
-`4.13.0` release) when this note was added.
+**The compatibility table is updated by the release.** The table in
+`docs/content/docs/releases.mdx` maps plugin version ranges to the TypeDoc
+version they support. After publishing, the Release workflow runs
+`devtools/scripts/compatibility-table.mjs`, which reads the core plugin's
+version and `typedoc` peer range from its `package.json` and puts the result
+in the same pull request as the changelog dates — so, like the dates, it only
+lands once that PR is merged. It used to be a hand edit and was two minors
+stale when this automation was added.
 
-- A normal release extends the current row's upper bound to the version just
-  published.
-- A release that changes the `typedoc` peer range opens a new row instead, and
-  closes the previous one at the last version on the old range.
+- A release on the current TypeDoc range extends the top row's upper bound to
+  the version just published.
+- A release that changes the `typedoc` peer range opens a new row above it,
+  leaving the previous row closed at the last version on the old range.
 
-The peer range in `packages/typedoc-plugin-markdown/package.json` is the source
-of truth for which row a version belongs in — read it rather than assuming the
-latest release stayed on the same TypeDoc line.
+The script is idempotent and skips prereleases. If the table ever needs a hand
+edit, keep the peer range in `packages/typedoc-plugin-markdown/package.json`
+as the source of truth for which row a version belongs in.
 
 ## Pre-PR checklist
 

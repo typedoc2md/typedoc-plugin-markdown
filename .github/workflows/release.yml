@@ -30,7 +30,7 @@ jobs:
           publish: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Open a pull request dating the published changelogs
+      - name: Open a pull request dating the changelogs and updating the compatibility table
         if: steps.changesets.outputs.published == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -39,6 +39,7 @@ jobs:
         run: |
           node ./devtools/scripts/changelog-dates.mjs
           node ./devtools/scripts/changelog-sync.mjs
+          node ./devtools/scripts/compatibility-table.mjs
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add packages/*/CHANGELOG.md docs/content
@@ -47,12 +48,12 @@ jobs:
             exit 0
           fi
           git checkout -b "$BRANCH"
-          git commit -m "chore(release): date and sync changelogs"
+          git commit -m "chore(release): date the changelogs and update the compatibility table"
           git push --force origin "$BRANCH"
           if [ "$(gh pr view "$BRANCH" --json state --jq .state 2>/dev/null)" = "OPEN" ]; then
             echo "Updated the open changelog pull request"
           else
             gh pr create --base "$BASE" --head "$BRANCH" \
-              --title "chore(release): date and sync changelogs" \
-              --body "Adds release dates to the version headings Changesets wrote, and syncs them into \`docs/content\`. Opened by the Release workflow once packages were published. Merge to land the dates."
+              --title "chore(release): date the changelogs and update the compatibility table" \
+              --body "Adds release dates to the version headings Changesets wrote, syncs them into \`docs/content\`, and brings the compatibility table in \`docs/content/docs/releases.mdx\` up to the published core plugin version. Opened by the Release workflow once packages were published. Merge to land them."
           fi
