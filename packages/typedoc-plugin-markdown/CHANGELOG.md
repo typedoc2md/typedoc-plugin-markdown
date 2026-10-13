@@ -1,5 +1,32 @@
 # Changelog
 
+## 4.14.0
+
+### Minor Changes
+
+This release is a sweep of rendering fixes checked against TypeDoc's own output. Most of them change the generated markdown, so expect diffs when docs are regenerated. No option or public type changes.
+
+- Render methods inside object types with their call signatures, every overload and their comments, instead of only the first overload's return type. This applies to expanded objects (`expandObjects`), properties tables, parameter tables and lists, and type declaration tables, where nested methods also keep their path prefix (`inner.fn()`) ([#908](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/908)).
+- Render anchors for type parameters, including those of methods, so links to them resolve. They are slugged from the type parameter's name, prefixed with `type-parameter-` when `parametersFormat` is a table so they no longer shift member anchors, and omitted when `parametersFormat` is `none` ([#909](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/909)).
+- Fire the `page.begin`, `page.end`, `content.begin` and `content.end` hooks on the readme page and on document pages, which previously fired no hooks, so content injected through them (such as front matter) now appears there too. The `index.page.begin` and `index.page.end` hooks still fire on the project page as before.
+- Change the structure of several page sections: named tuple members are rendered with their names and optional markers (`[first: string, second?: number]`); each parent under "Extends" is its own item instead of being joined with `.`; the object members of an intersection sit under a single "Type Declaration" heading after the type parameters; and each document group lists only its own documents.
+- Remove `#`, `?` and `\` from generated file names, so links to pages such as a document titled `FAQ: What's new? #1` resolve, and keep names made only of underscores, so `export function _()` is written to `functions/_.md` instead of an empty file name.
+
+### Patch Changes
+
+- Apply `anchorPrefix` to links that point to another page, and only once with the `kind-dir` and `structure-dir` routers, and link constructors to their localised heading (e.g. `#konstruktor`) when `lang` is not English.
+- Keep literal values verbatim in code blocks (`useCodeBlocks`) and escape backslashes in text outside code, so `'[a](b)'`, `'&lt;b&gt;'` and `'C:\\temp'` display as written instead of as `"a"`, `"<b>"` and `C:\temp`.
+- List a class under every hierarchy root it extends or implements on the hierarchy summary page, instead of only the first.
+- Encode relative media links, so a linked file with spaces in its name still resolves.
+- Match `entryModule` against modules only, so a function or class sharing the module's name keeps its page, find the entry module when project documents are present, and write the readme page once with the core routers and `mergeReadme` instead of a second page at the same URL.
+- Render the return type of a signature when it is an array or intersection of documented object types or an `@expand` type, instead of an empty "Returns" section, and render parameters and return types that reference an `@expand` type as the type instead of listing union members separately.
+- Wrap function, intersection, conditional and type operator types in parentheses when they are array elements or optional tuple elements, e.g. `(() => void)[]` instead of `() => void[]`.
+- Strike through deprecated nested members in properties and type declaration tables, as list format already does.
+- Mark a parameter as optional (`a?`) in tables when it has a default value, as the signature title and list format already do, and only by its own flag for members of an object parameter instead of every row after the first optional one. Show the default value of a union-typed parameter and the type of an object parameter with no members to list (such as an index signature alone) in list format, and show an elided property default as `...` in properties tables instead of `undefined`.
+- Keep pages inside the output directory when a module or document name contains parent directory segments.
+- Escape `|` in table cells (including inside code spans, as GFM tables require) so it no longer splits a row into extra columns. The rendered text still shows a plain `|`.
+- Show every modifier of a property (e.g. `protected static readonly`), not only the first one found.
+
 ## 4.13.1 (2026-09-18)
 
 ### Patch Changes
