@@ -150,7 +150,7 @@ moves independently.
 **The range is inherited from TypeDoc, not chosen here.** The core plugin
 declares a `typedoc` peer range; the Node floor is whatever TypeDoc declares
 for that range. Whenever the peer range is bumped, read the new TypeDoc
-release's own value and move the three sites to match it:
+release's own value and move the four sites to match it:
 
 ```bash
 npm view typedoc@<peer-range> engines
