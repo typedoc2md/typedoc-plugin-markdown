@@ -358,13 +358,15 @@ export abstract class MarkdownRouter extends BaseRouter {
       name = name.replace(/\//g, '_');
     }
 
-    const alias = removeUnsafeFileNameChars(name)
-      .replace(/"/g, '')
-      .replace(/^_+|_+$/g, '')
-      .replace(/[<>]/g, '-');
+    const safeName = removeTraversalSegments(
+      removeUnsafeFileNameChars(name).replace(/"/g, ''),
+    );
 
-    // A name made only of underscores (e.g. `_`) would otherwise be empty.
-    return alias || removeUnsafeFileNameChars(name).replace(/"/g, '');
+    const alias = safeName.replace(/^_+|_+$/g, '').replace(/[<>]/g, '-');
+
+    // A name made only of underscores (e.g. `_`) would otherwise be empty, as
+    // would one made only of traversal segments (e.g. `..`).
+    return alias || safeName || '_';
   }
 
   /**
@@ -401,4 +403,18 @@ export abstract class MarkdownRouter extends BaseRouter {
  */
 function removeUnsafeFileNameChars(name: string) {
   return name.replace(/[#?\\]/g, '');
+}
+
+/**
+ * Drops `.` and `..` path segments. A reflection name is used as a path, so a
+ * module named `../../x` (via an `@module` tag) or a document whose title is
+ * `../x` would otherwise be written outside the output directory. TypeDoc's
+ * own routers replace the separators instead, but `/` is kept here so a
+ * module name can still map to a directory.
+ */
+function removeTraversalSegments(name: string) {
+  return name
+    .split('/')
+    .filter((segment) => segment !== '.' && segment !== '..')
+    .join('/');
 }

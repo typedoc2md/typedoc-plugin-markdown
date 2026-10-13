@@ -245,6 +245,15 @@ async function renderDocument(
   const formatWithPrettier =
     renderer.application.options.getValue('formatWithPrettier');
 
+  // A router is free to derive urls from reflection names, so refuse any page
+  // that would be written outside the output directory.
+  if (!isInsideDirectory(outputDirectory, page.url)) {
+    renderer.application.logger.error(
+      `[typedoc-plugin-markdown] Skipping page "${page.url}" as it resolves outside the output directory.`,
+    );
+    return;
+  }
+
   const pageEvent = new MarkdownPageEvent(page.model);
 
   pageEvent.url = page.url;
@@ -274,8 +283,20 @@ async function renderDocument(
     writeFileSync(pageEvent.filename, pageEvent.contents);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
-    renderer.application.logger.error(i18n.could_not_write_0(pageEvent.filename));
+    renderer.application.logger.error(
+      i18n.could_not_write_0(pageEvent.filename),
+    );
   }
+}
+
+function isInsideDirectory(directory: string, relativeUrl: string) {
+  const root = path.resolve(directory);
+  const relative = path.relative(root, path.resolve(root, relativeUrl));
+  return (
+    relative.length > 0 &&
+    !relative.startsWith('..') &&
+    !path.isAbsolute(relative)
+  );
 }
 
 // Helper to execute async renderer jobs

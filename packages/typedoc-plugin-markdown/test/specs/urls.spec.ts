@@ -1,4 +1,8 @@
-import { expectFileToEqual, expectUrlsToEqual } from '../helpers.js';
+import { assertFileExists } from '@devtools/testing';
+import { strict as assert } from 'assert';
+import * as fs from 'fs';
+import * as path from 'path';
+import { expectFileToEqual, expectUrlsToEqual, getOutDir } from '../helpers.js';
 
 describe(`typedoc-plugin-markdown (Integration / Urls)`, () => {
   it(`should gets Urls for multiple entry points`, () => {
@@ -43,5 +47,22 @@ describe(`typedoc-plugin-markdown (Integration / Urls)`, () => {
 
   it(`should write safe file names and no duplicate pages`, () => {
     expectFileToEqual('file-names', 'members', 'urls.json');
+  });
+
+  it(`should keep pages named with parent directories inside the output directory`, () => {
+    const outDir = path.join(getOutDir(), 'md', 'file-names');
+    assert.ok(
+      !fs.existsSync(path.join(outDir, 'escape')) &&
+        !fs.existsSync(path.join(outDir, 'escape-doc.md')) &&
+        !fs.existsSync(path.join(outDir, 'members', 'escape')) &&
+        !fs.existsSync(path.join(outDir, 'members', 'escape-doc.md')),
+      'pages were written outside the output directory',
+    );
+    assertFileExists(
+      'fixtures/out/md/file-names/members/opts-1/escape/README.md',
+    );
+    assertFileExists(
+      'fixtures/out/md/file-names/members/opts-1/documents/escape-doc.md',
+    );
   });
 });

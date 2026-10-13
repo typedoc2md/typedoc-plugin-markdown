@@ -21,6 +21,10 @@ describe(`typedoc-plugin-markdown (Integration / Text)`, () => {
     expectFileToEqual('text', 'members', 'module-1/variables/someVar.md', 1);
   });
 
+  it(`should insert a name containing a dollar sign literally`, () => {
+    expectFileToEqual('file-names', 'members', 'escape/variables/$$.md', 1);
+  });
+
   it(`should get translations for modules page`, () => {
     expectFileToEqual('text', 'modules', ['module-2.md']);
   });

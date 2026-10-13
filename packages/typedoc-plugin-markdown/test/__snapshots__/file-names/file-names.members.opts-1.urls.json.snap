@@ -2,6 +2,9 @@
   "README.md",
   "README-1.md",
   "documents/FAQ:-What's-new-1.md",
+  "documents/escape-doc.md",
+  "escape/README.md",
+  "escape/variables/$$.md",
   "main/functions/main.md",
   "other/README.md",
   "other/functions/_.md"
