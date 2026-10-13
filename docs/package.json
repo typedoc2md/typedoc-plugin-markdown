@@ -9,7 +9,7 @@
     "prebuild": "npm run prepare",
     "dev": "next --turbopack",
     "build": "next build",
-    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
+    "postbuild": "node ./scripts/pagefind.mjs",
     "start": "next start"
   },
   "author": "Thomas Grey",
