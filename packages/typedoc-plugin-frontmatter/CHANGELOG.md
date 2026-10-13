@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.3
+
+### Patch Changes
+
+- Write frontmatter tag values containing `$'` or `$&` literally instead of duplicating the page body.
+
 ## 1.3.2 (2026-09-07)
 
 ### Patch Changes
