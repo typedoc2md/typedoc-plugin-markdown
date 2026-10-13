@@ -3,10 +3,17 @@
 const baseOptions = require('../typedoc.cjs');
 
 const commonOptions = {
-  entryPoints: ['../src/file-names/main.ts', '../src/file-names/other.ts'],
+  entryPoints: [
+    '../src/file-names/main.ts',
+    '../src/file-names/other.ts',
+    '../src/file-names/escape.ts',
+  ],
   plugin: ['../../../dist/index.js', '../custom-plugins/urls-plugin.mjs'],
   readme: '../PROJECT_DOC_1.md',
-  projectDocuments: ['../docs/file-names/FAQ.md'],
+  projectDocuments: [
+    '../docs/file-names/FAQ.md',
+    '../docs/file-names/escape.md',
+  ],
   hidePageHeader: true,
   hideBreadcrumbs: true,
   disableSources: true,

@@ -7,9 +7,8 @@ export function getProjectName(
   includeVersion = true,
 ) {
   return stringWithPlaceholders
-    .replace('{projectName}', page.project.name)
-    .replace(
-      '{version}',
+    .replace('{projectName}', () => page.project.name)
+    .replace('{version}', () =>
       includeVersion && page.project.packageVersion
         ? `v${page.project.packageVersion}`
         : '',

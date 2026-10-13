@@ -137,13 +137,15 @@ function getFromString(
   textContent: string,
   config: PageTitleTemplatePlaceholders,
 ): string {
+  // Function replacers so a `$` in a name (e.g. `$$`) is inserted literally
+  // rather than read as a replacement pattern.
   return textContent
-    .replace('{kind}', config.kind)
-    .replace('{rawName}', config.rawName)
-    .replace('{name}', config.name)
-    .replace('{keyword}', config.keyword ?? '')
-    .replace('{codeKeyword}', config.codeKeyword ?? '')
-    .replace('{group}', config.group ?? '')
+    .replace('{kind}', () => config.kind)
+    .replace('{rawName}', () => config.rawName)
+    .replace('{name}', () => config.name)
+    .replace('{keyword}', () => config.keyword ?? '')
+    .replace('{codeKeyword}', () => config.codeKeyword ?? '')
+    .replace('{group}', () => config.group ?? '')
     .replace(/``/g, '')
     .replace(/\s+/g, ' ')
     .trim();

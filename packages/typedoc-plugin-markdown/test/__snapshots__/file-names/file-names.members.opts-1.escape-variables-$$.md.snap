@@ -1,0 +1,5 @@
+# Variable: $$
+
+> `const` **$$**: `1` = `1`
+
+A variable whose name is a replacement pattern.
