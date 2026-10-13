@@ -40,6 +40,13 @@ describe(`typedoc-plugin-frontmatter (Options)`, () => {
       assertToMatchSnapshot('yaml-function-tags', pageContent);
     });
 
+    it(`should write tag values containing replacement patterns literally`, async () => {
+      const pageContent = getFileContents(
+        'out/options-2/functions/someFunctionWithPatterns.md',
+      );
+      assertToMatchSnapshot('yaml-function-tags-patterns', pageContent);
+    });
+
     it(`should add custom tags to functions with multiple signatures`, async () => {
       const pageContent = getFileContents(
         'out/options-2/functions/someFunctionWithMultipleSignatures.md',
