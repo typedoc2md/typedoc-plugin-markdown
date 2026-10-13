@@ -13,3 +13,4 @@ veryLong: 'This is a long string that would normally wrap over multiple lines wh
 
 - [someFunction](functions/someFunction.md)
 - [someFunctionWithMultipleSignatures](functions/someFunctionWithMultipleSignatures.md)
+- [someFunctionWithPatterns](functions/someFunctionWithPatterns.md)

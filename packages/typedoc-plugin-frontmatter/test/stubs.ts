@@ -40,3 +40,8 @@ export function someFunctionWithMultipleSignatures(
 }
 
 console.log(someFunctionWithMultipleSignatures('John'));
+
+/**
+ * @tagOne $' and $& are replacement patterns
+ */
+export const someFunctionWithPatterns = () => {};

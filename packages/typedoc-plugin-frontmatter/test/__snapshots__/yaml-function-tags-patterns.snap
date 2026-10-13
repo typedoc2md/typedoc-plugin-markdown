@@ -1,0 +1,20 @@
+---
+title: someFunctionWithPatterns
+layout: blog
+veryLong: This is a long string that would normally wrap over multiple lines when the text exceeds a certain length.
+navOrder: 1
+hide: true
+tagOne: $' and $& are replacement patterns
+---
+
+# Function: someFunctionWithPatterns()
+
+> **someFunctionWithPatterns**(): `void`
+
+## Returns
+
+`void`
+
+## Tag One
+
+$' and $& are replacement patterns

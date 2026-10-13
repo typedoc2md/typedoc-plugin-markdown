@@ -57,12 +57,17 @@ export function load(app: MarkdownApplication) {
   app.renderer.on(MarkdownPageEvent.END, (page: MarkdownPageEvent) => {
     if (page.frontmatter && Object.keys(page.frontmatter)?.length) {
       const yamlStringifyOptions = app.options.getValue('yamlStringifyOptions');
-      page.contents = page?.contents
-        ?.replace(
-          /^/,
-          `---\n${yaml.stringify(page.frontmatter, { ...yamlStringifyOptions, lineWidth: 0 })}---\n\n`,
-        )
-        .replace(/[\r\n]{3,}/g, '\n\n');
+      const frontmatter = yaml.stringify(page.frontmatter, {
+        ...yamlStringifyOptions,
+        lineWidth: 0,
+      });
+      // Concatenated rather than passed to `replace`, where a `$'` or `$&`
+      // in a tag value would be read as a replacement pattern.
+      page.contents =
+        `---\n${frontmatter}---\n\n${page.contents ?? ''}`.replace(
+          /[\r\n]{3,}/g,
+          '\n\n',
+        );
     }
   });
 }
