@@ -78,5 +78,9 @@ module.exports = {
         ...opts3,
       },
     },
+    {
+      name: 'html',
+      path: '../out/html/utils',
+    },
   ],
 };
