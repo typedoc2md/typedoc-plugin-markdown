@@ -87,6 +87,7 @@ Module comments
 | [FunctionType](type-aliases/FunctionType.md) | Comments for FunctionType |
 | [IndexAccessType](type-aliases/IndexAccessType.md) | Comments for IndexAccessType |
 | [IntersectionType](type-aliases/IntersectionType.md) | Comments for IntersectionType |
+| [IntersectionWithAbstractConstructor](type-aliases/IntersectionWithAbstractConstructor.md) | Comments for an intersection with an abstract constructor type |
 | [IntersectionWithTypeParams](type-aliases/IntersectionWithTypeParams.md) | Comments for intersection with type parameters |
 | [LiteralType](type-aliases/LiteralType.md) | Comments for LiteralType |
 | [MarkdownLikeLiterals](type-aliases/MarkdownLikeLiterals.md) | Comments for literal types that look like markdown |
@@ -146,7 +147,9 @@ Module comments
 | [functionWithArrayOfUnionStuff](functions/functionWithArrayOfUnionStuff.md) | Comments for array of union stuff |
 | [functionWithArraysOfCompoundTypes](functions/functionWithArraysOfCompoundTypes.md) | Comments for function with arrays of compound types |
 | [functionWithComplexParams](functions/functionWithComplexParams.md) | Function with function params |
+| [functionWithConstructorIntersection](functions/functionWithConstructorIntersection.md) | Comments for function with a constructor type in an intersection constraint |
 | [functionWithDefaultParameters](functions/functionWithDefaultParameters.md) | This is a function with a parameter that has a default value. |
+| [functionWithFunctionIntersection](functions/functionWithFunctionIntersection.md) | Comments for function with a function type in an intersection constraint |
 | [functionWithIndexSignatureParam](functions/functionWithIndexSignatureParam.md) | Comments for function with an index signature parameter |
 | [functionWithMethodInObjectParam](functions/functionWithMethodInObjectParam.md) | Comments for function with a method in an object parameter |
 | [functionWithMultipleSignatures](functions/functionWithMultipleSignatures.md) | Main function comment. |

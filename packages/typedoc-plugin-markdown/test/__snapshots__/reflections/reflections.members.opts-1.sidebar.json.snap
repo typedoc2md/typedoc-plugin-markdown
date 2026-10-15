@@ -364,6 +364,12 @@
         "isDeprecated": false
       },
       {
+        "title": "IntersectionWithAbstractConstructor",
+        "kind": 2097152,
+        "path": "type-aliases/IntersectionWithAbstractConstructor.md",
+        "isDeprecated": false
+      },
+      {
         "title": "IntersectionWithTypeParams",
         "kind": 2097152,
         "path": "type-aliases/IntersectionWithTypeParams.md",
@@ -668,9 +674,21 @@
         "isDeprecated": false
       },
       {
+        "title": "functionWithConstructorIntersection",
+        "kind": 64,
+        "path": "functions/functionWithConstructorIntersection.md",
+        "isDeprecated": false
+      },
+      {
         "title": "functionWithDefaultParameters",
         "kind": 64,
         "path": "functions/functionWithDefaultParameters.md",
+        "isDeprecated": false
+      },
+      {
+        "title": "functionWithFunctionIntersection",
+        "kind": 64,
+        "path": "functions/functionWithFunctionIntersection.md",
         "isDeprecated": false
       },
       {

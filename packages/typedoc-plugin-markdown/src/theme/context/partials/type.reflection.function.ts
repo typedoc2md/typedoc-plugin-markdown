@@ -1,6 +1,6 @@
 import { backTicks } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
-import { SignatureReflection, SomeType } from 'typedoc';
+import { ReflectionKind, SignatureReflection, SomeType } from 'typedoc';
 
 export function functionType(
   this: MarkdownThemeContext,
@@ -15,6 +15,10 @@ export function functionType(
   const typeSeparator = options?.typeSeparator || ' => ';
   const typeOptions = { forceCollapse: options?.forceCollapse };
   const functions = model.map((fn) => {
+    const constructorKeyword =
+      fn.kind === ReflectionKind.ConstructorSignature
+        ? `${fn.flags?.isAbstract ? 'abstract ' : ''}new `
+        : '';
     const typeParams = fn.typeParameters
       ? `${this.helpers.getAngleBracket('<')}${fn.typeParameters
           .map((typeParameter) => backTicks(typeParameter.name))
@@ -40,8 +44,9 @@ export function functionType(
       : [];
     const returns = this.partials.someType(fn.type as SomeType, typeOptions);
     return (
+      `${shouldFormat && model.length > 1 ? '  ' : ''}${constructorKeyword}` +
       typeParams +
-      `${shouldFormat && model.length > 1 ? '  ' : ''}(${params.join(', ')})${typeSeparator}${returns}`
+      `(${params.join(', ')})${typeSeparator}${returns}`
     );
   });
   const join = shouldFormat ? ';\n' : '; ';

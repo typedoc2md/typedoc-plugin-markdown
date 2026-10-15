@@ -185,6 +185,22 @@ describe(`typedoc-plugin-markdown (Integration /Function Reflection)`, () => {
     );
   });
 
+  it(`should compile function with a constructor type in an intersection`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionWithConstructorIntersection.md',
+    );
+  });
+
+  it(`should compile function with a function type in an intersection`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'functions/functionWithFunctionIntersection.md',
+    );
+  });
+
   it(`should compile function with array of union stuff`, () => {
     expectFileToEqual(
       'reflections',

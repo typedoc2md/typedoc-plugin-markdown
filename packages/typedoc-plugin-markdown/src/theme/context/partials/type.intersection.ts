@@ -1,4 +1,5 @@
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
+import { needsParenthesesInIntersection } from '@plugin/theme/lib/index.js';
 import { IntersectionType } from 'typedoc';
 
 export function intersectionType(
@@ -6,6 +7,11 @@ export function intersectionType(
   model: IntersectionType,
 ): string {
   return model.types
-    .map((intersectionType) => this.partials.someType(intersectionType))
+    .map((intersectionType) => {
+      const theType = this.partials.someType(intersectionType);
+      return needsParenthesesInIntersection(intersectionType)
+        ? `(${theType})`
+        : theType;
+    })
     .join(' & ');
 }

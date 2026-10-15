@@ -364,6 +364,26 @@ export function functionWithArraysOfCompoundTypes(
   optionalFn: [(() => void)?],
 ) {}
 
+/**
+ * Comments for function with a constructor type in an intersection constraint
+ */
+export const functionWithConstructorIntersection = <
+  T extends { readonly name: string } & (abstract new (
+    ...args: Array<never>
+  ) => unknown),
+>(
+  constructor: T,
+): T => constructor;
+
+/**
+ * Comments for function with a function type in an intersection constraint
+ */
+export const functionWithFunctionIntersection = <
+  T extends { readonly name: string } & ((value: string) => void),
+>(
+  fn: T,
+): T => fn;
+
 export const typedef = {
   /**
    * Comments for a

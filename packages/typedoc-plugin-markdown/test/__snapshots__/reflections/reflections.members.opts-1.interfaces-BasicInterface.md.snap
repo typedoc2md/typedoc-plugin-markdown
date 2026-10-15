@@ -134,7 +134,7 @@ Comments for propReturningSignatureDeclaration
 
 ### propReturningSignatureDeclarations
 
-> **propReturningSignatureDeclarations**: () => `any` & (`paramsA`, `paramsB?`) => `any` & (`paramsC`) => `any`
+> **propReturningSignatureDeclarations**: (() => `any`) & ((`paramsA`, `paramsB?`) => `any`) & ((`paramsC`) => `any`)
 
 Defined in: [interfaces.ts:1](http://source-url)
 

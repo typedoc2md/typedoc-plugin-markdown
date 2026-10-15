@@ -1,0 +1,23 @@
+# Function: functionWithFunctionIntersection()
+
+> **functionWithFunctionIntersection**\<`T`\>(`fn`): `T`
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function with a function type in an intersection constraint
+
+## Type Parameters
+
+### T
+
+`T` *extends* `object` & ((`value`) => `void`)
+
+## Parameters
+
+### fn
+
+`T`
+
+## Returns
+
+`T`

@@ -168,4 +168,12 @@ describe(`typedoc-plugin-markdown (Integration /Type Alias Reflection)`, () => {
       'type-aliases/IntersectionWithTypeParams.md',
     );
   });
+
+  it(`should compile intersection with an abstract constructor type`, () => {
+    expectFileToEqual(
+      'reflections',
+      'members',
+      'type-aliases/IntersectionWithAbstractConstructor.md',
+    );
+  });
 });

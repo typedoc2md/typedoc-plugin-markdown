@@ -321,3 +321,10 @@ export type IntersectionWithTypeParams<T> = {
    */
   b: T;
 };
+
+/**
+ * Comments for an intersection with an abstract constructor type
+ */
+export type IntersectionWithAbstractConstructor = {
+  readonly name: string;
+} & (abstract new (...args: Array<never>) => unknown);

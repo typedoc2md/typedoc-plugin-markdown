@@ -21,7 +21,7 @@ Comments for BasicInterface
 | `propReturningObjectDeclaration.b` | `string` | - |
 | <a id="property-propreturningobjectdeclarations"></a> `propReturningObjectDeclarations` | `object` & `object` | Comments for propReturningObjectDeclarations |
 | <a id="property-propreturningsignaturedeclaration"></a> `propReturningSignatureDeclaration?` | () => `string` \| `number` \| `boolean` | Comments for propReturningSignatureDeclaration |
-| <a id="property-propreturningsignaturedeclarations"></a> `propReturningSignatureDeclarations` | () => `any` & (`paramsA`: `true` \| `any`[], `paramsB?`: `any`) => `any` & (`paramsC`: `any`) => `any` | Comments for propReturningSignatureDeclarations |
+| <a id="property-propreturningsignaturedeclarations"></a> `propReturningSignatureDeclarations` | (() => `any`) & ((`paramsA`: `true` \| `any`[], `paramsB?`: `any`) => `any`) & ((`paramsC`: `any`) => `any`) | Comments for propReturningSignatureDeclarations |
 | <a id="property-propwithfunction"></a> `propWithFunction` | (`options`: `object`) => `boolean` | Comments for propWithFunction |
 | <a id="property-propwithprops"></a> `propWithProps` | `object` | Comments for propWithProps |
 | `propWithProps.callbacks?` | `Partial`\<[`CallbacksOptions`](../classes/CallbacksOptions.md)\<[`DisposableClass`](../classes/DisposableClass.md), [`ClassWithModifiers`](../classes/ClassWithModifiers.md)\>\> | Comments for callbacks |
