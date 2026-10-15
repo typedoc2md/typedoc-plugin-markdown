@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.14.1
+
+### Patch Changes
+
+- Render constructor types with their `new` and `abstract` keywords instead of as function types ([#940](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/940)).
+- Parenthesise function, constructor, union and conditional types inside intersections, so `A & (() => void)` is no longer rendered as `A & () => void` ([#940](https://github.com/typedoc2md/typedoc-plugin-markdown/issues/940)).
+- With `useCodeBlocks`, mark optional members with `?` instead of an `optional` keyword, which is not valid TypeScript.
+- With `useCodeBlocks`, quote property and method names that are not identifiers, so `"prop.with.dot": string` is no longer rendered as `prop.with.dot: string`.
+- With `useCodeBlocks`, render "Overrides", "Implementation of" and "Inherited from" references to external members as inline code instead of code blocks, on one line.
+
 ## 4.14.0 (2026-10-13)
 
 ### Minor Changes
