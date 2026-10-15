@@ -2,9 +2,9 @@
 
 ```ts
 const variableWithChars: {
-  <x>: string;
-  <y>: string;
-  <z>: string;
+  "<x>": string;
+  "<y>": string;
+  "<z>": string;
 };
 ```
 
@@ -13,17 +13,17 @@ const variableWithChars: {
 ### &lt;x&gt;
 
 ```ts
-<x>: string = '>';
+"<x>": string = '>';
 ```
 
 ### &lt;y&gt;
 
 ```ts
-<y>: string = '<';
+"<y>": string = '<';
 ```
 
 ### &lt;z&gt;
 
 ```ts
-<z>: string = '<tag>';
+"<z>": string = '<tag>';
 ```

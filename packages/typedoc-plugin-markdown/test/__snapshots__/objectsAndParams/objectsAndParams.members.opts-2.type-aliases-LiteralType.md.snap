@@ -40,7 +40,7 @@ Comments for someFunctionWithArrow
 ### x?
 
 ```ts
-optional x?: string;
+x?: string;
 ```
 
 comment for x
@@ -70,7 +70,7 @@ comment for y.x
 #### y?
 
 ```ts
-optional y?: boolean | string;
+y?: boolean | string;
 ```
 
 comment for y.y
@@ -190,7 +190,7 @@ Comments for someFunction
 ### someOptionalGenericFunction()?
 
 ```ts
-optional someOptionalGenericFunction<T>(param: T): T;
+someOptionalGenericFunction?<T>(param: T): T;
 ```
 
 Comments for someOptionalGenericFunction

@@ -1,5 +1,6 @@
 import { backTicks } from '@plugin/libs/markdown/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
+import { getPropertyName } from '@plugin/theme/lib/index.js';
 import { DeclarationReflection, SomeType } from 'typedoc';
 
 export function declarationType(
@@ -36,13 +37,15 @@ export function declarationType(
 
   if (model.children) {
     const children = model.children;
+    const getName = (name: string) =>
+      shouldFormat ? getPropertyName(name) : name;
 
     const declarationTypes =
       children &&
       children.flatMap((obj) => {
         if (obj.signatures?.length) {
           const displayObjectName =
-            obj.name + (obj.flags?.isOptional ? '?' : '');
+            getName(obj.name) + (obj.flags?.isOptional ? '?' : '');
           return obj.signatures.map((signature) => {
             const signatureString = `${backTicks(displayObjectName)}${this.partials.functionType(
               [signature],
@@ -59,7 +62,7 @@ export function declarationType(
 
         if (obj.getSignature) {
           name.push('get');
-          name.push(backTicks(obj.name) + '()');
+          name.push(backTicks(getName(obj.name)) + '()');
         } else if (obj.setSignature) {
           name.push('set');
           const params = obj.setSignature.parameters
@@ -67,10 +70,10 @@ export function declarationType(
                 forceExpandParameters: true,
               })
             : '()';
-          name.push(backTicks(obj.name) + params);
+          name.push(backTicks(getName(obj.name)) + params);
         } else {
           const displayObjectName =
-            obj.name + (obj.flags?.isOptional ? '?' : '');
+            getName(obj.name) + (obj.flags?.isOptional ? '?' : '');
           name.push(backTicks(displayObjectName));
         }
 

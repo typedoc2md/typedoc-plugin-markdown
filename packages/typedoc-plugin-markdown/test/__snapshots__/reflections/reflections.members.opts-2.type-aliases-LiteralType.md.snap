@@ -119,7 +119,7 @@ Comments for someFunction
 ### someOptionalGenericFunction()?
 
 ```ts
-optional someOptionalGenericFunction<T>(param: T): T;
+someOptionalGenericFunction?<T>(param: T): T;
 ```
 
 Defined in: [types.ts:1](http://source-url)

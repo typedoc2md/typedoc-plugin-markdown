@@ -25,7 +25,9 @@ export function getReflectionFlags(
   if (reflectionFlags?.isStatic) {
     result.push(backTicks('static'));
   }
-  if (reflectionFlags?.isOptional) {
+  // In code blocks the flags are TypeScript modifiers, and `optional` is not
+  // one: optional members are marked with `?` on the name instead.
+  if (reflectionFlags?.isOptional && !this.options.getValue('useCodeBlocks')) {
     result.push(backTicks('optional'));
   }
   return result.join(' ');
