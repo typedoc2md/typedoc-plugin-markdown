@@ -1,4 +1,4 @@
-import { backTicks, codeBlock, link } from '@plugin/libs/markdown/index.js';
+import { backTicks, link } from '@plugin/libs/markdown/index.js';
 import { removeLineBreaks } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
 import { ArrayType, ReferenceType, SignatureReflection } from 'typedoc';
@@ -38,8 +38,14 @@ export function typeAndParent(
       return resultWithParent.join('.');
     }
   }
-  if (this.options.getValue('useCodeBlocks')) {
-    return codeBlock(model.toString());
-  }
-  return backTicks(removeLineBreaks(model.toString()));
+  // A reference that cannot be linked is named after its source text, which
+  // can span lines (e.g. type arguments of an `extends` clause).
+  return backTicks(
+    removeLineBreaks(
+      model
+        .toString()
+        .replace(/<\s*\n\s*/g, '<')
+        .replace(/,?\s*\n\s*>/g, '>'),
+    ),
+  );
 }
