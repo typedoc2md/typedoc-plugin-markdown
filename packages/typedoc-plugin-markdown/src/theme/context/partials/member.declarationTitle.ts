@@ -1,6 +1,7 @@
 import { backTicks, bold, codeBlock } from '@plugin/libs/markdown/index.js';
 import { encodeAngleBrackets, escapeChars } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
+import { getPropertyName } from '@plugin/theme/lib/index.js';
 import { DeclarationReflection, ReflectionKind } from 'typedoc';
 
 type DeclarationWithOriginalName = DeclarationReflection & {
@@ -26,7 +27,9 @@ export function declarationTitle(
   } else if (model.kind === ReflectionKind.TypeAlias) {
     const expandObjects = this.options.getValue('expandObjects');
     md.push(
-      expandObjects ? this.partials.declarationType(model) : backTicks('object'),
+      expandObjects
+        ? this.partials.declarationType(model)
+        : backTicks('object'),
     );
   }
 
@@ -75,6 +78,9 @@ function buildDeclarationName(
 
   const originalName = (model as DeclarationWithOriginalName).originalName;
   let declarationName = originalName ?? model.name;
+  if (context.options.getValue('useCodeBlocks')) {
+    declarationName = getPropertyName(declarationName);
+  }
   if (model.flags.isOptional) {
     declarationName += '?';
   }

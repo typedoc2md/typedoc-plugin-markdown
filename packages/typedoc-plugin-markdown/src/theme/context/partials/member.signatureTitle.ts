@@ -1,6 +1,7 @@
 import { bold, codeBlock } from '@plugin/libs/markdown/index.js';
 import { escapeChars } from '@plugin/libs/utils/index.js';
 import { MarkdownThemeContext } from '@plugin/theme/index.js';
+import { getPropertyName } from '@plugin/theme/lib/index.js';
 import { ReflectionKind, SignatureReflection } from 'typedoc';
 
 export function signatureTitle(
@@ -36,7 +37,13 @@ export function signatureTitle(
     if (model.kind === ReflectionKind.ConstructorSignature) {
       name.push('new');
     }
-    name.push(escapeChars(model.name));
+    name.push(
+      escapeChars(
+        useCodeBlocks
+          ? `${getPropertyName(model.name)}${model.parent.flags?.isOptional ? '?' : ''}`
+          : model.name,
+      ),
+    );
     md.push(bold(name.join(' ')));
   }
 

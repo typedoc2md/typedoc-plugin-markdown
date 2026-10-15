@@ -11,7 +11,7 @@
 ### &lt;
 
 ```ts
-<: string;
+"<": string;
 ```
 
 ---
@@ -19,7 +19,7 @@
 ### &lt;tag&gt;
 
 ```ts
-<tag>: string;
+"<tag>": string;
 ```
 
 ---
@@ -27,7 +27,7 @@
 ### &gt;
 
 ```ts
->: string;
+">": string;
 ```
 
 ---
