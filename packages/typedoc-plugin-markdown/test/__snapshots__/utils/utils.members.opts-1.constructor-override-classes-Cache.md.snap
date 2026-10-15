@@ -16,4 +16,4 @@
 
 #### Overrides
 
-`LRUCache< CacheFetchContext, CacheFetchContext, CacheFetchContext >.constructor`
+`LRUCache<CacheFetchContext, CacheFetchContext, CacheFetchContext>.constructor`

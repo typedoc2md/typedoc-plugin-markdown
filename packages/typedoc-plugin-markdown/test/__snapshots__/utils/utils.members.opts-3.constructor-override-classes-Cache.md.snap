@@ -18,10 +18,4 @@ new Cache(): Cache;
 
 #### Overrides
 
-```ts
-LRUCache<
-  CacheFetchContext,
-  CacheFetchContext,
-  CacheFetchContext
->.constructor
-```
+`LRUCache<CacheFetchContext, CacheFetchContext, CacheFetchContext>.constructor`

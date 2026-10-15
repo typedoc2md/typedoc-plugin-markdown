@@ -21,12 +21,6 @@ const OUT_DIR = path.join(process.cwd(), 'test', 'fixtures', 'out', 'md');
  */
 const KNOWN_INVALID: { file: RegExp; code?: RegExp; reason: string }[] = [
   {
-    file: /.*/,
-    code: /^[^;]*\.(\[[\w$]+\]|constructor)$/,
-    reason:
-      '"Overrides" / "Implementation of" references are rendered as code blocks.',
-  },
-  {
     file: /^comments\//,
     code: /^def /,
     reason: 'A doc comment example tagged `ts` that is not TypeScript.',
