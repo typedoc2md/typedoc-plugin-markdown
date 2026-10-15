@@ -1,0 +1,23 @@
+# Function: functionWithConstructorIntersection()
+
+> **functionWithConstructorIntersection**\<`T`\>(`constructor`): `T`
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function with a constructor type in an intersection constraint
+
+## Type Parameters
+
+### T
+
+`T` *extends* `object` & (new (...`args`) => `unknown`)
+
+## Parameters
+
+### constructor
+
+`T`
+
+## Returns
+
+`T`

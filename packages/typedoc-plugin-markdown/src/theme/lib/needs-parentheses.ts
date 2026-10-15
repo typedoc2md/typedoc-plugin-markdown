@@ -21,3 +21,23 @@ export function needsParentheses(type: SomeType): boolean {
       return false;
   }
 }
+
+/**
+ * Whether a type must be wrapped in parentheses when it is a member of an
+ * intersection, so that `A & (() => void)` is not rendered as
+ * `A & () => void`, which is not valid TypeScript.
+ */
+export function needsParenthesesInIntersection(type: SomeType): boolean {
+  switch (type.type) {
+    case 'union':
+    case 'conditional':
+      return true;
+    case 'reflection':
+      // Rendered as a bare function or constructor type (see type.reflection.ts).
+      return (
+        type.declaration?.signatures?.length === 1 && !type.declaration.children
+      );
+    default:
+      return false;
+  }
+}

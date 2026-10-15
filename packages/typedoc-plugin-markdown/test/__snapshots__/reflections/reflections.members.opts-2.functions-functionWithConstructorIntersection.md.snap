@@ -1,0 +1,25 @@
+# Function: functionWithConstructorIntersection()
+
+```ts
+function functionWithConstructorIntersection<T extends object & (new (...args: never[]) => unknown)>(constructor: T): T;
+```
+
+Defined in: [functions.ts:1](http://source-url)
+
+Comments for function with a constructor type in an intersection constraint
+
+## Type Parameters
+
+| Type Parameter |
+| :------ |
+| <a id="type-parameter-t"></a> `T` *extends* `object` & (new (...`args`: `never`[]) => `unknown`) |
+
+## Parameters
+
+| Parameter | Type |
+| :------ | :------ |
+| `constructor` | `T` |
+
+## Returns
+
+`T`

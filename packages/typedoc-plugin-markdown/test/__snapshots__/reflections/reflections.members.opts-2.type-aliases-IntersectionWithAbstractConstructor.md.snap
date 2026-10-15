@@ -1,0 +1,15 @@
+# Type Alias: IntersectionWithAbstractConstructor
+
+```ts
+type IntersectionWithAbstractConstructor = object & (abstract new (...args: never[]) => unknown);
+```
+
+Defined in: [types.ts:1](http://source-url)
+
+Comments for an intersection with an abstract constructor type
+
+## Type Declaration
+
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |

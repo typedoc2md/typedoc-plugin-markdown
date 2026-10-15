@@ -106,7 +106,7 @@ Comments for propReturningSignatureDeclaration
 
 ### propReturningSignatureDeclarations
 
-> **propReturningSignatureDeclarations**: () => `any` & (`paramsA`: `true` \| `any`[], `paramsB?`: `any`) => `any` & (`paramsC`: `any`) => `any`
+> **propReturningSignatureDeclarations**: (() => `any`) & ((`paramsA`: `true` \| `any`[], `paramsB?`: `any`) => `any`) & ((`paramsC`: `any`) => `any`)
 
 Comments for propReturningSignatureDeclarations
 
