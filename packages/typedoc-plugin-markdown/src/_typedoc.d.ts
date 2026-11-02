@@ -23,12 +23,7 @@ declare module 'typedoc' {
     indexFormat: 'list' | 'table' | 'htmlTable';
     interfacePropertiesFormat: 'list' | 'table' | 'htmlTable';
     membersWithOwnFile: (
-      | 'Enum'
-      | 'Variable'
-      | 'Function'
-      | 'Class'
-      | 'Interface'
-      | 'TypeAlias'
+      'Enum' | 'Variable' | 'Function' | 'Class' | 'Interface' | 'TypeAlias'
     )[];
     mergeReadme: boolean;
     modulesFileName: string;
@@ -41,8 +36,7 @@ declare module 'typedoc' {
     outputFileStrategy: 'members' | 'modules';
     pageTitleTemplates: {
       index?:
-        | string
-        | ((name: { projectName: string; version: string }) => string);
+        string | ((name: { projectName: string; version: string }) => string);
       member?:
         | string
         | ((name: {
