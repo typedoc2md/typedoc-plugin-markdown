@@ -302,12 +302,10 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
       helpers.getCommentParts.apply(context, [model]) as string,
     getDeclarationType: (model: DeclarationReflection) =>
       helpers.getDeclarationType.apply(context, [model]) as
-        | SomeType
-        | undefined,
+        SomeType | undefined,
     getDescriptionForComment: (comment: Comment) =>
       helpers.getDescriptionForComment.apply(context, [comment]) as
-        | string
-        | null,
+        string | null,
     getFlattenedDeclarations: (
       model: DeclarationReflection[],
       options?: { includeSignatures: boolean } | undefined,
@@ -347,8 +345,7 @@ export const resourceHelpers = (context: MarkdownThemeContext) => {
       options?: { includeBackticks?: boolean | undefined } | undefined,
     ) =>
       helpers.getTypeParameters.apply(context, [typeParameters, options]) as
-        | string
-        | undefined,
+        string | undefined,
     hasSignatures: (model: DeclarationReflection) =>
       helpers.hasSignatures.apply(context, [model]) as boolean,
     hasUsefulTypeDetails: (type: SomeType) =>

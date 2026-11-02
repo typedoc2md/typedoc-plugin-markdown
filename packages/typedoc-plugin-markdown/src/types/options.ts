@@ -110,12 +110,7 @@ export interface PluginOptions {
    * Determines which members are exported to their own file.
    */
   membersWithOwnFile?: (
-    | 'Enum'
-    | 'Variable'
-    | 'Function'
-    | 'Class'
-    | 'Interface'
-    | 'TypeAlias'
+    'Enum' | 'Variable' | 'Function' | 'Class' | 'Interface' | 'TypeAlias'
   )[];
 
   /**
@@ -152,8 +147,7 @@ export interface PluginOptions {
    */
   pageTitleTemplates?: {
     index?:
-      | string
-      | ((name: { projectName: string; version: string }) => string);
+      string | ((name: { projectName: string; version: string }) => string);
     member?:
       | string
       | ((name: {
