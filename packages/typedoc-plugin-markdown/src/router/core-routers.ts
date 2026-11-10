@@ -11,7 +11,7 @@ import {
   Reflection,
   ReflectionKind,
 } from 'typedoc';
-import { getAnchorName } from './anchor-name.js';
+import { getAnchorName } from './utils.js';
 
 /**
  * The core routers of TypeDoc are decorated to handle file options of the plugin.

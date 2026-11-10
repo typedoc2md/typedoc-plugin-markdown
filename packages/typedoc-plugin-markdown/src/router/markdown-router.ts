@@ -17,7 +17,7 @@ import {
   RouterTarget,
   Slugger,
 } from 'typedoc';
-import { getAnchorName } from './anchor-name.js';
+import { getAnchorName } from './utils.js';
 
 export abstract class MarkdownRouter extends BaseRouter {
   override extension = this.application.options.getValue('fileExtension');
