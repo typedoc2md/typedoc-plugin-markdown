@@ -3,9 +3,18 @@
 # of their checks would leave a docs-only or changeset-only pull request
 # waiting forever for a check that never reports.
 #
-# The job always runs and reports, but a pull request that touches nothing
-# outside `docs/` skips install, lint, build and test: the docs site is not an
-# npm workspace, so none of those steps cover it (Vercel builds it instead).
+# The job always runs and reports, but on a pull request it only runs lint,
+# build and test when application code changed -- anything else (the docs
+# site, changesets, READMEs, changelogs, contributor docs, issue templates)
+# passes in seconds. Application code is:
+#
+#   packages/**                      except packages/*/README.md and CHANGELOG*.md
+#   devtools/**                      build tooling and examples
+#   package.json, package-lock.json  dependencies
+#   tsconfig*.json, eslint.config.*  compiler and lint config
+#   .prettierrc*, .editorconfig      read by the plugin when formatting output
+#   .github/workflows/**             so CI changes test themselves
+#
 # Pushes to `main` always run the full cycle.
 name: Gate
 on:
@@ -30,32 +39,34 @@ jobs:
           # A pull_request checkout is the merge commit; its first parent is
           # the base branch, so depth 2 is enough to diff the PR's changes.
           fetch-depth: 2
-      - name: Detect docs-only changes
+      - name: Detect application code changes
         id: changes
         if: github.event_name == 'pull_request'
         run: |
+          code='^(packages/|devtools/|\.github/workflows/|package(-lock)?\.json$|tsconfig[^/]*\.json$|eslint\.config\.[^/]+$|\.prettierrc[^/]*$|\.editorconfig$)'
+          prose='^packages/[^/]+/(README|CHANGELOG[^/]*)\.md$'
           git diff --name-only HEAD^1 HEAD
-          if git diff --name-only HEAD^1 HEAD | grep -qv '^docs/'; then
-            echo "docs_only=false" >> "$GITHUB_OUTPUT"
+          if git diff --name-only HEAD^1 HEAD | grep -vE "$prose" | grep -qE "$code"; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
           else
-            echo "docs_only=true" >> "$GITHUB_OUTPUT"
-            echo "Only \`docs/\` changed: skipped lint, build and test." >> "$GITHUB_STEP_SUMMARY"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "No application code changed: skipped lint, build and test." >> "$GITHUB_STEP_SUMMARY"
           fi
       - name: Set up Node
-        if: steps.changes.outputs.docs_only != 'true'
+        if: steps.changes.outputs.skip != 'true'
         uses: actions/setup-node@v6
         with:
           node-version: '20.19.0'
           cache: 'npm'
       - name: Install
-        if: steps.changes.outputs.docs_only != 'true'
+        if: steps.changes.outputs.skip != 'true'
         run: HUSKY=0 npm ci
       - name: Lint
-        if: steps.changes.outputs.docs_only != 'true'
+        if: steps.changes.outputs.skip != 'true'
         run: npm run lint-all
       - name: Build All Workspaces
-        if: steps.changes.outputs.docs_only != 'true'
+        if: steps.changes.outputs.skip != 'true'
         run: npm run build-all
       - name: Test All Workspaces
-        if: steps.changes.outputs.docs_only != 'true'
+        if: steps.changes.outputs.skip != 'true'
         run: npm run test-all

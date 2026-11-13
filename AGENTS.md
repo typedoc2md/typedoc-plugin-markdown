@@ -128,11 +128,16 @@ check is the one required by branch protection. The per-package workflows
 are path-filtered, so requiring any of their checks would leave a docs-only
 pull request waiting for a check that never reports.
 
-The gate always reports, but on a pull request that changes nothing outside
-`docs/` it skips install, lint, build and test and passes in seconds: the docs
-site is not a workspace, so those steps never covered it, and Vercel's preview
-build is what checks it. Pushes to `main` always run the full cycle. If the
-docs site ever becomes a workspace, remove the skip.
+The gate always reports, but on a pull request it only runs install, lint,
+build and test when application code changed; otherwise it passes in seconds.
+The list of what counts as application code is at the top of `gate.yml`:
+`packages/**` (except package READMEs and changelogs), `devtools/**`, the root
+manifests and lockfile, compiler/lint/format config, and the workflows
+themselves. The docs site, changesets and prose skip — the docs site is not a
+workspace, so those steps never covered it; Vercel's preview build checks it.
+Pushes to `main` always run the full cycle. A new top-level folder or root
+config file that affects the build must be added to that list, or pull
+requests touching only it will skip CI.
 
 CI runs on **Node 18 and 20** (engines: `>= 18`) — the one place in this file
 that states the value, and one of the four sites listed below. The
