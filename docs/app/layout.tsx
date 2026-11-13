@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import { Footer, Layout, Navbar } from 'nextra-theme-docs';
 import 'nextra-theme-docs/style.css';
 import { Head } from 'nextra/components';
@@ -70,6 +71,7 @@ export default async function RootLayout({ children }) {
         >
           {children}
         </Layout>
+        {process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' && <Analytics />}
       </body>
     </html>
   );
