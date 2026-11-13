@@ -128,6 +128,12 @@ check is the one required by branch protection. The per-package workflows
 are path-filtered, so requiring any of their checks would leave a docs-only
 pull request waiting for a check that never reports.
 
+The gate always reports, but on a pull request that changes nothing outside
+`docs/` it skips install, lint, build and test and passes in seconds: the docs
+site is not a workspace, so those steps never covered it, and Vercel's preview
+build is what checks it. Pushes to `main` always run the full cycle. If the
+docs site ever becomes a workspace, remove the skip.
+
 CI runs on **Node 18 and 20** (engines: `>= 18`) — the one place in this file
 that states the value, and one of the four sites listed below. The
 per-package workflows build and test on the floor, Node 18; the gate runs the
