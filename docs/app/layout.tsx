@@ -21,9 +21,6 @@ export const metadata = {
     siteName: 'typedoc-plugin-markdown',
     type: 'website',
   },
-  icons: {
-    icon: '/logos/plugin-logo.png',
-  },
 };
 
 const navbar = (
@@ -66,7 +63,6 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
       <Head>
-        <link rel="icon" href="/logos/plugin-logo.png" type="image/png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
