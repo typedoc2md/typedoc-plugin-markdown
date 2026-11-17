@@ -53,11 +53,24 @@ const navbar = (
 );
 const footer = <Footer></Footer>;
 
+// Lets Google show "typedoc-plugin-markdown" as the site name in search
+// results instead of the bare domain. Google reads it from the home page.
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'typedoc-plugin-markdown',
+  url: 'https://typedoc-plugin-markdown.org/',
+};
+
 export default async function RootLayout({ children }) {
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
       <Head>
         <link rel="icon" href="/logos/plugin-logo.png" type="image/png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
       </Head>
       <body>
         <Layout
