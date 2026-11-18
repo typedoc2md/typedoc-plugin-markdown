@@ -15,7 +15,7 @@ export default {
     title: 'Docs',
   },
   plugins: {
-    title: 'Utils & Themes',
+    title: 'Util & Theme plugins',
     type: 'page',
   },
 };
