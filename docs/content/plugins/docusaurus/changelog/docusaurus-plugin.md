@@ -1,3 +1,7 @@
+---
+description: 'Release notes for docusaurus-plugin-typedoc, listing the changes in each published version.'
+---
+
 # Changelog
 
 ## 1.4.3 (2026-09-07)

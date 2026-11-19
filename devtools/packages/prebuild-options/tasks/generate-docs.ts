@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-empty */
-import { DocsConfig } from '@devtools/helpers';
+import { DocsConfig, getPackageName } from '@devtools/helpers';
 import * as fs from 'fs';
 import * as path from 'path';
 import { dirname } from 'path';
@@ -114,8 +114,28 @@ ${presetsJson}
 
     const categories = Object.entries(groupedConfig);
 
+    if (docsConfig.optionsFile !== 'options/index.mdx') {
+      outputPage.unshift(
+        frontmatter(
+          describeOptions(
+            `${getPackageName()} options`,
+            parsedConfig,
+            docsConfig.presets,
+          ),
+        ),
+      );
+    }
+
     for (const [categoryName, options] of categories) {
       const out: string[] = [
+        categories.length > 1
+          ? frontmatter(
+              describeOptions(
+                `${getDocsTitle(categoryName)} options for ${getPackageName()}`,
+                options,
+              ),
+            )
+          : '',
         categories.length > 1
           ? `import { Callout, FileTree } from 'nextra/components';`
           : '',
@@ -400,6 +420,50 @@ function getJsonPath() {
  */
 function getDocsTitle(categoryName: string) {
   return categoryName === 'other' ? 'Plugin Options' : categoryName;
+}
+
+/**
+ * Longest meta description to emit; search engines truncate around here.
+ */
+const MAX_DESCRIPTION_LENGTH = 160;
+
+/**
+ * Builds a page's meta description from the options it documents. Option names
+ * are what people search for, so as many as fit are listed by name.
+ */
+function describeOptions(
+  subject: string,
+  options: any[],
+  hasPresets = false,
+) {
+  const names = options
+    .filter((option) => !option.deprecated)
+    .map((option) => option.name);
+  const ending = hasPresets
+    ? ', plus the typedoc-plugin-markdown options it presets.'
+    : ', with types, defaults and examples.';
+  const build = (count: number) => {
+    const listed = names.slice(0, count);
+    const list =
+      count < names.length
+        ? `${listed.join(', ')} and more`
+        : listed.length > 1
+          ? `${listed.slice(0, -1).join(', ')} and ${listed.at(-1)}`
+          : listed.join('');
+    return `${subject}: ${list}${ending}`;
+  };
+  let count = names.length;
+  while (count > 1 && build(count).length > MAX_DESCRIPTION_LENGTH) {
+    count--;
+  }
+  return build(count);
+}
+
+/**
+ * Wraps a meta description in a YAML frontmatter block.
+ */
+function frontmatter(description: string) {
+  return `---\ndescription: '${description.replace(/'/g, "''")}'\n---`;
 }
 
 /**
