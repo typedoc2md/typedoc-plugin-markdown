@@ -1,12 +1,20 @@
+---
+description: 'Install typedoc-plugin-frontmatter and add it alongside typedoc-plugin-markdown to add YAML frontmatter to every generated page.'
+---
+
 # Quick Start
+
+<PackageVersion name={'typedoc-plugin-frontmatter'} />
 
 ## Installation
 
 ```sh npm2yarn
-npm install typedoc-plugin-frontmatter --save-dev
+npm install typedoc typedoc-plugin-markdown typedoc-plugin-frontmatter --save-dev
 ```
 
 ## Usage
+
+Add the plugins to your TypeDoc configuration file:
 
 ```json filename="typedoc.json"
 {
@@ -14,6 +22,18 @@ npm install typedoc-plugin-frontmatter --save-dev
 }
 ```
 
+Add a docs script to your `package.json` file:
+
+```json filename="package.json"
+{
+  "scripts": {
+    "docs": "typedoc"
+  }
+}
+```
+
+Then build your documentation:
+
 ```bash filename="CLI"
-npm run typedoc
+npm run docs
 ```

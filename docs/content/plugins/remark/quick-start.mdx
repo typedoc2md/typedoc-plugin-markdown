@@ -1,15 +1,39 @@
+---
+description: 'Install typedoc-plugin-remark and add it alongside typedoc-plugin-markdown to run remark plugins over the generated Markdown.'
+---
+
 # Quick Start
+
+<PackageVersion name={'typedoc-plugin-remark'} />
 
 ## Installation
 
 ```sh npm2yarn
-npm install typedoc-plugin-remark --save-dev
+npm install typedoc typedoc-plugin-markdown typedoc-plugin-remark --save-dev
 ```
 
 ## Usage
+
+Add the plugins to your TypeDoc configuration file:
 
 ```json filename="typedoc.json"
 {
   "plugin": ["typedoc-plugin-markdown", "typedoc-plugin-remark"]
 }
+```
+
+Add a docs script to your `package.json` file:
+
+```json filename="package.json"
+{
+  "scripts": {
+    "docs": "typedoc"
+  }
+}
+```
+
+Then build your documentation:
+
+```bash filename="CLI"
+npm run docs
 ```

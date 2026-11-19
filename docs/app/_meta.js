@@ -12,10 +12,10 @@ export default {
   },
   docs: {
     type: 'page',
-    title: 'Docs',
+    title: 'Documentation',
   },
   plugins: {
-    title: 'Util & Theme plugins',
+    title: 'Plugins',
     type: 'page',
   },
 };

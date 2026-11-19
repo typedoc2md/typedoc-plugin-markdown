@@ -1,4 +1,10 @@
+---
+description: 'Install typedoc-gitlab-wiki-theme and add it alongside typedoc-plugin-markdown to generate TypeDoc API documentation for a GitLab Wiki.'
+---
+
 # Quick Start
+
+<PackageVersion name={'typedoc-gitlab-wiki-theme'} />
 
 ## Installation
 
@@ -8,12 +14,26 @@ npm install typedoc typedoc-plugin-markdown typedoc-gitlab-wiki-theme --save-dev
 
 ## Usage
 
+Add the plugins to your TypeDoc configuration file:
+
 ```json filename="typedoc.json"
 {
   "plugin": ["typedoc-plugin-markdown", "typedoc-gitlab-wiki-theme"]
 }
 ```
 
+Add a docs script to your `package.json` file:
+
+```json filename="package.json"
+{
+  "scripts": {
+    "docs": "typedoc"
+  }
+}
+```
+
+Then build your documentation:
+
 ```bash filename="CLI"
-npm run typedoc
+npm run docs
 ```

@@ -1,6 +1,10 @@
-# Customizing Frontmatter
+---
+description: 'Change the frontmatter of each generated page from a local TypeDoc plugin that listens for MarkdownPageEvent.BEGIN.'
+---
 
-For advanced use a local plugin can be written to listen for the emitted event `MarkdownPageEvent.BEGIN` (before the page has been written) and then update the frontmatter config. See [MarkdownPageEvent](/api-docs/Class.MarkdownPageEvent).
+# Customizing
+
+For advanced use a local plugin can be written to listen for the emitted event `MarkdownPageEvent.BEGIN` (before the page has been written) and then update the frontmatter config. See [Local Plugins](/docs/customization#local-plugins) for how to set one up.
 
 ```json filename="typedoc.json"
 {

@@ -1,3 +1,7 @@
+---
+description: 'Upgrade to typedoc-plugin-markdown v4: architectural changes, new features, and renamed or removed options.'
+---
+
 # Migration Guides
 
 ## v4
@@ -23,7 +27,7 @@ Released: **2024-05-03**
 
 ### Non-Breaking Changes
 
-- Each module member is now output to its own file by default. See <OptionLink type="display" name="outputFileStrategy" />. To achieve the same output as v3 (whereby only Classes, Enums and Interfaces have their own file), set the [`membersWithOwnFile`](/docs/options#memberswithownfile) option.
+- Each module member is now output to its own file by default. See <OptionLink type="display" name="outputFileStrategy" />. To achieve the same output as v3 (whereby only Classes, Enums and Interfaces have their own file), set the `membersWithOwnFile` option.
 - Parameters are output as a list by default. To achieve the same output as v3 (where parameters are output as a table), use the `table` key of <OptionLink type="display" name="parametersFormat" />.
 - Comment `@` tags are now displayed as headings.
 

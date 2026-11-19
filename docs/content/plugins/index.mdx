@@ -1,73 +1,36 @@
+---
+description: 'Utility plugins and themes that build on typedoc-plugin-markdown: frontmatter, remark, Docusaurus, VitePress, GitHub Wiki and GitLab Wiki.'
+---
+
 {/* prettier-ignore */}
-import { faFileLines } from '@fortawesome/free-regular-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from 'next/image';
-import { Cards } from 'nextra/components';
+import { faFileLines } from '@fortawesome/free-solid-svg-icons';
 
-# Util & Theme plugins
+# Plugins
 
-Listed here are plugins that can be used with **typedoc-plugin-markdown** to enhance the documentation experience.
+These packages build on `typedoc-plugin-markdown` and are installed alongside it. Utility plugins change the Markdown it generates; themes shape that output for a particular docs platform or wiki.
 
-## Utils
+## Utilities
 
-Utility plugins that can be used to provide metadata or adjust the output of the markdown files.
+Post-process the generated Markdown: add YAML frontmatter to each page, or run remark plugins over every file.
 
-<Cards num={2}>
-  <Cards.Card
-    title="Frontmatter"
-    icon={<FontAwesomeIcon icon={faFileLines} />}
-    arrow={true}
-    href="plugins/frontmatter"
-
+<PluginCards
+  className="mt-6"
+  items={[
+    { title: 'Frontmatter', text: 'Adds configurable YAML frontmatter to each page.', href: '/plugins/frontmatter', icon: faFileLines },
+    { title: 'Remark', text: 'Runs remark plugins on the generated Markdown.', href: '/plugins/remark', logo: '/logos/remark-logo.png' },
+  ]}
 />
 
-  <Cards.Card
-    title="Remark"
-    icon={
-      <Image src="/logos/remark-logo.png" alt="Remark" width={26} height={26} />
-    }
-    arrow={true}
-    href="plugins/remark"
-  />
-</Cards>
+## Themes
 
-## Themes & Integrations
+Format the output for a specific platform, with the file layout, links and sidebar configuration it expects.
 
-Plugins that can be used to integrate and target output for specific platforms.
-
-<Cards num={2}>
-
-  <Cards.Card
-    title="Github Wiki"
-    icon={<Image src="/logos/github-logo.svg" alt="Gitlab" width={26} height={26} />}
-    arrow={true}
-    href="plugins/github-wiki"
-  />
-  <Cards.Card
-    title="Gitlab Wiki"
-    icon={<Image src="/logos/gitlab-logo.png" alt="Gitlab" width={26} height={26} />}
-    arrow={true}
-    href="plugins/gitlab-wiki"
-  />
-<Cards.Card
-    title="VitePress"
-    icon={
-      <Image src="/logos/vuepress-logo.png" alt="VuePress" width={26} height={26} />
-    }
-    arrow={true}
-    href="plugins/vitepress"
-  />
-  <Cards.Card
-    title="Docusaurus"
-    icon={
-      <Image
-        src="/logos/docusaurus-logo.svg"
-        alt="Docusaurus"
-        width={26}
-        height={26}
-      />
-    }
-    arrow={true}
-    href="plugins/docusaurus"
-  />
-</Cards>
+<PluginCards
+  className="mt-6"
+  items={[
+    { title: 'GitHub Wiki', text: 'Generates output for a GitHub Wiki.', href: '/plugins/github-wiki', logo: '/logos/github-logo.svg' },
+    { title: 'GitLab Wiki', text: 'Generates output for a GitLab Wiki.', href: '/plugins/gitlab-wiki', logo: '/logos/gitlab-logo.png' },
+    { title: 'VitePress', text: 'Generates output for a VitePress site.', href: '/plugins/vitepress', logo: '/logos/vuepress-logo.png' },
+    { title: 'Docusaurus', text: 'Generates output for a Docusaurus site.', href: '/plugins/docusaurus', logo: '/logos/docusaurus-logo.svg' },
+  ]}
+/>
