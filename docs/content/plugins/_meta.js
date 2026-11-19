@@ -1,5 +1,5 @@
 export default {
-  index: 'Util & Theme plugins',
+  index: 'Plugins',
   '-- Utils': {
     type: 'separator',
     title: 'Utils',
@@ -10,8 +10,8 @@ export default {
     type: 'separator',
     title: 'Themes',
   },
-  'github-wiki': 'Github Wiki',
-  'gitlab-wiki': 'Gitlab Wiki',
+  'github-wiki': 'GitHub Wiki',
+  'gitlab-wiki': 'GitLab Wiki',
   vitepress: 'VitePress',
   docusaurus: 'Docusaurus',
 };

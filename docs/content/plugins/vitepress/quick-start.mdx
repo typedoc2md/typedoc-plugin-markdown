@@ -1,7 +1,13 @@
+---
+description: 'Generate TypeDoc API documentation for a VitePress site with typedoc-vitepress-theme, including an auto-generated sidebar.'
+---
+
 import { Callout, Steps } from 'nextra/components';
 import { Cards, Card } from 'nextra/components';
 
 # Quick Start
+
+<PackageVersion name={'typedoc-vitepress-theme'} />
 
 <Steps>
 
@@ -19,7 +25,7 @@ npm install typedoc typedoc-plugin-markdown typedoc-vitepress-theme --save-dev
 
 ### Update the TypeDoc config
 
-Update the TypeDoc config file to include the plugins and add any additional [options](/themes/vitepress/options).
+Update the TypeDoc config file to include the plugins and add any additional [options](/plugins/vitepress/options).
 
 ```json filename="typedoc.json"
 {
@@ -29,7 +35,7 @@ Update the TypeDoc config file to include the plugins and add any additional [op
 
 ### Run TypeDoc before bootstrapping VitePress
 
-Run TypeDoc before bootstraping VitePress.
+Run TypeDoc before bootstrapping VitePress.
 
 ```json filename="package.json"
 "predocs": "typedoc"
@@ -41,7 +47,7 @@ Run TypeDoc before bootstraping VitePress.
 
 <Callout type="warning">
   If running TypeDoc from outside the VitePress project root then the option
-  [`docsRoot`](/plugins/vitepress/options#sidebarbasepath) will need to be be
+  [`docsRoot`](/plugins/vitepress/options#docsroot) will need to be
   updated for sidebar links to resolve correctly.
 </Callout>
 

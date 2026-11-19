@@ -1,31 +1,44 @@
+import { normalizePages } from 'nextra/normalize-pages';
+import { getPageMap } from 'nextra/page-map';
 import { generateStaticParamsFor, importPage } from 'nextra/pages';
-import * as path from 'path';
 import '../../globals.css';
 import { useMDXComponents as getMDXComponents } from '../../mdx-components';
 
 export const generateStaticParams = generateStaticParamsFor('mdxPath');
 
+const SITE_NAME = 'typedoc-plugin-markdown';
+
+// Titles read most specific first, site name last, so the part that tells
+// pages apart survives when tabs and search results truncate them:
+// "Quick Start • VitePress • typedoc-plugin-markdown". Section names come from
+// the same resolved page map as the breadcrumb, so they match the sidebar.
 export async function generateMetadata(props) {
   const params = await props.params;
-
   const { metadata } = await importPage(params.mdxPath);
+  const route = `/${(params.mdxPath ?? []).join('/')}`;
 
-  const titlePath = metadata.filePath
-    .split(path.sep)
-    .map((part) => part[0]?.toUpperCase() + part.substring(1))
-    .slice(1, metadata.asIndexPage ? -2 : -1)
-    .filter((part) => Boolean(part))
-    .join(' • ');
-
-  const titleParts = [];
-  if (titlePath) {
-    titleParts.push(titlePath);
+  if (route === '/') {
+    return { ...metadata, title: `${SITE_NAME} • ${metadata.title}` };
   }
-  titleParts.push(metadata.title);
-  const title = `typedoc-plugin-markdown • ${titleParts.join(' • ')}`;
+
+  const { activePath } = normalizePages({ list: await getPageMap(), route });
+  const titles = activePath
+    // The top-level section ("Documentation", "Plugins") is in every title
+    // below it and tells pages apart no better than the site name does.
+    .slice(1)
+    .map((item) => item.title)
+    .filter((title) => typeof title === 'string' && title)
+    // A section's index page usually repeats the section's own title.
+    .filter((title, i, all) => title !== all[i - 1])
+    .reverse();
+
+  if (titles.length === 0) {
+    titles.push(metadata.title);
+  }
+
   return {
     ...metadata,
-    title,
+    title: [...titles, SITE_NAME].join(' • '),
   };
 }
 

@@ -1,8 +1,14 @@
+---
+description: 'Generate TypeDoc API documentation as part of your Docusaurus build with docusaurus-plugin-typedoc, or with the standalone Docusaurus theme.'
+---
+
 import { Callout, Steps, FileTree } from 'nextra/components';
 
 # Quick Start
 
 ## Docusaurus Plugin (Recommended)
+
+<PackageVersion name={'docusaurus-plugin-typedoc'} />
 
 For fully integrated setup with Docusaurus, we recommend using the Docusaurus plugin `docusaurus-plugin-typedoc`.
 
@@ -85,6 +91,8 @@ e.g. `http://localhost:3000/docs/api`
 
 ## Standalone
 
+<PackageVersion name={'typedoc-docusaurus-theme'} />
+
 If you would prefer to generate your docs entirely independently of a Docusaurus project (for later integration) you can run the `typedoc-docusaurus-theme` TypeDoc plugin independently.
 
 ### Install
@@ -95,12 +103,26 @@ npm install typedoc typedoc-plugin-markdown typedoc-docusaurus-theme --save-dev
 
 ### Usage
 
+Add the plugins to your TypeDoc configuration file:
+
 ```json filename="typedoc.json"
 {
   "plugin": ["typedoc-plugin-markdown", "typedoc-docusaurus-theme"]
 }
 ```
 
+Add a docs script to your `package.json` file:
+
+```json filename="package.json"
+{
+  "scripts": {
+    "docs": "typedoc"
+  }
+}
+```
+
+Then build your documentation:
+
 ```bash filename="CLI"
-npm run typedoc
+npm run docs
 ```

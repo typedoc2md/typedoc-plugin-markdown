@@ -3,6 +3,7 @@ import { EventsTable } from './components/events-table';
 import { Link } from './components/link';
 import { OptionLink } from './components/option-link';
 import { PackageVersion } from './components/package-version';
+import { PluginCards } from './components/plugin-cards';
 import { PropsTable } from './components/props-table';
 
 // Get the default MDX components
@@ -18,5 +19,6 @@ export function useMDXComponents(components) {
     PropsTable,
     EventsTable,
     Link,
+    PluginCards,
   };
 }

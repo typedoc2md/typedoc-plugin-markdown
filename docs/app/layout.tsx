@@ -1,7 +1,7 @@
 import { Analytics } from '@vercel/analytics/next';
 import { Footer, Layout, Navbar } from 'nextra-theme-docs';
 import 'nextra-theme-docs/style.css';
-import { Head } from 'nextra/components';
+import { Head, Search } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
 import '../globals.css';
 
@@ -41,7 +41,7 @@ const navbar = (
           />
           <path d="m30 98v-68h20l20 25 20-25h20v68h-20v-39l-20 25-20-25v39zm125 0-30-33h20v-35h20v35h20z" />
         </svg>
-        <span className="text-base font-extrabold tracking-tight">
+        <span className="font-mono text-sm font-semibold">
           typedoc-plugin-markdown
         </span>
       </span>
@@ -73,6 +73,7 @@ export default async function RootLayout({ children }) {
         <Layout
           docsRepositoryBase="https://github.com/typedoc2md/typedoc-plugin-markdown/tree/main/docs"
           navbar={navbar}
+          search={<Search placeholder="Search…" />}
           sidebar={{ defaultMenuCollapseLevel: 1 }}
           pageMap={await getPageMap()}
           footer={footer}
