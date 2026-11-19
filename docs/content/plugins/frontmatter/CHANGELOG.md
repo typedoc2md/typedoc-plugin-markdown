@@ -1,3 +1,7 @@
+---
+description: 'Release notes for typedoc-plugin-frontmatter, listing the changes in each published version.'
+---
+
 # Changelog
 
 ## 1.3.3 (2026-10-13)

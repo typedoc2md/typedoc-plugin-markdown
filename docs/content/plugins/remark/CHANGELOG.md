@@ -1,3 +1,7 @@
+---
+description: 'Release notes for typedoc-plugin-remark, listing the changes in each published version.'
+---
+
 # Changelog
 
 ## 2.0.2 (2026-09-07)

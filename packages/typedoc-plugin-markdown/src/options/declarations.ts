@@ -267,7 +267,7 @@ export const excludeGroups: Partial<DeclarationOption> = {
  *
  * Please note that when this option is set to `true` it is not possible to link to other references.
  *
- * As a work around the [`@link`](https://typedoc.org/tags/link/) tag can be be used to manually reference types.
+ * As a work around the [`@link`](https://typedoc.org/tags/link/) tag can be used to manually reference types.
  *
  * @category Display
  */

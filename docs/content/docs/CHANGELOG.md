@@ -1,3 +1,7 @@
+---
+description: 'Release notes for typedoc-plugin-markdown, listing the changes in each published version.'
+---
+
 # Changelog
 
 ## 4.14.1 (2026-10-19)

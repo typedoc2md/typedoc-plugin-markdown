@@ -4,9 +4,10 @@ import * as fs from 'fs';
 /**
  * Mirrors each package changelog into its counterpart under `docs/content`.
  *
- * The docs copies are plain duplicates, and were previously kept up to date by
- * hand, so a release could ship with the docs site a version behind. The
- * Release workflow runs this after dating the published entries.
+ * The docs copies duplicate the package changelog under a frontmatter block
+ * that gives each page its meta description. They were previously kept up to
+ * date by hand, so a release could ship with the docs site a version behind.
+ * The Release workflow runs this after dating the published entries.
  *
  * Packages absent from this map have no changelog page in the docs.
  */
@@ -40,7 +41,8 @@ function main() {
   }
 
   const synced = Object.entries(CHANGELOGS).filter(([source, target]) => {
-    const contents = fs.readFileSync(source, 'utf-8');
+    const contents =
+      frontmatter(source.split('/')[1]) + fs.readFileSync(source, 'utf-8');
     if (contents === fs.readFileSync(target, 'utf-8')) {
       return false;
     }
@@ -54,4 +56,13 @@ function main() {
   }
 
   synced.forEach(([, target]) => consola.success(`Synced ${target}`));
+}
+
+/**
+ * The docs page's frontmatter, named after the package directory, which
+ * matches the published package name. Must match `docs/copy-changelogs.cjs`,
+ * which rewrites the same files before every docs build.
+ */
+function frontmatter(packageName) {
+  return `---\ndescription: 'Release notes for ${packageName}, listing the changes in each published version.'\n---\n\n`;
 }

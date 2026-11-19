@@ -1,3 +1,7 @@
+---
+description: 'Release notes for typedoc-vitepress-theme, listing the changes in each published version.'
+---
+
 # Changelog
 
 ## 1.1.4 (2026-09-07)

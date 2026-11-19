@@ -31,19 +31,21 @@ const changelogs = [
   },
 ];
 
+// Must match the frontmatter written by devtools/scripts/changelog-sync.mjs,
+// which keeps the committed copies in step at release time.
+function frontmatter(packageName) {
+  return `---\ndescription: 'Release notes for ${packageName}, listing the changes in each published version.'\n---\n\n`;
+}
+
 changelogs.forEach(({ from, to, title }) => {
   const fromPath = path.join(repoRoot, from);
   const toPath = path.join(docsRoot, to);
   fs.mkdirSync(path.dirname(toPath), { recursive: true });
 
-  if (!title) {
-    fs.copyFileSync(fromPath, toPath);
-    return;
+  let content = fs.readFileSync(fromPath, 'utf8');
+  if (title) {
+    content = content.replace(/^# Changelog/, `# ${title}`);
   }
 
-  const content = fs
-    .readFileSync(fromPath, 'utf8')
-    .replace(/^# Changelog/, `# ${title}`);
-
-  fs.writeFileSync(toPath, content);
+  fs.writeFileSync(toPath, frontmatter(from.split('/')[1]) + content);
 });

@@ -1,3 +1,7 @@
+---
+description: 'Release notes for typedoc-docusaurus-theme, listing the changes in each published version.'
+---
+
 # Changelog
 
 ## 1.4.3 (2026-09-07)
